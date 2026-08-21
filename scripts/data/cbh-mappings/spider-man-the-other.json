@@ -1,0 +1,490 @@
+{
+  "id": "spider-man-the-other",
+  "inventoryId": "spider-man-the-other",
+  "sourceUrl": "https://www.comicbookherald.com/amazing-spider-man-reading-order-modern-marvel-era/#theother",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 12,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 2453,
+      "title": "Friendly Neighborhood Spider-Man",
+      "issueTitle": "Friendly Neighborhood Spider-Man (2005) #1",
+      "seriesTitle": "Friendly Neighborhood Spider-Man",
+      "apiSeriesName": "Friendly Neighborhood Spider-Man (2005 - 2007)",
+      "seriesId": 877,
+      "issueNumber": "1",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/2453/friendly_neighborhood_spider-man_2005_1",
+      "onSaleDate": "2005-10-12T00:00:00+0000"
+    },
+    {
+      "id": 2559,
+      "title": "Marvel Knights Spider-Man",
+      "issueTitle": "Marvel Knights Spider-Man (2004) #19",
+      "seriesTitle": "Marvel Knights Spider-Man",
+      "apiSeriesName": "Marvel Knights Spider-Man (2004 - 2006)",
+      "seriesId": 721,
+      "issueNumber": "19",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/2559/marvel_knights_spider-man_2004_19",
+      "onSaleDate": "2005-12-01T00:00:00+0000"
+    },
+    {
+      "id": 2452,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #525",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "525",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/2452/amazing_spider-man_1999_525",
+      "onSaleDate": "2005-10-26T00:00:00+0000"
+    },
+    {
+      "id": 3021,
+      "title": "Friendly Neighborhood Spider-Man",
+      "issueTitle": "Friendly Neighborhood Spider-Man (2005) #2",
+      "seriesTitle": "Friendly Neighborhood Spider-Man",
+      "apiSeriesName": "Friendly Neighborhood Spider-Man (2005 - 2007)",
+      "seriesId": 877,
+      "issueNumber": "2",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/3021/friendly_neighborhood_spider-man_2005_2",
+      "onSaleDate": "2005-11-09T00:00:00+0000"
+    },
+    {
+      "id": 3087,
+      "title": "Marvel Knights Spider-Man",
+      "issueTitle": "Marvel Knights Spider-Man (2004) #20",
+      "seriesTitle": "Marvel Knights Spider-Man",
+      "apiSeriesName": "Marvel Knights Spider-Man (2004 - 2006)",
+      "seriesId": 721,
+      "issueNumber": "20",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/3087/marvel_knights_spider-man_2004_20",
+      "onSaleDate": "2006-01-01T00:00:00+0000"
+    },
+    {
+      "id": 3020,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #526",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "526",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/3020/amazing_spider-man_1999_526",
+      "onSaleDate": "2005-11-23T00:00:00+0000"
+    },
+    {
+      "id": 3133,
+      "title": "Friendly Neighborhood Spider-Man",
+      "issueTitle": "Friendly Neighborhood Spider-Man (2005) #3",
+      "seriesTitle": "Friendly Neighborhood Spider-Man",
+      "apiSeriesName": "Friendly Neighborhood Spider-Man (2005 - 2007)",
+      "seriesId": 877,
+      "issueNumber": "3",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/3133/friendly_neighborhood_spider-man_2005_3",
+      "onSaleDate": "2005-12-07T00:00:00+0000"
+    },
+    {
+      "id": 3192,
+      "title": "Marvel Knights Spider-Man",
+      "issueTitle": "Marvel Knights Spider-Man (2004) #21",
+      "seriesTitle": "Marvel Knights Spider-Man",
+      "apiSeriesName": "Marvel Knights Spider-Man (2004 - 2006)",
+      "seriesId": 721,
+      "issueNumber": "21",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/3192/marvel_knights_spider-man_2004_21",
+      "onSaleDate": "2006-01-11T00:00:00+0000"
+    },
+    {
+      "id": 3132,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #527",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "527",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/3132/amazing_spider-man_1999_527",
+      "onSaleDate": "2005-12-28T00:00:00+0000"
+    },
+    {
+      "id": 3361,
+      "title": "Friendly Neighborhood Spider-Man",
+      "issueTitle": "Friendly Neighborhood Spider-Man (2005) #4",
+      "seriesTitle": "Friendly Neighborhood Spider-Man",
+      "apiSeriesName": "Friendly Neighborhood Spider-Man (2005 - 2007)",
+      "seriesId": 877,
+      "issueNumber": "4",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/3361/friendly_neighborhood_spider-man_2005_4",
+      "onSaleDate": "2006-01-18T00:00:00+0000"
+    },
+    {
+      "id": 3398,
+      "title": "Marvel Knights Spider-Man",
+      "issueTitle": "Marvel Knights Spider-Man (2004) #22",
+      "seriesTitle": "Marvel Knights Spider-Man",
+      "apiSeriesName": "Marvel Knights Spider-Man (2004 - 2006)",
+      "seriesId": 721,
+      "issueNumber": "22",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/3398/marvel_knights_spider-man_2004_22",
+      "onSaleDate": "2006-01-18T00:00:00+0000"
+    },
+    {
+      "id": 3360,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #528",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "528",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/3360/amazing_spider-man_1999_528",
+      "onSaleDate": "2006-01-25T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Friendly Neighborhood Spider-Man #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Friendly Neighborhood Spider-Man",
+      "seriesYear": 2005,
+      "issueNumber": "1",
+      "seriesId": 877,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "2453"
+      ],
+      "selectedIssueId": 2453,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/2453/friendly_neighborhood_spider-man_2005_1",
+      "resolvedIssueTitle": "Friendly Neighborhood Spider-Man (2005) #1",
+      "note": "Marvel series 877 (Friendly Neighborhood Spider-Man (2005 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        2453
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Marvel Knights Spider-Man #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Marvel Knights Spider-Man",
+      "seriesYear": 2004,
+      "issueNumber": "19",
+      "seriesId": 721,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "2559"
+      ],
+      "selectedIssueId": 2559,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/2559/marvel_knights_spider-man_2004_19",
+      "resolvedIssueTitle": "Marvel Knights Spider-Man (2004) #19",
+      "note": "Marvel series 721 (Marvel Knights Spider-Man (2004 - 2006)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        2559
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Amazing Spider-Man #525",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "525",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "2452"
+      ],
+      "selectedIssueId": 2452,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/2452/amazing_spider-man_1999_525",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #525",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        2452
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Friendly Neighborhood Spider-Man #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Friendly Neighborhood Spider-Man",
+      "seriesYear": 2005,
+      "issueNumber": "2",
+      "seriesId": 877,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3021"
+      ],
+      "selectedIssueId": 3021,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3021/friendly_neighborhood_spider-man_2005_2",
+      "resolvedIssueTitle": "Friendly Neighborhood Spider-Man (2005) #2",
+      "note": "Marvel series 877 (Friendly Neighborhood Spider-Man (2005 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3021
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Marvel Knights Spider-Man #20",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Marvel Knights Spider-Man",
+      "seriesYear": 2004,
+      "issueNumber": "20",
+      "seriesId": 721,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3087"
+      ],
+      "selectedIssueId": 3087,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3087/marvel_knights_spider-man_2004_20",
+      "resolvedIssueTitle": "Marvel Knights Spider-Man (2004) #20",
+      "note": "Marvel series 721 (Marvel Knights Spider-Man (2004 - 2006)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3087
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Amazing Spider-Man #526",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "526",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3020"
+      ],
+      "selectedIssueId": 3020,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3020/amazing_spider-man_1999_526",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #526",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3020
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Friendly Neighborhood Spider-Man #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Friendly Neighborhood Spider-Man",
+      "seriesYear": 2005,
+      "issueNumber": "3",
+      "seriesId": 877,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3133"
+      ],
+      "selectedIssueId": 3133,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3133/friendly_neighborhood_spider-man_2005_3",
+      "resolvedIssueTitle": "Friendly Neighborhood Spider-Man (2005) #3",
+      "note": "Marvel series 877 (Friendly Neighborhood Spider-Man (2005 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3133
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Marvel Knights Spider-Man #21",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Marvel Knights Spider-Man",
+      "seriesYear": 2004,
+      "issueNumber": "21",
+      "seriesId": 721,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3192"
+      ],
+      "selectedIssueId": 3192,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3192/marvel_knights_spider-man_2004_21",
+      "resolvedIssueTitle": "Marvel Knights Spider-Man (2004) #21",
+      "note": "Marvel series 721 (Marvel Knights Spider-Man (2004 - 2006)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3192
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Amazing Spider-Man #527",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "527",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3132"
+      ],
+      "selectedIssueId": 3132,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3132/amazing_spider-man_1999_527",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #527",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3132
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Friendly Neighborhood Spider-Man #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Friendly Neighborhood Spider-Man",
+      "seriesYear": 2005,
+      "issueNumber": "4",
+      "seriesId": 877,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3361"
+      ],
+      "selectedIssueId": 3361,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3361/friendly_neighborhood_spider-man_2005_4",
+      "resolvedIssueTitle": "Friendly Neighborhood Spider-Man (2005) #4",
+      "note": "Marvel series 877 (Friendly Neighborhood Spider-Man (2005 - 2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3361
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Marvel Knights Spider-Man #22",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Marvel Knights Spider-Man",
+      "seriesYear": 2004,
+      "issueNumber": "22",
+      "seriesId": 721,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3398"
+      ],
+      "selectedIssueId": 3398,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3398/marvel_knights_spider-man_2004_22",
+      "resolvedIssueTitle": "Marvel Knights Spider-Man (2004) #22",
+      "note": "Marvel series 721 (Marvel Knights Spider-Man (2004 - 2006)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3398
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Amazing Spider-Man #528",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "528",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "3360"
+      ],
+      "selectedIssueId": 3360,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/3360/amazing_spider-man_1999_528",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #528",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        3360
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+  "approvedManifest": {
+    "id": "spider-man-the-other",
+    "name": "Spider-Man: The Other",
+    "description": "The twelve-part crossover alternating Friendly Neighborhood Spider-Man, Marvel Knights Spider-Man, and Amazing Spider-Man.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "spider-man-the-other.md",
+    "sourcePage": "https://www.comicbookherald.com/amazing-spider-man-reading-order-modern-marvel-era/#theother",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "spider_man_the_other.json",
+    "characters": [
+      "Spider-Man",
+      "Peter Parker",
+      "Morlun"
+    ],
+    "keywords": [
+      "The Other",
+      "Friendly Neighborhood Spider-Man",
+      "Marvel Knights Spider-Man"
+    ],
+    "expect": 12,
+    "timeline": 2005,
+    "coverIssueId": 2453,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Friendly Neighborhood Spider-Man #1"
+  }
+}

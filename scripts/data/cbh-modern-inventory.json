@@ -35,11 +35,13 @@
     "guideType": "sub-guide",
     "window": "Q1",
     "disposition": "new-order",
-    "reason": "Discrete historical crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 5-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "secret-war"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 4,
@@ -77,11 +79,11 @@
     "guideType": "event",
     "window": "Q1",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Blocked: Generation M #1-5 are absent from repository metadata, so exact resolution failed",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 7,
@@ -119,11 +121,13 @@
     "guideType": "sub-guide",
     "window": "Q1",
     "disposition": "new-order",
-    "reason": "Anchored discrete crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 12-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "spider-man-the-other"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 10,
@@ -189,11 +193,14 @@
     "guideType": "event",
     "window": "Q2",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
-    "overlapIds": [],
+    "reason": "Blocked: complete overlap found 2 shared issues with civil-war-avengers and 1 with the final Aftersmash peer, with no approved disposition",
+    "sourceRetrievedAt": "2026-08-21",
+    "overlapIds": [
+      "civil-war-avengers",
+      "world-war-hulk-aftersmash"
+    ],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 15,
@@ -203,11 +210,13 @@
     "guideType": "bridge",
     "window": "Q2",
     "disposition": "new-order",
-    "reason": "Leading pilot; flat 26-line source pending resolver proof",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 26-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "world-war-hulk-aftersmash"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 16,
@@ -273,11 +282,11 @@
     "guideType": "event",
     "window": "Q2",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Blocked: Fall of the Hulks: MODOK #1 is absent from repository metadata, so exact resolution failed",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 21,
@@ -343,11 +352,13 @@
     "guideType": "sub-guide",
     "window": "Q3",
     "disposition": "new-order",
-    "reason": "Discrete historical crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 29-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "shadowland"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 26,
@@ -357,11 +368,13 @@
     "guideType": "event",
     "window": "Q3",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 19-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "chaos-war"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 27,
@@ -385,11 +398,13 @@
     "guideType": "event",
     "window": "Q3",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
-    "overlapIds": [],
+    "reason": "Blocked: complete overlap found 15 shared issues with heroic-age-avengers, with no approved disposition",
+    "sourceRetrievedAt": "2026-08-21",
+    "overlapIds": [
+      "heroic-age-avengers"
+    ],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 29,
@@ -413,11 +428,13 @@
     "guideType": "event",
     "window": "Q3",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
-    "overlapIds": [],
+    "reason": "Blocked: complete overlap found 17 shared issues with heroic-age-avengers, with no approved disposition",
+    "sourceRetrievedAt": "2026-08-21",
+    "overlapIds": [
+      "heroic-age-avengers"
+    ],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 31,
@@ -455,11 +472,14 @@
     "guideType": "event",
     "window": "Q4",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
-    "overlapIds": [],
+    "reason": "Blocked: complete overlap found 1 shared issue with heroic-age-avengers and 1 with spider-man-best-of, with no approved disposition",
+    "sourceRetrievedAt": "2026-08-21",
+    "overlapIds": [
+      "heroic-age-avengers",
+      "spider-man-best-of"
+    ],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 34,
@@ -469,11 +489,11 @@
     "guideType": "event",
     "window": "Q4",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Blocked: Infinity: Against the Tide #1-2 are absent from repository metadata and the unnumbered Thanos epilogue has 6 candidates",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 35,
@@ -483,11 +503,15 @@
     "guideType": "event",
     "window": "Q4",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
-    "overlapIds": [],
+    "reason": "Blocked: complete overlap found 6 shared issues with each Hickman order and 2 with the final Spider-Verse peer, with no approved disposition",
+    "sourceRetrievedAt": "2026-08-21",
+    "overlapIds": [
+      "hickman-full",
+      "hickman-minimal",
+      "spider-verse"
+    ],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 36,
@@ -497,11 +521,11 @@
     "guideType": "sub-guide",
     "window": "Q4",
     "disposition": "new-order",
-    "reason": "Discrete historical crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Blocked: the source ends with Wolverines #1 to present, which leaves 20 metadata candidates and no exact final range",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 37,
@@ -511,11 +535,13 @@
     "guideType": "event",
     "window": "Q4",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 55-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "axis"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 38,
@@ -525,11 +551,13 @@
     "guideType": "sub-guide",
     "window": "Q4",
     "disposition": "new-order",
-    "reason": "Discrete historical crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 35-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "spider-verse"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 39,
@@ -539,11 +567,11 @@
     "guideType": "sub-guide",
     "window": "Q4",
     "disposition": "new-order",
-    "reason": "Discrete historical crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Blocked: the exact source page returned HTTP 404 on 2026-08-21, so no source rows could be frozen",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 40,
@@ -595,11 +623,13 @@
     "guideType": "event",
     "window": "Q5",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
-    "overlapIds": [],
+    "reason": "Blocked: complete overlap found 2 shared issues with all-new-all-different-avengers, with no approved disposition",
+    "sourceRetrievedAt": "2026-08-21",
+    "overlapIds": [
+      "all-new-all-different-avengers"
+    ],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 44,
@@ -609,11 +639,13 @@
     "guideType": "sub-guide",
     "window": "Q5",
     "disposition": "new-order",
-    "reason": "Discrete historical crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 13-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "apocalypse-wars"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 45,
@@ -623,11 +655,11 @@
     "guideType": "event",
     "window": "Q5",
     "disposition": "new-order",
-    "reason": "Separate event from the shipped 2006 Civil War",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Blocked: 6 Ulysses issues, Gods of War #1, X-Men #1, and The Accused #1 are absent from repository metadata",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
     "catalogIds": [],
-    "deliveryStatus": "pending"
+    "deliveryStatus": "blocked"
   },
   {
     "position": 46,
@@ -637,11 +669,13 @@
     "guideType": "sub-guide",
     "window": "Q5",
     "disposition": "new-order",
-    "reason": "Discrete historical crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 24-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "clone-conspiracy"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 47,
@@ -651,11 +685,13 @@
     "guideType": "event",
     "window": "Q5",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 20-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "inhumans-vs-x-men"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 48,

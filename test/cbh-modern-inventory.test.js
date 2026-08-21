@@ -9,7 +9,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const inventoryPath = path.join(root, 'scripts', 'data', 'cbh-modern-inventory.json');
 const inventory = JSON.parse(fs.readFileSync(inventoryPath, 'utf8'));
 
-test('the maintained inventory matches the P01 contract', () => {
+test('the maintained inventory matches the current lifecycle contract', () => {
   const counts = validateInventory(inventory);
 
   assert.equal(inventory.length, 86);
@@ -33,9 +33,22 @@ test('the maintained inventory matches the P01 contract', () => {
   assert.ok(inventory.every((record) => /^\d{4}-\d{2}-\d{2}$/.test(record.sourceRetrievedAt)));
   assert.ok(inventory.filter((record) => record.guideType === 'commerce').every((record) => record.disposition === 'excluded'));
   assert.equal(inventory.find((record) => record.id === 'armageddon-2026')?.disposition, 'deferred');
-  assert.ok(inventory.every((record) => Array.isArray(record.overlapIds) && record.overlapIds.length === 0));
-  assert.ok(inventory.every((record) => Array.isArray(record.catalogIds) && record.catalogIds.length === 0));
-  assert.ok(inventory.filter((record) => record.disposition === 'new-order').every((record) => record.deliveryStatus === 'pending'));
+  assert.ok(inventory.every((record) => (
+    Array.isArray(record.overlapIds)
+    && record.overlapIds.every((id) => typeof id === 'string')
+    && new Set(record.overlapIds).size === record.overlapIds.length
+  )));
+  assert.ok(inventory.every((record) => (
+    Array.isArray(record.catalogIds)
+    && record.catalogIds.every((id) => typeof id === 'string')
+    && new Set(record.catalogIds).size === record.catalogIds.length
+  )));
+  assert.ok(inventory.filter((record) => record.disposition === 'new-order').every((record) => (
+    ['pending', 'ready', 'shipped', 'blocked'].includes(record.deliveryStatus)
+  )));
+  assert.ok(inventory.filter((record) => record.deliveryStatus === 'blocked').every((record) => (
+    record.reason.startsWith('Blocked:')
+  )));
   assert.ok(inventory.filter((record) => record.disposition !== 'new-order').every((record) => record.deliveryStatus === 'not-applicable'));
 });
 
@@ -61,6 +74,22 @@ test('batch duplicate guard rejects repeated ids, URLs, issue sequences, and cat
       catalogIds: ['catalog-3'],
     },
   ], existing, peer));
+  assert.doesNotThrow(() => validateBatchNoDuplicates([
+    {
+      id: 'new-guide',
+      url: 'https://example.com/new-guide',
+      selectedIssueIds: ['3000', '3001'],
+      catalogIds: ['catalog-3'],
+    },
+  ], [
+    existing[0],
+    {
+      id: 'existing-variant',
+      url: existing[0].url,
+      selectedIssueIds: ['1002', '1003'],
+      catalogIds: ['catalog-variant'],
+    },
+  ], peer), 'pre-existing source variants must not block an unrelated batch');
 
   const duplicateIdBatch = [{
     id: 'existing-guide',

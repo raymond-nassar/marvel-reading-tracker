@@ -1,0 +1,391 @@
+{
+  "id": "apocalypse-wars",
+  "name": "X-Men: Apocalypse Wars",
+  "description": "Thirteen alternating chapters from Extraordinary X-Men, Uncanny X-Men, and All-New X-Men.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-apocalypse-wars/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T09:58:39.875Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 13,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 55440,
+      "title": "Extraordinary X-Men (2015) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/55440/extraordinary_x-men_2015_8",
+      "seriesId": 20460,
+      "seriesName": "Extraordinary X-Men (2015 - 2017)",
+      "onSale": "2016-03-16T00:00:00+0000",
+      "mu": "2016-09-12T00:00:00+0000",
+      "digitalId": 41414,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/56e3335193a8c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Victor Ibanez",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 56054,
+      "title": "Uncanny X-Men (2016) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/56054/uncanny_x-men_2016_6",
+      "seriesId": 20612,
+      "seriesName": "Uncanny X-Men (2016 - 2017)",
+      "onSale": "2016-04-06T00:00:00+0000",
+      "mu": "2016-10-03T00:00:00+0000",
+      "digitalId": 41666,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/20/56fed62b288c8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55441,
+      "title": "Extraordinary X-Men (2015) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/55441/extraordinary_x-men_2015_9",
+      "seriesId": 20460,
+      "seriesName": "Extraordinary X-Men (2015 - 2017)",
+      "onSale": "2016-04-20T00:00:00+0000",
+      "mu": "2016-10-17T00:00:00+0000",
+      "digitalId": 41892,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/70/570c10a6cd125",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 56055,
+      "title": "Uncanny X-Men (2016) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/56055/uncanny_x-men_2016_7",
+      "seriesId": 20612,
+      "seriesName": "Uncanny X-Men (2016 - 2017)",
+      "onSale": "2016-05-04T00:00:00+0000",
+      "mu": "2016-11-14T00:00:00+0000",
+      "digitalId": 41537,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/e0/571f88a958595",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 56238,
+      "title": "All-New X-Men (2015) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/56238/all-new_x-men_2015_9",
+      "seriesId": 20622,
+      "seriesName": "All-New X-Men (2015 - 2017)",
+      "onSale": "2016-05-11T00:00:00+0000",
+      "mu": "2016-11-14T00:00:00+0000",
+      "digitalId": 41541,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/572783ee158fa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55442,
+      "title": "Extraordinary X-Men (2015) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/55442/extraordinary_x-men_2015_10",
+      "seriesId": 20460,
+      "seriesName": "Extraordinary X-Men (2015 - 2017)",
+      "onSale": "2016-05-25T00:00:00+0000",
+      "mu": "2016-11-28T00:00:00+0000",
+      "digitalId": 41600,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/20/57361a8bbbc18",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 56056,
+      "title": "Uncanny X-Men (2016) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/56056/uncanny_x-men_2016_8",
+      "seriesId": 20612,
+      "seriesName": "Uncanny X-Men (2016 - 2017)",
+      "onSale": "2016-06-15T00:00:00+0000",
+      "mu": "2016-12-19T00:00:00+0000",
+      "digitalId": 41821,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/90/57559cb89febf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 56239,
+      "title": "All-New X-Men (2015) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/56239/all-new_x-men_2015_10",
+      "seriesId": 20622,
+      "seriesName": "All-New X-Men (2015 - 2017)",
+      "onSale": "2016-06-08T00:00:00+0000",
+      "mu": "2016-12-12T00:00:00+0000",
+      "digitalId": 41766,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/5750450ede7d7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55443,
+      "title": "Extraordinary X-Men (2015) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/55443/extraordinary_x-men_2015_11",
+      "seriesId": 20460,
+      "seriesName": "Extraordinary X-Men (2015 - 2017)",
+      "onSale": "2016-06-29T00:00:00+0000",
+      "mu": "2017-01-02T00:00:00+0000",
+      "digitalId": 41804,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/c0/5769987569f8f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 56057,
+      "title": "Uncanny X-Men (2016) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/56057/uncanny_x-men_2016_9",
+      "seriesId": 20612,
+      "seriesName": "Uncanny X-Men (2016 - 2017)",
+      "onSale": "2016-06-29T00:00:00+0000",
+      "mu": "2017-01-02T00:00:00+0000",
+      "digitalId": 41822,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/576d71ccd3887",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 56240,
+      "title": "All-New X-Men (2015) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/56240/all-new_x-men_2015_11",
+      "seriesId": 20622,
+      "seriesName": "All-New X-Men (2015 - 2017)",
+      "onSale": "2016-07-13T00:00:00+0000",
+      "mu": "2017-01-16T00:00:00+0000",
+      "digitalId": 42065,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/50/577e690714638",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55444,
+      "title": "Extraordinary X-Men (2015) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/55444/extraordinary_x-men_2015_12",
+      "seriesId": 20460,
+      "seriesName": "Extraordinary X-Men (2015 - 2017)",
+      "onSale": "2016-07-27T00:00:00+0000",
+      "mu": "2017-01-30T00:00:00+0000",
+      "digitalId": 42115,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/5791362dd5a6e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeff Lemire",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 56058,
+      "title": "Uncanny X-Men (2016) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/56058/uncanny_x-men_2016_10",
+      "seriesId": 20612,
+      "seriesName": "Uncanny X-Men (2016 - 2017)",
+      "onSale": "2016-07-20T00:00:00+0000",
+      "mu": "2017-01-23T00:00:00+0000",
+      "digitalId": 42108,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/90/5789057d0859e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

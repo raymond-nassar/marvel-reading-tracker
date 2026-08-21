@@ -1,0 +1,752 @@
+{
+  "id": "chaos-war",
+  "inventoryId": "chaos-war",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/chaos-war-checklist/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 19,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 34517,
+      "title": "Chaos War",
+      "issueTitle": "Chaos War (2010) #1",
+      "seriesTitle": "Chaos War",
+      "apiSeriesName": "Chaos War (2010 - 2011)",
+      "seriesId": 11854,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34517/chaos_war_2010_1",
+      "onSaleDate": "2010-09-01T00:00:00+0000"
+    },
+    {
+      "id": 36280,
+      "title": "Chaos War",
+      "issueTitle": "Chaos War (2010) #2",
+      "seriesTitle": "Chaos War",
+      "apiSeriesName": "Chaos War (2010 - 2011)",
+      "seriesId": 11854,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36280/chaos_war_2010_2",
+      "onSaleDate": "2010-10-20T00:00:00+0000"
+    },
+    {
+      "id": 34535,
+      "title": "Chaos War",
+      "issueTitle": "Chaos War (2010) #3",
+      "seriesTitle": "Chaos War",
+      "apiSeriesName": "Chaos War (2010 - 2011)",
+      "seriesId": 11854,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34535/chaos_war_2010_3",
+      "onSaleDate": "2010-11-03T00:00:00+0000"
+    },
+    {
+      "id": 37062,
+      "title": "Chaos War: Thor",
+      "issueTitle": "Chaos War: Thor (2010) #1",
+      "seriesTitle": "Chaos War: Thor",
+      "apiSeriesName": "Chaos War: Thor (2010)",
+      "seriesId": 13253,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37062/chaos_war_thor_2010_1",
+      "onSaleDate": "2010-11-10T00:00:00+0000"
+    },
+    {
+      "id": 37068,
+      "title": "Chaos War: Chaos King",
+      "issueTitle": "Chaos War: Chaos King (2010) #1",
+      "seriesTitle": "Chaos War: Chaos King",
+      "apiSeriesName": "Chaos War: Chaos King (2010)",
+      "seriesId": 13261,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37068/chaos_war_chaos_king_2010_1",
+      "onSaleDate": "2010-11-17T00:00:00+0000"
+    },
+    {
+      "id": 37064,
+      "title": "Chaos War: Dead Avengers",
+      "issueTitle": "Chaos War: Dead Avengers (2010) #1",
+      "seriesTitle": "Chaos War: Dead Avengers",
+      "apiSeriesName": "Chaos War: Dead Avengers (2010)",
+      "seriesId": 13257,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37064/chaos_war_dead_avengers_2010_1",
+      "onSaleDate": "2010-11-17T00:00:00+0000"
+    },
+    {
+      "id": 37067,
+      "title": "Chaos War: Alpha Flight",
+      "issueTitle": "Chaos War: Alpha Flight (2010) #1",
+      "seriesTitle": "Chaos War: Alpha Flight",
+      "apiSeriesName": "Chaos War: Alpha Flight (2010)",
+      "seriesId": 13260,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37067/chaos_war_alpha_flight_2010_1",
+      "onSaleDate": "2010-11-24T00:00:00+0000"
+    },
+    {
+      "id": 37065,
+      "title": "Chaos War: God Squad",
+      "issueTitle": "Chaos War: God Squad (2010) #1",
+      "seriesTitle": "Chaos War: God Squad",
+      "apiSeriesName": "Chaos War: God Squad (2010)",
+      "seriesId": 13258,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37065/chaos_war_god_squad_2010_1",
+      "onSaleDate": "2010-12-02T00:00:00+0000"
+    },
+    {
+      "id": 34523,
+      "title": "Chaos War",
+      "issueTitle": "Chaos War (2010) #4",
+      "seriesTitle": "Chaos War",
+      "apiSeriesName": "Chaos War (2010 - 2011)",
+      "seriesId": 11854,
+      "issueNumber": "4",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34523/chaos_war_2010_4",
+      "onSaleDate": "2010-12-15T00:00:00+0000"
+    },
+    {
+      "id": 31236,
+      "title": "Incredible Hulks",
+      "issueTitle": "Incredible Hulks (2010) #618",
+      "seriesTitle": "Incredible Hulks",
+      "apiSeriesName": "Incredible Hulks (2010 - 2011)",
+      "seriesId": 8842,
+      "issueNumber": "618",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/31236/incredible_hulks_2010_618",
+      "onSaleDate": "2010-12-08T00:00:00+0000"
+    },
+    {
+      "id": 37066,
+      "title": "Chaos War: Ares",
+      "issueTitle": "Chaos War: Ares (2010) #1",
+      "seriesTitle": "Chaos War: Ares",
+      "apiSeriesName": "Chaos War: Ares (2010)",
+      "seriesId": 13259,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37066/chaos_war_ares_2010_1",
+      "onSaleDate": "2010-12-08T00:00:00+0000"
+    },
+    {
+      "id": 37060,
+      "title": "Chaos War: Thor",
+      "issueTitle": "Chaos War: Thor (2010) #2",
+      "seriesTitle": "Chaos War: Thor",
+      "apiSeriesName": "Chaos War: Thor (2010)",
+      "seriesId": 13253,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37060/chaos_war_thor_2010_2",
+      "onSaleDate": "2010-12-15T00:00:00+0000"
+    },
+    {
+      "id": 37085,
+      "title": "Chaos War: Dead Avengers",
+      "issueTitle": "Chaos War: Dead Avengers (2010) #2",
+      "seriesTitle": "Chaos War: Dead Avengers",
+      "apiSeriesName": "Chaos War: Dead Avengers (2010)",
+      "seriesId": 13257,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37085/chaos_war_dead_avengers_2010_2",
+      "onSaleDate": "2010-12-22T00:00:00+0000"
+    },
+    {
+      "id": 34050,
+      "title": "Incredible Hulks",
+      "issueTitle": "Incredible Hulks (2010) #619",
+      "seriesTitle": "Incredible Hulks",
+      "apiSeriesName": "Incredible Hulks (2010 - 2011)",
+      "seriesId": 8842,
+      "issueNumber": "619",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34050/incredible_hulks_2010_619",
+      "onSaleDate": "2010-12-22T00:00:00+0000"
+    },
+    {
+      "id": 37881,
+      "title": "Chaos War: X-Men",
+      "issueTitle": "Chaos War: X-Men (2010) #1",
+      "seriesTitle": "Chaos War: X-Men",
+      "apiSeriesName": "Chaos War: X-Men (2010)",
+      "seriesId": 13588,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37881/chaos_war_x-men_2010_1",
+      "onSaleDate": "2010-12-29T00:00:00+0000"
+    },
+    {
+      "id": 34021,
+      "title": "Incredible Hulks",
+      "issueTitle": "Incredible Hulks (2010) #620",
+      "seriesTitle": "Incredible Hulks",
+      "apiSeriesName": "Incredible Hulks (2010 - 2011)",
+      "seriesId": 8842,
+      "issueNumber": "620",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34021/incredible_hulks_2010_620",
+      "onSaleDate": "2011-01-12T00:00:00+0000"
+    },
+    {
+      "id": 37084,
+      "title": "Chaos War: Dead Avengers",
+      "issueTitle": "Chaos War: Dead Avengers (2010) #3",
+      "seriesTitle": "Chaos War: Dead Avengers",
+      "apiSeriesName": "Chaos War: Dead Avengers (2010)",
+      "seriesId": 13257,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37084/chaos_war_dead_avengers_2010_3",
+      "onSaleDate": "2011-01-12T00:00:00+0000"
+    },
+    {
+      "id": 37882,
+      "title": "Chaos War: X-Men",
+      "issueTitle": "Chaos War: X-Men (2010) #2",
+      "seriesTitle": "Chaos War: X-Men",
+      "apiSeriesName": "Chaos War: X-Men (2010)",
+      "seriesId": 13588,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37882/chaos_war_x-men_2010_2",
+      "onSaleDate": "2011-01-26T00:00:00+0000"
+    },
+    {
+      "id": 36278,
+      "title": "Chaos War",
+      "issueTitle": "Chaos War (2010) #5",
+      "seriesTitle": "Chaos War",
+      "apiSeriesName": "Chaos War (2010 - 2011)",
+      "seriesId": 11854,
+      "issueNumber": "5",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36278/chaos_war_2010_5",
+      "onSaleDate": "2011-01-26T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Chaos War #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 11854,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34517"
+      ],
+      "selectedIssueId": 34517,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34517/chaos_war_2010_1",
+      "resolvedIssueTitle": "Chaos War (2010) #1",
+      "note": "Marvel series 11854 (Chaos War (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34517
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Chaos War #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 11854,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36280"
+      ],
+      "selectedIssueId": 36280,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36280/chaos_war_2010_2",
+      "resolvedIssueTitle": "Chaos War (2010) #2",
+      "note": "Marvel series 11854 (Chaos War (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36280
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Chaos War #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 11854,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34535"
+      ],
+      "selectedIssueId": 34535,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34535/chaos_war_2010_3",
+      "resolvedIssueTitle": "Chaos War (2010) #3",
+      "note": "Marvel series 11854 (Chaos War (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34535
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Chaos War: Thor #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: Thor",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13253,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37062"
+      ],
+      "selectedIssueId": 37062,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37062/chaos_war_thor_2010_1",
+      "resolvedIssueTitle": "Chaos War: Thor (2010) #1",
+      "note": "Marvel series 13253 (Chaos War: Thor (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37062
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Chaos War: Chaos King #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: Chaos King",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13261,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37068"
+      ],
+      "selectedIssueId": 37068,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37068/chaos_war_chaos_king_2010_1",
+      "resolvedIssueTitle": "Chaos War: Chaos King (2010) #1",
+      "note": "Marvel series 13261 (Chaos War: Chaos King (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37068
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Chaos War: Dead Avengers #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: Dead Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13257,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37064"
+      ],
+      "selectedIssueId": 37064,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37064/chaos_war_dead_avengers_2010_1",
+      "resolvedIssueTitle": "Chaos War: Dead Avengers (2010) #1",
+      "note": "Marvel series 13257 (Chaos War: Dead Avengers (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37064
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Chaos War: Alpha Flight #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: Alpha Flight",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13260,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37067"
+      ],
+      "selectedIssueId": 37067,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37067/chaos_war_alpha_flight_2010_1",
+      "resolvedIssueTitle": "Chaos War: Alpha Flight (2010) #1",
+      "note": "Marvel series 13260 (Chaos War: Alpha Flight (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37067
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Chaos War: God Squad #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: God Squad",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37065"
+      ],
+      "selectedIssueId": 37065,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37065/chaos_war_god_squad_2010_1",
+      "resolvedIssueTitle": "Chaos War: God Squad (2010) #1",
+      "note": "Marvel series 13258 (Chaos War: God Squad (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37065
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Chaos War #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War",
+      "seriesYear": 2010,
+      "issueNumber": "4",
+      "seriesId": 11854,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34523"
+      ],
+      "selectedIssueId": 34523,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34523/chaos_war_2010_4",
+      "resolvedIssueTitle": "Chaos War (2010) #4",
+      "note": "Marvel series 11854 (Chaos War (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34523
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Incredible Hulks #618",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulks",
+      "seriesYear": 2010,
+      "issueNumber": "618",
+      "seriesId": 8842,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "31236"
+      ],
+      "selectedIssueId": 31236,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/31236/incredible_hulks_2010_618",
+      "resolvedIssueTitle": "Incredible Hulks (2010) #618",
+      "note": "Marvel series 8842 (Incredible Hulks (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        31236
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Chaos War: Ares #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: Ares",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13259,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37066"
+      ],
+      "selectedIssueId": 37066,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37066/chaos_war_ares_2010_1",
+      "resolvedIssueTitle": "Chaos War: Ares (2010) #1",
+      "note": "Marvel series 13259 (Chaos War: Ares (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37066
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Chaos War: Thor #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: Thor",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 13253,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37060"
+      ],
+      "selectedIssueId": 37060,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37060/chaos_war_thor_2010_2",
+      "resolvedIssueTitle": "Chaos War: Thor (2010) #2",
+      "note": "Marvel series 13253 (Chaos War: Thor (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37060
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Chaos War: Dead Avengers #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: Dead Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 13257,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37085"
+      ],
+      "selectedIssueId": 37085,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37085/chaos_war_dead_avengers_2010_2",
+      "resolvedIssueTitle": "Chaos War: Dead Avengers (2010) #2",
+      "note": "Marvel series 13257 (Chaos War: Dead Avengers (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37085
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Incredible Hulks #619",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulks",
+      "seriesYear": 2010,
+      "issueNumber": "619",
+      "seriesId": 8842,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34050"
+      ],
+      "selectedIssueId": 34050,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34050/incredible_hulks_2010_619",
+      "resolvedIssueTitle": "Incredible Hulks (2010) #619",
+      "note": "Marvel series 8842 (Incredible Hulks (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34050
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Chaos War: X-Men #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13588,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37881"
+      ],
+      "selectedIssueId": 37881,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37881/chaos_war_x-men_2010_1",
+      "resolvedIssueTitle": "Chaos War: X-Men (2010) #1",
+      "note": "Marvel series 13588 (Chaos War: X-Men (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37881
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Incredible Hulks #620",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Incredible Hulks",
+      "seriesYear": 2010,
+      "issueNumber": "620",
+      "seriesId": 8842,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34021"
+      ],
+      "selectedIssueId": 34021,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34021/incredible_hulks_2010_620",
+      "resolvedIssueTitle": "Incredible Hulks (2010) #620",
+      "note": "Marvel series 8842 (Incredible Hulks (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34021
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Chaos War: Dead Avengers #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: Dead Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 13257,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37084"
+      ],
+      "selectedIssueId": 37084,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37084/chaos_war_dead_avengers_2010_3",
+      "resolvedIssueTitle": "Chaos War: Dead Avengers (2010) #3",
+      "note": "Marvel series 13257 (Chaos War: Dead Avengers (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37084
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Chaos War: X-Men #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War: X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 13588,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37882"
+      ],
+      "selectedIssueId": 37882,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37882/chaos_war_x-men_2010_2",
+      "resolvedIssueTitle": "Chaos War: X-Men (2010) #2",
+      "note": "Marvel series 13588 (Chaos War: X-Men (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37882
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Chaos War #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Chaos War",
+      "seriesYear": 2010,
+      "issueNumber": "5",
+      "seriesId": 11854,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36278"
+      ],
+      "selectedIssueId": 36278,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36278/chaos_war_2010_5",
+      "resolvedIssueTitle": "Chaos War (2010) #5",
+      "note": "Marvel series 11854 (Chaos War (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36278
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+  "approvedManifest": {
+    "id": "chaos-war",
+    "name": "Chaos War",
+    "description": "Nineteen issues combining the five-part event with Hercules, Thor, Alpha Flight, X-Men, and Incredible Hulks tie-ins.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "chaos-war.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/chaos-war-checklist/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "chaos_war.json",
+    "characters": [
+      "Hercules",
+      "Thor",
+      "Hulk",
+      "Alpha Flight",
+      "X-Men"
+    ],
+    "keywords": [
+      "Chaos War",
+      "Chaos King",
+      "God Squad",
+      "Dead Avengers"
+    ],
+    "expect": 19,
+    "timeline": 2010,
+    "coverIssueId": 34517,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Chaos War #1"
+  }
+}

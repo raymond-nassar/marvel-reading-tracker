@@ -1,0 +1,1010 @@
+{
+  "id": "world-war-hulk-aftersmash",
+  "inventoryId": "world-war-hulk-aftersmash",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-10-wwh-aftersmash/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 26,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 17231,
+      "title": "WORLD WAR HULK: AFTERSMASH 1",
+      "issueTitle": "WORLD WAR HULK: AFTERSMASH 1 (2007) #1",
+      "seriesTitle": "WORLD WAR HULK: AFTERSMASH 1",
+      "apiSeriesName": "WORLD WAR HULK: AFTERSMASH 1 (2007)",
+      "seriesId": 3020,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/17231/world_war_hulk_aftersmash_1_2007_1",
+      "onSaleDate": "2007-12-05T00:00:00+0000"
+    },
+    {
+      "id": 17661,
+      "title": "Wwh Aftersmash: Damage Control",
+      "issueTitle": "Wwh Aftersmash: Damage Control (2008) #1",
+      "seriesTitle": "Wwh Aftersmash: Damage Control",
+      "apiSeriesName": "Wwh Aftersmash: Damage Control (2008)",
+      "seriesId": 3422,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/17661/wwh_aftersmash_damage_control_2008_1",
+      "onSaleDate": "2008-01-23T00:00:00+0000"
+    },
+    {
+      "id": 20708,
+      "title": "Wwh Aftersmash: Damage Control",
+      "issueTitle": "Wwh Aftersmash: Damage Control (2008) #2",
+      "seriesTitle": "Wwh Aftersmash: Damage Control",
+      "apiSeriesName": "Wwh Aftersmash: Damage Control (2008)",
+      "seriesId": 3422,
+      "issueNumber": "2",
+      "seriesYear": 2008,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/20708/wwh_aftersmash_damage_control_2008_2",
+      "onSaleDate": "2008-02-27T00:00:00+0000"
+    },
+    {
+      "id": 20901,
+      "title": "Wwh Aftersmash: Damage Control",
+      "issueTitle": "Wwh Aftersmash: Damage Control (2008) #3",
+      "seriesTitle": "Wwh Aftersmash: Damage Control",
+      "apiSeriesName": "Wwh Aftersmash: Damage Control (2008)",
+      "seriesId": 3422,
+      "issueNumber": "3",
+      "seriesYear": 2008,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/20901/wwh_aftersmash_damage_control_2008_3",
+      "onSaleDate": "2008-03-26T00:00:00+0000"
+    },
+    {
+      "id": 17212,
+      "title": "Hulk",
+      "issueTitle": "Hulk (1999) #112",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (1999 - 2008)",
+      "seriesId": 465,
+      "issueNumber": "112",
+      "seriesYear": 1999,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/17212/hulk_1999_112",
+      "onSaleDate": "2007-12-19T00:00:00+0000"
+    },
+    {
+      "id": 23067,
+      "title": "Incredible Hercules",
+      "issueTitle": "Incredible Hercules (2008) #113",
+      "seriesTitle": "Incredible Hercules",
+      "apiSeriesName": "Incredible Hercules (2008 - 2010)",
+      "seriesId": 3762,
+      "issueNumber": "113",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23067/incredible_hercules_2008_113",
+      "onSaleDate": "2008-01-16T00:00:00+0000"
+    },
+    {
+      "id": 20636,
+      "title": "Incredible Hercules",
+      "issueTitle": "Incredible Hercules (2008) #114",
+      "seriesTitle": "Incredible Hercules",
+      "apiSeriesName": "Incredible Hercules (2008 - 2010)",
+      "seriesId": 3762,
+      "issueNumber": "114",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20636/incredible_hercules_2008_114",
+      "onSaleDate": "2008-02-20T00:00:00+0000"
+    },
+    {
+      "id": 20827,
+      "title": "Incredible Hercules",
+      "issueTitle": "Incredible Hercules (2008) #115",
+      "seriesTitle": "Incredible Hercules",
+      "apiSeriesName": "Incredible Hercules (2008 - 2010)",
+      "seriesId": 3762,
+      "issueNumber": "115",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20827/incredible_hercules_2008_115",
+      "onSaleDate": "2008-03-19T00:00:00+0000"
+    },
+    {
+      "id": 23911,
+      "title": "Hulk Vs. Hercules: When Titans Collide",
+      "issueTitle": "Hulk Vs. Hercules: When Titans Collide (2008) #1",
+      "seriesTitle": "Hulk Vs. Hercules: When Titans Collide",
+      "apiSeriesName": "Hulk Vs. Hercules: When Titans Collide (2008)",
+      "seriesId": 7078,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23911/hulk_vs_hercules_when_titans_collide_2008_1",
+      "onSaleDate": "2008-06-01T00:00:00+0000"
+    },
+    {
+      "id": 17361,
+      "title": "World War Hulk: Warbound",
+      "issueTitle": "World War Hulk: Warbound (2007) #1",
+      "seriesTitle": "World War Hulk: Warbound",
+      "apiSeriesName": "World War Hulk: Warbound (2007)",
+      "seriesId": 3171,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17361/world_war_hulk_warbound_2007_1",
+      "onSaleDate": "2007-12-19T00:00:00+0000"
+    },
+    {
+      "id": 23232,
+      "title": "World War Hulk: Warbound",
+      "issueTitle": "World War Hulk: Warbound (2007) #2",
+      "seriesTitle": "World War Hulk: Warbound",
+      "apiSeriesName": "World War Hulk: Warbound (2007)",
+      "seriesId": 3171,
+      "issueNumber": "2",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23232/world_war_hulk_warbound_2007_2",
+      "onSaleDate": "2008-03-01T00:00:00+0000"
+    },
+    {
+      "id": 23233,
+      "title": "World War Hulk: Warbound",
+      "issueTitle": "World War Hulk: Warbound (2007) #3",
+      "seriesTitle": "World War Hulk: Warbound",
+      "apiSeriesName": "World War Hulk: Warbound (2007)",
+      "seriesId": 3171,
+      "issueNumber": "3",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23233/world_war_hulk_warbound_2007_3",
+      "onSaleDate": "2008-04-01T00:00:00+0000"
+    },
+    {
+      "id": 23234,
+      "title": "World War Hulk: Warbound",
+      "issueTitle": "World War Hulk: Warbound (2007) #4",
+      "seriesTitle": "World War Hulk: Warbound",
+      "apiSeriesName": "World War Hulk: Warbound (2007)",
+      "seriesId": 3171,
+      "issueNumber": "4",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23234/world_war_hulk_warbound_2007_4",
+      "onSaleDate": "2008-05-01T00:00:00+0000"
+    },
+    {
+      "id": 23235,
+      "title": "World War Hulk: Warbound",
+      "issueTitle": "World War Hulk: Warbound (2007) #5",
+      "seriesTitle": "World War Hulk: Warbound",
+      "apiSeriesName": "World War Hulk: Warbound (2007)",
+      "seriesId": 3171,
+      "issueNumber": "5",
+      "seriesYear": 2007,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23235/world_war_hulk_warbound_2007_5",
+      "onSaleDate": "2008-06-16T00:00:00+0000"
+    },
+    {
+      "id": 17623,
+      "title": "Hulk",
+      "issueTitle": "Hulk (2008) #1",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (2008 - 2012)",
+      "seriesId": 3374,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/17623/hulk_2008_1",
+      "onSaleDate": "2008-01-09T00:00:00+0000"
+    },
+    {
+      "id": 20668,
+      "title": "Hulk",
+      "issueTitle": "Hulk (2008) #2",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (2008 - 2012)",
+      "seriesId": 3374,
+      "issueNumber": "2",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20668/hulk_2008_2",
+      "onSaleDate": "2008-02-20T00:00:00+0000"
+    },
+    {
+      "id": 20863,
+      "title": "Hulk",
+      "issueTitle": "Hulk (2008) #3",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (2008 - 2012)",
+      "seriesId": 3374,
+      "issueNumber": "3",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20863/hulk_2008_3",
+      "onSaleDate": "2008-04-23T00:00:00+0000"
+    },
+    {
+      "id": 20999,
+      "title": "Hulk",
+      "issueTitle": "Hulk (2008) #4",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (2008 - 2012)",
+      "seriesId": 3374,
+      "issueNumber": "4",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20999/hulk_2008_4",
+      "onSaleDate": "2008-06-25T00:00:00+0000"
+    },
+    {
+      "id": 21535,
+      "title": "Hulk",
+      "issueTitle": "Hulk (2008) #5",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (2008 - 2012)",
+      "seriesId": 3374,
+      "issueNumber": "5",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21535/hulk_2008_5",
+      "onSaleDate": "2008-08-06T00:00:00+0000"
+    },
+    {
+      "id": 21968,
+      "title": "Hulk",
+      "issueTitle": "Hulk (2008) #6",
+      "seriesTitle": "Hulk",
+      "apiSeriesName": "Hulk (2008 - 2012)",
+      "seriesId": 3374,
+      "issueNumber": "6",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21968/hulk_2008_6",
+      "onSaleDate": "2008-09-24T00:00:00+0000"
+    },
+    {
+      "id": 24268,
+      "title": "PLANET SKAAR PROLOGUE 1",
+      "issueTitle": "PLANET SKAAR PROLOGUE 1 (2009) #1",
+      "seriesTitle": "PLANET SKAAR PROLOGUE 1",
+      "apiSeriesName": "PLANET SKAAR PROLOGUE 1 (2009)",
+      "seriesId": 7461,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/24268/planet_skaar_prologue_1_2009_1",
+      "onSaleDate": "2009-05-20T00:00:00+0000"
+    },
+    {
+      "id": 24168,
+      "title": "Skaar: Son of Hulk",
+      "issueTitle": "Skaar: Son of Hulk (2008) #11",
+      "seriesTitle": "Skaar: Son of Hulk",
+      "apiSeriesName": "Skaar: Son of Hulk (2008 - 2010)",
+      "seriesId": 5002,
+      "issueNumber": "11",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24168/skaar_son_of_hulk_2008_11",
+      "onSaleDate": "2009-06-03T00:00:00+0000"
+    },
+    {
+      "id": 26314,
+      "title": "Skaar: Son of Hulk",
+      "issueTitle": "Skaar: Son of Hulk (2008) #12",
+      "seriesTitle": "Skaar: Son of Hulk",
+      "apiSeriesName": "Skaar: Son of Hulk (2008 - 2010)",
+      "seriesId": 5002,
+      "issueNumber": "12",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26314/skaar_son_of_hulk_2008_12",
+      "onSaleDate": "2009-06-24T00:00:00+0000"
+    },
+    {
+      "id": 27569,
+      "title": "Incredible Hulks",
+      "issueTitle": "Incredible Hulks (2010) #600",
+      "seriesTitle": "Incredible Hulks",
+      "apiSeriesName": "Incredible Hulks (2010 - 2011)",
+      "seriesId": 8842,
+      "issueNumber": "600",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27569/incredible_hulks_2010_600",
+      "onSaleDate": "2009-07-22T00:00:00+0000"
+    },
+    {
+      "id": 27645,
+      "title": "Incredible Hulks",
+      "issueTitle": "Incredible Hulks (2010) #601",
+      "seriesTitle": "Incredible Hulks",
+      "apiSeriesName": "Incredible Hulks (2010 - 2011)",
+      "seriesId": 8842,
+      "issueNumber": "601",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27645/incredible_hulks_2010_601",
+      "onSaleDate": "2009-08-26T00:00:00+0000"
+    },
+    {
+      "id": 20812,
+      "title": "What If? Planet Hulk",
+      "issueTitle": "What If? Planet Hulk (2007) #1",
+      "seriesTitle": "What If? Planet Hulk",
+      "apiSeriesName": "What If? Planet Hulk (2007)",
+      "seriesId": 3915,
+      "issueNumber": "1",
+      "seriesYear": 2007,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/20812/what_if_planet_hulk_2007_1",
+      "onSaleDate": "2007-10-24T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "World War Hulk Aftersmash",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "World War Hulk: Aftersmash",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 3020,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17231"
+      ],
+      "selectedIssueId": 17231,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17231/world_war_hulk_aftersmash_1_2007_1",
+      "resolvedIssueTitle": "WORLD WAR HULK: AFTERSMASH 1 (2007) #1",
+      "note": "Marvel series 3020 (WORLD WAR HULK: AFTERSMASH 1 (2007)) is the reviewed metadata series for this source reference. The source title is World War Hulk: Aftersmash; Marvel names the selected series WORLD WAR HULK: AFTERSMASH 1. The source omits #1; Marvel names a one-issue series WORLD WAR HULK: AFTERSMASH 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17231
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "World War Hulk: Damage Control #1",
+      "sourceRangeReference": "World War Hulk - Damage Control 1-3",
+      "normalizedSeriesTitle": "World War Hulk: Damage Control",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 3422,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17661"
+      ],
+      "selectedIssueId": 17661,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17661/wwh_aftersmash_damage_control_2008_1",
+      "resolvedIssueTitle": "Wwh Aftersmash: Damage Control (2008) #1",
+      "note": "Marvel series 3422 (Wwh Aftersmash: Damage Control (2008)) is the reviewed metadata series for this source reference. The source title is World War Hulk: Damage Control; Marvel names the selected series Wwh Aftersmash: Damage Control. Marvel names this exact three-issue series Wwh Aftersmash: Damage Control.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17661
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "World War Hulk: Damage Control #2",
+      "sourceRangeReference": "World War Hulk - Damage Control 1-3",
+      "normalizedSeriesTitle": "World War Hulk: Damage Control",
+      "seriesYear": 2008,
+      "issueNumber": "2",
+      "seriesId": 3422,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20708"
+      ],
+      "selectedIssueId": 20708,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20708/wwh_aftersmash_damage_control_2008_2",
+      "resolvedIssueTitle": "Wwh Aftersmash: Damage Control (2008) #2",
+      "note": "Marvel series 3422 (Wwh Aftersmash: Damage Control (2008)) is the reviewed metadata series for this source reference. The source title is World War Hulk: Damage Control; Marvel names the selected series Wwh Aftersmash: Damage Control. Marvel names this exact three-issue series Wwh Aftersmash: Damage Control.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20708
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "World War Hulk: Damage Control #3",
+      "sourceRangeReference": "World War Hulk - Damage Control 1-3",
+      "normalizedSeriesTitle": "World War Hulk: Damage Control",
+      "seriesYear": 2008,
+      "issueNumber": "3",
+      "seriesId": 3422,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20901"
+      ],
+      "selectedIssueId": 20901,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20901/wwh_aftersmash_damage_control_2008_3",
+      "resolvedIssueTitle": "Wwh Aftersmash: Damage Control (2008) #3",
+      "note": "Marvel series 3422 (Wwh Aftersmash: Damage Control (2008)) is the reviewed metadata series for this source reference. The source title is World War Hulk: Damage Control; Marvel names the selected series Wwh Aftersmash: Damage Control. Marvel names this exact three-issue series Wwh Aftersmash: Damage Control.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20901
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Incredible Hercules #112",
+      "sourceRangeReference": "Incredible Hercules 112-115",
+      "normalizedSeriesTitle": "Incredible Hercules",
+      "seriesYear": 1999,
+      "issueNumber": "112",
+      "seriesId": 465,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17212"
+      ],
+      "selectedIssueId": 17212,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17212/hulk_1999_112",
+      "resolvedIssueTitle": "Hulk (1999) #112",
+      "note": "Marvel series 465 (Hulk (1999 - 2008)) is the reviewed metadata series for this source reference. The source title is Incredible Hercules; Marvel names the selected series Hulk. Marvel indexes the source reference as Hulk (1999) #112 immediately before Incredible Hercules #113.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17212
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Incredible Hercules #113",
+      "sourceRangeReference": "Incredible Hercules 112-115",
+      "normalizedSeriesTitle": "Incredible Hercules",
+      "seriesYear": 2008,
+      "issueNumber": "113",
+      "seriesId": 3762,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23067"
+      ],
+      "selectedIssueId": 23067,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23067/incredible_hercules_2008_113",
+      "resolvedIssueTitle": "Incredible Hercules (2008) #113",
+      "note": "Marvel series 3762 (Incredible Hercules (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23067
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Incredible Hercules #114",
+      "sourceRangeReference": "Incredible Hercules 112-115",
+      "normalizedSeriesTitle": "Incredible Hercules",
+      "seriesYear": 2008,
+      "issueNumber": "114",
+      "seriesId": 3762,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20636"
+      ],
+      "selectedIssueId": 20636,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20636/incredible_hercules_2008_114",
+      "resolvedIssueTitle": "Incredible Hercules (2008) #114",
+      "note": "Marvel series 3762 (Incredible Hercules (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20636
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Incredible Hercules #115",
+      "sourceRangeReference": "Incredible Hercules 112-115",
+      "normalizedSeriesTitle": "Incredible Hercules",
+      "seriesYear": 2008,
+      "issueNumber": "115",
+      "seriesId": 3762,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20827"
+      ],
+      "selectedIssueId": 20827,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20827/incredible_hercules_2008_115",
+      "resolvedIssueTitle": "Incredible Hercules (2008) #115",
+      "note": "Marvel series 3762 (Incredible Hercules (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20827
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Hulk vs. Hercules: When Titans Collide #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Hulk vs. Hercules: When Titans Collide",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 7078,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23911"
+      ],
+      "selectedIssueId": 23911,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23911/hulk_vs_hercules_when_titans_collide_2008_1",
+      "resolvedIssueTitle": "Hulk Vs. Hercules: When Titans Collide (2008) #1",
+      "note": "Marvel series 7078 (Hulk Vs. Hercules: When Titans Collide (2008)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23911
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "World War Hulk: Warbound #1",
+      "sourceRangeReference": "World War Hulk - Warbound 1-5",
+      "normalizedSeriesTitle": "World War Hulk: Warbound",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 3171,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17361"
+      ],
+      "selectedIssueId": 17361,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17361/world_war_hulk_warbound_2007_1",
+      "resolvedIssueTitle": "World War Hulk: Warbound (2007) #1",
+      "note": "Marvel series 3171 (World War Hulk: Warbound (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17361
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "World War Hulk: Warbound #2",
+      "sourceRangeReference": "World War Hulk - Warbound 1-5",
+      "normalizedSeriesTitle": "World War Hulk: Warbound",
+      "seriesYear": 2007,
+      "issueNumber": "2",
+      "seriesId": 3171,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23232"
+      ],
+      "selectedIssueId": 23232,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23232/world_war_hulk_warbound_2007_2",
+      "resolvedIssueTitle": "World War Hulk: Warbound (2007) #2",
+      "note": "Marvel series 3171 (World War Hulk: Warbound (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23232
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "World War Hulk: Warbound #3",
+      "sourceRangeReference": "World War Hulk - Warbound 1-5",
+      "normalizedSeriesTitle": "World War Hulk: Warbound",
+      "seriesYear": 2007,
+      "issueNumber": "3",
+      "seriesId": 3171,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23233"
+      ],
+      "selectedIssueId": 23233,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23233/world_war_hulk_warbound_2007_3",
+      "resolvedIssueTitle": "World War Hulk: Warbound (2007) #3",
+      "note": "Marvel series 3171 (World War Hulk: Warbound (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23233
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "World War Hulk: Warbound #4",
+      "sourceRangeReference": "World War Hulk - Warbound 1-5",
+      "normalizedSeriesTitle": "World War Hulk: Warbound",
+      "seriesYear": 2007,
+      "issueNumber": "4",
+      "seriesId": 3171,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23234"
+      ],
+      "selectedIssueId": 23234,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23234/world_war_hulk_warbound_2007_4",
+      "resolvedIssueTitle": "World War Hulk: Warbound (2007) #4",
+      "note": "Marvel series 3171 (World War Hulk: Warbound (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23234
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "World War Hulk: Warbound #5",
+      "sourceRangeReference": "World War Hulk - Warbound 1-5",
+      "normalizedSeriesTitle": "World War Hulk: Warbound",
+      "seriesYear": 2007,
+      "issueNumber": "5",
+      "seriesId": 3171,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23235"
+      ],
+      "selectedIssueId": 23235,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23235/world_war_hulk_warbound_2007_5",
+      "resolvedIssueTitle": "World War Hulk: Warbound (2007) #5",
+      "note": "Marvel series 3171 (World War Hulk: Warbound (2007)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23235
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Hulk #1",
+      "sourceRangeReference": "Hulk 1-6",
+      "normalizedSeriesTitle": "Hulk",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 3374,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "17623"
+      ],
+      "selectedIssueId": 17623,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/17623/hulk_2008_1",
+      "resolvedIssueTitle": "Hulk (2008) #1",
+      "note": "Marvel series 3374 (Hulk (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        17623
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Hulk #2",
+      "sourceRangeReference": "Hulk 1-6",
+      "normalizedSeriesTitle": "Hulk",
+      "seriesYear": 2008,
+      "issueNumber": "2",
+      "seriesId": 3374,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20668"
+      ],
+      "selectedIssueId": 20668,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20668/hulk_2008_2",
+      "resolvedIssueTitle": "Hulk (2008) #2",
+      "note": "Marvel series 3374 (Hulk (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20668
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Hulk #3",
+      "sourceRangeReference": "Hulk 1-6",
+      "normalizedSeriesTitle": "Hulk",
+      "seriesYear": 2008,
+      "issueNumber": "3",
+      "seriesId": 3374,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20863"
+      ],
+      "selectedIssueId": 20863,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20863/hulk_2008_3",
+      "resolvedIssueTitle": "Hulk (2008) #3",
+      "note": "Marvel series 3374 (Hulk (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20863
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Hulk #4",
+      "sourceRangeReference": "Hulk 1-6",
+      "normalizedSeriesTitle": "Hulk",
+      "seriesYear": 2008,
+      "issueNumber": "4",
+      "seriesId": 3374,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20999"
+      ],
+      "selectedIssueId": 20999,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20999/hulk_2008_4",
+      "resolvedIssueTitle": "Hulk (2008) #4",
+      "note": "Marvel series 3374 (Hulk (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20999
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Hulk #5",
+      "sourceRangeReference": "Hulk 1-6",
+      "normalizedSeriesTitle": "Hulk",
+      "seriesYear": 2008,
+      "issueNumber": "5",
+      "seriesId": 3374,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21535"
+      ],
+      "selectedIssueId": 21535,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21535/hulk_2008_5",
+      "resolvedIssueTitle": "Hulk (2008) #5",
+      "note": "Marvel series 3374 (Hulk (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21535
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Hulk #6",
+      "sourceRangeReference": "Hulk 1-6",
+      "normalizedSeriesTitle": "Hulk",
+      "seriesYear": 2008,
+      "issueNumber": "6",
+      "seriesId": 3374,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21968"
+      ],
+      "selectedIssueId": 21968,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21968/hulk_2008_6",
+      "resolvedIssueTitle": "Hulk (2008) #6",
+      "note": "Marvel series 3374 (Hulk (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21968
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Planet Skaar Prologue",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Planet Skaar Prologue",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 7461,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24268"
+      ],
+      "selectedIssueId": 24268,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24268/planet_skaar_prologue_1_2009_1",
+      "resolvedIssueTitle": "PLANET SKAAR PROLOGUE 1 (2009) #1",
+      "note": "Marvel series 7461 (PLANET SKAAR PROLOGUE 1 (2009)) is the reviewed metadata series for this source reference. The source title is Planet Skaar Prologue; Marvel names the selected series PLANET SKAAR PROLOGUE 1. The source omits #1; Marvel names a one-issue series PLANET SKAAR PROLOGUE 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24268
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Skaar: Son of Hulk #11",
+      "sourceRangeReference": "Skaar - Son of Hulk 11-12",
+      "normalizedSeriesTitle": "Skaar: Son of Hulk",
+      "seriesYear": 2008,
+      "issueNumber": "11",
+      "seriesId": 5002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24168"
+      ],
+      "selectedIssueId": 24168,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24168/skaar_son_of_hulk_2008_11",
+      "resolvedIssueTitle": "Skaar: Son of Hulk (2008) #11",
+      "note": "Marvel series 5002 (Skaar: Son of Hulk (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24168
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Skaar: Son of Hulk #12",
+      "sourceRangeReference": "Skaar - Son of Hulk 11-12",
+      "normalizedSeriesTitle": "Skaar: Son of Hulk",
+      "seriesYear": 2008,
+      "issueNumber": "12",
+      "seriesId": 5002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26314"
+      ],
+      "selectedIssueId": 26314,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26314/skaar_son_of_hulk_2008_12",
+      "resolvedIssueTitle": "Skaar: Son of Hulk (2008) #12",
+      "note": "Marvel series 5002 (Skaar: Son of Hulk (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26314
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Incredible Hulks #600",
+      "sourceRangeReference": "Incredible Hulks 600-601",
+      "normalizedSeriesTitle": "Incredible Hulks",
+      "seriesYear": 2010,
+      "issueNumber": "600",
+      "seriesId": 8842,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27569"
+      ],
+      "selectedIssueId": 27569,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27569/incredible_hulks_2010_600",
+      "resolvedIssueTitle": "Incredible Hulks (2010) #600",
+      "note": "Marvel series 8842 (Incredible Hulks (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27569
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Incredible Hulks #601",
+      "sourceRangeReference": "Incredible Hulks 600-601",
+      "normalizedSeriesTitle": "Incredible Hulks",
+      "seriesYear": 2010,
+      "issueNumber": "601",
+      "seriesId": 8842,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27645"
+      ],
+      "selectedIssueId": 27645,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27645/incredible_hulks_2010_601",
+      "resolvedIssueTitle": "Incredible Hulks (2010) #601",
+      "note": "Marvel series 8842 (Incredible Hulks (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27645
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "What If .. Featuring Planet Hulk",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "What If? Featuring Planet Hulk",
+      "seriesYear": 2007,
+      "issueNumber": "1",
+      "seriesId": 3915,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20812"
+      ],
+      "selectedIssueId": 20812,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20812/what_if_planet_hulk_2007_1",
+      "resolvedIssueTitle": "What If? Planet Hulk (2007) #1",
+      "note": "Marvel series 3915 (What If? Planet Hulk (2007)) is the reviewed metadata series for this source reference. The source title is What If? Featuring Planet Hulk; Marvel names the selected series What If? Planet Hulk. The source phrase resolves to Marvel series What If? Planet Hulk, which contains one issue.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20812
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+  "approvedManifest": {
+    "id": "world-war-hulk-aftersmash",
+    "name": "World War Hulk: Aftersmash",
+    "description": "Twenty-six aftermath issues spanning Damage Control, Incredible Hercules, Warbound, Red Hulk, Skaar, and the next Hulk stories.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "world-war-hulk-aftersmash.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-10-wwh-aftersmash/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "world_war_hulk_aftersmash.json",
+    "characters": [
+      "Hulk",
+      "Hercules",
+      "Skaar",
+      "Red Hulk"
+    ],
+    "keywords": [
+      "World War Hulk",
+      "Aftersmash",
+      "Warbound",
+      "Damage Control"
+    ],
+    "expect": 26,
+    "timeline": 2007,
+    "coverIssueId": 17231,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "World War Hulk Aftersmash"
+  }
+}

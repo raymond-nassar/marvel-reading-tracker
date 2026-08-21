@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "contract": "node scripts/check-contract.mjs",
+    "cbh:prepare": "node scripts/prepare-cbh-batch.mjs",
     "cbh:resolve": "node scripts/resolve-cbh-order.mjs",
     "orders:overlap": "node scripts/report-order-overlap.mjs",
     "anchors": "node scripts/check-anchors.mjs",

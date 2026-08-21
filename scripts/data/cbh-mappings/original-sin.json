@@ -1,0 +1,2095 @@
+{
+  "id": "original-sin",
+  "inventoryId": "original-sin",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/guide-part-19-original-sin/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 56,
+  "excludedSourceReferences": [],
+  "reviewStatus": "pending-independent-review",
+  "proposedManifest": {
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "variant": null,
+    "timeline": 2014,
+    "coverSourceReference": "Original Sin #1"
+  },
+  "candidateMetadata": [
+    {
+      "id": 50642,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014)",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "0",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50642/original_sin_2014",
+      "onSaleDate": "2014-04-23T00:00:00+0000"
+    },
+    {
+      "id": 49491,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #1",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49491/original_sin_2014_1",
+      "onSaleDate": "2014-05-07T00:00:00+0000"
+    },
+    {
+      "id": 48325,
+      "title": "Mighty Avengers",
+      "issueTitle": "Mighty Avengers (2013) #10",
+      "seriesTitle": "Mighty Avengers",
+      "apiSeriesName": "Mighty Avengers (2013 - 2014)",
+      "seriesId": 18309,
+      "issueNumber": "10",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48325/mighty_avengers_2013_10",
+      "onSaleDate": "2014-05-28T00:00:00+0000"
+    },
+    {
+      "id": 49498,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #2",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49498/original_sin_2014_2",
+      "onSaleDate": "2014-05-21T00:00:00+0000"
+    },
+    {
+      "id": 48798,
+      "title": "Nova",
+      "issueTitle": "Nova (2013) #18",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2013 - 2015)",
+      "seriesId": 16411,
+      "issueNumber": "18",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48798/nova_2013_18",
+      "onSaleDate": "2014-06-18T00:00:00+0000"
+    },
+    {
+      "id": 50850,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #3.1",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "3.1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50850/original_sin_2014_3.1",
+      "onSaleDate": "2014-06-25T00:00:00+0000"
+    },
+    {
+      "id": 50891,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #3.2",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "3.2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50891/original_sin_2014_3.2",
+      "onSaleDate": "2014-07-16T00:00:00+0000"
+    },
+    {
+      "id": 50895,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #3.3",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "3.3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50895/original_sin_2014_3.3",
+      "onSaleDate": "2014-07-30T00:00:00+0000"
+    },
+    {
+      "id": 50925,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #3.4",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "3.4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50925/original_sin_2014_3.4",
+      "onSaleDate": "2014-08-06T00:00:00+0000"
+    },
+    {
+      "id": 50888,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #5.1",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "5.1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50888/original_sin_2014_5.1",
+      "onSaleDate": "2014-07-09T00:00:00+0000"
+    },
+    {
+      "id": 50892,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #5.2",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "5.2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50892/original_sin_2014_5.2",
+      "onSaleDate": "2014-07-23T00:00:00+0000"
+    },
+    {
+      "id": 50926,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #5.3",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "5.3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50926/original_sin_2014_5.3",
+      "onSaleDate": "2014-08-06T00:00:00+0000"
+    },
+    {
+      "id": 50927,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #5.4",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "5.4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50927/original_sin_2014_5.4",
+      "onSaleDate": "2014-08-27T00:00:00+0000"
+    },
+    {
+      "id": 45803,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #4",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45803/the_amazing_spider-man_2014_4",
+      "onSaleDate": "2014-07-23T00:00:00+0000"
+    },
+    {
+      "id": 45804,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #5",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "5",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45804/the_amazing_spider-man_2014_5",
+      "onSaleDate": "2014-08-13T00:00:00+0000"
+    },
+    {
+      "id": 50851,
+      "title": "Original Sin: Secret Avengers Infinite Comic",
+      "issueTitle": "Original Sin: Secret Avengers Infinite Comic (2014) #1",
+      "seriesTitle": "Original Sin: Secret Avengers Infinite Comic",
+      "apiSeriesName": "Original Sin: Secret Avengers Infinite Comic (2014)",
+      "seriesId": 19032,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50851/original_sin_secret_avengers_infinite_comic_2014_1",
+      "onSaleDate": "2014-06-04T00:00:00-0400"
+    },
+    {
+      "id": 48617,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2012) #29",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2012 - 2015)",
+      "seriesId": 16542,
+      "issueNumber": "29",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48617/deadpool_2012_29",
+      "onSaleDate": "2014-05-28T00:00:00+0000"
+    },
+    {
+      "id": 49776,
+      "title": "Fantastic Four",
+      "issueTitle": "Fantastic Four (2014) #6",
+      "seriesTitle": "Fantastic Four",
+      "apiSeriesName": "Fantastic Four (2014 - 2015)",
+      "seriesId": 18700,
+      "issueNumber": "6",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49776/fantastic_four_2014_6",
+      "onSaleDate": "2014-06-25T00:00:00+0000"
+    },
+    {
+      "id": 49777,
+      "title": "Fantastic Four",
+      "issueTitle": "Fantastic Four (2014) #7",
+      "seriesTitle": "Fantastic Four",
+      "apiSeriesName": "Fantastic Four (2014 - 2015)",
+      "seriesId": 18700,
+      "issueNumber": "7",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49777/fantastic_four_2014_7",
+      "onSaleDate": "2014-07-09T00:00:00+0000"
+    },
+    {
+      "id": 49778,
+      "title": "Fantastic Four",
+      "issueTitle": "Fantastic Four (2014) #8",
+      "seriesTitle": "Fantastic Four",
+      "apiSeriesName": "Fantastic Four (2014 - 2015)",
+      "seriesId": 18700,
+      "issueNumber": "8",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49778/fantastic_four_2014_8",
+      "onSaleDate": "2014-08-13T00:00:00+0000"
+    },
+    {
+      "id": 49036,
+      "title": "Daredevil",
+      "issueTitle": "Daredevil (2014) #6",
+      "seriesTitle": "Daredevil",
+      "apiSeriesName": "Daredevil (2014 - 2015)",
+      "seriesId": 18457,
+      "issueNumber": "6",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49036/daredevil_2014_6",
+      "onSaleDate": "2014-07-23T00:00:00+0000"
+    },
+    {
+      "id": 49037,
+      "title": "Daredevil",
+      "issueTitle": "Daredevil (2014) #7",
+      "seriesTitle": "Daredevil",
+      "apiSeriesName": "Daredevil (2014 - 2015)",
+      "seriesId": 18457,
+      "issueNumber": "7",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49037/daredevil_2014_7",
+      "onSaleDate": "2014-08-20T00:00:00+0000"
+    },
+    {
+      "id": 48383,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2012) #29",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2012 - 2015)",
+      "seriesId": 16452,
+      "issueNumber": "29",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48383/avengers_2012_29",
+      "onSaleDate": "2014-05-14T00:00:00+0000"
+    },
+    {
+      "id": 48384,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2012) #30",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2012 - 2015)",
+      "seriesId": 16452,
+      "issueNumber": "30",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48384/avengers_2012_30",
+      "onSaleDate": "2014-05-28T00:00:00+0000"
+    },
+    {
+      "id": 48385,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2012) #31",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2012 - 2015)",
+      "seriesId": 16452,
+      "issueNumber": "31",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48385/avengers_2012_31",
+      "onSaleDate": "2014-06-18T00:00:00+0000"
+    },
+    {
+      "id": 48386,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2012) #32",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2012 - 2015)",
+      "seriesId": 16452,
+      "issueNumber": "32",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48386/avengers_2012_32",
+      "onSaleDate": "2014-07-09T00:00:00+0000"
+    },
+    {
+      "id": 48387,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2012) #33",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2012 - 2015)",
+      "seriesId": 16452,
+      "issueNumber": "33",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48387/avengers_2012_33",
+      "onSaleDate": "2014-07-30T00:00:00+0000"
+    },
+    {
+      "id": 50852,
+      "title": "Original Sin: Secret Avengers Infinite Comic",
+      "issueTitle": "Original Sin: Secret Avengers Infinite Comic (2014) #2",
+      "seriesTitle": "Original Sin: Secret Avengers Infinite Comic",
+      "apiSeriesName": "Original Sin: Secret Avengers Infinite Comic (2014)",
+      "seriesId": 19032,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50852/original_sin_secret_avengers_infinite_comic_2014_2",
+      "onSaleDate": "2014-07-04T00:00:00-0400"
+    },
+    {
+      "id": 48326,
+      "title": "Mighty Avengers",
+      "issueTitle": "Mighty Avengers (2013) #11",
+      "seriesTitle": "Mighty Avengers",
+      "apiSeriesName": "Mighty Avengers (2013 - 2014)",
+      "seriesId": 18309,
+      "issueNumber": "11",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48326/mighty_avengers_2013_11",
+      "onSaleDate": "2014-06-11T00:00:00+0000"
+    },
+    {
+      "id": 48327,
+      "title": "Mighty Avengers",
+      "issueTitle": "Mighty Avengers (2013) #12",
+      "seriesTitle": "Mighty Avengers",
+      "apiSeriesName": "Mighty Avengers (2013 - 2014)",
+      "seriesId": 18309,
+      "issueNumber": "12",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48327/mighty_avengers_2013_12",
+      "onSaleDate": "2014-07-23T00:00:00+0000"
+    },
+    {
+      "id": 48359,
+      "title": "All-New Invaders",
+      "issueTitle": "All-New Invaders (2014) #6",
+      "seriesTitle": "All-New Invaders",
+      "apiSeriesName": "All-New Invaders (2014 - 2015)",
+      "seriesId": 18315,
+      "issueNumber": "6",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48359/all-new_invaders_2014_6",
+      "onSaleDate": "2014-06-11T00:00:00+0000"
+    },
+    {
+      "id": 48360,
+      "title": "All-New Invaders",
+      "issueTitle": "All-New Invaders (2014) #7",
+      "seriesTitle": "All-New Invaders",
+      "apiSeriesName": "All-New Invaders (2014 - 2015)",
+      "seriesId": 18315,
+      "issueNumber": "7",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48360/all-new_invaders_2014_7",
+      "onSaleDate": "2014-07-09T00:00:00+0000"
+    },
+    {
+      "id": 48618,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2012) #30",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2012 - 2015)",
+      "seriesId": 16542,
+      "issueNumber": "30",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48618/deadpool_2012_30",
+      "onSaleDate": "2014-06-11T00:00:00+0000"
+    },
+    {
+      "id": 48619,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2012) #31",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2012 - 2015)",
+      "seriesId": 16542,
+      "issueNumber": "31",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48619/deadpool_2012_31",
+      "onSaleDate": "2014-07-09T00:00:00+0000"
+    },
+    {
+      "id": 48620,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2012) #32",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2012 - 2015)",
+      "seriesId": 16542,
+      "issueNumber": "32",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48620/deadpool_2012_32",
+      "onSaleDate": "2014-07-23T00:00:00+0000"
+    },
+    {
+      "id": 48621,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2012) #33",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2012 - 2015)",
+      "seriesId": 16542,
+      "issueNumber": "33",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48621/deadpool_2012_33",
+      "onSaleDate": "2014-08-13T00:00:00+0000"
+    },
+    {
+      "id": 49505,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #3",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49505/original_sin_2014_3",
+      "onSaleDate": "2014-06-04T00:00:00+0000"
+    },
+    {
+      "id": 50847,
+      "title": "Original Sins",
+      "issueTitle": "Original Sins (2014) #1",
+      "seriesTitle": "Original Sins",
+      "apiSeriesName": "Original Sins (2014)",
+      "seriesId": 19030,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50847/original_sins_2014_1",
+      "onSaleDate": "2014-06-11T00:00:00+0000"
+    },
+    {
+      "id": 50848,
+      "title": "Original Sins",
+      "issueTitle": "Original Sins (2014) #2",
+      "seriesTitle": "Original Sins",
+      "apiSeriesName": "Original Sins (2014)",
+      "seriesId": 19030,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50848/original_sins_2014_2",
+      "onSaleDate": "2014-06-25T00:00:00+0000"
+    },
+    {
+      "id": 50889,
+      "title": "Original Sins",
+      "issueTitle": "Original Sins (2014) #3",
+      "seriesTitle": "Original Sins",
+      "apiSeriesName": "Original Sins (2014)",
+      "seriesId": 19030,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50889/original_sins_2014_3",
+      "onSaleDate": "2014-07-09T00:00:00+0000"
+    },
+    {
+      "id": 50893,
+      "title": "Original Sins",
+      "issueTitle": "Original Sins (2014) #4",
+      "seriesTitle": "Original Sins",
+      "apiSeriesName": "Original Sins (2014)",
+      "seriesId": 19030,
+      "issueNumber": "4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50893/original_sins_2014_4",
+      "onSaleDate": "2014-07-23T00:00:00+0000"
+    },
+    {
+      "id": 48799,
+      "title": "Nova",
+      "issueTitle": "Nova (2013) #19",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2013 - 2015)",
+      "seriesId": 16411,
+      "issueNumber": "19",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48799/nova_2013_19",
+      "onSaleDate": "2014-07-16T00:00:00+0000"
+    },
+    {
+      "id": 48800,
+      "title": "Nova",
+      "issueTitle": "Nova (2013) #20",
+      "seriesTitle": "Nova",
+      "apiSeriesName": "Nova (2013 - 2015)",
+      "seriesId": 16411,
+      "issueNumber": "20",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48800/nova_2013_20",
+      "onSaleDate": "2014-08-20T00:00:00+0000"
+    },
+    {
+      "id": 49512,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #4",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49512/original_sin_2014_4",
+      "onSaleDate": "2014-06-18T00:00:00+0000"
+    },
+    {
+      "id": 49518,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #5",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "5",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49518/original_sin_2014_5",
+      "onSaleDate": "2014-07-02T00:00:00+0000"
+    },
+    {
+      "id": 49522,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #6",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "6",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49522/original_sin_2014_6",
+      "onSaleDate": "2014-07-16T00:00:00+0000"
+    },
+    {
+      "id": 50941,
+      "title": "Original Sins",
+      "issueTitle": "Original Sins (2014) #5",
+      "seriesTitle": "Original Sins",
+      "apiSeriesName": "Original Sins (2014)",
+      "seriesId": 19030,
+      "issueNumber": "5",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50941/original_sins_2014_5",
+      "onSaleDate": "2014-08-20T00:00:00+0000"
+    },
+    {
+      "id": 49526,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #7",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "7",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49526/original_sin_2014_7",
+      "onSaleDate": "2014-08-13T00:00:00+0000"
+    },
+    {
+      "id": 49530,
+      "title": "Original Sin",
+      "issueTitle": "Original Sin (2014) #8",
+      "seriesTitle": "Original Sin",
+      "apiSeriesName": "Original Sin (2014)",
+      "seriesId": 18681,
+      "issueNumber": "8",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49530/original_sin_2014_8",
+      "onSaleDate": "2014-09-03T00:00:00+0000"
+    },
+    {
+      "id": 48388,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2012) #34",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2012 - 2015)",
+      "seriesId": 16452,
+      "issueNumber": "34",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48388/avengers_2012_34",
+      "onSaleDate": "2014-08-27T00:00:00+0000"
+    },
+    {
+      "id": 50967,
+      "title": "Original Sin Annual",
+      "issueTitle": "Original Sin Annual (2014) #1",
+      "seriesTitle": "Original Sin Annual",
+      "apiSeriesName": "Original Sin Annual (2014)",
+      "seriesId": 19080,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50967/original_sin_annual_2014_1",
+      "onSaleDate": "2014-10-15T00:00:00+0000"
+    },
+    {
+      "id": 48637,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2013) #18",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2013 - 2015)",
+      "seriesId": 16410,
+      "issueNumber": "18",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48637/guardians_of_the_galaxy_2013_18",
+      "onSaleDate": "2014-08-27T00:00:00+0000"
+    },
+    {
+      "id": 48638,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2013) #19",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2013 - 2015)",
+      "seriesId": 16410,
+      "issueNumber": "19",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48638/guardians_of_the_galaxy_2013_19",
+      "onSaleDate": "2014-09-24T00:00:00+0000"
+    },
+    {
+      "id": 48681,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2013) #23",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2013 - 2015)",
+      "seriesId": 17602,
+      "issueNumber": "23",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48681/uncanny_x-men_2013_23",
+      "onSaleDate": "2014-07-16T00:00:00+0000"
+    },
+    {
+      "id": 48682,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2013) #24",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2013 - 2015)",
+      "seriesId": 17602,
+      "issueNumber": "24",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48682/uncanny_x-men_2013_24",
+      "onSaleDate": "2014-07-30T00:00:00+0000"
+    },
+    {
+      "id": 48683,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2013) #25",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2013 - 2015)",
+      "seriesId": 17602,
+      "issueNumber": "25",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48683/uncanny_x-men_2013_25",
+      "onSaleDate": "2014-09-03T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Original Sin #0: Who is The Watcher?",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "0",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50642"
+      ],
+      "selectedIssueId": 50642,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50642/original_sin_2014",
+      "resolvedIssueTitle": "Original Sin (2014)",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50642
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Original Sin #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49491"
+      ],
+      "selectedIssueId": 49491,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49491/original_sin_2014_1",
+      "resolvedIssueTitle": "Original Sin (2014) #1",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49491
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Mighty Avengers #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Mighty Avengers",
+      "seriesYear": 2013,
+      "issueNumber": "10",
+      "seriesId": 18309,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48325"
+      ],
+      "selectedIssueId": 48325,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48325/mighty_avengers_2013_10",
+      "resolvedIssueTitle": "Mighty Avengers (2013) #10",
+      "note": "Marvel series 18309 (Mighty Avengers (2013 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48325
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Original Sin #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49498"
+      ],
+      "selectedIssueId": 49498,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49498/original_sin_2014_2",
+      "resolvedIssueTitle": "Original Sin (2014) #2",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49498
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Nova #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2013,
+      "issueNumber": "18",
+      "seriesId": 16411,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48798"
+      ],
+      "selectedIssueId": 48798,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48798/nova_2013_18",
+      "resolvedIssueTitle": "Nova (2013) #18",
+      "note": "Marvel series 16411 (Nova (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48798
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Original Sin: Hulk vs. Iron Man #1 (3.1)",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "3.1",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50850"
+      ],
+      "selectedIssueId": 50850,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50850/original_sin_2014_3.1",
+      "resolvedIssueTitle": "Original Sin (2014) #3.1",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50850
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Original Sin: Hulk vs. Iron Man #2 (3.2)",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "3.2",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50891"
+      ],
+      "selectedIssueId": 50891,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50891/original_sin_2014_3.2",
+      "resolvedIssueTitle": "Original Sin (2014) #3.2",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50891
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Original Sin: Hulk vs. Iron Man #3 (3.3)",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "3.3",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50895"
+      ],
+      "selectedIssueId": 50895,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50895/original_sin_2014_3.3",
+      "resolvedIssueTitle": "Original Sin (2014) #3.3",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50895
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Original Sin: Hulk vs. Iron Man #4 (3.4)",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "3.4",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50925"
+      ],
+      "selectedIssueId": 50925,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50925/original_sin_2014_3.4",
+      "resolvedIssueTitle": "Original Sin (2014) #3.4",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50925
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Thor & Loki: The Tenth Realm #1 (Original Sin #5.1)",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "5.1",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50888"
+      ],
+      "selectedIssueId": 50888,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50888/original_sin_2014_5.1",
+      "resolvedIssueTitle": "Original Sin (2014) #5.1",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50888
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Thor & Loki: The Tenth Realm #2 (Original Sin #5.2)",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "5.2",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50892"
+      ],
+      "selectedIssueId": 50892,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50892/original_sin_2014_5.2",
+      "resolvedIssueTitle": "Original Sin (2014) #5.2",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50892
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Thor & Loki: The Tenth Realm #3 (Original Sin #5.3)",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "5.3",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50926"
+      ],
+      "selectedIssueId": 50926,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50926/original_sin_2014_5.3",
+      "resolvedIssueTitle": "Original Sin (2014) #5.3",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50926
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Thor & Loki: The Tenth Realm #4 (Original Sin #5.4)",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "5.4",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50927"
+      ],
+      "selectedIssueId": 50927,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50927/original_sin_2014_5.4",
+      "resolvedIssueTitle": "Original Sin (2014) #5.4",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50927
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Amazing Spider-Man #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "4",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45803"
+      ],
+      "selectedIssueId": 45803,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45803/the_amazing_spider-man_2014_4",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #4",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45803
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Amazing Spider-Man #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "5",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45804"
+      ],
+      "selectedIssueId": 45804,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45804/the_amazing_spider-man_2014_5",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #5",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45804
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Original Sin: Secret Avengers Infinite Comic #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin: Secret Avengers Infinite Comic",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 19032,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50851"
+      ],
+      "selectedIssueId": 50851,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50851/original_sin_secret_avengers_infinite_comic_2014_1",
+      "resolvedIssueTitle": "Original Sin: Secret Avengers Infinite Comic (2014) #1",
+      "note": "Marvel series 19032 (Original Sin: Secret Avengers Infinite Comic (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50851
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Deadpool #29",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2012,
+      "issueNumber": "29",
+      "seriesId": 16542,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48617"
+      ],
+      "selectedIssueId": 48617,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48617/deadpool_2012_29",
+      "resolvedIssueTitle": "Deadpool (2012) #29",
+      "note": "Marvel series 16542 (Deadpool (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48617
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Fantastic Four #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Fantastic Four",
+      "seriesYear": 2014,
+      "issueNumber": "6",
+      "seriesId": 18700,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49776"
+      ],
+      "selectedIssueId": 49776,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49776/fantastic_four_2014_6",
+      "resolvedIssueTitle": "Fantastic Four (2014) #6",
+      "note": "Marvel series 18700 (Fantastic Four (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49776
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Fantastic Four #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Fantastic Four",
+      "seriesYear": 2014,
+      "issueNumber": "7",
+      "seriesId": 18700,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49777"
+      ],
+      "selectedIssueId": 49777,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49777/fantastic_four_2014_7",
+      "resolvedIssueTitle": "Fantastic Four (2014) #7",
+      "note": "Marvel series 18700 (Fantastic Four (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49777
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Fantastic Four #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Fantastic Four",
+      "seriesYear": 2014,
+      "issueNumber": "8",
+      "seriesId": 18700,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49778"
+      ],
+      "selectedIssueId": 49778,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49778/fantastic_four_2014_8",
+      "resolvedIssueTitle": "Fantastic Four (2014) #8",
+      "note": "Marvel series 18700 (Fantastic Four (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49778
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Daredevil #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Daredevil",
+      "seriesYear": 2014,
+      "issueNumber": "6",
+      "seriesId": 18457,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49036"
+      ],
+      "selectedIssueId": 49036,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49036/daredevil_2014_6",
+      "resolvedIssueTitle": "Daredevil (2014) #6",
+      "note": "Marvel series 18457 (Daredevil (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49036
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Daredevil #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Daredevil",
+      "seriesYear": 2014,
+      "issueNumber": "7",
+      "seriesId": 18457,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49037"
+      ],
+      "selectedIssueId": 49037,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49037/daredevil_2014_7",
+      "resolvedIssueTitle": "Daredevil (2014) #7",
+      "note": "Marvel series 18457 (Daredevil (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49037
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Avengers #29",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2012,
+      "issueNumber": "29",
+      "seriesId": 16452,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48383"
+      ],
+      "selectedIssueId": 48383,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48383/avengers_2012_29",
+      "resolvedIssueTitle": "Avengers (2012) #29",
+      "note": "Marvel series 16452 (Avengers (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48383
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Avengers #30",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2012,
+      "issueNumber": "30",
+      "seriesId": 16452,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48384"
+      ],
+      "selectedIssueId": 48384,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48384/avengers_2012_30",
+      "resolvedIssueTitle": "Avengers (2012) #30",
+      "note": "Marvel series 16452 (Avengers (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48384
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Avengers #31",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2012,
+      "issueNumber": "31",
+      "seriesId": 16452,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48385"
+      ],
+      "selectedIssueId": 48385,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48385/avengers_2012_31",
+      "resolvedIssueTitle": "Avengers (2012) #31",
+      "note": "Marvel series 16452 (Avengers (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48385
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Avengers #32",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2012,
+      "issueNumber": "32",
+      "seriesId": 16452,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48386"
+      ],
+      "selectedIssueId": 48386,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48386/avengers_2012_32",
+      "resolvedIssueTitle": "Avengers (2012) #32",
+      "note": "Marvel series 16452 (Avengers (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48386
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Avengers #33",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2012,
+      "issueNumber": "33",
+      "seriesId": 16452,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48387"
+      ],
+      "selectedIssueId": 48387,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48387/avengers_2012_33",
+      "resolvedIssueTitle": "Avengers (2012) #33",
+      "note": "Marvel series 16452 (Avengers (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48387
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Original Sin: Secret Avengers Infinite Comic #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin: Secret Avengers Infinite Comic",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 19032,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50852"
+      ],
+      "selectedIssueId": 50852,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50852/original_sin_secret_avengers_infinite_comic_2014_2",
+      "resolvedIssueTitle": "Original Sin: Secret Avengers Infinite Comic (2014) #2",
+      "note": "Marvel series 19032 (Original Sin: Secret Avengers Infinite Comic (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50852
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "Mighty Avengers #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Mighty Avengers",
+      "seriesYear": 2013,
+      "issueNumber": "11",
+      "seriesId": 18309,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48326"
+      ],
+      "selectedIssueId": 48326,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48326/mighty_avengers_2013_11",
+      "resolvedIssueTitle": "Mighty Avengers (2013) #11",
+      "note": "Marvel series 18309 (Mighty Avengers (2013 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48326
+      ]
+    },
+    {
+      "sourcePosition": 30,
+      "sourceIssueReference": "Mighty Avengers #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Mighty Avengers",
+      "seriesYear": 2013,
+      "issueNumber": "12",
+      "seriesId": 18309,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48327"
+      ],
+      "selectedIssueId": 48327,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48327/mighty_avengers_2013_12",
+      "resolvedIssueTitle": "Mighty Avengers (2013) #12",
+      "note": "Marvel series 18309 (Mighty Avengers (2013 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48327
+      ]
+    },
+    {
+      "sourcePosition": 31,
+      "sourceIssueReference": "All-New Invaders #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New Invaders",
+      "seriesYear": 2014,
+      "issueNumber": "6",
+      "seriesId": 18315,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48359"
+      ],
+      "selectedIssueId": 48359,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48359/all-new_invaders_2014_6",
+      "resolvedIssueTitle": "All-New Invaders (2014) #6",
+      "note": "Marvel series 18315 (All-New Invaders (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48359
+      ]
+    },
+    {
+      "sourcePosition": 32,
+      "sourceIssueReference": "All-New Invaders #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New Invaders",
+      "seriesYear": 2014,
+      "issueNumber": "7",
+      "seriesId": 18315,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48360"
+      ],
+      "selectedIssueId": 48360,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48360/all-new_invaders_2014_7",
+      "resolvedIssueTitle": "All-New Invaders (2014) #7",
+      "note": "Marvel series 18315 (All-New Invaders (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48360
+      ]
+    },
+    {
+      "sourcePosition": 33,
+      "sourceIssueReference": "Deadpool #30",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2012,
+      "issueNumber": "30",
+      "seriesId": 16542,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48618"
+      ],
+      "selectedIssueId": 48618,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48618/deadpool_2012_30",
+      "resolvedIssueTitle": "Deadpool (2012) #30",
+      "note": "Marvel series 16542 (Deadpool (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48618
+      ]
+    },
+    {
+      "sourcePosition": 34,
+      "sourceIssueReference": "Deadpool #31",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2012,
+      "issueNumber": "31",
+      "seriesId": 16542,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48619"
+      ],
+      "selectedIssueId": 48619,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48619/deadpool_2012_31",
+      "resolvedIssueTitle": "Deadpool (2012) #31",
+      "note": "Marvel series 16542 (Deadpool (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48619
+      ]
+    },
+    {
+      "sourcePosition": 35,
+      "sourceIssueReference": "Deadpool #32",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2012,
+      "issueNumber": "32",
+      "seriesId": 16542,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48620"
+      ],
+      "selectedIssueId": 48620,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48620/deadpool_2012_32",
+      "resolvedIssueTitle": "Deadpool (2012) #32",
+      "note": "Marvel series 16542 (Deadpool (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48620
+      ]
+    },
+    {
+      "sourcePosition": 36,
+      "sourceIssueReference": "Deadpool #33",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2012,
+      "issueNumber": "33",
+      "seriesId": 16542,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48621"
+      ],
+      "selectedIssueId": 48621,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48621/deadpool_2012_33",
+      "resolvedIssueTitle": "Deadpool (2012) #33",
+      "note": "Marvel series 16542 (Deadpool (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48621
+      ]
+    },
+    {
+      "sourcePosition": 37,
+      "sourceIssueReference": "Original Sin #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49505"
+      ],
+      "selectedIssueId": 49505,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49505/original_sin_2014_3",
+      "resolvedIssueTitle": "Original Sin (2014) #3",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49505
+      ]
+    },
+    {
+      "sourcePosition": 38,
+      "sourceIssueReference": "Original Sins #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sins",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 19030,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50847"
+      ],
+      "selectedIssueId": 50847,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50847/original_sins_2014_1",
+      "resolvedIssueTitle": "Original Sins (2014) #1",
+      "note": "Marvel series 19030 (Original Sins (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50847
+      ]
+    },
+    {
+      "sourcePosition": 39,
+      "sourceIssueReference": "Original Sins #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sins",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 19030,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50848"
+      ],
+      "selectedIssueId": 50848,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50848/original_sins_2014_2",
+      "resolvedIssueTitle": "Original Sins (2014) #2",
+      "note": "Marvel series 19030 (Original Sins (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50848
+      ]
+    },
+    {
+      "sourcePosition": 40,
+      "sourceIssueReference": "Original Sins #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sins",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 19030,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50889"
+      ],
+      "selectedIssueId": 50889,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50889/original_sins_2014_3",
+      "resolvedIssueTitle": "Original Sins (2014) #3",
+      "note": "Marvel series 19030 (Original Sins (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50889
+      ]
+    },
+    {
+      "sourcePosition": 41,
+      "sourceIssueReference": "Original Sins #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sins",
+      "seriesYear": 2014,
+      "issueNumber": "4",
+      "seriesId": 19030,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50893"
+      ],
+      "selectedIssueId": 50893,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50893/original_sins_2014_4",
+      "resolvedIssueTitle": "Original Sins (2014) #4",
+      "note": "Marvel series 19030 (Original Sins (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50893
+      ]
+    },
+    {
+      "sourcePosition": 42,
+      "sourceIssueReference": "Nova #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2013,
+      "issueNumber": "19",
+      "seriesId": 16411,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48799"
+      ],
+      "selectedIssueId": 48799,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48799/nova_2013_19",
+      "resolvedIssueTitle": "Nova (2013) #19",
+      "note": "Marvel series 16411 (Nova (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48799
+      ]
+    },
+    {
+      "sourcePosition": 43,
+      "sourceIssueReference": "Nova #20",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nova",
+      "seriesYear": 2013,
+      "issueNumber": "20",
+      "seriesId": 16411,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48800"
+      ],
+      "selectedIssueId": 48800,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48800/nova_2013_20",
+      "resolvedIssueTitle": "Nova (2013) #20",
+      "note": "Marvel series 16411 (Nova (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48800
+      ]
+    },
+    {
+      "sourcePosition": 44,
+      "sourceIssueReference": "Original Sin #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "4",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49512"
+      ],
+      "selectedIssueId": 49512,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49512/original_sin_2014_4",
+      "resolvedIssueTitle": "Original Sin (2014) #4",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49512
+      ]
+    },
+    {
+      "sourcePosition": 45,
+      "sourceIssueReference": "Original Sin #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "5",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49518"
+      ],
+      "selectedIssueId": 49518,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49518/original_sin_2014_5",
+      "resolvedIssueTitle": "Original Sin (2014) #5",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49518
+      ]
+    },
+    {
+      "sourcePosition": 46,
+      "sourceIssueReference": "Original Sin #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "6",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49522"
+      ],
+      "selectedIssueId": 49522,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49522/original_sin_2014_6",
+      "resolvedIssueTitle": "Original Sin (2014) #6",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49522
+      ]
+    },
+    {
+      "sourcePosition": 47,
+      "sourceIssueReference": "Original Sins #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sins",
+      "seriesYear": 2014,
+      "issueNumber": "5",
+      "seriesId": 19030,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50941"
+      ],
+      "selectedIssueId": 50941,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50941/original_sins_2014_5",
+      "resolvedIssueTitle": "Original Sins (2014) #5",
+      "note": "Marvel series 19030 (Original Sins (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50941
+      ]
+    },
+    {
+      "sourcePosition": 48,
+      "sourceIssueReference": "Original Sin #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "7",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49526"
+      ],
+      "selectedIssueId": 49526,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49526/original_sin_2014_7",
+      "resolvedIssueTitle": "Original Sin (2014) #7",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49526
+      ]
+    },
+    {
+      "sourcePosition": 49,
+      "sourceIssueReference": "Original Sin #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin",
+      "seriesYear": 2014,
+      "issueNumber": "8",
+      "seriesId": 18681,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49530"
+      ],
+      "selectedIssueId": 49530,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49530/original_sin_2014_8",
+      "resolvedIssueTitle": "Original Sin (2014) #8",
+      "note": "Marvel series 18681 (Original Sin (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49530
+      ]
+    },
+    {
+      "sourcePosition": 50,
+      "sourceIssueReference": "Avengers #34",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2012,
+      "issueNumber": "34",
+      "seriesId": 16452,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48388"
+      ],
+      "selectedIssueId": 48388,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48388/avengers_2012_34",
+      "resolvedIssueTitle": "Avengers (2012) #34",
+      "note": "Marvel series 16452 (Avengers (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48388
+      ]
+    },
+    {
+      "sourcePosition": 51,
+      "sourceIssueReference": "Original Sin Annual #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Original Sin Annual",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 19080,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50967"
+      ],
+      "selectedIssueId": 50967,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50967/original_sin_annual_2014_1",
+      "resolvedIssueTitle": "Original Sin Annual (2014) #1",
+      "note": "Marvel series 19080 (Original Sin Annual (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50967
+      ]
+    },
+    {
+      "sourcePosition": 52,
+      "sourceIssueReference": "Guardians of the Galaxy #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2013,
+      "issueNumber": "18",
+      "seriesId": 16410,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48637"
+      ],
+      "selectedIssueId": 48637,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48637/guardians_of_the_galaxy_2013_18",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2013) #18",
+      "note": "Marvel series 16410 (Guardians of the Galaxy (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48637
+      ]
+    },
+    {
+      "sourcePosition": 53,
+      "sourceIssueReference": "Guardians of the Galaxy #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2013,
+      "issueNumber": "19",
+      "seriesId": 16410,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48638"
+      ],
+      "selectedIssueId": 48638,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48638/guardians_of_the_galaxy_2013_19",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2013) #19",
+      "note": "Marvel series 16410 (Guardians of the Galaxy (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48638
+      ]
+    },
+    {
+      "sourcePosition": 54,
+      "sourceIssueReference": "Uncanny X-Men #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2013,
+      "issueNumber": "23",
+      "seriesId": 17602,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48681"
+      ],
+      "selectedIssueId": 48681,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48681/uncanny_x-men_2013_23",
+      "resolvedIssueTitle": "Uncanny X-Men (2013) #23",
+      "note": "Marvel series 17602 (Uncanny X-Men (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48681
+      ]
+    },
+    {
+      "sourcePosition": 55,
+      "sourceIssueReference": "Uncanny X-Men #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2013,
+      "issueNumber": "24",
+      "seriesId": 17602,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48682"
+      ],
+      "selectedIssueId": 48682,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48682/uncanny_x-men_2013_24",
+      "resolvedIssueTitle": "Uncanny X-Men (2013) #24",
+      "note": "Marvel series 17602 (Uncanny X-Men (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48682
+      ]
+    },
+    {
+      "sourcePosition": 56,
+      "sourceIssueReference": "Uncanny X-Men #25",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2013,
+      "issueNumber": "25",
+      "seriesId": 17602,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48683"
+      ],
+      "selectedIssueId": 48683,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48683/uncanny_x-men_2013_25",
+      "resolvedIssueTitle": "Uncanny X-Men (2013) #25",
+      "note": "Marvel series 17602 (Uncanny X-Men (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48683
+      ]
+    }
+  ]
+}

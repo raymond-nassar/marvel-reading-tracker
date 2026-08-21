@@ -1,0 +1,1546 @@
+{
+  "id": "axis",
+  "name": "Avengers & X-Men: Axis",
+  "description": "Fifty-five issues from the March to Axis prelude through the nine-part event and its immediate tie-ins.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/axis-reading-order/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T09:58:39.872Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 55,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 48921,
+      "title": "Magneto (2014) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/48921/magneto_2014_9",
+      "seriesId": 18407,
+      "seriesName": "Magneto (2014 - 2015)",
+      "onSale": "2014-09-10T00:00:00+0000",
+      "mu": "2015-03-16T00:00:00+0000",
+      "digitalId": 34766,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/5409ea5cb4a13",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 49227,
+      "title": "Uncanny Avengers (2012) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/49227/uncanny_avengers_2012_24",
+      "seriesId": 16414,
+      "seriesName": "Uncanny Avengers (2012 - 2014)",
+      "onSale": "2014-09-17T00:00:00+0000",
+      "mu": "2015-03-23T00:00:00+0000",
+      "digitalId": 34787,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/03/54134535b727c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paul Renaud",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48922,
+      "title": "Magneto (2014) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/48922/magneto_2014_10",
+      "seriesId": 18407,
+      "seriesName": "Magneto (2014 - 2015)",
+      "onSale": "2014-09-24T00:00:00+0000",
+      "mu": "2015-03-30T00:00:00+0000",
+      "digitalId": 34799,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/54173a93035b0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48589,
+      "title": "Captain America (2012) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/48589/captain_america_2012_22",
+      "seriesId": 16516,
+      "seriesName": "Captain America (2012 - 2014)",
+      "onSale": "2014-07-02T00:00:00+0000",
+      "mu": "2015-01-05T00:00:00+0000",
+      "digitalId": 34096,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/53a85e435eab9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rodolfo Mariano Taibo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48590,
+      "title": "Captain America (2012) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/48590/captain_america_2012_23",
+      "seriesId": 16516,
+      "seriesName": "Captain America (2012 - 2014)",
+      "onSale": "2014-08-13T00:00:00+0000",
+      "mu": "2015-02-09T00:00:00+0000",
+      "digitalId": 34530,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/53dfb45d492a3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rodolfo Mariano Taibo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48591,
+      "title": "Captain America (2012) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/48591/captain_america_2012_24",
+      "seriesId": 16516,
+      "seriesName": "Captain America (2012 - 2014)",
+      "onSale": "2014-09-03T00:00:00+0000",
+      "mu": "2015-03-02T00:00:00+0000",
+      "digitalId": 34742,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/53f7469b06c92",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rodolfo Mariano Taibo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Pacheco",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48519,
+      "title": "Loki: Agent of Asgard (2014) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/48519/loki_agent_of_asgard_2014_6",
+      "seriesId": 18340,
+      "seriesName": "Loki: Agent of Asgard (2014 - 2015)",
+      "onSale": "2014-09-24T00:00:00+0000",
+      "mu": "2015-03-30T00:00:00+0000",
+      "digitalId": 34798,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/f0/54173810e414c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lee Garbett",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 49228,
+      "title": "Uncanny Avengers (2012) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/49228/uncanny_avengers_2012_25",
+      "seriesId": 16414,
+      "seriesName": "Uncanny Avengers (2012 - 2014)",
+      "onSale": "2014-10-01T00:00:00+0000",
+      "mu": "2015-04-06T00:00:00+0000",
+      "digitalId": 34881,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/03/542458c18e138",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Paul Renaud",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48592,
+      "title": "Captain America (2012) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/48592/captain_america_2012_25",
+      "seriesId": 16516,
+      "seriesName": "Captain America (2012 - 2014)",
+      "onSale": "2014-10-01T00:00:00+0000",
+      "mu": "2015-04-06T00:00:00+0000",
+      "digitalId": 34853,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/541c8c8df1fe5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rodolfo Mariano Taibo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50599,
+      "title": "Avengers & X-Men: Axis (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50599/avengers_x-men_axis_2014_1",
+      "seriesId": 18904,
+      "seriesName": "Avengers & X-Men: Axis (2014)",
+      "onSale": "2014-10-08T00:00:00+0000",
+      "mu": "2015-04-06T00:00:00+0000",
+      "digitalId": 34915,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/30/54299cd54cb79",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50982,
+      "title": "Axis: Revolutions (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50982/axis_revolutions_2014_1",
+      "seriesId": 19086,
+      "seriesName": "Axis: Revolutions (2014)",
+      "onSale": "2014-10-29T00:00:00+0000",
+      "mu": "2015-04-27T00:00:00+0000",
+      "digitalId": 35017,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/543d7bbac7750",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50601,
+      "title": "Avengers & X-Men: Axis (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/50601/avengers_x-men_axis_2014_2",
+      "seriesId": 18904,
+      "seriesName": "Avengers & X-Men: Axis (2014)",
+      "onSale": "2014-10-15T00:00:00+0000",
+      "mu": "2015-04-13T09:27:03+0000",
+      "digitalId": 34969,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/b0/5432db529e458",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50715,
+      "title": "Loki: Agent of Asgard (2014) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/50715/loki_agent_of_asgard_2014_7",
+      "seriesId": 18340,
+      "seriesName": "Loki: Agent of Asgard (2014 - 2015)",
+      "onSale": "2014-10-15T00:00:00+0000",
+      "mu": "2015-04-13T00:00:00+0000",
+      "digitalId": 34878,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/60/54342455458c1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lee Garbett",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48923,
+      "title": "Magneto (2014) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/48923/magneto_2014_11",
+      "seriesId": 18407,
+      "seriesName": "Magneto (2014 - 2015)",
+      "onSale": "2014-10-15T00:00:00+0000",
+      "mu": "2015-04-13T00:00:00+0000",
+      "digitalId": 34879,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/543429e531fc3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50602,
+      "title": "Avengers & X-Men: Axis (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/50602/avengers_x-men_axis_2014_3",
+      "seriesId": 18904,
+      "seriesName": "Avengers & X-Men: Axis (2014)",
+      "onSale": "2014-10-22T00:00:00+0000",
+      "mu": "2015-04-20T09:00:27+0000",
+      "digitalId": 34979,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/e0/5438395571650",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48924,
+      "title": "Magneto (2014) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/48924/magneto_2014_12",
+      "seriesId": 18407,
+      "seriesName": "Magneto (2014 - 2015)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-18T00:00:00+0000",
+      "digitalId": 35357,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/03/5464f3240565a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Yardin",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50977,
+      "title": "Deadpool (2012) #36",
+      "number": "36",
+      "url": "https://www.marvel.com/comics/issue/50977/deadpool_2012_36",
+      "seriesId": 16542,
+      "seriesName": "Deadpool (2012 - 2015)",
+      "onSale": "2014-10-22T00:00:00+0000",
+      "mu": "2015-04-20T00:00:00+0000",
+      "digitalId": 35008,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/b0/543be7a1cc1e2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "David Nakayama",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Posehn",
+          "role": "writer"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47976,
+      "title": "All-New X-Factor (2014) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/47976/all-new_x-factor_2014_15",
+      "seriesId": 18136,
+      "seriesName": "All-New X-Factor (2014 - 2015)",
+      "onSale": "2014-10-22T00:00:00+0000",
+      "mu": "2015-04-20T00:00:00+0000",
+      "digitalId": 34892,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/e0/543831dd22900",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jared K. Fletcher",
+          "role": "penciler"
+        },
+        {
+          "name": "Kris Anka",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47977,
+      "title": "All-New X-Factor (2014) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/47977/all-new_x-factor_2014_16",
+      "seriesId": 18136,
+      "seriesName": "All-New X-Factor (2014 - 2015)",
+      "onSale": "2014-11-05T00:00:00+0000",
+      "mu": "2015-05-04T00:00:00+0000",
+      "digitalId": 35321,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/d0/544015052ec8b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kris Anka",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47818,
+      "title": "Inhuman (2014) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/47818/inhuman_2014_9",
+      "seriesId": 18065,
+      "seriesName": "Inhuman (2014 - 2015)",
+      "onSale": "2014-12-03T00:00:00+0000",
+      "mu": "2015-06-01T00:00:00+0000",
+      "digitalId": 35755,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/547dddc52a914",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47819,
+      "title": "Inhuman (2014) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/47819/inhuman_2014_10",
+      "seriesId": 18065,
+      "seriesName": "Inhuman (2014 - 2015)",
+      "onSale": "2014-12-17T00:00:00+0000",
+      "mu": "2014-12-17T00:00:00+0000",
+      "digitalId": 35756,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5492eb2bdb39e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ryan Stegman",
+          "role": "penciler"
+        },
+        {
+          "name": "Charles Soule",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50603,
+      "title": "Avengers & X-Men: Axis (2014) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/50603/avengers_x-men_axis_2014_4",
+      "seriesId": 18904,
+      "seriesName": "Avengers & X-Men: Axis (2014)",
+      "onSale": "2014-11-05T00:00:00+0000",
+      "mu": "2015-05-04T00:00:00+0000",
+      "digitalId": 35364,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/30/54467d7f895a0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51062,
+      "title": "Superior Iron Man (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/51062/superior_iron_man_2014_1",
+      "seriesId": 19164,
+      "seriesName": "Superior Iron Man (2014 - 2015)",
+      "onSale": "2014-11-12T00:00:00+0000",
+      "mu": "2015-05-11T00:00:00+0000",
+      "digitalId": 35412,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/90/59c406cfbc7ce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Tom Taylor",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50976,
+      "title": "Axis: Hobgoblin (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50976/axis_hobgoblin_2014_1",
+      "seriesId": 19084,
+      "seriesName": "Axis: Hobgoblin (2014)",
+      "onSale": "2014-10-22T00:00:00+0000",
+      "mu": "2015-04-20T00:00:00+0000",
+      "digitalId": 34982,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/54383b710e790",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Javier Rodriguez",
+          "role": "penciler"
+        },
+        {
+          "name": "Kevin Shinick",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51055,
+      "title": "Axis: Hobgoblin (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/51055/axis_hobgoblin_2014_2",
+      "seriesId": 19084,
+      "seriesName": "Axis: Hobgoblin (2014)",
+      "onSale": "2014-11-12T00:00:00+0000",
+      "mu": "2015-05-04T14:55:04+0000",
+      "digitalId": 35400,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/544ea51f79603",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Javier Rodriguez",
+          "role": "penciler"
+        },
+        {
+          "name": "Kevin Shinick",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51155,
+      "title": "Axis: Hobgoblin (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/51155/axis_hobgoblin_2014_3",
+      "seriesId": 19084,
+      "seriesName": "Axis: Hobgoblin (2014)",
+      "onSale": "2014-12-17T00:00:00+0000",
+      "mu": "2015-06-15T00:00:00+0000",
+      "digitalId": 35861,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/b0/548f1b11205f1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Javier Rodriguez",
+          "role": "penciler"
+        },
+        {
+          "name": "Kevin Shinick",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50980,
+      "title": "Axis: Carnage (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/50980/axis_carnage_2014_1",
+      "seriesId": 19085,
+      "seriesName": "Axis: Carnage (2014)",
+      "onSale": "2014-10-29T00:00:00+0000",
+      "mu": "2015-04-27T00:00:00+0000",
+      "digitalId": 35010,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/543d7a8318804",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alexander Lozano",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Spears",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51064,
+      "title": "Axis: Carnage (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/51064/axis_carnage_2014_2",
+      "seriesId": 19085,
+      "seriesName": "Axis: Carnage (2014)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-18T00:00:00+0000",
+      "digitalId": 35429,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/0/03/54624447b31d1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alexander Lozano",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Spears",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51511,
+      "title": "Axis: Carnage (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/51511/axis_carnage_2014_3",
+      "seriesId": 19085,
+      "seriesName": "Axis: Carnage (2014)",
+      "onSale": "2014-12-10T00:00:00+0000",
+      "mu": "2015-06-08T00:00:00+0000",
+      "digitalId": 35846,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/5485c088a3c22",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alexander Lozano",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Spears",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51049,
+      "title": "Captain America & the Mighty Avengers (2014) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/51049/captain_america_the_mighty_avengers_2014_1",
+      "seriesId": 19160,
+      "seriesName": "Captain America & the Mighty Avengers (2014 - 2015)",
+      "onSale": "2014-11-12T00:00:00+0000",
+      "mu": "2015-05-04T00:00:00+0000",
+      "digitalId": 35393,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/03/54467f759a034",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51550,
+      "title": "Captain America & the Mighty Avengers (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/51550/captain_america_the_mighty_avengers_2014_2",
+      "seriesId": 19160,
+      "seriesName": "Captain America & the Mighty Avengers (2014 - 2015)",
+      "onSale": "2014-11-26T00:00:00+0000",
+      "mu": "2015-05-25T00:00:00+0000",
+      "digitalId": 35433,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/546b83edc2636",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51158,
+      "title": "Captain America & the Mighty Avengers (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/51158/captain_america_the_mighty_avengers_2014_3",
+      "seriesId": 19160,
+      "seriesName": "Captain America & the Mighty Avengers (2014 - 2015)",
+      "onSale": "2014-12-24T00:00:00+0000",
+      "mu": "2015-06-22T00:00:00+0000",
+      "digitalId": 35858,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/50/54983188762b5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Luke Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51067,
+      "title": "Deadpool (2012) #37",
+      "number": "37",
+      "url": "https://www.marvel.com/comics/issue/51067/deadpool_2012_37",
+      "seriesId": 16542,
+      "seriesName": "Deadpool (2012 - 2015)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-18T00:00:00+0000",
+      "digitalId": 35434,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/20/59764e883857f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mark Brooks",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Posehn",
+          "role": "writer"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47978,
+      "title": "All-New X-Factor (2014) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/47978/all-new_x-factor_2014_17",
+      "seriesId": 18136,
+      "seriesName": "All-New X-Factor (2014 - 2015)",
+      "onSale": "2014-12-03T00:00:00+0000",
+      "mu": "2015-06-01T00:00:00+0000",
+      "digitalId": 35741,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/f0/54739f858e981",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kris Anka",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51147,
+      "title": "Amazing X-Men (2013) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/51147/amazing_x-men_2013_14",
+      "seriesId": 18142,
+      "seriesName": "Amazing X-Men (2013 - 2015)",
+      "onSale": "2014-12-10T00:00:00+0000",
+      "mu": "2015-06-08T00:00:00+0000",
+      "digitalId": 35934,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/54820fc14ef68",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kris Anka",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50604,
+      "title": "Avengers & X-Men: Axis (2014) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/50604/avengers_x-men_axis_2014_5",
+      "seriesId": 18904,
+      "seriesName": "Avengers & X-Men: Axis (2014)",
+      "onSale": "2014-11-12T00:00:00+0000",
+      "mu": "2015-05-04T00:00:00+0000",
+      "digitalId": 35369,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/544ea231a1b89",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51060,
+      "title": "Nova (2013) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/51060/nova_2013_23",
+      "seriesId": 16411,
+      "seriesName": "Nova (2013 - 2015)",
+      "onSale": "2014-11-12T00:00:00+0000",
+      "mu": "2015-05-11T00:00:00+0000",
+      "digitalId": 35411,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/5459312e02d5c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Zachary Montoya",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51086,
+      "title": "Nova (2013) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/51086/nova_2013_24",
+      "seriesId": 16411,
+      "seriesName": "Nova (2013 - 2015)",
+      "onSale": "2014-11-26T00:00:00+0000",
+      "mu": "2015-05-25T00:00:00+0000",
+      "digitalId": 35453,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/10/56212a52ec000",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": []
+    },
+    {
+      "issueId": 51063,
+      "title": "Avengers World (2014) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/51063/avengers_world_2014_15",
+      "seriesId": 18398,
+      "seriesName": "Avengers World (2014 - 2015)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-11T00:00:00+0000",
+      "digitalId": 35427,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/54623e75acba4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kalman Andrasofszky",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51444,
+      "title": "Avengers World (2014) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/51444/avengers_world_2014_16",
+      "seriesId": 18398,
+      "seriesName": "Avengers World (2014 - 2015)",
+      "onSale": "2014-12-10T00:00:00+0000",
+      "mu": "2015-06-08T00:00:00+0000",
+      "digitalId": 35847,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/00/5485cb3704895",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kalman Andrasofszky",
+          "role": "penciler"
+        },
+        {
+          "name": "Frank Barbiere",
+          "role": "writer"
+        },
+        {
+          "name": "Nick Spencer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51065,
+      "title": "Axis: Revolutions (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/51065/axis_revolutions_2014_2",
+      "seriesId": 19086,
+      "seriesName": "Axis: Revolutions (2014)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-18T00:00:00+0000",
+      "digitalId": 35431,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/b0/546247c1ad2ab",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kalman Andrasofszky",
+          "role": "penciler"
+        },
+        {
+          "name": "Frank Tieri",
+          "role": "writer"
+        },
+        {
+          "name": "Kevin Maurer",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51137,
+      "title": "Axis: Revolutions (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/51137/axis_revolutions_2014_3",
+      "seriesId": 19086,
+      "seriesName": "Axis: Revolutions (2014)",
+      "onSale": "2014-12-03T00:00:00+0000",
+      "mu": "2015-06-01T00:00:00+0000",
+      "digitalId": 35819,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/560d4cdfdd852",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Tan Eng Huat",
+          "role": "penciler"
+        },
+        {
+          "name": "Frank Barbiere",
+          "role": "writer"
+        },
+        {
+          "name": "Ray Fawkes",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51519,
+      "title": "Axis: Revolutions (2014) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/51519/axis_revolutions_2014_4",
+      "seriesId": 19086,
+      "seriesName": "Axis: Revolutions (2014)",
+      "onSale": "2014-12-17T00:00:00+0000",
+      "mu": "2015-06-15T00:00:00+0000",
+      "digitalId": 35859,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/548f1f6b5e325",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Howard Chaykin",
+          "role": "writer"
+        },
+        {
+          "name": "John Barber",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51078,
+      "title": "Loki: Agent of Asgard (2014) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/51078/loki_agent_of_asgard_2014_8",
+      "seriesId": 18340,
+      "seriesName": "Loki: Agent of Asgard (2014 - 2015)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-18T00:00:00+0000",
+      "digitalId": 35450,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/03/5464f135f0154",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Lee Garbett",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50605,
+      "title": "Avengers & X-Men: Axis (2014) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/50605/avengers_x-men_axis_2014_6",
+      "seriesId": 18904,
+      "seriesName": "Avengers & X-Men: Axis (2014)",
+      "onSale": "2014-11-19T00:00:00+0000",
+      "mu": "2015-05-11T00:00:00+0000",
+      "digitalId": 35370,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/5462299d30cb4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51087,
+      "title": "Superior Iron Man (2014) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/51087/superior_iron_man_2014_2",
+      "seriesId": 19164,
+      "seriesName": "Superior Iron Man (2014 - 2015)",
+      "onSale": "2014-11-26T00:00:00+0000",
+      "mu": "2015-05-25T00:00:00+0000",
+      "digitalId": 35464,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/546d0b9fd9e17",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Yildiray Cinar",
+          "role": "penciler"
+        },
+        {
+          "name": "Tom Taylor",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51174,
+      "title": "Superior Iron Man (2014) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/51174/superior_iron_man_2014_3",
+      "seriesId": 19164,
+      "seriesName": "Superior Iron Man (2014 - 2015)",
+      "onSale": "2014-12-24T00:00:00+0000",
+      "mu": "2015-06-29T00:00:00+0000",
+      "digitalId": 35865,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/03/549826a300d28",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": []
+    },
+    {
+      "issueId": 48907,
+      "title": "Wolverine & the X-Men (2014) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/48907/wolverine_the_x-men_2014_12",
+      "seriesId": 18406,
+      "seriesName": "Wolverine & the X-Men (2014)",
+      "onSale": "2014-11-26T00:00:00+0000",
+      "mu": "2015-05-25T00:00:00+0000",
+      "digitalId": 35375,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/546e4fd09d3aa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mahmud Asrar",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Latour",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51143,
+      "title": "Deadpool (2012) #38",
+      "number": "38",
+      "url": "https://www.marvel.com/comics/issue/51143/deadpool_2012_38",
+      "seriesId": 16542,
+      "seriesName": "Deadpool (2012 - 2015)",
+      "onSale": "2014-12-03T00:00:00+0000",
+      "mu": "2015-06-01T00:00:00+0000",
+      "digitalId": 35827,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/547cb1c81d06f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mark Brooks",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Posehn",
+          "role": "writer"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50606,
+      "title": "Avengers & X-Men: Axis (2014) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/50606/avengers_x-men_axis_2014_7",
+      "seriesId": 18904,
+      "seriesName": "Avengers & X-Men: Axis (2014)",
+      "onSale": "2014-12-10T00:00:00+0000",
+      "mu": "2015-06-03T16:35:39+0000",
+      "digitalId": 35744,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/548217c71ab4a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 50607,
+      "title": "Avengers & X-Men: Axis (2014) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/50607/avengers_x-men_axis_2014_8",
+      "seriesId": 18904,
+      "seriesName": "Avengers & X-Men: Axis (2014)",
+      "onSale": "2014-12-17T00:00:00+0000",
+      "mu": "2015-06-15T00:00:00+0000",
+      "digitalId": 35745,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/548f0b4a7949c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51168,
+      "title": "Avengers & X-Men: Axis (2014) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/51168/avengers_x-men_axis_2014_9",
+      "seriesId": 18904,
+      "seriesName": "Avengers & X-Men: Axis (2014)",
+      "onSale": "2014-12-24T00:00:00+0000",
+      "mu": "2015-06-22T00:00:00+0000",
+      "digitalId": 35871,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/50/54982e9f94986",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Rick Remender",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51159,
+      "title": "Deadpool (2012) #39",
+      "number": "39",
+      "url": "https://www.marvel.com/comics/issue/51159/deadpool_2012_39",
+      "seriesId": 16542,
+      "seriesName": "Deadpool (2012 - 2015)",
+      "onSale": "2014-12-24T00:00:00+0000",
+      "mu": "2015-06-29T00:00:00+0000",
+      "digitalId": 35857,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/59764eb80b7c3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mark Brooks",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Hawthorne",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Posehn",
+          "role": "writer"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 51170,
+      "title": "Loki: Agent of Asgard (2014) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/51170/loki_agent_of_asgard_2014_9",
+      "seriesId": 18340,
+      "seriesName": "Loki: Agent of Asgard (2014 - 2015)",
+      "onSale": "2014-12-24T00:00:00+0000",
+      "mu": "2015-06-29T00:00:00+0000",
+      "digitalId": 35869,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/03/54982cb083551",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": []
+    },
+    {
+      "issueId": 51173,
+      "title": "Nova (2013) #25",
+      "number": "25",
+      "url": "https://www.marvel.com/comics/issue/51173/nova_2013_25",
+      "seriesId": 16411,
+      "seriesName": "Nova (2013 - 2015)",
+      "onSale": "2014-12-24T00:00:00+0000",
+      "mu": "2015-06-29T00:00:00+0000",
+      "digitalId": 35864,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/03/549829c17335b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Pallot",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Baldeon",
+          "role": "penciler"
+        },
+        {
+          "name": "Zachary Montoya",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

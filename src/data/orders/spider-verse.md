@@ -1,0 +1,42 @@
+# Spider-Verse: Issue-by-Issue Reading Checklist
+
+Generated for this project by scripts/author-cbh-packet.mjs from the independently reviewed spider-verse issue mapping.
+The mapping transcribes only issue-bearing references from Comic Book Herald's exact guide, expands its ranges, and preserves its source order.
+No source commentary or images are copied. Issue identities, titles, and exact links come from Marvel metadata after the packet resolution and overlap gates passed.
+See [the data provenance record](../../../docs/DATA_PROVENANCE.md) for the permission boundary and review method.
+
+- [ ] [The Amazing Spider-Man (2014) #4](https://www.marvel.com/comics/issue/45803/the_amazing_spider-man_2014_4)
+- [ ] [The Amazing Spider-Man (2014) #5](https://www.marvel.com/comics/issue/45804/the_amazing_spider-man_2014_5)
+- [ ] [The Amazing Spider-Man (2014) #6](https://www.marvel.com/comics/issue/45805/the_amazing_spider-man_2014_6)
+- [ ] [Superior Spider-Man (2013) #32](https://www.marvel.com/comics/issue/50924/superior_spider-man_2013_32)
+- [ ] [Edge of Spider-Verse (2014) #1](https://www.marvel.com/comics/issue/50954/edge_of_spider-verse_2014_1)
+- [ ] [Superior Spider-Man (2013) #33](https://www.marvel.com/comics/issue/50960/superior_spider-man_2013_33)
+- [ ] [Edge of Spider-Verse (2014) #2](https://www.marvel.com/comics/issue/50955/edge_of_spider-verse_2014_2)
+- [ ] [Edge of Spider-Verse (2014) #3](https://www.marvel.com/comics/issue/50956/edge_of_spider-verse_2014_3)
+- [ ] [Edge of Spider-Verse (2014) #4](https://www.marvel.com/comics/issue/50962/edge_of_spider-verse_2014_4)
+- [ ] [The Amazing Spider-Man (2014) #7](https://www.marvel.com/comics/issue/45806/the_amazing_spider-man_2014_7)
+- [ ] [Edge of Spider-Verse (2014) #5](https://www.marvel.com/comics/issue/50963/edge_of_spider-verse_2014_5)
+- [ ] [Spider-Man 2099 (2014) #5](https://www.marvel.com/comics/issue/50545/spider-man_2099_2014_5)
+- [ ] [The Amazing Spider-Man (2014) #8](https://www.marvel.com/comics/issue/45807/the_amazing_spider-man_2014_8)
+- [ ] [The Amazing Spider-Man (2014) #9](https://www.marvel.com/comics/issue/45808/the_amazing_spider-man_2014_9)
+- [ ] [Spider-Verse (2014) #1](https://www.marvel.com/comics/issue/50554/spider-verse_2014_1)
+- [ ] [Spider-Verse Team-Up (2014) #1](https://www.marvel.com/comics/issue/50555/spider-verse_team-up_2014_1)
+- [ ] [The Amazing Spider-Man (2014) #10](https://www.marvel.com/comics/issue/45809/the_amazing_spider-man_2014_10)
+- [ ] [Scarlet Spiders (2014) #1](https://www.marvel.com/comics/issue/50537/scarlet_spiders_2014_1)
+- [ ] [Spider-Woman (2014) #1](https://www.marvel.com/comics/issue/50561/spider-woman_2014_1)
+- [ ] [Spider-Man 2099 (2014) #6](https://www.marvel.com/comics/issue/50546/spider-man_2099_2014_6)
+- [ ] [The Amazing Spider-Man (2014) #11](https://www.marvel.com/comics/issue/45810/the_amazing_spider-man_2014_11)
+- [ ] [Spider-Verse Team-Up (2014) #2](https://www.marvel.com/comics/issue/50556/spider-verse_team-up_2014_2)
+- [ ] [Scarlet Spiders (2014) #2](https://www.marvel.com/comics/issue/50538/scarlet_spiders_2014_2)
+- [ ] [Spider-Woman (2014) #2](https://www.marvel.com/comics/issue/50562/spider-woman_2014_2)
+- [ ] [Spider-Verse (2014) #2](https://www.marvel.com/comics/issue/53336/spider-verse_2014_2)
+- [ ] [The Amazing Spider-Man (2014) #12](https://www.marvel.com/comics/issue/45811/the_amazing_spider-man_2014_12)
+- [ ] [Spider-Man 2099 (2014) #7](https://www.marvel.com/comics/issue/50547/spider-man_2099_2014_7)
+- [ ] [Scarlet Spiders (2014) #3](https://www.marvel.com/comics/issue/50539/scarlet_spiders_2014_3)
+- [ ] [The Amazing Spider-Man (2014) #13](https://www.marvel.com/comics/issue/50350/the_amazing_spider-man_2014_13)
+- [ ] [Spider-Woman (2014) #3](https://www.marvel.com/comics/issue/49504/spider-woman_2014_3)
+- [ ] [Spider-Verse Team-Up (2014) #3](https://www.marvel.com/comics/issue/50557/spider-verse_team-up_2014_3)
+- [ ] [Spider-Man 2099 (2014) #8](https://www.marvel.com/comics/issue/50548/spider-man_2099_2014_8)
+- [ ] [The Amazing Spider-Man (2014) #14](https://www.marvel.com/comics/issue/51320/the_amazing_spider-man_2014_14)
+- [ ] [Spider-Woman (2014) #4](https://www.marvel.com/comics/issue/49511/spider-woman_2014_4)
+- [ ] [The Amazing Spider-Man (2014) #15](https://www.marvel.com/comics/issue/51324/the_amazing_spider-man_2014_15)

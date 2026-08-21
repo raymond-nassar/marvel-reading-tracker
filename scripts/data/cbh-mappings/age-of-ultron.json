@@ -1,0 +1,948 @@
+{
+  "id": "age-of-ultron",
+  "inventoryId": "age-of-ultron",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/age-of-ultron-reading-list/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 25,
+  "excludedSourceReferences": [],
+  "reviewStatus": "pending-independent-review",
+  "proposedManifest": {
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "variant": null,
+    "timeline": 2013,
+    "coverSourceReference": "Age of Ultron #1"
+  },
+  "candidateMetadata": [
+    {
+      "id": 39852,
+      "title": "Avengers",
+      "issueTitle": "Avengers (2010) #12.1",
+      "seriesTitle": "Avengers",
+      "apiSeriesName": "Avengers (2010 - 2012)",
+      "seriesId": 9085,
+      "issueNumber": "12.1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39852/avengers_2010_12.1",
+      "onSaleDate": "2011-04-27T00:00:00+0000"
+    },
+    {
+      "id": 45878,
+      "title": "Avengers Assemble",
+      "issueTitle": "Avengers Assemble (2012) #14",
+      "seriesTitle": "Avengers Assemble",
+      "apiSeriesName": "Avengers Assemble (2012 - 2014)",
+      "seriesId": 15373,
+      "issueNumber": "14",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45878/avengers_assemble_2012_14",
+      "onSaleDate": "2013-04-10T00:00:00+0000"
+    },
+    {
+      "id": 47001,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #1",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "1",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47001/age_of_ultron_2013_1",
+      "onSaleDate": "2013-03-06T00:00:00+0000"
+    },
+    {
+      "id": 47003,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #2",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "2",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47003/age_of_ultron_2013_2",
+      "onSaleDate": "2013-03-13T00:00:00+0000"
+    },
+    {
+      "id": 47073,
+      "title": "Fantastic Four",
+      "issueTitle": "Fantastic Four (2012) #5",
+      "seriesTitle": "Fantastic Four",
+      "apiSeriesName": "Fantastic Four (2012 - 2014)",
+      "seriesId": 16557,
+      "issueNumber": "5",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47073/fantastic_four_2012_5",
+      "onSaleDate": "2013-03-27T00:00:00+0000"
+    },
+    {
+      "id": 46478,
+      "title": "Superior Spider-Man",
+      "issueTitle": "Superior Spider-Man (2013) #6",
+      "seriesTitle": "Superior Spider-Man",
+      "apiSeriesName": "Superior Spider-Man (2013 - 2014)",
+      "seriesId": 17554,
+      "issueNumber": "6",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/46478/superior_spider-man_2013_6",
+      "onSaleDate": "2013-03-20T00:00:00+0000"
+    },
+    {
+      "id": 37405,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #3",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "3",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37405/age_of_ultron_2013_3",
+      "onSaleDate": "2013-03-27T00:00:00+0000"
+    },
+    {
+      "id": 37406,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #4",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "4",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37406/age_of_ultron_2013_4",
+      "onSaleDate": "2013-04-03T00:00:00+0000"
+    },
+    {
+      "id": 47394,
+      "title": "Ultron",
+      "issueTitle": "Ultron (2013) #1",
+      "seriesTitle": "Ultron",
+      "apiSeriesName": "Ultron (2013)",
+      "seriesId": 17900,
+      "issueNumber": "1",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47394/ultron_2013_1",
+      "onSaleDate": "2013-04-10T00:00:00+0000"
+    },
+    {
+      "id": 37407,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #5",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "5",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37407/age_of_ultron_2013_5",
+      "onSaleDate": "2013-04-10T00:00:00+0000"
+    },
+    {
+      "id": 43277,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #27",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "27",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43277/wolverine_the_x-men_2011_27",
+      "onSaleDate": "2013-03-27T00:00:00+0000"
+    },
+    {
+      "id": 45904,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #6",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "6",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45904/age_of_ultron_2013_6",
+      "onSaleDate": "2013-04-17T00:00:00+0000"
+    },
+    {
+      "id": 45905,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #7",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "7",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45905/age_of_ultron_2013_7",
+      "onSaleDate": "2013-05-01T00:00:00+0000"
+    },
+    {
+      "id": 45879,
+      "title": "Avengers Assemble",
+      "issueTitle": "Avengers Assemble (2012) #15",
+      "seriesTitle": "Avengers Assemble",
+      "apiSeriesName": "Avengers Assemble (2012 - 2014)",
+      "seriesId": 15373,
+      "issueNumber": "15",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45879/avengers_assemble_2012_15",
+      "onSaleDate": "2013-05-08T00:00:00+0000"
+    },
+    {
+      "id": 45906,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #8",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "8",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45906/age_of_ultron_2013_8",
+      "onSaleDate": "2013-05-15T00:00:00+0000"
+    },
+    {
+      "id": 43332,
+      "title": "Uncanny Avengers",
+      "issueTitle": "Uncanny Avengers (2012) #8",
+      "seriesTitle": "Uncanny Avengers",
+      "apiSeriesName": "Uncanny Avengers (2012 - 2014)",
+      "seriesId": 16414,
+      "issueNumber": "8",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43332/uncanny_avengers_2012_8",
+      "onSaleDate": "2013-05-08T00:00:00+0000"
+    },
+    {
+      "id": 46072,
+      "title": "Fearless Defenders",
+      "issueTitle": "Fearless Defenders (2013) #4",
+      "seriesTitle": "Fearless Defenders",
+      "apiSeriesName": "Fearless Defenders (2013)",
+      "seriesId": 17370,
+      "issueNumber": "4",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/46072/fearless_defenders_2013_4",
+      "onSaleDate": "2013-05-08T00:00:00+0000"
+    },
+    {
+      "id": 45907,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #9",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "9",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45907/age_of_ultron_2013_9",
+      "onSaleDate": "2013-06-05T00:00:00+0000"
+    },
+    {
+      "id": 45908,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #10",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "10",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45908/age_of_ultron_2013_10",
+      "onSaleDate": "2013-06-19T00:00:00+0000"
+    },
+    {
+      "id": 47072,
+      "title": "Age of Ultron",
+      "issueTitle": "Age of Ultron (2013) #10",
+      "seriesTitle": "Age of Ultron",
+      "apiSeriesName": "Age of Ultron (2013)",
+      "seriesId": 17318,
+      "issueNumber": "10",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47072/age_of_ultron_2013_10",
+      "onSaleDate": "2013-06-26T00:00:00+0000"
+    },
+    {
+      "id": 47576,
+      "title": "Avengers a.I.",
+      "issueTitle": "Avengers a.I. (2013) #1",
+      "seriesTitle": "Avengers a.I.",
+      "apiSeriesName": "Avengers a.I. (2013 - 2014)",
+      "seriesId": 17954,
+      "issueNumber": "1",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47576/avengers_ai_2013_1",
+      "onSaleDate": "2013-07-03T00:00:00+0000"
+    },
+    {
+      "id": 48172,
+      "title": "Hunger",
+      "issueTitle": "Hunger (2013) #1",
+      "seriesTitle": "Hunger",
+      "apiSeriesName": "Hunger (2013)",
+      "seriesId": 18248,
+      "issueNumber": "1",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48172/hunger_2013_1",
+      "onSaleDate": "2013-07-24T00:00:00+0000"
+    },
+    {
+      "id": 48174,
+      "title": "Hunger",
+      "issueTitle": "Hunger (2013) #2",
+      "seriesTitle": "Hunger",
+      "apiSeriesName": "Hunger (2013)",
+      "seriesId": 18248,
+      "issueNumber": "2",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48174/hunger_2013_2",
+      "onSaleDate": "2013-08-07T00:00:00+0000"
+    },
+    {
+      "id": 48175,
+      "title": "Hunger",
+      "issueTitle": "Hunger (2013) #3",
+      "seriesTitle": "Hunger",
+      "apiSeriesName": "Hunger (2013)",
+      "seriesId": 18248,
+      "issueNumber": "3",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48175/hunger_2013_3",
+      "onSaleDate": "2013-10-02T00:00:00+0000"
+    },
+    {
+      "id": 48176,
+      "title": "Hunger",
+      "issueTitle": "Hunger (2013) #4",
+      "seriesTitle": "Hunger",
+      "apiSeriesName": "Hunger (2013)",
+      "seriesId": 18248,
+      "issueNumber": "4",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48176/hunger_2013_4",
+      "onSaleDate": "2013-10-16T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Avengers #12.1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers",
+      "seriesYear": 2010,
+      "issueNumber": "12.1",
+      "seriesId": 9085,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39852"
+      ],
+      "selectedIssueId": 39852,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39852/avengers_2010_12.1",
+      "resolvedIssueTitle": "Avengers (2010) #12.1",
+      "note": "Marvel series 9085 (Avengers (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39852
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Avengers Assemble #14AU",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Assemble",
+      "seriesYear": 2012,
+      "issueNumber": "14",
+      "seriesId": 15373,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45878"
+      ],
+      "selectedIssueId": 45878,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45878/avengers_assemble_2012_14",
+      "resolvedIssueTitle": "Avengers Assemble (2012) #14",
+      "note": "Marvel series 15373 (Avengers Assemble (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45878
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Age of Ultron #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "1",
+      "seriesId": 17318,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47001"
+      ],
+      "selectedIssueId": 47001,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47001/age_of_ultron_2013_1",
+      "resolvedIssueTitle": "Age of Ultron (2013) #1",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47001
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Age of Ultron #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "2",
+      "seriesId": 17318,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47003"
+      ],
+      "selectedIssueId": 47003,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47003/age_of_ultron_2013_2",
+      "resolvedIssueTitle": "Age of Ultron (2013) #2",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47003
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Fantastic Four #5AU",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Fantastic Four",
+      "seriesYear": 2012,
+      "issueNumber": "5",
+      "seriesId": 16557,
+      "candidateIssueId": 47073,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47073"
+      ],
+      "selectedIssueId": 47073,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47073/fantastic_four_2012_5",
+      "resolvedIssueTitle": "Fantastic Four (2012) #5",
+      "note": "Marvel series 16557 (Fantastic Four (2012 - 2014)) is the reviewed metadata series for this source reference. Issue 47073 is the candidate whose metadata description identifies it as the Age of Ultron tie-in.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47073
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Superior Spider-Man #6AU",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Superior Spider-Man",
+      "seriesYear": 2013,
+      "issueNumber": "6",
+      "seriesId": 17554,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "46478"
+      ],
+      "selectedIssueId": 46478,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/46478/superior_spider-man_2013_6",
+      "resolvedIssueTitle": "Superior Spider-Man (2013) #6",
+      "note": "Marvel series 17554 (Superior Spider-Man (2013 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        46478
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Age of Ultron #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "3",
+      "seriesId": 17318,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37405"
+      ],
+      "selectedIssueId": 37405,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37405/age_of_ultron_2013_3",
+      "resolvedIssueTitle": "Age of Ultron (2013) #3",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37405
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Age of Ultron #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "4",
+      "seriesId": 17318,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37406"
+      ],
+      "selectedIssueId": 37406,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37406/age_of_ultron_2013_4",
+      "resolvedIssueTitle": "Age of Ultron (2013) #4",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37406
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Ultron #1AU",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "1",
+      "seriesId": 17900,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47394"
+      ],
+      "selectedIssueId": 47394,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47394/ultron_2013_1",
+      "resolvedIssueTitle": "Ultron (2013) #1",
+      "note": "Marvel series 17900 (Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47394
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Age of Ultron #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "5",
+      "seriesId": 17318,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37407"
+      ],
+      "selectedIssueId": 37407,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37407/age_of_ultron_2013_5",
+      "resolvedIssueTitle": "Age of Ultron (2013) #5",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37407
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Wolverine & the X-Men #27AU",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "27",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43277"
+      ],
+      "selectedIssueId": 43277,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43277/wolverine_the_x-men_2011_27",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #27",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43277
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Age of Ultron #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "6",
+      "seriesId": 17318,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45904"
+      ],
+      "selectedIssueId": 45904,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45904/age_of_ultron_2013_6",
+      "resolvedIssueTitle": "Age of Ultron (2013) #6",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45904
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Age of Ultron #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "7",
+      "seriesId": 17318,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45905"
+      ],
+      "selectedIssueId": 45905,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45905/age_of_ultron_2013_7",
+      "resolvedIssueTitle": "Age of Ultron (2013) #7",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45905
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Avengers Assemble #15AU",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Assemble",
+      "seriesYear": 2012,
+      "issueNumber": "15",
+      "seriesId": 15373,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45879"
+      ],
+      "selectedIssueId": 45879,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45879/avengers_assemble_2012_15",
+      "resolvedIssueTitle": "Avengers Assemble (2012) #15",
+      "note": "Marvel series 15373 (Avengers Assemble (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45879
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Age of Ultron #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "8",
+      "seriesId": 17318,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45906"
+      ],
+      "selectedIssueId": 45906,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45906/age_of_ultron_2013_8",
+      "resolvedIssueTitle": "Age of Ultron (2013) #8",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45906
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Uncanny Avengers #8AU",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny Avengers",
+      "seriesYear": 2012,
+      "issueNumber": "8",
+      "seriesId": 16414,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43332"
+      ],
+      "selectedIssueId": 43332,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43332/uncanny_avengers_2012_8",
+      "resolvedIssueTitle": "Uncanny Avengers (2012) #8",
+      "note": "Marvel series 16414 (Uncanny Avengers (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43332
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Fearless Defenders #4AU",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Fearless Defenders",
+      "seriesYear": 2013,
+      "issueNumber": "4",
+      "seriesId": 17370,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "46072"
+      ],
+      "selectedIssueId": 46072,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/46072/fearless_defenders_2013_4",
+      "resolvedIssueTitle": "Fearless Defenders (2013) #4",
+      "note": "Marvel series 17370 (Fearless Defenders (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        46072
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Age of Ultron #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "9",
+      "seriesId": 17318,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45907"
+      ],
+      "selectedIssueId": 45907,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45907/age_of_ultron_2013_9",
+      "resolvedIssueTitle": "Age of Ultron (2013) #9",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45907
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Age of Ultron #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "10",
+      "seriesId": 17318,
+      "candidateIssueId": 45908,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45908"
+      ],
+      "selectedIssueId": 45908,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45908/age_of_ultron_2013_10",
+      "resolvedIssueTitle": "Age of Ultron (2013) #10",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference. Issue 45908 is the main chapter released one week before the separately listed epilogue.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45908
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Age of Ultron: Epilogue #10AI",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Ultron",
+      "seriesYear": 2013,
+      "issueNumber": "10",
+      "seriesId": 17318,
+      "candidateIssueId": 47072,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47072"
+      ],
+      "selectedIssueId": 47072,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47072/age_of_ultron_2013_10",
+      "resolvedIssueTitle": "Age of Ultron (2013) #10",
+      "note": "Marvel series 17318 (Age of Ultron (2013)) is the reviewed metadata series for this source reference. Issue 47072 is the later epilogue that Marvel metadata also numbers as issue 10.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47072
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Avengers A.I. #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers A.I.",
+      "seriesYear": 2013,
+      "issueNumber": "1",
+      "seriesId": 17954,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47576"
+      ],
+      "selectedIssueId": 47576,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47576/avengers_ai_2013_1",
+      "resolvedIssueTitle": "Avengers a.I. (2013) #1",
+      "note": "Marvel series 17954 (Avengers a.I. (2013 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47576
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Hunger #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Hunger",
+      "seriesYear": 2013,
+      "issueNumber": "1",
+      "seriesId": 18248,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48172"
+      ],
+      "selectedIssueId": 48172,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48172/hunger_2013_1",
+      "resolvedIssueTitle": "Hunger (2013) #1",
+      "note": "Marvel series 18248 (Hunger (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48172
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Hunger #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Hunger",
+      "seriesYear": 2013,
+      "issueNumber": "2",
+      "seriesId": 18248,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48174"
+      ],
+      "selectedIssueId": 48174,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48174/hunger_2013_2",
+      "resolvedIssueTitle": "Hunger (2013) #2",
+      "note": "Marvel series 18248 (Hunger (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48174
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Hunger #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Hunger",
+      "seriesYear": 2013,
+      "issueNumber": "3",
+      "seriesId": 18248,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48175"
+      ],
+      "selectedIssueId": 48175,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48175/hunger_2013_3",
+      "resolvedIssueTitle": "Hunger (2013) #3",
+      "note": "Marvel series 18248 (Hunger (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48175
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Hunger #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Hunger",
+      "seriesYear": 2013,
+      "issueNumber": "4",
+      "seriesId": 18248,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48176"
+      ],
+      "selectedIssueId": 48176,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48176/hunger_2013_4",
+      "resolvedIssueTitle": "Hunger (2013) #4",
+      "note": "Marvel series 18248 (Hunger (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48176
+      ]
+    }
+  ]
+}

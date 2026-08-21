@@ -9,7 +9,7 @@ built as well as what has not. Of the 28 stories originally written here, 24 shi
 in part, 1 was never started, 1 is ruled out by a product constraint, and 1 is dropped by a product
 decision. The new items come from that same pass and from the UX study in `docs/UX_STUDY.md`.
 
-A hundred and twenty-seven items have since been delivered and are marked `Shipped` in the table below: BL-007,
+A hundred and twenty-eight items have since been delivered and are marked `Shipped` in the table below: BL-007,
 BL-014, BL-017, BL-026, BL-027, BL-029, BL-030, BL-031, BL-032, BL-033, BL-034, BL-035, BL-036,
 BL-037, BL-038, BL-039, BL-040, BL-041, BL-043, BL-044, BL-045, BL-046, BL-047, BL-048, BL-049,
 BL-050, BL-051, BL-052, BL-053, BL-054, BL-055, BL-056, BL-057, BL-058, BL-059, BL-061, BL-062,
@@ -20,7 +20,7 @@ BL-103, BL-104, BL-105, BL-106, BL-107, BL-108, BL-109, BL-110, BL-111, BL-112, 
 BL-115, BL-116, BL-117, BL-118, BL-121, BL-122, BL-123, BL-124, BL-125, BL-126, BL-127, BL-128,
 BL-129, BL-130, BL-131, BL-132, BL-133, BL-134, BL-139, BL-140, BL-141, BL-142, BL-143, BL-144,
 BL-145, BL-146, BL-147, BL-149, BL-150, BL-152, BL-153, BL-154, BL-157, BL-158, BL-160, BL-161, BL-163,
-BL-164, BL-165, BL-166 and BL-167.
+BL-164, BL-165, BL-166, BL-167 and BL-169.
 Their detail blocks record what changed, what was measured, and which tasks were deliberately left
 open. BL-049 and BL-103 are the two whose delivery changed no code at all: the first was a decision,
 measured in full and closed without touching the colours, and the second was three operations on the
@@ -245,7 +245,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-149 | Read the Marvel Unlimited book id off an address the reader pastes | Story | EP-03 | Leaves alone | 8 | 8 | 3 | 1 | 19.0 | none | Measured | Shipped | src/js/reader.js:50-55 |
 | BL-161 | Redraw the app icon so it stops echoing Marvel's trade dress | Debt | EP-12 | Follows BL-100 | 5 | 5 | 8 | 1 | 18.0 | none | Measured | Shipped | src/index.html:13 |
 | BL-164 | Carry a rename without breaking the download link installed copies use | Enabler | EP-12 | Follows BL-162 | 5 | 5 | 8 | 1 | 18.0 | none | Measured | Shipped | src/js/lib/updateCheck.js:4 |
-| BL-128 | Correct the provenance record's description count and record its placeholder shape | Debt | EP-12 | Extends BL-099 | 5 | 5 | 3 | 1 | 13.0 | none | Measured | Shipped | docs/DATA_PROVENANCE.md:88-97 |
+| BL-128 | Correct the provenance record's description count and record its placeholder shape | Debt | EP-12 | Extends BL-099 | 5 | 5 | 3 | 1 | 13.0 | none | Measured | Shipped | docs/DATA_PROVENANCE.md:90-109 |
 | BL-166 | Move the app's identity off Marvel's red and onto its own purple | Debt | EP-12 | Follows BL-161 | 8 | 8 | 8 | 2 | 12.0 | none | Measured | Shipped | src/styles.css:42 |
 | BL-163 | Say where the metadata came from, instead of borrowing Marvel's API attribution | Debt | EP-12 | Extends BL-099 | 3 | 3 | 5 | 1 | 11.0 | none | Measured | Shipped | src/index.html:279 |
 | BL-140 | Give the tracker a file a non-engineer can double-click to start it | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 1 | 10.0 | none | Observed | Shipped | absent: any way to start the app that is not a terminal command, read of the README's step 2 and a listing of the repository root |
@@ -275,6 +275,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-048 | Correct the availability comment that names four states | Debt | EP-05 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | src/js/lib/availability.js:10 |
 | BL-040 | Add a linter and formatter | Chore | EP-12 | Leaves alone | 2 | 1 | 3 | 1 | 6.0 | none | Observed | Shipped | absent: eslint or prettier config or lint script, read of package.json:8-17 and glob of repository root |
 | BL-099 | Clarify the license and provenance boundary for committed data | Debt | EP-12 | Leaves alone | 8 | 8 | 13 | 5 | 5.8 | none | Measured | Shipped | src/data/curated-lists.json:82-123 |
+| BL-169 | Publish the first guarded modern Marvel event batch | Feature | EP-03 | Follows BL-165 | 8 | 8 | 13 | 5 | 5.8 | none | Measured | Shipped | absent: any bundled order produced from the maintained modern continuity intake before this batch |
 | BL-087 | State the network privacy boundary where the promise appears | Debt | EP-05 | Leaves alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/index.html:563 |
 | BL-091 | Let catalog descriptions survive the WCAG text-spacing override | Defect | EP-07 | Leaves BL-028 alone | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Dropped | src/styles.css:952-955 |
 | BL-101 | Withdraw the undo-restore offer when erasing everything | Defect | EP-06 | Follows BL-083 | 5 | 3 | 3 | 2 | 5.5 | none | Measured | Shipped | src/js/main.js:4389-4426 |
@@ -288,14 +289,14 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-104 | Let the anchors gate see a citation of a file with no extension | Debt | EP-12 | Extends BL-079 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:32 |
 | BL-105 | Derive the roadmap paragraph's status split in the counts gate | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-counts.mjs:360-435 |
 | BL-106 | Credit Comic Book Herald where a new reader would look for it | Chore | EP-12 | Follows BL-099 | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | absent: any mention of Comic Book Herald in README.md, search of every tracked file on main for the name, which ten of them carry |
-| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4012-4015 |
+| BL-107 | Date or re-derive the repeat figures BL-058 states as current | Debt | EP-12 | Extends BL-059 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:4012-4018 |
 | BL-111 | Check the metadata source for what it covers, not only what it returns | Enabler | EP-05 | Extends BL-021 | 1 | 1 | 3 | 1 | 5.0 | none | Measured | Shipped | scripts/check-contract.mjs:88-139 |
 | BL-141 | Let the installed window open when the server is not running | Story | EP-10 | Extends BL-139 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any service worker, listing of src/ and a launch of the installed address in Edge with the server stopped |
 | BL-143 | Shelve the catalog in reading order rather than in the order the manifest happens to list | Story | EP-01 | Extends BL-142 | 5 | 2 | 3 | 2 | 5.0 | none | Measured | Shipped | absent: any field on a manifest entry saying when its reading starts, and any sort between parsing the catalog and rendering it |
 | BL-154 | Shelve the events apart from the character runs, and say why the runs sit last | Story | EP-01 | Follows BL-152 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Shipped | `src/js/lib/catalog.js:593-596` |
 | BL-156 | Make the Start here badge carry more weight than a colour change | Story | EP-01 | Follows BL-154 | 5 | 3 | 2 | 2 | 5.0 | none | Measured | Ready | `src/styles.css:392-394` |
 | BL-115 | Complete the ESLint 10 upgrade the grouped proposal could not | Chore | EP-12 | Extends BL-040 | 2 | 5 | 3 | 2 | 5.0 | none | Measured | Shipped | eslint.config.mjs:13 |
-| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1504-1505 |
+| BL-121 | Point the three erase-and-restore citations at three different lines | Debt | EP-12 | Extends BL-101 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | PRODUCT_BACKLOG.md:1505-1506 |
 | BL-122 | Catch a sentence that answers a list of things with one citation twice | Debt | EP-12 | Extends BL-121 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | scripts/check-anchors.mjs:511-544 |
 | BL-123 | Re-derive the appendix claim that rank and score disagree in four places | Debt | EP-12 | Extends BL-056 | 2 | 1 | 2 | 1 | 5.0 | none | Measured | Shipped | absent: the four-place claim and the eight-shipped-rows claim, read of the opening of Appendix B |
 | BL-043 | Give releases a version, a tag and a changelog | Chore | EP-12 | Leaves alone | 2 | 1 | 2 | 1 | 5.0 | none | Observed | Shipped | package.json:3 |
@@ -329,7 +330,7 @@ existed. Each shipped item's detail block below says what changed and how it was
 | BL-146 | Put a way out of the capped landing grid where the reader runs out of it | Defect | EP-10 | Follows BL-145 | 3 | 1 | 2 | 2 | 3.0 | none | Measured | Shipped | `src/index.html:278`, `src/js/main.js:1447-1454` |
 | BL-147 | Stop the startup failure messages naming a tool the download does not carry | Defect | EP-10 | Follows BL-145 | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | `server.mjs:223-235`, `test/startup-messages.test.js:23-27` |
 | BL-150 | Fill in what the metadata snapshot cannot, from the one catalogue a browser can reach | Feature | EP-03 | Follows BL-149 | 5 | 5 | 5 | 5 | 3.0 | none | Measured | Shipped | `src/js/lib/wikitext.js:38-42`, `src/js/main.js:3599-3611`, `absent: any record newer than 2025-10-29 upstream, measured by asking the metadata service for 2026 and being told the total is zero` |
-| BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | `scripts/browser-check.mjs:1-7`, `package.json:25-26` |
+| BL-093 | Make real-browser regression evidence reproducible | Enabler | EP-12 | Extends BL-041 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | `scripts/browser-check.mjs:1-7`, `package.json:26-27` |
 | BL-109 | Tell an issue upstream refused apart from one nobody has asked about | Defect | EP-05 | Extends BL-018 | 5 | 3 | 8 | 5 | 3.2 | none | Measured | Shipped | src/js/lib/model.js:215 |
 | BL-045 | Move the API base URL check into the client that uses it | Debt | EP-12 | Leaves alone | 2 | 1 | 3 | 2 | 3.0 | none | Observed | Shipped | src/js/api.js:52-67 |
 | BL-063 | Extend the Constraint 11 check past JavaScript to the page and its styling | Chore | EP-12 | Leaves alone | 2 | 1 | 1 | 2 | 2.0 | none | Measured | Shipped | test/shipped-copy.test.js:62-78 |
@@ -2529,7 +2530,7 @@ subset of the places an anchor can be written. `scripts/check-anchors.mjs` finge
 lines themselves rather than their numbers, so a correct re-aim preserves the fingerprint while
 drift breaks it, and the build fails in the commit that moves the code rather than in a sweep months
 later. It runs in the lint job at `.github/workflows/ci.yml:154-156` and locally as `npm run anchors`,
-wired at `package.json:14-15`.
+wired at `package.json:17-18`.
 
 Which half of it depends on which is the load-bearing decision. Listing the shapes an anchor can
 appear in would repeat this thread's defect with a longer list, because an enumeration is something
@@ -2728,7 +2729,7 @@ task text is left as it was written, and corrected here, because a task rewritte
 was found is no longer evidence of what was asked.
 
 So the work was done against the measurement rather than the wording. That 138-word paragraph is
-now three, at `README.md:738-749`, and the four sentences over 40 words are now none: the longest
+now three, at `README.md:745-762`, and the four sentences over 40 words are now none: the longest
 is 36 and the mean is 17.3. The audit paragraph was the one worth splitting on its own merits, not
 just its length, because it was carrying three separate arguments at once: where the catalogue
 comes from, why it is read out of `HEAD`, and what a shortcut nobody can check would cost.
@@ -3182,7 +3183,7 @@ the defect landed on the paragraph least able to afford it.
 The first copy is the one the prose reads with, which is settled rather than assumed: the line above
 it ends on the bare word "The", so the sentence completes into the first copy and the second begins
 mid-clause after a full stop. The second copy was deleted; the retained text is at
-`PRODUCT_BACKLOG.md:2876-2879`.
+`PRODUCT_BACKLOG.md:2873-2880`.
 
 The second task was the substance. A scan of every tracked Markdown file, at every block length from
 eight lines down to one, found exactly one repeat, and it is this one. That result is what made a
@@ -4719,7 +4720,7 @@ Constraint gate: checked 1 to 11, none breached.
 Filed out of the BL-014 review. `src/js/main.js` was stated as 1,566 lines in three places and was
 2,563 when this item measured it, so the file had grown by 997 lines, 64 per cent, while every
 statement of its size stood
-still. The maintainability gap at `PRODUCT_BACKLOG.md:11822-11824` uses that size as the argument for
+still. The maintainability gap at `PRODUCT_BACKLOG.md:11858-11870` uses that size as the argument for
 the gap, which made the understated figure an understatement of the debt.
 
 The obvious fix would have been to overwrite 1,566 with 2,563 everywhere. That is wrong here,
@@ -4729,11 +4730,11 @@ figure as audited" at `PRODUCT_BACKLOG.md:205-206`. The clause is quoted only as
 half. The live number beside it moves whenever a test is added, and pinning a copy of it into this
 record would be the same defect in a second place, which is the rule BL-059 later had to state
 outright. Appendix A does the same thing in its own idiom, correcting a miscount inside the
-`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11841-11845`.
+`Resolved:` line rather than editing the bullet it resolves, at `PRODUCT_BACKLOG.md:11879-11883`.
 Overwriting would have destroyed the audit trail these sections exist to keep.
 
 So the audited figures stand and each now carries its drift. Two of the three statements were
-treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11657-11658` describes
+treated as live and one was not. The outcome narrative at `PRODUCT_BACKLOG.md:11690-11695` describes
 the state that motivated OC-3, and the same paragraph says there is no linter
 and no changelog, both of which have since shipped; correcting the number alone would leave a
 coherent snapshot half-updated and half-stale, which is worse than either. It is left as a snapshot,
@@ -4941,7 +4942,7 @@ Shipped. The rule the item asked for is that a figure belongs in a release recor
 property of the change and does not when it is a property of the tree, because only the second kind
 moves without anyone editing the record. Both audited figures are properties of the audit and stay;
 the two current values were properties of the tree and are gone, replaced by a sentence at
-`CHANGELOG.md:3018-3027` that says so and points at the backlog clause instead. That clause was
+`CHANGELOG.md:3035-3045` that says so and points at the backlog clause instead. That clause was
 checked before the entry was allowed to defer to it: `PRODUCT_BACKLOG.md:194-198` and
 `PRODUCT_BACKLOG.md:205-206` do each carry a live value and are marked as needing re-derivation, so
 deferring to them loses nothing a reader could previously find.
@@ -5763,7 +5764,7 @@ Constraint gate: checked 1 to 11, none breached.
 The README says correctly that reading data stays local while metadata and covers are downloaded.
 The app itself says nothing is uploaded. Search text and requested issue identifiers do cross the
 machine boundary, and image hosts receive ordinary requests. Reading progress, notes and identity
-remain local or absent. Evidence: `README.md:108-127`, `src/index.html:560-628`,
+remain local or absent. Evidence: `README.md:117-135`, `src/index.html:560-628`,
 `src/js/api.js:137-149`.
 
 Shipped. Four destinations were enumerated from the code rather than from the copy, because the
@@ -6401,7 +6402,7 @@ Constraint gate: checked 1 to 11, none breached.
 The current lockfile audited with zero known vulnerabilities, but GitHub reported Dependabot alerts
 and secret scanning disabled. No committed update configuration or advisory gate repeats the check.
 Development dependencies execute in CI even though they never reach the browser. Evidence:
-`package.json:29-39`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file inventory`.
+`package.json:37-41`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file inventory`.
 
 Shipped, with the second task deliberately left open. Both halves of the monitoring were off before
 this: asking whether vulnerability alerts were enabled answered 404, and automated security fixes
@@ -6550,7 +6551,7 @@ the figure rather than printing digits: its number words stopped at ninety-nine,
 goes red the moment the document states a figure the words cannot reach. That is the ceiling working
 rather than a ceiling set wrong, so the range was extended and the guard left alone. The band is
 spelled "a hundred and ninety-three" because that is how the backlog already writes a figure of that
-size, at `PRODUCT_BACKLOG.md:2600`, and one of the four tests added to the counts suite pins the
+size, at `PRODUCT_BACKLOG.md:2609`, and one of the four tests added to the counts suite pins the
 spelling to that line. "One
 hundred and ninety-three" is equally correct English, would fail every comparison it was used in,
 and would read as drift in the document rather than in the checker. The new ceiling stops below two
@@ -6885,7 +6886,7 @@ The sixth was in the evidence above rather than in the product. The block claime
 turned exactly one test red, and the two prose assertions in fact shared a single sentence, so
 deleting that sentence turned two red and neither guard was independent of the other. The sentence
 was split in two, which is why the claim about runtime dependencies and the claim about the
-declared dev packages now stand as separate sentences at `SECURITY.md:6-9`; a fourth mutation was
+declared dev packages now stand as separate sentences in `SECURITY.md:5-9`; a fourth mutation was
 added for the second of them, and all four now turn exactly one red, which is what the paragraph
 above records. The seventh was the `CHANGELOG.md` entry announcing a private reporting route as
 shipped fact while the policy and this block both say it cannot be enabled yet. That entry now
@@ -6903,7 +6904,7 @@ Constraint gate: checked 1 to 11, none breached.
 
 The README explains tools and data generation well, but it does not define contribution scope,
 conduct enforcement, support boundaries or maintainer decisions. The detailed internal instructions
-are valuable history and are not a concise public policy. Evidence: `README.md:415-804`,
+are valuable history and are not a concise public policy. Evidence: `README.md:415-822`,
 `absent: CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md and governance file, tracked-file inventory`.
 
 Shipped as four documents, a test that keeps them honest, and one correction to the README that the
@@ -7624,7 +7625,7 @@ project owes it. The wording is the part worth recording, because the first draf
 debt. It said the trade order was compiled from that guide, which is wider than anything committed
 here says: `src/data/orders/new-ultimate-universe-trades.md:3-5` states the sequence and its ids as
 this project's own work and scopes the debt to the division into volumes alone, and
-`docs/DATA_PROVENANCE.md:106` files the order under "Compiled for this project". Review found the
+`docs/DATA_PROVENANCE.md:118-123` files the order under "Compiled for this project". Review found the
 same overclaim in the changelog, where it went further and said the committed record already backed
 it. Both now scope the debt the way the record does.
 
@@ -8302,7 +8303,7 @@ package added here is development tooling that never reaches the browser.
 The grouped dev-tooling proposal had been open and red since it was raised. Its lint job failed at
 `eslint.config.mjs:13`, the line that imports the recommended rule set, with the module not found
 and exit 2. Nothing was wrong with the configuration: ESLint 10 stopped bundling `@eslint/js`, so a
-config that imports it needs it declared. Evidence: `package.json:35-38`, `eslint.config.mjs:13`.
+config that imports it needs it declared. Evidence: `package.json:37-38`, `eslint.config.mjs:13`.
 
 Two things about that fix were assumed and both were wrong, which is the reason this has a record of
 its own rather than a line in a merge. The first is cheap and immediate: the obvious version does not
@@ -8422,7 +8423,7 @@ in silence rather than merged. That is the same fault as the wrapped line above,
 pattern spanning a sentence assumes the punctuation whoever wrote it last happened to use.
 Corrected rather than gated, because two figures of this class already carry a deliberate decision
 not to file, on the ground that a matcher written per sentence costs more than the figure being
-wrong. Evidence: `PRODUCT_BACKLOG.md:4835-4843`.
+wrong. Evidence: `PRODUCT_BACKLOG.md:4844-4850`.
 
 **BL-121: Point the three erase-and-restore citations at three different lines**
 
@@ -8437,7 +8438,7 @@ withdrawn. One sentence names three actions and offers three citations for them,
 three were the same line. Erasing everything, restoring a backup and undoing a restore do each call
 `forgetDeleted()`, at `src/js/main.js:4400`, `src/js/main.js:4324` and `src/js/main.js:4345`
 respectively, but the sentence cited the restore path twice and the erase path not at all. Evidence:
-`PRODUCT_BACKLOG.md:1504-1505`.
+`PRODUCT_BACKLOG.md:1505-1506`.
 
 It was filed rather than fixed there because it belongs to another item's record and that change was
 a behaviour change to the covers switch. It had also been wrong since it was written, so nothing
@@ -8523,7 +8524,7 @@ Not closed by this item: the wider class. A sentence naming three things and off
 is caught only when the two are identical. Offering two citations for three things, or three
 citations of which two merely overlap, stays unprotected, and reading a count out of English prose
 to compare against a citation count is the matcher-per-sentence cost `BL-056` measured and declined
-at `PRODUCT_BACKLOG.md:4840-4841`.
+at `PRODUCT_BACKLOG.md:4844-4850`.
 
 **Delivered** as a rule inside the anchors gate rather than a script beside it, so it runs on every
 existing invocation and CI needs no new step. A new step would have meant a new deadline, and the
@@ -8689,7 +8690,7 @@ is a different change from correcting a sentence that miscounts, and the order t
 into is the one this item has just declined to treat as authoritative.
 
 Not closed by this item: gating either figure. `BL-056` measured that class and declined it, though
-the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4835-4838` are the counts of items above
+the two shapes it named as unchecked at `PRODUCT_BACKLOG.md:4844-4849` are the counts of items above
 a row and the Cost of Delay orderings, not these. These are a third shape of the same kind, stated in
 prose too varied to match without a pattern per sentence. The two live inversions are named in the
 appendix instead, so the figure a reader acts on is written down even though no gate derives it.
@@ -10256,7 +10257,7 @@ first. The upstream figure was confirmed byte for byte by the build, which is th
 estimate that had to be exact.
 
 The version to bundle is chosen by the test matrix, not by the engines floor alone.
-`package.json:31-33` asks for Node 20 or newer, which every current line satisfies, so the floor
+`package.json:34-35` asks for Node 20 or newer, which every current line satisfies, so the floor
 narrows nothing. `.github/workflows/ci.yml:40` does: the suite runs on 20 and 24 and on nothing
 else, so bundling any other line would hand the reader a runtime this project never runs its own
 tests against. That picks 24, which is also the newest LTS line and the one the app is developed on.
@@ -11470,6 +11471,35 @@ Sized 2 rather than 1 because the standalone page has no token layer, so measuri
 literals against each other and deciding which pairs matter without the token names to lean on, and
 because the manifest is a cross-file agreement rather than a contrast ratio and needs its own check.
 
+**BL-169: Publish the first guarded modern Marvel event batch**
+
+- [x] Evaluate the frozen source-order candidates without weakening exact-resolution or overlap gates
+- [x] Record every blocked candidate and backfill only with the next eligible inventory position
+- [x] Publish ten complete issue sequences with exact source credit and no copied commentary or images
+- [x] Prove every Markdown, generated payload and catalog entry preserves its reviewed mapping
+- [x] Keep the inventory, mappings, overlap reports and preparation tools out of browser runtime data
+
+Constraint gate: checked 1 to 11, none breached. Constraint 1 is protected by vendoring cover URLs
+only. Constraint 4 is protected by build-time scripts and zero new dependencies. Constraints 6, 7,
+8 and 9 are untouched. Constraint 11 is checked by the added-line dash scan.
+
+Implemented on 2026-08-21. The source-order gate evaluated 22 candidates through position 47 and
+blocked 12 on missing source data, missing metadata, an open range, or unapproved overlap. The ten
+that passed add 238 distinct issues across Secret War, Spider-Man: The Other, World War Hulk:
+Aftersmash, Shadowland, Chaos War, Axis, Spider-Verse, Apocalypse Wars, Clone Conspiracy, and
+Inhumans vs. X-Men. All 350 comparisons against the existing catalog and final peers have zero
+shared issues.
+
+Every card credits Comic Book Herald and links to the exact guide followed. Vendoring reported zero
+unresolved rows, placeholders, count warnings, duplicate warnings, missing digital ids, and missing
+covers. Two semantic tests hold the exact ten sequences and the packet-wide no-duplicate and
+no-overlap result; each was observed failing after one issue id was changed and passed again after
+that one value was restored.
+
+Sized 5 because the product addition is ten orders but the controlling work is one packet: 22 source
+decisions, 238 live issue identities, 16 complete overlap reports, ten generated payloads, and one
+catalog change all have to agree before any one guide is safe to ship.
+
 
 
 
@@ -11764,7 +11794,7 @@ No gap. Co-existence is a non-issue for a single local process, and interoperabi
 both directions: JSON backup for round-tripping and Markdown export for reading elsewhere. Zero
 runtime dependencies and plain ES modules mean nothing to reconcile with a host application.
 
-Evidence: `package.json:1-39` (no `dependencies` key at all, `engines.node >= 20`),
+Evidence: `package.json:1-43` (no `dependencies` key at all, `engines.node >= 20`),
 `src/js/lib/model.js:1046-1077` (validated backup shape).
 
 The fixed `127.0.0.1:8787` origin is a deliberate storage-bucket decision rather than a
@@ -11863,13 +11893,13 @@ The clearest debt in the repository, and it is concentrated in one file.
 Swept in full rather than dispositioned.
 
 - Installability: good, and suited to an app cloned and run by hand. `npm start` runs the server
-  with no install step, because there is nothing to install. Evidence: `package.json:8-29`.
+  with no install step, because there is nothing to install. Evidence: `package.json:8-10`.
   Changed since: `BL-040` added three devDependencies and a tracked `package-lock.json`, so linting
   now needs `npm install` first, and `BL-115` took that to four. Running the app still does not, and
   runtime dependencies are still zero.
 - Adaptability: good. Plain ES modules with no build step and no bundler mean a Node upgrade
   changes nothing about the client, and `engines.node >= 20` states the floor.
-  Evidence: `package.json:31-33`.
+  Evidence: `package.json:34-35`.
 - Replaceability: good. The metadata API base URL is user-configurable and validated, the cache is
   keyed by base URL and schema version so switching mirrors does not serve stale data across them,
   and stored state carries a schema version with migrations.
@@ -11898,13 +11928,13 @@ That loss is covered as a reliability and data-durability concern rather than a 
 | Observability | Partial gap, bounded by Repository Constraint 3. Product analytics are forbidden and are not proposed. What is missing is local and private: there is no way for the reader to see why hydration stalled beyond a queue-depth pill. Evidence: `src/js/main.js:4663-4666`. |
 | Performance | Gap, measured. See characteristic 2. Evidence: `docs/ux-artifacts/render-cost.json`. |
 | Security, OWASP Top 10 | Gap under A05 Security Misconfiguration: no CSP and no `x-frame-options` on the dev server. Evidence: `server.mjs:129-139`. Resolved: `BL-030` shipped both, assembled at `server.mjs:53-64` and sent at `server.mjs:134` and `server.mjs:137`. Partial gap under A10 Server-Side Request Forgery by analogy: `MarvelApi` accepted any base URL and only stripped trailing slashes, with the https-or-local check living in the settings form rather than in the client. Resolved: `BL-045` moved the rule into the constructor at `src/js/api.js:52-67` and onto the read out of storage at `src/js/main.js:535-567`, so a base the rule refuses cannot reach a fetch from any of the three call sites, and the form keeps its own message at `src/js/main.js:4351-4352`. A01, A02, A03, A07 and A09 are not applicable, because there is no server-side authorisation boundary, no credential store, no server-side query language, no account system and no central log to protect. |
-| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-39` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
+| Privacy | No gap. Nothing is uploaded, there is no account and there is no telemetry, which is the product promise itself. Evidence: `package.json:1-43` (no dependency that could exfiltrate), `absent: analytics|telemetry|gtag|beacon, grep across src/ and scripts/`. |
 | Accessibility | Gap, measured and detailed in `docs/UX_STUDY.md`. Headline: 27 pa11y errors on the seeded reading view, 9 definite axe colour-contrast nodes there and 8 in the catalog, and a dead mobile layout rule. Evidence: `docs/ux-artifacts/pa11y-reading-seeded.json`, `docs/ux-artifacts/axe-03-reading-seeded.json`, `src/styles.css:229-232`. Resolved in part: the contrast findings closed under BL-029, BL-030 and BL-048, and the per-finding resolutions are recorded against each finding in `docs/UX_STUDY.md`. The headline counts above are the pre-fix measurements and are left as the record of what the audit found. The dead mobile layout rule is not fixed and will not be: BL-028 is parked, because phone and tablet reading is served by Marvel's own apps. |
 | Documentation | No gap for users and maintainers: the README covers setup, the origin decision, the metadata boundary and the closed Android question. Evidence: `README.md`. |
 | Testing strategy | Gap. 224 tests pass and the pure logic modules are well covered, but the three browser-coupled modules have none, so no test exercises a render path. Evidence: `absent: test/cache.test.js, test/hydrate.test.js, test/main.test.js; glob of test/ cross-checked against src/js`. Partly changed: the suite is 235 after this pass, but the three modules still have no test file, so the gap itself is unchanged. |
 | CI/CD | Gap, total. No workflow, no pipeline, no automated run of the existing suite. Evidence: `absent: .github/workflows, Get-ChildItem of repository root and .github; no pipeline file of any kind`. Resolved: `BL-039` added `.github/workflows/ci.yml`, which runs the suite and the linter on every push and pull request, and on demand for any ref. |
-| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version at `package.json:3`, to `1.0.0` as audited, added `CHANGELOG.md`, and wired a `version` script at `package.json:29` that syncs the version the app reports. |
-| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-39` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` at `package.json:34-39` and a tracked `package-lock.json`, and `BL-115` took that to four, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
+| Release and versioning | Gap. Version is pinned at `0.1.0` with no tags and no changelog, so there is no way to say which build a backup or a bug report came from. Evidence: `package.json:3`, `absent: CHANGELOG.md and git tags, glob of repository root and git tag --list`. Resolved: `BL-043` set the version at `package.json:3`, to `1.0.0` as audited, added `CHANGELOG.md`, and wired a `version` script at `package.json:32` that syncs the version the app reports. |
+| Dependency management | Not applicable, because runtime dependencies are zero by Repository Constraint 4, there are no `devDependencies`, and there is therefore no lockfile and no dependency graph to manage or audit. The repository invokes no package-fetching tool at all. Evidence: `package.json:1-43` (neither a `dependencies` nor a `devDependencies` key), `absent: npx, grep across the repository returning only this appendix's own text`. The absence of dev tooling is recorded as a maintainability and CI gap above rather than counted twice here. Changed since: the "not applicable" verdict no longer holds. `BL-040` added three `devDependencies` and a tracked `package-lock.json`, and `BL-115` took that to the four currently listed at `package.json:37-41`, so there is now a dev dependency graph to audit even though runtime dependencies remain zero. |
 | Licensing | No gap. The project is MIT, and every vendored order records its upstream source and licence rather than absorbing it silently. Evidence: `LICENSE`, `src/data/catalog.json` (`source` and `sourceLicense` per list), `src/js/main.js:3907-3927` (attribution rendered in the UI before import). |
 
 ### 2026-08-10 assurance and open-source delta
@@ -12000,10 +12030,10 @@ again, because a swap can lift a row above a third one it also outscores. Nothin
 itself, so it would drift again with the next item filed. And the paragraph above leaves no decision
 resting on the order, so the exercise buys a tidier table and no better choice of what to build next.
 
-### Case 1: BL-026 is labelled P0 but ranks seventy-fifth
+### Case 1: BL-026 is labelled P0 but ranks seventy-sixth
 
 - Stated: P0 Foundation, the first keyboard story in the original Epic 7.
-- Calculated: WSJF 3.67, rank 75 of 142.
+- Calculated: WSJF 3.67, rank 76 of 143.
 - Driver: job size, not value. Its Cost of Delay of 11 is the tenth highest figure in the backlog.
   It is outranked by seventy-one items, sixty-eight of them sized 1, 2 or 3 whose Cost of Delay
   is lower but whose size is smaller still. WSJF is explicitly a throughput heuristic, so a P0 that
@@ -12025,7 +12055,7 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 ### Case 2: BL-007 is labelled P1 but sits near the bottom
 
 - Stated: P1 Core product value, event order variants.
-- Calculated: WSJF 1.4, rank 136 of 142, below a hundred and twenty-nine unlabelled items and five places above the
+- Calculated: WSJF 1.4, rank 137 of 143, below a hundred and twenty-nine unlabelled items and five places above the
   single P2 story.
 - Driver: both sides. Job size is 5, because the work is editorial rather than technical, and value
   is only 3, because the rendering that would display variants already ships and works. Evidence:
@@ -12083,9 +12113,9 @@ resting on the order, so the exercise buys a tidier table and no better choice o
 
 ### Where the label and the score agree
 
-- BL-014, P1, rank 93 of 142. Mid-table, which is where a P1 belongs.
-- BL-027, P1, rank 77 of 142. Mid-table.
-- BL-017, P2, rank 141 of 142. The lowest-ranked scored story other than the one that cannot be
+- BL-014, P1, rank 94 of 143. Mid-table, which is where a P1 belongs.
+- BL-027, P1, rank 78 of 143. Mid-table.
+- BL-017, P2, rank 142 of 143. The lowest-ranked scored story other than the one that cannot be
   sized, which matches its P2 label exactly.
 - BL-025, P2, parked. The label is moot, because the item was removed by the constraint gate before
   it could be scored.

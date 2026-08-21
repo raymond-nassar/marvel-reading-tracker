@@ -1,0 +1,816 @@
+{
+  "id": "clone-conspiracy",
+  "name": "Spider-Man: The Clone Conspiracy",
+  "description": "Twenty-four issues combining the five-part event with Amazing Spider-Man, Silk, Prowler, and the Omega conclusion.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-clone-conspiracy/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-21T09:58:39.876Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 24,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 55314,
+      "title": "The Amazing Spider-Man (2017) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/55314/the_amazing_spider-man_2017_16",
+      "seriesId": 20432,
+      "seriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "onSale": "2016-08-10T00:00:00+0000",
+      "mu": "2017-02-13T00:00:00+0000",
+      "digitalId": 42281,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/57a35e7e937a6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55315,
+      "title": "The Amazing Spider-Man (2017) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/55315/the_amazing_spider-man_2017_17",
+      "seriesId": 20432,
+      "seriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "onSale": "2016-08-31T00:00:00+0000",
+      "mu": "2017-03-06T00:00:00+0000",
+      "digitalId": 42333,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/57bb656d3b3b0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55316,
+      "title": "The Amazing Spider-Man (2017) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/55316/the_amazing_spider-man_2017_18",
+      "seriesId": 20432,
+      "seriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "onSale": "2016-09-21T00:00:00+0000",
+      "mu": "2017-03-27T00:00:00+0000",
+      "digitalId": 42660,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/57d2c23577da4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55317,
+      "title": "The Amazing Spider-Man (2017) #19",
+      "number": "19",
+      "url": "https://www.marvel.com/comics/issue/55317/the_amazing_spider-man_2017_19",
+      "seriesId": 20432,
+      "seriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "onSale": "2016-10-05T00:00:00+0000",
+      "mu": "2017-04-10T00:00:00+0000",
+      "digitalId": 42891,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/57e58002ee2e5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Javier Garron",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61713,
+      "title": "The Clone Conspiracy (2016) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/61713/the_clone_conspiracy_2016_1",
+      "seriesId": 22654,
+      "seriesName": "The Clone Conspiracy (2016 - 2017)",
+      "onSale": "2016-10-12T00:00:00+0000",
+      "mu": "2017-04-17T00:00:00+0000",
+      "digitalId": 42817,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/e0/57f550d6687aa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55318,
+      "title": "The Amazing Spider-Man (2017) #20",
+      "number": "20",
+      "url": "https://www.marvel.com/comics/issue/55318/the_amazing_spider-man_2017_20",
+      "seriesId": 20432,
+      "seriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "onSale": "2016-10-19T00:00:00+0000",
+      "mu": "2017-04-24T00:00:00+0000",
+      "digitalId": 42910,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/10/57fe48a9ae6b5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61714,
+      "title": "The Clone Conspiracy (2016) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/61714/the_clone_conspiracy_2016_2",
+      "seriesId": 22654,
+      "seriesName": "The Clone Conspiracy (2016 - 2017)",
+      "onSale": "2016-11-09T00:00:00+0000",
+      "mu": "2017-05-15T00:00:00+0000",
+      "digitalId": 43178,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/581b86dc56de3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55319,
+      "title": "The Amazing Spider-Man (2017) #21",
+      "number": "21",
+      "url": "https://www.marvel.com/comics/issue/55319/the_amazing_spider-man_2017_21",
+      "seriesId": 20432,
+      "seriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "onSale": "2016-11-16T00:00:00+0000",
+      "mu": "2017-05-22T00:00:00+0000",
+      "digitalId": 43215,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/03/5820b482c9549",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55653,
+      "title": "Silk (2015) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/55653/silk_2015_14",
+      "seriesId": 20499,
+      "seriesName": "Silk (2015 - 2017)",
+      "onSale": "2016-11-16T00:00:00+0000",
+      "mu": "2017-05-22T00:00:00+0000",
+      "digitalId": 43225,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/30/58237a7521207",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Irene Strychalski",
+          "role": "penciler"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Robbie Thompson",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61715,
+      "title": "The Clone Conspiracy (2016) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/61715/the_clone_conspiracy_2016_3",
+      "seriesId": 22654,
+      "seriesName": "The Clone Conspiracy (2016 - 2017)",
+      "onSale": "2016-12-07T00:00:00+0000",
+      "mu": "2017-06-12T00:00:00+0000",
+      "digitalId": 43453,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/5841d28d046e9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55320,
+      "title": "The Amazing Spider-Man (2017) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/55320/the_amazing_spider-man_2017_22",
+      "seriesId": 20432,
+      "seriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "onSale": "2016-12-21T00:00:00+0000",
+      "mu": "2017-06-26T00:00:00+0000",
+      "digitalId": 43401,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/e0/584b0a70a0e66",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55654,
+      "title": "Silk (2015) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/55654/silk_2015_15",
+      "seriesId": 20499,
+      "seriesName": "Silk (2015 - 2017)",
+      "onSale": "2016-12-14T00:00:00+0000",
+      "mu": "2017-06-19T00:00:00+0000",
+      "digitalId": 43447,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/d0/583da43d4a1cc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Helen Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Irene Strychalski",
+          "role": "penciler"
+        },
+        {
+          "name": "Robbie Thompson",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61716,
+      "title": "The Clone Conspiracy (2016) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/61716/the_clone_conspiracy_2016_4",
+      "seriesId": 22654,
+      "seriesName": "The Clone Conspiracy (2016 - 2017)",
+      "onSale": "2017-01-18T00:00:00+0000",
+      "mu": "2017-07-24T00:00:00+0000",
+      "digitalId": 43849,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/b0/58750c1591428",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55321,
+      "title": "The Amazing Spider-Man (2017) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/55321/the_amazing_spider-man_2017_23",
+      "seriesId": 20432,
+      "seriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "onSale": "2017-01-18T00:00:00+0000",
+      "mu": "2017-07-24T00:00:00+0000",
+      "digitalId": 43785,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/5873ee035752a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55655,
+      "title": "Silk (2015) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/55655/silk_2015_16",
+      "seriesId": 20499,
+      "seriesName": "Silk (2015 - 2017)",
+      "onSale": "2017-01-11T00:00:00+0000",
+      "mu": "2017-07-17T00:00:00+0000",
+      "digitalId": 43836,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/d0/586ebd666a2e4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Helen Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Irene Strychalski",
+          "role": "penciler"
+        },
+        {
+          "name": "Robbie Thompson",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61302,
+      "title": "Prowler (2016) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/61302/prowler_2016_1",
+      "seriesId": 22535,
+      "seriesName": "Prowler (2016 - 2017)",
+      "onSale": "2016-10-26T00:00:00+0000",
+      "mu": "2017-05-01T00:00:00+0000",
+      "digitalId": 42834,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/20/580a910488212",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jamal Campbell",
+          "role": "penciler"
+        },
+        {
+          "name": "Travel Foreman",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Ryan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61304,
+      "title": "Prowler (2016) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/61304/prowler_2016_2",
+      "seriesId": 22535,
+      "seriesName": "Prowler (2016 - 2017)",
+      "onSale": "2016-11-23T00:00:00+0000",
+      "mu": "2017-05-29T00:00:00+0000",
+      "digitalId": 43247,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/582c96c92715a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jamal Campbell",
+          "role": "penciler"
+        },
+        {
+          "name": "Travel Foreman",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Ryan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61306,
+      "title": "Prowler (2016) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/61306/prowler_2016_3",
+      "seriesId": 22535,
+      "seriesName": "Prowler (2016 - 2017)",
+      "onSale": "2016-12-28T00:00:00+0000",
+      "mu": "2017-07-03T00:00:00+0000",
+      "digitalId": 43444,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/585aa953490b1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jamal Campbell",
+          "role": "penciler"
+        },
+        {
+          "name": "Travel Foreman",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Ryan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61307,
+      "title": "Prowler (2016) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/61307/prowler_2016_4",
+      "seriesId": 22535,
+      "seriesName": "Prowler (2016 - 2017)",
+      "onSale": "2017-01-25T00:00:00+0000",
+      "mu": "2017-07-31T00:00:00+0000",
+      "digitalId": 43833,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/587906fd1ab62",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jamal Campbell",
+          "role": "penciler"
+        },
+        {
+          "name": "Javier Saltares",
+          "role": "penciler"
+        },
+        {
+          "name": "Travel Foreman",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Ryan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61717,
+      "title": "The Clone Conspiracy (2016) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/61717/the_clone_conspiracy_2016_5",
+      "seriesId": 22654,
+      "seriesName": "The Clone Conspiracy (2016 - 2017)",
+      "onSale": "2017-02-15T00:00:00+0000",
+      "mu": "2017-08-21T00:00:00+0000",
+      "digitalId": 44096,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/50/589decc8945bc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gabriele Dell'otto",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Cheung",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 55322,
+      "title": "The Amazing Spider-Man (2017) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/55322/the_amazing_spider-man_2017_24",
+      "seriesId": 20432,
+      "seriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44108,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/70/58a20dcab2a81",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Alex Ross",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61050,
+      "title": "Silk (2015) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/61050/silk_2015_17",
+      "seriesId": 20499,
+      "seriesName": "Silk (2015 - 2017)",
+      "onSale": "2017-02-15T00:00:00+0000",
+      "mu": "2017-08-21T00:00:00+0000",
+      "digitalId": 44092,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/70/589dec3ad3add",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Helen Chen",
+          "role": "penciler"
+        },
+        {
+          "name": "Irene Strychalski",
+          "role": "penciler"
+        },
+        {
+          "name": "Robbie Thompson",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 61308,
+      "title": "Prowler (2016) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/61308/prowler_2016_5",
+      "seriesId": 22535,
+      "seriesName": "Prowler (2016 - 2017)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44121,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/40/58a22f6bf1dec",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jamal Campbell",
+          "role": "penciler"
+        },
+        {
+          "name": "Javier Saltares",
+          "role": "penciler"
+        },
+        {
+          "name": "Travel Foreman",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Ryan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62649,
+      "title": "The Clone Conspiracy: Omega (2017) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/62649/the_clone_conspiracy_omega_2017_1",
+      "seriesId": 23028,
+      "seriesName": "The Clone Conspiracy: Omega (2017)",
+      "onSale": "2017-03-01T00:00:00+0000",
+      "mu": "2017-09-04T00:00:00+0000",
+      "digitalId": 44375,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/d0/589a369bb4bfc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Cory Smith",
+          "role": "cover artist"
+        },
+        {
+          "name": "John Dell",
+          "role": "cover artist"
+        },
+        {
+          "name": "Wade Von Grawbadger",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Stuart Immonen",
+          "role": "penciler"
+        },
+        {
+          "name": "James Harren",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Christos Gage",
+          "role": "writer"
+        },
+        {
+          "name": "Dan Slott",
+          "role": "writer"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

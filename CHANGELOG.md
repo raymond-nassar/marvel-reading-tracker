@@ -14,6 +14,18 @@ quote in a bug report.
 
 ## Unreleased
 
+### Added ten modern Marvel event reading orders
+
+In plain English: the catalog now includes ten more event and crossover guides, from Secret War and
+World War Hulk: Aftersmash through Axis, Spider-Verse, Apocalypse Wars, Clone Conspiracy, and
+Inhumans vs. X-Men. Each card credits Comic Book Herald and links to the exact guide followed.
+Nothing you have saved is changed.
+
+For maintainers: the batch contains 238 distinct issues across ten exact source mappings. Twelve
+earlier candidates were blocked rather than duplicated or guessed, and the final ten have zero
+issue overlap with the existing catalog or one another. Vendoring produced zero unresolved rows,
+placeholders, missing digital ids, missing covers, duplicate warnings, or count warnings.
+
 ### Added the build-time Marvel continuity intake foundation
 
 In plain English: the project now keeps a maintained inventory of 86 Comic Book Herald source records, resolves issue references deterministically, and emits overlap reports against shipped orders without adding a browser runtime dependency or shipping a new reader guide. Nothing you have saved is affected.

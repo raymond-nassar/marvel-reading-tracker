@@ -1,0 +1,526 @@
+{
+  "id": "apocalypse-wars",
+  "inventoryId": "apocalypse-wars",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-apocalypse-wars/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 13,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 55440,
+      "title": "Extraordinary X-Men",
+      "issueTitle": "Extraordinary X-Men (2015) #8",
+      "seriesTitle": "Extraordinary X-Men",
+      "apiSeriesName": "Extraordinary X-Men (2015 - 2017)",
+      "seriesId": 20460,
+      "issueNumber": "8",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55440/extraordinary_x-men_2015_8",
+      "onSaleDate": "2016-03-16T00:00:00+0000"
+    },
+    {
+      "id": 56054,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2016) #6",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2016 - 2017)",
+      "seriesId": 20612,
+      "issueNumber": "6",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/56054/uncanny_x-men_2016_6",
+      "onSaleDate": "2016-04-06T00:00:00+0000"
+    },
+    {
+      "id": 55441,
+      "title": "Extraordinary X-Men",
+      "issueTitle": "Extraordinary X-Men (2015) #9",
+      "seriesTitle": "Extraordinary X-Men",
+      "apiSeriesName": "Extraordinary X-Men (2015 - 2017)",
+      "seriesId": 20460,
+      "issueNumber": "9",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55441/extraordinary_x-men_2015_9",
+      "onSaleDate": "2016-04-20T00:00:00+0000"
+    },
+    {
+      "id": 56055,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2016) #7",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2016 - 2017)",
+      "seriesId": 20612,
+      "issueNumber": "7",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/56055/uncanny_x-men_2016_7",
+      "onSaleDate": "2016-05-04T00:00:00+0000"
+    },
+    {
+      "id": 56238,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2015) #9",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2015 - 2017)",
+      "seriesId": 20622,
+      "issueNumber": "9",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/56238/all-new_x-men_2015_9",
+      "onSaleDate": "2016-05-11T00:00:00+0000"
+    },
+    {
+      "id": 55442,
+      "title": "Extraordinary X-Men",
+      "issueTitle": "Extraordinary X-Men (2015) #10",
+      "seriesTitle": "Extraordinary X-Men",
+      "apiSeriesName": "Extraordinary X-Men (2015 - 2017)",
+      "seriesId": 20460,
+      "issueNumber": "10",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55442/extraordinary_x-men_2015_10",
+      "onSaleDate": "2016-05-25T00:00:00+0000"
+    },
+    {
+      "id": 56056,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2016) #8",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2016 - 2017)",
+      "seriesId": 20612,
+      "issueNumber": "8",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/56056/uncanny_x-men_2016_8",
+      "onSaleDate": "2016-06-15T00:00:00+0000"
+    },
+    {
+      "id": 56239,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2015) #10",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2015 - 2017)",
+      "seriesId": 20622,
+      "issueNumber": "10",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/56239/all-new_x-men_2015_10",
+      "onSaleDate": "2016-06-08T00:00:00+0000"
+    },
+    {
+      "id": 55443,
+      "title": "Extraordinary X-Men",
+      "issueTitle": "Extraordinary X-Men (2015) #11",
+      "seriesTitle": "Extraordinary X-Men",
+      "apiSeriesName": "Extraordinary X-Men (2015 - 2017)",
+      "seriesId": 20460,
+      "issueNumber": "11",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55443/extraordinary_x-men_2015_11",
+      "onSaleDate": "2016-06-29T00:00:00+0000"
+    },
+    {
+      "id": 56057,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2016) #9",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2016 - 2017)",
+      "seriesId": 20612,
+      "issueNumber": "9",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/56057/uncanny_x-men_2016_9",
+      "onSaleDate": "2016-06-29T00:00:00+0000"
+    },
+    {
+      "id": 56240,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2015) #11",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2015 - 2017)",
+      "seriesId": 20622,
+      "issueNumber": "11",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/56240/all-new_x-men_2015_11",
+      "onSaleDate": "2016-07-13T00:00:00+0000"
+    },
+    {
+      "id": 55444,
+      "title": "Extraordinary X-Men",
+      "issueTitle": "Extraordinary X-Men (2015) #12",
+      "seriesTitle": "Extraordinary X-Men",
+      "apiSeriesName": "Extraordinary X-Men (2015 - 2017)",
+      "seriesId": 20460,
+      "issueNumber": "12",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55444/extraordinary_x-men_2015_12",
+      "onSaleDate": "2016-07-27T00:00:00+0000"
+    },
+    {
+      "id": 56058,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2016) #10",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2016 - 2017)",
+      "seriesId": 20612,
+      "issueNumber": "10",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/56058/uncanny_x-men_2016_10",
+      "onSaleDate": "2016-07-20T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Extraordinary X-Men #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Extraordinary X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "8",
+      "seriesId": 20460,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55440"
+      ],
+      "selectedIssueId": 55440,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55440/extraordinary_x-men_2015_8",
+      "resolvedIssueTitle": "Extraordinary X-Men (2015) #8",
+      "note": "Marvel series 20460 (Extraordinary X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55440
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Uncanny X-Men #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "6",
+      "seriesId": 20612,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "56054"
+      ],
+      "selectedIssueId": 56054,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/56054/uncanny_x-men_2016_6",
+      "resolvedIssueTitle": "Uncanny X-Men (2016) #6",
+      "note": "Marvel series 20612 (Uncanny X-Men (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        56054
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Extraordinary X-Men #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Extraordinary X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "9",
+      "seriesId": 20460,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55441"
+      ],
+      "selectedIssueId": 55441,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55441/extraordinary_x-men_2015_9",
+      "resolvedIssueTitle": "Extraordinary X-Men (2015) #9",
+      "note": "Marvel series 20460 (Extraordinary X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55441
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Uncanny X-Men #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "7",
+      "seriesId": 20612,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "56055"
+      ],
+      "selectedIssueId": 56055,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/56055/uncanny_x-men_2016_7",
+      "resolvedIssueTitle": "Uncanny X-Men (2016) #7",
+      "note": "Marvel series 20612 (Uncanny X-Men (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        56055
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "All-New X-Men #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "9",
+      "seriesId": 20622,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "56238"
+      ],
+      "selectedIssueId": 56238,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/56238/all-new_x-men_2015_9",
+      "resolvedIssueTitle": "All-New X-Men (2015) #9",
+      "note": "Marvel series 20622 (All-New X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        56238
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Extraordinary X-Men #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Extraordinary X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "10",
+      "seriesId": 20460,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55442"
+      ],
+      "selectedIssueId": 55442,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55442/extraordinary_x-men_2015_10",
+      "resolvedIssueTitle": "Extraordinary X-Men (2015) #10",
+      "note": "Marvel series 20460 (Extraordinary X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55442
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Uncanny X-Men #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "8",
+      "seriesId": 20612,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "56056"
+      ],
+      "selectedIssueId": 56056,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/56056/uncanny_x-men_2016_8",
+      "resolvedIssueTitle": "Uncanny X-Men (2016) #8",
+      "note": "Marvel series 20612 (Uncanny X-Men (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        56056
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "All-New X-Men #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "10",
+      "seriesId": 20622,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "56239"
+      ],
+      "selectedIssueId": 56239,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/56239/all-new_x-men_2015_10",
+      "resolvedIssueTitle": "All-New X-Men (2015) #10",
+      "note": "Marvel series 20622 (All-New X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        56239
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Extraordinary X-Men #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Extraordinary X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "11",
+      "seriesId": 20460,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55443"
+      ],
+      "selectedIssueId": 55443,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55443/extraordinary_x-men_2015_11",
+      "resolvedIssueTitle": "Extraordinary X-Men (2015) #11",
+      "note": "Marvel series 20460 (Extraordinary X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55443
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Uncanny X-Men #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "9",
+      "seriesId": 20612,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "56057"
+      ],
+      "selectedIssueId": 56057,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/56057/uncanny_x-men_2016_9",
+      "resolvedIssueTitle": "Uncanny X-Men (2016) #9",
+      "note": "Marvel series 20612 (Uncanny X-Men (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        56057
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "All-New X-Men #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "11",
+      "seriesId": 20622,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "56240"
+      ],
+      "selectedIssueId": 56240,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/56240/all-new_x-men_2015_11",
+      "resolvedIssueTitle": "All-New X-Men (2015) #11",
+      "note": "Marvel series 20622 (All-New X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        56240
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Extraordinary X-Men #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Extraordinary X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "12",
+      "seriesId": 20460,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55444"
+      ],
+      "selectedIssueId": 55444,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55444/extraordinary_x-men_2015_12",
+      "resolvedIssueTitle": "Extraordinary X-Men (2015) #12",
+      "note": "Marvel series 20460 (Extraordinary X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55444
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Uncanny X-Men #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "10",
+      "seriesId": 20612,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "56058"
+      ],
+      "selectedIssueId": 56058,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/56058/uncanny_x-men_2016_10",
+      "resolvedIssueTitle": "Uncanny X-Men (2016) #10",
+      "note": "Marvel series 20612 (Uncanny X-Men (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        56058
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+  "approvedManifest": {
+    "id": "apocalypse-wars",
+    "name": "X-Men: Apocalypse Wars",
+    "description": "Thirteen alternating chapters from Extraordinary X-Men, Uncanny X-Men, and All-New X-Men.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "apocalypse-wars.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-apocalypse-wars/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "apocalypse_wars.json",
+    "characters": [
+      "X-Men",
+      "Apocalypse"
+    ],
+    "keywords": [
+      "Apocalypse Wars",
+      "Extraordinary X-Men",
+      "All-New X-Men"
+    ],
+    "expect": 13,
+    "timeline": 2016,
+    "coverIssueId": 55440,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Extraordinary X-Men #8"
+  }
+}

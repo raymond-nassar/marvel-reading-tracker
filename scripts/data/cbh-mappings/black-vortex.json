@@ -1,0 +1,21 @@
+{
+  "id": "black-vortex",
+  "inventoryId": "black-vortex",
+  "sourceUrl": "https://www.comicbookherald.com/forums/topic/guardians-of-the-galaxy-x-men-the-black-vortex-reading-order/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "HTTP 404 on 2026-08-21",
+  "approvedSourceCount": null,
+  "excludedSourceReferences": [],
+  "reviewStatus": "blocked-source-unavailable",
+  "proposedManifest": {
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "variant": null,
+    "timeline": 2015,
+    "coverSourceReference": null
+  },
+  "candidateMetadata": [],
+  "rows": []
+}

@@ -6,6 +6,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { resolveRow, validateResolvedMapping } from '../scripts/lib/cbh-resolution.mjs';
+import { shouldPreserveApprovedMapping } from '../scripts/prepare-cbh-batch.mjs';
 import { resolveMapping } from '../scripts/resolve-cbh-order.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -33,6 +34,53 @@ test('similar but non-exact candidates stay unresolved', () => {
   const result = resolveRow(row, candidates);
   assert.equal(result.status, 'unmatched');
   assert.deepEqual(result.candidateIssueIds, ['201', '202']);
+});
+
+test('series ids are checked instead of trusting row-derived candidate titles', () => {
+  const row = {
+    normalizedSeriesTitle: 'Secret War',
+    issueNumber: '1',
+    seriesYear: '2004',
+    seriesId: 418,
+    note: '',
+  };
+  const wrongSeries = [{
+    id: 203,
+    title: 'Secret War',
+    issueNumber: '1',
+    seriesYear: '2004',
+    seriesId: 999,
+  }];
+
+  assert.equal(resolveRow(row, wrongSeries).status, 'unmatched');
+});
+
+test('a reviewed title mismatch requires explicit approval, the same series id, and a note', () => {
+  const candidate = {
+    id: 17212,
+    title: 'Hulk',
+    issueNumber: '112',
+    seriesYear: '1999',
+    seriesId: 465,
+    manualSeriesSelection: true,
+    manualSeriesSelectionApproved: true,
+  };
+  const reviewed = {
+    normalizedSeriesTitle: 'Incredible Hercules',
+    issueNumber: '112',
+    seriesYear: '1999',
+    seriesId: 465,
+    manualSeriesSelectionApproved: true,
+    note: 'Marvel indexes this transition issue in Hulk before Incredible Hercules #113.',
+  };
+
+  const result = resolveRow(reviewed, [candidate]);
+  assert.equal(result.status, 'exact');
+  assert.equal(result.selectedIssueId, '17212');
+  assert.equal(resolveRow({ ...reviewed, manualSeriesSelectionApproved: false }, [candidate]).status, 'unmatched');
+  assert.equal(resolveRow(reviewed, [{ ...candidate, manualSeriesSelectionApproved: false }]).status, 'unmatched');
+  assert.equal(resolveRow({ ...reviewed, note: '' }, [candidate]).status, 'unmatched');
+  assert.equal(resolveRow({ ...reviewed, seriesId: 466 }, [candidate]).status, 'unmatched');
 });
 
 test('multiple exact title matches are ambiguous and stop the run', () => {
@@ -79,6 +127,14 @@ test('duplicate selected ids fail validation before writing', () => {
     { resolutionStatus: 'exact', selectedIssueId: 500 },
     { resolutionStatus: 'exact', selectedIssueId: 500 },
   ]), /Duplicate selected issue id/);
+});
+
+test('preparation preserves approved mappings unless an explicit refresh mode is selected', () => {
+  const approved = { reviewStatus: 'approved' };
+  assert.equal(shouldPreserveApprovedMapping(approved), true);
+  assert.equal(shouldPreserveApprovedMapping(approved, { forceApproved: true }), false);
+  assert.equal(shouldPreserveApprovedMapping(approved, { refreshApproved: true }), false);
+  assert.equal(shouldPreserveApprovedMapping({ reviewStatus: 'pending-independent-review' }), false);
 });
 
 test('resolveMapping requires real metadata and rejects unresolved rows', async () => {

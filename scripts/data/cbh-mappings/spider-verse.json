@@ -1,0 +1,1343 @@
+{
+  "id": "spider-verse",
+  "inventoryId": "spider-verse",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-spider-verse-reading-order/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 35,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 45803,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #4",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45803/the_amazing_spider-man_2014_4",
+      "onSaleDate": "2014-07-23T00:00:00+0000"
+    },
+    {
+      "id": 45804,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #5",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "5",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45804/the_amazing_spider-man_2014_5",
+      "onSaleDate": "2014-08-13T00:00:00+0000"
+    },
+    {
+      "id": 45805,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #6",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "6",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45805/the_amazing_spider-man_2014_6",
+      "onSaleDate": "2014-09-10T00:00:00+0000"
+    },
+    {
+      "id": 50924,
+      "title": "Superior Spider-Man",
+      "issueTitle": "Superior Spider-Man (2013) #32",
+      "seriesTitle": "Superior Spider-Man",
+      "apiSeriesName": "Superior Spider-Man (2013 - 2014)",
+      "seriesId": 17554,
+      "issueNumber": "32",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50924/superior_spider-man_2013_32",
+      "onSaleDate": "2014-08-06T00:00:00+0000"
+    },
+    {
+      "id": 50954,
+      "title": "Edge of Spider-Verse",
+      "issueTitle": "Edge of Spider-Verse (2014) #1",
+      "seriesTitle": "Edge of Spider-Verse",
+      "apiSeriesName": "Edge of Spider-Verse (2014)",
+      "seriesId": 19075,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50954/edge_of_spider-verse_2014_1",
+      "onSaleDate": "2014-09-10T00:00:00+0000"
+    },
+    {
+      "id": 50960,
+      "title": "Superior Spider-Man",
+      "issueTitle": "Superior Spider-Man (2013) #33",
+      "seriesTitle": "Superior Spider-Man",
+      "apiSeriesName": "Superior Spider-Man (2013 - 2014)",
+      "seriesId": 17554,
+      "issueNumber": "33",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50960/superior_spider-man_2013_33",
+      "onSaleDate": "2014-09-17T00:00:00+0000"
+    },
+    {
+      "id": 50955,
+      "title": "Edge of Spider-Verse",
+      "issueTitle": "Edge of Spider-Verse (2014) #2",
+      "seriesTitle": "Edge of Spider-Verse",
+      "apiSeriesName": "Edge of Spider-Verse (2014)",
+      "seriesId": 19075,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50955/edge_of_spider-verse_2014_2",
+      "onSaleDate": "2014-09-17T00:00:00+0000"
+    },
+    {
+      "id": 50956,
+      "title": "Edge of Spider-Verse",
+      "issueTitle": "Edge of Spider-Verse (2014) #3",
+      "seriesTitle": "Edge of Spider-Verse",
+      "apiSeriesName": "Edge of Spider-Verse (2014)",
+      "seriesId": 19075,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50956/edge_of_spider-verse_2014_3",
+      "onSaleDate": "2014-09-24T00:00:00+0000"
+    },
+    {
+      "id": 50962,
+      "title": "Edge of Spider-Verse",
+      "issueTitle": "Edge of Spider-Verse (2014) #4",
+      "seriesTitle": "Edge of Spider-Verse",
+      "apiSeriesName": "Edge of Spider-Verse (2014)",
+      "seriesId": 19075,
+      "issueNumber": "4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50962/edge_of_spider-verse_2014_4",
+      "onSaleDate": "2014-10-01T00:00:00+0000"
+    },
+    {
+      "id": 45806,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #7",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "7",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45806/the_amazing_spider-man_2014_7",
+      "onSaleDate": "2014-10-08T00:00:00+0000"
+    },
+    {
+      "id": 50963,
+      "title": "Edge of Spider-Verse",
+      "issueTitle": "Edge of Spider-Verse (2014) #5",
+      "seriesTitle": "Edge of Spider-Verse",
+      "apiSeriesName": "Edge of Spider-Verse (2014)",
+      "seriesId": 19075,
+      "issueNumber": "5",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50963/edge_of_spider-verse_2014_5",
+      "onSaleDate": "2014-10-15T00:00:00+0000"
+    },
+    {
+      "id": 50545,
+      "title": "Spider-Man 2099",
+      "issueTitle": "Spider-Man 2099 (2014) #5",
+      "seriesTitle": "Spider-Man 2099",
+      "apiSeriesName": "Spider-Man 2099 (2014 - 2015)",
+      "seriesId": 18891,
+      "issueNumber": "5",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50545/spider-man_2099_2014_5",
+      "onSaleDate": "2014-10-15T00:00:00+0000"
+    },
+    {
+      "id": 45807,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #8",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "8",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45807/the_amazing_spider-man_2014_8",
+      "onSaleDate": "2014-10-22T00:00:00+0000"
+    },
+    {
+      "id": 45808,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #9",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "9",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45808/the_amazing_spider-man_2014_9",
+      "onSaleDate": "2014-11-05T00:00:00+0000"
+    },
+    {
+      "id": 50554,
+      "title": "Spider-Verse",
+      "issueTitle": "Spider-Verse (2014) #1",
+      "seriesTitle": "Spider-Verse",
+      "apiSeriesName": "Spider-Verse (2014 - 2015)",
+      "seriesId": 18892,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50554/spider-verse_2014_1",
+      "onSaleDate": "2014-11-12T00:00:00+0000"
+    },
+    {
+      "id": 50555,
+      "title": "Spider-Verse Team-Up",
+      "issueTitle": "Spider-Verse Team-Up (2014) #1",
+      "seriesTitle": "Spider-Verse Team-Up",
+      "apiSeriesName": "Spider-Verse Team-Up (2014 - 2015)",
+      "seriesId": 18893,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50555/spider-verse_team-up_2014_1",
+      "onSaleDate": "2014-11-05T00:00:00+0000"
+    },
+    {
+      "id": 45809,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #10",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "10",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45809/the_amazing_spider-man_2014_10",
+      "onSaleDate": "2014-11-19T00:00:00+0000"
+    },
+    {
+      "id": 50537,
+      "title": "Scarlet Spiders",
+      "issueTitle": "Scarlet Spiders (2014) #1",
+      "seriesTitle": "Scarlet Spiders",
+      "apiSeriesName": "Scarlet Spiders (2014 - 2015)",
+      "seriesId": 18889,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50537/scarlet_spiders_2014_1",
+      "onSaleDate": "2014-11-26T00:00:00+0000"
+    },
+    {
+      "id": 50561,
+      "title": "Spider-Woman",
+      "issueTitle": "Spider-Woman (2014) #1",
+      "seriesTitle": "Spider-Woman",
+      "apiSeriesName": "Spider-Woman (2014 - 2015)",
+      "seriesId": 18894,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50561/spider-woman_2014_1",
+      "onSaleDate": "2014-11-19T00:00:00+0000"
+    },
+    {
+      "id": 50546,
+      "title": "Spider-Man 2099",
+      "issueTitle": "Spider-Man 2099 (2014) #6",
+      "seriesTitle": "Spider-Man 2099",
+      "apiSeriesName": "Spider-Man 2099 (2014 - 2015)",
+      "seriesId": 18891,
+      "issueNumber": "6",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50546/spider-man_2099_2014_6",
+      "onSaleDate": "2014-11-26T00:00:00+0000"
+    },
+    {
+      "id": 45810,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #11",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "11",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45810/the_amazing_spider-man_2014_11",
+      "onSaleDate": "2014-12-10T00:00:00+0000"
+    },
+    {
+      "id": 50556,
+      "title": "Spider-Verse Team-Up",
+      "issueTitle": "Spider-Verse Team-Up (2014) #2",
+      "seriesTitle": "Spider-Verse Team-Up",
+      "apiSeriesName": "Spider-Verse Team-Up (2014 - 2015)",
+      "seriesId": 18893,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50556/spider-verse_team-up_2014_2",
+      "onSaleDate": "2014-12-10T00:00:00+0000"
+    },
+    {
+      "id": 50538,
+      "title": "Scarlet Spiders",
+      "issueTitle": "Scarlet Spiders (2014) #2",
+      "seriesTitle": "Scarlet Spiders",
+      "apiSeriesName": "Scarlet Spiders (2014 - 2015)",
+      "seriesId": 18889,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50538/scarlet_spiders_2014_2",
+      "onSaleDate": "2014-12-17T00:00:00+0000"
+    },
+    {
+      "id": 50562,
+      "title": "Spider-Woman",
+      "issueTitle": "Spider-Woman (2014) #2",
+      "seriesTitle": "Spider-Woman",
+      "apiSeriesName": "Spider-Woman (2014 - 2015)",
+      "seriesId": 18894,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50562/spider-woman_2014_2",
+      "onSaleDate": "2014-12-17T00:00:00+0000"
+    },
+    {
+      "id": 53336,
+      "title": "Spider-Verse",
+      "issueTitle": "Spider-Verse (2014) #2",
+      "seriesTitle": "Spider-Verse",
+      "apiSeriesName": "Spider-Verse (2014 - 2015)",
+      "seriesId": 18892,
+      "issueNumber": "2",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/53336/spider-verse_2014_2",
+      "onSaleDate": "2015-01-14T00:00:00+0000"
+    },
+    {
+      "id": 45811,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #12",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "12",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/45811/the_amazing_spider-man_2014_12",
+      "onSaleDate": "2015-01-07T00:00:00+0000"
+    },
+    {
+      "id": 50547,
+      "title": "Spider-Man 2099",
+      "issueTitle": "Spider-Man 2099 (2014) #7",
+      "seriesTitle": "Spider-Man 2099",
+      "apiSeriesName": "Spider-Man 2099 (2014 - 2015)",
+      "seriesId": 18891,
+      "issueNumber": "7",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50547/spider-man_2099_2014_7",
+      "onSaleDate": "2015-01-07T00:00:00+0000"
+    },
+    {
+      "id": 50539,
+      "title": "Scarlet Spiders",
+      "issueTitle": "Scarlet Spiders (2014) #3",
+      "seriesTitle": "Scarlet Spiders",
+      "apiSeriesName": "Scarlet Spiders (2014 - 2015)",
+      "seriesId": 18889,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50539/scarlet_spiders_2014_3",
+      "onSaleDate": "2015-01-21T00:00:00+0000"
+    },
+    {
+      "id": 50350,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #13",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "13",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/50350/the_amazing_spider-man_2014_13",
+      "onSaleDate": "2015-01-21T00:00:00+0000"
+    },
+    {
+      "id": 49504,
+      "title": "Spider-Woman",
+      "issueTitle": "Spider-Woman (2014) #3",
+      "seriesTitle": "Spider-Woman",
+      "apiSeriesName": "Spider-Woman (2014 - 2015)",
+      "seriesId": 18894,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49504/spider-woman_2014_3",
+      "onSaleDate": "2015-01-21T00:00:00+0000"
+    },
+    {
+      "id": 50557,
+      "title": "Spider-Verse Team-Up",
+      "issueTitle": "Spider-Verse Team-Up (2014) #3",
+      "seriesTitle": "Spider-Verse Team-Up",
+      "apiSeriesName": "Spider-Verse Team-Up (2014 - 2015)",
+      "seriesId": 18893,
+      "issueNumber": "3",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50557/spider-verse_team-up_2014_3",
+      "onSaleDate": "2015-01-21T00:00:00+0000"
+    },
+    {
+      "id": 50548,
+      "title": "Spider-Man 2099",
+      "issueTitle": "Spider-Man 2099 (2014) #8",
+      "seriesTitle": "Spider-Man 2099",
+      "apiSeriesName": "Spider-Man 2099 (2014 - 2015)",
+      "seriesId": 18891,
+      "issueNumber": "8",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/50548/spider-man_2099_2014_8",
+      "onSaleDate": "2015-01-28T00:00:00+0000"
+    },
+    {
+      "id": 51320,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #14",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "14",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/51320/the_amazing_spider-man_2014_14",
+      "onSaleDate": "2015-02-11T00:00:00+0000"
+    },
+    {
+      "id": 49511,
+      "title": "Spider-Woman",
+      "issueTitle": "Spider-Woman (2014) #4",
+      "seriesTitle": "Spider-Woman",
+      "apiSeriesName": "Spider-Woman (2014 - 2015)",
+      "seriesId": 18894,
+      "issueNumber": "4",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49511/spider-woman_2014_4",
+      "onSaleDate": "2015-02-11T00:00:00+0000"
+    },
+    {
+      "id": 51324,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2014) #15",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2014 - 2015)",
+      "seriesId": 17285,
+      "issueNumber": "15",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/51324/the_amazing_spider-man_2014_15",
+      "onSaleDate": "2015-02-25T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Amazing Spider-Man #4",
+      "sourceRangeReference": "Amazing Spider-Man #4-#6",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "4",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45803"
+      ],
+      "selectedIssueId": 45803,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45803/the_amazing_spider-man_2014_4",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #4",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45803
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Amazing Spider-Man #5",
+      "sourceRangeReference": "Amazing Spider-Man #4-#6",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "5",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45804"
+      ],
+      "selectedIssueId": 45804,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45804/the_amazing_spider-man_2014_5",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #5",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45804
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Amazing Spider-Man #6",
+      "sourceRangeReference": "Amazing Spider-Man #4-#6",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "6",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45805"
+      ],
+      "selectedIssueId": 45805,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45805/the_amazing_spider-man_2014_6",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #6",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45805
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Superior Spider-Man #32",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Superior Spider-Man",
+      "seriesYear": 2013,
+      "issueNumber": "32",
+      "seriesId": 17554,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50924"
+      ],
+      "selectedIssueId": 50924,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50924/superior_spider-man_2013_32",
+      "resolvedIssueTitle": "Superior Spider-Man (2013) #32",
+      "note": "Marvel series 17554 (Superior Spider-Man (2013 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50924
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Edge of Spider-Verse #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Edge of Spider-Verse",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 19075,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50954"
+      ],
+      "selectedIssueId": 50954,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50954/edge_of_spider-verse_2014_1",
+      "resolvedIssueTitle": "Edge of Spider-Verse (2014) #1",
+      "note": "Marvel series 19075 (Edge of Spider-Verse (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50954
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Superior Spider-Man #33",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Superior Spider-Man",
+      "seriesYear": 2013,
+      "issueNumber": "33",
+      "seriesId": 17554,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50960"
+      ],
+      "selectedIssueId": 50960,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50960/superior_spider-man_2013_33",
+      "resolvedIssueTitle": "Superior Spider-Man (2013) #33",
+      "note": "Marvel series 17554 (Superior Spider-Man (2013 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50960
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Edge of Spider-Verse #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Edge of Spider-Verse",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 19075,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50955"
+      ],
+      "selectedIssueId": 50955,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50955/edge_of_spider-verse_2014_2",
+      "resolvedIssueTitle": "Edge of Spider-Verse (2014) #2",
+      "note": "Marvel series 19075 (Edge of Spider-Verse (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50955
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Edge of Spider-Verse #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Edge of Spider-Verse",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 19075,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50956"
+      ],
+      "selectedIssueId": 50956,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50956/edge_of_spider-verse_2014_3",
+      "resolvedIssueTitle": "Edge of Spider-Verse (2014) #3",
+      "note": "Marvel series 19075 (Edge of Spider-Verse (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50956
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Edge of Spider-Verse #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Edge of Spider-Verse",
+      "seriesYear": 2014,
+      "issueNumber": "4",
+      "seriesId": 19075,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50962"
+      ],
+      "selectedIssueId": 50962,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50962/edge_of_spider-verse_2014_4",
+      "resolvedIssueTitle": "Edge of Spider-Verse (2014) #4",
+      "note": "Marvel series 19075 (Edge of Spider-Verse (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50962
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Amazing Spider-Man #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "7",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45806"
+      ],
+      "selectedIssueId": 45806,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45806/the_amazing_spider-man_2014_7",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #7",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45806
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Edge of Spider-Verse #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Edge of Spider-Verse",
+      "seriesYear": 2014,
+      "issueNumber": "5",
+      "seriesId": 19075,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50963"
+      ],
+      "selectedIssueId": 50963,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50963/edge_of_spider-verse_2014_5",
+      "resolvedIssueTitle": "Edge of Spider-Verse (2014) #5",
+      "note": "Marvel series 19075 (Edge of Spider-Verse (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50963
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Spider-Man 2099 #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Man 2099",
+      "seriesYear": 2014,
+      "issueNumber": "5",
+      "seriesId": 18891,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50545"
+      ],
+      "selectedIssueId": 50545,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50545/spider-man_2099_2014_5",
+      "resolvedIssueTitle": "Spider-Man 2099 (2014) #5",
+      "note": "Marvel series 18891 (Spider-Man 2099 (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50545
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Amazing Spider-Man #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "8",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45807"
+      ],
+      "selectedIssueId": 45807,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45807/the_amazing_spider-man_2014_8",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #8",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45807
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Amazing Spider-Man #9",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "9",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45808"
+      ],
+      "selectedIssueId": 45808,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45808/the_amazing_spider-man_2014_9",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #9",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45808
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Spider-Verse #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Verse",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18892,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50554"
+      ],
+      "selectedIssueId": 50554,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50554/spider-verse_2014_1",
+      "resolvedIssueTitle": "Spider-Verse (2014) #1",
+      "note": "Marvel series 18892 (Spider-Verse (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50554
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Spider-Verse Team-Up #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Verse Team-Up",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18893,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50555"
+      ],
+      "selectedIssueId": 50555,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50555/spider-verse_team-up_2014_1",
+      "resolvedIssueTitle": "Spider-Verse Team-Up (2014) #1",
+      "note": "Marvel series 18893 (Spider-Verse Team-Up (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50555
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Amazing Spider-Man #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "10",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45809"
+      ],
+      "selectedIssueId": 45809,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45809/the_amazing_spider-man_2014_10",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #10",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45809
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Scarlet Spiders #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Scarlet Spiders",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18889,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50537"
+      ],
+      "selectedIssueId": 50537,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50537/scarlet_spiders_2014_1",
+      "resolvedIssueTitle": "Scarlet Spiders (2014) #1",
+      "note": "Marvel series 18889 (Scarlet Spiders (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50537
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Spider-Woman #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Woman",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18894,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50561"
+      ],
+      "selectedIssueId": 50561,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50561/spider-woman_2014_1",
+      "resolvedIssueTitle": "Spider-Woman (2014) #1",
+      "note": "Marvel series 18894 (Spider-Woman (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50561
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Spider-Man 2099 #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Man 2099",
+      "seriesYear": 2014,
+      "issueNumber": "6",
+      "seriesId": 18891,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50546"
+      ],
+      "selectedIssueId": 50546,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50546/spider-man_2099_2014_6",
+      "resolvedIssueTitle": "Spider-Man 2099 (2014) #6",
+      "note": "Marvel series 18891 (Spider-Man 2099 (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50546
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Amazing Spider-Man #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "11",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45810"
+      ],
+      "selectedIssueId": 45810,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45810/the_amazing_spider-man_2014_11",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #11",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45810
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Spider-Verse Team-Up #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Verse Team-Up",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 18893,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50556"
+      ],
+      "selectedIssueId": 50556,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50556/spider-verse_team-up_2014_2",
+      "resolvedIssueTitle": "Spider-Verse Team-Up (2014) #2",
+      "note": "Marvel series 18893 (Spider-Verse Team-Up (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50556
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Scarlet Spiders #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Scarlet Spiders",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 18889,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50538"
+      ],
+      "selectedIssueId": 50538,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50538/scarlet_spiders_2014_2",
+      "resolvedIssueTitle": "Scarlet Spiders (2014) #2",
+      "note": "Marvel series 18889 (Scarlet Spiders (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50538
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Spider-Woman #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Woman",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 18894,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50562"
+      ],
+      "selectedIssueId": 50562,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50562/spider-woman_2014_2",
+      "resolvedIssueTitle": "Spider-Woman (2014) #2",
+      "note": "Marvel series 18894 (Spider-Woman (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50562
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Spider-Verse #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Verse",
+      "seriesYear": 2014,
+      "issueNumber": "2",
+      "seriesId": 18892,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "53336"
+      ],
+      "selectedIssueId": 53336,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/53336/spider-verse_2014_2",
+      "resolvedIssueTitle": "Spider-Verse (2014) #2",
+      "note": "Marvel series 18892 (Spider-Verse (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        53336
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Amazing Spider-Man #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "12",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45811"
+      ],
+      "selectedIssueId": 45811,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45811/the_amazing_spider-man_2014_12",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #12",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45811
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Spider-Man 2099 #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Man 2099",
+      "seriesYear": 2014,
+      "issueNumber": "7",
+      "seriesId": 18891,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50547"
+      ],
+      "selectedIssueId": 50547,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50547/spider-man_2099_2014_7",
+      "resolvedIssueTitle": "Spider-Man 2099 (2014) #7",
+      "note": "Marvel series 18891 (Spider-Man 2099 (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50547
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Scarlet Spiders #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Scarlet Spiders",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 18889,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50539"
+      ],
+      "selectedIssueId": 50539,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50539/scarlet_spiders_2014_3",
+      "resolvedIssueTitle": "Scarlet Spiders (2014) #3",
+      "note": "Marvel series 18889 (Scarlet Spiders (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50539
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "Amazing Spider-Man #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "13",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50350"
+      ],
+      "selectedIssueId": 50350,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50350/the_amazing_spider-man_2014_13",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #13",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50350
+      ]
+    },
+    {
+      "sourcePosition": 30,
+      "sourceIssueReference": "Spider-Woman #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Woman",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 18894,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49504"
+      ],
+      "selectedIssueId": 49504,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49504/spider-woman_2014_3",
+      "resolvedIssueTitle": "Spider-Woman (2014) #3",
+      "note": "Marvel series 18894 (Spider-Woman (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49504
+      ]
+    },
+    {
+      "sourcePosition": 31,
+      "sourceIssueReference": "Spider-Verse Team-Up #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Verse Team-Up",
+      "seriesYear": 2014,
+      "issueNumber": "3",
+      "seriesId": 18893,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50557"
+      ],
+      "selectedIssueId": 50557,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50557/spider-verse_team-up_2014_3",
+      "resolvedIssueTitle": "Spider-Verse Team-Up (2014) #3",
+      "note": "Marvel series 18893 (Spider-Verse Team-Up (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50557
+      ]
+    },
+    {
+      "sourcePosition": 32,
+      "sourceIssueReference": "Spider-Man 2099 #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Man 2099",
+      "seriesYear": 2014,
+      "issueNumber": "8",
+      "seriesId": 18891,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "50548"
+      ],
+      "selectedIssueId": 50548,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/50548/spider-man_2099_2014_8",
+      "resolvedIssueTitle": "Spider-Man 2099 (2014) #8",
+      "note": "Marvel series 18891 (Spider-Man 2099 (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        50548
+      ]
+    },
+    {
+      "sourcePosition": 33,
+      "sourceIssueReference": "Amazing Spider-Man #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "14",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51320"
+      ],
+      "selectedIssueId": 51320,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51320/the_amazing_spider-man_2014_14",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #14",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51320
+      ]
+    },
+    {
+      "sourcePosition": 34,
+      "sourceIssueReference": "Spider-Woman #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Woman",
+      "seriesYear": 2014,
+      "issueNumber": "4",
+      "seriesId": 18894,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49511"
+      ],
+      "selectedIssueId": 49511,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49511/spider-woman_2014_4",
+      "resolvedIssueTitle": "Spider-Woman (2014) #4",
+      "note": "Marvel series 18894 (Spider-Woman (2014 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49511
+      ]
+    },
+    {
+      "sourcePosition": 35,
+      "sourceIssueReference": "Amazing Spider-Man #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2014,
+      "issueNumber": "15",
+      "seriesId": 17285,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "51324"
+      ],
+      "selectedIssueId": 51324,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/51324/the_amazing_spider-man_2014_15",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2014) #15",
+      "note": "Marvel series 17285 (The Amazing Spider-Man (2014 - 2015)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2014 series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        51324
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+  "approvedManifest": {
+    "id": "spider-verse",
+    "name": "Spider-Verse",
+    "description": "Thirty-five issues from Edge of Spider-Verse through the main Amazing Spider-Man event and its team books.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "spider-verse.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-spider-verse-reading-order/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "spider_verse.json",
+    "characters": [
+      "Spider-Man",
+      "Spider-Woman",
+      "Spider-Gwen",
+      "Spider-Man 2099"
+    ],
+    "keywords": [
+      "Spider-Verse",
+      "Edge of Spider-Verse",
+      "Inheritors",
+      "Spider-Totems"
+    ],
+    "expect": 35,
+    "timeline": 2014,
+    "coverIssueId": 45808,
+    "coverSourcePosition": 14,
+    "coverSourceReference": "Amazing Spider-Man #9"
+  }
+}

@@ -1,0 +1,787 @@
+{
+  "id": "inhumans-vs-x-men",
+  "inventoryId": "inhumans-vs-x-men",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/inhumans-vs-x-men/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 20,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 61593,
+      "title": "Ivx",
+      "issueTitle": "Ivx (2016)",
+      "seriesTitle": "Ivx",
+      "apiSeriesName": "Ivx (2016 - 2017)",
+      "seriesId": 22644,
+      "issueNumber": "0",
+      "seriesYear": 2016,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/61593/ivx_2016",
+      "onSaleDate": "2016-11-30T00:00:00+0000"
+    },
+    {
+      "id": 61594,
+      "title": "Ivx",
+      "issueTitle": "Ivx (2016) #1",
+      "seriesTitle": "Ivx",
+      "apiSeriesName": "Ivx (2016 - 2017)",
+      "seriesId": 22644,
+      "issueNumber": "1",
+      "seriesYear": 2016,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/61594/ivx_2016_1",
+      "onSaleDate": "2016-12-14T00:00:00+0000"
+    },
+    {
+      "id": 56064,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2016) #16",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2016 - 2017)",
+      "seriesId": 20612,
+      "issueNumber": "16",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/56064/uncanny_x-men_2016_16",
+      "onSaleDate": "2016-12-21T00:00:00+0000"
+    },
+    {
+      "id": 55449,
+      "title": "Extraordinary X-Men",
+      "issueTitle": "Extraordinary X-Men (2015) #17",
+      "seriesTitle": "Extraordinary X-Men",
+      "apiSeriesName": "Extraordinary X-Men (2015 - 2017)",
+      "seriesId": 20460,
+      "issueNumber": "17",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55449/extraordinary_x-men_2015_17",
+      "onSaleDate": "2016-12-28T00:00:00+0000"
+    },
+    {
+      "id": 61595,
+      "title": "Ivx",
+      "issueTitle": "Ivx (2016) #2",
+      "seriesTitle": "Ivx",
+      "apiSeriesName": "Ivx (2016 - 2017)",
+      "seriesId": 22644,
+      "issueNumber": "2",
+      "seriesYear": 2016,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/61595/ivx_2016_2",
+      "onSaleDate": "2017-01-11T00:00:00+0000"
+    },
+    {
+      "id": 60862,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2016) #17",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2016 - 2017)",
+      "seriesId": 20612,
+      "issueNumber": "17",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/60862/uncanny_x-men_2016_17",
+      "onSaleDate": "2017-01-11T00:00:00+0000"
+    },
+    {
+      "id": 61108,
+      "title": "Uncanny Inhumans",
+      "issueTitle": "Uncanny Inhumans (2015) #18",
+      "seriesTitle": "Uncanny Inhumans",
+      "apiSeriesName": "Uncanny Inhumans (2015 - 2017)",
+      "seriesId": 19780,
+      "issueNumber": "18",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61108/uncanny_inhumans_2015_18",
+      "onSaleDate": "2017-01-18T00:00:00+0000"
+    },
+    {
+      "id": 60518,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2015) #17",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2015 - 2017)",
+      "seriesId": 20622,
+      "issueNumber": "17",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/60518/all-new_x-men_2015_17",
+      "onSaleDate": "2017-01-18T00:00:00+0000"
+    },
+    {
+      "id": 62508,
+      "title": "Deadpool & the Mercs for Money",
+      "issueTitle": "Deadpool & the Mercs for Money (2016) #7",
+      "seriesTitle": "Deadpool & the Mercs for Money",
+      "apiSeriesName": "Deadpool & the Mercs for Money (2016 - 2017)",
+      "seriesId": 21942,
+      "issueNumber": "7",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/62508/deadpool_the_mercs_for_money_2016_7",
+      "onSaleDate": "2017-01-18T00:00:00+0000"
+    },
+    {
+      "id": 55450,
+      "title": "Extraordinary X-Men",
+      "issueTitle": "Extraordinary X-Men (2015) #18",
+      "seriesTitle": "Extraordinary X-Men",
+      "apiSeriesName": "Extraordinary X-Men (2015 - 2017)",
+      "seriesId": 20460,
+      "issueNumber": "18",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55450/extraordinary_x-men_2015_18",
+      "onSaleDate": "2017-01-25T00:00:00+0000"
+    },
+    {
+      "id": 61596,
+      "title": "Ivx",
+      "issueTitle": "Ivx (2016) #3",
+      "seriesTitle": "Ivx",
+      "apiSeriesName": "Ivx (2016 - 2017)",
+      "seriesId": 22644,
+      "issueNumber": "3",
+      "seriesYear": 2016,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/61596/ivx_2016_3",
+      "onSaleDate": "2017-01-25T00:00:00+0000"
+    },
+    {
+      "id": 62586,
+      "title": "Deadpool & the Mercs for Money",
+      "issueTitle": "Deadpool & the Mercs for Money (2016) #8",
+      "seriesTitle": "Deadpool & the Mercs for Money",
+      "apiSeriesName": "Deadpool & the Mercs for Money (2016 - 2017)",
+      "seriesId": 21942,
+      "issueNumber": "8",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/62586/deadpool_the_mercs_for_money_2016_8",
+      "onSaleDate": "2017-02-01T00:00:00+0000"
+    },
+    {
+      "id": 60519,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2015) #18",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2015 - 2017)",
+      "seriesId": 20622,
+      "issueNumber": "18",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/60519/all-new_x-men_2015_18",
+      "onSaleDate": "2017-02-01T00:00:00+0000"
+    },
+    {
+      "id": 61597,
+      "title": "Ivx",
+      "issueTitle": "Ivx (2016) #4",
+      "seriesTitle": "Ivx",
+      "apiSeriesName": "Ivx (2016 - 2017)",
+      "seriesId": 22644,
+      "issueNumber": "4",
+      "seriesYear": 2016,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/61597/ivx_2016_4",
+      "onSaleDate": "2017-02-08T00:00:00+0000"
+    },
+    {
+      "id": 61109,
+      "title": "Uncanny Inhumans",
+      "issueTitle": "Uncanny Inhumans (2015) #19",
+      "seriesTitle": "Uncanny Inhumans",
+      "apiSeriesName": "Uncanny Inhumans (2015 - 2017)",
+      "seriesId": 19780,
+      "issueNumber": "19",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61109/uncanny_inhumans_2015_19",
+      "onSaleDate": "2017-02-15T00:00:00+0000"
+    },
+    {
+      "id": 60863,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2016) #18",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2016 - 2017)",
+      "seriesId": 20612,
+      "issueNumber": "18",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/60863/uncanny_x-men_2016_18",
+      "onSaleDate": "2017-02-15T00:00:00+0000"
+    },
+    {
+      "id": 61598,
+      "title": "Ivx",
+      "issueTitle": "Ivx (2016) #5",
+      "seriesTitle": "Ivx",
+      "apiSeriesName": "Ivx (2016 - 2017)",
+      "seriesId": 22644,
+      "issueNumber": "5",
+      "seriesYear": 2016,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/61598/ivx_2016_5",
+      "onSaleDate": "2017-02-22T00:00:00+0000"
+    },
+    {
+      "id": 55451,
+      "title": "Extraordinary X-Men",
+      "issueTitle": "Extraordinary X-Men (2015) #19",
+      "seriesTitle": "Extraordinary X-Men",
+      "apiSeriesName": "Extraordinary X-Men (2015 - 2017)",
+      "seriesId": 20460,
+      "issueNumber": "19",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55451/extraordinary_x-men_2015_19",
+      "onSaleDate": "2017-02-22T00:00:00+0000"
+    },
+    {
+      "id": 61982,
+      "title": "Ivx",
+      "issueTitle": "Ivx (2016) #6",
+      "seriesTitle": "Ivx",
+      "apiSeriesName": "Ivx (2016 - 2017)",
+      "seriesId": 22644,
+      "issueNumber": "6",
+      "seriesYear": 2016,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/61982/ivx_2016_6",
+      "onSaleDate": "2017-03-08T00:00:00+0000"
+    },
+    {
+      "id": 61110,
+      "title": "Uncanny Inhumans",
+      "issueTitle": "Uncanny Inhumans (2015) #20",
+      "seriesTitle": "Uncanny Inhumans",
+      "apiSeriesName": "Uncanny Inhumans (2015 - 2017)",
+      "seriesId": 19780,
+      "issueNumber": "20",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61110/uncanny_inhumans_2015_20",
+      "onSaleDate": "2017-03-22T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Inhumans vs. X-Men #0",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Inhumans vs. X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "0",
+      "seriesId": 22644,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61593"
+      ],
+      "selectedIssueId": 61593,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61593/ivx_2016",
+      "resolvedIssueTitle": "Ivx (2016)",
+      "note": "Marvel series 22644 (Ivx (2016 - 2017)) is the reviewed metadata series for this source reference. The source title is Inhumans vs. X-Men; Marvel names the selected series Ivx. Marvel abbreviates the event series as Ivx; its seven issues are numbered 0 through 6.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61593
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Inhumans vs. X-Men #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Inhumans vs. X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "1",
+      "seriesId": 22644,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61594"
+      ],
+      "selectedIssueId": 61594,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61594/ivx_2016_1",
+      "resolvedIssueTitle": "Ivx (2016) #1",
+      "note": "Marvel series 22644 (Ivx (2016 - 2017)) is the reviewed metadata series for this source reference. The source title is Inhumans vs. X-Men; Marvel names the selected series Ivx. Marvel abbreviates the event series as Ivx; its seven issues are numbered 0 through 6.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61594
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Uncanny X-Men #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "16",
+      "seriesId": 20612,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "56064"
+      ],
+      "selectedIssueId": 56064,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/56064/uncanny_x-men_2016_16",
+      "resolvedIssueTitle": "Uncanny X-Men (2016) #16",
+      "note": "Marvel series 20612 (Uncanny X-Men (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        56064
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Extraordinary X-Men #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Extraordinary X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "17",
+      "seriesId": 20460,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55449"
+      ],
+      "selectedIssueId": 55449,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55449/extraordinary_x-men_2015_17",
+      "resolvedIssueTitle": "Extraordinary X-Men (2015) #17",
+      "note": "Marvel series 20460 (Extraordinary X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55449
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Inhumans Vs X-Men #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Inhumans vs. X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "2",
+      "seriesId": 22644,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61595"
+      ],
+      "selectedIssueId": 61595,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61595/ivx_2016_2",
+      "resolvedIssueTitle": "Ivx (2016) #2",
+      "note": "Marvel series 22644 (Ivx (2016 - 2017)) is the reviewed metadata series for this source reference. The source title is Inhumans vs. X-Men; Marvel names the selected series Ivx. Marvel abbreviates the event series as Ivx; its seven issues are numbered 0 through 6.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61595
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Uncanny X-Men #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "17",
+      "seriesId": 20612,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "60862"
+      ],
+      "selectedIssueId": 60862,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/60862/uncanny_x-men_2016_17",
+      "resolvedIssueTitle": "Uncanny X-Men (2016) #17",
+      "note": "Marvel series 20612 (Uncanny X-Men (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        60862
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Uncanny Inhumans #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny Inhumans",
+      "seriesYear": 2015,
+      "issueNumber": "18",
+      "seriesId": 19780,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61108"
+      ],
+      "selectedIssueId": 61108,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61108/uncanny_inhumans_2015_18",
+      "resolvedIssueTitle": "Uncanny Inhumans (2015) #18",
+      "note": "Marvel series 19780 (Uncanny Inhumans (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61108
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "All-New X-Men #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "17",
+      "seriesId": 20622,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "60518"
+      ],
+      "selectedIssueId": 60518,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/60518/all-new_x-men_2015_17",
+      "resolvedIssueTitle": "All-New X-Men (2015) #17",
+      "note": "Marvel series 20622 (All-New X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        60518
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Deadpool & the Mercs for Money #7",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool & the Mercs for Money",
+      "seriesYear": 2016,
+      "issueNumber": "7",
+      "seriesId": 21942,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "62508"
+      ],
+      "selectedIssueId": 62508,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/62508/deadpool_the_mercs_for_money_2016_7",
+      "resolvedIssueTitle": "Deadpool & the Mercs for Money (2016) #7",
+      "note": "Marvel series 21942 (Deadpool & the Mercs for Money (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        62508
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Extraordinary X-Men #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Extraordinary X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "18",
+      "seriesId": 20460,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55450"
+      ],
+      "selectedIssueId": 55450,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55450/extraordinary_x-men_2015_18",
+      "resolvedIssueTitle": "Extraordinary X-Men (2015) #18",
+      "note": "Marvel series 20460 (Extraordinary X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55450
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Inhumans Vs X-Men #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Inhumans vs. X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "3",
+      "seriesId": 22644,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61596"
+      ],
+      "selectedIssueId": 61596,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61596/ivx_2016_3",
+      "resolvedIssueTitle": "Ivx (2016) #3",
+      "note": "Marvel series 22644 (Ivx (2016 - 2017)) is the reviewed metadata series for this source reference. The source title is Inhumans vs. X-Men; Marvel names the selected series Ivx. Marvel abbreviates the event series as Ivx; its seven issues are numbered 0 through 6.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61596
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Deadpool and the Mercs For Money #8",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool & the Mercs for Money",
+      "seriesYear": 2016,
+      "issueNumber": "8",
+      "seriesId": 21942,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "62586"
+      ],
+      "selectedIssueId": 62586,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/62586/deadpool_the_mercs_for_money_2016_8",
+      "resolvedIssueTitle": "Deadpool & the Mercs for Money (2016) #8",
+      "note": "Marvel series 21942 (Deadpool & the Mercs for Money (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        62586
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "All-New X-Men #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "18",
+      "seriesId": 20622,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "60519"
+      ],
+      "selectedIssueId": 60519,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/60519/all-new_x-men_2015_18",
+      "resolvedIssueTitle": "All-New X-Men (2015) #18",
+      "note": "Marvel series 20622 (All-New X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        60519
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Inhumans Vs X-Men #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Inhumans vs. X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "4",
+      "seriesId": 22644,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61597"
+      ],
+      "selectedIssueId": 61597,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61597/ivx_2016_4",
+      "resolvedIssueTitle": "Ivx (2016) #4",
+      "note": "Marvel series 22644 (Ivx (2016 - 2017)) is the reviewed metadata series for this source reference. The source title is Inhumans vs. X-Men; Marvel names the selected series Ivx. Marvel abbreviates the event series as Ivx; its seven issues are numbered 0 through 6.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61597
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Uncanny Inhumans #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny Inhumans",
+      "seriesYear": 2015,
+      "issueNumber": "19",
+      "seriesId": 19780,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61109"
+      ],
+      "selectedIssueId": 61109,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61109/uncanny_inhumans_2015_19",
+      "resolvedIssueTitle": "Uncanny Inhumans (2015) #19",
+      "note": "Marvel series 19780 (Uncanny Inhumans (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61109
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Uncanny X-Men #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "18",
+      "seriesId": 20612,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "60863"
+      ],
+      "selectedIssueId": 60863,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/60863/uncanny_x-men_2016_18",
+      "resolvedIssueTitle": "Uncanny X-Men (2016) #18",
+      "note": "Marvel series 20612 (Uncanny X-Men (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        60863
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Inhumans Vs X-Men #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Inhumans vs. X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "5",
+      "seriesId": 22644,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61598"
+      ],
+      "selectedIssueId": 61598,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61598/ivx_2016_5",
+      "resolvedIssueTitle": "Ivx (2016) #5",
+      "note": "Marvel series 22644 (Ivx (2016 - 2017)) is the reviewed metadata series for this source reference. The source title is Inhumans vs. X-Men; Marvel names the selected series Ivx. Marvel abbreviates the event series as Ivx; its seven issues are numbered 0 through 6.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61598
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Extraordinary X-Men #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Extraordinary X-Men",
+      "seriesYear": 2015,
+      "issueNumber": "19",
+      "seriesId": 20460,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55451"
+      ],
+      "selectedIssueId": 55451,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55451/extraordinary_x-men_2015_19",
+      "resolvedIssueTitle": "Extraordinary X-Men (2015) #19",
+      "note": "Marvel series 20460 (Extraordinary X-Men (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55451
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Inhumans Vs X-Men #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Inhumans vs. X-Men",
+      "seriesYear": 2016,
+      "issueNumber": "6",
+      "seriesId": 22644,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61982"
+      ],
+      "selectedIssueId": 61982,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61982/ivx_2016_6",
+      "resolvedIssueTitle": "Ivx (2016) #6",
+      "note": "Marvel series 22644 (Ivx (2016 - 2017)) is the reviewed metadata series for this source reference. The source title is Inhumans vs. X-Men; Marvel names the selected series Ivx. Marvel abbreviates the event series as Ivx; its seven issues are numbered 0 through 6.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61982
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Uncanny Inhumans #20",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny Inhumans",
+      "seriesYear": 2015,
+      "issueNumber": "20",
+      "seriesId": 19780,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61110"
+      ],
+      "selectedIssueId": 61110,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61110/uncanny_inhumans_2015_20",
+      "resolvedIssueTitle": "Uncanny Inhumans (2015) #20",
+      "note": "Marvel series 19780 (Uncanny Inhumans (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61110
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+  "approvedManifest": {
+    "id": "inhumans-vs-x-men",
+    "name": "Inhumans vs. X-Men",
+    "description": "Twenty chapters alternating the seven-part event with X-Men, Inhumans, and Mercs for Money tie-ins.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "inhumans-vs-x-men.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/inhumans-vs-x-men/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "inhumans_vs_x_men.json",
+    "characters": [
+      "X-Men",
+      "Inhumans",
+      "Medusa",
+      "Black Bolt"
+    ],
+    "keywords": [
+      "Inhumans vs. X-Men",
+      "IvX",
+      "Terrigen"
+    ],
+    "expect": 20,
+    "timeline": 2016,
+    "coverIssueId": 61594,
+    "coverSourcePosition": 2,
+    "coverSourceReference": "Inhumans vs. X-Men #1"
+  }
+}

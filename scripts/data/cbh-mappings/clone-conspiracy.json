@@ -1,0 +1,936 @@
+{
+  "id": "clone-conspiracy",
+  "inventoryId": "clone-conspiracy",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-clone-conspiracy/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 24,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 55314,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2017) #16",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "seriesId": 20432,
+      "issueNumber": "16",
+      "seriesYear": 2017,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/55314/the_amazing_spider-man_2017_16",
+      "onSaleDate": "2016-08-10T00:00:00+0000"
+    },
+    {
+      "id": 55315,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2017) #17",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "seriesId": 20432,
+      "issueNumber": "17",
+      "seriesYear": 2017,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/55315/the_amazing_spider-man_2017_17",
+      "onSaleDate": "2016-08-31T00:00:00+0000"
+    },
+    {
+      "id": 55316,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2017) #18",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "seriesId": 20432,
+      "issueNumber": "18",
+      "seriesYear": 2017,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/55316/the_amazing_spider-man_2017_18",
+      "onSaleDate": "2016-09-21T00:00:00+0000"
+    },
+    {
+      "id": 55317,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2017) #19",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "seriesId": 20432,
+      "issueNumber": "19",
+      "seriesYear": 2017,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/55317/the_amazing_spider-man_2017_19",
+      "onSaleDate": "2016-10-05T00:00:00+0000"
+    },
+    {
+      "id": 61713,
+      "title": "The Clone Conspiracy",
+      "issueTitle": "The Clone Conspiracy (2016) #1",
+      "seriesTitle": "The Clone Conspiracy",
+      "apiSeriesName": "The Clone Conspiracy (2016 - 2017)",
+      "seriesId": 22654,
+      "issueNumber": "1",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61713/the_clone_conspiracy_2016_1",
+      "onSaleDate": "2016-10-12T00:00:00+0000"
+    },
+    {
+      "id": 55318,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2017) #20",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "seriesId": 20432,
+      "issueNumber": "20",
+      "seriesYear": 2017,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/55318/the_amazing_spider-man_2017_20",
+      "onSaleDate": "2016-10-19T00:00:00+0000"
+    },
+    {
+      "id": 61714,
+      "title": "The Clone Conspiracy",
+      "issueTitle": "The Clone Conspiracy (2016) #2",
+      "seriesTitle": "The Clone Conspiracy",
+      "apiSeriesName": "The Clone Conspiracy (2016 - 2017)",
+      "seriesId": 22654,
+      "issueNumber": "2",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61714/the_clone_conspiracy_2016_2",
+      "onSaleDate": "2016-11-09T00:00:00+0000"
+    },
+    {
+      "id": 55319,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2017) #21",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "seriesId": 20432,
+      "issueNumber": "21",
+      "seriesYear": 2017,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/55319/the_amazing_spider-man_2017_21",
+      "onSaleDate": "2016-11-16T00:00:00+0000"
+    },
+    {
+      "id": 55653,
+      "title": "Silk",
+      "issueTitle": "Silk (2015) #14",
+      "seriesTitle": "Silk",
+      "apiSeriesName": "Silk (2015 - 2017)",
+      "seriesId": 20499,
+      "issueNumber": "14",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55653/silk_2015_14",
+      "onSaleDate": "2016-11-16T00:00:00+0000"
+    },
+    {
+      "id": 61715,
+      "title": "The Clone Conspiracy",
+      "issueTitle": "The Clone Conspiracy (2016) #3",
+      "seriesTitle": "The Clone Conspiracy",
+      "apiSeriesName": "The Clone Conspiracy (2016 - 2017)",
+      "seriesId": 22654,
+      "issueNumber": "3",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61715/the_clone_conspiracy_2016_3",
+      "onSaleDate": "2016-12-07T00:00:00+0000"
+    },
+    {
+      "id": 55320,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2017) #22",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "seriesId": 20432,
+      "issueNumber": "22",
+      "seriesYear": 2017,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/55320/the_amazing_spider-man_2017_22",
+      "onSaleDate": "2016-12-21T00:00:00+0000"
+    },
+    {
+      "id": 55654,
+      "title": "Silk",
+      "issueTitle": "Silk (2015) #15",
+      "seriesTitle": "Silk",
+      "apiSeriesName": "Silk (2015 - 2017)",
+      "seriesId": 20499,
+      "issueNumber": "15",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55654/silk_2015_15",
+      "onSaleDate": "2016-12-14T00:00:00+0000"
+    },
+    {
+      "id": 61716,
+      "title": "The Clone Conspiracy",
+      "issueTitle": "The Clone Conspiracy (2016) #4",
+      "seriesTitle": "The Clone Conspiracy",
+      "apiSeriesName": "The Clone Conspiracy (2016 - 2017)",
+      "seriesId": 22654,
+      "issueNumber": "4",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61716/the_clone_conspiracy_2016_4",
+      "onSaleDate": "2017-01-18T00:00:00+0000"
+    },
+    {
+      "id": 55321,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2017) #23",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "seriesId": 20432,
+      "issueNumber": "23",
+      "seriesYear": 2017,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/55321/the_amazing_spider-man_2017_23",
+      "onSaleDate": "2017-01-18T00:00:00+0000"
+    },
+    {
+      "id": 55655,
+      "title": "Silk",
+      "issueTitle": "Silk (2015) #16",
+      "seriesTitle": "Silk",
+      "apiSeriesName": "Silk (2015 - 2017)",
+      "seriesId": 20499,
+      "issueNumber": "16",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/55655/silk_2015_16",
+      "onSaleDate": "2017-01-11T00:00:00+0000"
+    },
+    {
+      "id": 61302,
+      "title": "Prowler",
+      "issueTitle": "Prowler (2016) #1",
+      "seriesTitle": "Prowler",
+      "apiSeriesName": "Prowler (2016 - 2017)",
+      "seriesId": 22535,
+      "issueNumber": "1",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61302/prowler_2016_1",
+      "onSaleDate": "2016-10-26T00:00:00+0000"
+    },
+    {
+      "id": 61304,
+      "title": "Prowler",
+      "issueTitle": "Prowler (2016) #2",
+      "seriesTitle": "Prowler",
+      "apiSeriesName": "Prowler (2016 - 2017)",
+      "seriesId": 22535,
+      "issueNumber": "2",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61304/prowler_2016_2",
+      "onSaleDate": "2016-11-23T00:00:00+0000"
+    },
+    {
+      "id": 61306,
+      "title": "Prowler",
+      "issueTitle": "Prowler (2016) #3",
+      "seriesTitle": "Prowler",
+      "apiSeriesName": "Prowler (2016 - 2017)",
+      "seriesId": 22535,
+      "issueNumber": "3",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61306/prowler_2016_3",
+      "onSaleDate": "2016-12-28T00:00:00+0000"
+    },
+    {
+      "id": 61307,
+      "title": "Prowler",
+      "issueTitle": "Prowler (2016) #4",
+      "seriesTitle": "Prowler",
+      "apiSeriesName": "Prowler (2016 - 2017)",
+      "seriesId": 22535,
+      "issueNumber": "4",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61307/prowler_2016_4",
+      "onSaleDate": "2017-01-25T00:00:00+0000"
+    },
+    {
+      "id": 61717,
+      "title": "The Clone Conspiracy",
+      "issueTitle": "The Clone Conspiracy (2016) #5",
+      "seriesTitle": "The Clone Conspiracy",
+      "apiSeriesName": "The Clone Conspiracy (2016 - 2017)",
+      "seriesId": 22654,
+      "issueNumber": "5",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61717/the_clone_conspiracy_2016_5",
+      "onSaleDate": "2017-02-15T00:00:00+0000"
+    },
+    {
+      "id": 55322,
+      "title": "The Amazing Spider-Man",
+      "issueTitle": "The Amazing Spider-Man (2017) #24",
+      "seriesTitle": "The Amazing Spider-Man",
+      "apiSeriesName": "The Amazing Spider-Man (2017 - 2018)",
+      "seriesId": 20432,
+      "issueNumber": "24",
+      "seriesYear": 2017,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/55322/the_amazing_spider-man_2017_24",
+      "onSaleDate": "2017-02-22T00:00:00+0000"
+    },
+    {
+      "id": 61050,
+      "title": "Silk",
+      "issueTitle": "Silk (2015) #17",
+      "seriesTitle": "Silk",
+      "apiSeriesName": "Silk (2015 - 2017)",
+      "seriesId": 20499,
+      "issueNumber": "17",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61050/silk_2015_17",
+      "onSaleDate": "2017-02-15T00:00:00+0000"
+    },
+    {
+      "id": 61308,
+      "title": "Prowler",
+      "issueTitle": "Prowler (2016) #5",
+      "seriesTitle": "Prowler",
+      "apiSeriesName": "Prowler (2016 - 2017)",
+      "seriesId": 22535,
+      "issueNumber": "5",
+      "seriesYear": 2016,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/61308/prowler_2016_5",
+      "onSaleDate": "2017-02-22T00:00:00+0000"
+    },
+    {
+      "id": 62649,
+      "title": "The Clone Conspiracy: Omega",
+      "issueTitle": "The Clone Conspiracy: Omega (2017) #1",
+      "seriesTitle": "The Clone Conspiracy: Omega",
+      "apiSeriesName": "The Clone Conspiracy: Omega (2017)",
+      "seriesId": 23028,
+      "issueNumber": "1",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/62649/the_clone_conspiracy_omega_2017_1",
+      "onSaleDate": "2017-03-01T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Amazing Spider-Man #16",
+      "sourceRangeReference": "Amazing Spider-Man #16-#19",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2017,
+      "issueNumber": "16",
+      "seriesId": 20432,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55314"
+      ],
+      "selectedIssueId": 55314,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55314/the_amazing_spider-man_2017_16",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2017) #16",
+      "note": "Marvel series 20432 (The Amazing Spider-Man (2017 - 2018)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2017-indexed series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55314
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Amazing Spider-Man #17",
+      "sourceRangeReference": "Amazing Spider-Man #16-#19",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2017,
+      "issueNumber": "17",
+      "seriesId": 20432,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55315"
+      ],
+      "selectedIssueId": 55315,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55315/the_amazing_spider-man_2017_17",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2017) #17",
+      "note": "Marvel series 20432 (The Amazing Spider-Man (2017 - 2018)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2017-indexed series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55315
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Amazing Spider-Man #18",
+      "sourceRangeReference": "Amazing Spider-Man #16-#19",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2017,
+      "issueNumber": "18",
+      "seriesId": 20432,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55316"
+      ],
+      "selectedIssueId": 55316,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55316/the_amazing_spider-man_2017_18",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2017) #18",
+      "note": "Marvel series 20432 (The Amazing Spider-Man (2017 - 2018)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2017-indexed series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55316
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Amazing Spider-Man #19",
+      "sourceRangeReference": "Amazing Spider-Man #16-#19",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2017,
+      "issueNumber": "19",
+      "seriesId": 20432,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55317"
+      ],
+      "selectedIssueId": 55317,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55317/the_amazing_spider-man_2017_19",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2017) #19",
+      "note": "Marvel series 20432 (The Amazing Spider-Man (2017 - 2018)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2017-indexed series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55317
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "The Clone Conspiracy #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "The Clone Conspiracy",
+      "seriesYear": 2016,
+      "issueNumber": "1",
+      "seriesId": 22654,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61713"
+      ],
+      "selectedIssueId": 61713,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61713/the_clone_conspiracy_2016_1",
+      "resolvedIssueTitle": "The Clone Conspiracy (2016) #1",
+      "note": "Marvel series 22654 (The Clone Conspiracy (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61713
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Amazing Spider-Man #20",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2017,
+      "issueNumber": "20",
+      "seriesId": 20432,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55318"
+      ],
+      "selectedIssueId": 55318,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55318/the_amazing_spider-man_2017_20",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2017) #20",
+      "note": "Marvel series 20432 (The Amazing Spider-Man (2017 - 2018)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2017-indexed series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55318
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "The Clone Conspiracy #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "The Clone Conspiracy",
+      "seriesYear": 2016,
+      "issueNumber": "2",
+      "seriesId": 22654,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61714"
+      ],
+      "selectedIssueId": 61714,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61714/the_clone_conspiracy_2016_2",
+      "resolvedIssueTitle": "The Clone Conspiracy (2016) #2",
+      "note": "Marvel series 22654 (The Clone Conspiracy (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61714
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Amazing Spider-Man #21",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2017,
+      "issueNumber": "21",
+      "seriesId": 20432,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55319"
+      ],
+      "selectedIssueId": 55319,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55319/the_amazing_spider-man_2017_21",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2017) #21",
+      "note": "Marvel series 20432 (The Amazing Spider-Man (2017 - 2018)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2017-indexed series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55319
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Silk #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Silk",
+      "seriesYear": 2015,
+      "issueNumber": "14",
+      "seriesId": 20499,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55653"
+      ],
+      "selectedIssueId": 55653,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55653/silk_2015_14",
+      "resolvedIssueTitle": "Silk (2015) #14",
+      "note": "Marvel series 20499 (Silk (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55653
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "The Clone Conspiracy #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "The Clone Conspiracy",
+      "seriesYear": 2016,
+      "issueNumber": "3",
+      "seriesId": 22654,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61715"
+      ],
+      "selectedIssueId": 61715,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61715/the_clone_conspiracy_2016_3",
+      "resolvedIssueTitle": "The Clone Conspiracy (2016) #3",
+      "note": "Marvel series 22654 (The Clone Conspiracy (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61715
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Amazing Spider-Man #22",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2017,
+      "issueNumber": "22",
+      "seriesId": 20432,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55320"
+      ],
+      "selectedIssueId": 55320,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55320/the_amazing_spider-man_2017_22",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2017) #22",
+      "note": "Marvel series 20432 (The Amazing Spider-Man (2017 - 2018)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2017-indexed series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55320
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Silk #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Silk",
+      "seriesYear": 2015,
+      "issueNumber": "15",
+      "seriesId": 20499,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55654"
+      ],
+      "selectedIssueId": 55654,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55654/silk_2015_15",
+      "resolvedIssueTitle": "Silk (2015) #15",
+      "note": "Marvel series 20499 (Silk (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55654
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "The Clone Conspiracy #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "The Clone Conspiracy",
+      "seriesYear": 2016,
+      "issueNumber": "4",
+      "seriesId": 22654,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61716"
+      ],
+      "selectedIssueId": 61716,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61716/the_clone_conspiracy_2016_4",
+      "resolvedIssueTitle": "The Clone Conspiracy (2016) #4",
+      "note": "Marvel series 22654 (The Clone Conspiracy (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61716
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Amazing Spider-Man #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2017,
+      "issueNumber": "23",
+      "seriesId": 20432,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55321"
+      ],
+      "selectedIssueId": 55321,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55321/the_amazing_spider-man_2017_23",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2017) #23",
+      "note": "Marvel series 20432 (The Amazing Spider-Man (2017 - 2018)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2017-indexed series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55321
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Silk #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Silk",
+      "seriesYear": 2015,
+      "issueNumber": "16",
+      "seriesId": 20499,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55655"
+      ],
+      "selectedIssueId": 55655,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55655/silk_2015_16",
+      "resolvedIssueTitle": "Silk (2015) #16",
+      "note": "Marvel series 20499 (Silk (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55655
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Prowler #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Prowler",
+      "seriesYear": 2016,
+      "issueNumber": "1",
+      "seriesId": 22535,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61302"
+      ],
+      "selectedIssueId": 61302,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61302/prowler_2016_1",
+      "resolvedIssueTitle": "Prowler (2016) #1",
+      "note": "Marvel series 22535 (Prowler (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61302
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Prowler #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Prowler",
+      "seriesYear": 2016,
+      "issueNumber": "2",
+      "seriesId": 22535,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61304"
+      ],
+      "selectedIssueId": 61304,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61304/prowler_2016_2",
+      "resolvedIssueTitle": "Prowler (2016) #2",
+      "note": "Marvel series 22535 (Prowler (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61304
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Prowler #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Prowler",
+      "seriesYear": 2016,
+      "issueNumber": "3",
+      "seriesId": 22535,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61306"
+      ],
+      "selectedIssueId": 61306,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61306/prowler_2016_3",
+      "resolvedIssueTitle": "Prowler (2016) #3",
+      "note": "Marvel series 22535 (Prowler (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61306
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Prowler #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Prowler",
+      "seriesYear": 2016,
+      "issueNumber": "4",
+      "seriesId": 22535,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61307"
+      ],
+      "selectedIssueId": 61307,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61307/prowler_2016_4",
+      "resolvedIssueTitle": "Prowler (2016) #4",
+      "note": "Marvel series 22535 (Prowler (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61307
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "The Clone Conspiracy #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "The Clone Conspiracy",
+      "seriesYear": 2016,
+      "issueNumber": "5",
+      "seriesId": 22654,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61717"
+      ],
+      "selectedIssueId": 61717,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61717/the_clone_conspiracy_2016_5",
+      "resolvedIssueTitle": "The Clone Conspiracy (2016) #5",
+      "note": "Marvel series 22654 (The Clone Conspiracy (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61717
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Amazing Spider-Man #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 2017,
+      "issueNumber": "24",
+      "seriesId": 20432,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "55322"
+      ],
+      "selectedIssueId": 55322,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/55322/the_amazing_spider-man_2017_24",
+      "resolvedIssueTitle": "The Amazing Spider-Man (2017) #24",
+      "note": "Marvel series 20432 (The Amazing Spider-Man (2017 - 2018)) is the reviewed metadata series for this source reference. The source title is Amazing Spider-Man; Marvel names the selected series The Amazing Spider-Man. Marvel adds the leading article in The Amazing Spider-Man; the reviewed issues are from this 2017-indexed series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        55322
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Silk #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Silk",
+      "seriesYear": 2015,
+      "issueNumber": "17",
+      "seriesId": 20499,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61050"
+      ],
+      "selectedIssueId": 61050,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61050/silk_2015_17",
+      "resolvedIssueTitle": "Silk (2015) #17",
+      "note": "Marvel series 20499 (Silk (2015 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61050
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Prowler #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Prowler",
+      "seriesYear": 2016,
+      "issueNumber": "5",
+      "seriesId": 22535,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "61308"
+      ],
+      "selectedIssueId": 61308,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/61308/prowler_2016_5",
+      "resolvedIssueTitle": "Prowler (2016) #5",
+      "note": "Marvel series 22535 (Prowler (2016 - 2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        61308
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "The Clone Conspiracy: Omega #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "The Clone Conspiracy: Omega",
+      "seriesYear": 2017,
+      "issueNumber": "1",
+      "seriesId": 23028,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "62649"
+      ],
+      "selectedIssueId": 62649,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/62649/the_clone_conspiracy_omega_2017_1",
+      "resolvedIssueTitle": "The Clone Conspiracy: Omega (2017) #1",
+      "note": "Marvel series 23028 (The Clone Conspiracy: Omega (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        62649
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/reviews/logs/2026-08-21/modern-marvel-continuity-guides-packet-review.md",
+  "approvedManifest": {
+    "id": "clone-conspiracy",
+    "name": "Spider-Man: The Clone Conspiracy",
+    "description": "Twenty-four issues combining the five-part event with Amazing Spider-Man, Silk, Prowler, and the Omega conclusion.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "clone-conspiracy.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-clone-conspiracy/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "clone_conspiracy.json",
+    "characters": [
+      "Spider-Man",
+      "Prowler",
+      "Silk",
+      "The Jackal"
+    ],
+    "keywords": [
+      "Clone Conspiracy",
+      "Dead No More",
+      "Prowler",
+      "Silk"
+    ],
+    "expect": 24,
+    "timeline": 2016,
+    "coverIssueId": 61713,
+    "coverSourcePosition": 5,
+    "coverSourceReference": "The Clone Conspiracy #1"
+  }
+}
