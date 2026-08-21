@@ -29,6 +29,476 @@
     "fp": "4d2b3f12e677a462",
     "head": "<title>Recap Page</title>"
   },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c1|src/data/curated-lists.json:1-146|0": {
+    "anchor": "src/data/curated-lists.json:1-146",
+    "fp": "63443bd34b548769",
+    "head": "{"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c10|package.json:8-29|0": {
+    "anchor": "package.json:8-29",
+    "fp": "d8f24a5ce3eb937f",
+    "head": "\"scripts\": {"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c11|src/js/lib/markdown.js:225-244|0": {
+    "anchor": "src/js/lib/markdown.js:225-244",
+    "fp": "7435d4ca3e1e3d73",
+    "head": "// Normalization used only for exact-match title resolution. Deliberately strict:"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c12|src/js/main.js:3299-3355|0": {
+    "anchor": "src/js/main.js:3299-3355",
+    "fp": "afc8c8338e35c82c",
+    "head": "function unresolvedRow(entry, listId) {"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c13|scripts/build-event-order.mjs:295-373|0": {
+    "anchor": "scripts/build-event-order.mjs:295-373",
+    "fp": "658ec0a6737da5f6",
+    "head": "// PR #4 adds a byte-faithful src/data/series-index.json covering all 6,990 series; once that"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c14|test/reading-path.test.js:213-248|0": {
+    "anchor": "test/reading-path.test.js:213-248",
+    "fp": "5228ad71b1e75acf",
+    "head": "// The chain is only honest if a reader who works through it is never sent the same issue twice,"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c15|docs/DATA_PROVENANCE.md:163-177|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:163-177",
+    "fp": "dc06d76aa997e905",
+    "head": "## Where the chain stops, and why no other chain replaces it"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c2|src/js/lib/markdown.js:70-148|0": {
+    "anchor": "src/js/lib/markdown.js:70-148",
+    "fp": "d31ca73cc50278f8",
+    "head": "// Returns { entries, unresolved, headings }"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c3|scripts/vendor-orders.mjs:173-360|0": {
+    "anchor": "scripts/vendor-orders.mjs:173-360",
+    "fp": "4fad811d654b9284",
+    "head": "async function main() {"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c4|scripts/vendor-orders.mjs:300-307|0": {
+    "anchor": "scripts/vendor-orders.mjs:300-307",
+    "fp": "f45e52c1b90fe41a",
+    "head": "const dupes = new Set();"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c5|src/js/lib/curated.js:146-205|0": {
+    "anchor": "src/js/lib/curated.js:146-205",
+    "fp": "09e36c41f0dc86af",
+    "head": "// A named ordered reading path through the catalog: the stops a reader works through, in the"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c6|README.md:603-647|0": {
+    "anchor": "README.md:603-647",
+    "fp": "c2301cf7bd6f3429",
+    "head": "### Adding a curated reading list"
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c7|src/data/curated-lists.json:149-423|0": {
+    "anchor": "src/data/curated-lists.json:149-423",
+    "fp": "ccff78b6b378a175",
+    "head": "\"id\": \"house-of-m\","
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c8|src/data/curated-lists.json:552-980|0": {
+    "anchor": "src/data/curated-lists.json:552-980",
+    "fp": "d8d543a29c2b7116",
+    "head": "\"id\": \"captain-america-best-of\","
+  },
+  ".copilot-tracking/research/2026-08-20/modern-marvel-continuity-guides-research.md|codebase-evidence#c9|docs/DATA_PROVENANCE.md:287-310|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:287-310",
+    "fp": "33cba19a18a4fe1a",
+    "head": "**Comic Book Herald was written to on 2026-08-19**, at the address published on its contact page. It"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|lower-model-normalization-contract|scripts/vendor-orders.mjs:270-323|0": {
+    "anchor": "scripts/vendor-orders.mjs:270-323",
+    "fp": "442d0840b0e45b52",
+    "head": "const placeholderItems = unresolved.map((u) => ({"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|lower-model-normalization-contract|src/js/lib/curated.js:39-143|0": {
+    "anchor": "src/js/lib/curated.js:39-143",
+    "fp": "9a17071704b6ca52",
+    "head": "function checkEntry(raw, index, seen) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|lower-model-normalization-contract|src/js/lib/markdown.js:70-148|0": {
+    "anchor": "src/js/lib/markdown.js:70-148",
+    "fp": "d31ca73cc50278f8",
+    "head": "// Returns { entries, unresolved, headings }"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|pilot-comparison#siege|src/data/orders/dark-reign-avengers.md:41-46|0": {
+    "anchor": "src/data/orders/dark-reign-avengers.md:41-46",
+    "fp": "b155b06bc164ec83",
+    "head": "## Dark Avengers, Volume 3"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|pilot-comparison#world-war-hulk-aftersmash|src/data/curated-lists.json:342-381|0": {
+    "anchor": "src/data/curated-lists.json:342-381",
+    "fp": "e7245dd7a3007d02",
+    "head": "\"id\": \"secret-invasion\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-deeper.md|pilot-comparison#x-men-extermination|README.md:688-700|0": {
+    "anchor": "README.md:688-700",
+    "fp": "b89058a2d533f1a9",
+    "head": "A checklist may divide its issues with `##` sub-headings. Each one names a collected edition, and"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:194-360|0": {
+    "anchor": "scripts/vendor-orders.mjs:194-360",
+    "fp": "8abd046ee1d4d764",
+    "head": "const parsed = [];"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:327-368|0": {
+    "anchor": "scripts/vendor-orders.mjs:327-368",
+    "fp": "c5e09135386a7e50",
+    "head": "summary.push({"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:36-45|0": {
+    "anchor": "scripts/vendor-orders.mjs:36-45",
+    "fp": "3fd2445a00d250e7",
+    "head": "// A manifest that cannot be read in full is a maintainer error: vendoring the valid subset"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|scripts/vendor-orders.mjs:55-59|0": {
+    "anchor": "scripts/vendor-orders.mjs:55-59",
+    "fp": "0f48abb7d9c3e5b6",
+    "head": "// An order comes from exactly one place; the manifest has already guaranteed which."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/data/catalog.json:1176-1194|0": {
+    "anchor": "src/data/catalog.json:1176-1194",
+    "fp": "850060bee9dc3b0f",
+    "head": "\"paths\": ["
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/data/curated-lists.json:982-1000|0": {
+    "anchor": "src/data/curated-lists.json:982-1000",
+    "fp": "850060bee9dc3b0f",
+    "head": "\"paths\": ["
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/catalog.js:126-224|0": {
+    "anchor": "src/js/lib/catalog.js:126-224",
+    "fp": "947a2e97e85830d7",
+    "head": "function normalizeEntry(raw) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/catalog.js:265-309|0": {
+    "anchor": "src/js/lib/catalog.js:265-309",
+    "fp": "9a868995af85f852",
+    "head": "export function catalogFacets(lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/catalog.js:412-472|0": {
+    "anchor": "src/js/lib/catalog.js:412-472",
+    "fp": "e8c65d8459512aec",
+    "head": "export function groupCatalog(lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/catalog.js:482-541|0": {
+    "anchor": "src/js/lib/catalog.js:482-541",
+    "fp": "94da725e9a5c6df5",
+    "head": "// Where each story sits on a named reading path. A path is the one thing the catalog could not"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:146-205|0": {
+    "anchor": "src/js/lib/curated.js:146-205",
+    "fp": "09e36c41f0dc86af",
+    "head": "// A named ordered reading path through the catalog: the stops a reader works through, in the"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:207-248|0": {
+    "anchor": "src/js/lib/curated.js:207-248",
+    "fp": "953bc223ac21954c",
+    "head": "// Returns every valid entry plus every reason an entry was rejected. Callers decide whether a"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:23-26|0": {
+    "anchor": "src/js/lib/curated.js:23-26",
+    "fp": "fc3f245261cd4c02",
+    "head": "// An SPDX expression: identifiers of letters, digits, dot, plus and hyphen, optionally joined by"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:3-15|0": {
+    "anchor": "src/js/lib/curated.js:3-15",
+    "fp": "4e420ea149044257",
+    "head": "// A curated reading list is defined entirely by data: `src/data/curated-lists.json` names the"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/curated.js:39-143|0": {
+    "anchor": "src/js/lib/curated.js:39-143",
+    "fp": "9a17071704b6ca52",
+    "head": "function checkEntry(raw, index, seen) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/markdown.js:175-184|0": {
+    "anchor": "src/js/lib/markdown.js:175-184",
+    "fp": "ab1fa16f5b973d3e",
+    "head": "// Serializes a list back to the same format it can be re-imported from."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/markdown.js:2-11|0": {
+    "anchor": "src/js/lib/markdown.js:2-11",
+    "fp": "01fb452f9f8dd3e7",
+    "head": "// Upstream format: - [ ] [Title](https://www.marvel.com/comics/issue/<id>/<slug>)"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|1-source-to-catalog-workflow|src/js/lib/markdown.js:70-148|0": {
+    "anchor": "src/js/lib/markdown.js:70-148",
+    "fp": "d31ca73cc50278f8",
+    "head": "// Returns { entries, unresolved, headings }"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#authoring-the-curated-manifest-and-orders|README.md:603-679|0": {
+    "anchor": "README.md:603-679",
+    "fp": "74f80f9dc41bafc7",
+    "head": "### Adding a curated reading list"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#authoring-the-curated-manifest-and-orders|src/js/lib/curated.js:39-143|0": {
+    "anchor": "src/js/lib/curated.js:39-143",
+    "fp": "9a17071704b6ca52",
+    "head": "function checkEntry(raw, index, seen) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#authoring-the-curated-manifest-and-orders|src/js/lib/markdown.js:70-148|0": {
+    "anchor": "src/js/lib/markdown.js:70-148",
+    "fp": "d31ca73cc50278f8",
+    "head": "// Returns { entries, unresolved, headings }"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#browser-behavior|README.md:485-520|0": {
+    "anchor": "README.md:485-520",
+    "fp": "f59cb16a8b63939b",
+    "head": "### The browser check"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#browser-behavior|README.md:522-530|0": {
+    "anchor": "README.md:522-530",
+    "fp": "c10e6902c389c750",
+    "head": "```"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#browser-behavior|scripts/browser-check.mjs:1-26|0": {
+    "anchor": "scripts/browser-check.mjs:1-26",
+    "fp": "1b92e3b4b03db03a",
+    "head": "// Real-browser regression evidence, made reproducible."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#browser-behavior|scripts/browser-check.mjs:99-260|0": {
+    "anchor": "scripts/browser-check.mjs:99-260",
+    "fp": "27555423e31fd878",
+    "head": "// ------------------------------------------------------------------ fixtures"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|src/js/lib/catalog.js:177-224|0": {
+    "anchor": "src/js/lib/catalog.js:177-224",
+    "fp": "59bc865d96e705fe",
+    "head": "// The catalog is a shelf, and a shelf has an order. Left to the manifest's own, it is the order"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|src/js/lib/catalog.js:412-541|0": {
+    "anchor": "src/js/lib/catalog.js:412-541",
+    "fp": "64456003c06ad4df",
+    "head": "export function groupCatalog(lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|src/js/lib/catalog.js:544-608|0": {
+    "anchor": "src/js/lib/catalog.js:544-608",
+    "fp": "89641819798222f5",
+    "head": "// The year an order's reading starts, as a phrase. Null means the order ranges across the"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|test/catalog.test.js:377-519|0": {
+    "anchor": "test/catalog.test.js:377-519",
+    "fp": "450a2b6cf95b6265",
+    "head": "test('orders for the same event are grouped together under the event name', () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#catalog-grouping-and-order|test/catalog.test.js:536-878|0": {
+    "anchor": "test/catalog.test.js:536-878",
+    "fp": "9134ce4d34d8e09f",
+    "head": "// The shelf shows one card per story, so a chip promising \"Events (8)\" that opens onto six cards"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#counts|scripts/check-counts.mjs:1-23|0": {
+    "anchor": "scripts/check-counts.mjs:1-23",
+    "fp": "978ebe6613f132b7",
+    "head": "// A count stated in prose is an evidence claim with nothing behind it. The anchors"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#counts|scripts/check-counts.mjs:128-179|0": {
+    "anchor": "scripts/check-counts.mjs:128-179",
+    "fp": "19b988dceb511053",
+    "head": "export function derive(text) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#counts|test/check-counts.test.js:84-136|0": {
+    "anchor": "test/check-counts.test.js:84-136",
+    "fp": "733724fa49f338b7",
+    "head": "test('the real backlog agrees with the table every figure is derived from', () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#generated-data-parity|test/catalog.test.js:641-754|0": {
+    "anchor": "test/catalog.test.js:641-754",
+    "fp": "091729448ec3205e",
+    "head": "test('every bundled catalog entry carries attribution and a last-updated date', async () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#generated-data-parity|test/catalog.test.js:96-125|0": {
+    "anchor": "test/catalog.test.js:96-125",
+    "fp": "80b70a54efc47f76",
+    "head": "test('the bundled catalog is valid and its counts match the vendored orders', async () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#generated-data-parity|test/curated.test.js:135-185|0": {
+    "anchor": "test/curated.test.js:135-185",
+    "fp": "d03b83481df6d136",
+    "head": "test('the bundled manifest is valid and describes exactly the bundled catalog', async () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#generated-data-parity|test/reading-path.test.js:192-248|0": {
+    "anchor": "test/reading-path.test.js:192-248",
+    "fp": "e87503423b41d019",
+    "head": "test('the shipped manifest declares a path that resolves end to end', async () => {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#provenance|docs/DATA_PROVENANCE.md:279-333|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:279-333",
+    "fp": "ebffbf69809db3c5",
+    "head": "### What was asked of the guide writers, and the one answer received"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#provenance|docs/DATA_PROVENANCE.md:350-383|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:350-383",
+    "fp": "f7b0610d963aec83",
+    "head": "### What the first hand's own terms said"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#provenance|docs/DATA_PROVENANCE.md:71-125|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:71-125",
+    "fp": "d70d4403c6ad4feb",
+    "head": "## Inventory"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#provenance|src/js/lib/catalog.js:61-90|0": {
+    "anchor": "src/js/lib/catalog.js:61-90",
+    "fp": "a9a43f5ddc529004",
+    "head": "// Attribution is only trustworthy if the reader can follow it, and only safe if what we"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#schema-and-normalization|src/js/lib/catalog.js:109-224|0": {
+    "anchor": "src/js/lib/catalog.js:109-224",
+    "fp": "bd396a396fc308ba",
+    "head": "// A curated file is fetched from our own origin by name, so it must stay a plain file name."
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands#schema-and-normalization|src/js/lib/curated.js:39-143|0": {
+    "anchor": "src/js/lib/curated.js:39-143",
+    "fp": "9a17071704b6ca52",
+    "head": "function checkEntry(raw, index, seen) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands|scripts/vendor-orders.mjs:327-368|0": {
+    "anchor": "scripts/vendor-orders.mjs:327-368",
+    "fp": "c5e09135386a7e50",
+    "head": "summary.push({"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands|src/data/curated-lists.json:982-1000|0": {
+    "anchor": "src/data/curated-lists.json:982-1000",
+    "fp": "850060bee9dc3b0f",
+    "head": "\"paths\": ["
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands|src/js/lib/curated.js:119-120|0": {
+    "anchor": "src/js/lib/curated.js:119-120",
+    "fp": "d64176633a05b7a8",
+    "head": "sourcePage: httpsUrl(raw.sourcePage) ?? sourceUrl,"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|3-validation-owners-and-commands|src/js/lib/curated.js:67-73|0": {
+    "anchor": "src/js/lib/curated.js:67-73",
+    "fp": "ddbdf02d819f1272",
+    "head": "if (!str(raw.sourceOrigin)) at('has no sourceOrigin');"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|4-comic-book-herald-permission-and-attribution|docs/DATA_PROVENANCE.md:287-290|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:287-290",
+    "fp": "6bb4616ffb7d4aa0",
+    "head": "**Comic Book Herald was written to on 2026-08-19**, at the address published on its contact page. It"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|4-comic-book-herald-permission-and-attribution|docs/DATA_PROVENANCE.md:292-300|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:292-300",
+    "fp": "c8a17ced0a725dc7",
+    "head": "> Hi Raymond,"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|4-comic-book-herald-permission-and-attribution|docs/DATA_PROVENANCE.md:306-310|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:306-310",
+    "fp": "20242cfd44e33465",
+    "head": "That is a yes to the exact pattern already in use on the twelve lists and a no to the idea that the"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|4-comic-book-herald-permission-and-attribution|docs/DATA_PROVENANCE.md:321-333|0": {
+    "anchor": "docs/DATA_PROVENANCE.md:321-333",
+    "fp": "c262c1ff0611c8e7",
+    "head": "\"As described\" refers to the request, which offered to credit Comic Book Reading Orders on the"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|5-batch-sizing-and-gap-assessment|src/data/curated-lists.json:113-146|0": {
+    "anchor": "src/data/curated-lists.json:113-146",
+    "fp": "da4ff34c92b35cf6",
+    "head": "\"id\": \"new-ultimate-universe-trades\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|README.md:481-483|0": {
+    "anchor": "README.md:481-483",
+    "fp": "dc2560aac0e9818d",
+    "head": "`npm run contract` is deliberately not part of CI. It calls the live metadata API, so it"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|README.md:681-684|0": {
+    "anchor": "README.md:681-684",
+    "fp": "19bec794503862df",
+    "head": "Nothing checks that the stops do not overlap, because nothing can: two orders sharing an issue is"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/build-event-order.mjs:209-243|0": {
+    "anchor": "scripts/build-event-order.mjs:209-243",
+    "fp": "f02c8c966c16a289",
+    "head": "const { getJson } = createJsonFetcher();"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/build-event-order.mjs:34-36|0": {
+    "anchor": "scripts/build-event-order.mjs:34-36",
+    "fp": "f3716d71bad4c513",
+    "head": "const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/vendor-orders.mjs:205-212|0": {
+    "anchor": "scripts/vendor-orders.mjs:205-212",
+    "fp": "13d5124fc5694d17",
+    "head": "const { meta, refused } = await lookupIssues(ids, {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/vendor-orders.mjs:300-307|0": {
+    "anchor": "scripts/vendor-orders.mjs:300-307",
+    "fp": "f45e52c1b90fe41a",
+    "head": "const dupes = new Set();"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|scripts/vendor-orders.mjs:31|0": {
+    "anchor": "scripts/vendor-orders.mjs:31",
+    "fp": "c74becb4aff486d5",
+    "head": "const API = 'https://marvel.emreparker.com/v1';"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|src/data/curated-lists.json:982-1000|0": {
+    "anchor": "src/data/curated-lists.json:982-1000",
+    "fp": "850060bee9dc3b0f",
+    "head": "\"paths\": ["
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|src/js/lib/catalog.js:292-309|0": {
+    "anchor": "src/js/lib/catalog.js:292-309",
+    "fp": "a309684c11e40cc7",
+    "head": "// How many stories a set of orders amounts to. The shelf shows one card per story, so a chip"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|src/js/lib/catalog.js:412-472|0": {
+    "anchor": "src/js/lib/catalog.js:412-472",
+    "fp": "e8c65d8459512aec",
+    "head": "export function groupCatalog(lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|6-contrarian-evidence-against-a-very-large-data-|src/js/lib/catalog.js:492-541|0": {
+    "anchor": "src/js/lib/catalog.js:492-541",
+    "fp": "140d4377bd7cf6da",
+    "head": "export function pathPlacements(paths, lists) {"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|boundary-notes|src/data/curated-lists.json:464-549|0": {
+    "anchor": "src/data/curated-lists.json:464-549",
+    "fp": "1d2a7cdd5b8253ef",
+    "head": "\"id\": \"xmen-claremont\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|boundary-notes|src/data/curated-lists.json:78-146|0": {
+    "anchor": "src/data/curated-lists.json:78-146",
+    "fp": "502f7775091555b1",
+    "head": "\"id\": \"new-ultimate-universe\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#civil-war|src/data/curated-lists.json:227-304|0": {
+    "anchor": "src/data/curated-lists.json:227-304",
+    "fp": "c636ffc561e955ab",
+    "head": "\"id\": \"civil-war\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#civil-war|src/data/curated-lists.json:805-841|0": {
+    "anchor": "src/data/curated-lists.json:805-841",
+    "fp": "302eac6c750456cf",
+    "head": "\"id\": \"civil-war-avengers\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#hickman-secret-wars|src/data/curated-lists.json:1-76|0": {
+    "anchor": "src/data/curated-lists.json:1-76",
+    "fp": "e106027c2e858674",
+    "head": "{"
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#house-of-m|src/data/curated-lists.json:149-225|0": {
+    "anchor": "src/data/curated-lists.json:149-225",
+    "fp": "70c05f2cb71b21d6",
+    "head": "\"id\": \"house-of-m\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|exact-overlap-families#secret-invasion|src/data/curated-lists.json:342-423|0": {
+    "anchor": "src/data/curated-lists.json:342-423",
+    "fp": "05ea3b31b01ddb49",
+    "head": "\"id\": \"secret-invasion\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|thematic-only-or-partial-overlap#avengers-shelf|src/data/curated-lists.json:738-980|0": {
+    "anchor": "src/data/curated-lists.json:738-980",
+    "fp": "14ccff719148390a",
+    "head": "\"id\": \"essential-avengers\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|thematic-only-or-partial-overlap#cbh-character-guides|src/data/curated-lists.json:552-735|0": {
+    "anchor": "src/data/curated-lists.json:552-735",
+    "fp": "24e212b28d08224d",
+    "head": "\"id\": \"captain-america-best-of\","
+  },
+  ".copilot-tracking/research/subagents/2026-08-20/modern-marvel-continuity-guides-internal-wider.md|thematic-only-or-partial-overlap#standalone-events|src/data/curated-lists.json:306-462|0": {
+    "anchor": "src/data/curated-lists.json:306-462",
+    "fp": "f995bfa949f71c71",
+    "head": "\"id\": \"annihilation\","
+  },
   ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:914-916|0": {
     "anchor": "docs/UX_STUDY.md:914-916",
     "fp": "1e64d83a8ff9a25f",
