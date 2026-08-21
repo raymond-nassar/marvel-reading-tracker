@@ -43,7 +43,7 @@ import { askConfirm, askText, askNote, wireAsk } from './ask.js';
 
 const SETTINGS_KEY = 'mrt.settings';
 const SIDEBAR_KEY = 'sidebar.collapsed';
-const RING_CIRCUMFERENCE = 94.2; // 2πr for r=15, matching the SVG in index.html
+const RING_CIRCUMFERENCE = 119.4; // 2πr for r=19, matching the SVG in index.html
 const SHELF_SIZE = 8;
 // The landing page shows this many cards and then hands the rest to the catalog page, so
 // it stays a page you can take in at a glance however far the catalog grows.
@@ -2388,8 +2388,8 @@ function renderReading() {
   listNote.hidden = !list.note;
   $('#btn-list-note').textContent = list.note ? 'Edit note' : 'Note';
   $('#ring-arc').setAttribute('stroke-dashoffset', String(RING_CIRCUMFERENCE * (1 - pct)));
-  $('#ring-label').textContent = `${read} / ${total}`;
-  $('#ring-wrap').setAttribute('title', `${Math.round(pct * 100)}% read`);
+  $('#ring-label').textContent = `${read} of ${total} read`;
+  $('#ring-sub').textContent = !total ? 'Nothing in this list' : read === total ? 'All read' : `${total - read} to go · ${Math.round(pct * 100)}%`;
 
   renderHero();
   renderShelf();

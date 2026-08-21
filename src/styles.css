@@ -416,8 +416,8 @@ main { min-width: 0; }
    appears as margin on both sides rather than as a long line or as a left-hugging column.
    The furniture that lives outside the views takes the same treatment for the same reason. */
 .view, #save-report, #app-report, #blocked-banner, .wrap > footer { max-width: var(--column); margin-inline: auto; }
-/* The opt-out, for a view that is a browsing surface rather than a document. Home is the only one:
-   its catalog is a grid, and a grid gains a column from width where a paragraph gains nothing. */
+/* The opt-out, for a view that is a browsing surface rather than a document. Home takes it for its
+   catalog grid and the reading view for its cover art; the prose in both is capped in characters. */
 .view.view-wide { max-width: none; }
 
 .head {
@@ -452,7 +452,7 @@ main { min-width: 0; }
 body.nocovers .tgl .sw { background: var(--track-2); }
 body.nocovers .tgl .sw::after { left: 2px; }
 
-.list-tools { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.list-tools { display: flex; align-items: center; gap: .15rem; flex-wrap: wrap; margin-bottom: 1.4rem; border: 1px solid var(--line); border-radius: 12px; padding: .35rem .45rem; }
 
 .quiet {
   border: 1px solid var(--line-2); background: none; color: var(--muted);
@@ -484,7 +484,7 @@ body.nocovers .hero-bg { background-image: none !important; opacity: .5; }
    range. Raising the top stop keeps a visible tint of the art while giving the
    text a deterministic backdrop. */
 .hero-fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(var(--card-line) / 87.843%) 0%, rgb(var(--card-line) / 96.078%) 60%, rgb(var(--card-line)) 100%); }
-.hero-in { position: relative; padding: 1.7rem 2rem; display: grid; grid-template-columns: 176px 1fr; gap: 1.8rem; }
+.hero-in { position: relative; padding: 2rem 2.2rem; display: grid; grid-template-columns: 216px 1fr; gap: 2.1rem; }
 @media (max-width: 700px) { .hero-in { grid-template-columns: 1fr; padding: 1.4rem; } .hero-in .art { max-width: 158px; } }
 
 .art { position: relative; }
@@ -509,8 +509,8 @@ body.nocovers .fallback, .fallback.show { display: flex; }
 .fallback .fn { font-size: 2.4rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
 
 .eyebrow { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--accent-text); font-weight: 800; margin: 0; }
-.hero h2 { font-size: 1.9rem; line-height: 1.14; margin: .4rem 0 .3rem; letter-spacing: -.025em; font-weight: 640; }
-.byline { color: var(--muted); margin: 0 0 .8rem; font-size: .9rem; }
+.hero h2 { font-size: 2.2rem; line-height: 1.1; margin: .45rem 0 .35rem; letter-spacing: -.028em; font-weight: 660; text-wrap: balance; }
+.byline { color: var(--dim); margin: 0 0 .9rem; font-size: .95rem; }
 .desc { color: var(--dim); font-size: .93rem; margin: 0 0 1.1rem; max-width: 58ch; }
 
 .facts { display: flex; gap: 1.6rem; flex-wrap: wrap; margin: 0 0 1.2rem; }
@@ -548,13 +548,22 @@ kbd { font: inherit; font-size: .72rem; border: 1px solid rgb(var(--tint-base) /
 .sec-h h2 { font-size: .95rem; margin: 0; font-weight: 600; }
 .sec-h span { color: var(--muted); font-size: .8rem; }
 
-.shelf { display: flex; gap: .8rem; overflow-x: auto; padding: 0 0 .6rem; margin: 0; list-style: none; }
-.tile { flex: 0 0 106px; }
+/* A wrapping row rather than a horizontal scroller. Measured at 1280x900 the scroller clipped the
+   eighth tile at the right edge, and a shelf whose last item is off screen is a shelf that answers
+   "what is coming up" with seven eighths of the truth. Wrapping flex rather than an auto-fit grid:
+   auto-fit gives the space of every track it collapses to the survivors, and a cap on the tile does
+   not cap the track, so four tiles left in an order sat a measured 80px apart on a declared 14.4px
+   gap. Growing each tile to that cap instead packs them, and leaves the slack at the end of the row
+   where it belongs. Measured after: eight tiles land on one 149px row at 2560 and wrap to two rows
+   at 1280, and one tile left is one 168px tile at the left rather than a cover the width of the
+   screen. */
+.shelf { display: flex; flex-wrap: wrap; gap: 1.15rem .9rem; padding: 0; margin: 0; list-style: none; }
+.tile { flex: 1 1 112px; min-width: 0; max-width: 168px; }
 .tile button { display: block; width: 100%; background: none; border: 0; padding: 0; text-align: left; color: inherit; border-radius: 8px; }
-.tile img { width: 106px; aspect-ratio: 2/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); display: block; }
+.tile img { width: 100%; aspect-ratio: 2/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); display: block; }
 body.nocovers .tile img, .tile img[hidden] { display: none; }
 .tile .tf {
-  display: none; width: 106px; aspect-ratio: 2/3; border-radius: 8px;
+  display: none; width: 100%; aspect-ratio: 2/3; border-radius: 8px;
   border: 1px solid var(--line-2); padding: .55rem;
   flex-direction: column; justify-content: space-between;
 }
@@ -613,7 +622,7 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
 .result .paths { margin: .35rem 0 .4rem; }
 #preview-paths .paths { margin: .55rem 0 .2rem; }
 
-.rows { display: grid; gap: .18rem; list-style: none; margin: 0; padding: 0; }
+.rows { display: grid; gap: .1rem; list-style: none; margin: 0; padding: 0; }
 /* A collected edition heading. The read count is text beside the bar rather than only the bar,
    for the reason the sidebar progress is: a bar alone is not readable to a screen reader and
    not distinguishable at the low contrast the accent colour lands at. */
@@ -628,8 +637,8 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
 .row-group progress { width: 90px; }
 .row-group.is-done .rg-name { color: var(--read-fg); }
 .row {
-  display: grid; grid-template-columns: 24px 34px 1fr auto; gap: .75rem;
-  align-items: center; padding: .42rem .55rem; border-radius: 9px; border: 1px solid transparent;
+  display: grid; grid-template-columns: 26px 44px minmax(0, 1fr) auto; gap: .8rem;
+  align-items: center; padding: .55rem .6rem; border-radius: 9px; border: 1px solid transparent;
 }
 .row:hover { background: rgb(var(--tint-base) / 2.745%); border-color: var(--line); }
 /* The row you are on. Selection, not danger, though until `--accent-line` existed it was drawn in
@@ -647,10 +656,10 @@ details.full[open] > summary .chev { transform: rotate(90deg); }
 .row.is-read img { opacity: .5; }
 
 .row .thumb { position: relative; }
-.row img { width: 34px; aspect-ratio: 2/3; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); display: block; }
+.row img { width: 44px; aspect-ratio: 2/3; object-fit: cover; border-radius: 5px; border: 1px solid var(--line); display: block; }
 body.nocovers .row img, .row img[hidden] { display: none; }
 .row .rf {
-  display: none; width: 34px; aspect-ratio: 2/3; border-radius: 4px;
+  display: none; width: 44px; aspect-ratio: 2/3; border-radius: 5px;
   border: 1px solid var(--line-2); align-items: center; justify-content: center;
   font-size: .66rem; font-weight: 700;
 }
@@ -662,7 +671,7 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 }
 .row.is-read .cb { background: var(--teal); border-color: var(--teal); }
 
-.rt { font-size: .89rem; font-weight: 500; }
+.rt { font-size: .94rem; font-weight: 560; letter-spacing: -.005em; }
 .rm { color: var(--muted); font-size: .76rem; display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; margin-top: .05rem; }
 
 /* The note control is a button that reads as text, because it is both the note and the way to
@@ -1128,4 +1137,71 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 
 @media (forced-colors: active) {
   .blocked { border: 2px solid CanvasText; background: Canvas; }
+}
+
+/* ============================================================ reading screen
+
+   The refinements MRT-003 made to the active reading order. They sit after the base sections
+   deliberately: several of them refine a rule declared above, and the block ends with its own
+   forced-colours overrides, which have to come after the two general ones or they would be
+   overridden by them rather than the other way round. */
+
+/* The progress figure used to live in a `title` attribute on the ring, which is reachable by
+   neither touch nor keyboard, so the only readable statement of progress was `0 / 8`. It is two
+   lines of real text now: the count, and what is left of the order beside the percentage. */
+.ring-text { display: flex; flex-direction: column; line-height: 1.3; }
+.ring-text b { color: var(--text); font-weight: 600; font-size: .85rem; }
+#ring-sub { color: var(--muted); font-size: .74rem; }
+
+/* One dominant action. The three calls to action were a primary button and two ghost buttons of
+   the same size, which is three things of nearly equal weight where the screen has exactly one
+   job. The Unlimited button grows, `Done, next` stays a ghost because it is an action, and the
+   issue page becomes a link because that is what it is: a way out of the app. */
+.hero .cta { gap: .7rem; align-items: center; }
+.btn-lg { padding: .85rem 1.5rem; font-size: 1rem; font-weight: 660; border-radius: 13px; }
+.btn-link {
+  background: none; color: var(--blue); border-color: transparent; font-weight: 560;
+  padding: .68rem .6rem; text-decoration: underline; text-underline-offset: 3px;
+}
+.btn-link:hover { filter: none; text-decoration-thickness: 2px; }
+
+@media (min-width: 1100px) { .hero-in { grid-template-columns: 248px 1fr; } }
+
+/* Rename, Note, Duplicate, Export and Delete were five outlined pills directly above the hero, at
+   the same weight as the hero's own buttons. The border moves from each button to the strip that
+   holds them, so the group keeps one affordance and stops competing, and every button comes back
+   at full weight the moment it is hovered or focused. Nothing moves in the DOM, so tab order,
+   the accessible names and the delete confirmation are all untouched. */
+.list-tools .quiet { border-color: transparent; padding: .34rem .6rem; }
+.list-tools .quiet:hover, .list-tools .quiet:focus-visible { border-color: var(--line-2); }
+.list-tools .quiet-danger:hover { border-color: rgb(var(--red-line) / 40%); }
+
+/* A rule between rows, and a bar down the one you are on. The separator is the adjacent-sibling
+   pair rather than every row, so a collected-edition heading is not followed by two lines, and it
+   is the row's own top border rather than a new box so that hover and the current row still take
+   the whole outline over. Both are excluded by name: this rule is later in the file at equal
+   specificity, so without the exclusion it would win the top edge of the accent outline back off
+   `.row.now` and leave the row you are on outlined on three sides. */
+.row + .row:not(:hover):not(.now) { border-top-color: var(--line); }
+.row.now { box-shadow: inset 3px 0 0 var(--accent-text); }
+
+/* The filters stay in reach while a long order scrolls past. Scoped by id: three other fieldsets
+   share the class and none of them should move. */
+#reading-filters {
+  position: sticky; top: 0; z-index: 1; background: var(--bg);
+  margin: 0 0 .2rem; padding: .85rem 0 .7rem;
+}
+
+/* A finished collected edition already dims its name. Its count takes the positive colour too, so
+   a volume that is done can be found while scanning rather than only read once found. */
+.row-group.is-done .rg-count { color: var(--teal); }
+
+@media (forced-colors: active) {
+  /* The strip is the whole affordance for the demoted tools, and a hairline in a palette token is
+     one of the things forced colours discards. */
+  .list-tools { border: 1px solid CanvasText; }
+  /* An inset shadow is discarded outright, so the current row is marked the way the rail marks the
+     selected view. */
+  .row.now { border: 2px solid Highlight; box-shadow: none; }
+  #reading-filters { background: Canvas; }
 }
