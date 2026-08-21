@@ -1,0 +1,90 @@
+{
+    "task_id":  "MRT-006",
+    "task_slug":  "add-issues-progressive-disclosure",
+    "parent_task":  {
+                        "task_id":  "MRT-005",
+                        "task_slug":  "library-and-progress-modernization"
+                    },
+    "mode":  "automatic",
+    "active_phase":  "Review",
+    "status":  "active",
+    "session_status":  "running",
+    "artifact_paths":  {
+                           "research":  ".copilot-tracking/research/2026-08-21/add-issues-progressive-disclosure-research.md",
+                           "plan":  ".copilot-tracking/plans/2026-08-21/add-issues-progressive-disclosure-plan.md",
+                           "details":  null,
+                           "critique":  ".copilot-tracking/reviews/plans/2026-08-21/add-issues-progressive-disclosure-plan-critique.md",
+                           "changes":  ".copilot-tracking/changes/2026-08-21/add-issues-progressive-disclosure-changes.md",
+                           "review":  ".copilot-tracking/reviews/logs/2026-08-21/add-issues-progressive-disclosure-review.md"
+                       },
+    "confirmed_decisions":  [
+                                {
+                                    "decision":  "Research and planning run on the strongest available model; implementation is delegated to capable lower-cost models; anything to do with rendering goes to GPT-5.6.",
+                                    "status":  "confirmed",
+                                    "evidence":  "User instruction opening the overnight run: \u0027Use the patterns we learned here concerning ways to use Opus 5 to perform research and planning, then delegating to capable models that are lower cost. Anything related to rendering should be given to GPT-5.6.\u0027"
+                                },
+                                {
+                                    "decision":  "Phases 4, 5 and 6 run one at a time, each pull request merging before the next session begins.",
+                                    "status":  "confirmed",
+                                    "evidence":  "User instruction: \u0027continue working throughout the night on completing each of the following phases of work, one at a time\u0027 and \u0027Each PR should merge before the next session begins.\u0027"
+                                },
+                                {
+                                    "decision":  "MRT-005, the Library and Progress modernization, is shipped and merged.",
+                                    "status":  "complete",
+                                    "evidence":  "Pull request 156 merged at 2026-08-21T08:23:11Z as commit a6ea336 on main."
+                                },
+                                {
+                                    "decision":  "No cover thumbnails on the Add view. Search, series and creator results come from list endpoints that return no cover field, so a cover would require a new per-row request pattern.",
+                                    "status":  "confirmed",
+                                    "evidence":  "Research wave 2, section \u0027what covers can and cannot do here\u0027; the hydration comment in addToActive states that only the single-issue route returns cover and digitalId."
+                                },
+                                {
+                                    "decision":  "The Add view result panes stay non-live. The announcer remains the single channel.",
+                                    "status":  "confirmed",
+                                    "evidence":  "The comment above the search results pane in the shipped markup records the decision and the measured reason: announcing the container read every row aloud on top of the summary already sent to the announcer."
+                                },
+                                {
+                                    "decision":  "A cancel control for the long series and creator loads is a new capability rather than a presentation change, so it is routed to the product backlog rather than taken in this task.",
+                                    "status":  "confirmed",
+                                    "evidence":  "Research, \u0027Routed to the backlog rather than taken here\u0027. The two existing cancellable runners are the hydrator and the synopsis runner, both wired in the reading view."
+                                },
+                                {
+                                    "decision":  "Review executed once. Outcome conformant for the assessed boundary, with no material finding open.",
+                                    "status":  "complete",
+                                    "evidence":  ".copilot-tracking/reviews/logs/2026-08-21/add-issues-progressive-disclosure-review.md, written after the full gate sweep and the 38-check Edge matrix."
+                                }
+                            ],
+    "blockers":  [
+
+                 ],
+    "next_action":  {
+                        "phase":  "Review",
+                        "action":  "Commit the staged tree, open the pull request, watch CI and merge, then advance to Follow-up."
+                    },
+    "prioritized_follow_ups":  [
+                                   {
+                                       "rank":  1,
+                                       "task":  "Phase 5, Settings, backup and system feedback",
+                                       "rationale":  "Queued next by the user and the heaviest review burden of the three, because it touches recovery paths, which this repository has twice found to be the most dangerous code in a change.",
+                                       "evidence":  "User instruction listing Phase 5 with six numbered requirements and an explicit instruction to review recovery paths more rigorously than ordinary settings."
+                                   },
+                                   {
+                                       "rank":  2,
+                                       "task":  "Phase 6, cohesion and accessibility review",
+                                       "rationale":  "Explicitly last, because it is a consistency pass over the merged result of every earlier phase.",
+                                       "evidence":  "User instruction: \u0027Perform a final cross-application visual and accessibility refinement after all modernization phases have merged.\u0027"
+                                   },
+                                   {
+                                       "rank":  3,
+                                       "task":  "A cancel control for the long series and creator adds",
+                                       "rationale":  "A real gap, but a new capability rather than a presentation change, so it does not belong in a progressive-disclosure task.",
+                                       "evidence":  "Research, routed follow-ups."
+                                   },
+                                   {
+                                       "rank":  4,
+                                       "task":  "Cover thumbnails in search results",
+                                       "rationale":  "Would improve recognition but needs a per-row single-issue request, which is a new request pattern.",
+                                       "evidence":  "Research, routed follow-ups."
+                                   }
+                               ]
+}

@@ -465,8 +465,8 @@
               <div class="sub" id="add-target"></div>
             </div></div>
 
-            <details class="card" id="sec-search" open>
-              <summary><h2>Search for issues</h2></summary>
+            <section class="card card-static addpri" id="sec-search">
+              <h2>Search for issues</h2>
               <form id="form-search" class="stack">
                 <label for="search-q">Search issue titles</label>
                 <div class="field-row">
@@ -481,80 +481,85 @@
                 summary is the one channel. See the note on notify() in js/main.js.
               -->
               <div id="search-results" class="results"></div>
-            </details>
+            </section>
 
-            <details class="card" id="sec-series">
-              <summary><h2>Add a whole series</h2></summary>
-              <form id="form-series" class="stack">
-                <label for="series-q">Find a series</label>
-                <div class="field-row">
-                  <input type="search" id="series-q" placeholder="e.g. New Avengers (2013)" autocomplete="off" />
-                  <button type="submit" class="btn">Find</button>
-                </div>
-              </form>
-              <div id="series-results" class="results"></div>
-            </details>
+            <section id="add-more" class="add-more">
+              <h2>Other ways to add</h2>
+              <p class="rail-hint">Use these for bulk additions and issues that search cannot reach.</p>
 
-            <details class="card" id="sec-creator">
-              <summary><h2>Browse a creator</h2></summary>
-              <form id="form-creator" class="stack">
-                <label for="creator-q">Find a creator</label>
-                <div class="field-row">
-                  <input type="search" id="creator-q" placeholder="e.g. Hickman" autocomplete="off" />
-                  <button type="submit" class="btn">Find</button>
-                </div>
-              </form>
-              <div id="creator-results" class="results"></div>
-            </details>
+              <details class="card" id="sec-series">
+                <summary><h3>Add a whole series</h3><span class="card-why">Every issue of one series, oldest first.</span></summary>
+                <form id="form-series" class="stack">
+                  <label for="series-q">Find a series</label>
+                  <div class="field-row">
+                    <input type="search" id="series-q" placeholder="e.g. New Avengers (2013)" autocomplete="off" />
+                    <button type="submit" class="btn">Find</button>
+                  </div>
+                </form>
+                <div id="series-results" class="results"></div>
+              </details>
 
-            <details class="card" id="sec-import">
-              <summary><h2>Paste a reading order</h2></summary>
-              <p class="rail-hint">
-                Accepts Markdown checklists
-                (<code>- [ ] [Title](https://www.marvel.com/comics/issue/123/slug)</code>)
-                or one title per line. Lines ticked <code>- [x]</code> import as already read.
-              </p>
-              <form id="form-import" class="stack">
-                <label for="import-text">Reading order</label>
-                <textarea id="import-text" rows="8" spellcheck="false"></textarea>
-                <div class="field-row">
-                  <button type="submit" class="btn">Import</button>
-                  <label class="checkbox"><input type="checkbox" id="import-new-list" checked /> Into a new list</label>
-                </div>
-              </form>
-              <div id="import-report" class="results"></div>
-            </details>
+              <details class="card" id="sec-creator">
+                <summary><h3>Browse a creator</h3><span class="card-why">Every issue credited to one writer or artist.</span></summary>
+                <form id="form-creator" class="stack">
+                  <label for="creator-q">Find a creator</label>
+                  <div class="field-row">
+                    <input type="search" id="creator-q" placeholder="e.g. Hickman" autocomplete="off" />
+                    <button type="submit" class="btn">Find</button>
+                  </div>
+                </form>
+                <div id="creator-results" class="results"></div>
+              </details>
 
-            <details class="card" id="sec-manual">
-              <summary><h2>Add an issue by hand</h2></summary>
-              <p class="rail-hint">
-                The metadata snapshot ends in 2025, so anything newer will not be found by search.
-                Add it by hand and it still tracks; availability just shows as unknown.
-              </p>
-              <form id="form-manual" class="stack">
-                <label for="manual-title">Title</label>
-                <input type="text" id="manual-title" required placeholder="e.g. The Amazing Spider-Man (2025) #12" />
-                <button type="button" class="btn btn-g" id="btn-manual-lookup">Look up details</button>
+              <details class="card" id="sec-import">
+                <summary><h3>Paste a reading order</h3><span class="card-why">A Markdown checklist or one title per line.</span></summary>
                 <p class="rail-hint">
-                  Optional, and nothing happens until you press it. It sends the words in the Title
-                  box to the Marvel Fandom wiki, a community site Marvel does not run, and offers
-                  you the release date, page count and credits the snapshot cannot supply. Nothing
-                  about your lists or your reading progress goes with it, no cover image is
-                  fetched, and nothing is saved until you press Add issue.
+                  Accepts Markdown checklists
+                  (<code>- [ ] [Title](https://www.marvel.com/comics/issue/123/slug)</code>)
+                  or one title per line. Lines ticked <code>- [x]</code> import as already read.
                 </p>
-                <div id="manual-candidates" class="results"></div>
-                <label for="manual-url">marvel.com or Marvel Unlimited address (optional)</label>
-                <input type="url" id="manual-url" aria-describedby="manual-url-hint" placeholder="https://read.marvel.com/#/book/…" />
-                <p class="rail-hint" id="manual-url-hint">
-                  Open the issue in Marvel Unlimited and paste the address from your browser. That
-                  address carries the reader's own id for the book, which is what lets Read take you
-                  straight there. A www.marvel.com issue address works too, but for anything newer
-                  than the snapshot it cannot be turned into a working Read link.
+                <form id="form-import" class="stack">
+                  <label for="import-text">Reading order</label>
+                  <textarea id="import-text" rows="8" spellcheck="false"></textarea>
+                  <div class="field-row">
+                    <button type="submit" class="btn">Import</button>
+                    <label class="checkbox"><input type="checkbox" id="import-new-list" checked /> Into a new list</label>
+                  </div>
+                </form>
+                <div id="import-report" class="results"></div>
+              </details>
+
+              <details class="card" id="sec-manual">
+                <summary><h3>Add an issue by hand</h3><span class="card-why">Anything the 2025 metadata snapshot does not have.</span></summary>
+                <p class="rail-hint">
+                  The metadata snapshot ends in 2025, so anything newer will not be found by search.
+                  Add it by hand and it still tracks; availability just shows as unknown.
                 </p>
-                <button type="submit" class="btn">Add issue</button>
-              </form>
-              <div id="manual-report" class="results"></div>
-            </details>
+                <form id="form-manual" class="stack">
+                  <label for="manual-title">Title</label>
+                  <input type="text" id="manual-title" required placeholder="e.g. The Amazing Spider-Man (2025) #12" />
+                  <button type="button" class="btn btn-g" id="btn-manual-lookup">Look up details</button>
+                  <p class="rail-hint">
+                    Optional, and nothing happens until you press it. It sends the words in the Title
+                    box to the Marvel Fandom wiki, a community site Marvel does not run, and offers
+                    you the release date, page count and credits the snapshot cannot supply. Nothing
+                    about your lists or your reading progress goes with it, no cover image is
+                    fetched, and nothing is saved until you press Add issue.
+                  </p>
+                  <div id="manual-candidates" class="results"></div>
+                  <label for="manual-url">marvel.com or Marvel Unlimited address (optional)</label>
+                  <input type="url" id="manual-url" aria-describedby="manual-url-hint" placeholder="https://read.marvel.com/#/book/…" />
+                  <p class="rail-hint" id="manual-url-hint">
+                    Open the issue in Marvel Unlimited and paste the address from your browser. That
+                    address carries the reader's own id for the book, which is what lets Read take you
+                    straight there. A www.marvel.com issue address works too, but for anything newer
+                    than the snapshot it cannot be turned into a working Read link.
+                  </p>
+                  <button type="submit" class="btn">Add issue</button>
+                </form>
+                <div id="manual-report" class="results"></div>
+              </details>
+            </section>
           </section>
 
           <!-- ---------------------------------------- data view -->

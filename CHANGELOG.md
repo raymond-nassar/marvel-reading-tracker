@@ -14,6 +14,21 @@ quote in a bug report.
 
 ## Unreleased
 
+### Adding issues now leads with search, and groups the other ways together
+
+In plain English: the screen for adding issues used to show five ways to add, all folded shut and all
+looking equally important, with searching for a title tucked in among them. Search is now open and
+ready at the top of the screen, and the other four ways sit together lower down under a heading
+"Other ways to add", each with a short line telling you what it is for before you open it.
+
+When you search, the results now begin with a line telling you how many were found, how many are
+already in your library, and which reading order they will be added to. Any issue you already have is
+marked "Already in your library", so you are not left adding the same one twice. The series and
+creator searches name the destination reading order now too, which they never did before.
+
+Nothing you have saved is affected. Every way to add issues is still there and still works as before;
+only their arrangement and the wording around them has changed.
+
 ### The library and progress views now show a summary before the rows
 
 In plain English: the three screens that list what you have read now put a short summary above the

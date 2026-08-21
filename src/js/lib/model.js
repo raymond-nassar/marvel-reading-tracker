@@ -1236,3 +1236,29 @@ export function orderStates(entries) {
   }
   return { orders: list.length, active, done, unstarted };
 }
+
+// How many of a set of search results the tracker already knows about. The Add view shows this
+// beside a result so a reader can tell a new comic from one they have already filed, without
+// opening another screen to check.
+//
+// The question is deliberately about the issue store rather than about the destination list.
+// Those differ, and the difference is not an edge case: issue metadata survives a list deletion
+// on purpose, and the add path merges every incoming issue into the store before it decides
+// whether the list already had it. So an issue can sit in the store while belonging to no list
+// at all, and a pill claiming it is in the destination would be false exactly there. What the
+// store can answer honestly is "this app has seen this comic", which is what the pill says.
+//
+// Counted over distinct ids, because a result set is free to repeat one and a count that grew
+// past the number of rows on screen would describe nothing a reader could verify.
+export function heldCount(state, items) {
+  const issues = state?.issues;
+  if (!issues) return 0;
+  const seen = new Set();
+  for (const item of Array.isArray(items) ? items : []) {
+    const id = item?.issueId;
+    if (id === undefined || id === null) continue;
+    if (seen.has(id)) continue;
+    if (issues[id]) seen.add(id);
+  }
+  return seen.size;
+}

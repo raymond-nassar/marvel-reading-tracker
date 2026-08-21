@@ -734,11 +734,19 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 /* ============================================================ forms, cards, results */
 
 .card { border: 1px solid var(--line); border-radius: var(--r); background: var(--card); margin-bottom: .7rem; }
-.card > summary { cursor: pointer; list-style: none; padding: .9rem 1.1rem; display: flex; align-items: center; gap: .5rem; }
+.card > summary {
+  cursor: pointer; list-style: none; padding: .9rem 1.1rem;
+  display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: .5rem; row-gap: .1rem;
+  align-items: start;
+}
 .card > summary::-webkit-details-marker { display: none; }
-.card > summary::before { content: "›"; color: var(--muted); transition: transform .15s; display: inline-block; }
+.card > summary::before {
+  content: "›"; color: var(--muted); transition: transform .15s; display: inline-block;
+  grid-column: 1; grid-row: 1; align-self: center;
+}
 .card[open] > summary::before { transform: rotate(90deg); }
-.card > summary h2 { font-size: .95rem; margin: 0; font-weight: 600; display: inline; }
+.card > summary :is(h2, h3) { grid-column: 2; grid-row: 1; font-size: .95rem; margin: 0; font-weight: 600; }
+.card-why { grid-column: 2; grid-row: 2; color: var(--muted); font-size: .78rem; line-height: 1.4; }
 .card > *:not(summary) { padding: 0 1.1rem; }
 .card > *:last-child { padding-bottom: 1.1rem; }
 .card-static { padding: 1.1rem; margin-bottom: 1rem; }
@@ -746,6 +754,11 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
 .card-static h2 { font-size: .95rem; margin: 0 0 .5rem; font-weight: 600; }
 .card-static h3 { font-size: .85rem; margin: 1.3rem 0 .4rem; font-weight: 600; }
 .card-danger { border-color: rgb(var(--red-line) / 20%); }
+.addpri { border-color: rgb(var(--tint-base) / 20%); background: rgb(var(--tint-base) / 3.922%); }
+.addpri h2 { font-size: 1.15rem; }
+.addpri .field-row input[type="search"] { flex: 1 1 24rem; min-height: 44px; }
+.add-more > h2 { font-size: 1rem; margin: 1.35rem .1rem 0; }
+.add-more > .rail-hint { margin: .2rem .1rem .75rem; max-width: 64ch; }
 
 .stack { display: grid; gap: .5rem; }
 .stack label { font-size: .8rem; color: var(--muted); }
@@ -787,6 +800,10 @@ input[type="file"] { color: var(--muted); font-size: .82rem; }
 code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: .05rem .3rem; font-size: .85em; }
 
 .results { display: grid; gap: .4rem; margin-top: .7rem; }
+.res-head {
+  color: var(--muted); font-size: .82rem; padding: .45rem .1rem .55rem;
+  border-bottom: 1px solid var(--line);
+}
 
 /* The heading over one half of the shelf. Space above it and almost none below, so the heading
    binds to the rows it introduces instead of floating equidistant between two sections; the grid's
@@ -808,11 +825,23 @@ code { background: rgb(var(--tint-base) / 5.098%); border-radius: 4px; padding: 
 .result-source { margin: .2rem 0 0; }
 .result-source a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 .result-source a:hover { color: var(--text); }
+/* The row is a flex line with nothing set to hold its size, so at 640 CSS pixels, which is what
+   200 per cent zoom reports, the pill was the part that gave way: the title kept its width and
+   "Already in your library" broke across three lines beside a one-line row. Fixing the pill and
+   letting the title shrink instead costs the title nothing, because it already truncates. */
+.pill-held {
+  color: var(--teal); border: 1px solid rgb(var(--teal-line) / 33.333%);
+  border-radius: 999px; padding: .15rem .55rem; font-size: .72rem; font-weight: 600;
+  flex: none; white-space: nowrap;
+}
+.pill-held::before { content: "✓ "; }
 
 .notice { border-radius: 9px; padding: .55rem .75rem; font-size: .84rem; margin: 0; border: 1px solid var(--line); }
 .notice-ok { color: var(--teal); border-color: rgb(var(--teal-line) / 25.098%); background: rgb(var(--teal-line) / 5.882%); }
 .notice-warn { color: var(--amber); border-color: rgb(var(--amber-line) / 25.098%); background: rgb(var(--amber-line) / 5.882%); }
 .notice-error { color: var(--red-fg-2); border-color: rgb(var(--red-line) / 33.333%); background: rgb(var(--red-line) / 7.059%); }
+.notice-busy { color: var(--muted); }
+.notice-busy::before { content: "•"; margin-right: .45rem; }
 
 /* A notice that carries an action, such as the undo offered after a list is deleted. The
    button is sized to the 44px target minimum rather than the notice's own type scale,
@@ -1100,6 +1129,7 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
      border, and only the border survives here, at whatever weight the mode assigns it. Marking the
      selected filter with Highlight is what the rail already does for the selected view. */
   .pill-start, .pill-beginner { border: 1px solid CanvasText; }
+  .addpri, .pill-held, .res-head { border-color: CanvasText; }
   .fp input:checked + span { border: 2px solid Highlight; }
 }
 

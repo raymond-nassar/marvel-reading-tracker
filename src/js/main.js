@@ -9,7 +9,7 @@ import {
   createList, deleteList, restoreList, duplicateList, renameList, setActive, addIssuesToList, removeFromList, moveItem,
   toggleRead, markRead, isRead, upNext, listProgress, seriesProgress, listItems, exportBackup,
   setOverride, pendingIssueIds, coverUrl, listForCatalogId, SCHEMA_VERSION,
-  setIssueNote, setListNote, MAX_BACKUP_BYTES, orderGapSentences, progressSummary, progressGroups, completionState, orderWord, orderStates,
+  setIssueNote, setListNote, MAX_BACKUP_BYTES, orderGapSentences, progressSummary, progressGroups, completionState, orderWord, orderStates, heldCount,
 } from './lib/model.js';
 import { parseChecklist, serializeChecklist, isSafeMarvelUrl, issueIdFromUrl, digitalIdFromUrl, resolveUniqueExact } from './lib/markdown.js';
 import { LIBRARY_VIEWS } from './lib/library.js';
@@ -1043,8 +1043,8 @@ function wireNav() {
       if (btn.dataset.open) {
         const d = $(`#${btn.dataset.open}`);
         if (d) {
-          for (const other of document.querySelectorAll('#view-add .card[open]')) other.open = false;
-          d.open = true;
+          for (const other of document.querySelectorAll('#view-add details.card[open]')) other.open = false;
+          if (d.tagName === 'DETAILS') d.open = true;
           d.querySelector('input, textarea, button')?.focus();
         }
       }
@@ -3080,7 +3080,7 @@ function wireAdd() {
     e.preventDefault();
     const q = $('#search-q').value.trim();
     if (!q) return;
-    notify('#search-results', 'Searching…', 'ok');
+    notify('#search-results', 'Searching…', 'busy');
     try {
       const items = await api.searchIssues(q, { limit: 50 });
       renderResults('#search-results', items, (it) => `${it.seriesName ?? ''}${it.onSale ? ` · ${ymd(it.onSale)}` : ''}`);
@@ -3095,7 +3095,7 @@ function wireAdd() {
   // does with the result.
   wireNameSearch({
     section: '#sec-series', form: '#form-series', input: '#series-q', results: '#series-results',
-    kind: 'series', many: 'series', btnClass: 'btn',
+    kind: 'series', many: 'series', btnClass: 'btn btn-g',
     search: (q, opts) => api.searchSeries(q, opts), onAdd: addSeries,
   });
 
@@ -3136,7 +3136,7 @@ function wireNameSearch({ section, form, input, results, kind, many, btnClass, s
     e.preventDefault();
     const q = $(input).value.trim();
     if (!q) return;
-    notify(results, 'Searching…', 'ok');
+    notify(results, 'Searching…', 'busy');
     try {
       const { items, matched, total, generatedAt } = await search(q, { limit: NAME_SEARCH_LIMIT });
       const box = $(results);
@@ -3156,6 +3156,7 @@ function wireNameSearch({ section, form, input, results, kind, many, btnClass, s
         class: 'rail-hint',
         text: `${summary} Filtered here from an index of ${count(total)} ${many}${snapshot(generatedAt)}.`,
       }));
+      box.append(el('p', { class: 'rail-hint', text: addDestination() }));
       announce(summary);
 
       for (const item of items) {
@@ -3186,6 +3187,13 @@ function snapshot(generatedAt) {
   return when ? `, taken ${when}` : '';
 }
 
+function addDestination() {
+  const target = store.state.lists[activeListId()];
+  return target
+    ? `Adding to “${target.name}”.`
+    : 'Adding will start a new list called “My reading order”.';
+}
+
 function renderResults(sel, items, metaFn) {
   const box = $(sel);
   box.replaceChildren();
@@ -3193,22 +3201,21 @@ function renderResults(sel, items, metaFn) {
 
   // Name the destination at the point of decision. The same hint sits in the view header, but
   // the results are far enough down the page that it is easy to miss entirely.
-  const target = store.state.lists[activeListId()];
-  const destination = target
-    ? `Adding to “${target.name}”.`
-    : 'Adding will start a new list called “My reading order”.';
-  box.append(el('p', { class: 'rail-hint', text: destination }));
+  const destination = addDestination();
+  const held = heldCount(store.state, items);
+  const summary = `${count(items.length)} ${items.length === 1 ? 'result' : 'results'}, ${count(held)} already in your library. ${destination}`;
+  box.append(el('div', { class: 'res-head', text: summary }));
 
   // This pane stopped being a live region, so the outcome has to be said here. The empty case
   // below goes through notify() and still speaks, so without this line a search that found
   // nothing announced itself and a search that worked did not, which reads as a broken search.
-  announce(`${count(items.length)} ${items.length === 1 ? 'result' : 'results'}. ${destination}`);
+  announce(summary);
 
   for (const it of items) {
     // The confirmation belongs on the control that was clicked. Previously the only feedback
     // was a screen-reader announcement, so a sighted user had to open the list to find out
     // whether anything had happened.
-    const btn = el('button', { type: 'button', class: 'btn' }, 'Add');
+    const btn = el('button', { type: 'button', class: 'btn btn-g' }, 'Add');
     btn.addEventListener('click', () => {
       const res = addToActive([it], `Added ${it.title}.`);
       if (!res.ok) {
@@ -3216,6 +3223,7 @@ function renderResults(sel, items, metaFn) {
         return;
       }
       btn.disabled = true;
+      btn.classList.add('btn-added');
       btn.textContent = res.added ? `Added to ${res.listName}` : 'Already in that list';
     });
 
@@ -3224,6 +3232,7 @@ function renderResults(sel, items, metaFn) {
         el('div', { class: 'result-title', text: it.title }),
         el('div', { class: 'result-meta', text: metaFn(it) }),
       ]),
+      ...(heldCount(store.state, [it]) ? [el('span', { class: 'pill-held', text: 'Already in your library' })] : []),
       btn,
     ]));
   }
@@ -3268,7 +3277,7 @@ function addToActive(issues, message, { sort = false } = {}) {
 }
 
 async function addSeries(series) {
-  notify('#series-results', `Loading all issues of ${series.name}…`, 'ok');
+  notify('#series-results', `Loading all issues of ${series.name}…`, 'busy');
   try {
     const issues = await api.seriesIssues(series.id, {
       onProgress: ({ loaded, total }) => announce(`Loaded ${loaded}${total ? ` of ${total}` : ''} issues…`),
@@ -3284,7 +3293,7 @@ async function addSeries(series) {
 }
 
 async function addCreator(creator) {
-  notify('#creator-results', `Loading issues credited to ${creator.name}…`, 'ok');
+  notify('#creator-results', `Loading issues credited to ${creator.name}…`, 'busy');
   try {
     const issues = await api.creatorIssues(creator.id, {
       onProgress: ({ loaded, total }) => announce(`Loaded ${loaded}${total ? ` of ${total}` : ''} issues…`),
@@ -3412,7 +3421,7 @@ function unresolvedRow(entry, listId) {
             el('div', { class: 'result-meta', text: `${c.seriesName ?? ''}${c.onSale ? ` · ${ymd(c.onSale)}` : ''}` }),
           ]),
           el('button', {
-            type: 'button', class: 'btn',
+            type: 'button', class: 'btn btn-g',
             onclick: () => {
               store.update((s) => addIssuesToList(s, listId, [c], {}).state);
               if (!store.lastUpdateOk) {
@@ -3526,7 +3535,7 @@ async function doManualLookup() {
             text: factsSummary(candidate) || 'No release date, page count or credits on that page',
           }),
         ]),
-        el('button', { type: 'button', class: 'btn', onclick: () => acceptManualMatch(candidate) }, 'Use this'),
+        el('button', { type: 'button', class: 'btn btn-g', onclick: () => acceptManualMatch(candidate) }, 'Use this'),
       ]));
     }
     $('#manual-candidates').replaceChildren(choices);
