@@ -81,7 +81,7 @@ export const PAIRS = [
   // track on the page while leaving the on-state track of the same control, on the same background,
   // ungated. Half of one control. `--accent` on `--bg` is painted by two separate things: the switch's
   // on-state track, and the catalog Clear button, which is a `.btn` with a transparent border
-  // falling through to the page. Both measure 3.89:1 dark and 4.73:1 light, so nothing was failing,
+  // falling through to the page. They measure 3.95:1 dark and 6.83:1 light, so nothing was failing,
   // but nothing was watching either.
   //
   // Neither was visible to the browser pass, and the reason is worth keeping: the Clear button is
@@ -99,7 +99,7 @@ export const PAIRS = [
   ['--accent', '--card-2', LARGE, 'the fill of a primary button on a raised card'],
   // Found by the same review, one token over, and it is the reason the guard in test/theme.test.js
   // now pins `--on-accent` too. The tick inside a checked checkbox is `--on-accent` on `--teal`
-  // (`src/styles.css:660` and `src/styles.css:662`), which is 2.30:1 in the dark theme. It is
+  // (`src/styles.css:661` and `src/styles.css:663`), which is 1.93:1 in the dark theme. It is
   // listed here and recorded below rather than fixed, because the colour decision belongs to
   // BL-069 and this item is about measuring what nothing measured. The railed status dot is the
   // other thing painted on `--teal` and it carries no foreground at all, since
@@ -116,9 +116,9 @@ export const PAIRS = [
   //
   // The accent bar is deliberately not on that entry. `.ri[aria-current]`
   // sets its own background at `src/styles.css:302`, a tint over the rail, and the bar at
-  // `src/styles.css:306` is its `::before`, so it can only ever land on the tint. It reads 3.35 and
-  // 3.68. Putting it on `--rail` with the other two would have overstated it by 0.65, which is the
-  // mistake hit testing was for.
+  // `src/styles.css:306` is its `::before`, so it can only ever land on the tint. It reads 3.44 and
+  // 5.35. Putting it on `--rail` with the other two would have read 4.09 and 6.37, overstating it
+  // by 0.65 in the dark theme and 1.02 in the light one, which is the mistake hit testing was for.
   ['--accent', '--rail', LARGE, 'the skip link when focused on the rail'],
   ['--accent', 'the selected rail item', LARGE, 'the accent bar marking the current destination'],
   ['--accent', 'the unreadable-data banner', LARGE, 'the fill of the download button in the blocked banner'],
@@ -129,7 +129,7 @@ export const PAIRS = [
   // ghost button has any: its label and its border. Both are listed rather than assumed, because
   // the button that was made quieter is the one it would be worst to make unreadable.
   ['--text', 'the ghost button on the unreadable-data banner', BODY, 'the label of the start-fresh button'],
-  ['--muted', 'the ghost button on the unreadable-data banner', LARGE, 'the border that sets the start-fresh button apart, at `src/styles.css:1123`'],
+  ['--muted', 'the ghost button on the unreadable-data banner', LARGE, 'the border that sets the start-fresh button apart, at `src/styles.css:1124`'],
 ];
 
 // Two of the surfaces this stylesheet paints on are not tokens and have no hex value to read, so a
@@ -164,7 +164,7 @@ export const SURFACES = {
     layer: '--warn',
     fraction: 0.12,
     on: '--panel',
-    css: 'color-mix(in srgb, var(--warn) 12%, var(--panel)), at `src/styles.css:1099`',
+    css: 'color-mix(in srgb, var(--warn) 12%, var(--panel)), at `src/styles.css:1100`',
   },
   // Built on a surface rather than a token, which is the case the first version of this could not
   // express. A ghost button is a tint over whatever it is dropped onto, so on the banner it is a
@@ -174,7 +174,7 @@ export const SURFACES = {
     layer: '--tint-base',
     fraction: 0.05882,
     on: 'the unreadable-data banner',
-    css: 'rgb(var(--tint-base) / 5.882%) over the banner, at `src/styles.css:532`',
+    css: 'rgb(var(--tint-base) / 5.882%) over the banner, at `src/styles.css:533`',
   },
 };
 
@@ -327,12 +327,15 @@ export function checkAll(css) {
 //
 // All four are `--track` against something behind it, and the reason they stay is arithmetic rather
 // than reluctance. `--track` is the trough of a progress bar and the `--accent` fill sits directly on
-// it, so the token has to answer to two floors at once. Colours clearing 3:1 against the card AND
-// carrying the fill at 3:1 do exist, but every one of them inverts the bar. In the dark theme each
-// has a relative luminance of at least 0.598, which is 3.6 times the fill's 0.166, so the empty part
-// of the bar would be brighter than the filled part. In the light theme each is at most 0.022, an
-// eighth of the fill, so the trough would be near black on a white card. Either way the bar would
-// report progress backwards, which is a worse outcome for the reader than the recorded ratio.
+// it, so the token has to answer to two floors at once. Colours clearing 3:1 against both surfaces
+// behind the bar AND carrying the fill at 3:1 exist in the dark theme, but every one of them inverts
+// it: each has a relative luminance of at least 0.611, which is 3.6 times the fill's 0.170, so the
+// empty part of the bar would be brighter than the filled part. In the light theme no such colour
+// exists at all, because the light fill is dark enough that nothing above black clears 3:1 beneath
+// it. Either way the bar cannot report progress the right way round, which is a worse outcome for
+// the reader than the recorded ratio. BL-166 re-derived both halves after it repainted the fill
+// purple and rotated the neutrals, rather than carrying the old figures across a change that moved
+// every term in them.
 //
 // The bar renders on two surfaces, not one, and review found the second: `.pbar` sits on a card and
 // `.ri .bar` sits on the rail. Listing only the card is the same defect BL-065 fixed for `--line-2`
@@ -365,28 +368,31 @@ export const KNOWN = [
   'dark:--track:--rail',
   'light:--track:--rail',
   // The fifth is a different case from the four above and is recorded for a different reason. The
-  // white tick inside a checked read checkbox is 2.30:1 on the dark `--teal` fill, and 6.48:1 on
-  // the light one, so only the dark theme is below the floor.
+  // white tick inside a checked read checkbox is 1.93:1 on the dark `--teal` fill, and 6.54:1 on
+  // the light one, so only the dark theme is below the floor. BL-166 moved it from 2.30:1 when it
+  // replaced the old green fill with `#3fcfbb`, and re-affirmed the decision below on the new
+  // arithmetic rather than inheriting it: a pair already recorded is exactly the pair a later
+  // change is most able to worsen without anybody noticing.
   //
   // BL-069 was the item that had to choose, and it chose to leave it. The choice is arithmetic
   // rather than preference, and the arithmetic is not the trough's. A trough clearing the card, the
   // rail and its own fill while staying darker than that fill does not exist: a search of all
-  // 16,777,216 sRGB colours returns none. A green clearing all three of its floors does exist, and
-  // 2,153,393 of them do, so this one was a genuine choice.
+  // 16,777,216 sRGB colours returns none. A fill clearing all three of its floors does exist, and
+  // 2,138,235 of them do, so this one was a genuine choice.
   //
-  // What decided it is what the choice costs. White on green reaching 3:1 caps the green's relative
-  // luminance at 0.3000, and the shipped green is at 0.4067. Every green under that cap reads at
-  // most 6.30:1 on the page and 5.81:1 on a card, against 8.22:1 and 7.58:1 today, so clearing the
-  // tick costs the available badge between 1.77 and 1.92 of its ratio, depending on which surface it
-  // is read against. The nearest feasible green to the shipped one, #3fa684, lands exactly on 3.00:1
+  // What decided it is what the choice costs. White on a fill reaching 3:1 caps that fill's relative
+  // luminance at 0.3000, and the shipped teal is at 0.4927. Every fill under that cap reads at
+  // most 6.27:1 on the page and 5.80:1 on a card, against 9.72:1 and 8.99:1 today, so clearing the
+  // tick costs the available badge between 3.19 and 3.45 of its ratio, depending on which surface it
+  // is read against. The nearest feasible fill to the shipped one, #3aa2b3, lands exactly on 3.00:1
   // with no margin at all.
   //
   // That is a trade of contrast on text for contrast on a glyph, and the glyph is the side that
   // carries nothing. The badge is language a reader has to read. The tick is not read by anybody:
   // the button takes its accessible name from the `aria-label` at `src/js/main.js:2765`, which
   // replaces the glyph in the name computation, and `aria-pressed` at `src/js/main.js:2765`
-  // carries the state besides. The fill already says the box is checked, emphatically, at 7.58:1
-  // against a card and 8.22:1 against the page. Taking that much ratio away from words that are
+  // carries the state besides. The fill already says the box is checked, emphatically, at 8.99:1
+  // against a card and 9.72:1 against the page. Taking that much ratio away from words that are
   // read, to give it to a symbol that is not, is a worse outcome for the reader who needs the
   // contrast most.
   //

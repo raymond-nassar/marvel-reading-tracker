@@ -12,7 +12,7 @@
    is invisible. Each rule keeps its own alpha, because the alphas are deliberately different
    and collapsing them into a named ramp would flatten distinctions that were tuned.
 
-   `--shadow-alpha` scales every drop shadow, because a shadow tuned to read against #0f1115
+   `--shadow-alpha` scales every drop shadow, because a shadow tuned to read against #111117
    is a smear against #fafaff.
 
    Colours that are the same in both themes stay in the shared block. Only what genuinely
@@ -382,12 +382,13 @@ h2[tabindex="-1"]:focus {
    learn two looks for that.
    They sit on a surface the palette gate had never measured: a catalog row is `--card-2`, not
    `--card`, and the gate carried --teal only against --bg and --card. That pair is now measured
-   too, at 7.10:1 in the dark theme and 6.10:1 in the light one against a 4.5:1 floor.
+   too, at 8.38:1 in the dark theme and 6.07:1 in the light one against a 4.5:1 floor.
    They carry more weight than `.pill-ok`, and they earn it with a tint rather than a fill. A fill
    is not available here: --teal flips polarity between themes, light on a dark page and dark on a
-   light one, so no single foreground can sit on it. Measured, a filled badge is 2.53:1 in the
-   light theme with a dark foreground and 1.93:1 in the dark theme with a white one. The tint
-   measures 7.22:1 dark and 6.03:1 light on --card, and 7.98:1 and 5.82:1 on --bg. */
+   light one, so no single foreground can sit on it. Measured, the theme's own --text on a filled
+   badge is 2.83:1 in the light theme and 1.73:1 in the dark one, and a fixed dark glyph fares no
+   better across the pair, reading 9.55:1 on the dark fill and 2.83:1 on the light one. The tint
+   measures 7.16:1 dark and 6.02:1 light on --card, and 7.89:1 and 5.81:1 on --bg. */
 .pill-start, .pill-beginner {
   color: var(--teal); border-color: rgb(var(--teal-line) / 33.333%);
   background: rgb(var(--teal-line) / 12%); font-weight: 700;
@@ -1106,17 +1107,17 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
 .blocked-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
 
 /* BL-072. The ghost border is calibrated for the page and the card. On this banner the ghost's own
-   fill sits closer in luminance to `--line-2` than either of those does, warmer and lighter in dark
-   but warmer and darker in light, so the direction differs by theme while the squeeze does not.
+   fill sits closer in luminance to `--line-2` than either of those does, so the boundary is
+   squeezed in both themes even though the two themes approach it from opposite sides.
    Measured against that fill, which is what the reader actually sees the border against, `--line-2`
-   falls to 2.44:1 dark and 2.39:1 light, under the 3:1 a control boundary needs. `--muted` is the
-   quietest token that clears there, at 4.29 and 4.39, and staying quiet is the entire point of
-   making the button a ghost. `--warn` clears too, at 4.42 and 4.91, and was rejected for the
+   falls to 2.46:1 dark and 2.57:1 light, under the 3:1 a control boundary needs. `--muted` is the
+   quietest token that clears there, at 4.20 and 4.81, and staying quiet is the entire point of
+   making the button a ghost. `--warn` clears too, at 4.44 and 4.91, and was rejected for the
    opposite reason: it is the banner's own alarm colour and would pull the eye towards the action
    the paragraph above says to take second.
 
    The figures are quoted against the button's fill rather than the banner deliberately. Against the
-   banner itself `--line-2` reads 2.90 and 2.73 and `--muted` reads 5.11 and 5.00, which would
+   banner itself `--line-2` reads 2.92 in both themes and `--muted` reads 4.99 and 5.48, which would
    overstate both. A ghost button is a tint over whatever it is dropped onto, so its border is a
    boundary on that tint, not on the surface underneath. This is the same misattribution BL-069
    recorded one surface earlier. */

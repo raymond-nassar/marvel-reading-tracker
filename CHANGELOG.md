@@ -39,9 +39,16 @@ than a Marvel-like red. Red is kept for one job only, which is warning you that 
 be deleted or has gone wrong, so a warning now stands out instead of blending into the decoration.
 Links are blue, finished and available things are teal, and cautions are amber.
 
-Every colour combination in the app was measured against the readability standard in both the light
-and the dark theme before this shipped, and none of them got worse. The high-contrast Windows mode
-and the reduced-motion setting behave exactly as they did.
+All 88 colour combinations the project checks were measured against the readability standard in both
+the light and the dark theme before this shipped. Nothing that used to be readable enough stopped
+being so: 52 improved, 30 came down slightly, and none of them crossed the line. Five combinations
+were already below the line before this change and still are, all of them shapes rather than words,
+and one of those five, the tick drawn inside a ticked-off issue, is now fainter against its own
+background than it was. That was already a known and recorded compromise and this change makes it a
+little worse rather than introducing it. Two places outside the main stylesheet were still wearing the
+old red: the small page that appears while a comic is opening, and the colour Windows paints around
+the app window when it is installed. Both now match the rest. The high-contrast Windows mode and the
+reduced-motion setting behave exactly as they did.
 
 ### Rebranded the app as Recap Page
 
