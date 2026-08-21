@@ -14,6 +14,25 @@ quote in a bug report.
 
 ## Unreleased
 
+## 1.3.0
+
+A flagship feature release that turns the tracker into Recap Page, expands the catalog from 26 to
+46 reading orders, and redesigns every major reading workflow. This is a MINOR release because saved
+data remains readable by the previous build. No migration is required: keep using the exact same
+browser address, and export a backup as a routine precaution before replacing the old copy.
+
+### A faster front door, with focused guides when you need the details
+
+In plain English: the project page now gets a new reader from "what is this?" to a working tracker
+in 118 lines instead of asking them to navigate an 849-line handbook. It keeps the product story,
+privacy boundary, download, source startup, and safe upgrade path in one place.
+
+Detailed setup, troubleshooting, maintenance, data authoring, and release procedures now live in
+two focused guides. Nothing in the app or in saved reading progress is affected.
+
+For maintainers: the release check now runs the actual v1.2.0 app, marks an issue read, and proves the
+same order and nonzero progress survive the folder swap into 1.3.0.
+
 ### Added ten more early modern Marvel event reading orders
 
 In plain English: the catalog now fills ten earlier gaps in Marvel continuity, starting with Maximum

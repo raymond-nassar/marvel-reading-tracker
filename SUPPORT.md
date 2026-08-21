@@ -6,15 +6,15 @@ here.
 ## Start with the troubleshooting section
 
 Most problems people hit are one of five, and all five are answered in
-[If something goes wrong](README.md#if-something-goes-wrong): the port is already in use, Node.js
-is not installed, the page is blank, the read button appears to do nothing, and reading progress
-has apparently disappeared.
+[the troubleshooting guide](docs/RUNNING.md#troubleshooting): the port is already in use, Node.js is
+not installed, the page is blank, the read button appears to do nothing, and reading progress has
+apparently disappeared.
 
 The last one is worth calling out because it is the most alarming and the least serious. Progress
 is filed by your browser under the exact address you were using, port and hostname included, so
 opening the app at a different address shows an empty tracker. Nothing has been deleted. Going back
 to the original address brings it all back. [Always open the same
-address](README.md#always-open-the-same-address) explains why, and it is the single most useful
+address](docs/RUNNING.md#always-use-the-same-address) explains why, and it is the single most useful
 thing to know about this app.
 
 Progress is also per browser and per profile. Opening the app in a browser you have not used with
@@ -47,9 +47,9 @@ subscription, and whether a particular comic is in the service at all. This app 
 and holds none of them, so it cannot affect them and cannot fix them. Take it to Marvel.
 
 **The metadata database.** Covers, titles, publication dates and creator credits come from a
-community project, the Marvel Metadata API, described under [Data source](README.md#data-source).
-Its availability, its correctness and its rate limits are not this project's to fix. Two things are
-worth separating before you report anything about it:
+community project, the Marvel Metadata API, described in
+[Data provenance](docs/DATA_PROVENANCE.md). Its availability, its correctness and its rate limits
+are not this project's to fix. Two things are worth separating before you report anything about it:
 
 - **An outage** looks like details failing to fill in while the app itself keeps working. That is
   deliberate: the app is written to degrade rather than break when the database is unreachable, and

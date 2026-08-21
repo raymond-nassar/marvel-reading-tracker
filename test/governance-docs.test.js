@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
+import { posix } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// These four documents are almost entirely claims about the rest of the repository: which checks
+// These six documents are almost entirely claims about the rest of the repository: which checks
 // run, which scripts exist, where to read about something, how many items carry a constraint
 // check. Every one of those goes stale silently. A link to a heading that has been renamed still
 // renders as a link, a gate added to CI does not announce itself in the guide that lists the
@@ -15,7 +16,14 @@ const root = new URL('../', import.meta.url);
 const read = (relative) => readFileSync(new URL(relative, root), 'utf8');
 const exists = (relative) => existsSync(fileURLToPath(new URL(relative, root)));
 
-const documents = ['CONTRIBUTING.md', 'CODE_OF_CONDUCT.md', 'SUPPORT.md', 'GOVERNANCE.md'];
+const documents = [
+  'CONTRIBUTING.md',
+  'CODE_OF_CONDUCT.md',
+  'SUPPORT.md',
+  'GOVERNANCE.md',
+  'docs/RUNNING.md',
+  'docs/MAINTAINING.md',
+];
 const text = Object.fromEntries(documents.map((name) => [name, read(name)]));
 // Collapsed copies, for the assertions on whole sentences. These documents are hard wrapped, so
 // matching the raw text passes only for phrases that happen not to wrap, which is a check whose
@@ -26,6 +34,8 @@ const flat = Object.fromEntries(
 const pkg = JSON.parse(read('package.json'));
 const workflow = read('.github/workflows/ci.yml');
 const backlog = read('PRODUCT_BACKLOG.md');
+const browserRunner = read('scripts/browser-check.mjs');
+const upgradeRunner = read('scripts/upgrade-check.mjs');
 
 // Every check the workflow actually runs, read out of its run steps rather than out of its prose,
 // which mentions checks it deliberately does not run.
@@ -64,7 +74,9 @@ test('every document link points at something that is still there', () => {
   for (const { from, target } of links) {
     if (/^(https?|mailto):/.test(target)) continue;
     const [path, fragment] = target.split('#');
-    const file = path === '' ? from : path;
+    const file = path === ''
+      ? from
+      : posix.normalize(posix.join(posix.dirname(from), path));
     assert.ok(exists(file), `${from} links to ${target}, and ${file} does not exist`);
     if (!fragment) continue;
     assert.ok(file.endsWith('.md'), `${from} links to a fragment of a non-document, ${target}`);
@@ -87,18 +99,44 @@ test('every command the guides tell you to run is a script this repository has',
   assert.ok(checked > 0, 'no commands found, so this check would pass vacuously');
 });
 
+test('the maintainer browser instructions match the runner interface', () => {
+  const section = /## Run the browser check([\s\S]*?)## Run the upgrade check/.exec(text['docs/MAINTAINING.md'])?.[1] ?? '';
+  const supported = new Set(
+    [...browserRunner.matchAll(/process\.env\.(MRT_[A-Z_]+)/g)].map((match) => match[1]),
+  );
+  const documented = new Set([...section.matchAll(/MRT_[A-Z_]+/g)].map((match) => match[0]));
+
+  assert.ok(section, 'the maintainer guide has no browser-check section');
+  assert.deepEqual([...documented].sort(), ['MRT_EDGE', 'MRT_PUPPETEER']);
+  for (const name of documented) assert.ok(supported.has(name), `${name} is not read by the browser runner`);
+  assert.match(section, /--only=<scenario-name>/);
+  assert.doesNotMatch(section, /--scenario|127\.0\.0\.1:8787/);
+  assert.match(section, /ephemeral port/);
+  assert.doesNotMatch(flat['docs/MAINTAINING.md'], /pull request also runs the browser journeys/);
+});
+
+test('the maintainer upgrade instructions match the historical runner contract', () => {
+  const section = /## Run the upgrade check([\s\S]*?)## Review pinned GitHub Actions/.exec(text['docs/MAINTAINING.md'])?.[1] ?? '';
+
+  assert.ok(section, 'the maintainer guide has no upgrade-check section');
+  assert.match(upgradeRunner, /OLD_REF\s*=\s*'v1\.2\.0'/);
+  assert.match(section, /v1\.2\.0/);
+  assert.match(section, /local Git history/);
+  assert.doesNotMatch(section, /fixture|--scenario|single scenario/i);
+});
+
 test('every document that lists the checks lists exactly the ones CI runs, and counts them', () => {
   // Read the gate set out of the workflow. A gate added there and not here would leave a
   // contributor green locally and red on the pull request, with the document as the thing that
-  // misled them. Both documents that state the number are checked, because the README is the one
+  // misled them. Both documents that state the number are checked, because the root was the one
   // that carried the wrong number: it told a contributor to run four and said four run in CI,
   // while the workflow ran six.
   const inCi = checksInCi();
   assert.ok(inCi.size >= 2, `only ${inCi.size} checks found in the workflow`);
 
   const words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
-  for (const name of ['CONTRIBUTING.md', 'README.md']) {
-    const doc = name === 'README.md' ? read(name) : text[name];
+  for (const name of ['CONTRIBUTING.md', 'docs/MAINTAINING.md']) {
+    const doc = text[name];
     // Checked inside the fenced blocks rather than anywhere in the document, because the block is
     // what a contributor copies. Prose describing a check it no longer tells you to run reads as
     // coverage and is not.

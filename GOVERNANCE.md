@@ -33,8 +33,8 @@ Three things follow from ranking this way, and all three are deliberate:
   deleted, so the argument survives and does not have to be had again from scratch.
 
 Each item also records a constraint check against the standing product constraints, which are the
-things this project will not trade away. Measured on 2026-08-21: of the 162 items with a detail
-block, 156 carry that check, and the only six without one are the six that were dropped. They were
+things this project will not trade away. Measured on 2026-08-21: of the 163 items with a detail
+block, 157 carry that check, and the only six without one are the six that were dropped. They were
 dropped for different reasons, one for breaching a constraint before it was ever scored, and none of
 them is missing a check that somebody forgot to run. [The contributing
 guide](CONTRIBUTING.md) lists the constraints in the form a contributor needs.
@@ -64,9 +64,10 @@ usual one, and it is chosen because reading progress lives only in the reader's 
 there is no server-side migration to save anybody.
 
 The maintainer decides when to cut one. The mechanics are in
-[Releasing](README.md#releasing). One step is not automated on purpose: `npm run contract` calls
-the live metadata API and is deliberately outside CI, because it would fail builds for reasons
-unrelated to the change under test, so it is run by hand before a release is trusted.
+[Cutting a release](docs/MAINTAINING.md#cutting-a-release). One step is not automated on purpose:
+`npm run contract` calls the live metadata API and is deliberately outside CI, because it would
+fail builds for reasons unrelated to the change under test, so it is run by hand before a release
+is trusted.
 
 ## Moderation
 

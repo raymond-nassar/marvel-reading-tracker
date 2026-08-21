@@ -1,0 +1,387 @@
+# Maintaining Recap Page
+
+This guide owns the operational procedures for checking, extending, and releasing Recap Page.
+[The contribution guide](../CONTRIBUTING.md) owns contribution policy and coding standards.
+[The architecture guide](ARCHITECTURE.md) explains how the application is assembled.
+
+The project has no browser build step and no runtime dependencies. `npm ci` installs development
+tools only.
+
+## Run the complete local check set
+
+Start with a clean dependency install:
+
+```text
+npm ci
+```
+
+Run the same seven deterministic checks used by CI:
+
+```text
+npm run lint
+npm test
+npm run counts
+npm run sizes
+npm run anchors
+npm run palette
+npm run publication
+```
+
+All seven run in CI. The checks cover lint and tests, documentation counts, stated file sizes,
+evidence anchors, contrast regressions, and publication content. The browser journeys below are
+manual release checks because they require installed Edge and a driver outside the repository.
+
+### Run the test suite directly
+
+The test script is deliberately the bare Node test command:
+
+```text
+npm test
+```
+
+Do not replace it with a quoted glob. Node 20 treats that glob as a literal filename.
+
+### Run the live API contract check
+
+The contract check calls the live third-party metadata API, so it is intentionally outside CI:
+
+```text
+npm run contract
+```
+
+It confirms that the response fields the app consumes are still present. A network outage, rate
+limit, or temporary API problem can fail it even when the repository is correct. Run it manually
+before trusting a release.
+
+To override the representative order or issue:
+
+```text
+MRT_CONTRACT_ORDER_ID=<order-id> MRT_CONTRACT_ISSUE_ID=<issue-id> npm run contract
+```
+
+On Windows PowerShell, use:
+
+```text
+$env:MRT_CONTRACT_ORDER_ID='<order-id>'; $env:MRT_CONTRACT_ISSUE_ID='<issue-id>'; npm run contract
+```
+
+## Run the browser check
+
+Browser coverage uses `puppeteer-core` from a scratch installation outside this repository. It must
+not become a dependency in `package.json`.
+
+Install it once in a temporary directory. `MRT_PUPPETEER` may point to that directory, its
+`node_modules/puppeteer-core` package, or the absolute entry-file path. Then run:
+
+Windows PowerShell:
+
+```text
+$env:MRT_PUPPETEER='C:\path\to\scratch-directory'
+npm run browser
+```
+
+Windows Command Prompt:
+
+```text
+set MRT_PUPPETEER=C:\path\to\scratch-directory
+npm run browser
+```
+
+macOS or Linux:
+
+```text
+export MRT_PUPPETEER=/absolute/path/to/scratch-directory
+npm run browser
+```
+
+The runner launches installed Edge by default and can use an explicit executable:
+
+```text
+MRT_EDGE=/absolute/path/to/browser npm run browser
+```
+
+The check serves the app on an ephemeral port, uses an isolated profile, stubs the catalog network
+before the page loads, and exits nonzero on a failed journey. The port keeps the reading progress at
+the standard app address untouched. Each journey prints its own assertion and timing totals.
+
+### Prove the browser check detects failures
+
+The proof runner introduces a reversible fault for one journey at a time:
+
+```text
+npm run browser:prove
+```
+
+It expects the chosen journey to fail for the intended reason, restores the original source, and
+runs that journey again to prove it passes. The full proof run covers every journey.
+
+For a faster local loop:
+
+```text
+npm run browser:prove -- --only=<scenario-name>
+```
+
+## Run the upgrade check
+
+The upgrade runner reconstructs the v1.2.0 app from local Git history, runs that historical build,
+and then replaces its folder with the current candidate at the same browser address:
+
+```text
+npm run upgrade
+```
+
+The historical server and complete source tree come directly from the local v1.2.0 tag, byte for
+byte and without a network request. A missing tag or unreadable Git object fails as a prerequisite
+instead of falling back to current source. The old build imports an order and marks one issue read;
+the current build must preserve the order, issue sequence, read marker, and visible nonzero progress.
+
+### Prove the upgrade check detects failures
+
+The proof runner mutates one disposable copy at a time:
+
+```text
+npm run upgrade:prove
+```
+
+It expects each aimed assertion to fail, removes the disposable mutation, and then requires the
+normal runner to pass. The upgrade proof has no single-scenario selector.
+
+## Review pinned GitHub Actions
+
+The workflow pins each third-party action to a full commit SHA and keeps the release ZIP checksum
+available as a build artifact. Before changing a pin:
+
+1. Open the action repository's release page.
+2. Confirm the release tag and immutable commit SHA.
+3. Read the release notes and diff for the versions being crossed.
+4. Change only the relevant `uses:` line.
+5. Review the workflow diff.
+
+```text
+git diff -- .github/workflows/ci.yml
+```
+
+6. Run the complete local check set and confirm the pull request workflow passes.
+
+Do not replace a full SHA with a floating tag such as `@v4`.
+
+## Add a curated reading order
+
+Curated orders are data, not application code. Append one entry to
+`src/data/curated-lists.json`, then run:
+
+```text
+npm run vendor
+```
+
+To vendor an order means fetching it once and committing the result. The app reads that reviewed
+file instead of calling the metadata API while someone is using it. The vendor run fills issue
+details, writes the order under `src/data`, and rebuilds `src/data/catalog.json`.
+
+An order comes from exactly one place: `sourceUrl` fetches an upstream HTTPS checklist, while
+`sourceFile` reads a checklist committed under `src/data/orders`. Keep the `id` stable and unique.
+Provide the reader-facing name and description, the order type and depth, discovery tags, source
+credit, source license, and an expected issue count when one is known. Story groups and variants are
+optional.
+
+Rebuild only the order being added:
+
+```text
+npm run vendor -- --only=<id>
+```
+
+Re-vendoring every order costs hundreds of API requests and restamps files whose content did not
+change. A malformed or unresolved entry fails rather than shipping a quietly shorter order.
+
+### Preserve source evidence
+
+Every manually curated order must have enough evidence for another maintainer to reproduce it.
+[The data provenance guide](DATA_PROVENANCE.md) defines the required source packet and normalization
+rules.
+
+At minimum, record:
+
+* The source URL and retrieval date.
+* The source order as published.
+* Every merge, split, replacement, or omission.
+* The final resolved issue IDs.
+* Independent verification for every non-mechanical correction.
+
+Never scrape `marvel.com` or `read.marvel.com`. Do not commit comic images.
+
+## Build a Comic Book Herald continuity packet
+
+For a modern continuity order, preserve four evidence layers before editing product data:
+
+1. A source snapshot containing the useful reading-list prose and links.
+2. A normalized extraction of headings, entries, labels, and source URLs.
+3. A resolution report mapping each entry to issue IDs.
+4. A discrepancy and browser review report explaining every exception.
+
+Run the maintained preparation and overlap reports before authoring:
+
+```text
+npm run cbh:prepare
+npm run orders:overlap
+```
+
+Keep source sequence. Do not regroup issues just to make the file look cleaner. Exclude prose-only
+recommendations, optional older runs, collected editions, and non-comic notes unless the source
+clearly makes them part of the issue order.
+
+### Resolve issue IDs deterministically
+
+Use source links for canonical identity, vendored metadata for exact title and issue matches, and
+the live API only when vendored data cannot resolve an issue. Group consecutive issues from the same
+series into range-backed runs where the app's data model supports it.
+
+Before shipping, verify:
+
+* Every source entry has a resolution or a documented exclusion.
+* Every added issue ID exists.
+* Part labels preserve the source's narrative structure.
+* The first and last entries match the intended boundaries.
+* Neighboring modern-continuity packets do not overlap accidentally.
+
+Only an approved mapping can be authored and vendored:
+
+```text
+node scripts/author-cbh-packet.mjs
+npm run vendor -- --only=<id>
+```
+
+The author refuses unresolved mappings and nonzero overlap. Every resulting catalog card must credit
+Comic Book Herald and link to the exact guide section followed.
+
+### Validate the packet
+
+Run the targeted data tests first, then the full repository check set:
+
+```text
+npm test
+npm run counts
+npm run anchors
+```
+
+Open the finished order in a real browser and check the catalog name, description, group labels,
+first issue, last issue, and reading sequence.
+
+## Create reading paths and collected-edition groups
+
+A reading path is a named sequence of existing order IDs. Define it in the `paths` array beside the
+curated lists in `src/data/curated-lists.json`. Each step is a list `id`, not a story-group key.
+Include a stable path ID, reader-facing name and description, source credit, and at least two steps.
+
+The vendor run refuses missing list IDs, duplicate stories, duplicate path IDs, and paths with fewer
+than two steps. Tests also verify that shipped path stops do not overlap.
+
+A hand-authored checklist can divide issues with `##` subheadings. Each subheading names a collected
+edition and groups the issues beneath it. A `#` heading remains the order title and ends any open
+edition. Orders without subheadings remain ordinary issue orders.
+
+The grouping is the curator's claim, so say in the order description where the volume lineup came
+from and which issues it leaves out. Issue read state remains shared across grouped and ordinary
+orders.
+
+## Regenerate event orders
+
+The generated event orders use the series IDs Marvel branded with each event. The script fetches
+their issues and writes a checklist in publication order under `src/data/orders`:
+
+```text
+node scripts/build-event-order.mjs
+node scripts/build-event-order.mjs civil-war
+node scripts/build-event-order.mjs --dry-run
+node scripts/build-event-order.mjs --audit
+```
+
+Run the audit before regeneration. It scans the full series catalog and fails when a matching series
+is in neither the include list nor the explicit rejection record. The output is committed, so review
+the order as a data diff before vendoring it.
+
+## Rebuild series and creator indexes
+
+The metadata API has no working server-side search for series or creators, so the app uses committed
+local indexes:
+
+```text
+npm run vendor:index
+```
+
+The command pages the complete series and creator catalogs and writes compact snapshots to
+`src/data/series-index.json` and `src/data/creators-index.json`. The app loads each file only when
+its search card opens. A new upstream record is not searchable until the snapshots are rebuilt.
+
+## Cutting a release
+
+Release preparation and GitHub publication are separate actions. Prepare and merge the release
+commit first. Create the GitHub release from the exact merged commit on the default branch, never
+from an unmerged branch commit.
+
+### 1. Finalize the release record
+
+Move the current changelog entries under a dated version heading. Keep the release notes
+benefit-led and link to the full changelog.
+
+Update all three version sources together:
+
+```text
+npm version <major|minor|patch> --no-git-tag-version
+```
+
+The npm version lifecycle updates the browser version constant in the same operation. Confirm all
+three values agree and the stored-data schema is still correct. A major version is required when an
+older build cannot read data written by the new build.
+
+### 2. Run release validation
+
+Repeat the seven deterministic gates from the start of this guide, then run the live contract,
+browser, upgrade, and package checks:
+
+```text
+npm run contract
+npm run browser
+npm run upgrade
+npm run pack
+```
+
+Review the generated archive checksum:
+
+```text
+Get-FileHash -Algorithm SHA256 dist/marvel-reading-tracker-windows.zip
+```
+
+Do not commit `dist`.
+
+### 3. Merge before tagging
+
+Open the release pull request and wait for every required check. After merge, confirm the merge
+commit on the default branch is the exact code being released.
+
+If a CI run was cancelled by a newer push, inspect its job conclusions before treating it as a
+product failure. Trigger a manual run when the merge commit has no run:
+
+```text
+gh workflow run CI --ref main
+```
+
+### 4. Create the release from the merged commit
+
+Create the GitHub release with tag `v<version>`, choose the merged commit as its target, paste the
+prepared release notes, and attach `dist/marvel-reading-tracker-windows.zip`. Creating the release is
+what creates the tag. Do not create the tag on the feature branch: squash merging would leave it
+pointing to a commit that never reaches the default branch.
+
+### 5. Verify the published release
+
+Confirm:
+
+* The tag resolves to the intended merged commit.
+* The release is public and not a draft.
+* The Windows archive is attached.
+* The published checksum matches the locally reviewed archive.
+* The stable download URL in the root README resolves to the new archive.
+* A clean download opens at `http://127.0.0.1:8787/`.
+
+Do not delete or move an existing release tag. Correct the release record without changing what the
+tag names.

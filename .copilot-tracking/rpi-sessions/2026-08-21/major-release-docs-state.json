@@ -1,0 +1,165 @@
+{
+  "task_id": "MRT-002",
+  "task_slug": "major-release-docs",
+  "parent_task": null,
+  "mode": "automatic",
+  "active_phase": "Follow-up",
+  "status": "completed",
+  "session_status": "running",
+  "artifact_paths": {
+    "research": ".copilot-tracking/research/2026-08-21/major-release-docs-research.md",
+    "plan": ".copilot-tracking/plans/2026-08-21/major-release-docs-plan.md",
+    "details": ".copilot-tracking/details/2026-08-21/major-release-docs-phase-details.md",
+    "critique": ".copilot-tracking/reviews/plans/2026-08-21/major-release-docs-plan-critique.md",
+    "changes": ".copilot-tracking/changes/2026-08-21/major-release-docs-changes.md",
+    "review": ".copilot-tracking/reviews/logs/2026-08-21/major-release-docs-review.md"
+  },
+  "confirmed_decisions": [
+    {
+      "decision": "Research will assess major-release readiness and define a shorter root README that links to detailed pages.",
+      "status": "active",
+      "evidence": "User direction on 2026-08-21"
+    },
+    {
+      "decision": "Release notes will use punchy bullets and polished product-led language.",
+      "status": "confirmed",
+      "evidence": "User direction on 2026-08-21"
+    },
+    {
+      "decision": "Research disposition: executed; one focused wider, deeper, and contrarian cycle completed.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/research/2026-08-21/major-release-docs-research.md"
+    },
+    {
+      "decision": "Planning Readiness: Ready. Recommend a flagship v1.3.0 release rather than v2.0.0 because stored-data schema 2 remains compatible.",
+      "status": "superseded-by-dependency",
+      "evidence": "C1-C6 and W1 in the research artifact"
+    },
+    {
+      "decision": "Wait for the Modern marvel batch two session before planning the release.",
+      "status": "confirmed",
+      "evidence": "User direction on 2026-08-21; dependent catalog-expansion session"
+    },
+    {
+      "decision": "Final-candidate critique executed once with verdict Blocked.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/reviews/plans/2026-08-21/major-release-docs-plan-critique.md; PC-001 through PC-005"
+    },
+    {
+      "decision": "Resolve PC-001 with a separate general historical-anchor prerequisite; do not re-aim historical tracking citations or relax the README shortening goal.",
+      "status": "confirmed",
+      "evidence": "User selection on 2026-08-21"
+    },
+    {
+      "decision": "Historical anchor support prerequisite launched as a coordinated session.",
+      "status": "completed",
+      "evidence": "Integrated commits 671c61a, 573d8f7, and 68daf3a; anchors report 1,017 unchanged and 13 validated local-only citations"
+    },
+    {
+      "decision": "Modern marvel batch two is integrated and final release evidence has been refreshed.",
+      "status": "completed",
+      "evidence": "PR 161 merge 04b68d9d87aab30c5cc3c557e51825a4a2b07871; 46 current orders, 26 at v1.2.0, 15 Unreleased entries"
+    },
+    {
+      "decision": "The merged batch and prerequisite both allocated BL-182 independently; the already-merged batch keeps BL-182 and the prerequisite product record is BL-183.",
+      "status": "completed",
+      "evidence": "PRODUCT_BACKLOG.md unique row and detail identities after integration"
+    },
+    {
+      "decision": "Full-plan implementation started with P01-T01.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/plans/2026-08-21/major-release-docs-plan.md"
+    },
+    {
+      "decision": "P01-T01 completed and P01-T02 started.",
+      "status": "completed",
+      "evidence": "docs/RUNNING.md and .copilot-tracking/changes/2026-08-21/major-release-docs-changes.md"
+    },
+    {
+      "decision": "P01-T02 completed and P01-T03 started.",
+      "status": "completed",
+      "evidence": "docs/MAINTAINING.md and .copilot-tracking/changes/2026-08-21/major-release-docs-changes.md"
+    },
+    {
+      "decision": "P01 completed and P02-T01 started.",
+      "status": "completed",
+      "evidence": "README.md, docs/RUNNING.md, docs/MAINTAINING.md, and the passing reader contract tests"
+    },
+    {
+      "decision": "P02-T01 and P02-T02 completed; P02-T03 validation started.",
+      "status": "completed",
+      "evidence": "CONTRIBUTING.md, SUPPORT.md, GOVERNANCE.md, CHANGELOG.md, PRODUCT_BACKLOG.md, and docs/anchors.lock.json"
+    },
+    {
+      "decision": "P02 completed and P03-T01 started.",
+      "status": "completed",
+      "evidence": "Seven repository gates pass; transferred semantic test has red and green proof; README.md is 118 lines"
+    },
+    {
+      "decision": "P03-T01 completed and P03-T02 started.",
+      "status": "completed",
+      "evidence": "46 current orders, 26 at v1.2.0, 16 release entries, schema 2 on both trees, and the PR 161 merge commit is an ancestor"
+    },
+    {
+      "decision": "P03-T02 completed and P03-T03 started.",
+      "status": "completed",
+      "evidence": "Seven release bullets; 1.3.0 in package.json, package-lock.json, src/js/lib/version.js, and CHANGELOG.md"
+    },
+    {
+      "decision": "P03-T03 and full-plan implementation completed; transition to the single post-implementation Review is ready.",
+      "status": "completed",
+      "evidence": "All seven repository gates, 33 contract assumptions, 119 browser assertions, 10 upgrade assertions, packaging, documentation contracts, and final static checks passed"
+    },
+    {
+      "decision": "Single post-implementation Review started over the complete task boundary.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/plans/2026-08-21/major-release-docs-plan.md and .copilot-tracking/changes/2026-08-21/major-release-docs-changes.md"
+    },
+    {
+      "decision": "Review execution completed once with outcome Defects found.",
+      "status": "completed",
+      "evidence": ".copilot-tracking/reviews/logs/2026-08-21/major-release-docs-review.md; RV-001 through RV-003"
+    },
+    {
+      "decision": "The automatic session remains running at the post-Review follow-up checkpoint.",
+      "status": "active",
+      "evidence": "Earlier user direction to continue autonomously and the RPI automatic-session contract"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "RV-001-RV-002",
+      "summary": "The upgrade check does not exercise the v1.2.0 source boundary or nonzero read progress.",
+      "resolution": "Route to a later rpi-implement invocation before publication."
+    },
+    {
+      "id": "RV-003",
+      "summary": "The maintainer guide documents unsupported runner variables, flags, fixtures, ports, and CI coverage.",
+      "resolution": "Route to a later rpi-implement invocation before publication."
+    }
+  ],
+  "next_action": {
+    "phase": "Research",
+    "action": "Start the selected child task to resolve RV-001 through RV-003 together."
+  },
+  "prioritized_follow_ups": [
+    {
+      "rank": 1,
+      "task": "Resolve all release-blocking Review findings in one implementation pass.",
+      "rationale": "This is the shortest path to a trustworthy release candidate because all three findings touch the same validation and maintainer contract.",
+      "evidence": "RV-001 through RV-003 in .copilot-tracking/reviews/logs/2026-08-21/major-release-docs-review.md"
+    },
+    {
+      "rank": 2,
+      "task": "Repair the historical and nonzero-progress upgrade proof first.",
+      "rationale": "The two High findings directly govern the promise that existing reading progress survives the release.",
+      "evidence": "RV-001 and RV-002"
+    },
+    {
+      "rank": 3,
+      "task": "Correct maintainer runner instructions and semantic tests first.",
+      "rationale": "The Medium finding is lower risk than data-loss proof but is a bounded documentation and test correction.",
+      "evidence": "RV-003"
+    }
+  ]
+}
