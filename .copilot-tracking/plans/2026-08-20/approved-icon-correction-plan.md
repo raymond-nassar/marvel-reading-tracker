@@ -63,7 +63,7 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 * Existing exact icon assertions in test/app-icons.test.js.
 * Current icon wording in CHANGELOG.md and PRODUCT_BACKLOG.md.
 * Child-task changes, review, and state evidence.
-* docs/screenshots/catalog-shelf-1280.png and the PR description.
+* docs/screenshots/catalog-shelf-1280.png and the focused follow-up PR description.
 
 ### Non-Goals
 
@@ -174,13 +174,13 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 * Detail section: P01-T02 in .copilot-tracking/details/2026-08-20/approved-icon-correction-phase-details.md
 
 <!-- rpi:phase id=P02 -->
-### [ ] P02: Correct current identity records
+### [x] P02: Correct current identity records
 
 * Intent: Make every current claim and screenshot describe or show the approved mark.
 * Dependencies: P01.
 
 <!-- rpi:task id=P02-T01 -->
-#### [ ] P02-T01: Update current written evidence
+#### [x] P02-T01: Update current written evidence
 
 * Requirement and evidence: Research C3 and C4.
 * Expected result: Changelog, backlog, child changes record, state, and PR description accurately
@@ -195,9 +195,9 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 * Detail section: P02-T02 in .copilot-tracking/details/2026-08-20/approved-icon-correction-phase-details.md
 
 <!-- rpi:phase id=P03 -->
-### [ ] P03: Validate and publish the correction
+### [x] P03: Validate and publish the correction
 
-* Intent: Prove the corrected icon is consistent, compatible, and ready on PR 151.
+* Intent: Prove the corrected icon is consistent, compatible, and ready in its focused follow-up PR.
 * Dependencies: P01 and P02.
 
 <!-- rpi:task id=P03-T01 -->
@@ -208,9 +208,10 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 * Detail section: P03-T01 in .copilot-tracking/details/2026-08-20/approved-icon-correction-phase-details.md
 
 <!-- rpi:task id=P03-T02 -->
-#### [ ] P03-T02: Commit, push, and refresh the PR record
+#### [x] P03-T02: Commit, push, and refresh the PR record
 
-* Requirement and evidence: Current open PR 151 and repository commit rules.
+* Requirement and evidence: PR 151 merged before the correction push, so PR 152 carries the focused
+  follow-up under the repository commit rules.
 * Expected result: The correction is pushed to the existing PR branch and its description reports
   the approved mark and current verification.
 * Detail section: P03-T02 in .copilot-tracking/details/2026-08-20/approved-icon-correction-phase-details.md
@@ -220,7 +221,7 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 * User-supplied icon: Authoritative visual direction.
 * Existing generator: Maintains dependency-free SVG and PNG parity.
 * Existing browser harness and out-of-tree Puppeteer: Validate the live app without changing dependencies.
-* Current PR 151: Receives the corrected commit and description.
+* Focused follow-up PR 152: Carries the corrected commit and description after PR 151 merged.
 
 ## Critique Disposition
 
@@ -235,5 +236,5 @@ For current user input, see [User Decisions and Requirements](#user-decisions-an
 ## Handoff
 
 * Implementation artifact: .copilot-tracking/changes/2026-08-20/approved-icon-correction-changes.md
-* Ready phase or task: P01
+* Ready phase or task: Review
 * Remaining provisional question or blocker: none

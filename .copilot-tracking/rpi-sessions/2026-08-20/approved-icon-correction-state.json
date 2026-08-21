@@ -6,8 +6,8 @@
     "task_slug": "recap-page-rebrand"
   },
   "mode": "automatic",
-  "active_phase": "Implement",
-  "status": "active",
+  "active_phase": "Follow-up",
+  "status": "completed",
   "session_status": "running",
   "artifact_paths": {
     "research": ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md",
@@ -15,7 +15,7 @@
     "details": ".copilot-tracking/details/2026-08-20/approved-icon-correction-phase-details.md",
     "critique": ".copilot-tracking/reviews/plans/2026-08-20/approved-icon-correction-plan-critique.md",
     "changes": ".copilot-tracking/changes/2026-08-20/approved-icon-correction-changes.md",
-    "review": null
+    "review": ".copilot-tracking/reviews/logs/2026-08-20/approved-icon-correction-review.md"
   },
   "confirmed_decisions": [
     {
@@ -47,12 +47,29 @@
       "decision": "P03-T01 validation is complete: 1,208 tests, lint, 887 anchors, counts, sizes, palette, publication, browser, dash, and whitespace checks passed.",
       "status": "confirmed",
       "evidence": ".copilot-tracking/changes/2026-08-20/approved-icon-correction-changes.md"
+    },
+    {
+      "decision": "Implementation completed all P01 through P03 markers and published the correction through focused follow-up PR 152 after PR 151 merged.",
+      "status": "confirmed",
+      "evidence": ".copilot-tracking/changes/2026-08-20/approved-icon-correction-changes.md"
+    },
+    {
+      "decision": "The one post-implementation Review executed against the full MRT-003 boundary with a Conformant outcome and no findings.",
+      "status": "confirmed",
+      "evidence": ".copilot-tracking/reviews/logs/2026-08-20/approved-icon-correction-review.md"
     }
   ],
   "blockers": [],
   "next_action": {
-    "phase": "Implement",
-    "action": "Commit and push the correction, update PR 151 wording, and finish P02 and P03."
+    "phase": "Follow-up",
+    "action": "Select the remaining BL-162 Microsoft Store follow-up, stop the automatic session, or switch to manual mode."
   },
-  "prioritized_follow_ups": []
+  "prioritized_follow_ups": [
+    {
+      "rank": 1,
+      "task": "Reserve or list Recap Page in the Microsoft Store, then close BL-162.",
+      "rationale": "The owner explicitly excluded this external work from the original rebrand and the icon correction does not change that boundary.",
+      "evidence": "MRT-002 PC-002 decision and PRODUCT_BACKLOG.md BL-162."
+    }
+  ]
 }

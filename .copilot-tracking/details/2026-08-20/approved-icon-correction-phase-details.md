@@ -151,7 +151,8 @@ Make current prose and imagery agree with the live product.
 
 ### Boundaries
 
-* Included: Current changelog and backlog implementation wording, child task records, screenshot, PR body.
+* Included: Current changelog and backlog implementation wording, child task records, screenshot,
+  and focused follow-up PR body.
 * Excluded: Rewriting the completed parent research, plan, critique, or review.
 
 ### Likely Targets
@@ -159,7 +160,7 @@ Make current prose and imagery agree with the live product.
 * CHANGELOG.md and PRODUCT_BACKLOG.md: Current user and maintainer record.
 * .copilot-tracking/changes/2026-08-20/approved-icon-correction-changes.md: Child implementation evidence.
 * docs/screenshots/catalog-shelf-1280.png: Current README image.
-* PR 151 description: Current review surface.
+* Focused follow-up PR description: Current review surface after PR 151 merged.
 
 ### Dependencies
 
@@ -262,7 +263,7 @@ changes.
 
 ### Intent
 
-Produce a clean, reviewed, pushed correction on PR 151.
+Produce a clean, pushed correction in the focused follow-up PR, ready for parent Review.
 
 ### Boundaries
 
@@ -332,7 +333,8 @@ Verify the exact requested outcome and unchanged surrounding contracts.
 
 #### Context
 
-PR 151 currently describes the wrong folded-page icon and must not merge with that claim or image.
+PR 151 merged before the correction push, so the corrected source and description require a focused
+follow-up PR rather than an edit to the merged review.
 
 #### Intent
 
@@ -345,7 +347,7 @@ Publish the corrected source and review record to the existing branch.
 
 #### Likely Targets
 
-* Current branch and PR 151.
+* Current branch and focused follow-up PR 152.
 
 #### Dependencies
 

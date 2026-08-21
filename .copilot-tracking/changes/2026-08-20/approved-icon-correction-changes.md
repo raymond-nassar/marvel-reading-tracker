@@ -10,18 +10,17 @@
 
 ## Execution Status
 
-* Status: Partial
+* Status: Complete
 * Declared invocation scope: Full plan
-* Completed scope markers: P01, P01-T01, P01-T02, P02-T02, and P03-T01
-* All remaining active-plan markers: P02, P02-T01, P03, and P03-T02
-* Status basis: The approved icon is generated and protected, and the README screenshot is
-  recaptured; current records, full validation, review, and publication remain.
+* Completed scope markers: P01, P01-T01, P01-T02, P02, P02-T01, P02-T02, P03, P03-T01, and P03-T02
+* All remaining active-plan markers: None
+* Status basis: The approved icon, current records, screenshot, validation, commit, push, and focused
+  follow-up PR are complete.
 
 ## Execution Summary
 
-The generator, SVG, both install PNGs, focused assertions, and README screenshot now use the
-owner-approved purple page mark. Current written evidence and the PR record still require final
-reconciliation before full validation and publication.
+The generator, SVG, both install PNGs, focused assertions, current product records, README
+screenshot, and focused follow-up PR now use or describe the owner-approved purple page mark.
 
 ## Completed Work
 
@@ -48,6 +47,17 @@ reconciliation before full validation and publication.
   request for the app-owned SVG.
 * Validation: Passed by direct browser capture and inspection.
 
+### Correct current records and publish the focused follow-up
+
+* Related phase or task: P02, P02-T01, P03, and P03-T02
+* Files or systems: CHANGELOG.md, PRODUCT_BACKLOG.md, child RPI artifacts, git branch, and PR 152
+* What changed and why: Replaced current folded-page wording, committed and pushed the correction,
+  and opened a focused follow-up because PR 151 merged automatically before the corrected commit
+  could be added to it.
+* Completion evidence: Commit 2682ea6 is on the remote branch and the follow-up PR body describes
+  the approved icon and current validation figures.
+* Validation: Complete; parent Review remains the next RPI phase.
+
 ## Implementation-Time Plan and Detail Updates
 
 ### Keep publication inside implementation and Review after it
@@ -62,6 +72,18 @@ reconciliation before full validation and publication.
 * Reconciliation performed: Phase details now place Review after P03-T02 without changing scope,
   requirements, acceptance, or the one-critique state.
 * Planning and critique state: Ready; the critique remains Pass because no implementation boundary changed.
+
+### Publish through a focused follow-up after PR 151 merged
+
+* Affected plan area or markers: P02-T01, P03, and P03-T02
+* What changed: Replaced the plan's stale PR 151 target with focused follow-up PR 152.
+* Why: PR 151 merged and its branch was deleted before the approved-icon correction was pushed.
+* Triggering evidence: GitHub reported PR 151 merged at 2026-08-21T01:11:15Z and the next push
+  recreated the branch.
+* User answer or decision: None; publishing the requested correction requires a current PR.
+* Reconciliation performed: Plan, details, changes evidence, and PR body now identify the focused
+  follow-up without widening product scope.
+* Planning and critique state: Ready; only the delivery target changed.
 
 ## Validation Record
 
@@ -83,11 +105,12 @@ reconciliation before full validation and publication.
 
 ## Pre-Review Reconciliation
 
-* Plan markers and phase details: Current through P01, P02-T02, and P03-T01.
-* Completed-work evidence and handoff prose: Current for the generated icon, screenshot, and gates.
-* Validation, blockers, remaining work, and follow-up items: No blockers or follow-ups; PR
-  publication and current PR wording remain before Review.
-* Review readiness: Not ready until P01 through P03 validation and reconciliation complete.
+* Plan markers and phase details: All full-plan markers complete and current.
+* Completed-work evidence and handoff prose: Current for source, records, screenshot, validation,
+  commit, push, and focused follow-up PR.
+* Validation, blockers, remaining work, and follow-up items: All validation passed; no blockers,
+  remaining work, or follow-ups.
+* Review readiness: Ready.
 
 ## Blockers
 
@@ -95,7 +118,7 @@ reconciliation before full validation and publication.
 
 ## Remaining Work
 
-* P02-T01, P02, P03-T02, and P03.
+* None.
 
 ## Follow-Up Items
 
@@ -104,15 +127,13 @@ reconciliation before full validation and publication.
 
 ## Return-to-Caller State
 
-* Implementation execution status: Partial
-* Declared scope and markers: Full plan; P01, P01-T01, P01-T02, P02-T02, and P03-T01 complete;
-  P02-T01, P02, P03-T02, and P03 remain.
+* Implementation execution status: Complete
+* Declared scope and markers: Full plan; all P01 through P03 markers complete.
 * Validation coverage: Icon generation, 8 focused tests, smallest-revert proof, and browser
   screenshot capture passed; all repository and browser gates passed.
 * Blockers: None.
 * Current plan and detail updates: None.
 * Planning and critique state: Ready; critique Pass with no findings.
 * Follow-up items: None.
-* Review readiness or no-handoff reason: Not ready until the correction is pushed and the PR
-  description is current.
+* Review readiness or no-handoff reason: Ready for the one post-implementation Review.
 * Continuation owner: Confirmed automatic RPI Agent.
