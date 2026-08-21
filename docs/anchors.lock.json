@@ -1,4 +1,34 @@
 {
+  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c1|scripts/build-icons.mjs:24-37|0": {
+    "anchor": "scripts/build-icons.mjs:24-37",
+    "fp": "1f87d5cebc14a05d",
+    "head": "// Fixed brand colors keep the approved mark stable outside the themed document."
+  },
+  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c2|test/app-icons.test.js:139-184|0": {
+    "anchor": "test/app-icons.test.js:139-184",
+    "fp": "fced5be35c69483b",
+    "head": "test('the committed icons are what the generator draws', () => {"
+  },
+  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c3|PRODUCT_BACKLOG.md:11091-11104|0": {
+    "anchor": "PRODUCT_BACKLOG.md:11091-11104",
+    "fp": "1e910ad0a8efc7f4",
+    "head": "**BL-161: Redraw the app icon so it stops echoing Marvel's trade dress**"
+  },
+  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c4|CHANGELOG.md:17-20|0": {
+    "anchor": "CHANGELOG.md:17-20",
+    "fp": "de300ca1c425986d",
+    "head": "### Rebranded the app as Recap Page"
+  },
+  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c5|README.md:16-22|0": {
+    "anchor": "README.md:16-22",
+    "fp": "38a9d6fba38e9c55",
+    "head": "![The Reading list catalog screen. A sidebar down the left lists your reading orders, library views"
+  },
+  ".copilot-tracking/research/2026-08-20/approved-icon-correction-research.md|codebase-evidence#c5|src/index.html:11-39|0": {
+    "anchor": "src/index.html:11-39",
+    "fp": "4d2b3f12e677a462",
+    "head": "<title>Recap Page</title>"
+  },
   ".github/copilot-instructions.md|browser-verification|docs/UX_STUDY.md:914-916|0": {
     "anchor": "docs/UX_STUDY.md:914-916",
     "fp": "1e64d83a8ff9a25f",
@@ -1284,10 +1314,10 @@
     "fp": "0229604f80988ee1",
     "head": "`# ${event.name}: ${essential ? 'Main Series Reading Checklist' : 'Issue-by-Issue Reading Checklist'"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/build-icons.mjs:35-43|0": {
-    "anchor": "scripts/build-icons.mjs:35-43",
-    "fp": "5698793263f46e6e",
-    "head": "const VIEW = 32;"
+  "PRODUCT_BACKLOG.md|item-details|scripts/build-icons.mjs:29-37|0": {
+    "anchor": "scripts/build-icons.mjs:29-37",
+    "fp": "4e3144775613472c",
+    "head": "// Everything below is in a 32 by 32 space, the favicon's viewBox, and scaled to the size being"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-anchors.mjs:1025-1040|0": {
     "anchor": "scripts/check-anchors.mjs:1025-1040",

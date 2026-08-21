@@ -16,7 +16,7 @@ quote in a bug report.
 
 ### Rebranded the app as Recap Page
 
-In plain English: the app now has its own name and folded-page icon instead of a Marvel-like red
+In plain English: the app now has its own name and purple page icon instead of a Marvel-like red
 tile. The home screen also says where its Marvel metadata actually came from.
 
 Installed copies still look for the same Windows download, saved reading progress stays under the
