@@ -60,6 +60,8 @@ const HERO_NO_ISSUE = 'Nothing up next';
 // The same for the landing page's continue card, whose heading also names its section. Both
 // have to match the text index.html starts out holding.
 const CONTINUE_NO_LIST = 'Continue reading';
+// And for the featured journey, for the same reason: its heading names its section too.
+const FEATURE_NO_PICK = 'A place to start';
 const UPDATE_NOTICE_KEY = 'update-available';
 const UPDATE_CHECK_BUTTON_TEXT = 'Check for updates';
 
@@ -1451,6 +1453,70 @@ export function overflowState(matched, shown) {
   };
 }
 
+// The answer to "where do I start", for a reader who has nothing yet. Deterministic, and derived
+// from the catalog rather than from an editor's pick: the beginner-friendly order with the fewest
+// issues, ties broken by catalog order. That is the smallest real commitment the data can offer,
+// which is the question a first-time reader is actually asking. Exported for the tests, because a
+// selection rule that quietly changes is a selection rule nobody can rely on.
+export function pickFeatured(lists) {
+  let best = null;
+  for (const list of lists) {
+    if (!list.beginner) continue;
+    // Strictly less than, so the first of a tie wins and catalog order is the tie-break.
+    if (!best || list.count < best.count) best = list;
+  }
+  return best;
+}
+
+// Shown only on a genuine first run. Every one of the three conditions is a case where the reader
+// has already told us something more specific than "I do not know where to start": a library means
+// they have chosen before, and a facet or a query means they are choosing right now. Withdrawing
+// the offer at the moment it stops making sense is cheaper than explaining it later.
+function renderFeatured(all) {
+  const sec = $('#home-featured');
+  const populated = store.state.listOrder.length > 0;
+  const pick = populated || homeFacet !== 'all' || homeQuery ? null : pickFeatured(all);
+  sec.hidden = !pick;
+  // Hidden rather than emptied, so the heading keeps text. It labels this section, so an empty
+  // one would cost the section its name too.
+  if (!pick) {
+    $('#feature-h').textContent = FEATURE_NO_PICK;
+    return;
+  }
+
+  const story = groupCatalog(all).find((s) => s.lists.some((l) => l.id === pick.id)) ?? null;
+
+  $('#feature-h').textContent = pick.name;
+  $('#feature-why').textContent = pick.description ?? '';
+  $('#feature-why').hidden = !pick.description;
+
+  // The commitment, said out loud rather than left to be inferred from a metadata line. Same
+  // facts the card carries, given room, because this is where the decision is actually made.
+  $('#feature-facts').replaceChildren(...[
+    `${pick.count} issue${pick.count === 1 ? '' : 's'}`,
+    readingTimeLabel(pick.count),
+    collectionsLabel(pick),
+    typeLabel(pick.type),
+    pick.beginner ? 'No prior reading needed' : null,
+  ].filter(Boolean).map((text) => el('li', { text })));
+
+  // Decorative: the title is text right beside it.
+  paintCoverUrl($('#feature-img'), $('#feature-fb'), catalogCoverUrl(pick), hueOf(pick.name));
+  $('#feature-fs').textContent = shortTitle(pick.name);
+  $('#feature-fn').textContent = '';
+
+  // The names carry the order, so a screen reader hears which story is being started rather than
+  // one more "Start reading" identical to the eight below it. The labels are read off the buttons
+  // so editing the markup cannot leave the name behind still saying the old words.
+  const start = $('#btn-feature-start');
+  start.setAttribute('aria-label', labelledName(start.textContent, pick.name));
+  start.onclick = (e) => importCurated(pick, e.currentTarget, { navigate: true, report: '#home-cat-report' });
+
+  const preview = $('#btn-feature-preview');
+  preview.setAttribute('aria-label', labelledName(preview.textContent, pick.name));
+  preview.onclick = () => openPreview(pick, story);
+}
+
 async function renderHomeCatalog({ announceCount = false } = {}) {
   const grid = $('#home-grid');
   // Every other route into this function rebuilds the grid while focus is outside it, on the
@@ -1467,6 +1533,9 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
       grid.replaceChildren();
       $('#home-chips').hidden = true;
       $('#form-home-q').hidden = true;
+      // The panel offers a specific order, so it cannot survive the catalog it was picked from.
+      $('#home-featured').hidden = true;
+      $('#feature-h').textContent = FEATURE_NO_PICK;
       notify('#home-cat-report', `The catalog could not be loaded: ${err.message}. Your lists are unchanged.`, 'error', CATALOG_LOAD);
       return;
     }
@@ -1491,10 +1560,13 @@ async function renderHomeCatalog({ announceCount = false } = {}) {
     // the block that owns these three, so every control that block reveals has to be put away
     // again by hand, and relying on the attribute only works while nothing has rendered yet.
     $('#home-more').hidden = true;
+    $('#home-featured').hidden = true;
+    $('#feature-h').textContent = FEATURE_NO_PICK;
     grid.replaceChildren(el('li', { class: 'rail-hint', text: 'No curated reading orders are bundled with this build.' }));
     return;
   }
 
+  renderFeatured(all);
   renderHomeChips(all);
   // Scanning works up to about a dozen orders; past that the reader needs to be able to
   // type. Showing the box before then would be a control with nothing to do. Counted in
@@ -1702,8 +1774,9 @@ function orderCard(story) {
     ways.replaceChildren(...(story.lists.length > 1 ? [waysButton(story, list)] : []));
     ways.hidden = story.lists.length < 2;
     // Beginner-friendliness is why many readers pick an order, so it is a visible mark rather
-    // than only a filter you have to know to apply.
-    marks.replaceChildren(...(list.beginner ? [el('span', { class: 'pill', text: 'Beginner-friendly' })] : []));
+    // than only a filter you have to know to apply, and it carries the same weight as the badge
+    // on the first stop of a path, because it answers the same question.
+    marks.replaceChildren(...(list.beginner ? [el('span', { class: 'pill pill-beginner', text: 'Beginner-friendly' })] : []));
     marks.hidden = !list.beginner;
     foot.replaceChildren(
       addButton(list, listForCatalogId(store.state, list.id)),
