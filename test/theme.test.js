@@ -473,3 +473,23 @@ test('every pair resolves in both themes, so nothing is skipped unmeasured', () 
   const unresolvable = findings.filter((f) => /not defined|not a plain hex/.test(f.message));
   assert.deepEqual(unresolvable.map((f) => f.message), []);
 });
+
+function declaredPixelMinHeight(selector) {
+  const rule = stripComments(css).match(new RegExp(`${selector}\\s*\\{([^}]*)\\}`));
+  assert.ok(rule, `${selector} has no rule`);
+  const declaration = rule[1].match(/(?:^|;)\s*min-height:\s*([\d.]+)px\s*(?:;|$)/);
+  assert.ok(declaration, `${selector} has no pixel minimum height`);
+  return Number(declaration[1]);
+}
+
+test('the quiet button has a minimum height of at least 24 pixels', () => {
+  assert.ok(declaredPixelMinHeight('\\.quiet') >= 24);
+});
+
+test('the file input has a minimum height of at least 24 pixels', () => {
+  assert.ok(declaredPixelMinHeight('input\\[type="file"\\]') >= 24);
+});
+
+test('the checkbox row has a minimum height of at least 24 pixels', () => {
+  assert.ok(declaredPixelMinHeight('\\.checkbox') >= 24);
+});
