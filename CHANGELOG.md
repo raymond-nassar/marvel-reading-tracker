@@ -25,8 +25,8 @@ is changed.
 For maintainers: the batch adds 128 distinct issues across ten exact mappings. The source evidence
 keeps Minimum Carnage at six issues, Venomverse at its 11-issue core, Infinity at the 46 explicit
 issue-by-issue rows, and Damnation at 15 issues. All 650 comparisons against 56 existing orders and
-nine batch peers report no shared issue. The eight Monsters Unleashed tie-ins retain their `1.MU`
-source numbers even though Marvel metadata represents them as `1.1`.
+nine batch peers report no shared issue. The eight Monsters Unleashed tie-ins retain `1.MU` in
+both their displayed titles and source numbers even though Marvel metadata represents them as `1.1`.
 
 ### Added ten more Marvel event and aftermath reading orders
 

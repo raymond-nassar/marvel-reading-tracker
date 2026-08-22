@@ -5,7 +5,7 @@
   "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/monsters-unleashed/",
   "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
   "sourceLicense": null,
-  "generatedAt": "2026-08-22T05:06:19.792Z",
+  "generatedAt": "2026-08-22T05:47:30.518Z",
   "apiBase": "https://marvel.emreparker.com/v1",
   "count": 13,
   "collections": 0,
@@ -73,7 +73,7 @@
     },
     {
       "issueId": 62507,
-      "title": "Avengers (2016) #1.1",
+      "title": "Avengers (2016) #1.MU",
       "number": "1.MU",
       "url": "https://www.marvel.com/comics/issue/62507/avengers_2016_1.1",
       "seriesId": 22547,
@@ -104,7 +104,7 @@
     },
     {
       "issueId": 62511,
-      "title": "Spider-Man/Deadpool (2016) #1.1",
+      "title": "Spider-Man/Deadpool (2016) #1.MU",
       "number": "1.MU",
       "url": "https://www.marvel.com/comics/issue/62511/spider-mandeadpool_2016_1.1",
       "seriesId": 19679,
@@ -166,7 +166,7 @@
     },
     {
       "issueId": 62601,
-      "title": "All-New X-Men (2015) #1.1",
+      "title": "All-New X-Men (2015) #1.MU",
       "number": "1.MU",
       "url": "https://www.marvel.com/comics/issue/62601/all-new_x-men_2015_1.1",
       "seriesId": 20622,
@@ -232,7 +232,7 @@
     },
     {
       "issueId": 62603,
-      "title": "Doctor Strange (2015) #1.1",
+      "title": "Doctor Strange (2015) #1.MU",
       "number": "1.MU",
       "url": "https://www.marvel.com/comics/issue/62603/doctor_strange_2015_1.1",
       "seriesId": 20457,
@@ -259,7 +259,7 @@
     },
     {
       "issueId": 62604,
-      "title": "Champions (2016) #1.1",
+      "title": "Champions (2016) #1.MU",
       "number": "1.MU",
       "url": "https://www.marvel.com/comics/issue/62604/champions_2016_1.1",
       "seriesId": 22552,
@@ -294,7 +294,7 @@
     },
     {
       "issueId": 62602,
-      "title": "Uncanny Inhumans (2015) #1.1",
+      "title": "Uncanny Inhumans (2015) #1.MU",
       "number": "1.MU",
       "url": "https://www.marvel.com/comics/issue/62602/uncanny_inhumans_2015_1.1",
       "seriesId": 19780,
@@ -352,7 +352,7 @@
     },
     {
       "issueId": 62637,
-      "title": "Guardians of the Galaxy (2015) #1.1",
+      "title": "Guardians of the Galaxy (2015) #1.MU",
       "number": "1.MU",
       "url": "https://www.marvel.com/comics/issue/62637/guardians_of_the_galaxy_2015_1.1",
       "seriesId": 20465,
@@ -383,7 +383,7 @@
     },
     {
       "issueId": 62648,
-      "title": "The Totally Awesome Hulk (2015) #1.1",
+      "title": "The Totally Awesome Hulk (2015) #1.MU",
       "number": "1.MU",
       "url": "https://www.marvel.com/comics/issue/62648/the_totally_awesome_hulk_2015_1.1",
       "seriesId": 20614,

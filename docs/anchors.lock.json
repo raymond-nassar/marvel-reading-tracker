@@ -2464,18 +2464,18 @@
     "fp": "2c3648b8f1356780",
     "head": "const { getJson } = createJsonFetcher();"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:144|0": {
-    "anchor": "scripts/vendor-orders.mjs:144",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:140|0": {
+    "anchor": "scripts/vendor-orders.mjs:140",
     "fp": "bfa656a9707f58db",
     "head": "name: order.name,"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:223-269|0": {
-    "anchor": "scripts/vendor-orders.mjs:223-269",
-    "fp": "b769704786b8d6ad",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:219-272|0": {
+    "anchor": "scripts/vendor-orders.mjs:219-272",
+    "fp": "6303d89db37810bc",
     "head": "const issueItems = entries.map((e) => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:254-260|0": {
-    "anchor": "scripts/vendor-orders.mjs:254-260",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:257-263|0": {
+    "anchor": "scripts/vendor-orders.mjs:257-263",
     "fp": "61b44012d91bfeb2",
     "head": "// The one thing this run learned that the item cannot otherwise show. An issue the"
   },
@@ -2484,18 +2484,18 @@
     "fp": "2691c5a6c7db0bcf",
     "head": "import { parseManifest } from '../src/js/lib/curated.js';"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:307-309|0": {
-    "anchor": "scripts/vendor-orders.mjs:307-309",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:310-312|0": {
+    "anchor": "scripts/vendor-orders.mjs:310-312",
     "fp": "25233c80e7ca767f",
     "head": "if (dupes.size) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:323|0": {
-    "anchor": "scripts/vendor-orders.mjs:323",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:326|0": {
+    "anchor": "scripts/vendor-orders.mjs:326",
     "fp": "ff88de3ad58e78b4",
     "head": "placeholders: placeholderItems.length,"
   },
-  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:47|0": {
-    "anchor": "scripts/vendor-orders.mjs:47",
+  "PRODUCT_BACKLOG.md|item-details|scripts/vendor-orders.mjs:48|0": {
+    "anchor": "scripts/vendor-orders.mjs:48",
     "fp": "2c3648b8f1356780",
     "head": "const { getJson } = createJsonFetcher();"
   },
@@ -4184,9 +4184,9 @@
     "fp": "6cf2e7a03e765847",
     "head": "// The catch, and the reason this is a function with a refusal in it rather than a flag on each"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:198-324|0": {
-    "anchor": "scripts/vendor-orders.mjs:198-324",
-    "fp": "3ee090e76cb59607",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-008|scripts/vendor-orders.mjs:194-327|0": {
+    "anchor": "scripts/vendor-orders.mjs:194-327",
+    "fp": "cff9d647ed0a3d79",
     "head": "const { entries, unresolved } = parseChecklist(md);"
   },
   "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/lib/markdown.js:70-149|0": {

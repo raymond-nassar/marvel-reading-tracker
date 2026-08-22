@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { FOURTH_PACKET_IDS } from './author-cbh-packet.mjs';
 import { createJsonFetcher } from './lib/fetch-json.mjs';
+import { reconcileIssueTitleNumber } from './lib/issue-number.mjs';
 import { lookupIssues } from './lib/lookup-issues.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -74,10 +75,17 @@ async function main() {
       continue;
     }
     if (Number(live.id) !== item.issueId) problems.push(`${item.issueId}: live id is ${live.id}`);
-    if (cleanText(live.title) !== item.title) problems.push(`${item.issueId}: title changed`);
+    const expectedRow = expectedById.get(item.issueId);
+    const expectedTitle = expectedRow?.metadataIssueNumber == null
+      ? cleanText(live.title)
+      : reconcileIssueTitleNumber(
+        cleanText(live.title),
+        expectedRow.metadataIssueNumber,
+        expectedRow.issueNumber,
+      );
+    if (expectedTitle !== item.title) problems.push(`${item.issueId}: title changed`);
     if (live.detailUrl !== item.url) problems.push(`${item.issueId}: detail URL changed`);
     if (Number(live.seriesId) !== item.seriesId) problems.push(`${item.issueId}: series changed`);
-    const expectedRow = expectedById.get(item.issueId);
     const expectedMetadataNumber = expectedRow?.metadataIssueNumber ?? expectedRow?.issueNumber;
     if (String(live.issueNumber) !== String(expectedMetadataNumber)) {
       problems.push(`${item.issueId}: issue number changed`);

@@ -586,3 +586,32 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   number while the product keeps the source display number. No material finding remains open.
 * Next action: Commit and push the validated batch, open one pull request against `main`, then let
   Agent Merge handle authorized CI, conflict, and review-comment work through merge.
+
+### CHG-023: Reconcile approved source numbers in vendored titles
+
+* Related phase or task: P03-T02.
+* Review finding: Agent Merge found one material Medium defect on pull request 164 at head
+  `6119f8751f0c933d9eaae5974cdd43c2378b5b39`. All eight Monsters Unleashed tie-in numbers were
+  `1.MU`, but their vendored titles still ended in the metadata service's `#1.1`, so the same row
+  displayed contradictory labels.
+* Root cause: Vendoring preferred the approved checklist for `number` but always preferred live
+  metadata for `title`.
+* Fix: Added one deterministic issue-number helper shared by vendoring and the packet live contract.
+  When an approved checklist suffix differs from the metadata suffix, vendoring replaces only the
+  title's trailing issue number. The live contract permits that title difference only for mapping
+  rows that explicitly carry `metadataIssueNumber`; every other title still has to match live
+  metadata exactly.
+* Generated result: Re-vendored only Monsters Unleashed. All eight affected titles and numbers now
+  end in `1.MU`; issue ids, URLs, dates, digital ids, covers, creators, and source order are
+  unchanged.
+* Failure proof: The new payload-title assertion failed once on the original pull-request head and
+  named all eight `#1.1` versus `#1.MU` differences. Applying the reconciliation returned that
+  focused test to passing.
+* Validation: The full suite passed 1,316 of 1,316 and lint reported zero errors. Counts reported
+  160 ranked rows, 5 parked rows, and 165 detail blocks; seven stated sizes agreed; 88 palette
+  pairs had zero new failures; publication found zero content findings; and Edge passed 120 of 120
+  assertions across 14 scenarios. The repository contract passed 33 of 33 assumptions over 17
+  requests, and the packet contract passed 128 of 128 issue ids.
+* Evidence anchors: Re-aimed seven vendor citations by fingerprint head and diff arithmetic, with
+  no blank range edge. Together with CHG-022, the packet has 43 reviewed re-aims and 1,047 anchors.
+* Next action: Commit and push the review fix, then resume Agent Merge. Do not merge manually.

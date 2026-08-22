@@ -1350,13 +1350,13 @@
         "palette_new_failures": 0,
         "publication_findings": 0,
         "anchors": 1047,
-        "anchor_reaims": 36,
+        "anchor_reaims": 43,
         "repository_contract": "33/33",
         "repository_contract_requests": 17,
         "added_issue_contract": "128/128",
         "browser_assertions": 120,
         "browser_scenarios": 14,
-        "failure_proofs": 1,
+        "failure_proofs": 2,
         "approved_mapping_hash_changes": 0,
         "author_hash_changes": 0,
         "overlap_hash_changes": 0
@@ -1367,8 +1367,16 @@
         "open_material_findings": 0,
         "result": "Corrected an inventory edit that first matched the adjacent Secret Invasion bridge and changed the added-issue contract to compare explicit metadata numbers while the product preserves source display numbers."
       },
+      "post_pr_review": {
+        "status": "resolved",
+        "pull_request": 164,
+        "reviewed_head": "6119f8751f0c933d9eaae5974cdd43c2378b5b39",
+        "material_findings": 1,
+        "open_material_findings": 0,
+        "result": "Reconciled the eight approved 1.MU checklist overrides into vendored display titles, added a payload-title assertion, and limited the live-contract title allowance to rows carrying an explicit metadataIssueNumber."
+      },
       "review_agent_passes": "waived by parent instruction",
-      "agent_merge": "required after pull request creation"
+      "agent_merge": "Resume after the review-fix commit is pushed"
     },
     "selection_status": "Approved ten-order packet authored, vendored, and validated",
     "next_action": "Commit and push the validated batch, open one pull request, then hand it to Agent Merge."

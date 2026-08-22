@@ -26,6 +26,7 @@ import { lookupIssues } from './lib/lookup-issues.mjs';
 import { parseChecklist } from '../src/js/lib/markdown.js';
 import { parseCatalog } from '../src/js/lib/catalog.js';
 import { parseManifest } from '../src/js/lib/curated.js';
+import { parseIssueNumber, reconcileIssueTitleNumber } from './lib/issue-number.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const API = 'https://marvel.emreparker.com/v1';
@@ -81,11 +82,6 @@ function placeholderId(orderId, title) {
     h = Math.imul(h, 0x01000193) >>> 0;
   }
   return -((h % 0x7ffffffe) + 1);
-}
-
-function parseIssueNumber(title) {
-  const m = /#\s*([0-9]+(?:\.[0-9A-Za-z]+)?[A-Za-z]*)\s*$/.exec(String(title ?? '').trim());
-  return m ? m[1] : null;
 }
 
 // Marvel's metadata occasionally carries a doubled space inside a title, as in
@@ -225,12 +221,19 @@ async function main() {
       if (d.digitalId == null) missingDigital += 1;
       const cover = coverBase(d.cover);
       if (!cover) missingCover += 1;
+      const metadataTitle = cleanText(d.title ?? e.title);
+      const metadataNumber = parseIssueNumber(metadataTitle);
+      const checklistNumber = parseIssueNumber(e.title);
       return {
         at: e.index,
         item: {
           issueId: e.issueId,
-          title: cleanText(d.title ?? e.title),
-          number: parseIssueNumber(e.title) ?? parseIssueNumber(d.title),
+          title: reconcileIssueTitleNumber(
+            metadataTitle,
+            metadataNumber,
+            checklistNumber ?? metadataNumber,
+          ),
+          number: checklistNumber ?? metadataNumber,
           url: d.detailUrl ?? e.url,
           seriesId: d.seriesId ?? null,
           seriesName: d.seriesName == null ? null : cleanText(d.seriesName),

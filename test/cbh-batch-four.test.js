@@ -164,6 +164,10 @@ test('batch four stays exact through mapping, Markdown, payload, catalog, and in
       payload.items.map((item) => String(item.number)),
       mapping.rows.map((row) => String(row.issueNumber)),
     );
+    assert.deepEqual(
+      payload.items.map((item) => item.title),
+      mapping.rows.map((row) => row.resolvedIssueTitle),
+    );
     assert.equal(payload.count, expectedIds.length);
     assert.equal(payload.placeholders, 0);
     assert.deepEqual(payload.unresolved, []);
