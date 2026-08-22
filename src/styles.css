@@ -788,6 +788,96 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
   font-size: var(--t-subtitle); font-weight: 600; margin: 1.7rem .1rem .75rem; padding-bottom: .35rem;
 }
 .card-danger { border-color: rgb(var(--red-line) / 20%); }
+
+/* A settings row. The header and its one line description sit in the text column, and the control
+   that changes the setting is pinned to the right of the card rather than stacked underneath it,
+   so a column of settings reads as a column of settings rather than as an article with buttons in
+   it. Positioning rather than a grid column, and deliberately: the privacy copy in the Cover art
+   card is extracted by a test that slices from the heading to the next `</div>`, so a wrapper
+   element around the text would silently cut that extraction in half. This shape needs no wrapper
+   and no change to source order, which keeps the reading order the same as the visual order. */
+.setting { position: relative; padding-right: 15rem; }
+.setting > .setting-ctl {
+  position: absolute; right: 1.1rem; top: 50%; transform: translateY(-50%);
+  margin: 0; max-width: 13rem;
+}
+.setting > .setting-desc { margin: 0; max-width: 62ch; }
+
+/* The long form of a setting's explanation. Every word of it is still in the page and still in the
+   accessibility tree; it starts closed because a description that runs to five sentences stops
+   being a description. The Cover art card was 89 words for one switch before this. */
+.setting-more { margin-top: .55rem; }
+.setting-more > summary {
+  cursor: pointer; color: var(--muted); font-size: var(--t-caption);
+  list-style: none; display: inline-flex; align-items: center; gap: .35rem;
+  border-radius: 6px; padding: .1rem .2rem;
+}
+.setting-more > summary::-webkit-details-marker { display: none; }
+.setting-more > summary::before {
+  content: "›"; display: inline-block; transition: transform .15s; font-size: var(--t-body);
+}
+.setting-more[open] > summary::before { transform: rotate(90deg); }
+.setting-more > summary:hover { color: var(--text); }
+.setting-more > p { margin: .4rem 0 0; max-width: 62ch; }
+
+@media (max-width: 720px) {
+  .setting { padding-right: 1.1rem; }
+  .setting > .setting-ctl { position: static; transform: none; margin-top: .7rem; max-width: none; }
+}
+
+/* A settings checkbox, drawn as the same switch the view headers already use. The cover art switch
+   was two different controls saying two different things about one setting: a pill switch reading
+   "Cover art on" in the reading and home headers, and a native tick box reading "Show cover art"
+   here. A reader who met both had no way to know they were the same switch. The input stays a
+   checkbox, so the keyboard, the label association and the change event are all unchanged; only
+   the drawing moves. */
+.setting-ctl.checkbox { border: 1px solid var(--line-2); border-radius: 999px; padding: .3rem .7rem; gap: .45rem; min-height: 24px; }
+.setting-ctl.checkbox:hover { color: var(--text); }
+.setting-ctl.checkbox > input[type="checkbox"] {
+  appearance: none; margin: 0; flex: none; cursor: pointer;
+  width: 26px; height: 15px; border-radius: 999px; background: var(--track-2);
+  position: relative; transition: background .15s;
+}
+.setting-ctl.checkbox > input[type="checkbox"]::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 11px; height: 11px;
+  border-radius: 50%; background: var(--on-accent); transition: left .15s;
+}
+.setting-ctl.checkbox > input[type="checkbox"]:checked { background: var(--accent); }
+.setting-ctl.checkbox > input[type="checkbox"]:checked::after { left: 13px; }
+/* In forced colours the drawn switch would be two system-coloured rectangles carrying no state, so
+   the platform control is handed back its own appearance. */
+@media (forced-colors: active) {
+  .setting-ctl.checkbox > input[type="checkbox"] { appearance: auto; width: auto; height: auto; }
+  .setting-ctl.checkbox > input[type="checkbox"]::after { content: none; }
+}
+
+/* A stacked form puts each child on its own grid row, which stretches a submit button to the full
+   width of the card and makes it read as a banner rather than as a button. */
+.stack > button { justify-self: start; }
+
+/* Native controls, given the same shape as the buttons they sit beside. Left alone, a `select` and
+   a file input are drawn by the platform in a style that belongs to no part of this app, and the
+   file input in particular announces itself as "Choose File / No file chosen" in the middle of a
+   surface where every other control is a labelled button. */
+#view-data select, .setting select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, currentcolor 50%),
+    linear-gradient(135deg, currentcolor 50%, transparent 50%);
+  background-repeat: no-repeat;
+  background-size: 5px 5px, 5px 5px;
+  background-position: right 1rem top 55%, right .75rem top 55%;
+  color: var(--muted); border: 1px solid var(--line-2); border-radius: 8px;
+  padding: .42rem 2rem .42rem .7rem; font: inherit; font-size: var(--t-body); min-height: 34px;
+  cursor: pointer; width: 100%;
+}
+#view-data select:hover, .setting select:hover { color: var(--text); background-color: rgb(var(--tint-base) / 5.098%); }
+input[type="file"]::file-selector-button {
+  background: none; color: var(--muted); border: 1px solid var(--line-2);
+  border-radius: 8px; padding: .4rem .8rem; font: inherit; font-size: var(--t-body);
+  margin-right: .6rem; cursor: pointer;
+}
+input[type="file"]::file-selector-button:hover { color: var(--text); background: rgb(var(--tint-base) / 5.098%); }
+
 .addpri { border-color: rgb(var(--tint-base) / 20%); background: rgb(var(--tint-base) / 3.922%); }
 .addpri h2, #view-data .addpri h3 { font-size: var(--t-subtitle); }
 .addpri .field-row input[type="search"] { flex: 1 1 24rem; min-height: 44px; }

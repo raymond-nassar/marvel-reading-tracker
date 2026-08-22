@@ -588,14 +588,19 @@
                 <div id="restore-report" class="results"></div>
               </div>
 
-              <div class="card card-static">
+              <div class="card card-static setting">
                 <h3>Copies kept after a failed read</h3>
-                <p class="rail-hint">
+                <p class="rail-hint setting-desc">
                   If the app ever cannot read your saved data, it sets a copy of that data aside before
-                  it does anything else, so nothing is lost while you decide what to do. Those copies
-                  are kept until you remove them here, and they sit in the same browser storage as your
-                  lists and progress.
+                  it does anything else, so nothing is lost while you decide what to do.
                 </p>
+                <details class="setting-more">
+                  <summary>Where these copies live</summary>
+                  <p class="rail-hint">
+                    Those copies are kept until you remove them here, and they sit in the same browser
+                    storage as your lists and progress.
+                  </p>
+                </details>
                 <div id="salvage-list"></div>
                 <div id="salvage-report" class="results"></div>
               </div>
@@ -603,32 +608,42 @@
 
             <section class="setgroup">
               <h2>Personalization</h2>
-              <div class="card card-static">
+              <div class="card card-static setting">
                 <h3>Cover art</h3>
-                <p class="rail-hint">
+                <p class="rail-hint setting-desc">
                   Covers are loaded straight from Marvel's own image servers, and from nowhere else.
-                  The metadata service reports each address, but one naming any other host is refused
-                  before a request is made, so a service that had been tampered with cannot have this
-                  browser contact a server of its choosing. This app stores only the address, never the
-                  image itself, and never proxies or re-hosts artwork. Switch covers off and every cover
-                  becomes a plain typographic tile, and no cover is requested at all.
                 </p>
-                <label class="checkbox"><input type="checkbox" id="opt-covers" /> Show cover art</label>
+                <label class="checkbox setting-ctl"><input type="checkbox" id="opt-covers" /> Show cover art</label>
+                <details class="setting-more">
+                  <summary>How covers are requested</summary>
+                  <p class="rail-hint">
+                    The metadata service reports each address, but one naming any other host is refused
+                    before a request is made, so a service that had been tampered with cannot have this
+                    browser contact a server of its choosing. This app stores only the address, never the
+                    image itself, and never proxies or re-hosts artwork. Switch covers off and every cover
+                    becomes a plain typographic tile, and no cover is requested at all.
+                  </p>
+                </details>
               </div>
 
-              <div class="card card-static">
+              <div class="card card-static setting">
                 <h3>Theme</h3>
-                <p class="rail-hint">
-                  Follow your system setting, or pick one and keep it. The choice is stored in this
-                  browser alongside your other settings and is never sent anywhere. High contrast mode
-                  and reduced motion are still honoured whichever you pick.
+                <p class="rail-hint setting-desc">
+                  Follow your system setting, or pick one and keep it.
                 </p>
-                <label for="opt-theme">Colour theme</label>
-                <select id="opt-theme">
-                  <option value="system">Follow my system setting</option>
+                <label class="visually-hidden" for="opt-theme">Colour theme</label>
+                <select id="opt-theme" class="setting-ctl">
+                  <option value="system">Use system setting</option>
                   <option value="dark">Dark</option>
                   <option value="light">Light</option>
                 </select>
+                <details class="setting-more">
+                  <summary>What the choice affects</summary>
+                  <p class="rail-hint">
+                    The choice is stored in this browser alongside your other settings and is never sent
+                    anywhere. High contrast mode and reduced motion are still honoured whichever you pick.
+                  </p>
+                </details>
               </div>
             </section>
 
@@ -639,40 +654,53 @@
                 <form id="form-settings" class="stack">
                   <label for="api-base">Metadata API base URL</label>
                   <input type="url" id="api-base" />
+                  <button type="submit" class="btn btn-g">Save API URL</button>
+                </form>
+                <details class="setting-more">
+                  <summary>Why this can be changed</summary>
                   <p class="rail-hint">
                     The default is the community API this was built against. If it disappears the
                     upstream is self-hostable, so you can point this at your own copy.
                   </p>
-                  <button type="submit" class="btn btn-g">Save API URL</button>
-                </form>
+                </details>
                 <div id="api-report" class="results"></div>
               </div>
 
-              <div class="card card-static">
+              <div class="card card-static setting">
                 <h3>Update checks</h3>
-                <p class="rail-hint">
-                  Once a day, the app can ask GitHub for the latest version number. That request sends
-                  no reading list, progress, note or identifier. If a newer version exists, the app shows
-                  a link to download it, but it never downloads or installs anything by itself.
+                <p class="rail-hint setting-desc">
+                  Once a day, the app can ask GitHub for the latest version number.
                 </p>
-                <label class="checkbox"><input type="checkbox" id="opt-update-checks" /> Check for updates automatically</label>
+                <label class="checkbox setting-ctl"><input type="checkbox" id="opt-update-checks" /> Check automatically</label>
+                <details class="setting-more">
+                  <summary>What the check sends</summary>
+                  <p class="rail-hint">
+                    That request sends no reading list, progress, note or identifier. If a newer version
+                    exists, the app shows a link to download it, but it never downloads or installs
+                    anything by itself.
+                  </p>
+                </details>
               </div>
             </section>
 
             <section class="setgroup">
               <h2>Advanced</h2>
-              <div class="card card-static">
+              <div class="card card-static setting">
                 <h3>Cached metadata</h3>
-                <p id="cache-usage" class="rail-hint">Checking cache size…</p>
-                <button type="button" id="btn-clear-cache" class="quiet">Clear cached metadata</button>
-                <p class="rail-hint">Clearing the cache never touches your lists or reading progress.</p>
+                <p id="cache-usage" class="rail-hint setting-desc">Checking cache size…</p>
+                <button type="button" id="btn-clear-cache" class="quiet setting-ctl">Clear cached metadata</button>
+                <details class="setting-more">
+                  <summary>What clearing removes</summary>
+                  <p class="rail-hint">Clearing the cache never touches your lists or reading progress.</p>
+                </details>
                 <div id="cache-report" class="results"></div>
               </div>
             </section>
 
-            <div class="card card-static card-danger">
+            <div class="card card-static card-danger setting">
               <h2>Danger zone</h2>
-              <button type="button" id="btn-wipe" class="quiet quiet-danger">Erase all local data</button>
+              <p class="rail-hint setting-desc">Erasing removes every list, all progress and every note from this browser.</p>
+              <button type="button" id="btn-wipe" class="quiet quiet-danger setting-ctl">Erase all local data</button>
             </div>
           </section>
 
