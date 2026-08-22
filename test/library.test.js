@@ -80,6 +80,33 @@ test('a Library view that cannot produce a section id or a page is reported, not
   );
 });
 
+test('an empty-state action is optional, but a declared one has to lead somewhere', () => {
+  // Omitting it is a real answer: an empty screen with nothing useful to offer should offer
+  // nothing. A declared one is checked because the button is painted from these two strings and a
+  // typo in the destination would render a control that navigates nowhere and reports no error.
+  const ok = { value: 'library-read', label: 'L', sub: 'S', empty: 'E', markHandAdded: true, select: () => [], summarise: () => [], group: () => [] };
+  assert.deepEqual(libraryViewProblems([ok]), []);
+  const bad = 'Library view 0 has an empty-state action with no label or no destination.';
+  assert.deepEqual(libraryViewProblems([{ ...ok, emptyAction: { label: 'Go', view: 'catalog' } }]), []);
+  assert.deepEqual(libraryViewProblems([{ ...ok, emptyAction: { label: 'Go', view: '' } }]), [bad]);
+  assert.deepEqual(libraryViewProblems([{ ...ok, emptyAction: { label: '', view: 'catalog' } }]), [bad]);
+  assert.deepEqual(libraryViewProblems([{ ...ok, emptyAction: { label: 'Go' } }]), [bad]);
+  assert.deepEqual(libraryViewProblems([{ ...ok, emptyAction: null }]), [bad]);
+});
+
+test('every declared empty-state action names a view the rail can actually reach', () => {
+  // The destination is a data value here and a data-view attribute there, so nothing but this
+  // test connects the two. A renamed view would leave the button pointing at a dead name.
+  const reachable = new Set(['home', 'catalog', 'add', 'library', 'progress', 'settings', 'about', 'reading']);
+  for (const v of LIBRARY_VIEWS) {
+    if (!v.emptyAction) continue;
+    assert.ok(
+      reachable.has(v.emptyAction.view),
+      `${v.value} offers an empty-state action that goes to ${v.emptyAction.view}, which is not a view`,
+    );
+  }
+});
+
 test('Everything read is the read map, newest first', () => {
   let s = seeded();
   s = markRead(s, 20, true, 1000);
