@@ -1034,21 +1034,34 @@ function hideRailTip() {
 
 // ------------------------------------------------------------------ navigation
 
+// Extracted so a control created after boot can navigate the same way a rail button does.
+// wireNav only ever runs once, over the markup present at load, so an empty-state button built
+// during a render would carry data-view and do nothing at all.
+function navigateTo(view, open) {
+  // A click on the rail is the archetypal navigation, so this is the one that has to leave a
+  // history entry for Back to come back to.
+  showView(view, { push: true });
+  if (!open) return;
+  const d = $(`#${open}`);
+  if (!d) return;
+  for (const other of document.querySelectorAll('#view-add details.card[open]')) other.open = false;
+  if (d.tagName === 'DETAILS') d.open = true;
+  d.querySelector('input, textarea, button')?.focus();
+}
+
+// The action an empty state offers. A screen with nothing on it is the one place a reader has no
+// context to work from, so it hands over the next step rather than naming a control elsewhere.
+function emptyAction({ label, view, open }) {
+  return el('button', {
+    class: 'btn btn-g',
+    type: 'button',
+    onclick: () => navigateTo(view, open),
+  }, label);
+}
+
 function wireNav() {
   for (const btn of document.querySelectorAll('[data-view]')) {
-    btn.addEventListener('click', () => {
-      // A click on the rail is the archetypal navigation, so this is the one that has to leave a
-      // history entry for Back to come back to.
-      showView(btn.dataset.view, { push: true });
-      if (btn.dataset.open) {
-        const d = $(`#${btn.dataset.open}`);
-        if (d) {
-          for (const other of document.querySelectorAll('#view-add details.card[open]')) other.open = false;
-          if (d.tagName === 'DETAILS') d.open = true;
-          d.querySelector('input, textarea, button')?.focus();
-        }
-      }
-    });
+    btn.addEventListener('click', () => navigateTo(btn.dataset.view, btn.dataset.open));
   }
 
   for (const btn of ['#btn-new-list', '#esc-new-list']) {
@@ -2376,11 +2389,18 @@ function renderReading() {
   ).size;
 
   $('#order-name').textContent = list.name;
+  // Facts only. The description used to be welded onto the end of this line, which made a single
+  // 543 character run of the subtitle: three sentences of blurb inside a 62ch column, with the
+  // right two fifths of the header band empty beside it. It has its own disclosure below now.
   $('#order-sub').textContent = [
     `${total} issue${total === 1 ? '' : 's'}`,
     seriesCount ? `${seriesCount} series` : null,
-    list.description || null,
   ].filter(Boolean).join(' · ');
+  const desc = $('#order-desc');
+  const descText = $('#order-desc-text');
+  descText.textContent = list.description || '';
+  desc.hidden = !list.description;
+  if (!list.description) desc.open = false;
 
   const pct = total ? read / total : 0;
   const listNote = $('#list-note');
@@ -2388,8 +2408,14 @@ function renderReading() {
   listNote.hidden = !list.note;
   $('#btn-list-note').textContent = list.note ? 'Edit note' : 'Note';
   $('#ring-arc').setAttribute('stroke-dashoffset', String(RING_CIRCUMFERENCE * (1 - pct)));
-  $('#ring-label').textContent = `${read} of ${total} read`;
-  $('#ring-sub').textContent = !total ? 'Nothing in this list' : read === total ? 'All read' : `${total - read} to go · ${Math.round(pct * 100)}%`;
+  // One statement, not two. The ring used to read "0 of 120 read" over "120 to go · 0%", which is
+  // the same fact said twice and subtracted once, in a 44px circle.
+  //
+  // The word "read" stays in the second line even though the first line is now a percentage. The
+  // svg is aria-hidden, so these two spans are the whole programmatic statement of progress: drop
+  // the verb and a screen reader announces "13%, 12 of 89" with nothing saying what was counted.
+  $('#ring-label').textContent = total ? `${Math.round(pct * 100)}%` : '';
+  $('#ring-sub').textContent = !total ? 'Nothing in this list' : read === total ? 'All read' : `${read} of ${total} read`;
 
   renderHero();
   renderShelf();
@@ -2447,12 +2473,16 @@ function renderHero() {
 
   const avClass = av.state === STATE.EXPECTED || av.state === STATE.OVERRIDE_AVAILABLE ? 'ok'
     : av.state === STATE.SCHEDULED ? 'warn' : '';
-  $('#hero-facts').replaceChildren(
-    fact('In Unlimited', `${SHORT[av.state]} ${describe(issue, { override })}`, avClass),
-    fact('Pages', issue.pageCount ? String(issue.pageCount) : 'Unknown'),
-    fact('Released', ymd(issue.onSale) || 'Unknown'),
-    fact('Position', total ? `${position} of ${total}` : 'Unknown'),
-  );
+  // An absent fact is left out rather than printed as "Unknown". A row of four facts where three
+  // read Unknown tells a reader nothing they could not see from the empty screen, and it costs the
+  // one fact that is present the prominence of being the only one. Availability is never dropped:
+  // its unknown state is a distinct, meaningful answer rather than a missing value, which is the
+  // whole reason that model has five states instead of a boolean.
+  const facts = [fact('In Unlimited', `${SHORT[av.state]} ${describe(issue, { override })}`, avClass)];
+  if (issue.pageCount) facts.push(fact('Pages', String(issue.pageCount)));
+  if (ymd(issue.onSale)) facts.push(fact('Released', ymd(issue.onSale)));
+  if (total) facts.push(fact('Position', `${position} of ${total}`));
+  $('#hero-facts').replaceChildren(...facts);
 
   const info = $('#btn-hero-info');
   const infoHref = detailUrl(issue);
@@ -4140,6 +4170,11 @@ function renderProgress() {
     : 'Counted over unique issues across every list, so an issue in two lists counts once.';
 
   const rows = scoped ? seriesProgress(store.state, activeListId()) : seriesProgress(store.state);
+  // How a figure is counted is worth explaining beside the figures and nowhere else. With no rows
+  // the subtitle described the arithmetic of an empty table, which is two sentences a reader has
+  // to get past to reach the one that tells them there is nothing here.
+  $('#progress-sub').hidden = rows.length === 0;
+  $('#progress-note').hidden = rows.length === 0;
   // Both the scope and the active list are in the key. One number would let expanding All lists
   // carry into This list, and one list's expansion onto the next list opened under the same scope,
   // so switching either restarts at the cap, which is what a reader expects when the list changes.
@@ -4148,7 +4183,15 @@ function renderProgress() {
   preservingFocus(box, () => {
     box.replaceChildren();
     if (!rows.length) {
-      box.append(el('p', { class: 'rail-hint', text: 'Nothing tracked yet.' }));
+      // The same shape the library sub-views and the finished-order panel use, rather than a bare
+      // hint line. It also drops the two sentences of methodology that sat above it: how unique
+      // issues are counted and what "tracked" means are answers about a table, and there is no
+      // table, so on this screen they explained a measurement of nothing.
+      box.append(el('div', { class: 'empty-state' }, [
+        el('div', { class: 'empty-glyph', 'aria-hidden': 'true', text: '☐' }),
+        el('p', { text: 'Nothing tracked yet.' }),
+        emptyAction({ label: 'Browse reading orders', view: 'catalog' }),
+      ]));
       return;
     }
     const shown = Math.min(listShown.get(key) ?? LIBRARY_CAP, rows.length);
@@ -4195,6 +4238,7 @@ function renderLibrary() {
         box.append(el('div', { class: 'empty-state' }, [
           el('div', { class: 'empty-glyph', 'aria-hidden': 'true', text: '☐' }),
           el('p', { text: v.empty }),
+          ...(v.emptyAction ? [emptyAction(v.emptyAction)] : []),
         ]));
         return;
       }
@@ -4998,10 +5042,12 @@ function writeYoursSummary(sec, state) {
 
 // The full order summary in its <summary>, on screen whether or not the order is open. An empty
 // order is said plainly rather than as "0 of 0 read", which reads as a fault, not as the fact it is.
+// The unread half used to be spelled out beside the read half. It is the same fact subtracted, and
+// this line is the fifth place on the screen that the same fact appears, so it says one of them.
 function fullCountText(all, unread) {
   if (!all.length) return 'No issues yet';
   const read = all.length - unread;
-  return `${read} of ${all.length} read · ${unread} unread`;
+  return `${read} of ${all.length} read`;
 }
 
 // A quiet row above the reading filters: a bar for the whole order and its percentage, and, when a

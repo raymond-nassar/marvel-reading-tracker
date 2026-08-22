@@ -14,6 +14,39 @@ quote in a bug report.
 
 ## Unreleased
 
+### Made the screens quieter and easier to scan
+
+In plain English: the screens said too much. The settings page has been rebuilt so each choice is
+one row with its control beside it and a single line of explanation; every longer explanation is
+still there, one click away, and not a sentence was removed. The reading page used to tell you how
+far through an order you were in five different places at once, twice of them the same number
+subtracted from itself, and now says it once. The navigation strip down the left no longer pushes
+settings, about and the connection status off the bottom of the screen. The three pages that can be
+empty now offer the button they used to describe in words. Text sizes across the whole app come
+from one small set rather than being picked one at a time, so headings and body text stop
+disagreeing by a fraction of a pixel. Two smaller repairs came out of reviewing the work: the
+keyboard highlight on the left-hand strip was being cut off at the edges, and the reading page's
+progress circle had stopped saying that the numbers were about issues you had read, which mattered
+to anyone using a screen reader. Nothing you have saved is affected.
+
+For maintainers: 107 of 108 declared font sizes now resolve through a six step scale, taking the
+landing page from 15 distinct computed sizes to 5. The settings view went from 383 words to 227
+with every sentence preserved behind a disclosure. The reading view's header subtitle went from 543
+characters to 19 and the order description moved to its own disclosure. The rail is now a fixed
+column with a scrolling middle and a pinned foot, measured at 900px of content in a 900px viewport
+where it was 991. The catalog's import buttons are outlines, taking the page from 59 filled accent
+buttons to none and matching the rule the card grid already applied. The progress and library empty
+states gained an action; the progress view withholds its counting methodology when it has no
+figures. Structural tests for heading levels, group labels, binding ids and the privacy copy
+extraction all pass unchanged, and two tests were added to hold the new empty-state action: one for
+its shape, one that its destination is a view the rail can reach. Review then found three defects
+and all three are fixed here: the reachability test's hand-written allow-list held three names that
+are not views and omitted two that are, so it now reads the sections out of the markup; the ring's
+accessible text regained the verb, since the circle is `aria-hidden` and those two spans are the
+whole spoken statement; and the rail's focus ring is drawn inside the button, because the pane is a
+scroll container and padding it cannot help a full-width button. That last one is not a regression,
+measured as 13 of 13 controls clipped under the arrangement this replaced. Details in BL-187.
+
 ### Added ten more modern Marvel crossover reading orders
 
 In plain English: the catalog now follows Minimum Carnage, X-Termination, The Enemy Within, Battle
