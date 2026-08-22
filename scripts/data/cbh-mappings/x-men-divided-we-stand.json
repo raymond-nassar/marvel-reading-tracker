@@ -1,0 +1,1827 @@
+{
+  "id": "x-men-divided-we-stand",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "X-Men: Divided We Stand",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 48,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 20633,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #495",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "495",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20633/uncanny_x-men_1963_495",
+      "onSaleDate": "2008-02-06T00:00:00+0000"
+    },
+    {
+      "id": 20820,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #496",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "496",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20820/uncanny_x-men_1963_496",
+      "onSaleDate": "2008-03-05T00:00:00+0000"
+    },
+    {
+      "id": 20959,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #497",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "497",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20959/uncanny_x-men_1963_497",
+      "onSaleDate": "2008-04-23T00:00:00+0000"
+    },
+    {
+      "id": 21168,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #498",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "498",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21168/uncanny_x-men_1963_498",
+      "onSaleDate": "2008-05-29T00:00:00+0000"
+    },
+    {
+      "id": 21318,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #499",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "499",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21318/uncanny_x-men_1963_499",
+      "onSaleDate": "2008-06-25T00:00:00+0000"
+    },
+    {
+      "id": 20632,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #208",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "208",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20632/x-men_legacy_2008_208",
+      "onSaleDate": "2008-02-27T00:00:00+0000"
+    },
+    {
+      "id": 20819,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #209",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "209",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20819/x-men_legacy_2008_209",
+      "onSaleDate": "2008-03-26T00:00:00+0000"
+    },
+    {
+      "id": 20957,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #210",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "210",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20957/x-men_legacy_2008_210",
+      "onSaleDate": "2008-04-30T00:00:00+0000"
+    },
+    {
+      "id": 21166,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #211",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "211",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21166/x-men_legacy_2008_211",
+      "onSaleDate": "2008-05-14T00:00:00+0000"
+    },
+    {
+      "id": 21167,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #212",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "212",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21167/x-men_legacy_2008_212",
+      "onSaleDate": "2008-05-29T00:00:00+0000"
+    },
+    {
+      "id": 20662,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #28",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "28",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20662/x-factor_2005_28",
+      "onSaleDate": "2008-02-13T00:00:00+0000"
+    },
+    {
+      "id": 20858,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #29",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "29",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20858/x-factor_2005_29",
+      "onSaleDate": "2008-03-12T00:00:00+0000"
+    },
+    {
+      "id": 20990,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #30",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "30",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20990/x-factor_2005_30",
+      "onSaleDate": "2008-04-16T00:00:00+0000"
+    },
+    {
+      "id": 21201,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #31",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "31",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21201/x-factor_2005_31",
+      "onSaleDate": "2008-05-21T00:00:00+0000"
+    },
+    {
+      "id": 21348,
+      "title": "X-Factor",
+      "issueTitle": "X-Factor (2005) #32",
+      "seriesTitle": "X-Factor",
+      "apiSeriesName": "X-Factor (2005 - 2013)",
+      "seriesId": 1035,
+      "issueNumber": "32",
+      "seriesYear": 2005,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21348/x-factor_2005_32",
+      "onSaleDate": "2008-06-18T00:00:00+0000"
+    },
+    {
+      "id": 21217,
+      "title": "X-FACTOR: THE QUICK AND THE DEAD 1",
+      "issueTitle": "X-FACTOR: THE QUICK AND THE DEAD 1 (2008) #1",
+      "seriesTitle": "X-FACTOR: THE QUICK AND THE DEAD 1",
+      "apiSeriesName": "X-FACTOR: THE QUICK AND THE DEAD 1 (2008)",
+      "seriesId": 4833,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/21217/x-factor_the_quick_and_the_dead_1_2008_1",
+      "onSaleDate": "2008-05-07T00:00:00+0000"
+    },
+    {
+      "id": 20704,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #1",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20704/x-force_2008_1",
+      "onSaleDate": "2008-02-13T00:00:00+0000"
+    },
+    {
+      "id": 20895,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #2",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "2",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20895/x-force_2008_2",
+      "onSaleDate": "2008-03-05T00:00:00+0000"
+    },
+    {
+      "id": 21028,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #3",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "3",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21028/x-force_2008_3",
+      "onSaleDate": "2008-04-23T00:00:00+0000"
+    },
+    {
+      "id": 21244,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #4",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "4",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21244/x-force_2008_4",
+      "onSaleDate": "2008-05-28T00:00:00+0000"
+    },
+    {
+      "id": 21561,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #5",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "5",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21561/x-force_2008_5",
+      "onSaleDate": "2008-07-16T00:00:00+0000"
+    },
+    {
+      "id": 21757,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #6",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "6",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21757/x-force_2008_6",
+      "onSaleDate": "2008-08-27T00:00:00+0000"
+    },
+    {
+      "id": 21996,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #7",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "7",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21996/x-force_2008_7",
+      "onSaleDate": "2008-09-24T00:00:00+0000"
+    },
+    {
+      "id": 22322,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #8",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "8",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22322/x-force_2008_8",
+      "onSaleDate": "2008-10-29T00:00:00+0000"
+    },
+    {
+      "id": 22521,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #9",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "9",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22521/x-force_2008_9",
+      "onSaleDate": "2008-11-26T00:00:00+0000"
+    },
+    {
+      "id": 22929,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #10",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "10",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22929/x-force_2008_10",
+      "onSaleDate": "2008-12-31T00:00:00+0000"
+    },
+    {
+      "id": 23125,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #11",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "11",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23125/x-force_2008_11",
+      "onSaleDate": "2009-01-28T00:00:00+0000"
+    },
+    {
+      "id": 23617,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #12",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "12",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23617/x-force_2008_12",
+      "onSaleDate": "2009-02-25T00:00:00+0000"
+    },
+    {
+      "id": 23772,
+      "title": "X-Force",
+      "issueTitle": "X-Force (2008) #13",
+      "seriesTitle": "X-Force",
+      "apiSeriesName": "X-Force (2008 - 2010)",
+      "seriesId": 3839,
+      "issueNumber": "13",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23772/x-force_2008_13",
+      "onSaleDate": "2009-03-18T00:00:00+0000"
+    },
+    {
+      "id": 21392,
+      "title": "X-FORCE SPECIAL: AIN'T NO DOG 1",
+      "issueTitle": "X-FORCE SPECIAL: AIN'T NO DOG 1 (2008) #1",
+      "seriesTitle": "X-FORCE SPECIAL: AIN'T NO DOG 1",
+      "apiSeriesName": "X-FORCE SPECIAL: AIN'T NO DOG 1 (2008)",
+      "seriesId": 5024,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/21392/x-force_special_aint_no_dog_1_2008_1",
+      "onSaleDate": "2008-06-11T00:00:00+0000"
+    },
+    {
+      "id": 29818,
+      "title": "X-Force Annual",
+      "issueTitle": "X-Force Annual (2009) #1",
+      "seriesTitle": "X-Force Annual",
+      "apiSeriesName": "X-Force Annual (2009)",
+      "seriesId": 9119,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29818/x-force_annual_2009_1",
+      "onSaleDate": "2009-12-03T00:00:00+0000"
+    },
+    {
+      "id": 20642,
+      "title": "Wolverine",
+      "issueTitle": "Wolverine (2003) #62",
+      "seriesTitle": "Wolverine",
+      "apiSeriesName": "Wolverine (2003 - 2009)",
+      "seriesId": 632,
+      "issueNumber": "62",
+      "seriesYear": 2003,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20642/wolverine_2003_62",
+      "onSaleDate": "2008-02-13T00:00:00+0000"
+    },
+    {
+      "id": 20833,
+      "title": "Wolverine",
+      "issueTitle": "Wolverine (2003) #63",
+      "seriesTitle": "Wolverine",
+      "apiSeriesName": "Wolverine (2003 - 2009)",
+      "seriesId": 632,
+      "issueNumber": "63",
+      "seriesYear": 2003,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20833/wolverine_2003_63",
+      "onSaleDate": "2008-03-12T00:00:00+0000"
+    },
+    {
+      "id": 20971,
+      "title": "Wolverine",
+      "issueTitle": "Wolverine (2003) #64",
+      "seriesTitle": "Wolverine",
+      "apiSeriesName": "Wolverine (2003 - 2009)",
+      "seriesId": 632,
+      "issueNumber": "64",
+      "seriesYear": 2003,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20971/wolverine_2003_64",
+      "onSaleDate": "2008-04-09T00:00:00+0000"
+    },
+    {
+      "id": 21180,
+      "title": "Wolverine",
+      "issueTitle": "Wolverine (2003) #65",
+      "seriesTitle": "Wolverine",
+      "apiSeriesName": "Wolverine (2003 - 2009)",
+      "seriesId": 632,
+      "issueNumber": "65",
+      "seriesYear": 2003,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21180/wolverine_2003_65",
+      "onSaleDate": "2008-05-14T00:00:00+0000"
+    },
+    {
+      "id": 20897,
+      "title": "Cable",
+      "issueTitle": "Cable (2008) #1",
+      "seriesTitle": "Cable",
+      "apiSeriesName": "Cable (2008 - 2010)",
+      "seriesId": 4002,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/20897/cable_2008_1",
+      "onSaleDate": "2008-03-05T00:00:00+0000"
+    },
+    {
+      "id": 21030,
+      "title": "Cable",
+      "issueTitle": "Cable (2008) #2",
+      "seriesTitle": "Cable",
+      "apiSeriesName": "Cable (2008 - 2010)",
+      "seriesId": 4002,
+      "issueNumber": "2",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21030/cable_2008_2",
+      "onSaleDate": "2008-04-02T00:00:00+0000"
+    },
+    {
+      "id": 21246,
+      "title": "Cable",
+      "issueTitle": "Cable (2008) #3",
+      "seriesTitle": "Cable",
+      "apiSeriesName": "Cable (2008 - 2010)",
+      "seriesId": 4002,
+      "issueNumber": "3",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21246/cable_2008_3",
+      "onSaleDate": "2008-05-07T00:00:00+0000"
+    },
+    {
+      "id": 21388,
+      "title": "Cable",
+      "issueTitle": "Cable (2008) #4",
+      "seriesTitle": "Cable",
+      "apiSeriesName": "Cable (2008 - 2010)",
+      "seriesId": 4002,
+      "issueNumber": "4",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21388/cable_2008_4",
+      "onSaleDate": "2008-06-04T00:00:00+0000"
+    },
+    {
+      "id": 21563,
+      "title": "Cable",
+      "issueTitle": "Cable (2008) #5",
+      "seriesTitle": "Cable",
+      "apiSeriesName": "Cable (2008 - 2010)",
+      "seriesId": 4002,
+      "issueNumber": "5",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21563/cable_2008_5",
+      "onSaleDate": "2008-07-02T00:00:00+0000"
+    },
+    {
+      "id": 22047,
+      "title": "CABLE KING-SIZE SPECTACULAR 1",
+      "issueTitle": "CABLE KING-SIZE SPECTACULAR 1 (2008) #1",
+      "seriesTitle": "CABLE KING-SIZE SPECTACULAR 1",
+      "apiSeriesName": "CABLE KING-SIZE SPECTACULAR 1 (2008)",
+      "seriesId": 5749,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/22047/cable_king-size_spectacular_1_2008_1",
+      "onSaleDate": "2008-09-10T00:00:00+0000"
+    },
+    {
+      "id": 21044,
+      "title": "X-Men: Divided We Stand",
+      "issueTitle": "X-Men: Divided We Stand (2008) #1",
+      "seriesTitle": "X-Men: Divided We Stand",
+      "apiSeriesName": "X-Men: Divided We Stand (2008)",
+      "seriesId": 4880,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21044/x-men_divided_we_stand_2008_1",
+      "onSaleDate": "2008-04-16T00:00:00+0000"
+    },
+    {
+      "id": 21263,
+      "title": "X-Men: Divided We Stand",
+      "issueTitle": "X-Men: Divided We Stand (2008) #2",
+      "seriesTitle": "X-Men: Divided We Stand",
+      "apiSeriesName": "X-Men: Divided We Stand (2008)",
+      "seriesId": 4880,
+      "issueNumber": "2",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21263/x-men_divided_we_stand_2008_2",
+      "onSaleDate": "2008-05-21T00:00:00+0000"
+    },
+    {
+      "id": 21041,
+      "title": "Young X-Men",
+      "issueTitle": "Young X-Men (2008) #1",
+      "seriesTitle": "Young X-Men",
+      "apiSeriesName": "Young X-Men (2008 - 2009)",
+      "seriesId": 4443,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21041/young_x-men_2008_1",
+      "onSaleDate": "2008-04-02T00:00:00+0000"
+    },
+    {
+      "id": 21258,
+      "title": "Young X-Men",
+      "issueTitle": "Young X-Men (2008) #2",
+      "seriesTitle": "Young X-Men",
+      "apiSeriesName": "Young X-Men (2008 - 2009)",
+      "seriesId": 4443,
+      "issueNumber": "2",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21258/young_x-men_2008_2",
+      "onSaleDate": "2008-05-07T00:00:00+0000"
+    },
+    {
+      "id": 21403,
+      "title": "Young X-Men",
+      "issueTitle": "Young X-Men (2008) #3",
+      "seriesTitle": "Young X-Men",
+      "apiSeriesName": "Young X-Men (2008 - 2009)",
+      "seriesId": 4443,
+      "issueNumber": "3",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21403/young_x-men_2008_3",
+      "onSaleDate": "2008-06-04T00:00:00+0000"
+    },
+    {
+      "id": 21576,
+      "title": "Young X-Men",
+      "issueTitle": "Young X-Men (2008) #4",
+      "seriesTitle": "Young X-Men",
+      "apiSeriesName": "Young X-Men (2008 - 2009)",
+      "seriesId": 4443,
+      "issueNumber": "4",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21576/young_x-men_2008_4",
+      "onSaleDate": "2008-07-09T00:00:00+0000"
+    },
+    {
+      "id": 21771,
+      "title": "Young X-Men",
+      "issueTitle": "Young X-Men (2008) #5",
+      "seriesTitle": "Young X-Men",
+      "apiSeriesName": "Young X-Men (2008 - 2009)",
+      "seriesId": 4443,
+      "issueNumber": "5",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21771/young_x-men_2008_5",
+      "onSaleDate": "2008-08-20T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Uncanny X-Men #495",
+      "sourceRangeReference": "Uncanny X-Men #495-499",
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "495",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20633"
+      ],
+      "selectedIssueId": 20633,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20633/uncanny_x-men_1963_495",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #495",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20633
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Uncanny X-Men #496",
+      "sourceRangeReference": "Uncanny X-Men #495-499",
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "496",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20820"
+      ],
+      "selectedIssueId": 20820,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20820/uncanny_x-men_1963_496",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #496",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20820
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Uncanny X-Men #497",
+      "sourceRangeReference": "Uncanny X-Men #495-499",
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "497",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20959"
+      ],
+      "selectedIssueId": 20959,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20959/uncanny_x-men_1963_497",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #497",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20959
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Uncanny X-Men #498",
+      "sourceRangeReference": "Uncanny X-Men #495-499",
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "498",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21168"
+      ],
+      "selectedIssueId": 21168,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21168/uncanny_x-men_1963_498",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #498",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21168
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Uncanny X-Men #499",
+      "sourceRangeReference": "Uncanny X-Men #495-499",
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "499",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21318"
+      ],
+      "selectedIssueId": 21318,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21318/uncanny_x-men_1963_499",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #499",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21318
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "X-Men Legacy #208",
+      "sourceRangeReference": "X-Men: Legacy #208-212",
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "208",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20632"
+      ],
+      "selectedIssueId": 20632,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20632/x-men_legacy_2008_208",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #208",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20632
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "X-Men Legacy #209",
+      "sourceRangeReference": "X-Men: Legacy #208-212",
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "209",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20819"
+      ],
+      "selectedIssueId": 20819,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20819/x-men_legacy_2008_209",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #209",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20819
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "X-Men Legacy #210",
+      "sourceRangeReference": "X-Men: Legacy #208-212",
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "210",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20957"
+      ],
+      "selectedIssueId": 20957,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20957/x-men_legacy_2008_210",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #210",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20957
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "X-Men Legacy #211",
+      "sourceRangeReference": "X-Men: Legacy #208-212",
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "211",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21166"
+      ],
+      "selectedIssueId": 21166,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21166/x-men_legacy_2008_211",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #211",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21166
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "X-Men Legacy #212",
+      "sourceRangeReference": "X-Men: Legacy #208-212",
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "212",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21167"
+      ],
+      "selectedIssueId": 21167,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21167/x-men_legacy_2008_212",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #212",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21167
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "X-Factor #28",
+      "sourceRangeReference": "X-Factor #28-32",
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "28",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20662"
+      ],
+      "selectedIssueId": 20662,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20662/x-factor_2005_28",
+      "resolvedIssueTitle": "X-Factor (2005) #28",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20662
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "X-Factor #29",
+      "sourceRangeReference": "X-Factor #28-32",
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "29",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20858"
+      ],
+      "selectedIssueId": 20858,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20858/x-factor_2005_29",
+      "resolvedIssueTitle": "X-Factor (2005) #29",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20858
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "X-Factor #30",
+      "sourceRangeReference": "X-Factor #28-32",
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "30",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20990"
+      ],
+      "selectedIssueId": 20990,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20990/x-factor_2005_30",
+      "resolvedIssueTitle": "X-Factor (2005) #30",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20990
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "X-Factor #31",
+      "sourceRangeReference": "X-Factor #28-32",
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "31",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21201"
+      ],
+      "selectedIssueId": 21201,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21201/x-factor_2005_31",
+      "resolvedIssueTitle": "X-Factor (2005) #31",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21201
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "X-Factor #32",
+      "sourceRangeReference": "X-Factor #28-32",
+      "normalizedSeriesTitle": "X-Factor",
+      "seriesYear": 2005,
+      "issueNumber": "32",
+      "seriesId": 1035,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21348"
+      ],
+      "selectedIssueId": 21348,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21348/x-factor_2005_32",
+      "resolvedIssueTitle": "X-Factor (2005) #32",
+      "note": "Marvel series 1035 (X-Factor (2005 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21348
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "X-Factor: Quick And The Dead",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Factor: The Quick and the Dead",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 4833,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21217"
+      ],
+      "selectedIssueId": 21217,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21217/x-factor_the_quick_and_the_dead_1_2008_1",
+      "resolvedIssueTitle": "X-FACTOR: THE QUICK AND THE DEAD 1 (2008) #1",
+      "note": "Marvel series 4833 (X-FACTOR: THE QUICK AND THE DEAD 1 (2008)) is the reviewed metadata series for this source reference. The source title is X-Factor: The Quick and the Dead; Marvel names the selected series X-FACTOR: THE QUICK AND THE DEAD 1. Marvel capitalizes the one-issue series name and adds a trailing 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21217
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "X-Force #1",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20704"
+      ],
+      "selectedIssueId": 20704,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20704/x-force_2008_1",
+      "resolvedIssueTitle": "X-Force (2008) #1",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20704
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "X-Force #2",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "2",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20895"
+      ],
+      "selectedIssueId": 20895,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20895/x-force_2008_2",
+      "resolvedIssueTitle": "X-Force (2008) #2",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20895
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "X-Force #3",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "3",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21028"
+      ],
+      "selectedIssueId": 21028,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21028/x-force_2008_3",
+      "resolvedIssueTitle": "X-Force (2008) #3",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21028
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "X-Force #4",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "4",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21244"
+      ],
+      "selectedIssueId": 21244,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21244/x-force_2008_4",
+      "resolvedIssueTitle": "X-Force (2008) #4",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21244
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "X-Force #5",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "5",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21561"
+      ],
+      "selectedIssueId": 21561,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21561/x-force_2008_5",
+      "resolvedIssueTitle": "X-Force (2008) #5",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21561
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "X-Force #6",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "6",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21757"
+      ],
+      "selectedIssueId": 21757,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21757/x-force_2008_6",
+      "resolvedIssueTitle": "X-Force (2008) #6",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21757
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "X-Force #7",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "7",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21996"
+      ],
+      "selectedIssueId": 21996,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21996/x-force_2008_7",
+      "resolvedIssueTitle": "X-Force (2008) #7",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21996
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "X-Force #8",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "8",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22322"
+      ],
+      "selectedIssueId": 22322,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22322/x-force_2008_8",
+      "resolvedIssueTitle": "X-Force (2008) #8",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22322
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "X-Force #9",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "9",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22521"
+      ],
+      "selectedIssueId": 22521,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22521/x-force_2008_9",
+      "resolvedIssueTitle": "X-Force (2008) #9",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22521
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "X-Force #10",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "10",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22929"
+      ],
+      "selectedIssueId": 22929,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22929/x-force_2008_10",
+      "resolvedIssueTitle": "X-Force (2008) #10",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22929
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "X-Force #11",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "11",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23125"
+      ],
+      "selectedIssueId": 23125,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23125/x-force_2008_11",
+      "resolvedIssueTitle": "X-Force (2008) #11",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23125
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "X-Force #12",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "12",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23617"
+      ],
+      "selectedIssueId": 23617,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23617/x-force_2008_12",
+      "resolvedIssueTitle": "X-Force (2008) #12",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23617
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "X-Force #13",
+      "sourceRangeReference": "X-Force (2008) #1-13",
+      "normalizedSeriesTitle": "X-Force",
+      "seriesYear": 2008,
+      "issueNumber": "13",
+      "seriesId": 3839,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23772"
+      ],
+      "selectedIssueId": 23772,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23772/x-force_2008_13",
+      "resolvedIssueTitle": "X-Force (2008) #13",
+      "note": "Marvel series 3839 (X-Force (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23772
+      ]
+    },
+    {
+      "sourcePosition": 30,
+      "sourceIssueReference": "X-Force Special: Ain't No Dog",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force Special: Ain't No Dog",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 5024,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21392"
+      ],
+      "selectedIssueId": 21392,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21392/x-force_special_aint_no_dog_1_2008_1",
+      "resolvedIssueTitle": "X-FORCE SPECIAL: AIN'T NO DOG 1 (2008) #1",
+      "note": "Marvel series 5024 (X-FORCE SPECIAL: AIN'T NO DOG 1 (2008)) is the reviewed metadata series for this source reference. The source title is X-Force Special: Ain't No Dog; Marvel names the selected series X-FORCE SPECIAL: AIN'T NO DOG 1. Marvel capitalizes the one-issue series name and adds a trailing 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21392
+      ]
+    },
+    {
+      "sourcePosition": 31,
+      "sourceIssueReference": "Material From X-Force Annual (2010) #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Force Annual",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 9119,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29818"
+      ],
+      "selectedIssueId": 29818,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29818/x-force_annual_2009_1",
+      "resolvedIssueTitle": "X-Force Annual (2009) #1",
+      "note": "Marvel series 9119 (X-Force Annual (2009)) is the reviewed metadata series for this source reference. The source labels the material 2010; Marvel indexes the issue in its 2009 annual series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29818
+      ]
+    },
+    {
+      "sourcePosition": 32,
+      "sourceIssueReference": "Wolverine #62",
+      "sourceRangeReference": "Wolverine (2003) #62-65",
+      "normalizedSeriesTitle": "Wolverine",
+      "seriesYear": 2003,
+      "issueNumber": "62",
+      "seriesId": 632,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20642"
+      ],
+      "selectedIssueId": 20642,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20642/wolverine_2003_62",
+      "resolvedIssueTitle": "Wolverine (2003) #62",
+      "note": "Marvel series 632 (Wolverine (2003 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20642
+      ]
+    },
+    {
+      "sourcePosition": 33,
+      "sourceIssueReference": "Wolverine #63",
+      "sourceRangeReference": "Wolverine (2003) #62-65",
+      "normalizedSeriesTitle": "Wolverine",
+      "seriesYear": 2003,
+      "issueNumber": "63",
+      "seriesId": 632,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20833"
+      ],
+      "selectedIssueId": 20833,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20833/wolverine_2003_63",
+      "resolvedIssueTitle": "Wolverine (2003) #63",
+      "note": "Marvel series 632 (Wolverine (2003 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20833
+      ]
+    },
+    {
+      "sourcePosition": 34,
+      "sourceIssueReference": "Wolverine #64",
+      "sourceRangeReference": "Wolverine (2003) #62-65",
+      "normalizedSeriesTitle": "Wolverine",
+      "seriesYear": 2003,
+      "issueNumber": "64",
+      "seriesId": 632,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20971"
+      ],
+      "selectedIssueId": 20971,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20971/wolverine_2003_64",
+      "resolvedIssueTitle": "Wolverine (2003) #64",
+      "note": "Marvel series 632 (Wolverine (2003 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20971
+      ]
+    },
+    {
+      "sourcePosition": 35,
+      "sourceIssueReference": "Wolverine #65",
+      "sourceRangeReference": "Wolverine (2003) #62-65",
+      "normalizedSeriesTitle": "Wolverine",
+      "seriesYear": 2003,
+      "issueNumber": "65",
+      "seriesId": 632,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21180"
+      ],
+      "selectedIssueId": 21180,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21180/wolverine_2003_65",
+      "resolvedIssueTitle": "Wolverine (2003) #65",
+      "note": "Marvel series 632 (Wolverine (2003 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21180
+      ]
+    },
+    {
+      "sourcePosition": 36,
+      "sourceIssueReference": "Cable #1",
+      "sourceRangeReference": "Cable (2008) #1-5",
+      "normalizedSeriesTitle": "Cable",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 4002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20897"
+      ],
+      "selectedIssueId": 20897,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20897/cable_2008_1",
+      "resolvedIssueTitle": "Cable (2008) #1",
+      "note": "Marvel series 4002 (Cable (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20897
+      ]
+    },
+    {
+      "sourcePosition": 37,
+      "sourceIssueReference": "Cable #2",
+      "sourceRangeReference": "Cable (2008) #1-5",
+      "normalizedSeriesTitle": "Cable",
+      "seriesYear": 2008,
+      "issueNumber": "2",
+      "seriesId": 4002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21030"
+      ],
+      "selectedIssueId": 21030,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21030/cable_2008_2",
+      "resolvedIssueTitle": "Cable (2008) #2",
+      "note": "Marvel series 4002 (Cable (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21030
+      ]
+    },
+    {
+      "sourcePosition": 38,
+      "sourceIssueReference": "Cable #3",
+      "sourceRangeReference": "Cable (2008) #1-5",
+      "normalizedSeriesTitle": "Cable",
+      "seriesYear": 2008,
+      "issueNumber": "3",
+      "seriesId": 4002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21246"
+      ],
+      "selectedIssueId": 21246,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21246/cable_2008_3",
+      "resolvedIssueTitle": "Cable (2008) #3",
+      "note": "Marvel series 4002 (Cable (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21246
+      ]
+    },
+    {
+      "sourcePosition": 39,
+      "sourceIssueReference": "Cable #4",
+      "sourceRangeReference": "Cable (2008) #1-5",
+      "normalizedSeriesTitle": "Cable",
+      "seriesYear": 2008,
+      "issueNumber": "4",
+      "seriesId": 4002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21388"
+      ],
+      "selectedIssueId": 21388,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21388/cable_2008_4",
+      "resolvedIssueTitle": "Cable (2008) #4",
+      "note": "Marvel series 4002 (Cable (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21388
+      ]
+    },
+    {
+      "sourcePosition": 40,
+      "sourceIssueReference": "Cable #5",
+      "sourceRangeReference": "Cable (2008) #1-5",
+      "normalizedSeriesTitle": "Cable",
+      "seriesYear": 2008,
+      "issueNumber": "5",
+      "seriesId": 4002,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21563"
+      ],
+      "selectedIssueId": 21563,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21563/cable_2008_5",
+      "resolvedIssueTitle": "Cable (2008) #5",
+      "note": "Marvel series 4002 (Cable (2008 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21563
+      ]
+    },
+    {
+      "sourcePosition": 41,
+      "sourceIssueReference": "King-Size Cable #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Cable King-Size Spectacular",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 5749,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22047"
+      ],
+      "selectedIssueId": 22047,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22047/cable_king-size_spectacular_1_2008_1",
+      "resolvedIssueTitle": "CABLE KING-SIZE SPECTACULAR 1 (2008) #1",
+      "note": "Marvel series 5749 (CABLE KING-SIZE SPECTACULAR 1 (2008)) is the reviewed metadata series for this source reference. The source title is Cable King-Size Spectacular; Marvel names the selected series CABLE KING-SIZE SPECTACULAR 1. The source shortens the one-shot to King-Size Cable; Marvel capitalizes the series name and adds a trailing 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22047
+      ]
+    },
+    {
+      "sourcePosition": 42,
+      "sourceIssueReference": "X-Men: Divided We Stand #1",
+      "sourceRangeReference": "X-Men: Divided We Stand (2008) #1-2",
+      "normalizedSeriesTitle": "X-Men: Divided We Stand",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 4880,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21044"
+      ],
+      "selectedIssueId": 21044,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21044/x-men_divided_we_stand_2008_1",
+      "resolvedIssueTitle": "X-Men: Divided We Stand (2008) #1",
+      "note": "Marvel series 4880 (X-Men: Divided We Stand (2008)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21044
+      ]
+    },
+    {
+      "sourcePosition": 43,
+      "sourceIssueReference": "X-Men: Divided We Stand #2",
+      "sourceRangeReference": "X-Men: Divided We Stand (2008) #1-2",
+      "normalizedSeriesTitle": "X-Men: Divided We Stand",
+      "seriesYear": 2008,
+      "issueNumber": "2",
+      "seriesId": 4880,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21263"
+      ],
+      "selectedIssueId": 21263,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21263/x-men_divided_we_stand_2008_2",
+      "resolvedIssueTitle": "X-Men: Divided We Stand (2008) #2",
+      "note": "Marvel series 4880 (X-Men: Divided We Stand (2008)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21263
+      ]
+    },
+    {
+      "sourcePosition": 44,
+      "sourceIssueReference": "Young X-Men #1",
+      "sourceRangeReference": "Young X-Men #1-5",
+      "normalizedSeriesTitle": "Young X-Men",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 4443,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21041"
+      ],
+      "selectedIssueId": 21041,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21041/young_x-men_2008_1",
+      "resolvedIssueTitle": "Young X-Men (2008) #1",
+      "note": "Marvel series 4443 (Young X-Men (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21041
+      ]
+    },
+    {
+      "sourcePosition": 45,
+      "sourceIssueReference": "Young X-Men #2",
+      "sourceRangeReference": "Young X-Men #1-5",
+      "normalizedSeriesTitle": "Young X-Men",
+      "seriesYear": 2008,
+      "issueNumber": "2",
+      "seriesId": 4443,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21258"
+      ],
+      "selectedIssueId": 21258,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21258/young_x-men_2008_2",
+      "resolvedIssueTitle": "Young X-Men (2008) #2",
+      "note": "Marvel series 4443 (Young X-Men (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21258
+      ]
+    },
+    {
+      "sourcePosition": 46,
+      "sourceIssueReference": "Young X-Men #3",
+      "sourceRangeReference": "Young X-Men #1-5",
+      "normalizedSeriesTitle": "Young X-Men",
+      "seriesYear": 2008,
+      "issueNumber": "3",
+      "seriesId": 4443,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21403"
+      ],
+      "selectedIssueId": 21403,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21403/young_x-men_2008_3",
+      "resolvedIssueTitle": "Young X-Men (2008) #3",
+      "note": "Marvel series 4443 (Young X-Men (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21403
+      ]
+    },
+    {
+      "sourcePosition": 47,
+      "sourceIssueReference": "Young X-Men #4",
+      "sourceRangeReference": "Young X-Men #1-5",
+      "normalizedSeriesTitle": "Young X-Men",
+      "seriesYear": 2008,
+      "issueNumber": "4",
+      "seriesId": 4443,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21576"
+      ],
+      "selectedIssueId": 21576,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21576/young_x-men_2008_4",
+      "resolvedIssueTitle": "Young X-Men (2008) #4",
+      "note": "Marvel series 4443 (Young X-Men (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21576
+      ]
+    },
+    {
+      "sourcePosition": 48,
+      "sourceIssueReference": "Young X-Men #5",
+      "sourceRangeReference": "Young X-Men #1-5",
+      "normalizedSeriesTitle": "Young X-Men",
+      "seriesYear": 2008,
+      "issueNumber": "5",
+      "seriesId": 4443,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21771"
+      ],
+      "selectedIssueId": 21771,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21771/young_x-men_2008_5",
+      "resolvedIssueTitle": "Young X-Men (2008) #5",
+      "note": "Marvel series 4443 (Young X-Men (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21771
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-men-divided-we-stand",
+    "name": "X-Men: Divided We Stand",
+    "description": "Forty-eight aftermath issues following the X-Men, X-Factor, X-Force, Wolverine, Cable, and the Young X-Men after Messiah Complex.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-men-divided-we-stand.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+    "sourceSection": "X-Men: Divided We Stand",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_men_divided_we_stand.json",
+    "characters": [
+      "X-Men",
+      "Cyclops",
+      "Wolverine",
+      "Cable",
+      "X-Force"
+    ],
+    "keywords": [
+      "Divided We Stand",
+      "Messiah Complex aftermath",
+      "X-Men",
+      "Cable"
+    ],
+    "expect": 48,
+    "timeline": 2008,
+    "coverIssueId": 20633,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Uncanny X-Men #495"
+  }
+}

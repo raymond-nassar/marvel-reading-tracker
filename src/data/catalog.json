@@ -1,6 +1,152 @@
 {
-  "generatedAt": "2026-08-21T16:26:50.413Z",
+  "generatedAt": "2026-08-22T01:03:29.279Z",
   "lists": [
+    {
+      "id": "x-men-age-of-x",
+      "file": "x_men_age_of_x.json",
+      "name": "X-Men: Age of X",
+      "description": "Eleven chapters combining Alpha, X-Men Legacy, New Mutants, Universe, and the two aftermath issues.",
+      "type": "event",
+      "depth": "complete",
+      "count": 11,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Legion",
+        "Rogue",
+        "New Mutants"
+      ],
+      "keywords": [
+        "Age of X",
+        "X-Men Legacy",
+        "New Mutants",
+        "Legion"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2011,
+      "coverIssueId": 37996,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/10/59762093434e7",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+      "sourceSection": "Age of X",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T00:30:07.251Z"
+    },
+    {
+      "id": "x-men-schism",
+      "file": "x_men_schism.json",
+      "name": "X-Men: Schism",
+      "description": "Seven chapters interleaving the five-part Schism event with the two Generation Hope tie-ins.",
+      "type": "event",
+      "depth": "complete",
+      "count": 7,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Cyclops",
+        "Wolverine",
+        "Generation Hope"
+      ],
+      "keywords": [
+        "Schism",
+        "X-Men",
+        "Generation Hope"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2011,
+      "coverIssueId": 38491,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/c0/52c5b13ae5704",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+      "sourceSection": "Schism",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T00:30:07.262Z"
+    },
+    {
+      "id": "spider-island",
+      "file": "spider_island.json",
+      "name": "Spider-Island",
+      "description": "Thirteen story issues combining Amazing Spider-Man, Venom, and the Deadly Foes one-shot.",
+      "type": "event",
+      "depth": "complete",
+      "count": 13,
+      "collections": 0,
+      "characters": [
+        "Spider-Man",
+        "Venom",
+        "Mary Jane Watson"
+      ],
+      "keywords": [
+        "Spider-Island",
+        "Amazing Spider-Man",
+        "Venom",
+        "Deadly Foes"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2011,
+      "coverIssueId": 35513,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/e0/57eaa30fd170e",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-fear-itself-to-avengers-vs-x-men/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T00:30:07.263Z"
+    },
+    {
+      "id": "x-men-regenesis",
+      "file": "x_men_regenesis.json",
+      "name": "X-Men: Regenesis",
+      "description": "Forty-three distinct chapters following the post-Schism teams across the X-Men family of titles.",
+      "type": "event",
+      "depth": "complete",
+      "count": 43,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Cyclops",
+        "Wolverine",
+        "Magneto",
+        "Generation Hope"
+      ],
+      "keywords": [
+        "Regenesis",
+        "X-Men",
+        "Wolverine and the X-Men",
+        "Uncanny X-Men"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2011,
+      "coverIssueId": 39739,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/00/58cc1ee0aeb81",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+      "sourceSection": "Regenesis",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T00:30:07.263Z"
+    },
     {
       "id": "hickman-minimal",
       "file": "hickman_minimal.json",
@@ -428,6 +574,44 @@
       "sourceOrigin": "Assembled from Marvel series metadata (publication order)",
       "sourceLicense": null,
       "updatedAt": "2026-08-05T06:17:07.278Z"
+    },
+    {
+      "id": "x-men-divided-we-stand",
+      "file": "x_men_divided_we_stand.json",
+      "name": "X-Men: Divided We Stand",
+      "description": "Forty-eight aftermath issues following the X-Men, X-Factor, X-Force, Wolverine, Cable, and the Young X-Men after Messiah Complex.",
+      "type": "event",
+      "depth": "complete",
+      "count": 48,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Cyclops",
+        "Wolverine",
+        "Cable",
+        "X-Force"
+      ],
+      "keywords": [
+        "Divided We Stand",
+        "Messiah Complex aftermath",
+        "X-Men",
+        "Cable"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2008,
+      "coverIssueId": 20633,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/40/4bc31a1074cd2",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+      "sourceSection": "X-Men: Divided We Stand",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T00:30:07.264Z"
     },
     {
       "id": "secret-invasion",
@@ -1070,6 +1254,44 @@
       "updatedAt": "2026-08-17T04:10:56.797Z"
     },
     {
+      "id": "x-men-manifest-destiny",
+      "file": "x_men_manifest_destiny.json",
+      "name": "X-Men: Manifest Destiny",
+      "description": "Nineteen issues following the X-Men move to San Francisco through Uncanny X-Men, Wolverine, the anthology, and Eternals.",
+      "type": "event",
+      "depth": "complete",
+      "count": 19,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Wolverine",
+        "Nightcrawler",
+        "Iceman",
+        "Cyclops"
+      ],
+      "keywords": [
+        "Manifest Destiny",
+        "San Francisco",
+        "X-Men",
+        "Eternals"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2008,
+      "coverIssueId": 33565,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/513f4b8517c45",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+      "sourceSection": "X-Men: Manifest Destiny",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T01:03:29.258Z"
+    },
+    {
       "id": "dark-reign-avengers",
       "file": "dark_reign_avengers.json",
       "name": "Dark Reign: An Avengers Reading List",
@@ -1186,6 +1408,43 @@
       "updatedAt": "2026-08-21T15:16:57.184Z"
     },
     {
+      "id": "x-men-nation-x",
+      "file": "x_men_nation_x.json",
+      "name": "X-Men: Nation X",
+      "description": "Twenty chapters interleaving Uncanny X-Men, X-Men Legacy, Deadpool, Nation X, and the X-Factor one-shot.",
+      "type": "event",
+      "depth": "complete",
+      "count": 20,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Magneto",
+        "Cyclops",
+        "Deadpool"
+      ],
+      "keywords": [
+        "Nation X",
+        "Utopia",
+        "Magneto",
+        "X-Men"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2009,
+      "coverIssueId": 29940,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/5e62c2ff2eea7",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+      "sourceSection": "X-Men: Nation X",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T00:30:07.266Z"
+    },
+    {
       "id": "necrosha",
       "file": "necrosha.json",
       "name": "X-Men: Necrosha",
@@ -1220,6 +1479,42 @@
       "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
       "sourceLicense": null,
       "updatedAt": "2026-08-21T15:16:57.185Z"
+    },
+    {
+      "id": "doomwar",
+      "file": "doomwar.json",
+      "name": "Doomwar",
+      "description": "The complete six-issue conflict between Wakanda and Doctor Doom.",
+      "type": "event",
+      "depth": "complete",
+      "count": 6,
+      "collections": 0,
+      "characters": [
+        "Black Panther",
+        "Doctor Doom",
+        "Storm",
+        "Wakanda"
+      ],
+      "keywords": [
+        "Doomwar",
+        "Black Panther",
+        "Doctor Doom",
+        "Wakanda"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2010,
+      "coverIssueId": 29948,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/5a2990f8184b9",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-siege-to-the-heroic-age/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T00:30:07.266Z"
     },
     {
       "id": "second-coming",
@@ -1641,6 +1936,44 @@
       "updatedAt": "2026-08-21T09:58:39.863Z"
     },
     {
+      "id": "x-men-curse-of-the-mutants",
+      "file": "x_men_curse_of_the_mutants.json",
+      "name": "X-Men: Curse of the Mutants",
+      "description": "Eighteen chapters following the vampire conflict through X-Men, Namor, Deadpool, and four one-shots.",
+      "type": "event",
+      "depth": "complete",
+      "count": 18,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Blade",
+        "Namor",
+        "Dracula",
+        "Deadpool"
+      ],
+      "keywords": [
+        "Curse of the Mutants",
+        "vampires",
+        "Blade",
+        "Namor"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2010,
+      "coverIssueId": 34249,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/58d12610ef57d",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+      "sourceSection": "Curse of the Mutants",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T00:30:07.267Z"
+    },
+    {
       "id": "shadowland",
       "file": "shadowland.json",
       "name": "Shadowland",
@@ -1675,6 +2008,41 @@
       "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
       "sourceLicense": null,
       "updatedAt": "2026-08-21T09:58:39.866Z"
+    },
+    {
+      "id": "wolverine-goes-to-hell",
+      "file": "wolverine_goes_to_hell.json",
+      "name": "Wolverine Goes to Hell",
+      "description": "Fifteen chapters alternating Wolverine, Daken, and X-23 through the opening Goes to Hell storyline.",
+      "type": "event",
+      "depth": "complete",
+      "count": 15,
+      "collections": 0,
+      "characters": [
+        "Wolverine",
+        "Daken",
+        "X-23"
+      ],
+      "keywords": [
+        "Wolverine Goes to Hell",
+        "Daken",
+        "X-23"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2010,
+      "coverIssueId": 30224,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/589a1e1fb85d8",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+      "sourceSection": "Wolverine Goes to Hell",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T00:30:07.268Z"
     },
     {
       "id": "chaos-war",

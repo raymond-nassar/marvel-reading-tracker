@@ -49,6 +49,7 @@ function checkEntry(raw, index, seen) {
   const out = safeFile(raw.out);
   const sourceUrl = httpsUrl(raw.sourceUrl);
   const sourceFile = safeOrderFile(raw.sourceFile);
+  const sourceSection = str(raw.sourceSection);
 
   if (!id) at('has no id');
   else if (seen.has(id)) at(`duplicate id "${id}"`);
@@ -63,6 +64,9 @@ function checkEntry(raw, index, seen) {
   if (sourceUrl && sourceFile) at('has both sourceUrl and sourceFile; an order comes from one place');
   else if (!sourceUrl && !sourceFile && raw.sourceUrl == null && raw.sourceFile == null) {
     at('has no sourceUrl or sourceFile to vendor from');
+  }
+  if (raw.sourceSection != null && !sourceSection) {
+    at('sourceSection must be a non-empty string when present');
   }
   if (!str(raw.sourceOrigin)) at('has no sourceOrigin');
   // Origin and licence are different claims and were one field until BL-099. Ten of the twelve
@@ -117,6 +121,7 @@ function checkEntry(raw, index, seen) {
       // URL so attribution is never blank. An order authored here has no upstream page, so it
       // is credited by sourceOrigin alone rather than given a link that goes nowhere.
       sourcePage: httpsUrl(raw.sourcePage) ?? sourceUrl,
+      sourceSection,
       sourceOrigin: str(raw.sourceOrigin),
       sourceLicense: str(raw.sourceLicense),
       description: str(raw.description),

@@ -2,7 +2,7 @@
 
 **A private reading companion for Marvel Unlimited.**
 
-Recap Page turns long comic events and character runs into clear reading sessions. Pick one of 46
+Recap Page turns long comic events and character runs into clear reading sessions. Pick one of 56
 curated reading orders, follow it issue by issue, and keep your place without creating an account.
 Everything runs locally in your browser.
 

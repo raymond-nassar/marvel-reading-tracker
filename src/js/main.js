@@ -3916,8 +3916,11 @@ function pathLine(placement) {
 function attributionLine(list) {
   const label = sourceLabel(list);
   const href = sourceLink(list);
+  const section = typeof list.sourceSection === 'string' && list.sourceSection.trim()
+    ? list.sourceSection.trim()
+    : null;
   const updated = updatedLabel(list);
-  if (!label && !updated) return null;
+  if (!label && !section && !updated) return null;
 
   const parts = [];
   if (label) {
@@ -3927,11 +3930,12 @@ function attributionLine(list) {
         href,
         target: '_blank',
         rel: 'noopener noreferrer',
-        'aria-label': `Source of ${list.name}: ${label}`,
+        'aria-label': `Source of ${list.name}: ${label}${section ? `, section ${section}` : ''}`,
       }, label)
       : el('span', { text: label }));
   }
-  if (updated) parts.push(el('span', { text: `${label ? ' · ' : ''}Snapshot taken ${updated}` }));
+  if (section) parts.push(el('span', { text: `${label ? ' · ' : ''}Section: ${section}` }));
+  if (updated) parts.push(el('span', { text: `${label || section ? ' · ' : ''}Snapshot taken ${updated}` }));
   return el('p', { class: 'result-meta result-source' }, parts);
 }
 

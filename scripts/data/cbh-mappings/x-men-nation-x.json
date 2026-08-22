@@ -1,0 +1,790 @@
+{
+  "id": "x-men-nation-x",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "X-Men: Nation X",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 20,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 24949,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2008) #15",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2008 - 2012)",
+      "seriesId": 5701,
+      "issueNumber": "15",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24949/deadpool_2008_15",
+      "onSaleDate": "2009-09-02T00:00:00+0000"
+    },
+    {
+      "id": 26968,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #515",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "515",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26968/uncanny_x-men_1963_515",
+      "onSaleDate": "2009-09-23T00:00:00+0000"
+    },
+    {
+      "id": 24950,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2008) #16",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2008 - 2012)",
+      "seriesId": 5701,
+      "issueNumber": "16",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24950/deadpool_2008_16",
+      "onSaleDate": "2009-10-07T00:00:00+0000"
+    },
+    {
+      "id": 26969,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #516",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "516",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26969/uncanny_x-men_1963_516",
+      "onSaleDate": "2009-10-14T00:00:00+0000"
+    },
+    {
+      "id": 27345,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #228",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "228",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27345/x-men_legacy_2008_228",
+      "onSaleDate": "2009-10-21T00:00:00+0000"
+    },
+    {
+      "id": 24951,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2008) #17",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2008 - 2012)",
+      "seriesId": 5701,
+      "issueNumber": "17",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24951/deadpool_2008_17",
+      "onSaleDate": "2009-11-11T00:00:00+0000"
+    },
+    {
+      "id": 27346,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #229",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "229",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27346/x-men_legacy_2008_229",
+      "onSaleDate": "2009-11-18T00:00:00+0000"
+    },
+    {
+      "id": 26970,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #517",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "517",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26970/uncanny_x-men_1963_517",
+      "onSaleDate": "2009-11-25T00:00:00+0000"
+    },
+    {
+      "id": 26971,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #518",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "518",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26971/uncanny_x-men_1963_518",
+      "onSaleDate": "2009-12-03T00:00:00+0000"
+    },
+    {
+      "id": 29940,
+      "title": "Nation X",
+      "issueTitle": "Nation X (2009) #1",
+      "seriesTitle": "Nation X",
+      "apiSeriesName": "Nation X (2009 - 2010)",
+      "seriesId": 9176,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29940/nation_x_2009_1",
+      "onSaleDate": "2009-12-09T00:00:00+0000"
+    },
+    {
+      "id": 24952,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2008) #18",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2008 - 2012)",
+      "seriesId": 5701,
+      "issueNumber": "18",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/24952/deadpool_2008_18",
+      "onSaleDate": "2009-12-09T00:00:00+0000"
+    },
+    {
+      "id": 27347,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #230",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "230",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/27347/x-men_legacy_2008_230",
+      "onSaleDate": "2009-12-16T00:00:00+0000"
+    },
+    {
+      "id": 26972,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #519",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "519",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26972/uncanny_x-men_1963_519",
+      "onSaleDate": "2009-12-23T00:00:00+0000"
+    },
+    {
+      "id": 30007,
+      "title": "Nation X: X-Factor",
+      "issueTitle": "Nation X: X-Factor (2010) #1",
+      "seriesTitle": "Nation X: X-Factor",
+      "apiSeriesName": "Nation X: X-Factor (2010)",
+      "seriesId": 9183,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30007/nation_x_x-factor_2010_1",
+      "onSaleDate": "2010-01-06T00:00:00+0000"
+    },
+    {
+      "id": 29941,
+      "title": "Nation X",
+      "issueTitle": "Nation X (2009) #2",
+      "seriesTitle": "Nation X",
+      "apiSeriesName": "Nation X (2009 - 2010)",
+      "seriesId": 9176,
+      "issueNumber": "2",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29941/nation_x_2009_2",
+      "onSaleDate": "2010-01-13T00:00:00+0000"
+    },
+    {
+      "id": 26973,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #520",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "520",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26973/uncanny_x-men_1963_520",
+      "onSaleDate": "2010-01-20T00:00:00+0000"
+    },
+    {
+      "id": 26974,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #521",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "521",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/26974/uncanny_x-men_1963_521",
+      "onSaleDate": "2010-02-17T00:00:00+0000"
+    },
+    {
+      "id": 29942,
+      "title": "Nation X",
+      "issueTitle": "Nation X (2009) #3",
+      "seriesTitle": "Nation X",
+      "apiSeriesName": "Nation X (2009 - 2010)",
+      "seriesId": 9176,
+      "issueNumber": "3",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29942/nation_x_2009_3",
+      "onSaleDate": "2010-02-24T00:00:00+0000"
+    },
+    {
+      "id": 29943,
+      "title": "Nation X",
+      "issueTitle": "Nation X (2009) #4",
+      "seriesTitle": "Nation X",
+      "apiSeriesName": "Nation X (2009 - 2010)",
+      "seriesId": 9176,
+      "issueNumber": "4",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29943/nation_x_2009_4",
+      "onSaleDate": "2010-03-17T00:00:00+0000"
+    },
+    {
+      "id": 30619,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #522",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "522",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30619/uncanny_x-men_1963_522",
+      "onSaleDate": "2010-03-24T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Deadpool #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2008,
+      "issueNumber": "15",
+      "seriesId": 5701,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24949"
+      ],
+      "selectedIssueId": 24949,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24949/deadpool_2008_15",
+      "resolvedIssueTitle": "Deadpool (2008) #15",
+      "note": "Marvel series 5701 (Deadpool (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24949
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Uncanny X-Men #515",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "515",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26968"
+      ],
+      "selectedIssueId": 26968,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26968/uncanny_x-men_1963_515",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #515",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26968
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Deadpool #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2008,
+      "issueNumber": "16",
+      "seriesId": 5701,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24950"
+      ],
+      "selectedIssueId": 24950,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24950/deadpool_2008_16",
+      "resolvedIssueTitle": "Deadpool (2008) #16",
+      "note": "Marvel series 5701 (Deadpool (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24950
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Uncanny X-Men #516",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "516",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26969"
+      ],
+      "selectedIssueId": 26969,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26969/uncanny_x-men_1963_516",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #516",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26969
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "X-Men Legacy #228",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "228",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27345"
+      ],
+      "selectedIssueId": 27345,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27345/x-men_legacy_2008_228",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #228",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27345
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Deadpool #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2008,
+      "issueNumber": "17",
+      "seriesId": 5701,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24951"
+      ],
+      "selectedIssueId": 24951,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24951/deadpool_2008_17",
+      "resolvedIssueTitle": "Deadpool (2008) #17",
+      "note": "Marvel series 5701 (Deadpool (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24951
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "X-Men Legacy #229",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "229",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27346"
+      ],
+      "selectedIssueId": 27346,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27346/x-men_legacy_2008_229",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #229",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27346
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Uncanny X-Men #517",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "517",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26970"
+      ],
+      "selectedIssueId": 26970,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26970/uncanny_x-men_1963_517",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #517",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26970
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Uncanny X-Men #518",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "518",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26971"
+      ],
+      "selectedIssueId": 26971,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26971/uncanny_x-men_1963_518",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #518",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26971
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Nation X #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nation X",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 9176,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29940"
+      ],
+      "selectedIssueId": 29940,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29940/nation_x_2009_1",
+      "resolvedIssueTitle": "Nation X (2009) #1",
+      "note": "Marvel series 9176 (Nation X (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29940
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Deadpool #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2008,
+      "issueNumber": "18",
+      "seriesId": 5701,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "24952"
+      ],
+      "selectedIssueId": 24952,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/24952/deadpool_2008_18",
+      "resolvedIssueTitle": "Deadpool (2008) #18",
+      "note": "Marvel series 5701 (Deadpool (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        24952
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "X-Men Legacy #230",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "230",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "27347"
+      ],
+      "selectedIssueId": 27347,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/27347/x-men_legacy_2008_230",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #230",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        27347
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Uncanny X-Men #519",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "519",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26972"
+      ],
+      "selectedIssueId": 26972,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26972/uncanny_x-men_1963_519",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #519",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26972
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Nation X: X-Factor #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nation X: X-Factor",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9183,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30007"
+      ],
+      "selectedIssueId": 30007,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30007/nation_x_x-factor_2010_1",
+      "resolvedIssueTitle": "Nation X: X-Factor (2010) #1",
+      "note": "Marvel series 9183 (Nation X: X-Factor (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30007
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Nation X #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nation X",
+      "seriesYear": 2009,
+      "issueNumber": "2",
+      "seriesId": 9176,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29941"
+      ],
+      "selectedIssueId": 29941,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29941/nation_x_2009_2",
+      "resolvedIssueTitle": "Nation X (2009) #2",
+      "note": "Marvel series 9176 (Nation X (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29941
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Uncanny X-Men #520",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "520",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26973"
+      ],
+      "selectedIssueId": 26973,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26973/uncanny_x-men_1963_520",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #520",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26973
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Uncanny X-Men #521",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "521",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "26974"
+      ],
+      "selectedIssueId": 26974,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/26974/uncanny_x-men_1963_521",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #521",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        26974
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Nation X #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nation X",
+      "seriesYear": 2009,
+      "issueNumber": "3",
+      "seriesId": 9176,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29942"
+      ],
+      "selectedIssueId": 29942,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29942/nation_x_2009_3",
+      "resolvedIssueTitle": "Nation X (2009) #3",
+      "note": "Marvel series 9176 (Nation X (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29942
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Nation X #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Nation X",
+      "seriesYear": 2009,
+      "issueNumber": "4",
+      "seriesId": 9176,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29943"
+      ],
+      "selectedIssueId": 29943,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29943/nation_x_2009_4",
+      "resolvedIssueTitle": "Nation X (2009) #4",
+      "note": "Marvel series 9176 (Nation X (2009 - 2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29943
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Uncanny X-Men #522",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "522",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30619"
+      ],
+      "selectedIssueId": 30619,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30619/uncanny_x-men_1963_522",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #522",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30619
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-men-nation-x",
+    "name": "X-Men: Nation X",
+    "description": "Twenty chapters interleaving Uncanny X-Men, X-Men Legacy, Deadpool, Nation X, and the X-Factor one-shot.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-men-nation-x.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+    "sourceSection": "X-Men: Nation X",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_men_nation_x.json",
+    "characters": [
+      "X-Men",
+      "Magneto",
+      "Cyclops",
+      "Deadpool"
+    ],
+    "keywords": [
+      "Nation X",
+      "Utopia",
+      "Magneto",
+      "X-Men"
+    ],
+    "expect": 20,
+    "timeline": 2009,
+    "coverIssueId": 29940,
+    "coverSourcePosition": 10,
+    "coverSourceReference": "Nation X #1"
+  }
+}

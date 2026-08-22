@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseManifest } from '../src/js/lib/curated.js';
 import { escapeLinkText } from '../src/js/lib/markdown.js';
+import { validateSourceIdentities } from './lib/cbh-inventory.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const MAPPINGS_DIR = path.join(ROOT, 'scripts', 'data', 'cbh-mappings');
@@ -64,6 +65,33 @@ export const PACKET_IDS = Object.freeze([
   'thanos-imperative',
 ]);
 
+export const THIRD_SELECTION_IDS = Object.freeze([
+  'x-men-divided-we-stand',
+  'x-men-manifest-destiny',
+  'x-men-nation-x',
+  'x-men-curse-of-the-mutants',
+  'wolverine-goes-to-hell',
+  'x-men-age-of-x',
+  'x-men-schism',
+  'x-men-regenesis',
+  'doomwar',
+  'spider-island',
+]);
+
+// The approved queue follows source position; the shelf follows verified first on-sale dates.
+export const THIRD_PACKET_IDS = Object.freeze([
+  'x-men-divided-we-stand',
+  'x-men-manifest-destiny',
+  'x-men-nation-x',
+  'doomwar',
+  'x-men-curse-of-the-mutants',
+  'wolverine-goes-to-hell',
+  'x-men-age-of-x',
+  'x-men-schism',
+  'spider-island',
+  'x-men-regenesis',
+]);
+
 const INSERT_BEFORE = Object.freeze({
   'maximum-security': 'avengers-disassembled',
   'planet-hulk': 'civil-war',
@@ -75,6 +103,16 @@ const INSERT_BEFORE = Object.freeze({
   necrosha: 'heroic-age-avengers',
   'second-coming': 'heroic-age-avengers',
   'thanos-imperative': 'heroic-age-avengers',
+  'x-men-divided-we-stand': 'secret-invasion',
+  'x-men-manifest-destiny': 'dark-reign-avengers',
+  'x-men-nation-x': 'necrosha',
+  doomwar: 'second-coming',
+  'x-men-curse-of-the-mutants': 'shadowland',
+  'wolverine-goes-to-hell': 'chaos-war',
+  'x-men-age-of-x': 'hickman-minimal',
+  'x-men-schism': 'hickman-minimal',
+  'spider-island': 'hickman-minimal',
+  'x-men-regenesis': 'hickman-minimal',
 });
 
 const MANIFEST_FIELDS = new Set([
@@ -90,6 +128,7 @@ const MANIFEST_FIELDS = new Set([
   'variant',
   'sourceUrl',
   'sourcePage',
+  'sourceSection',
   'sourceOrigin',
   'sourceLicense',
   'out',
@@ -118,6 +157,8 @@ export function manifestEntryForMapping(mapping) {
   assert(entry.sourceOrigin === "Compiled for this project from Comic Book Herald's guide", `${mapping.id} has the wrong source origin`);
   assert(entry.sourceLicense === null, `${mapping.id} must keep sourceLicense null`);
   assert(entry.sourcePage === mapping.sourceUrl, `${mapping.id} source page differs from its mapping`);
+  assert((entry.sourceSection ?? null) === (mapping.sourceSection ?? null),
+    `${mapping.id} source section differs from its mapping`);
   assert(entry.expect === mapping.rows.length, `${mapping.id} expected count differs from its mapping`);
   return entry;
 }
@@ -135,7 +176,7 @@ export function selectedIssueIds(mapping) {
 }
 
 function checklistTitleForRow(row) {
-  const title = row.resolvedIssueTitle.trim();
+  const title = row.resolvedIssueTitle.trim().replace(/[\u2013\u2014]/g, '-');
   const issueNumber = String(row.issueNumber).trim();
   const escapedNumber = issueNumber.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return new RegExp(`#\\s*${escapedNumber}(?=\\s|$)`, 'i').test(title)
@@ -215,15 +256,15 @@ export function mergePacketEntries(existing, entries) {
   return merged;
 }
 
-export async function authorPacket() {
+export async function authorPacket(packetIds = THIRD_PACKET_IDS) {
   const current = JSON.parse(await readFile(MANIFEST_PATH, 'utf8'));
   const currentLists = Array.isArray(current.lists) ? current.lists : [];
-  const existing = existingEntriesForPacket(currentLists);
+  const existing = existingEntriesForPacket(currentLists, packetIds);
   const mappings = [];
   const entries = [];
   const issueIds = [];
 
-  for (const id of PACKET_IDS) {
+  for (const id of packetIds) {
     const mapping = JSON.parse(await readFile(path.join(MAPPINGS_DIR, `${id}.json`), 'utf8'));
     const report = JSON.parse(await readFile(path.join(OVERLAPS_DIR, `${id}.json`), 'utf8'));
     assert(mapping.id === id, `${id} mapping id changed`);
@@ -234,7 +275,7 @@ export async function authorPacket() {
       candidateCount: ids.length,
       expectedOrderIds: [
         ...existing.map((entry) => entry.id),
-        ...PACKET_IDS.filter((peerId) => peerId !== id),
+        ...packetIds.filter((peerId) => peerId !== id),
       ],
     });
     mappings.push(mapping);
@@ -244,25 +285,23 @@ export async function authorPacket() {
 
   assertNoDuplicates(issueIds, 'packet issue id');
   assertNoDuplicates(entries.map((entry) => entry.id), 'packet catalog id');
-  assertNoDuplicates(entries.map((entry) => entry.sourcePage), 'packet source page');
+  validateSourceIdentities(entries, existing);
   assertNoDuplicates(entries.map((entry) => entry.out), 'packet output');
   assertNoDuplicates(entries.map((entry) => entry.sourceFile), 'packet source file');
 
   const existingIds = new Set(existing.map((entry) => entry.id));
-  const existingPages = new Set(existing.map((entry) => entry.sourcePage).filter(Boolean));
   const existingOutputs = new Set(existing.map((entry) => entry.out));
-  const existingSources = new Set(existing.map((entry) => entry.sourceFile).filter(Boolean));
+  const existingSourceFiles = new Set(existing.map((entry) => entry.sourceFile).filter(Boolean));
   for (const entry of entries) {
     assert(!existingIds.has(entry.id), `${entry.id} duplicates a shipped catalog id`);
-    assert(!existingPages.has(entry.sourcePage), `${entry.id} duplicates a shipped source page`);
     assert(!existingOutputs.has(entry.out), `${entry.id} duplicates a shipped output`);
-    assert(!existingSources.has(entry.sourceFile), `${entry.id} duplicates a shipped source file`);
+    assert(!existingSourceFiles.has(entry.sourceFile), `${entry.id} duplicates a shipped source file`);
   }
 
   const nextManifest = { ...current, lists: mergePacketEntries(existing, entries) };
   const parsed = parseManifest(nextManifest);
   assert(parsed.errors.length === 0, `Authored manifest is invalid:\n${parsed.errors.join('\n')}`);
-  assert(parsed.entries.length === existing.length + PACKET_IDS.length, 'Authored manifest lost an order');
+  assert(parsed.entries.length === existing.length + packetIds.length, 'Authored manifest lost an order');
 
   await mkdir(ORDERS_DIR, { recursive: true });
   for (const mapping of mappings) {

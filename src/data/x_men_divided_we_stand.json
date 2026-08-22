@@ -1,0 +1,1421 @@
+{
+  "id": "x-men-divided-we-stand",
+  "name": "X-Men: Divided We Stand",
+  "description": "Forty-eight aftermath issues following the X-Men, X-Factor, X-Force, Wolverine, Cable, and the Young X-Men after Messiah Complex.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "X-Men: Divided We Stand",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T00:30:07.264Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 48,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 20633,
+      "title": "Uncanny X-Men (1963) #495",
+      "number": "495",
+      "url": "https://www.marvel.com/comics/issue/20633/uncanny_x-men_1963_495",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-02-06T00:00:00+0000",
+      "mu": "2009-01-21T00:00:00+0000",
+      "digitalId": 10347,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/40/4bc31a1074cd2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20820,
+      "title": "Uncanny X-Men (1963) #496",
+      "number": "496",
+      "url": "https://www.marvel.com/comics/issue/20820/uncanny_x-men_1963_496",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-03-05T00:00:00+0000",
+      "mu": "2009-02-25T00:00:00+0000",
+      "digitalId": 11738,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/56a792f1e1cc8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20959,
+      "title": "Uncanny X-Men (1963) #497",
+      "number": "497",
+      "url": "https://www.marvel.com/comics/issue/20959/uncanny_x-men_1963_497",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-04-23T00:00:00+0000",
+      "mu": "2009-04-01T00:00:00+0000",
+      "digitalId": 11739,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/03/591e0155b5850",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21168,
+      "title": "Uncanny X-Men (1963) #498",
+      "number": "498",
+      "url": "https://www.marvel.com/comics/issue/21168/uncanny_x-men_1963_498",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-05-29T00:00:00+0000",
+      "mu": "2009-04-29T00:00:00+0000",
+      "digitalId": 11740,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/03/591e01f265780",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Billy Tan",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21318,
+      "title": "Uncanny X-Men (1963) #499",
+      "number": "499",
+      "url": "https://www.marvel.com/comics/issue/21318/uncanny_x-men_1963_499",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-06-25T00:00:00+0000",
+      "mu": "2010-04-07T00:00:00+0000",
+      "digitalId": 11741,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/f0/591f3c986d062",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ben Oliver",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20632,
+      "title": "X-Men Legacy (2008) #208",
+      "number": "208",
+      "url": "https://www.marvel.com/comics/issue/20632/x-men_legacy_2008_208",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2008-02-27T00:00:00+0000",
+      "mu": "2008-09-13T00:00:00+0000",
+      "digitalId": 10148,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/10/51a4dd1fe56ea",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20819,
+      "title": "X-Men Legacy (2008) #209",
+      "number": "209",
+      "url": "https://www.marvel.com/comics/issue/20819/x-men_legacy_2008_209",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2008-03-26T00:00:00+0000",
+      "mu": "2009-02-04T00:00:00+0000",
+      "digitalId": 11871,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/80/51a4dd101e3f4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20957,
+      "title": "X-Men Legacy (2008) #210",
+      "number": "210",
+      "url": "https://www.marvel.com/comics/issue/20957/x-men_legacy_2008_210",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2008-04-30T00:00:00+0000",
+      "mu": "2009-03-25T00:00:00+0000",
+      "digitalId": 11872,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/00/51a4dd09edec2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21166,
+      "title": "X-Men Legacy (2008) #211",
+      "number": "211",
+      "url": "https://www.marvel.com/comics/issue/21166/x-men_legacy_2008_211",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2008-05-14T00:00:00+0000",
+      "mu": "2009-04-22T00:00:00+0000",
+      "digitalId": 11873,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/51a4dd19ba351",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21167,
+      "title": "X-Men Legacy (2008) #212",
+      "number": "212",
+      "url": "https://www.marvel.com/comics/issue/21167/x-men_legacy_2008_212",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2008-05-29T00:00:00+0000",
+      "mu": "2010-01-13T00:00:00+0000",
+      "digitalId": 11874,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/a0/51a4dcfbaa3b8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "David Finch",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20662,
+      "title": "X-Factor (2005) #28",
+      "number": "28",
+      "url": "https://www.marvel.com/comics/issue/20662/x-factor_2005_28",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2008-02-13T00:00:00+0000",
+      "mu": "2009-01-07T00:00:00+0000",
+      "digitalId": 10344,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/00/594c2ac573489",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Glenn Fabry",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20858,
+      "title": "X-Factor (2005) #29",
+      "number": "29",
+      "url": "https://www.marvel.com/comics/issue/20858/x-factor_2005_29",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2008-03-12T00:00:00+0000",
+      "mu": "2009-02-25T00:00:00+0000",
+      "digitalId": 11819,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/59510ca3ee5f4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Valentine De Landro",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20990,
+      "title": "X-Factor (2005) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/20990/x-factor_2005_30",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2008-04-16T00:00:00+0000",
+      "mu": "2009-03-18T00:00:00+0000",
+      "digitalId": 11820,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/5951166fb9b12",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21201,
+      "title": "X-Factor (2005) #31",
+      "number": "31",
+      "url": "https://www.marvel.com/comics/issue/21201/x-factor_2005_31",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2008-05-21T00:00:00+0000",
+      "mu": "2009-04-22T00:00:00+0000",
+      "digitalId": 11821,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/03/53208e0a95593",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Glenn Fabry",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21348,
+      "title": "X-Factor (2005) #32",
+      "number": "32",
+      "url": "https://www.marvel.com/comics/issue/21348/x-factor_2005_32",
+      "seriesId": 1035,
+      "seriesName": "X-Factor (2005 - 2013)",
+      "onSale": "2008-06-18T00:00:00+0000",
+      "mu": "2010-04-14T00:00:00+0000",
+      "digitalId": 11822,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/10/594c0eb959715",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Craig Yeung",
+          "role": "cover artist"
+        },
+        {
+          "name": "Valentine De Landro",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21217,
+      "title": "X-FACTOR: THE QUICK AND THE DEAD 1 (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/21217/x-factor_the_quick_and_the_dead_1_2008_1",
+      "seriesId": 4833,
+      "seriesName": "X-FACTOR: THE QUICK AND THE DEAD 1 (2008)",
+      "onSale": "2008-05-07T00:00:00+0000",
+      "mu": "2008-05-07T00:00:00+0000",
+      "digitalId": 12015,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/595a4c6479f15",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Pablo Raimondi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Boo Cook",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20704,
+      "title": "X-Force (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/20704/x-force_2008_1",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-02-13T00:00:00+0000",
+      "mu": "2008-02-13T00:00:00+0000",
+      "digitalId": 10308,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/595e3b6d7c3fc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20895,
+      "title": "X-Force (2008) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/20895/x-force_2008_2",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-03-05T00:00:00+0000",
+      "mu": "2008-03-05T00:00:00+0000",
+      "digitalId": 11830,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/d0/595e44aba32ba",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21028,
+      "title": "X-Force (2008) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/21028/x-force_2008_3",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-04-23T00:00:00+0000",
+      "mu": "2008-04-23T00:00:00+0000",
+      "digitalId": 11831,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/595e4683db019",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21244,
+      "title": "X-Force (2008) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/21244/x-force_2008_4",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-05-28T00:00:00+0000",
+      "mu": "2008-05-28T00:00:00+0000",
+      "digitalId": 11832,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/20/595e47f2be0f9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21561,
+      "title": "X-Force (2008) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/21561/x-force_2008_5",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-07-16T00:00:00+0000",
+      "mu": "2008-07-16T00:00:00+0000",
+      "digitalId": 11833,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/70/595e498260188",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21757,
+      "title": "X-Force (2008) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/21757/x-force_2008_6",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-08-27T00:00:00+0000",
+      "mu": "2008-08-27T00:00:00+0000",
+      "digitalId": 11834,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/a0/595e4b67b4bae",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21996,
+      "title": "X-Force (2008) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/21996/x-force_2008_7",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-09-24T00:00:00+0000",
+      "mu": "2008-09-24T00:00:00+0000",
+      "digitalId": 11835,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/00/595e4ee9ce24b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22322,
+      "title": "X-Force (2008) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/22322/x-force_2008_8",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-10-29T00:00:00+0000",
+      "mu": "2008-10-29T00:00:00+0000",
+      "digitalId": 11836,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/595e50458dbc1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22521,
+      "title": "X-Force (2008) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/22521/x-force_2008_9",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-11-26T00:00:00+0000",
+      "mu": "2008-11-26T00:00:00+0000",
+      "digitalId": 11837,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/595e525dedc57",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22929,
+      "title": "X-Force (2008) #10",
+      "number": "10",
+      "url": "https://www.marvel.com/comics/issue/22929/x-force_2008_10",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2008-12-31T00:00:00+0000",
+      "mu": "2008-12-31T00:00:00+0000",
+      "digitalId": 11829,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/03/595e540217d26",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Choi",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23125,
+      "title": "X-Force (2008) #11",
+      "number": "11",
+      "url": "https://www.marvel.com/comics/issue/23125/x-force_2008_11",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2009-01-28T00:00:00+0000",
+      "mu": "2009-01-28T00:00:00+0000",
+      "digitalId": 13165,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/c0/576848373a689",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23617,
+      "title": "X-Force (2008) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/23617/x-force_2008_12",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2009-02-25T00:00:00+0000",
+      "mu": "2009-02-25T00:00:00+0000",
+      "digitalId": 13166,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/80/595f8c6289cc4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23772,
+      "title": "X-Force (2008) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/23772/x-force_2008_13",
+      "seriesId": 3839,
+      "seriesName": "X-Force (2008 - 2010)",
+      "onSale": "2009-03-18T00:00:00+0000",
+      "mu": "2009-03-18T00:00:00+0000",
+      "digitalId": 13167,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/b0/595f8d84c97a5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21392,
+      "title": "X-FORCE SPECIAL: AIN'T NO DOG 1 (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/21392/x-force_special_aint_no_dog_1_2008_1",
+      "seriesId": 5024,
+      "seriesName": "X-FORCE SPECIAL: AIN'T NO DOG 1 (2008)",
+      "onSale": "2008-06-11T00:00:00+0000",
+      "mu": "2008-06-11T00:00:00+0000",
+      "digitalId": 11838,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/595e8ca7c64bd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Antonio Fuso",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bryan Hitch",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jefte Palo",
+          "role": "penciler"
+        },
+        {
+          "name": "Werther Dell'edera",
+          "role": "penciler"
+        },
+        {
+          "name": "Charlie Huston",
+          "role": "writer"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29818,
+      "title": "X-Force Annual (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/29818/x-force_annual_2009_1",
+      "seriesId": 9119,
+      "seriesName": "X-Force Annual (2009)",
+      "onSale": "2009-12-03T00:00:00+0000",
+      "mu": "2011-03-31T00:00:00+0000",
+      "digitalId": 14793,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/b0/5e444bb0da3f2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Carlo Barberi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Pearson",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Craig Kyle",
+          "role": "writer"
+        },
+        {
+          "name": "Robert Kirkman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20642,
+      "title": "Wolverine (2003) #62",
+      "number": "62",
+      "url": "https://www.marvel.com/comics/issue/20642/wolverine_2003_62",
+      "seriesId": 632,
+      "seriesName": "Wolverine (2003 - 2009)",
+      "onSale": "2008-02-13T00:00:00+0000",
+      "mu": "2008-02-13T00:00:00+0000",
+      "digitalId": 10130,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/58939a381ab3a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ron Garney",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20833,
+      "title": "Wolverine (2003) #63",
+      "number": "63",
+      "url": "https://www.marvel.com/comics/issue/20833/wolverine_2003_63",
+      "seriesId": 632,
+      "seriesName": "Wolverine (2003 - 2009)",
+      "onSale": "2008-03-12T00:00:00+0000",
+      "mu": "2008-03-12T00:00:00+0000",
+      "digitalId": 11775,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/80/58939aff8d264",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ron Garney",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20971,
+      "title": "Wolverine (2003) #64",
+      "number": "64",
+      "url": "https://www.marvel.com/comics/issue/20971/wolverine_2003_64",
+      "seriesId": 632,
+      "seriesName": "Wolverine (2003 - 2009)",
+      "onSale": "2008-04-09T00:00:00+0000",
+      "mu": "2008-04-09T00:00:00+0000",
+      "digitalId": 12319,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/10/58939bad0e68d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ron Garney",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21180,
+      "title": "Wolverine (2003) #65",
+      "number": "65",
+      "url": "https://www.marvel.com/comics/issue/21180/wolverine_2003_65",
+      "seriesId": 632,
+      "seriesName": "Wolverine (2003 - 2009)",
+      "onSale": "2008-05-14T00:00:00+0000",
+      "mu": "2008-05-14T00:00:00+0000",
+      "digitalId": 11776,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/50/58939c4e672b5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ron Garney",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20897,
+      "title": "Cable (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/20897/cable_2008_1",
+      "seriesId": 4002,
+      "seriesName": "Cable (2008 - 2010)",
+      "onSale": "2008-03-05T00:00:00+0000",
+      "mu": "2008-03-05T00:00:00+0000",
+      "digitalId": 10350,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/80/4ea17c010dfa6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "penciler"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21030,
+      "title": "Cable (2008) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/21030/cable_2008_2",
+      "seriesId": 4002,
+      "seriesName": "Cable (2008 - 2010)",
+      "onSale": "2008-04-02T00:00:00+0000",
+      "mu": "2008-04-02T00:00:00+0000",
+      "digitalId": 10975,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/03/4d24e32259672",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21246,
+      "title": "Cable (2008) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/21246/cable_2008_3",
+      "seriesId": 4002,
+      "seriesName": "Cable (2008 - 2010)",
+      "onSale": "2008-05-07T00:00:00+0000",
+      "mu": "2008-05-07T00:00:00+0000",
+      "digitalId": 10976,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/4ea1818dc1b0e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21388,
+      "title": "Cable (2008) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/21388/cable_2008_4",
+      "seriesId": 4002,
+      "seriesName": "Cable (2008 - 2010)",
+      "onSale": "2008-06-04T00:00:00+0000",
+      "mu": "2008-06-04T00:00:00+0000",
+      "digitalId": 10977,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/a0/4ea183a6278e6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21563,
+      "title": "Cable (2008) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/21563/cable_2008_5",
+      "seriesId": 4002,
+      "seriesName": "Cable (2008 - 2010)",
+      "onSale": "2008-07-02T00:00:00+0000",
+      "mu": "2008-07-02T00:00:00+0000",
+      "digitalId": 10978,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/4ea18812d5611",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "cover artist"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22047,
+      "title": "CABLE KING-SIZE SPECTACULAR 1 (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/22047/cable_king-size_spectacular_1_2008_1",
+      "seriesId": 5749,
+      "seriesName": "CABLE KING-SIZE SPECTACULAR 1 (2008)",
+      "onSale": "2008-09-10T00:00:00+0000",
+      "mu": "2008-09-10T00:00:00+0000",
+      "digitalId": 10985,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/6050fc4693b7a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 64,
+      "creators": [
+        {
+          "name": "Paul Neary",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ken Lashley",
+          "role": "penciler"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21044,
+      "title": "X-Men: Divided We Stand (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/21044/x-men_divided_we_stand_2008_1",
+      "seriesId": 4880,
+      "seriesName": "X-Men: Divided We Stand (2008)",
+      "onSale": "2008-04-16T00:00:00+0000",
+      "mu": "2008-04-16T00:00:00+0000",
+      "digitalId": 10149,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/90/5858401eb6ced",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "David Lafuente",
+          "role": "penciler"
+        },
+        {
+          "name": "Jamie Mckelvie",
+          "role": "penciler"
+        },
+        {
+          "name": "Sana Takeda",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        },
+        {
+          "name": "Skottie Young",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21263,
+      "title": "X-Men: Divided We Stand (2008) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/21263/x-men_divided_we_stand_2008_2",
+      "seriesId": 4880,
+      "seriesName": "X-Men: Divided We Stand (2008)",
+      "onSale": "2008-05-21T00:00:00+0000",
+      "mu": "2008-05-21T00:00:00+0000",
+      "digitalId": 11858,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/03/58584032293db",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Brandon Peterson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Burnham",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Yardin",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Lafuente",
+          "role": "penciler"
+        },
+        {
+          "name": "Scot Eaton",
+          "role": "penciler"
+        },
+        {
+          "name": "Andy Schmidt",
+          "role": "writer"
+        },
+        {
+          "name": "C.B. Cebulski",
+          "role": "writer"
+        },
+        {
+          "name": "Duane Swierczynski",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21041,
+      "title": "Young X-Men (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/21041/young_x-men_2008_1",
+      "seriesId": 4443,
+      "seriesName": "Young X-Men (2008 - 2009)",
+      "onSale": "2008-04-02T00:00:00+0000",
+      "mu": "2008-04-02T00:00:00+0000",
+      "digitalId": 10607,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/5eda9307a14f4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ray Snyder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yanick Paquette",
+          "role": "penciler"
+        },
+        {
+          "name": "Marc Guggenheim",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21258,
+      "title": "Young X-Men (2008) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/21258/young_x-men_2008_2",
+      "seriesId": 4443,
+      "seriesName": "Young X-Men (2008 - 2009)",
+      "onSale": "2008-05-07T00:00:00+0000",
+      "mu": "2008-05-07T00:00:00+0000",
+      "digitalId": 11899,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/70/5eda9310ccc10",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ray Snyder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Yanick Paquette",
+          "role": "penciler"
+        },
+        {
+          "name": "Marc Guggenheim",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21403,
+      "title": "Young X-Men (2008) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/21403/young_x-men_2008_3",
+      "seriesId": 4443,
+      "seriesName": "Young X-Men (2008 - 2009)",
+      "onSale": "2008-06-04T00:00:00+0000",
+      "mu": "2008-06-04T00:00:00+0000",
+      "digitalId": 11900,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5eda9322b72e4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kris Justice",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ray Snyder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yanick Paquette",
+          "role": "penciler"
+        },
+        {
+          "name": "Marc Guggenheim",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21576,
+      "title": "Young X-Men (2008) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/21576/young_x-men_2008_4",
+      "seriesId": 4443,
+      "seriesName": "Young X-Men (2008 - 2009)",
+      "onSale": "2008-07-09T00:00:00+0000",
+      "mu": "2008-07-09T00:00:00+0000",
+      "digitalId": 11901,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/5eda932c3561e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ray Snyder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yanick Paquette",
+          "role": "penciler"
+        },
+        {
+          "name": "Marc Guggenheim",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21771,
+      "title": "Young X-Men (2008) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/21771/young_x-men_2008_5",
+      "seriesId": 4443,
+      "seriesName": "Young X-Men (2008 - 2009)",
+      "onSale": "2008-08-20T00:00:00+0000",
+      "mu": "2008-08-20T00:00:00+0000",
+      "digitalId": 11902,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/518d25e8190e7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ray Snyder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Yanick Paquette",
+          "role": "penciler"
+        },
+        {
+          "name": "Marc Guggenheim",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

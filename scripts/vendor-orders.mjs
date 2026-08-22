@@ -91,7 +91,7 @@ function parseIssueNumber(title) {
 // Marvel's metadata occasionally carries a doubled space inside a title, as in
 // "King In Black: Black Panther  (2021) #1". The extra space is not data, and pinning it verbatim
 // makes it read as our typo rather than theirs, so internal whitespace is collapsed on ingest.
-// This only ever removes redundant spacing and changes no other character.
+// Typographic dashes are normalized too because issue titles are shipped surface copy.
 //
 // It is applied to titles resolved from the API, never to a placeholder's title: that string is
 // the input to placeholderId(), so rewriting it would change the id and silently reset the
@@ -105,7 +105,7 @@ function parseIssueNumber(title) {
 // writes. Neither fact is a reason to widen this function: the placeholder-title hazard above is
 // unchanged and is the one that would cost a reader their progress.
 function cleanText(s) {
-  return String(s ?? '').replace(/\s+/g, ' ').trim();
+  return String(s ?? '').replace(/[\u2013\u2014]/g, '-').replace(/\s+/g, ' ').trim();
 }
 
 // Marvel's CDN serves http:// in the API payload but supports https. Normalise so covers
@@ -164,6 +164,7 @@ function catalogEntry(order, payload) {
     coverIssueId,
     cover,
     source: payload.source,
+    ...(payload.sourceSection ? { sourceSection: payload.sourceSection } : {}),
     sourceOrigin: payload.sourceOrigin,
     sourceLicense: payload.sourceLicense,
     updatedAt: payload.generatedAt,
@@ -312,6 +313,7 @@ async function main() {
       name: order.name,
       description: order.description,
       source: order.sourcePage,
+      ...(order.sourceSection ? { sourceSection: order.sourceSection } : {}),
       sourceOrigin: order.sourceOrigin,
       sourceLicense: order.sourceLicense,
       generatedAt: new Date().toISOString(),

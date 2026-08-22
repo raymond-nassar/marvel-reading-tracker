@@ -200,7 +200,9 @@ const shelfEntry = (id, name, extra = {}) => ({
 // single heading and let a broken division pass.
 const CATALOG = {
   lists: [
-    shelfEntry('browser-check', 'Browser Check Order', { timeline: 1963 }),
+    shelfEntry('browser-check', 'Browser Check Order', {
+      timeline: 1963, source: 'https://example.com/shared-page', sourceSection: 'Fixture section',
+    }),
     shelfEntry('browser-check-two', 'Second Stop', { timeline: 2004 }),
     shelfEntry('browser-check-three-main', 'Third Stop: The Long Way', {
       group: 'bc-third', groupName: 'Third Stop', variant: 'Complete', timeline: 2006,
@@ -676,6 +678,7 @@ const SCENARIOS = [
       const rows = await page.$$eval('#catalog-results .result', (els) => els.map((e) => ({
         title: e.querySelector('.result-title')?.textContent.trim() ?? '',
         meta: e.querySelector('.result-meta')?.textContent.trim() ?? '',
+        source: e.querySelector('.result-source')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
         step: e.querySelector('.path-step')?.textContent.replace(/\s+/g, ' ').trim() ?? null,
       })));
 
@@ -691,6 +694,7 @@ const SCENARIOS = [
       t.check('the first stop is badged so a reader can find it at a glance', first?.step?.startsWith('Start here') === true, JSON.stringify(first?.step));
       t.check('and still says how long the path is', first?.step?.includes('Step 1 of 3') === true, JSON.stringify(first?.step));
       t.check('and names the path it belongs to', first?.step?.includes('The Fixture Path') === true, JSON.stringify(first?.step));
+      t.check('and names the exact source section without changing its link', first?.source?.includes('Section: Fixture section') === true, JSON.stringify(first?.source));
 
       t.check('a middle stop is numbered', middle?.step?.startsWith('Step 2 of 3') === true, JSON.stringify(middle?.step));
       // Deliberately absent. The shelf is sorted by year, so the previous stop is the row above,

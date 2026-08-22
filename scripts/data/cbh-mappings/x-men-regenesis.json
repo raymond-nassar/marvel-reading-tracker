@@ -1,0 +1,1644 @@
+{
+  "id": "x-men-regenesis",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "Regenesis",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 43,
+  "excludedSourceReferences": [
+    "The second consecutive Uncanny X-Men #3 row; the same page collection summary identifies Uncanny X-Men #1-4 once each"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 39739,
+      "title": "X-Men: Regenesis",
+      "issueTitle": "X-Men: Regenesis (2011) #1",
+      "seriesTitle": "X-Men: Regenesis",
+      "apiSeriesName": "X-Men: Regenesis (2011)",
+      "seriesId": 14685,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39739/x-men_regenesis_2011_1",
+      "onSaleDate": "2011-10-12T00:00:00+0000"
+    },
+    {
+      "id": 36637,
+      "title": "Generation Hope",
+      "issueTitle": "Generation Hope (2010) #12",
+      "seriesTitle": "Generation Hope",
+      "apiSeriesName": "Generation Hope (2010 - 2012)",
+      "seriesId": 9895,
+      "issueNumber": "12",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36637/generation_hope_2010_12",
+      "onSaleDate": "2011-10-12T00:00:00+0000"
+    },
+    {
+      "id": 36469,
+      "title": "Wolverine",
+      "issueTitle": "Wolverine (2010) #17",
+      "seriesTitle": "Wolverine",
+      "apiSeriesName": "Wolverine (2010 - 2012)",
+      "seriesId": 9962,
+      "issueNumber": "17",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36469/wolverine_2010_17",
+      "onSaleDate": "2011-10-19T00:00:00+0000"
+    },
+    {
+      "id": 36466,
+      "title": "Wolverine",
+      "issueTitle": "Wolverine (2010) #18",
+      "seriesTitle": "Wolverine",
+      "apiSeriesName": "Wolverine (2010 - 2012)",
+      "seriesId": 9962,
+      "issueNumber": "18",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36466/wolverine_2010_18",
+      "onSaleDate": "2011-11-09T00:00:00+0000"
+    },
+    {
+      "id": 38839,
+      "title": "Wolverine",
+      "issueTitle": "Wolverine (2010) #19",
+      "seriesTitle": "Wolverine",
+      "apiSeriesName": "Wolverine (2010 - 2012)",
+      "seriesId": 9962,
+      "issueNumber": "19",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38839/wolverine_2010_19",
+      "onSaleDate": "2011-11-30T00:00:00+0000"
+    },
+    {
+      "id": 38102,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #259",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "259",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38102/x-men_legacy_2008_259",
+      "onSaleDate": "2011-11-30T00:00:00+0000"
+    },
+    {
+      "id": 37942,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #544",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "544",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37942/uncanny_x-men_1963_544",
+      "onSaleDate": "2011-10-19T00:00:00+0000"
+    },
+    {
+      "id": 36485,
+      "title": "Avengers Academy",
+      "issueTitle": "Avengers Academy (2010) #22",
+      "seriesTitle": "Avengers Academy",
+      "apiSeriesName": "Avengers Academy (2010 - 2012)",
+      "seriesId": 9086,
+      "issueNumber": "22",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36485/avengers_academy_2010_22",
+      "onSaleDate": "2011-11-16T00:00:00+0000"
+    },
+    {
+      "id": 39737,
+      "title": "Magneto: Not a Hero",
+      "issueTitle": "Magneto: Not a Hero (2011) #1",
+      "seriesTitle": "Magneto: Not a Hero",
+      "apiSeriesName": "Magneto: Not a Hero (2011 - 2012)",
+      "seriesId": 14683,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39737/magneto_not_a_hero_2011_1",
+      "onSaleDate": "2011-11-09T00:00:00+0000"
+    },
+    {
+      "id": 36463,
+      "title": "X-23",
+      "issueTitle": "X-23 (2010) #17",
+      "seriesTitle": "X-23",
+      "apiSeriesName": "X-23 (2010 - 2012)",
+      "seriesId": 9367,
+      "issueNumber": "17",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36463/x-23_2010_17",
+      "onSaleDate": "2011-11-16T00:00:00+0000"
+    },
+    {
+      "id": 36462,
+      "title": "X-23",
+      "issueTitle": "X-23 (2010) #18",
+      "seriesTitle": "X-23",
+      "apiSeriesName": "X-23 (2010 - 2012)",
+      "seriesId": 9367,
+      "issueNumber": "18",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36462/x-23_2010_18",
+      "onSaleDate": "2011-12-07T00:00:00+0000"
+    },
+    {
+      "id": 40587,
+      "title": "X-23",
+      "issueTitle": "X-23 (2010) #19",
+      "seriesTitle": "X-23",
+      "apiSeriesName": "X-23 (2010 - 2012)",
+      "seriesId": 9367,
+      "issueNumber": "19",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40587/x-23_2010_19",
+      "onSaleDate": "2011-12-21T00:00:00+0000"
+    },
+    {
+      "id": 38586,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #1",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38586/wolverine_the_x-men_2011_1",
+      "onSaleDate": "2011-10-26T00:00:00+0000"
+    },
+    {
+      "id": 38584,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #2",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "2",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38584/wolverine_the_x-men_2011_2",
+      "onSaleDate": "2011-11-23T00:00:00+0000"
+    },
+    {
+      "id": 38582,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #3",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "3",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38582/wolverine_the_x-men_2011_3",
+      "onSaleDate": "2011-12-21T00:00:00+0000"
+    },
+    {
+      "id": 38084,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #260",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "260",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38084/x-men_legacy_2008_260",
+      "onSaleDate": "2011-12-28T00:00:00+0000"
+    },
+    {
+      "id": 38080,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #33",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "33",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38080/new_mutants_2009_33",
+      "onSaleDate": "2011-11-02T00:00:00+0000"
+    },
+    {
+      "id": 38079,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #34",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "34",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38079/new_mutants_2009_34",
+      "onSaleDate": "2011-11-16T00:00:00+0000"
+    },
+    {
+      "id": 40721,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #35",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "35",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40721/new_mutants_2009_35",
+      "onSaleDate": "2011-12-21T00:00:00+0000"
+    },
+    {
+      "id": 40717,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #36",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "36",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40717/new_mutants_2009_36",
+      "onSaleDate": "2012-01-18T00:00:00+0000"
+    },
+    {
+      "id": 38081,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #20",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "20",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38081/x-men_2010_20",
+      "onSaleDate": "2011-11-02T00:00:00+0000"
+    },
+    {
+      "id": 38082,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #21",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "21",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38082/x-men_2010_21",
+      "onSaleDate": "2011-11-16T00:00:00+0000"
+    },
+    {
+      "id": 40874,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #22",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "22",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40874/x-men_2010_22",
+      "onSaleDate": "2011-12-07T00:00:00+0000"
+    },
+    {
+      "id": 40869,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #23",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "23",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40869/x-men_2010_23",
+      "onSaleDate": "2012-01-04T00:00:00+0000"
+    },
+    {
+      "id": 36623,
+      "title": "Generation Hope",
+      "issueTitle": "Generation Hope (2010) #13",
+      "seriesTitle": "Generation Hope",
+      "apiSeriesName": "Generation Hope (2010 - 2012)",
+      "seriesId": 9895,
+      "issueNumber": "13",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36623/generation_hope_2010_13",
+      "onSaleDate": "2011-11-16T00:00:00+0000"
+    },
+    {
+      "id": 36624,
+      "title": "Generation Hope",
+      "issueTitle": "Generation Hope (2010) #14",
+      "seriesTitle": "Generation Hope",
+      "apiSeriesName": "Generation Hope (2010 - 2012)",
+      "seriesId": 9895,
+      "issueNumber": "14",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36624/generation_hope_2010_14",
+      "onSaleDate": "2011-12-21T00:00:00+0000"
+    },
+    {
+      "id": 36620,
+      "title": "Generation Hope",
+      "issueTitle": "Generation Hope (2010) #15",
+      "seriesTitle": "Generation Hope",
+      "apiSeriesName": "Generation Hope (2010 - 2012)",
+      "seriesId": 9895,
+      "issueNumber": "15",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36620/generation_hope_2010_15",
+      "onSaleDate": "2012-01-18T00:00:00+0000"
+    },
+    {
+      "id": 41707,
+      "title": "X-Club",
+      "issueTitle": "X-Club (2011) #1",
+      "seriesTitle": "X-Club",
+      "apiSeriesName": "X-Club (2011 - 2012)",
+      "seriesId": 15552,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41707/x-club_2011_1",
+      "onSaleDate": "2011-12-07T00:00:00+0000"
+    },
+    {
+      "id": 41706,
+      "title": "X-Club",
+      "issueTitle": "X-Club (2011) #2",
+      "seriesTitle": "X-Club",
+      "apiSeriesName": "X-Club (2011 - 2012)",
+      "seriesId": 15552,
+      "issueNumber": "2",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41706/x-club_2011_2",
+      "onSaleDate": "2012-01-04T00:00:00+0000"
+    },
+    {
+      "id": 41705,
+      "title": "X-Club",
+      "issueTitle": "X-Club (2011) #3",
+      "seriesTitle": "X-Club",
+      "apiSeriesName": "X-Club (2011 - 2012)",
+      "seriesId": 15552,
+      "issueNumber": "3",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41705/x-club_2011_3",
+      "onSaleDate": "2012-02-01T00:00:00+0000"
+    },
+    {
+      "id": 41704,
+      "title": "X-Club",
+      "issueTitle": "X-Club (2011) #4",
+      "seriesTitle": "X-Club",
+      "apiSeriesName": "X-Club (2011 - 2012)",
+      "seriesId": 15552,
+      "issueNumber": "4",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41704/x-club_2011_4",
+      "onSaleDate": "2012-03-07T00:00:00+0000"
+    },
+    {
+      "id": 41703,
+      "title": "X-Club",
+      "issueTitle": "X-Club (2011) #5",
+      "seriesTitle": "X-Club",
+      "apiSeriesName": "X-Club (2011 - 2012)",
+      "seriesId": 15552,
+      "issueNumber": "5",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41703/x-club_2011_5",
+      "onSaleDate": "2012-04-04T00:00:00+0000"
+    },
+    {
+      "id": 40166,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #1",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40166/uncanny_x-men_2011_1",
+      "onSaleDate": "2011-11-02T00:00:00+0000"
+    },
+    {
+      "id": 40154,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #2",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "2",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40154/uncanny_x-men_2011_2",
+      "onSaleDate": "2011-11-30T00:00:00+0000"
+    },
+    {
+      "id": 40159,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #3",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "3",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40159/uncanny_x-men_2011_3",
+      "onSaleDate": "2011-12-28T00:00:00+0000"
+    },
+    {
+      "id": 40164,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2011) #4",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2011 - 2012)",
+      "seriesId": 14914,
+      "issueNumber": "4",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40164/uncanny_x-men_2011_4",
+      "onSaleDate": "2012-01-04T00:00:00+0000"
+    },
+    {
+      "id": 41149,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #260.1",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "260.1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41149/x-men_legacy_2008_260.1",
+      "onSaleDate": "2012-01-11T00:00:00+0000"
+    },
+    {
+      "id": 40454,
+      "title": "Uncanny X-Force",
+      "issueTitle": "Uncanny X-Force (2010) #19",
+      "seriesTitle": "Uncanny X-Force",
+      "apiSeriesName": "Uncanny X-Force (2010 - 2012)",
+      "seriesId": 9976,
+      "issueNumber": "19",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40454/uncanny_x-force_2010_19",
+      "onSaleDate": "2011-12-21T00:00:00+0000"
+    },
+    {
+      "id": 38576,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #4",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "4",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38576/wolverine_the_x-men_2011_4",
+      "onSaleDate": "2012-01-11T00:00:00+0000"
+    },
+    {
+      "id": 39318,
+      "title": "Astonishing X-Men",
+      "issueTitle": "Astonishing X-Men (2004) #44",
+      "seriesTitle": "Astonishing X-Men",
+      "apiSeriesName": "Astonishing X-Men (2004 - 2013)",
+      "seriesId": 744,
+      "issueNumber": "44",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39318/astonishing_x-men_2004_44",
+      "onSaleDate": "2011-11-23T00:00:00+0000"
+    },
+    {
+      "id": 39322,
+      "title": "Astonishing X-Men",
+      "issueTitle": "Astonishing X-Men (2004) #45",
+      "seriesTitle": "Astonishing X-Men",
+      "apiSeriesName": "Astonishing X-Men (2004 - 2013)",
+      "seriesId": 744,
+      "issueNumber": "45",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39322/astonishing_x-men_2004_45",
+      "onSaleDate": "2011-12-28T00:00:00+0000"
+    },
+    {
+      "id": 39321,
+      "title": "Astonishing X-Men",
+      "issueTitle": "Astonishing X-Men (2004) #46",
+      "seriesTitle": "Astonishing X-Men",
+      "apiSeriesName": "Astonishing X-Men (2004 - 2013)",
+      "seriesId": 744,
+      "issueNumber": "46",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39321/astonishing_x-men_2004_46",
+      "onSaleDate": "2012-01-25T00:00:00+0000"
+    },
+    {
+      "id": 39320,
+      "title": "Astonishing X-Men",
+      "issueTitle": "Astonishing X-Men (2004) #47",
+      "seriesTitle": "Astonishing X-Men",
+      "apiSeriesName": "Astonishing X-Men (2004 - 2013)",
+      "seriesId": 744,
+      "issueNumber": "47",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39320/astonishing_x-men_2004_47",
+      "onSaleDate": "2012-02-29T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "X-Men: Regenesis #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Regenesis",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 14685,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39739"
+      ],
+      "selectedIssueId": 39739,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39739/x-men_regenesis_2011_1",
+      "resolvedIssueTitle": "X-Men: Regenesis (2011) #1",
+      "note": "Marvel series 14685 (X-Men: Regenesis (2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39739
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Generation Hope #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Generation Hope",
+      "seriesYear": 2010,
+      "issueNumber": "12",
+      "seriesId": 9895,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36637"
+      ],
+      "selectedIssueId": 36637,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36637/generation_hope_2010_12",
+      "resolvedIssueTitle": "Generation Hope (2010) #12",
+      "note": "Marvel series 9895 (Generation Hope (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36637
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Wolverine #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine",
+      "seriesYear": 2010,
+      "issueNumber": "17",
+      "seriesId": 9962,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36469"
+      ],
+      "selectedIssueId": 36469,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36469/wolverine_2010_17",
+      "resolvedIssueTitle": "Wolverine (2010) #17",
+      "note": "Marvel series 9962 (Wolverine (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36469
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Wolverine #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine",
+      "seriesYear": 2010,
+      "issueNumber": "18",
+      "seriesId": 9962,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36466"
+      ],
+      "selectedIssueId": 36466,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36466/wolverine_2010_18",
+      "resolvedIssueTitle": "Wolverine (2010) #18",
+      "note": "Marvel series 9962 (Wolverine (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36466
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Wolverine #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine",
+      "seriesYear": 2010,
+      "issueNumber": "19",
+      "seriesId": 9962,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38839"
+      ],
+      "selectedIssueId": 38839,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38839/wolverine_2010_19",
+      "resolvedIssueTitle": "Wolverine (2010) #19",
+      "note": "Marvel series 9962 (Wolverine (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38839
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "X-Men Legacy #259",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "259",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38102"
+      ],
+      "selectedIssueId": 38102,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38102/x-men_legacy_2008_259",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #259",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38102
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Uncanny X-Men #544",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "544",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37942"
+      ],
+      "selectedIssueId": 37942,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37942/uncanny_x-men_1963_544",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #544",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37942
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Avengers Academy #22",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Academy",
+      "seriesYear": 2010,
+      "issueNumber": "22",
+      "seriesId": 9086,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36485"
+      ],
+      "selectedIssueId": 36485,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36485/avengers_academy_2010_22",
+      "resolvedIssueTitle": "Avengers Academy (2010) #22",
+      "note": "Marvel series 9086 (Avengers Academy (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36485
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Magneto: Not a Hero #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Magneto: Not a Hero",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 14683,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39737"
+      ],
+      "selectedIssueId": 39737,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39737/magneto_not_a_hero_2011_1",
+      "resolvedIssueTitle": "Magneto: Not a Hero (2011) #1",
+      "note": "Marvel series 14683 (Magneto: Not a Hero (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39737
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "X-23 #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-23",
+      "seriesYear": 2010,
+      "issueNumber": "17",
+      "seriesId": 9367,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36463"
+      ],
+      "selectedIssueId": 36463,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36463/x-23_2010_17",
+      "resolvedIssueTitle": "X-23 (2010) #17",
+      "note": "Marvel series 9367 (X-23 (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36463
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "X-23 #18",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-23",
+      "seriesYear": 2010,
+      "issueNumber": "18",
+      "seriesId": 9367,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36462"
+      ],
+      "selectedIssueId": 36462,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36462/x-23_2010_18",
+      "resolvedIssueTitle": "X-23 (2010) #18",
+      "note": "Marvel series 9367 (X-23 (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36462
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "X-23 #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-23",
+      "seriesYear": 2010,
+      "issueNumber": "19",
+      "seriesId": 9367,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40587"
+      ],
+      "selectedIssueId": 40587,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40587/x-23_2010_19",
+      "resolvedIssueTitle": "X-23 (2010) #19",
+      "note": "Marvel series 9367 (X-23 (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40587
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Wolverine and The X-Men #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38586"
+      ],
+      "selectedIssueId": 38586,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38586/wolverine_the_x-men_2011_1",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #1",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38586
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Wolverine and The X-Men #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "2",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38584"
+      ],
+      "selectedIssueId": 38584,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38584/wolverine_the_x-men_2011_2",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #2",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38584
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Wolverine and The X-Men #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "3",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38582"
+      ],
+      "selectedIssueId": 38582,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38582/wolverine_the_x-men_2011_3",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #3",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38582
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "X-Men Legacy #260",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "260",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38084"
+      ],
+      "selectedIssueId": 38084,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38084/x-men_legacy_2008_260",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #260",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38084
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "New Mutants #33",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "33",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38080"
+      ],
+      "selectedIssueId": 38080,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38080/new_mutants_2009_33",
+      "resolvedIssueTitle": "New Mutants (2009) #33",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38080
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "New Mutants #34",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "34",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38079"
+      ],
+      "selectedIssueId": 38079,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38079/new_mutants_2009_34",
+      "resolvedIssueTitle": "New Mutants (2009) #34",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38079
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "New Mutants #35",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "35",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40721"
+      ],
+      "selectedIssueId": 40721,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40721/new_mutants_2009_35",
+      "resolvedIssueTitle": "New Mutants (2009) #35",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40721
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "New Mutants #36",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "36",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40717"
+      ],
+      "selectedIssueId": 40717,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40717/new_mutants_2009_36",
+      "resolvedIssueTitle": "New Mutants (2009) #36",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40717
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "X-Men #20",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "20",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38081"
+      ],
+      "selectedIssueId": 38081,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38081/x-men_2010_20",
+      "resolvedIssueTitle": "X-Men (2010) #20",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38081
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "X-Men #21",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "21",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38082"
+      ],
+      "selectedIssueId": 38082,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38082/x-men_2010_21",
+      "resolvedIssueTitle": "X-Men (2010) #21",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38082
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "X-Men #22",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "22",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40874"
+      ],
+      "selectedIssueId": 40874,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40874/x-men_2010_22",
+      "resolvedIssueTitle": "X-Men (2010) #22",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40874
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "X-Men #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "23",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40869"
+      ],
+      "selectedIssueId": 40869,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40869/x-men_2010_23",
+      "resolvedIssueTitle": "X-Men (2010) #23",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40869
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Generation Hope #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Generation Hope",
+      "seriesYear": 2010,
+      "issueNumber": "13",
+      "seriesId": 9895,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36623"
+      ],
+      "selectedIssueId": 36623,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36623/generation_hope_2010_13",
+      "resolvedIssueTitle": "Generation Hope (2010) #13",
+      "note": "Marvel series 9895 (Generation Hope (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36623
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Generation Hope #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Generation Hope",
+      "seriesYear": 2010,
+      "issueNumber": "14",
+      "seriesId": 9895,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36624"
+      ],
+      "selectedIssueId": 36624,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36624/generation_hope_2010_14",
+      "resolvedIssueTitle": "Generation Hope (2010) #14",
+      "note": "Marvel series 9895 (Generation Hope (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36624
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Generation Hope #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Generation Hope",
+      "seriesYear": 2010,
+      "issueNumber": "15",
+      "seriesId": 9895,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36620"
+      ],
+      "selectedIssueId": 36620,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36620/generation_hope_2010_15",
+      "resolvedIssueTitle": "Generation Hope (2010) #15",
+      "note": "Marvel series 9895 (Generation Hope (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36620
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "X-Club #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Club",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 15552,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41707"
+      ],
+      "selectedIssueId": 41707,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41707/x-club_2011_1",
+      "resolvedIssueTitle": "X-Club (2011) #1",
+      "note": "Marvel series 15552 (X-Club (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41707
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "X-Club #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Club",
+      "seriesYear": 2011,
+      "issueNumber": "2",
+      "seriesId": 15552,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41706"
+      ],
+      "selectedIssueId": 41706,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41706/x-club_2011_2",
+      "resolvedIssueTitle": "X-Club (2011) #2",
+      "note": "Marvel series 15552 (X-Club (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41706
+      ]
+    },
+    {
+      "sourcePosition": 30,
+      "sourceIssueReference": "X-Club #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Club",
+      "seriesYear": 2011,
+      "issueNumber": "3",
+      "seriesId": 15552,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41705"
+      ],
+      "selectedIssueId": 41705,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41705/x-club_2011_3",
+      "resolvedIssueTitle": "X-Club (2011) #3",
+      "note": "Marvel series 15552 (X-Club (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41705
+      ]
+    },
+    {
+      "sourcePosition": 31,
+      "sourceIssueReference": "X-Club #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Club",
+      "seriesYear": 2011,
+      "issueNumber": "4",
+      "seriesId": 15552,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41704"
+      ],
+      "selectedIssueId": 41704,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41704/x-club_2011_4",
+      "resolvedIssueTitle": "X-Club (2011) #4",
+      "note": "Marvel series 15552 (X-Club (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41704
+      ]
+    },
+    {
+      "sourcePosition": 32,
+      "sourceIssueReference": "X-Club #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Club",
+      "seriesYear": 2011,
+      "issueNumber": "5",
+      "seriesId": 15552,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41703"
+      ],
+      "selectedIssueId": 41703,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41703/x-club_2011_5",
+      "resolvedIssueTitle": "X-Club (2011) #5",
+      "note": "Marvel series 15552 (X-Club (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41703
+      ]
+    },
+    {
+      "sourcePosition": 33,
+      "sourceIssueReference": "Uncanny X-Men #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40166"
+      ],
+      "selectedIssueId": 40166,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40166/uncanny_x-men_2011_1",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #1",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40166
+      ]
+    },
+    {
+      "sourcePosition": 34,
+      "sourceIssueReference": "Uncanny X-Men #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "2",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40154"
+      ],
+      "selectedIssueId": 40154,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40154/uncanny_x-men_2011_2",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #2",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40154
+      ]
+    },
+    {
+      "sourcePosition": 35,
+      "sourceIssueReference": "Uncanny X-Men #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "3",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40159"
+      ],
+      "selectedIssueId": 40159,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40159/uncanny_x-men_2011_3",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #3",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40159
+      ]
+    },
+    {
+      "sourcePosition": 36,
+      "sourceIssueReference": "Uncanny X-Men #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "4",
+      "seriesId": 14914,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40164"
+      ],
+      "selectedIssueId": 40164,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40164/uncanny_x-men_2011_4",
+      "resolvedIssueTitle": "Uncanny X-Men (2011) #4",
+      "note": "Marvel series 14914 (Uncanny X-Men (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40164
+      ]
+    },
+    {
+      "sourcePosition": 37,
+      "sourceIssueReference": "X-Men Legacy #260.1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "260.1",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41149"
+      ],
+      "selectedIssueId": 41149,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41149/x-men_legacy_2008_260.1",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #260.1",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41149
+      ]
+    },
+    {
+      "sourcePosition": 38,
+      "sourceIssueReference": "Uncanny X-Force #19",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Force",
+      "seriesYear": 2010,
+      "issueNumber": "19",
+      "seriesId": 9976,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40454"
+      ],
+      "selectedIssueId": 40454,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40454/uncanny_x-force_2010_19",
+      "resolvedIssueTitle": "Uncanny X-Force (2010) #19",
+      "note": "Marvel series 9976 (Uncanny X-Force (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40454
+      ]
+    },
+    {
+      "sourcePosition": 39,
+      "sourceIssueReference": "Wolverine and The X-Men #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "4",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38576"
+      ],
+      "selectedIssueId": 38576,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38576/wolverine_the_x-men_2011_4",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #4",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38576
+      ]
+    },
+    {
+      "sourcePosition": 40,
+      "sourceIssueReference": "Astonishing X-Men #44",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Astonishing X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "44",
+      "seriesId": 744,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39318"
+      ],
+      "selectedIssueId": 39318,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39318/astonishing_x-men_2004_44",
+      "resolvedIssueTitle": "Astonishing X-Men (2004) #44",
+      "note": "Marvel series 744 (Astonishing X-Men (2004 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39318
+      ]
+    },
+    {
+      "sourcePosition": 41,
+      "sourceIssueReference": "Astonishing X-Men #45",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Astonishing X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "45",
+      "seriesId": 744,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39322"
+      ],
+      "selectedIssueId": 39322,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39322/astonishing_x-men_2004_45",
+      "resolvedIssueTitle": "Astonishing X-Men (2004) #45",
+      "note": "Marvel series 744 (Astonishing X-Men (2004 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39322
+      ]
+    },
+    {
+      "sourcePosition": 42,
+      "sourceIssueReference": "Astonishing X-Men #46",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Astonishing X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "46",
+      "seriesId": 744,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39321"
+      ],
+      "selectedIssueId": 39321,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39321/astonishing_x-men_2004_46",
+      "resolvedIssueTitle": "Astonishing X-Men (2004) #46",
+      "note": "Marvel series 744 (Astonishing X-Men (2004 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39321
+      ]
+    },
+    {
+      "sourcePosition": 43,
+      "sourceIssueReference": "Astonishing X-Men #47",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Astonishing X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "47",
+      "seriesId": 744,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39320"
+      ],
+      "selectedIssueId": 39320,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39320/astonishing_x-men_2004_47",
+      "resolvedIssueTitle": "Astonishing X-Men (2004) #47",
+      "note": "Marvel series 744 (Astonishing X-Men (2004 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39320
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-men-regenesis",
+    "name": "X-Men: Regenesis",
+    "description": "Forty-three distinct chapters following the post-Schism teams across the X-Men family of titles.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-men-regenesis.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+    "sourceSection": "Regenesis",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_men_regenesis.json",
+    "characters": [
+      "X-Men",
+      "Cyclops",
+      "Wolverine",
+      "Magneto",
+      "Generation Hope"
+    ],
+    "keywords": [
+      "Regenesis",
+      "X-Men",
+      "Wolverine and the X-Men",
+      "Uncanny X-Men"
+    ],
+    "expect": 43,
+    "timeline": 2011,
+    "coverIssueId": 39739,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "X-Men: Regenesis #1"
+  }
+}

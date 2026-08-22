@@ -229,6 +229,10 @@ Keep source sequence. Do not regroup issues just to make the file look cleaner. 
 recommendations, optional older runs, collected editions, and non-comic notes unless the source
 clearly makes them part of the issue order.
 
+When one page contains several distinct guides, keep its exact URL and set `sourceSection` to the
+stable visible heading for each guide. The page and section together are the source identity. A
+guide without `sourceSection` remains unique by URL alone. Never invent a URL fragment or DOM id.
+
 ### Resolve issue IDs deterministically
 
 Use source links for canonical identity, vendored metadata for exact title and issue matches, and

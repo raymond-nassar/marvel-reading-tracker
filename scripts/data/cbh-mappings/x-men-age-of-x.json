@@ -1,0 +1,457 @@
+{
+  "id": "x-men-age-of-x",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "Age of X",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 11,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 37996,
+      "title": "Age of X: Alpha",
+      "issueTitle": "Age of X: Alpha (2010) #1",
+      "seriesTitle": "Age of X: Alpha",
+      "apiSeriesName": "Age of X: Alpha (2010)",
+      "seriesId": 13603,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37996/age_of_x_alpha_2010_1",
+      "onSaleDate": "2011-01-26T00:00:00+0000"
+    },
+    {
+      "id": 36431,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #245",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "245",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36431/x-men_legacy_2008_245",
+      "onSaleDate": "2011-02-23T00:00:00+0000"
+    },
+    {
+      "id": 36495,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #22",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "22",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36495/new_mutants_2009_22",
+      "onSaleDate": "2011-02-23T00:00:00+0000"
+    },
+    {
+      "id": 36437,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #246",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "246",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36437/x-men_legacy_2008_246",
+      "onSaleDate": "2011-03-09T00:00:00+0000"
+    },
+    {
+      "id": 36502,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #23",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "23",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36502/new_mutants_2009_23",
+      "onSaleDate": "2011-03-23T00:00:00+0000"
+    },
+    {
+      "id": 36426,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #247",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "247",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36426/x-men_legacy_2008_247",
+      "onSaleDate": "2011-04-13T00:00:00+0000"
+    },
+    {
+      "id": 36497,
+      "title": "New Mutants",
+      "issueTitle": "New Mutants (2009) #24",
+      "seriesTitle": "New Mutants",
+      "apiSeriesName": "New Mutants (2009 - 2012)",
+      "seriesId": 7455,
+      "issueNumber": "24",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36497/new_mutants_2009_24",
+      "onSaleDate": "2011-04-27T00:00:00+0000"
+    },
+    {
+      "id": 38524,
+      "title": "Age of X: Universe",
+      "issueTitle": "Age of X: Universe (2011) #1",
+      "seriesTitle": "Age of X: Universe",
+      "apiSeriesName": "Age of X: Universe (2011)",
+      "seriesId": 13896,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38524/age_of_x_universe_2011_1",
+      "onSaleDate": "2011-03-30T00:00:00+0000"
+    },
+    {
+      "id": 38523,
+      "title": "Age of X: Universe",
+      "issueTitle": "Age of X: Universe (2011) #2",
+      "seriesTitle": "Age of X: Universe",
+      "apiSeriesName": "Age of X: Universe (2011)",
+      "seriesId": 13896,
+      "issueNumber": "2",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38523/age_of_x_universe_2011_2",
+      "onSaleDate": "2011-04-27T00:00:00+0000"
+    },
+    {
+      "id": 36433,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #248",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "248",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36433/x-men_legacy_2008_248",
+      "onSaleDate": "2011-05-11T00:00:00+0000"
+    },
+    {
+      "id": 36434,
+      "title": "X-Men Legacy",
+      "issueTitle": "X-Men Legacy (2008) #249",
+      "seriesTitle": "X-Men Legacy",
+      "apiSeriesName": "X-Men Legacy (2008 - 2012)",
+      "seriesId": 3754,
+      "issueNumber": "249",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36434/x-men_legacy_2008_249",
+      "onSaleDate": "2011-05-25T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Age of X: Alpha #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of X: Alpha",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13603,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37996"
+      ],
+      "selectedIssueId": 37996,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37996/age_of_x_alpha_2010_1",
+      "resolvedIssueTitle": "Age of X: Alpha (2010) #1",
+      "note": "Marvel series 13603 (Age of X: Alpha (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37996
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "X-Men Legacy #245",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "245",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36431"
+      ],
+      "selectedIssueId": 36431,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36431/x-men_legacy_2008_245",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #245",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36431
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "New Mutants #22",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "22",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36495"
+      ],
+      "selectedIssueId": 36495,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36495/new_mutants_2009_22",
+      "resolvedIssueTitle": "New Mutants (2009) #22",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36495
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "X-Men Legacy #246",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "246",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36437"
+      ],
+      "selectedIssueId": 36437,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36437/x-men_legacy_2008_246",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #246",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36437
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "New Mutants #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "23",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36502"
+      ],
+      "selectedIssueId": 36502,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36502/new_mutants_2009_23",
+      "resolvedIssueTitle": "New Mutants (2009) #23",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36502
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "X-Men Legacy #247",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "247",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36426"
+      ],
+      "selectedIssueId": 36426,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36426/x-men_legacy_2008_247",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #247",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36426
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "New Mutants #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "New Mutants",
+      "seriesYear": 2009,
+      "issueNumber": "24",
+      "seriesId": 7455,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36497"
+      ],
+      "selectedIssueId": 36497,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36497/new_mutants_2009_24",
+      "resolvedIssueTitle": "New Mutants (2009) #24",
+      "note": "Marvel series 7455 (New Mutants (2009 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36497
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Age of X: Universe #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of X: Universe",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 13896,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38524"
+      ],
+      "selectedIssueId": 38524,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38524/age_of_x_universe_2011_1",
+      "resolvedIssueTitle": "Age of X: Universe (2011) #1",
+      "note": "Marvel series 13896 (Age of X: Universe (2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38524
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Age of X: Universe #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of X: Universe",
+      "seriesYear": 2011,
+      "issueNumber": "2",
+      "seriesId": 13896,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38523"
+      ],
+      "selectedIssueId": 38523,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38523/age_of_x_universe_2011_2",
+      "resolvedIssueTitle": "Age of X: Universe (2011) #2",
+      "note": "Marvel series 13896 (Age of X: Universe (2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38523
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "X-Men Legacy #248",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "248",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36433"
+      ],
+      "selectedIssueId": 36433,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36433/x-men_legacy_2008_248",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #248",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36433
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "X-Men Legacy #249",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Legacy",
+      "seriesYear": 2008,
+      "issueNumber": "249",
+      "seriesId": 3754,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36434"
+      ],
+      "selectedIssueId": 36434,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36434/x-men_legacy_2008_249",
+      "resolvedIssueTitle": "X-Men Legacy (2008) #249",
+      "note": "Marvel series 3754 (X-Men Legacy (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36434
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-men-age-of-x",
+    "name": "X-Men: Age of X",
+    "description": "Eleven chapters combining Alpha, X-Men Legacy, New Mutants, Universe, and the two aftermath issues.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-men-age-of-x.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+    "sourceSection": "Age of X",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_men_age_of_x.json",
+    "characters": [
+      "X-Men",
+      "Legion",
+      "Rogue",
+      "New Mutants"
+    ],
+    "keywords": [
+      "Age of X",
+      "X-Men Legacy",
+      "New Mutants",
+      "Legion"
+    ],
+    "expect": 11,
+    "timeline": 2011,
+    "coverIssueId": 37996,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Age of X: Alpha #1"
+  }
+}

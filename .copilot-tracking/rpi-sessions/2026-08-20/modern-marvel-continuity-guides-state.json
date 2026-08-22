@@ -238,7 +238,7 @@
     }
   ],
   "blockers": [],
-  "next_action": "Wait for explicit parent approval or revision of the batch three selection proposal and its shared-source blocker",
+  "next_action": "Complete batch three validation, open one pull request, and hand it to Agent Merge",
   "prioritized_follow_ups": [],
   "batch_two_proposal": {
     "date": "2026-08-21",
@@ -533,15 +533,15 @@
   },
   "batch_three_proposal": {
     "date": "2026-08-21",
-    "status": "awaiting-parent-approval",
+    "status": "approved-and-implemented-validation-in-progress",
     "baseline": {
       "pull_request": 161,
       "merge_commit": "04b68d9d87aab30c5cc3c557e51825a4a2b07871",
       "default_branch_commit": "e5d41287182febc1396f167dc4286b42cb6f9795"
     },
     "approval_gate": {
-      "required": true,
-      "authority": "Explicit parent approval or revision is required before implementation",
+      "required": false,
+      "authority": "Parent session approved the exact ten targets and the sourceSection contract on 2026-08-21",
       "prohibited_until_approval": [
         "mapping creation or refresh",
         "inventory disposition changes",
@@ -554,7 +554,7 @@
       ]
     },
     "selection_basis": "Re-audit master positions from the beginning, preserve master position before publication-year sorting, preserve heading order inside shared sources, and select the first ten genuine missing event or aftermath sections after shipped, reused, excluded, path-only, and already blocked work is recorded.",
-    "selection_status": "Ten-order continuity proposal identified through master position 29; not a frozen or authorable packet",
+    "selection_status": "Approved ten-order packet authored and vendored",
     "proposed_orders": [
       {
         "slot": 1,
@@ -732,11 +732,11 @@
       "approved_mapping_id_matches": 0,
       "shipped_source_url_matches": 0,
       "numbered_or_explicit_source_reference_matches": 0,
-      "exact_issue_id_overlap_status": "not evaluated because no proposal mapping exists",
+      "exact_issue_id_overlap_status": "550 comparisons complete with 550 none relationships and 0 shared ids",
       "semantic_conclusion": "The ten are distinct missing event or aftermath scopes, not renamed shipped orders."
     },
     "shared_source_blocker": {
-      "status": "requires-parent-decision",
+      "status": "resolved",
       "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
       "candidate_ids": [
         "x-men-divided-we-stand",
@@ -748,7 +748,83 @@
         "x-men-schism",
         "x-men-regenesis"
       ],
-      "evidence": "The source uses plain h2 headings with no HTML ids, so all eight exact sections share one URL. Invented fragments would be false links, while the current packet contract rejects repeated peer source URLs."
+      "evidence": "The source uses plain h2 headings with no HTML ids, so all eight exact sections share one URL. Invented fragments would be false links.",
+      "resolution": "Keep the exact shared URL, store a non-empty sourceSection derived from each visible heading, and use the page plus section as the uniqueness key. Sources without a section remain unique by URL.",
+      "verified_section_count": 8
+    },
+    "implementation": {
+      "status": "validated-delivery-in-progress",
+      "source_refreshed_at": "2026-08-21",
+      "catalog_order_ids": [
+        "x-men-divided-we-stand",
+        "x-men-manifest-destiny",
+        "x-men-nation-x",
+        "doomwar",
+        "x-men-curse-of-the-mutants",
+        "wolverine-goes-to-hell",
+        "x-men-age-of-x",
+        "x-men-schism",
+        "spider-island",
+        "x-men-regenesis"
+      ],
+      "counts": {
+        "guides": 10,
+        "mapping_rows": 200,
+        "distinct_issue_ids": 200,
+        "documented_excluded_source_references": 3,
+        "overlap_reports": 10,
+        "comparison_rows": 550,
+        "non_none_relationships": 0,
+        "catalog_entries_after": 56,
+        "shared_page_sections": 8
+      },
+      "ambiguity_resolutions": {
+        "x-men-manifest-destiny": "The two unnumbered anthology-material groups resolve to the same X-Men: Manifest Destiny #1-5 issues, which are represented once.",
+        "x-men-regenesis": "The consecutive second Uncanny X-Men #3 is recorded as a duplicate and represented once, consistent with the same source page's #1-4 collection summary.",
+        "spider-island": "Spider-Island Spotlight is recorded as a non-story companion magazine absent from the live metadata contract; the thirteen named story issues are exact."
+      },
+      "first_on_sale_dates": [
+        "2008-02-06",
+        "2008-04-16",
+        "2009-09-02",
+        "2010-02-17",
+        "2010-07-07",
+        "2010-09-01",
+        "2011-01-26",
+        "2011-07-13",
+        "2011-07-27",
+        "2011-10-12"
+      ],
+      "validation": {
+        "focused_tests": "134/134",
+        "full_tests": "1310/1310",
+        "lint_errors": 0,
+        "ranked_backlog_rows": 159,
+        "parked_backlog_rows": 5,
+        "backlog_detail_blocks": 164,
+        "stated_file_sizes": 7,
+        "palette_pairs": 88,
+        "palette_new_failures": 0,
+        "publication_findings": 0,
+        "anchors": 1047,
+        "repository_contract": "33/33",
+        "repository_contract_requests": 17,
+        "added_issue_contract": "200/200",
+        "browser_assertions": 120,
+        "browser_scenarios": 14,
+        "failure_proofs": 3,
+        "approved_mapping_hash_changes": 0,
+        "author_hash_changes": 0,
+        "overlap_hash_changes": 0
+      },
+      "self_review": {
+        "status": "resolved",
+        "material_findings": 2,
+        "open_material_findings": 0,
+        "result": "Corrected lifecycle updates that initially named adjacent bridge records and made an ordinary whole-page source conflict with any sectioned record on that page."
+      },
+      "review_agent_passes": "waived by parent instruction",
+      "agent_merge": "required after pull request creation"
     },
     "earlier_skips": [
       {
@@ -896,6 +972,6 @@
         "reason": "Schism and Regenesis are proposed from their earlier source; Circle of Four and the remaining entries are runs or arcs."
       }
     ],
-    "next_action": "Send the exact ten-order proposal to the parent and stop until explicit approval or revision arrives."
+    "next_action": "Complete validation, commit and push, open one pull request, and continue through Agent Merge."
   }
 }

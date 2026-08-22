@@ -1,0 +1,599 @@
+{
+  "id": "x-men-curse-of-the-mutants",
+  "name": "X-Men: Curse of the Mutants",
+  "description": "Eighteen chapters following the vampire conflict through X-Men, Namor, Deadpool, and four one-shots.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "Curse of the Mutants",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T00:30:07.267Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 18,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 33875,
+      "title": "Death of Dracula (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/33875/death_of_dracula_2010_1",
+      "seriesId": 10915,
+      "seriesName": "Death of Dracula (2010)",
+      "onSale": "2010-07-08T00:00:00+0000",
+      "mu": "2011-01-26T16:01:43+0000",
+      "digitalId": 15069,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/f0/5b59e85cac5b9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Onofrio Catacchio",
+          "role": "cover artist"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Marko Djurdjevic",
+          "role": "penciler"
+        },
+        {
+          "name": "Victor Gischler",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 34249,
+      "title": "X-Men (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/34249/x-men_2010_1",
+      "seriesId": 9906,
+      "seriesName": "X-Men (2010 - 2013)",
+      "onSale": "2010-07-07T00:00:00+0000",
+      "mu": "2011-05-18T00:00:00+0000",
+      "digitalId": 15161,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/58d12610ef57d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Victor Gischler",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32192,
+      "title": "X-Men (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/32192/x-men_2010_2",
+      "seriesId": 9906,
+      "seriesName": "X-Men (2010 - 2013)",
+      "onSale": "2010-08-11T00:00:00+0000",
+      "mu": "2011-07-13T00:00:00+0000",
+      "digitalId": 15656,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/58d1288e571b3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Francisco Velasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Victor Gischler",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36078,
+      "title": "Namor: The First Mutant (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/36078/namor_the_first_mutant_2010_1",
+      "seriesId": 12761,
+      "seriesName": "Namor: The First Mutant (2010 - 2011)",
+      "onSale": "2010-08-25T00:00:00+0000",
+      "mu": "2011-07-20T00:00:00+0000",
+      "digitalId": 15799,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/90/5e61164f96d03",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "penciler"
+        },
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Stuart Moore",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36112,
+      "title": "X-Men: Curse of the Mutants - Blade (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/36112/x-men_curse_of_the_mutants_-_blade_2010_1",
+      "seriesId": 12667,
+      "seriesName": "X-Men: Curse of the Mutants - Blade (2010)",
+      "onSale": "2010-08-25T00:00:00+0000",
+      "mu": "2017-03-13T00:00:00+0000",
+      "digitalId": 15815,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/f0/58bda93ba3da3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dave Wilkins",
+          "role": "penciler"
+        }
+      ]
+    },
+    {
+      "issueId": 35561,
+      "title": "X-Men: Curse of the Mutants - Storm & Gambit (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/35561/x-men_curse_of_the_mutants_-_storm_gambit_2010_1",
+      "seriesId": 12597,
+      "seriesName": "X-Men: Curse of the Mutants - Storm & Gambit (2010)",
+      "onSale": "2010-08-25T00:00:00+0000",
+      "mu": "2011-08-10T00:00:00+0000",
+      "digitalId": 15818,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/40/5be606deb28c3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mico Suayan",
+          "role": "penciler"
+        }
+      ]
+    },
+    {
+      "issueId": 35910,
+      "title": "X-Men: Curse of the Mutants - Smoke & Blood (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/35910/x-men_curse_of_the_mutants_-_smoke_blood_2010_1",
+      "seriesId": 12759,
+      "seriesName": "X-Men: Curse of the Mutants - Smoke & Blood (2010)",
+      "onSale": "2010-09-01T00:00:00+0000",
+      "mu": "2011-08-17T00:00:00+0000",
+      "digitalId": 15925,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/5cd33704a197a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        }
+      ]
+    },
+    {
+      "issueId": 32193,
+      "title": "X-Men (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/32193/x-men_2010_3",
+      "seriesId": 9906,
+      "seriesName": "X-Men (2010 - 2013)",
+      "onSale": "2010-09-09T00:00:00+0000",
+      "mu": "2011-08-17T00:00:00+0000",
+      "digitalId": 16008,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/00/58d129b02e3e1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Victor Gischler",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36079,
+      "title": "Namor: The First Mutant (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/36079/namor_the_first_mutant_2010_2",
+      "seriesId": 12761,
+      "seriesName": "Namor: The First Mutant (2010 - 2011)",
+      "onSale": "2010-09-29T00:00:00+0000",
+      "mu": "2011-08-10T00:00:00+0000",
+      "digitalId": 16330,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/5e611f68ebd68",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ariel Olivetti",
+          "role": "penciler"
+        },
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Stuart Moore",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36619,
+      "title": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/36619/x-men_curse_of_the_mutants_-_x-men_vs_vampires_2010_1",
+      "seriesId": 13008,
+      "seriesName": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010)",
+      "onSale": "2010-09-29T00:00:00+0000",
+      "mu": "2011-08-31T00:00:00+0000",
+      "digitalId": 16295,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5cd302fd6ef46",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jim Charalampidis",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        }
+      ]
+    },
+    {
+      "issueId": 32196,
+      "title": "X-Men (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/32196/x-men_2010_4",
+      "seriesId": 9906,
+      "seriesName": "X-Men (2010 - 2013)",
+      "onSale": "2010-10-13T00:00:00+0000",
+      "mu": "2011-10-05T00:00:00+0000",
+      "digitalId": 16755,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/58d12aa0846f8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Victor Gischler",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 37367,
+      "title": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/37367/x-men_curse_of_the_mutants_-_x-men_vs_vampires_2010_2",
+      "seriesId": 13008,
+      "seriesName": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010)",
+      "onSale": "2010-10-27T00:00:00+0000",
+      "mu": "2011-10-26T00:00:00+0000",
+      "digitalId": 16994,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/4f58d6bc2c5c8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Bob Wiacek",
+          "role": "cover artist"
+        },
+        {
+          "name": "Bill Sienkiewicz",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Charalampidis",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Claremont",
+          "role": "writer"
+        },
+        {
+          "name": "Howard Chaykin",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Benson",
+          "role": "writer"
+        },
+        {
+          "name": "Mike W. Barr",
+          "role": "writer"
+        },
+        {
+          "name": "Simon Spurrier",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36077,
+      "title": "Namor: The First Mutant (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/36077/namor_the_first_mutant_2010_3",
+      "seriesId": 12761,
+      "seriesName": "Namor: The First Mutant (2010 - 2011)",
+      "onSale": "2010-11-03T00:00:00+0000",
+      "mu": "2011-10-28T00:00:00+0000",
+      "digitalId": 17274,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/58ebf24a0a182",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jae Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ariel Olivetti",
+          "role": "penciler"
+        },
+        {
+          "name": "Stuart Moore",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32197,
+      "title": "X-Men (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/32197/x-men_2010_5",
+      "seriesId": 9906,
+      "seriesName": "X-Men (2010 - 2013)",
+      "onSale": "2010-11-17T00:00:00+0000",
+      "mu": "2011-11-21T00:00:00+0000",
+      "digitalId": 18605,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/50/58d12b7c98685",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Victor Gischler",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36080,
+      "title": "Namor: The First Mutant (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/36080/namor_the_first_mutant_2010_4",
+      "seriesId": 12761,
+      "seriesName": "Namor: The First Mutant (2010 - 2011)",
+      "onSale": "2010-11-24T00:00:00+0000",
+      "mu": "2011-10-28T00:00:00+0000",
+      "digitalId": 17918,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/58ebf2009307c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Antonio Fuso",
+          "role": "penciler"
+        },
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Stuart Moore",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29060,
+      "title": "Deadpool (2008) #30",
+      "number": "30",
+      "url": "https://www.marvel.com/comics/issue/29060/deadpool_2008_30",
+      "seriesId": 5701,
+      "seriesName": "Deadpool (2008 - 2012)",
+      "onSale": "2010-12-22T00:00:00+0000",
+      "mu": "2012-12-14T00:00:00+0000",
+      "digitalId": 18554,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/20/51a4fd464a8a4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlo Barberi",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Way",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 32199,
+      "title": "X-Men (2010) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/32199/x-men_2010_6",
+      "seriesId": 9906,
+      "seriesName": "X-Men (2010 - 2013)",
+      "onSale": "2010-12-22T00:00:00+0000",
+      "mu": "2012-10-09T00:00:00+0000",
+      "digitalId": 18606,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/58d12c98a679a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Francisco Velasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adi Granov",
+          "role": "penciler"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Victor Gischler",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 35720,
+      "title": "Deadpool (2008) #31",
+      "number": "31",
+      "url": "https://www.marvel.com/comics/issue/35720/deadpool_2008_31",
+      "seriesId": 5701,
+      "seriesName": "Deadpool (2008 - 2012)",
+      "onSale": "2011-01-12T00:00:00+0000",
+      "mu": "2012-12-17T00:00:00+0000",
+      "digitalId": 18859,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/c0/51a4fe22cfe2a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Bong Dazo",
+          "role": "penciler"
+        },
+        {
+          "name": "Dave Johnson",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Way",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}
