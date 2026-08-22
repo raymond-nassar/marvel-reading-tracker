@@ -1,0 +1,430 @@
+{
+  "id": "x-men-age-of-x",
+  "name": "X-Men: Age of X",
+  "description": "Eleven chapters combining Alpha, X-Men Legacy, New Mutants, Universe, and the two aftermath issues.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "Age of X",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T00:30:07.251Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 11,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 37996,
+      "title": "Age of X: Alpha (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/37996/age_of_x_alpha_2010_1",
+      "seriesId": 13603,
+      "seriesName": "Age of X: Alpha (2010)",
+      "onSale": "2011-01-26T00:00:00+0000",
+      "mu": "2011-12-05T00:00:00+0000",
+      "digitalId": 18981,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/10/59762093434e7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Gabriel Hernandez Walta",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Diaz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paul Davidson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Walden Wong",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlo Barberi",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "Mirco Pierfederici",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36431,
+      "title": "X-Men Legacy (2008) #245",
+      "number": "245",
+      "url": "https://www.marvel.com/comics/issue/36431/x-men_legacy_2008_245",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2011-02-23T00:00:00+0000",
+      "mu": "2012-12-12T00:00:00+0000",
+      "digitalId": 19717,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/e0/51a4e406deab7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clay Mann",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36495,
+      "title": "New Mutants (2009) #22",
+      "number": "22",
+      "url": "https://www.marvel.com/comics/issue/36495/new_mutants_2009_22",
+      "seriesId": 7455,
+      "seriesName": "New Mutants (2009 - 2012)",
+      "onSale": "2011-02-23T00:00:00+0000",
+      "mu": "2011-02-23T00:00:00+0000",
+      "digitalId": 19731,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/5155cdd048cb4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki with Studio",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mico Suayan",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Kurth",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36437,
+      "title": "X-Men Legacy (2008) #246",
+      "number": "246",
+      "url": "https://www.marvel.com/comics/issue/36437/x-men_legacy_2008_246",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2011-03-09T00:00:00+0000",
+      "mu": "2011-03-09T00:00:00+0000",
+      "digitalId": 19930,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/58b88352af764",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clay Mann",
+          "role": "penciler"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36502,
+      "title": "New Mutants (2009) #23",
+      "number": "23",
+      "url": "https://www.marvel.com/comics/issue/36502/new_mutants_2009_23",
+      "seriesId": 7455,
+      "seriesName": "New Mutants (2009 - 2012)",
+      "onSale": "2011-03-23T00:00:00+0000",
+      "mu": "2011-03-23T00:00:00+0000",
+      "digitalId": 20173,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/5155cdda836be",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Danny Miki with Studio",
+          "role": "cover artist"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Kurth",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36426,
+      "title": "X-Men Legacy (2008) #247",
+      "number": "247",
+      "url": "https://www.marvel.com/comics/issue/36426/x-men_legacy_2008_247",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2011-04-13T00:00:00+0000",
+      "mu": "2012-12-18T00:00:00+0000",
+      "digitalId": 20474,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/40/58b88cde61f5f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clay Mann",
+          "role": "penciler"
+        },
+        {
+          "name": "Mico Suayan",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36497,
+      "title": "New Mutants (2009) #24",
+      "number": "24",
+      "url": "https://www.marvel.com/comics/issue/36497/new_mutants_2009_24",
+      "seriesId": 7455,
+      "seriesName": "New Mutants (2009 - 2012)",
+      "onSale": "2011-04-27T00:00:00+0000",
+      "mu": "2012-02-08T00:00:00+0000",
+      "digitalId": 20709,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/5155cdee4ae99",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Allen Martinez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mico Suayan",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Kurth",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38524,
+      "title": "Age of X: Universe (2011) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/38524/age_of_x_universe_2011_1",
+      "seriesId": 13896,
+      "seriesName": "Age of X: Universe (2011)",
+      "onSale": "2011-03-30T00:00:00+0000",
+      "mu": "2012-02-01T00:00:00+0000",
+      "digitalId": 20260,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/d0/5976552f09303",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Simone Bianchi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Mccann",
+          "role": "writer"
+        },
+        {
+          "name": "Simon Spurrier",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 38523,
+      "title": "Age of X: Universe (2011) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/38523/age_of_x_universe_2011_2",
+      "seriesId": 13896,
+      "seriesName": "Age of X: Universe (2011)",
+      "onSale": "2011-04-27T00:00:00+0000",
+      "mu": "2011-04-27T00:00:00+0000",
+      "digitalId": 20772,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/60/59773cf861be7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Tom Palmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gabriel Hernandez Walta",
+          "role": "penciler"
+        },
+        {
+          "name": "Khoi Pham",
+          "role": "penciler"
+        },
+        {
+          "name": "Simone Bianchi",
+          "role": "penciler"
+        },
+        {
+          "name": "Chuck Kim",
+          "role": "writer"
+        },
+        {
+          "name": "Si Spurrier",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36433,
+      "title": "X-Men Legacy (2008) #248",
+      "number": "248",
+      "url": "https://www.marvel.com/comics/issue/36433/x-men_legacy_2008_248",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2011-05-11T00:00:00+0000",
+      "mu": "2012-12-19T00:00:00+0000",
+      "digitalId": 20945,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/58bec951c8be5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Craig Yeung",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pat Davidson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "Mico Suayan",
+          "role": "penciler"
+        },
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 36434,
+      "title": "X-Men Legacy (2008) #249",
+      "number": "249",
+      "url": "https://www.marvel.com/comics/issue/36434/x-men_legacy_2008_249",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2011-05-25T00:00:00+0000",
+      "mu": "2012-12-20T00:00:00+0000",
+      "digitalId": 21246,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/58bed32b73c65",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rafa Sandoval",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

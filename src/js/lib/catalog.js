@@ -146,6 +146,7 @@ function normalizeEntry(raw) {
     characters: strings(raw.characters),
     keywords: strings(raw.keywords),
     source: str(raw.source),
+    sourceSection: str(raw.sourceSection),
     sourceOrigin: str(raw.sourceOrigin),
     sourceLicense: str(raw.sourceLicense),
     updatedAt: str(raw.updatedAt),

@@ -237,8 +237,19 @@
       "evidence": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md"
     }
   ],
-  "blockers": [],
-  "next_action": "Push the authorized merge resolution and wait for required checks and GitHub approval state",
+  "blockers": [
+    {
+      "id": "agent-merge-state-injection",
+      "status": "external-app-blocker",
+      "pull_request": 163,
+      "head_commit": "d8b6ed773627be6a7d1621a178858c89f37104fe",
+      "observed": "Three Agent Merge activations across two independently attached PR sessions returned the skill guide without an agent_merge_state block or Authorized actions this run line.",
+      "github_state": "PR open, clean, mergeable, not draft, no review decision required, and all three CI jobs successful.",
+      "prohibited_workaround": "Do not merge manually, enable auto-merge, enqueue, or take an action not authorized by an injected Agent Merge state.",
+      "resolution_action": "Restart or repair the app-managed Agent Merge monitor for PR 163 so a PR-attached session receives an evaluated agent_merge_state and Authorized actions this run line; then let the app land the already-ready pull request."
+    }
+  ],
+  "next_action": "Repair or restart the app-managed Agent Merge state injection for pull request 163, then let the app merge the ready pull request",
   "prioritized_follow_ups": [],
   "batch_two_proposal": {
     "date": "2026-08-21",
@@ -526,9 +537,460 @@
       "delivery": {
         "status": "validated-delivery-in-progress",
         "review_agent_passes": "waived by parent instruction",
-        "agent_merge": "required after pull request creation"
+        "agent_merge": {
+          "status": "blocked-external",
+          "pull_request": 163,
+          "attempts": 3,
+          "attached_pr_sessions": 2,
+          "missing_input": "agent_merge_state and Authorized actions this run",
+          "manual_merge_forbidden": true,
+          "resolution_action": "Restart or repair the app-managed Agent Merge monitor and issue a fully evaluated tick for PR 163."
+        }
       }
     },
     "next_action": "Commit and push the validated batch, open one pull request, then hand it to Agent Merge."
+  },
+  "batch_three_proposal": {
+    "date": "2026-08-21",
+    "status": "approved-and-implemented-validation-in-progress",
+    "baseline": {
+      "pull_request": 161,
+      "merge_commit": "04b68d9d87aab30c5cc3c557e51825a4a2b07871",
+      "default_branch_commit": "e5d41287182febc1396f167dc4286b42cb6f9795"
+    },
+    "approval_gate": {
+      "required": false,
+      "authority": "Parent session approved the exact ten targets and the sourceSection contract on 2026-08-21",
+      "prohibited_until_approval": [
+        "mapping creation or refresh",
+        "inventory disposition changes",
+        "overlap report generation",
+        "order Markdown authoring",
+        "manifest, catalog, or generated data edits",
+        "product or tooling code changes",
+        "test changes",
+        "commits, pushes, or pull requests"
+      ]
+    },
+    "selection_basis": "Re-audit master positions from the beginning, preserve master position before publication-year sorting, preserve heading order inside shared sources, and select the first ten genuine missing event or aftermath sections after shipped, reused, excluded, path-only, and already blocked work is recorded.",
+    "selection_status": "Approved ten-order packet authored and vendored",
+    "proposed_orders": [
+      {
+        "slot": 1,
+        "position": 16,
+        "inventory_id": "x-men-events-fast-track",
+        "inventory_title": "X-Men Events Fast Track",
+        "proposed_id": "x-men-divided-we-stand",
+        "proposed_title": "X-Men: Divided We Stand",
+        "period": "Feb 2008 - Aug 2008",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+        "current_disposition": "grouped-variant",
+        "current_delivery_status": "shipped",
+        "existing_coverage": "No catalog id, shipped source URL, or numbered source-reference match found; the source URL is shared with proposal slots 2-8.",
+        "estimated_source_rows": "about 48 literal collection references after applying the source's Cable restriction",
+        "complexity": "high",
+        "why_next": "First unshipped aftermath heading after the shipped Messiah Complex order.",
+        "decision_or_blocker": "Approve the literal collection sequence; the shared URL fails the current peer-source uniqueness gate."
+      },
+      {
+        "slot": 2,
+        "position": 16,
+        "inventory_id": "x-men-events-fast-track",
+        "inventory_title": "X-Men Events Fast Track",
+        "proposed_id": "x-men-manifest-destiny",
+        "proposed_title": "X-Men: Manifest Destiny",
+        "period": "July 2008 - Nov 2008",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+        "current_disposition": "grouped-variant",
+        "current_delivery_status": "shipped",
+        "existing_coverage": "No catalog id, shipped source URL, or numbered source-reference match found; the source URL is shared with proposal slots 1 and 3-8.",
+        "estimated_source_rows": "14 numbered rows plus 2 unnumbered anthology-material groups",
+        "complexity": "high",
+        "why_next": "Next unshipped heading in the position 16 source.",
+        "decision_or_blocker": "The unnumbered material cannot be expanded without proof; the shared URL also fails the current gate."
+      },
+      {
+        "slot": 3,
+        "position": 16,
+        "inventory_id": "x-men-events-fast-track",
+        "inventory_title": "X-Men Events Fast Track",
+        "proposed_id": "x-men-nation-x",
+        "proposed_title": "X-Men: Nation X",
+        "period": "Sept 2009 - March 2010",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+        "current_disposition": "grouped-variant",
+        "current_delivery_status": "shipped",
+        "existing_coverage": "The explicit 20-row list has no shipped source-reference match; the source URL is shared with proposal slots 1-2 and 4-8.",
+        "estimated_source_rows": "20 explicit rows",
+        "complexity": "medium",
+        "why_next": "Next unshipped heading after shipped Messiah War and skipped Utopia.",
+        "decision_or_blocker": "Approve the explicit list rather than the narrower collection summary; the shared URL fails the current gate."
+      },
+      {
+        "slot": 4,
+        "position": 16,
+        "inventory_id": "x-men-events-fast-track",
+        "inventory_title": "X-Men Events Fast Track",
+        "proposed_id": "x-men-curse-of-the-mutants",
+        "proposed_title": "X-Men: Curse of the Mutants",
+        "period": "June 2010 - Jan 2011",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+        "current_disposition": "grouped-variant",
+        "current_delivery_status": "shipped",
+        "existing_coverage": "The explicit 18-row list has no shipped source-reference match; the source URL is shared with proposal slots 1-3 and 5-8.",
+        "estimated_source_rows": "18 explicit rows",
+        "complexity": "medium",
+        "why_next": "Next unshipped heading after shipped Necrosha and Second Coming.",
+        "decision_or_blocker": "Approve the explicit list over the inconsistent collection summary; the shared URL fails the current gate."
+      },
+      {
+        "slot": 5,
+        "position": 16,
+        "inventory_id": "x-men-events-fast-track",
+        "inventory_title": "X-Men Events Fast Track",
+        "proposed_id": "wolverine-goes-to-hell",
+        "proposed_title": "Wolverine Goes to Hell",
+        "period": "Sept 2010 - April 2011",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+        "current_disposition": "grouped-variant",
+        "current_delivery_status": "shipped",
+        "existing_coverage": "The explicit 15-row cross-title list has no shipped source-reference match; the source URL is shared with proposal slots 1-4 and 6-8.",
+        "estimated_source_rows": "15 explicit rows",
+        "complexity": "medium",
+        "why_next": "Next source heading, explicitly called an event and narrowed below the broad omnibus.",
+        "decision_or_blocker": "Approve the 15 selected rows instead of the omnibus contents; the shared URL fails the current gate."
+      },
+      {
+        "slot": 6,
+        "position": 16,
+        "inventory_id": "x-men-events-fast-track",
+        "inventory_title": "X-Men Events Fast Track",
+        "proposed_id": "x-men-age-of-x",
+        "proposed_title": "X-Men: Age of X",
+        "period": "Jan 2011 - May 2011",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+        "current_disposition": "grouped-variant",
+        "current_delivery_status": "shipped",
+        "existing_coverage": "The explicit 11-row list has no shipped source-reference match; the source URL is shared with proposal slots 1-5 and 7-8.",
+        "estimated_source_rows": "11 explicit rows",
+        "complexity": "medium",
+        "why_next": "Next unshipped event heading in the source.",
+        "decision_or_blocker": "Approve the explicit list, including two X-Men: Legacy aftermath rows beyond the collection summary; the shared URL fails the current gate."
+      },
+      {
+        "slot": 7,
+        "position": 16,
+        "inventory_id": "x-men-events-fast-track",
+        "inventory_title": "X-Men Events Fast Track",
+        "proposed_id": "x-men-schism",
+        "proposed_title": "X-Men: Schism",
+        "period": "July 2011 - Oct 2011",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+        "current_disposition": "grouped-variant",
+        "current_delivery_status": "shipped",
+        "existing_coverage": "The explicit 7-row list has no shipped source-reference match; the source URL is shared with proposal slots 1-6 and 8.",
+        "estimated_source_rows": "7 explicit rows",
+        "complexity": "low",
+        "why_next": "Next unshipped event heading in the source.",
+        "decision_or_blocker": "Approve the seven ordered rows over the broader Prelude and Generation Hope collections; the shared URL fails the current gate."
+      },
+      {
+        "slot": 8,
+        "position": 16,
+        "inventory_id": "x-men-events-fast-track",
+        "inventory_title": "X-Men Events Fast Track",
+        "proposed_id": "x-men-regenesis",
+        "proposed_title": "X-Men: Regenesis",
+        "period": "Oct 2011 - Feb 2012",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+        "current_disposition": "grouped-variant",
+        "current_delivery_status": "shipped",
+        "existing_coverage": "The listed rows have no shipped source-reference match; the source URL is shared with proposal slots 1-7.",
+        "estimated_source_rows": "44 listed rows and 43 textual uniques",
+        "complexity": "high",
+        "why_next": "Final unshipped aftermath heading before the fast track exits to Avengers vs. X-Men.",
+        "decision_or_blocker": "Uncanny X-Men #3 is listed twice and cannot be silently deduplicated; the shared URL also fails the current gate."
+      },
+      {
+        "slot": 9,
+        "position": 23,
+        "inventory_id": "siege-to-heroic-age",
+        "inventory_title": "Comics Getting You From Siege to the Heroic Age",
+        "proposed_id": "doomwar",
+        "proposed_title": "Doomwar",
+        "period": "2010",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-siege-to-the-heroic-age/",
+        "current_disposition": "path-source",
+        "current_delivery_status": "not-applicable",
+        "existing_coverage": "No catalog id, shipped source URL, or Doomwar #1-6 source-reference match found.",
+        "estimated_source_rows": "6",
+        "complexity": "low",
+        "why_next": "First later unblocked discrete crossover after positions 17-22 are skipped or blocked.",
+        "decision_or_blocker": "Approve extracting the six-issue miniseries from the bridge source."
+      },
+      {
+        "slot": 10,
+        "position": 29,
+        "inventory_id": "fear-itself-to-avx",
+        "inventory_title": "Comics Getting You From Fear Itself to Avengers vs. X-Men",
+        "proposed_id": "spider-island",
+        "proposed_title": "Spider-Island",
+        "period": "July 2011 - Nov 2011",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-fear-itself-to-avengers-vs-x-men/",
+        "current_disposition": "path-source",
+        "current_delivery_status": "not-applicable",
+        "existing_coverage": "No catalog id, shipped source URL, or match for the 14 collected source references found.",
+        "estimated_source_rows": "14",
+        "complexity": "medium",
+        "why_next": "First later unblocked discrete event after Heroic Age, Shadowland, Chaos War, and blocked Fear Itself.",
+        "decision_or_blocker": "Approve the 14-row collection boundary from the issue-bearing bridge source."
+      }
+    ],
+    "duplicate_review": {
+      "catalog_id_matches": 0,
+      "approved_mapping_id_matches": 0,
+      "shipped_source_url_matches": 0,
+      "numbered_or_explicit_source_reference_matches": 0,
+      "exact_issue_id_overlap_status": "550 comparisons complete with 550 none relationships and 0 shared ids",
+      "semantic_conclusion": "The ten are distinct missing event or aftermath scopes, not renamed shipped orders."
+    },
+    "shared_source_blocker": {
+      "status": "resolved",
+      "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+      "candidate_ids": [
+        "x-men-divided-we-stand",
+        "x-men-manifest-destiny",
+        "x-men-nation-x",
+        "x-men-curse-of-the-mutants",
+        "wolverine-goes-to-hell",
+        "x-men-age-of-x",
+        "x-men-schism",
+        "x-men-regenesis"
+      ],
+      "evidence": "The source uses plain h2 headings with no HTML ids, so all eight exact sections share one URL. Invented fragments would be false links.",
+      "resolution": "Keep the exact shared URL, store a non-empty sourceSection derived from each visible heading, and use the page plus section as the uniqueness key. Sources without a section remain unique by URL.",
+      "verified_section_count": 8
+    },
+    "implementation": {
+      "status": "validated-delivery-in-progress",
+      "source_refreshed_at": "2026-08-21",
+      "catalog_order_ids": [
+        "x-men-divided-we-stand",
+        "x-men-manifest-destiny",
+        "x-men-nation-x",
+        "doomwar",
+        "x-men-curse-of-the-mutants",
+        "wolverine-goes-to-hell",
+        "x-men-age-of-x",
+        "x-men-schism",
+        "spider-island",
+        "x-men-regenesis"
+      ],
+      "counts": {
+        "guides": 10,
+        "mapping_rows": 200,
+        "distinct_issue_ids": 200,
+        "documented_excluded_source_references": 3,
+        "overlap_reports": 10,
+        "comparison_rows": 550,
+        "non_none_relationships": 0,
+        "catalog_entries_after": 56,
+        "shared_page_sections": 8
+      },
+      "ambiguity_resolutions": {
+        "x-men-manifest-destiny": "The two unnumbered anthology-material groups resolve to the same X-Men: Manifest Destiny #1-5 issues, which are represented once.",
+        "x-men-regenesis": "The consecutive second Uncanny X-Men #3 is recorded as a duplicate and represented once, consistent with the same source page's #1-4 collection summary.",
+        "spider-island": "Spider-Island Spotlight is recorded as a non-story companion magazine absent from the live metadata contract; the thirteen named story issues are exact."
+      },
+      "first_on_sale_dates": [
+        "2008-02-06",
+        "2008-04-16",
+        "2009-09-02",
+        "2010-02-17",
+        "2010-07-07",
+        "2010-09-01",
+        "2011-01-26",
+        "2011-07-13",
+        "2011-07-27",
+        "2011-10-12"
+      ],
+      "validation": {
+        "focused_tests": "134/134",
+        "full_tests": "1310/1310",
+        "lint_errors": 0,
+        "ranked_backlog_rows": 159,
+        "parked_backlog_rows": 5,
+        "backlog_detail_blocks": 164,
+        "stated_file_sizes": 7,
+        "palette_pairs": 88,
+        "palette_new_failures": 0,
+        "publication_findings": 0,
+        "anchors": 1047,
+        "repository_contract": "33/33",
+        "repository_contract_requests": 17,
+        "added_issue_contract": "200/200",
+        "browser_assertions": 120,
+        "browser_scenarios": 14,
+        "failure_proofs": 3,
+        "approved_mapping_hash_changes": 0,
+        "author_hash_changes": 0,
+        "overlap_hash_changes": 0
+      },
+      "self_review": {
+        "status": "resolved",
+        "material_findings": 2,
+        "open_material_findings": 0,
+        "result": "Corrected lifecycle updates that initially named adjacent bridge records and made an ordinary whole-page source conflict with any sectioned record on that page."
+      },
+      "review_agent_passes": "waived by parent instruction",
+      "agent_merge": "required after pull request creation"
+    },
+    "earlier_skips": [
+      {
+        "position": 1,
+        "id": "early-2000s-until-disassembled",
+        "reason": "Maximum Security is shipped; the remaining source material is framed as pre-event-era runs, arcs, or alternate material."
+      },
+      {
+        "position": 2,
+        "id": "avengers-disassembled",
+        "reason": "Reuse existing; the wider source is an overlapping variant."
+      },
+      {
+        "position": 3,
+        "id": "secret-war",
+        "reason": "The exact five-issue order is shipped."
+      },
+      {
+        "position": 4,
+        "id": "disassembled-to-house-of-m",
+        "reason": "Secret War is the only source-framed mini-event and is shipped; the remainder is a continuity path."
+      },
+      {
+        "position": 5,
+        "id": "house-of-m",
+        "reason": "Reuse existing; full and essential variants already cover the event."
+      },
+      {
+        "position": 6,
+        "id": "decimation",
+        "reason": "Blocked by five absent Generation M issues and one House of M overlap."
+      },
+      {
+        "position": 7,
+        "id": "house-of-m-to-civil-war",
+        "reason": "Planet Hulk is shipped; Spider-Man: The Other and Annihilation are covered elsewhere, and the remainder is runs and arcs."
+      },
+      {
+        "position": 8,
+        "id": "iron-man-extremis-commerce",
+        "reason": "Excluded commerce link and a single story arc."
+      },
+      {
+        "position": 9,
+        "id": "spider-man-the-other",
+        "reason": "The exact 12-row crossover is shipped."
+      },
+      {
+        "position": 10,
+        "id": "marvel-cosmic",
+        "reason": "Conquest, War of Kings, and The Thanos Imperative are shipped; Realm of Kings is blocked, and Annihilation already exists."
+      },
+      {
+        "position": 11,
+        "id": "civil-war",
+        "reason": "Reuse existing; three shipped variants cover the event."
+      },
+      {
+        "position": 12,
+        "id": "civil-war-to-secret-invasion",
+        "reason": "Silent War and Messiah Complex are shipped; the other discrete event references are shipped or blocked."
+      },
+      {
+        "position": 13,
+        "id": "silent-war-commerce",
+        "reason": "Excluded commerce link; the issue-bearing event order is shipped from position 12."
+      },
+      {
+        "position": 14,
+        "id": "world-war-hulk",
+        "reason": "Blocked by three exact overlaps with two shipped orders."
+      },
+      {
+        "position": 15,
+        "id": "world-war-hulk-aftersmash",
+        "reason": "The exact aftermath order is shipped."
+      },
+      {
+        "position": 17,
+        "id": "secret-invasion",
+        "reason": "Reuse existing; full and essential variants are shipped."
+      },
+      {
+        "position": 18,
+        "id": "secret-invasion-to-dark-reign",
+        "reason": "War of Kings is shipped; remaining rows are connective runs or arcs without another closed event boundary."
+      },
+      {
+        "position": 19,
+        "id": "dark-reign",
+        "reason": "Broad era overlaps the shipped Dark Reign Avengers order; Utopia is also overlapped."
+      },
+      {
+        "position": 20,
+        "id": "fall-of-the-hulks",
+        "reason": "Blocked because Fall of the Hulks: MODOK #1 is absent from repository metadata."
+      },
+      {
+        "position": 21,
+        "id": "dark-reign-to-siege",
+        "reason": "Messiah War and Necrosha are shipped; Utopia is overlapped; Fall of the Hulks and Realm of Kings are blocked."
+      },
+      {
+        "position": 22,
+        "id": "siege",
+        "reason": "Blocked by thirteen shipped Dark Reign Avengers overlaps and unstable source rows."
+      },
+      {
+        "position": 24,
+        "id": "heroic-age",
+        "reason": "Broad era overlaps the shipped Heroic Age Avengers order; nine of ten Children's Crusade rows are already shipped in two variants."
+      },
+      {
+        "position": 25,
+        "id": "shadowland",
+        "reason": "The exact order is shipped."
+      },
+      {
+        "position": 26,
+        "id": "chaos-war",
+        "reason": "The exact order is shipped."
+      },
+      {
+        "position": 27,
+        "id": "heroic-age-to-fear-itself",
+        "reason": "Curse of the Mutants and Age of X are proposed earlier, Chaos War is shipped, and the residuals are runs or arcs."
+      },
+      {
+        "position": 28,
+        "id": "fear-itself",
+        "reason": "Blocked by fifteen exact overlaps with the shipped Heroic Age Avengers order."
+      }
+    ],
+    "embedded_skips": [
+      {
+        "position": 16,
+        "reason": "Messiah War, Necrosha, and Second Coming are shipped; Utopia has known shipped overlap."
+      },
+      {
+        "position": 23,
+        "reason": "Nation X is proposed from its earlier source, Second Coming is shipped, World War Hulks belongs to blocked position 20, and Thor: Siege Aftermath is a single-title arc."
+      },
+      {
+        "position": 29,
+        "reason": "Schism and Regenesis are proposed from their earlier source; Circle of Four and the remaining entries are runs or arcs."
+      }
+    ],
+    "next_action": "Restart or repair Agent Merge state injection for pull request 163; the pull request itself is ready."
   }
 }

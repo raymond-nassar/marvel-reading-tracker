@@ -1,0 +1,717 @@
+{
+  "id": "x-men-curse-of-the-mutants",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "Curse of the Mutants",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 18,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 33875,
+      "title": "Death of Dracula",
+      "issueTitle": "Death of Dracula (2010) #1",
+      "seriesTitle": "Death of Dracula",
+      "apiSeriesName": "Death of Dracula (2010)",
+      "seriesId": 10915,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33875/death_of_dracula_2010_1",
+      "onSaleDate": "2010-07-08T00:00:00+0000"
+    },
+    {
+      "id": 34249,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #1",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/34249/x-men_2010_1",
+      "onSaleDate": "2010-07-07T00:00:00+0000"
+    },
+    {
+      "id": 32192,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #2",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32192/x-men_2010_2",
+      "onSaleDate": "2010-08-11T00:00:00+0000"
+    },
+    {
+      "id": 36078,
+      "title": "Namor: The First Mutant",
+      "issueTitle": "Namor: The First Mutant (2010) #1",
+      "seriesTitle": "Namor: The First Mutant",
+      "apiSeriesName": "Namor: The First Mutant (2010 - 2011)",
+      "seriesId": 12761,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36078/namor_the_first_mutant_2010_1",
+      "onSaleDate": "2010-08-25T00:00:00+0000"
+    },
+    {
+      "id": 36112,
+      "title": "X-Men: Curse of the Mutants - Blade",
+      "issueTitle": "X-Men: Curse of the Mutants - Blade (2010) #1",
+      "seriesTitle": "X-Men: Curse of the Mutants - Blade",
+      "apiSeriesName": "X-Men: Curse of the Mutants - Blade (2010)",
+      "seriesId": 12667,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36112/x-men_curse_of_the_mutants_-_blade_2010_1",
+      "onSaleDate": "2010-08-25T00:00:00+0000"
+    },
+    {
+      "id": 35561,
+      "title": "X-Men: Curse of the Mutants - Storm & Gambit",
+      "issueTitle": "X-Men: Curse of the Mutants - Storm & Gambit (2010) #1",
+      "seriesTitle": "X-Men: Curse of the Mutants - Storm & Gambit",
+      "apiSeriesName": "X-Men: Curse of the Mutants - Storm & Gambit (2010)",
+      "seriesId": 12597,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35561/x-men_curse_of_the_mutants_-_storm_gambit_2010_1",
+      "onSaleDate": "2010-08-25T00:00:00+0000"
+    },
+    {
+      "id": 35910,
+      "title": "X-Men: Curse of the Mutants - Smoke & Blood",
+      "issueTitle": "X-Men: Curse of the Mutants - Smoke & Blood (2010) #1",
+      "seriesTitle": "X-Men: Curse of the Mutants - Smoke & Blood",
+      "apiSeriesName": "X-Men: Curse of the Mutants - Smoke & Blood (2010)",
+      "seriesId": 12759,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35910/x-men_curse_of_the_mutants_-_smoke_blood_2010_1",
+      "onSaleDate": "2010-09-01T00:00:00+0000"
+    },
+    {
+      "id": 32193,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #3",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32193/x-men_2010_3",
+      "onSaleDate": "2010-09-09T00:00:00+0000"
+    },
+    {
+      "id": 36079,
+      "title": "Namor: The First Mutant",
+      "issueTitle": "Namor: The First Mutant (2010) #2",
+      "seriesTitle": "Namor: The First Mutant",
+      "apiSeriesName": "Namor: The First Mutant (2010 - 2011)",
+      "seriesId": 12761,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36079/namor_the_first_mutant_2010_2",
+      "onSaleDate": "2010-09-29T00:00:00+0000"
+    },
+    {
+      "id": 36619,
+      "title": "X-Men: Curse of the Mutants - X-Men Vs. Vampires",
+      "issueTitle": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010) #1",
+      "seriesTitle": "X-Men: Curse of the Mutants - X-Men Vs. Vampires",
+      "apiSeriesName": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010)",
+      "seriesId": 13008,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36619/x-men_curse_of_the_mutants_-_x-men_vs_vampires_2010_1",
+      "onSaleDate": "2010-09-29T00:00:00+0000"
+    },
+    {
+      "id": 32196,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #4",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "4",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32196/x-men_2010_4",
+      "onSaleDate": "2010-10-13T00:00:00+0000"
+    },
+    {
+      "id": 37367,
+      "title": "X-Men: Curse of the Mutants - X-Men Vs. Vampires",
+      "issueTitle": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010) #2",
+      "seriesTitle": "X-Men: Curse of the Mutants - X-Men Vs. Vampires",
+      "apiSeriesName": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010)",
+      "seriesId": 13008,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/37367/x-men_curse_of_the_mutants_-_x-men_vs_vampires_2010_2",
+      "onSaleDate": "2010-10-27T00:00:00+0000"
+    },
+    {
+      "id": 36077,
+      "title": "Namor: The First Mutant",
+      "issueTitle": "Namor: The First Mutant (2010) #3",
+      "seriesTitle": "Namor: The First Mutant",
+      "apiSeriesName": "Namor: The First Mutant (2010 - 2011)",
+      "seriesId": 12761,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36077/namor_the_first_mutant_2010_3",
+      "onSaleDate": "2010-11-03T00:00:00+0000"
+    },
+    {
+      "id": 32197,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #5",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "5",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32197/x-men_2010_5",
+      "onSaleDate": "2010-11-17T00:00:00+0000"
+    },
+    {
+      "id": 36080,
+      "title": "Namor: The First Mutant",
+      "issueTitle": "Namor: The First Mutant (2010) #4",
+      "seriesTitle": "Namor: The First Mutant",
+      "apiSeriesName": "Namor: The First Mutant (2010 - 2011)",
+      "seriesId": 12761,
+      "issueNumber": "4",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36080/namor_the_first_mutant_2010_4",
+      "onSaleDate": "2010-11-24T00:00:00+0000"
+    },
+    {
+      "id": 29060,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2008) #30",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2008 - 2012)",
+      "seriesId": 5701,
+      "issueNumber": "30",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29060/deadpool_2008_30",
+      "onSaleDate": "2010-12-22T00:00:00+0000"
+    },
+    {
+      "id": 32199,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2010) #6",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2010 - 2013)",
+      "seriesId": 9906,
+      "issueNumber": "6",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/32199/x-men_2010_6",
+      "onSaleDate": "2010-12-22T00:00:00+0000"
+    },
+    {
+      "id": 35720,
+      "title": "Deadpool",
+      "issueTitle": "Deadpool (2008) #31",
+      "seriesTitle": "Deadpool",
+      "apiSeriesName": "Deadpool (2008 - 2012)",
+      "seriesId": 5701,
+      "issueNumber": "31",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35720/deadpool_2008_31",
+      "onSaleDate": "2011-01-12T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "The Death of Dracula #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Death of Dracula",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 10915,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33875"
+      ],
+      "selectedIssueId": 33875,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33875/death_of_dracula_2010_1",
+      "resolvedIssueTitle": "Death of Dracula (2010) #1",
+      "note": "Marvel series 10915 (Death of Dracula (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33875
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "X-Men (2010) #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "34249"
+      ],
+      "selectedIssueId": 34249,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/34249/x-men_2010_1",
+      "resolvedIssueTitle": "X-Men (2010) #1",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        34249
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "X-Men #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32192"
+      ],
+      "selectedIssueId": 32192,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32192/x-men_2010_2",
+      "resolvedIssueTitle": "X-Men (2010) #2",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32192
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Namor: The First Mutant #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Namor: The First Mutant",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 12761,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36078"
+      ],
+      "selectedIssueId": 36078,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36078/namor_the_first_mutant_2010_1",
+      "resolvedIssueTitle": "Namor: The First Mutant (2010) #1",
+      "note": "Marvel series 12761 (Namor: The First Mutant (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36078
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "X-Men: Curse of the Mutants - Blade #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Curse of the Mutants - Blade",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 12667,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36112"
+      ],
+      "selectedIssueId": 36112,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36112/x-men_curse_of_the_mutants_-_blade_2010_1",
+      "resolvedIssueTitle": "X-Men: Curse of the Mutants - Blade (2010) #1",
+      "note": "Marvel series 12667 (X-Men: Curse of the Mutants - Blade (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36112
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "X-Men: Curse of the Mutants - Storm & Gambit #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Curse of the Mutants - Storm & Gambit",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 12597,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35561"
+      ],
+      "selectedIssueId": 35561,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35561/x-men_curse_of_the_mutants_-_storm_gambit_2010_1",
+      "resolvedIssueTitle": "X-Men: Curse of the Mutants - Storm & Gambit (2010) #1",
+      "note": "Marvel series 12597 (X-Men: Curse of the Mutants - Storm & Gambit (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35561
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "X-Men: Curse of the Mutants - Smoke & Blood #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Curse of the Mutants - Smoke & Blood",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 12759,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35910"
+      ],
+      "selectedIssueId": 35910,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35910/x-men_curse_of_the_mutants_-_smoke_blood_2010_1",
+      "resolvedIssueTitle": "X-Men: Curse of the Mutants - Smoke & Blood (2010) #1",
+      "note": "Marvel series 12759 (X-Men: Curse of the Mutants - Smoke & Blood (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35910
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "X-Men #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32193"
+      ],
+      "selectedIssueId": 32193,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32193/x-men_2010_3",
+      "resolvedIssueTitle": "X-Men (2010) #3",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32193
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Namor: The First Mutant #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Namor: The First Mutant",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 12761,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36079"
+      ],
+      "selectedIssueId": 36079,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36079/namor_the_first_mutant_2010_2",
+      "resolvedIssueTitle": "Namor: The First Mutant (2010) #2",
+      "note": "Marvel series 12761 (Namor: The First Mutant (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36079
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "X-Men: Curse of the Mutants: X-Men vs. Vampires #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Curse of the Mutants - X-Men Vs. Vampires",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 13008,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36619"
+      ],
+      "selectedIssueId": 36619,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36619/x-men_curse_of_the_mutants_-_x-men_vs_vampires_2010_1",
+      "resolvedIssueTitle": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010) #1",
+      "note": "Marvel series 13008 (X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36619
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "X-Men #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "4",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32196"
+      ],
+      "selectedIssueId": 32196,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32196/x-men_2010_4",
+      "resolvedIssueTitle": "X-Men (2010) #4",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32196
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "X-Men: Curse of the Mutants: X-Men vs. Vampires #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Curse of the Mutants - X-Men Vs. Vampires",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 13008,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "37367"
+      ],
+      "selectedIssueId": 37367,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/37367/x-men_curse_of_the_mutants_-_x-men_vs_vampires_2010_2",
+      "resolvedIssueTitle": "X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010) #2",
+      "note": "Marvel series 13008 (X-Men: Curse of the Mutants - X-Men Vs. Vampires (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        37367
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Namor: The First Mutant #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Namor: The First Mutant",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 12761,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36077"
+      ],
+      "selectedIssueId": 36077,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36077/namor_the_first_mutant_2010_3",
+      "resolvedIssueTitle": "Namor: The First Mutant (2010) #3",
+      "note": "Marvel series 12761 (Namor: The First Mutant (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36077
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "X-Men #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "5",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32197"
+      ],
+      "selectedIssueId": 32197,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32197/x-men_2010_5",
+      "resolvedIssueTitle": "X-Men (2010) #5",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32197
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Namor: The First Mutant #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Namor: The First Mutant",
+      "seriesYear": 2010,
+      "issueNumber": "4",
+      "seriesId": 12761,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36080"
+      ],
+      "selectedIssueId": 36080,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36080/namor_the_first_mutant_2010_4",
+      "resolvedIssueTitle": "Namor: The First Mutant (2010) #4",
+      "note": "Marvel series 12761 (Namor: The First Mutant (2010 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36080
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Deadpool #30",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2008,
+      "issueNumber": "30",
+      "seriesId": 5701,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29060"
+      ],
+      "selectedIssueId": 29060,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29060/deadpool_2008_30",
+      "resolvedIssueTitle": "Deadpool (2008) #30",
+      "note": "Marvel series 5701 (Deadpool (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29060
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "X-Men #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2010,
+      "issueNumber": "6",
+      "seriesId": 9906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "32199"
+      ],
+      "selectedIssueId": 32199,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/32199/x-men_2010_6",
+      "resolvedIssueTitle": "X-Men (2010) #6",
+      "note": "Marvel series 9906 (X-Men (2010 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        32199
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Deadpool #31",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Deadpool",
+      "seriesYear": 2008,
+      "issueNumber": "31",
+      "seriesId": 5701,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35720"
+      ],
+      "selectedIssueId": 35720,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35720/deadpool_2008_31",
+      "resolvedIssueTitle": "Deadpool (2008) #31",
+      "note": "Marvel series 5701 (Deadpool (2008 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35720
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-men-curse-of-the-mutants",
+    "name": "X-Men: Curse of the Mutants",
+    "description": "Eighteen chapters following the vampire conflict through X-Men, Namor, Deadpool, and four one-shots.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-men-curse-of-the-mutants.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+    "sourceSection": "Curse of the Mutants",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_men_curse_of_the_mutants.json",
+    "characters": [
+      "X-Men",
+      "Blade",
+      "Namor",
+      "Dracula",
+      "Deadpool"
+    ],
+    "keywords": [
+      "Curse of the Mutants",
+      "vampires",
+      "Blade",
+      "Namor"
+    ],
+    "expect": 18,
+    "timeline": 2010,
+    "coverIssueId": 34249,
+    "coverSourcePosition": 2,
+    "coverSourceReference": "X-Men (2010) #1"
+  }
+}

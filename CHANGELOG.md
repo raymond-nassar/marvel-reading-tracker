@@ -14,6 +14,21 @@ quote in a bug report.
 
 ## Unreleased
 
+### Added ten more Marvel event and aftermath reading orders
+
+In plain English: the catalog now carries the X-Men from the aftermath of Messiah Complex through
+Manifest Destiny, Nation X, Curse of the Mutants, Age of X, Schism, and Regenesis. Wolverine Goes to
+Hell, Doomwar, and Spider-Island fill three more gaps. Every new card credits Comic Book Herald,
+opens the exact source page, and names the section when several guides share that page. Nothing you
+have saved is changed.
+
+For maintainers: the batch adds 200 distinct story issues across ten exact mappings. Manifest
+Destiny's anthology material resolves to five numbered issues, Regenesis records and removes one
+repeated Uncanny X-Men #3, and Spider-Island records its non-story Spotlight magazine as an excluded
+source reference. All 550 comparisons against 46 existing orders and nine batch peers report no
+shared issue. A source page plus its visible section is now the uniqueness key when a section is
+present; ordinary pages remain unique by URL.
+
 ## 1.3.0
 
 A flagship feature release that turns the tracker into Recap Page, expands the catalog from 26 to

@@ -1,0 +1,502 @@
+{
+  "id": "wolverine-goes-to-hell",
+  "name": "Wolverine Goes to Hell",
+  "description": "Fifteen chapters alternating Wolverine, Daken, and X-23 through the opening Goes to Hell storyline.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "Wolverine Goes to Hell",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T00:30:07.268Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 15,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 30224,
+      "title": "Wolverine (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/30224/wolverine_2010_1",
+      "seriesId": 9962,
+      "seriesName": "Wolverine (2010 - 2012)",
+      "onSale": "2010-09-01T00:00:00+0000",
+      "mu": "2011-09-08T00:00:00+0000",
+      "digitalId": 15933,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/589a1e1fb85d8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jose Wilson Magalhaes",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "June Chung",
+          "role": "penciler"
+        },
+        {
+          "name": "Renato Guedes",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30054,
+      "title": "Daken: Dark Wolverine (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/30054/daken_dark_wolverine_2010_1",
+      "seriesId": 9368,
+      "seriesName": "Daken: Dark Wolverine (2010 - 2012)",
+      "onSale": "2010-09-09T00:00:00+0000",
+      "mu": "2011-09-28T00:00:00+0000",
+      "digitalId": 15997,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5daa05e936d80",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Onofrio Catacchio",
+          "role": "cover artist"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Way",
+          "role": "writer"
+        },
+        {
+          "name": "Marjorie Liu",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30255,
+      "title": "X-23 (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/30255/x-23_2010_1",
+      "seriesId": 9367,
+      "seriesName": "X-23 (2010 - 2012)",
+      "onSale": "2010-09-15T00:00:00+0000",
+      "mu": "2010-09-15T00:00:00+0000",
+      "digitalId": 16076,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/51eeb085744ed",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Will Conrad",
+          "role": "penciler"
+        },
+        {
+          "name": "Danni Shinya Luo",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Marjorie Liu",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30228,
+      "title": "Wolverine (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/30228/wolverine_2010_2",
+      "seriesId": 9962,
+      "seriesName": "Wolverine (2010 - 2012)",
+      "onSale": "2010-10-06T00:00:00+0000",
+      "mu": "2011-10-12T00:00:00+0000",
+      "digitalId": 16548,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/30/589a20105fc37",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Renato Guedes",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30058,
+      "title": "Daken: Dark Wolverine (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/30058/daken_dark_wolverine_2010_2",
+      "seriesId": 9368,
+      "seriesName": "Daken: Dark Wolverine (2010 - 2012)",
+      "onSale": "2010-10-13T00:00:00+0000",
+      "mu": "2011-10-26T00:00:00+0000",
+      "digitalId": 16760,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/40/5daa0aeb0cb83",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Onofrio Catacchio",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Way",
+          "role": "writer"
+        },
+        {
+          "name": "Marjorie Liu",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30259,
+      "title": "X-23 (2010) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/30259/x-23_2010_2",
+      "seriesId": 9367,
+      "seriesName": "X-23 (2010 - 2012)",
+      "onSale": "2010-10-20T00:00:00+0000",
+      "mu": "2010-10-20T00:00:00+0000",
+      "digitalId": 16843,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/51eeb0762d425",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Will Conrad",
+          "role": "cover artist"
+        },
+        {
+          "name": "Danni Shinya Luo",
+          "role": "penciler"
+        },
+        {
+          "name": "Marjorie Liu",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30229,
+      "title": "Wolverine (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/30229/wolverine_2010_3",
+      "seriesId": 9962,
+      "seriesName": "Wolverine (2010 - 2012)",
+      "onSale": "2010-11-03T00:00:00+0000",
+      "mu": "2011-11-01T11:09:53+0000",
+      "digitalId": 17276,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/589a21f61dc53",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Oclair Albert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Renato Guedes",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30059,
+      "title": "Daken: Dark Wolverine (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/30059/daken_dark_wolverine_2010_3",
+      "seriesId": 9368,
+      "seriesName": "Daken: Dark Wolverine (2010 - 2012)",
+      "onSale": "2010-11-17T00:00:00+0000",
+      "mu": "2011-11-09T00:00:00+0000",
+      "digitalId": 17783,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/60/5daa113e1deea",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Onofrio Catacchio",
+          "role": "cover artist"
+        },
+        {
+          "name": "Daniel Way",
+          "role": "writer"
+        },
+        {
+          "name": "Marjorie Liu",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30260,
+      "title": "X-23 (2010) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/30260/x-23_2010_3",
+      "seriesId": 9367,
+      "seriesName": "X-23 (2010 - 2012)",
+      "onSale": "2010-11-17T00:00:00+0000",
+      "mu": "2010-11-17T00:00:00+0000",
+      "digitalId": 17784,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/51eeb0672847b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Will Conrad",
+          "role": "cover artist"
+        },
+        {
+          "name": "Danni Shinya Luo",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Marjorie Liu",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30230,
+      "title": "Wolverine (2010) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/30230/wolverine_2010_4",
+      "seriesId": 9962,
+      "seriesName": "Wolverine (2010 - 2012)",
+      "onSale": "2010-12-15T00:00:00+0000",
+      "mu": "2011-11-01T11:10:38+0000",
+      "digitalId": 18477,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/589a231c1ed3f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Oclair Albert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Renato Guedes",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30231,
+      "title": "Wolverine (2010) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/30231/wolverine_2010_5",
+      "seriesId": 9962,
+      "seriesName": "Wolverine (2010 - 2012)",
+      "onSale": "2011-01-19T00:00:00+0000",
+      "mu": "2011-11-01T11:11:19+0000",
+      "digitalId": 18938,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/40/589a246224431",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "ART & COMICS INT'L",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Renato Guedes",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 39288,
+      "title": "Wolverine (2010) #5.1",
+      "number": "5.1",
+      "url": "https://www.marvel.com/comics/issue/39288/wolverine_2010_5.1",
+      "seriesId": 9962,
+      "seriesName": "Wolverine (2010 - 2012)",
+      "onSale": "2011-02-09T00:00:00+0000",
+      "mu": "2011-02-09T00:00:00+0000",
+      "digitalId": 19274,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/4f4d22a0b67b4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jefte Palo",
+          "role": "penciler"
+        },
+        {
+          "name": "Paolo Rivera",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30232,
+      "title": "Wolverine (2010) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/30232/wolverine_2010_6",
+      "seriesId": 9962,
+      "seriesName": "Wolverine (2010 - 2012)",
+      "onSale": "2011-02-16T00:00:00+0000",
+      "mu": "2012-01-04T00:00:00+0000",
+      "digitalId": 19295,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/589a261c665b5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30233,
+      "title": "Wolverine (2010) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/30233/wolverine_2010_7",
+      "seriesId": 9962,
+      "seriesName": "Wolverine (2010 - 2012)",
+      "onSale": "2011-03-30T00:00:00+0000",
+      "mu": "2012-01-04T00:00:00+0000",
+      "digitalId": 20254,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/589a27793cd12",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jae Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30234,
+      "title": "Wolverine (2010) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/30234/wolverine_2010_8",
+      "seriesId": 9962,
+      "seriesName": "Wolverine (2010 - 2012)",
+      "onSale": "2011-04-20T00:00:00+0000",
+      "mu": "2011-04-20T00:00:00+0000",
+      "digitalId": 20568,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/c0/589a283a9dc06",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jae Lee",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

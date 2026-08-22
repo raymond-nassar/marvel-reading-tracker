@@ -126,6 +126,49 @@ test('batch duplicate guard rejects repeated ids, URLs, issue sequences, and cat
   assert.throws(() => validateBatchNoDuplicates(duplicateCatalogBatch, existing, peer), /Duplicate catalog id/i);
 });
 
+test('batch duplicate guard keys a sectioned source by page and visible section', () => {
+  const sharedPage = 'https://example.com/x-men-events';
+  const records = [
+    {
+      id: 'divided-we-stand',
+      url: sharedPage,
+      sourceSection: 'X-Men: Divided We Stand',
+      selectedIssueIds: ['7000'],
+      catalogIds: ['catalog-divided'],
+    },
+    {
+      id: 'manifest-destiny',
+      url: sharedPage,
+      sourceSection: 'X-Men: Manifest Destiny',
+      selectedIssueIds: ['7001'],
+      catalogIds: ['catalog-manifest'],
+    },
+  ];
+
+  assert.doesNotThrow(() => validateBatchNoDuplicates(records));
+  assert.throws(() => validateBatchNoDuplicates([
+    records[0],
+    {
+      ...records[1],
+      sourceSection: records[0].sourceSection,
+    },
+  ]), /Duplicate source page and section/i);
+  assert.throws(() => validateBatchNoDuplicates([
+    { ...records[0], sourceSection: undefined },
+    { ...records[1], sourceSection: undefined },
+  ]), /Duplicate source URL/i);
+  assert.throws(() => validateBatchNoDuplicates([
+    records[0],
+    { ...records[1], sourceSection: undefined },
+  ]), /Duplicate source URL/i);
+  assert.throws(() => validateBatchNoDuplicates([
+    records[0],
+  ], [{
+    ...records[1],
+    sourceSection: undefined,
+  }]), /Duplicate source URL/i);
+});
+
 test('live inventory validation accepts a guarded lifecycle and rejects invalid transitions', () => {
   const liveRecords = [
     {

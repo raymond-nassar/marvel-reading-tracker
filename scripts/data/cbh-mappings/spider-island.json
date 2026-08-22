@@ -1,0 +1,530 @@
+{
+  "id": "spider-island",
+  "inventoryId": "fear-itself-to-avx",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-fear-itself-to-avengers-vs-x-men/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 14,
+  "excludedSourceReferences": [
+    "Spider-Island Spotlight, a non-story companion magazine whose archived Marvel issue 38457 is absent from the live metadata contract"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 35513,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #666",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "666",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35513/amazing_spider-man_1999_666",
+      "onSaleDate": "2011-07-27T00:00:00+0000"
+    },
+    {
+      "id": 35528,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #667",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "667",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35528/amazing_spider-man_1999_667",
+      "onSaleDate": "2011-08-10T00:00:00+0000"
+    },
+    {
+      "id": 35532,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #668",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "668",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35532/amazing_spider-man_1999_668",
+      "onSaleDate": "2011-08-31T00:00:00+0000"
+    },
+    {
+      "id": 35529,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #669",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "669",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35529/amazing_spider-man_1999_669",
+      "onSaleDate": "2011-09-14T00:00:00+0000"
+    },
+    {
+      "id": 35522,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #670",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "670",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35522/amazing_spider-man_1999_670",
+      "onSaleDate": "2011-09-28T00:00:00+0000"
+    },
+    {
+      "id": 35527,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #671",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "671",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35527/amazing_spider-man_1999_671",
+      "onSaleDate": "2011-10-12T00:00:00+0000"
+    },
+    {
+      "id": 35523,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #672",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "672",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35523/amazing_spider-man_1999_672",
+      "onSaleDate": "2011-10-26T00:00:00+0000"
+    },
+    {
+      "id": 35509,
+      "title": "Amazing Spider-Man",
+      "issueTitle": "Amazing Spider-Man (1999) #673",
+      "seriesTitle": "Amazing Spider-Man",
+      "apiSeriesName": "Amazing Spider-Man (1999 - 2013)",
+      "seriesId": 454,
+      "issueNumber": "673",
+      "seriesYear": 1999,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/35509/amazing_spider-man_1999_673",
+      "onSaleDate": "2011-11-02T00:00:00+0000"
+    },
+    {
+      "id": 38590,
+      "title": "Venom",
+      "issueTitle": "Venom (2011) #6",
+      "seriesTitle": "Venom",
+      "apiSeriesName": "Venom (2011 - 2013)",
+      "seriesId": 13911,
+      "issueNumber": "6",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38590/venom_2011_6",
+      "onSaleDate": "2011-08-17T00:00:00+0000"
+    },
+    {
+      "id": 38592,
+      "title": "Venom",
+      "issueTitle": "Venom (2011) #7",
+      "seriesTitle": "Venom",
+      "apiSeriesName": "Venom (2011 - 2013)",
+      "seriesId": 13911,
+      "issueNumber": "7",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38592/venom_2011_7",
+      "onSaleDate": "2011-09-28T00:00:00+0000"
+    },
+    {
+      "id": 38587,
+      "title": "Venom",
+      "issueTitle": "Venom (2011) #8",
+      "seriesTitle": "Venom",
+      "apiSeriesName": "Venom (2011 - 2013)",
+      "seriesId": 13911,
+      "issueNumber": "8",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38587/venom_2011_8",
+      "onSaleDate": "2011-10-26T00:00:00+0000"
+    },
+    {
+      "id": 38589,
+      "title": "Venom",
+      "issueTitle": "Venom (2011) #9",
+      "seriesTitle": "Venom",
+      "apiSeriesName": "Venom (2011 - 2013)",
+      "seriesId": 13911,
+      "issueNumber": "9",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38589/venom_2011_9",
+      "onSaleDate": "2011-11-16T00:00:00+0000"
+    },
+    {
+      "id": 39895,
+      "title": "Spider-Island: Deadly Foes",
+      "issueTitle": "Spider-Island: Deadly Foes (2011) #1",
+      "seriesTitle": "Spider-Island: Deadly Foes",
+      "apiSeriesName": "Spider-Island: Deadly Foes (2011)",
+      "seriesId": 14778,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/39895/spider-island_deadly_foes_2011_1",
+      "onSaleDate": "2011-08-10T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Amazing Spider-Man #666",
+      "sourceRangeReference": "Amazing Spider-Man #666-673",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "666",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35513"
+      ],
+      "selectedIssueId": 35513,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35513/amazing_spider-man_1999_666",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #666",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35513
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Amazing Spider-Man #667",
+      "sourceRangeReference": "Amazing Spider-Man #666-673",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "667",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35528"
+      ],
+      "selectedIssueId": 35528,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35528/amazing_spider-man_1999_667",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #667",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35528
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Amazing Spider-Man #668",
+      "sourceRangeReference": "Amazing Spider-Man #666-673",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "668",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35532"
+      ],
+      "selectedIssueId": 35532,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35532/amazing_spider-man_1999_668",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #668",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35532
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Amazing Spider-Man #669",
+      "sourceRangeReference": "Amazing Spider-Man #666-673",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "669",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35529"
+      ],
+      "selectedIssueId": 35529,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35529/amazing_spider-man_1999_669",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #669",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35529
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Amazing Spider-Man #670",
+      "sourceRangeReference": "Amazing Spider-Man #666-673",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "670",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35522"
+      ],
+      "selectedIssueId": 35522,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35522/amazing_spider-man_1999_670",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #670",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35522
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Amazing Spider-Man #671",
+      "sourceRangeReference": "Amazing Spider-Man #666-673",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "671",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35527"
+      ],
+      "selectedIssueId": 35527,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35527/amazing_spider-man_1999_671",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #671",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35527
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Amazing Spider-Man #672",
+      "sourceRangeReference": "Amazing Spider-Man #666-673",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "672",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35523"
+      ],
+      "selectedIssueId": 35523,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35523/amazing_spider-man_1999_672",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #672",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35523
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Amazing Spider-Man #673",
+      "sourceRangeReference": "Amazing Spider-Man #666-673",
+      "normalizedSeriesTitle": "Amazing Spider-Man",
+      "seriesYear": 1999,
+      "issueNumber": "673",
+      "seriesId": 454,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "35509"
+      ],
+      "selectedIssueId": 35509,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/35509/amazing_spider-man_1999_673",
+      "resolvedIssueTitle": "Amazing Spider-Man (1999) #673",
+      "note": "Marvel series 454 (Amazing Spider-Man (1999 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        35509
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Venom #6",
+      "sourceRangeReference": "Venom #6-9",
+      "normalizedSeriesTitle": "Venom",
+      "seriesYear": 2011,
+      "issueNumber": "6",
+      "seriesId": 13911,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38590"
+      ],
+      "selectedIssueId": 38590,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38590/venom_2011_6",
+      "resolvedIssueTitle": "Venom (2011) #6",
+      "note": "Marvel series 13911 (Venom (2011 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38590
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Venom #7",
+      "sourceRangeReference": "Venom #6-9",
+      "normalizedSeriesTitle": "Venom",
+      "seriesYear": 2011,
+      "issueNumber": "7",
+      "seriesId": 13911,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38592"
+      ],
+      "selectedIssueId": 38592,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38592/venom_2011_7",
+      "resolvedIssueTitle": "Venom (2011) #7",
+      "note": "Marvel series 13911 (Venom (2011 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38592
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Venom #8",
+      "sourceRangeReference": "Venom #6-9",
+      "normalizedSeriesTitle": "Venom",
+      "seriesYear": 2011,
+      "issueNumber": "8",
+      "seriesId": 13911,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38587"
+      ],
+      "selectedIssueId": 38587,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38587/venom_2011_8",
+      "resolvedIssueTitle": "Venom (2011) #8",
+      "note": "Marvel series 13911 (Venom (2011 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38587
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Venom #9",
+      "sourceRangeReference": "Venom #6-9",
+      "normalizedSeriesTitle": "Venom",
+      "seriesYear": 2011,
+      "issueNumber": "9",
+      "seriesId": 13911,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38589"
+      ],
+      "selectedIssueId": 38589,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38589/venom_2011_9",
+      "resolvedIssueTitle": "Venom (2011) #9",
+      "note": "Marvel series 13911 (Venom (2011 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38589
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Spider-Island: Deadly Foes",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Spider-Island: Deadly Foes",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 14778,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "39895"
+      ],
+      "selectedIssueId": 39895,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/39895/spider-island_deadly_foes_2011_1",
+      "resolvedIssueTitle": "Spider-Island: Deadly Foes (2011) #1",
+      "note": "Marvel series 14778 (Spider-Island: Deadly Foes (2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        39895
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "spider-island",
+    "name": "Spider-Island",
+    "description": "Thirteen story issues combining Amazing Spider-Man, Venom, and the Deadly Foes one-shot.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "spider-island.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-fear-itself-to-avengers-vs-x-men/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "spider_island.json",
+    "characters": [
+      "Spider-Man",
+      "Venom",
+      "Mary Jane Watson"
+    ],
+    "keywords": [
+      "Spider-Island",
+      "Amazing Spider-Man",
+      "Venom",
+      "Deadly Foes"
+    ],
+    "expect": 13,
+    "timeline": 2011,
+    "coverIssueId": 35513,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Amazing Spider-Man #666"
+  }
+}

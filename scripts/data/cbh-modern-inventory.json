@@ -241,13 +241,21 @@
     "guideType": "fast-track",
     "window": "Q2",
     "disposition": "grouped-variant",
-    "reason": "Shipped splits: X-Men: Messiah War, X-Men: Necrosha, and X-Men: Second Coming; the remaining fast-track events stay deferred",
+    "reason": "Shipped eleven event and aftermath sections as separate catalog orders; Utopia and the broad remainder stay deferred",
     "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
     "catalogIds": [
       "messiah-war",
       "necrosha",
-      "second-coming"
+      "second-coming",
+      "x-men-divided-we-stand",
+      "x-men-manifest-destiny",
+      "x-men-nation-x",
+      "x-men-curse-of-the-mutants",
+      "wolverine-goes-to-hell",
+      "x-men-age-of-x",
+      "x-men-schism",
+      "x-men-regenesis"
     ],
     "deliveryStatus": "shipped"
   },
@@ -342,12 +350,14 @@
     "url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-siege-to-the-heroic-age/",
     "guideType": "bridge",
     "window": "Q2",
-    "disposition": "path-source",
-    "reason": "Chronology source for later bridge review",
-    "sourceRetrievedAt": "2026-08-20",
+    "disposition": "grouped-variant",
+    "reason": "Shipped split: Doomwar; the remaining bridge readings stay deferred",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "not-applicable"
+    "catalogIds": [
+      "doomwar"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 24,
@@ -432,12 +442,14 @@
     "url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-fear-itself-to-avengers-vs-x-men/",
     "guideType": "bridge",
     "window": "Q3",
-    "disposition": "path-source",
-    "reason": "Chronology source for later bridge review",
-    "sourceRetrievedAt": "2026-08-20",
+    "disposition": "grouped-variant",
+    "reason": "Shipped split: Spider-Island; the remaining bridge readings stay deferred",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "not-applicable"
+    "catalogIds": [
+      "spider-island"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 30,

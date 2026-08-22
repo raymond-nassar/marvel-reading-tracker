@@ -1,0 +1,697 @@
+{
+  "id": "x-men-nation-x",
+  "name": "X-Men: Nation X",
+  "description": "Twenty chapters interleaving Uncanny X-Men, X-Men Legacy, Deadpool, Nation X, and the X-Factor one-shot.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "X-Men: Nation X",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T00:30:07.266Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 20,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 24949,
+      "title": "Deadpool (2008) #15",
+      "number": "15",
+      "url": "https://www.marvel.com/comics/issue/24949/deadpool_2008_15",
+      "seriesId": 5701,
+      "seriesName": "Deadpool (2008 - 2012)",
+      "onSale": "2009-09-02T00:00:00+0000",
+      "mu": "2010-11-22T00:00:00+0000",
+      "digitalId": 13455,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/50/51a4f6e086ead",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Way",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26968,
+      "title": "Uncanny X-Men (1963) #515",
+      "number": "515",
+      "url": "https://www.marvel.com/comics/issue/26968/uncanny_x-men_1963_515",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2009-09-23T00:00:00+0000",
+      "mu": "2010-12-01T00:00:00+0000",
+      "digitalId": 13478,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/03/592725ce03018",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24950,
+      "title": "Deadpool (2008) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/24950/deadpool_2008_16",
+      "seriesId": 5701,
+      "seriesName": "Deadpool (2008 - 2012)",
+      "onSale": "2009-10-07T00:00:00+0000",
+      "mu": "2010-11-25T00:00:00+0000",
+      "digitalId": 13456,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/10/51a4fb8cf1c6b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Way",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26969,
+      "title": "Uncanny X-Men (1963) #516",
+      "number": "516",
+      "url": "https://www.marvel.com/comics/issue/26969/uncanny_x-men_1963_516",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2009-10-14T00:00:00+0000",
+      "mu": "2011-04-06T00:00:00+0000",
+      "digitalId": 17070,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/70/5927290854df9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27345,
+      "title": "X-Men Legacy (2008) #228",
+      "number": "228",
+      "url": "https://www.marvel.com/comics/issue/27345/x-men_legacy_2008_228",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2009-10-21T00:00:00+0000",
+      "mu": "2010-02-10T00:00:00+0000",
+      "digitalId": 13796,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/58bec5c206a5a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24951,
+      "title": "Deadpool (2008) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/24951/deadpool_2008_17",
+      "seriesId": 5701,
+      "seriesName": "Deadpool (2008 - 2012)",
+      "onSale": "2009-11-11T00:00:00+0000",
+      "mu": "2010-11-30T00:00:00+0000",
+      "digitalId": 17220,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/20/51a4fb7da0882",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Way",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27346,
+      "title": "X-Men Legacy (2008) #229",
+      "number": "229",
+      "url": "https://www.marvel.com/comics/issue/27346/x-men_legacy_2008_229",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2009-11-18T00:00:00+0000",
+      "mu": "2011-01-04T16:30:53+0000",
+      "digitalId": 17705,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/f0/58bec6f754999",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Ibraim Roberson",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26970,
+      "title": "Uncanny X-Men (1963) #517",
+      "number": "517",
+      "url": "https://www.marvel.com/comics/issue/26970/uncanny_x-men_1963_517",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2009-11-25T00:00:00+0000",
+      "mu": "2011-04-13T00:00:00+0000",
+      "digitalId": 17325,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/0/03/59272b1c71314",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26971,
+      "title": "Uncanny X-Men (1963) #518",
+      "number": "518",
+      "url": "https://www.marvel.com/comics/issue/26971/uncanny_x-men_1963_518",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2009-12-03T00:00:00+0000",
+      "mu": "2011-04-20T00:00:00+0000",
+      "digitalId": 18508,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/59272d4a09b86",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29940,
+      "title": "Nation X (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/29940/nation_x_2009_1",
+      "seriesId": 9176,
+      "seriesName": "Nation X (2009 - 2010)",
+      "onSale": "2009-12-09T00:00:00+0000",
+      "mu": "2011-02-18T00:00:00+0000",
+      "digitalId": 18635,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/5e62c2ff2eea7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "David Lopez",
+          "role": "penciler"
+        },
+        {
+          "name": "Dustin Weaver",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephen Thompson",
+          "role": "penciler"
+        },
+        {
+          "name": "James Asmus",
+          "role": "writer"
+        },
+        {
+          "name": "Scott Snyder",
+          "role": "writer"
+        },
+        {
+          "name": "Simon Spurrier",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 24952,
+      "title": "Deadpool (2008) #18",
+      "number": "18",
+      "url": "https://www.marvel.com/comics/issue/24952/deadpool_2008_18",
+      "seriesId": 5701,
+      "seriesName": "Deadpool (2008 - 2012)",
+      "onSale": "2009-12-09T00:00:00+0000",
+      "mu": "2011-04-11T00:00:00+0000",
+      "digitalId": 17609,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/d0/51a4fb7ecbccb",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Juan Vlasco",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Medina",
+          "role": "penciler"
+        },
+        {
+          "name": "Daniel Way",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 27347,
+      "title": "X-Men Legacy (2008) #230",
+      "number": "230",
+      "url": "https://www.marvel.com/comics/issue/27347/x-men_legacy_2008_230",
+      "seriesId": 3754,
+      "seriesName": "X-Men Legacy (2008 - 2012)",
+      "onSale": "2009-12-16T00:00:00+0000",
+      "mu": "2012-12-04T00:00:00+0000",
+      "digitalId": 17706,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/90/58bec7e7efb0a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Ben Oliver",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Dillon",
+          "role": "penciler"
+        },
+        {
+          "name": "DUANE SWIERCZYSNKI",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26972,
+      "title": "Uncanny X-Men (1963) #519",
+      "number": "519",
+      "url": "https://www.marvel.com/comics/issue/26972/uncanny_x-men_1963_519",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2009-12-23T00:00:00+0000",
+      "mu": "2011-04-27T00:00:00+0000",
+      "digitalId": 18507,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/60/59272efd4012f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30007,
+      "title": "Nation X: X-Factor (2010) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/30007/nation_x_x-factor_2010_1",
+      "seriesId": 9183,
+      "seriesName": "Nation X: X-Factor (2010)",
+      "onSale": "2010-01-06T00:00:00+0000",
+      "mu": "2010-10-06T00:00:00+0000",
+      "digitalId": 14794,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/5956a58aa330d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Valentine De Landro",
+          "role": "cover artist"
+        },
+        {
+          "name": "CHRISTIAN MACNEVEN",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter David",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29941,
+      "title": "Nation X (2009) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/29941/nation_x_2009_2",
+      "seriesId": 9176,
+      "seriesName": "Nation X (2009 - 2010)",
+      "onSale": "2010-01-13T00:00:00+0000",
+      "mu": "2011-03-09T00:00:00+0000",
+      "digitalId": 18059,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/5e62c2e7ae461",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "cover artist"
+        },
+        {
+          "name": "Becky Cloonan",
+          "role": "penciler"
+        },
+        {
+          "name": "Tim Fish",
+          "role": "penciler"
+        },
+        {
+          "name": "C.B. Cebulski",
+          "role": "writer"
+        },
+        {
+          "name": "John Barber",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26973,
+      "title": "Uncanny X-Men (1963) #520",
+      "number": "520",
+      "url": "https://www.marvel.com/comics/issue/26973/uncanny_x-men_1963_520",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2010-01-20T00:00:00+0000",
+      "mu": "2011-04-27T00:00:00+0000",
+      "digitalId": 18123,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/00/5927307cc022d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Rachel Dodson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 26974,
+      "title": "Uncanny X-Men (1963) #521",
+      "number": "521",
+      "url": "https://www.marvel.com/comics/issue/26974/uncanny_x-men_1963_521",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2010-02-17T00:00:00+0000",
+      "mu": "2010-12-08T00:00:00+0000",
+      "digitalId": 13903,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/03/513f533916b22",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29942,
+      "title": "Nation X (2009) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/29942/nation_x_2009_3",
+      "seriesId": 9176,
+      "seriesName": "Nation X (2009 - 2010)",
+      "onSale": "2010-02-24T00:00:00+0000",
+      "mu": "2010-12-08T00:00:00+0000",
+      "digitalId": 13934,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/5e62c2ef7ae95",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Dustin Weaver",
+          "role": "cover artist"
+        },
+        {
+          "name": "Corey Lewis",
+          "role": "penciler"
+        },
+        {
+          "name": "Gabriel Hernandez Walta",
+          "role": "penciler"
+        },
+        {
+          "name": "James Harren",
+          "role": "penciler"
+        },
+        {
+          "name": "Chuck Kim",
+          "role": "writer"
+        },
+        {
+          "name": "Grace Randolph",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 29943,
+      "title": "Nation X (2009) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/29943/nation_x_2009_4",
+      "seriesId": 9176,
+      "seriesName": "Nation X (2009 - 2010)",
+      "onSale": "2010-03-17T00:00:00+0000",
+      "mu": "2010-12-14T00:00:00+0000",
+      "digitalId": 14105,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/03/5e62c36782335",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Harvey Talibao",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Allred",
+          "role": "penciler"
+        },
+        {
+          "name": "Niko Henrichon",
+          "role": "penciler"
+        },
+        {
+          "name": "Phil Jimenez",
+          "role": "penciler"
+        },
+        {
+          "name": "Ivan Brandon",
+          "role": "writer"
+        },
+        {
+          "name": "Peter Milligan",
+          "role": "writer"
+        },
+        {
+          "name": "Roberto Aguirre-Sacasa",
+          "role": "writer"
+        },
+        {
+          "name": "Vc Joe Caramagna",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 30619,
+      "title": "Uncanny X-Men (1963) #522",
+      "number": "522",
+      "url": "https://www.marvel.com/comics/issue/30619/uncanny_x-men_1963_522",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2010-03-24T00:00:00+0000",
+      "mu": "2010-12-15T00:00:00+0000",
+      "digitalId": 14149,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/f0/513f532f8cf95",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Edgar Tadeo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Phil Jimenez",
+          "role": "penciler"
+        },
+        {
+          "name": "Whilce Portacio",
+          "role": "penciler"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

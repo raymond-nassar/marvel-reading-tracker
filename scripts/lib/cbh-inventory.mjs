@@ -28,6 +28,53 @@ export const DELIVERY_STATUSES = Object.freeze([
 
 export const BASELINE_COUNT = 86;
 
+export function sourceIdentityForRecord(record) {
+  if (!record || typeof record !== 'object') return null;
+  const rawUrl = record.url ?? record.sourceUrl ?? record.sourcePage;
+  const sourceUrl = rawUrl == null ? null : String(rawUrl).trim() || null;
+  if (!sourceUrl) return null;
+  const rawSection = record.sourceSection;
+  const sourceSection = rawSection == null ? null : String(rawSection).trim() || null;
+  return {
+    key: JSON.stringify(sourceSection ? [sourceUrl, sourceSection] : [sourceUrl]),
+    sourceUrl,
+    sourceSection,
+  };
+}
+
+function rememberSource(identity, seen) {
+  if (!identity) return;
+  seen.urls.add(identity.sourceUrl);
+  if (identity.sourceSection) seen.sections.add(identity.key);
+  else seen.wholePages.add(identity.sourceUrl);
+}
+
+export function validateSourceIdentities(batchRecords = [], existingRecords = []) {
+  const seen = {
+    urls: new Set(),
+    wholePages: new Set(),
+    sections: new Set(),
+  };
+  for (const record of existingRecords) rememberSource(sourceIdentityForRecord(record), seen);
+
+  for (const record of batchRecords) {
+    const identity = sourceIdentityForRecord(record);
+    if (!identity) continue;
+    if (identity.sourceSection) {
+      if (seen.wholePages.has(identity.sourceUrl)) {
+        throw new Error(`Duplicate source URL: ${identity.sourceUrl}`);
+      }
+      if (seen.sections.has(identity.key)) {
+        throw new Error(`Duplicate source page and section: ${identity.sourceUrl} :: ${identity.sourceSection}`);
+      }
+    } else if (seen.urls.has(identity.sourceUrl)) {
+      throw new Error(`Duplicate source URL: ${identity.sourceUrl}`);
+    }
+    rememberSource(identity, seen);
+  }
+  return true;
+}
+
 function assertField(name, value, predicate, message) {
   if (!predicate(value)) {
     throw new Error(`${name}: ${message}`);
@@ -36,7 +83,6 @@ function assertField(name, value, predicate, message) {
 
 export function validateBatchNoDuplicates(batchRecords = [], existingRecords = [], peerRecords = []) {
   const seenIds = new Set();
-  const seenUrls = new Set();
   const seenIssueSequences = new Set();
   const seenCatalogIds = new Set();
 
@@ -45,7 +91,7 @@ export function validateBatchNoDuplicates(batchRecords = [], existingRecords = [
       return null;
     }
     const recordId = record.id != null ? String(record.id) : null;
-    const sourceUrl = record.url != null ? String(record.url) : null;
+    const sourceIdentity = sourceIdentityForRecord(record);
     const selectedIssueIds = Array.isArray(record.selectedIssueIds)
       ? record.selectedIssueIds.map((entry) => String(entry))
       : (Array.isArray(record.issueIds)
@@ -56,7 +102,7 @@ export function validateBatchNoDuplicates(batchRecords = [], existingRecords = [
       : (record.catalogId != null ? [String(record.catalogId)] : []);
     return {
       recordId,
-      sourceUrl,
+      sourceIdentity,
       sequenceKey: selectedIssueIds.length > 0 ? selectedIssueIds.join('|') : null,
       catalogIds,
     };
@@ -66,22 +112,19 @@ export function validateBatchNoDuplicates(batchRecords = [], existingRecords = [
     const keys = keysFor(record);
     if (!keys) continue;
     if (keys.recordId) seenIds.add(keys.recordId);
-    if (keys.sourceUrl) seenUrls.add(keys.sourceUrl);
     if (keys.sequenceKey) seenIssueSequences.add(keys.sequenceKey);
     for (const catalogId of keys.catalogIds) seenCatalogIds.add(catalogId);
   }
 
-  for (const record of [...batchRecords, ...peerRecords]) {
+  const candidateRecords = [...batchRecords, ...peerRecords];
+  validateSourceIdentities(candidateRecords, existingRecords);
+  for (const record of candidateRecords) {
     const keys = keysFor(record);
     if (!keys) continue;
     if (keys.recordId && seenIds.has(keys.recordId)) {
       throw new Error(`Duplicate batch id: ${keys.recordId}`);
     }
     if (keys.recordId) seenIds.add(keys.recordId);
-    if (keys.sourceUrl && seenUrls.has(keys.sourceUrl)) {
-      throw new Error(`Duplicate source URL: ${keys.sourceUrl}`);
-    }
-    if (keys.sourceUrl) seenUrls.add(keys.sourceUrl);
     if (keys.sequenceKey && seenIssueSequences.has(keys.sequenceKey)) {
       throw new Error(`Duplicate selected issue sequence: ${keys.sequenceKey}`);
     }

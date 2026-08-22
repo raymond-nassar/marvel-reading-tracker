@@ -33,6 +33,7 @@ test('parses a well-formed catalog entry', () => {
       depth: 'essential',
       count: 89,
       source: 'https://example.com/order.md',
+      sourceSection: '  X-Men: Divided We Stand  ',
       sourceLicense: 'MIT',
       updatedAt: '2026-08-04T06:14:48.695Z',
     }],
@@ -41,6 +42,7 @@ test('parses a well-formed catalog entry', () => {
   assert.equal(lists.length, 1);
   assert.equal(lists[0].count, 89);
   assert.equal(lists[0].type, 'creator-run');
+  assert.equal(lists[0].sourceSection, 'X-Men: Divided We Stand');
 });
 
 test('entries missing what a reader needs to choose are dropped, and counted', () => {

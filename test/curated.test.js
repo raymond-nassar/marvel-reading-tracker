@@ -34,6 +34,14 @@ test('sourcePage falls back to sourceUrl so attribution is never blank', () => {
   assert.equal(entries[0].sourcePage, valid.sourceUrl);
 });
 
+test('a source section is preserved for distinct guides on one page', () => {
+  const { entries, errors } = parseManifest({
+    lists: [{ ...valid, sourceSection: '  X-Men: Divided We Stand  ' }],
+  });
+  assert.deepEqual(errors, []);
+  assert.equal(entries[0].sourceSection, 'X-Men: Divided We Stand');
+});
+
 test('expect is optional', () => {
   const { entries, errors } = parseManifest({ lists: [{ ...valid, expect: undefined }] });
   assert.deepEqual(errors, []);
@@ -94,6 +102,7 @@ test('an incomplete entry is reported with its reason, not silently skipped', ()
     [{ ...valid, sourceUrl: undefined, sourceFile: '../escape.md' }, /sourceFile that is not a plain/],
     [{ ...valid, sourceUrl: undefined, sourceFile: 'order.json' }, /sourceFile that is not a plain/],
     [{ ...valid, sourceFile: 'order.md' }, /an order comes from one place/],
+    [{ ...valid, sourceSection: '   ' }, /sourceSection must be a non-empty string/],
     [{ ...valid, sourceOrigin: null }, /has no sourceOrigin/],
     [{ ...valid, sourceLicense: 'MIT (emreparker/marvel-comics)' }, /must be an SPDX expression/],
     [{ ...valid, sourceLicense: 'Compiled for this project' }, /must be an SPDX expression/],
@@ -149,6 +158,7 @@ test('the bundled manifest is valid and describes exactly the bundled catalog', 
     assert.equal(list.type, entry.type);
     assert.equal(list.depth, entry.depth);
     assert.equal(list.source, entry.sourcePage);
+    assert.equal(list.sourceSection, entry.sourceSection);
     assert.equal(list.sourceOrigin, entry.sourceOrigin, `${entry.id} origin drifted from the manifest`);
     assert.equal(list.sourceLicense, entry.sourceLicense);
     assert.deepEqual(list.characters, entry.characters);
@@ -171,6 +181,7 @@ test('every pinned order file states the same origin and licence as the manifest
 
   for (const entry of entries) {
     const pinned = JSON.parse(await readFile(new URL(`../src/data/${entry.out}`, import.meta.url), 'utf8'));
+    assert.equal(pinned.sourceSection ?? null, entry.sourceSection, `${entry.id}: pinned section disagrees with the manifest`);
     assert.equal(pinned.sourceOrigin, entry.sourceOrigin, `${entry.id}: pinned origin disagrees with the manifest`);
     assert.equal(pinned.sourceLicense ?? null, entry.sourceLicense, `${entry.id}: pinned licence disagrees with the manifest`);
     // A pinned file is the copy the reader is actually served, so the shape is checked here too

@@ -1,0 +1,308 @@
+{
+  "id": "x-men-schism",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "Schism",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 7,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 38491,
+      "title": "X-Men: Schism",
+      "issueTitle": "X-Men: Schism (2011) #1",
+      "seriesTitle": "X-Men: Schism",
+      "apiSeriesName": "X-Men: Schism (2011)",
+      "seriesId": 13880,
+      "issueNumber": "1",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38491/x-men_schism_2011_1",
+      "onSaleDate": "2011-07-13T00:00:00+0000"
+    },
+    {
+      "id": 38492,
+      "title": "X-Men: Schism",
+      "issueTitle": "X-Men: Schism (2011) #2",
+      "seriesTitle": "X-Men: Schism",
+      "apiSeriesName": "X-Men: Schism (2011)",
+      "seriesId": 13880,
+      "issueNumber": "2",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38492/x-men_schism_2011_2",
+      "onSaleDate": "2011-07-27T00:00:00+0000"
+    },
+    {
+      "id": 38490,
+      "title": "X-Men: Schism",
+      "issueTitle": "X-Men: Schism (2011) #3",
+      "seriesTitle": "X-Men: Schism",
+      "apiSeriesName": "X-Men: Schism (2011)",
+      "seriesId": 13880,
+      "issueNumber": "3",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38490/x-men_schism_2011_3",
+      "onSaleDate": "2011-08-17T00:00:00+0000"
+    },
+    {
+      "id": 36639,
+      "title": "Generation Hope",
+      "issueTitle": "Generation Hope (2010) #10",
+      "seriesTitle": "Generation Hope",
+      "apiSeriesName": "Generation Hope (2010 - 2012)",
+      "seriesId": 9895,
+      "issueNumber": "10",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36639/generation_hope_2010_10",
+      "onSaleDate": "2011-08-17T00:00:00+0000"
+    },
+    {
+      "id": 36638,
+      "title": "Generation Hope",
+      "issueTitle": "Generation Hope (2010) #11",
+      "seriesTitle": "Generation Hope",
+      "apiSeriesName": "Generation Hope (2010 - 2012)",
+      "seriesId": 9895,
+      "issueNumber": "11",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/36638/generation_hope_2010_11",
+      "onSaleDate": "2011-09-21T00:00:00+0000"
+    },
+    {
+      "id": 38489,
+      "title": "X-Men: Schism",
+      "issueTitle": "X-Men: Schism (2011) #4",
+      "seriesTitle": "X-Men: Schism",
+      "apiSeriesName": "X-Men: Schism (2011)",
+      "seriesId": 13880,
+      "issueNumber": "4",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38489/x-men_schism_2011_4",
+      "onSaleDate": "2011-09-21T00:00:00+0000"
+    },
+    {
+      "id": 38971,
+      "title": "X-Men: Schism",
+      "issueTitle": "X-Men: Schism (2011) #5",
+      "seriesTitle": "X-Men: Schism",
+      "apiSeriesName": "X-Men: Schism (2011)",
+      "seriesId": 13880,
+      "issueNumber": "5",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/38971/x-men_schism_2011_5",
+      "onSaleDate": "2011-10-05T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Schism #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Schism",
+      "seriesYear": 2011,
+      "issueNumber": "1",
+      "seriesId": 13880,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38491"
+      ],
+      "selectedIssueId": 38491,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38491/x-men_schism_2011_1",
+      "resolvedIssueTitle": "X-Men: Schism (2011) #1",
+      "note": "Marvel series 13880 (X-Men: Schism (2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38491
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Schism #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Schism",
+      "seriesYear": 2011,
+      "issueNumber": "2",
+      "seriesId": 13880,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38492"
+      ],
+      "selectedIssueId": 38492,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38492/x-men_schism_2011_2",
+      "resolvedIssueTitle": "X-Men: Schism (2011) #2",
+      "note": "Marvel series 13880 (X-Men: Schism (2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38492
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Schism #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Schism",
+      "seriesYear": 2011,
+      "issueNumber": "3",
+      "seriesId": 13880,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38490"
+      ],
+      "selectedIssueId": 38490,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38490/x-men_schism_2011_3",
+      "resolvedIssueTitle": "X-Men: Schism (2011) #3",
+      "note": "Marvel series 13880 (X-Men: Schism (2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38490
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Generation Hope #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Generation Hope",
+      "seriesYear": 2010,
+      "issueNumber": "10",
+      "seriesId": 9895,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36639"
+      ],
+      "selectedIssueId": 36639,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36639/generation_hope_2010_10",
+      "resolvedIssueTitle": "Generation Hope (2010) #10",
+      "note": "Marvel series 9895 (Generation Hope (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36639
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Generation Hope #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Generation Hope",
+      "seriesYear": 2010,
+      "issueNumber": "11",
+      "seriesId": 9895,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "36638"
+      ],
+      "selectedIssueId": 36638,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/36638/generation_hope_2010_11",
+      "resolvedIssueTitle": "Generation Hope (2010) #11",
+      "note": "Marvel series 9895 (Generation Hope (2010 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        36638
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Schism #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Schism",
+      "seriesYear": 2011,
+      "issueNumber": "4",
+      "seriesId": 13880,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38489"
+      ],
+      "selectedIssueId": 38489,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38489/x-men_schism_2011_4",
+      "resolvedIssueTitle": "X-Men: Schism (2011) #4",
+      "note": "Marvel series 13880 (X-Men: Schism (2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38489
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Schism #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Schism",
+      "seriesYear": 2011,
+      "issueNumber": "5",
+      "seriesId": 13880,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "38971"
+      ],
+      "selectedIssueId": 38971,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/38971/x-men_schism_2011_5",
+      "resolvedIssueTitle": "X-Men: Schism (2011) #5",
+      "note": "Marvel series 13880 (X-Men: Schism (2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        38971
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-men-schism",
+    "name": "X-Men: Schism",
+    "description": "Seven chapters interleaving the five-part Schism event with the two Generation Hope tie-ins.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-men-schism.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+    "sourceSection": "Schism",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_men_schism.json",
+    "characters": [
+      "X-Men",
+      "Cyclops",
+      "Wolverine",
+      "Generation Hope"
+    ],
+    "keywords": [
+      "Schism",
+      "X-Men",
+      "Generation Hope"
+    ],
+    "expect": 7,
+    "timeline": 2011,
+    "coverIssueId": 38491,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Schism #1"
+  }
+}

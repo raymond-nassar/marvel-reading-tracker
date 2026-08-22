@@ -1,0 +1,737 @@
+{
+  "id": "x-men-manifest-destiny",
+  "name": "X-Men: Manifest Destiny",
+  "description": "Nineteen issues following the X-Men move to San Francisco through Uncanny X-Men, Wolverine, the anthology, and Eternals.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "X-Men: Manifest Destiny",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T01:03:29.258Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 19,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 33565,
+      "title": "Uncanny X-Men (1963) #500",
+      "number": "500",
+      "url": "https://www.marvel.com/comics/issue/33565/uncanny_x-men_1963_500",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-07-23T00:00:00+0000",
+      "mu": "2010-04-21T00:00:00+0000",
+      "digitalId": 14212,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/70/513f4b8517c45",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": []
+    },
+    {
+      "issueId": 21699,
+      "title": "Uncanny X-Men (1963) #501",
+      "number": "501",
+      "url": "https://www.marvel.com/comics/issue/21699/uncanny_x-men_1963_501",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-08-20T00:00:00+0000",
+      "mu": "2009-07-15T00:00:00+0000",
+      "digitalId": 11742,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/513f4b9398e42",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 21924,
+      "title": "Uncanny X-Men (1963) #502",
+      "number": "502",
+      "url": "https://www.marvel.com/comics/issue/21924/uncanny_x-men_1963_502",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-09-17T00:00:00+0000",
+      "mu": "2009-08-05T00:00:00+0000",
+      "digitalId": 11743,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/c0/513f4ba27e23b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22255,
+      "title": "Uncanny X-Men (1963) #503",
+      "number": "503",
+      "url": "https://www.marvel.com/comics/issue/22255/uncanny_x-men_1963_503",
+      "seriesId": 2258,
+      "seriesName": "Uncanny X-Men (1963 - 2011)",
+      "onSale": "2008-10-15T00:00:00+0000",
+      "mu": "2009-09-02T00:00:00+0000",
+      "digitalId": 11744,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/b0/513f4ba800048",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Brubaker",
+          "role": "writer"
+        },
+        {
+          "name": "Matt Fraction",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 20905,
+      "title": "FREE COMIC BOOK DAY 2008 1 (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/20905/free_comic_book_day_2008_1_2008_1",
+      "seriesId": 43531,
+      "seriesName": "FREE COMIC BOOK DAY 2008 1 (2008 - Present)",
+      "onSale": "2008-04-16T00:00:00+0000",
+      "mu": "2008-04-16T00:00:00+0000",
+      "digitalId": 10771,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/b0/4c365e12034bd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22048,
+      "title": "X-Men: Manifest Destiny (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/22048/x-men_manifest_destiny_2008_1",
+      "seriesId": 5750,
+      "seriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "onSale": "2008-09-03T00:00:00+0000",
+      "mu": "2008-09-03T00:00:00+0000",
+      "digitalId": 11885,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/20/58c1653d64f68",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Chris Burnham",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Yardin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Ryan",
+          "role": "penciler"
+        },
+        {
+          "name": "C.B. Cebulski",
+          "role": "writer"
+        },
+        {
+          "name": "James Asmus",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22379,
+      "title": "X-Men: Manifest Destiny (2008) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/22379/x-men_manifest_destiny_2008_2",
+      "seriesId": 5750,
+      "seriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "onSale": "2008-10-08T00:00:00+0000",
+      "mu": "2008-10-08T00:00:00+0000",
+      "digitalId": 11886,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/58c166123d3ce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Dan Panosian",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Diaz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Ryan",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        },
+        {
+          "name": "Skottie Young",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22569,
+      "title": "X-Men: Manifest Destiny (2008) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/22569/x-men_manifest_destiny_2008_3",
+      "seriesId": 5750,
+      "seriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "onSale": "2008-11-05T00:00:00+0000",
+      "mu": "2008-11-05T00:00:00+0000",
+      "digitalId": 11887,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/03/58c166b165630",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Carlos Cuevas",
+          "role": "cover artist"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Serge Lapointe",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Michael Ryan",
+          "role": "penciler"
+        },
+        {
+          "name": "Yanick Paquette",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Yost",
+          "role": "writer"
+        },
+        {
+          "name": "Marc Guggenheim",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22986,
+      "title": "X-Men: Manifest Destiny (2008) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/22986/x-men_manifest_destiny_2008_4",
+      "seriesId": 5750,
+      "seriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "onSale": "2008-12-03T00:00:00+0000",
+      "mu": "2008-12-03T00:00:00+0000",
+      "digitalId": 11888,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/58c1673e046c8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Takeshi Miyazawa",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Andre Coelho",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Ryan",
+          "role": "penciler"
+        },
+        {
+          "name": "C.B. Cebulski",
+          "role": "writer"
+        },
+        {
+          "name": "James Asmus",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23162,
+      "title": "X-Men: Manifest Destiny (2008) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/23162/x-men_manifest_destiny_2008_5",
+      "seriesId": 5750,
+      "seriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "onSale": "2009-01-07T00:00:00+0000",
+      "mu": "2009-01-07T00:00:00+0000",
+      "digitalId": 13191,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/58c167bd0f697",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ben Oliver",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Ryan",
+          "role": "penciler"
+        },
+        {
+          "name": "Frank Tieri",
+          "role": "writer"
+        },
+        {
+          "name": "Kieron Gillen",
+          "role": "writer"
+        },
+        {
+          "name": "Mike Carey",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22380,
+      "title": "Wolverine: Manifest Destiny (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/22380/wolverine_manifest_destiny_2008_1",
+      "seriesId": 5997,
+      "seriesName": "Wolverine: Manifest Destiny (2008 - 2009)",
+      "onSale": "2008-10-22T00:00:00+0000",
+      "mu": "2009-05-05T00:00:00+0000",
+      "digitalId": 11798,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/90/5dcdaee7dd8d2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Stephen Segovia",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dave Wilkins",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22571,
+      "title": "Wolverine: Manifest Destiny (2008) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/22571/wolverine_manifest_destiny_2008_2",
+      "seriesId": 5997,
+      "seriesName": "Wolverine: Manifest Destiny (2008 - 2009)",
+      "onSale": "2008-12-03T00:00:00+0000",
+      "mu": "2009-12-02T00:00:00+0000",
+      "digitalId": 11799,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/50/5dcdb7b46c7c2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Noah Salonga",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dave Wilkins",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephen Segovia",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22988,
+      "title": "Wolverine: Manifest Destiny (2008) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/22988/wolverine_manifest_destiny_2008_3",
+      "seriesId": 5997,
+      "seriesName": "Wolverine: Manifest Destiny (2008 - 2009)",
+      "onSale": "2008-12-31T00:00:00+0000",
+      "mu": "2010-04-07T00:00:00+0000",
+      "digitalId": 11800,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/30/5dcdc8b6e6aba",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Noah Salonga",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Diaz Luque",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dave Wilkins",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephen Segovia",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23164,
+      "title": "Wolverine: Manifest Destiny (2008) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/23164/wolverine_manifest_destiny_2008_4",
+      "seriesId": 5997,
+      "seriesName": "Wolverine: Manifest Destiny (2008 - 2009)",
+      "onSale": "2009-02-11T00:00:00+0000",
+      "mu": "2011-09-20T14:25:30+0000",
+      "digitalId": 20897,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/80/5dceb6c45426f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Noah Salonga",
+          "role": "cover artist"
+        },
+        {
+          "name": "Paco Diaz Luque",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dave Wilkins",
+          "role": "penciler"
+        },
+        {
+          "name": "Stephen Segovia",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23849,
+      "title": "X-Men: Manifest Destiny - Nightcrawler (2009) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/23849/x-men_manifest_destiny_nightcrawler_2009_1",
+      "seriesId": 7007,
+      "seriesName": "X-Men: Manifest Destiny - Nightcrawler (2009)",
+      "onSale": "2009-03-11T00:00:00+0000",
+      "mu": "2015-12-07T00:00:00+0000",
+      "digitalId": 40761,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/e0/5661d49ba0a4b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Brandon Peterson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Vicente Cifuentes",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ardian Syaf",
+          "role": "penciler"
+        },
+        {
+          "name": "Jorge Molina",
+          "role": "penciler"
+        },
+        {
+          "name": "James Asmus",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23127,
+      "title": "Eternals (2008) #7",
+      "number": "7",
+      "url": "https://www.marvel.com/comics/issue/23127/eternals_2008_7",
+      "seriesId": 5022,
+      "seriesName": "Eternals (2008 - 2009)",
+      "onSale": "2009-01-07T00:00:00+0000",
+      "mu": "2009-01-07T00:00:00+0000",
+      "digitalId": 12913,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/b0/57d86a9994d26",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Eric Nguyen",
+          "role": "cover artist"
+        },
+        {
+          "name": "Charles Knauf",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23619,
+      "title": "Eternals (2008) #8",
+      "number": "8",
+      "url": "https://www.marvel.com/comics/issue/23619/eternals_2008_8",
+      "seriesId": 5022,
+      "seriesName": "Eternals (2008 - 2009)",
+      "onSale": "2009-02-11T00:00:00+0000",
+      "mu": "2009-02-11T00:00:00+0000",
+      "digitalId": 19875,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/30/57d86a4b2b144",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Eric Nguyen",
+          "role": "cover artist"
+        },
+        {
+          "name": "Sara Pichelli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Charles Knauf",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 23774,
+      "title": "Eternals (2008) #9",
+      "number": "9",
+      "url": "https://www.marvel.com/comics/issue/23774/eternals_2008_9",
+      "seriesId": 5022,
+      "seriesName": "Eternals (2008 - 2009)",
+      "onSale": "2009-03-18T00:00:00+0000",
+      "mu": "2009-03-18T00:00:00+0000",
+      "digitalId": 19876,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/f0/57d86a5f7bf23",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Eric Nguyen",
+          "role": "cover artist"
+        },
+        {
+          "name": "Charles Knauf",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 22568,
+      "title": "ETERNALS ANNUAL 1 (2008) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/22568/eternals_annual_1_2008_1",
+      "seriesId": 6194,
+      "seriesName": "ETERNALS ANNUAL 1 (2008 - 2009)",
+      "onSale": "2008-11-12T00:00:00+0000",
+      "mu": "2008-11-12T00:00:00+0000",
+      "digitalId": 11932,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/f0/5d279f2bb0ea1",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 64,
+      "creators": [
+        {
+          "name": "Mark Farmer",
+          "role": "cover artist"
+        },
+        {
+          "name": "Pascal Alixe",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Fred Van Lente",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

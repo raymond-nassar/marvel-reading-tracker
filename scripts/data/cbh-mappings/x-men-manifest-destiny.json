@@ -1,0 +1,756 @@
+{
+  "id": "x-men-manifest-destiny",
+  "inventoryId": "x-men-events-fast-track",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+  "sourceSection": "X-Men: Manifest Destiny",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 19,
+  "excludedSourceReferences": [
+    "The second unnumbered anthology-material group resolves to the same X-Men: Manifest Destiny #1-5 issues already represented by the first group"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 33565,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #500",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "500",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/33565/uncanny_x-men_1963_500",
+      "onSaleDate": "2008-07-23T00:00:00+0000"
+    },
+    {
+      "id": 21699,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #501",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "501",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21699/uncanny_x-men_1963_501",
+      "onSaleDate": "2008-08-20T00:00:00+0000"
+    },
+    {
+      "id": 21924,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #502",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "502",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/21924/uncanny_x-men_1963_502",
+      "onSaleDate": "2008-09-17T00:00:00+0000"
+    },
+    {
+      "id": 22255,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (1963) #503",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (1963 - 2011)",
+      "seriesId": 2258,
+      "issueNumber": "503",
+      "seriesYear": 1963,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22255/uncanny_x-men_1963_503",
+      "onSaleDate": "2008-10-15T00:00:00+0000"
+    },
+    {
+      "id": 20905,
+      "title": "FREE COMIC BOOK DAY 2008 1",
+      "issueTitle": "FREE COMIC BOOK DAY 2008 1 (2008) #1",
+      "seriesTitle": "FREE COMIC BOOK DAY 2008 1",
+      "apiSeriesName": "FREE COMIC BOOK DAY 2008 1 (2008 - Present)",
+      "seriesId": 43531,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/20905/free_comic_book_day_2008_1_2008_1",
+      "onSaleDate": "2008-04-16T00:00:00+0000"
+    },
+    {
+      "id": 22048,
+      "title": "X-Men: Manifest Destiny",
+      "issueTitle": "X-Men: Manifest Destiny (2008) #1",
+      "seriesTitle": "X-Men: Manifest Destiny",
+      "apiSeriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "seriesId": 5750,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22048/x-men_manifest_destiny_2008_1",
+      "onSaleDate": "2008-09-03T00:00:00+0000"
+    },
+    {
+      "id": 22379,
+      "title": "X-Men: Manifest Destiny",
+      "issueTitle": "X-Men: Manifest Destiny (2008) #2",
+      "seriesTitle": "X-Men: Manifest Destiny",
+      "apiSeriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "seriesId": 5750,
+      "issueNumber": "2",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22379/x-men_manifest_destiny_2008_2",
+      "onSaleDate": "2008-10-08T00:00:00+0000"
+    },
+    {
+      "id": 22569,
+      "title": "X-Men: Manifest Destiny",
+      "issueTitle": "X-Men: Manifest Destiny (2008) #3",
+      "seriesTitle": "X-Men: Manifest Destiny",
+      "apiSeriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "seriesId": 5750,
+      "issueNumber": "3",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22569/x-men_manifest_destiny_2008_3",
+      "onSaleDate": "2008-11-05T00:00:00+0000"
+    },
+    {
+      "id": 22986,
+      "title": "X-Men: Manifest Destiny",
+      "issueTitle": "X-Men: Manifest Destiny (2008) #4",
+      "seriesTitle": "X-Men: Manifest Destiny",
+      "apiSeriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "seriesId": 5750,
+      "issueNumber": "4",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22986/x-men_manifest_destiny_2008_4",
+      "onSaleDate": "2008-12-03T00:00:00+0000"
+    },
+    {
+      "id": 23162,
+      "title": "X-Men: Manifest Destiny",
+      "issueTitle": "X-Men: Manifest Destiny (2008) #5",
+      "seriesTitle": "X-Men: Manifest Destiny",
+      "apiSeriesName": "X-Men: Manifest Destiny (2008 - 2009)",
+      "seriesId": 5750,
+      "issueNumber": "5",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23162/x-men_manifest_destiny_2008_5",
+      "onSaleDate": "2009-01-07T00:00:00+0000"
+    },
+    {
+      "id": 22380,
+      "title": "Wolverine: Manifest Destiny",
+      "issueTitle": "Wolverine: Manifest Destiny (2008) #1",
+      "seriesTitle": "Wolverine: Manifest Destiny",
+      "apiSeriesName": "Wolverine: Manifest Destiny (2008 - 2009)",
+      "seriesId": 5997,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22380/wolverine_manifest_destiny_2008_1",
+      "onSaleDate": "2008-10-22T00:00:00+0000"
+    },
+    {
+      "id": 22571,
+      "title": "Wolverine: Manifest Destiny",
+      "issueTitle": "Wolverine: Manifest Destiny (2008) #2",
+      "seriesTitle": "Wolverine: Manifest Destiny",
+      "apiSeriesName": "Wolverine: Manifest Destiny (2008 - 2009)",
+      "seriesId": 5997,
+      "issueNumber": "2",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22571/wolverine_manifest_destiny_2008_2",
+      "onSaleDate": "2008-12-03T00:00:00+0000"
+    },
+    {
+      "id": 22988,
+      "title": "Wolverine: Manifest Destiny",
+      "issueTitle": "Wolverine: Manifest Destiny (2008) #3",
+      "seriesTitle": "Wolverine: Manifest Destiny",
+      "apiSeriesName": "Wolverine: Manifest Destiny (2008 - 2009)",
+      "seriesId": 5997,
+      "issueNumber": "3",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/22988/wolverine_manifest_destiny_2008_3",
+      "onSaleDate": "2008-12-31T00:00:00+0000"
+    },
+    {
+      "id": 23164,
+      "title": "Wolverine: Manifest Destiny",
+      "issueTitle": "Wolverine: Manifest Destiny (2008) #4",
+      "seriesTitle": "Wolverine: Manifest Destiny",
+      "apiSeriesName": "Wolverine: Manifest Destiny (2008 - 2009)",
+      "seriesId": 5997,
+      "issueNumber": "4",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23164/wolverine_manifest_destiny_2008_4",
+      "onSaleDate": "2009-02-11T00:00:00+0000"
+    },
+    {
+      "id": 23849,
+      "title": "X-Men: Manifest Destiny \u2013 Nightcrawler",
+      "issueTitle": "X-Men: Manifest Destiny \u2013 Nightcrawler (2009) #1",
+      "seriesTitle": "X-Men: Manifest Destiny \u2013 Nightcrawler",
+      "apiSeriesName": "X-Men: Manifest Destiny \u2013 Nightcrawler (2009)",
+      "seriesId": 7007,
+      "issueNumber": "1",
+      "seriesYear": 2009,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23849/x-men_manifest_destiny_nightcrawler_2009_1",
+      "onSaleDate": "2009-03-11T00:00:00+0000"
+    },
+    {
+      "id": 23127,
+      "title": "Eternals",
+      "issueTitle": "Eternals (2008) #7",
+      "seriesTitle": "Eternals",
+      "apiSeriesName": "Eternals (2008 - 2009)",
+      "seriesId": 5022,
+      "issueNumber": "7",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23127/eternals_2008_7",
+      "onSaleDate": "2009-01-07T00:00:00+0000"
+    },
+    {
+      "id": 23619,
+      "title": "Eternals",
+      "issueTitle": "Eternals (2008) #8",
+      "seriesTitle": "Eternals",
+      "apiSeriesName": "Eternals (2008 - 2009)",
+      "seriesId": 5022,
+      "issueNumber": "8",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23619/eternals_2008_8",
+      "onSaleDate": "2009-02-11T00:00:00+0000"
+    },
+    {
+      "id": 23774,
+      "title": "Eternals",
+      "issueTitle": "Eternals (2008) #9",
+      "seriesTitle": "Eternals",
+      "apiSeriesName": "Eternals (2008 - 2009)",
+      "seriesId": 5022,
+      "issueNumber": "9",
+      "seriesYear": 2008,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/23774/eternals_2008_9",
+      "onSaleDate": "2009-03-18T00:00:00+0000"
+    },
+    {
+      "id": 22568,
+      "title": "ETERNALS ANNUAL 1",
+      "issueTitle": "ETERNALS ANNUAL 1 (2008) #1",
+      "seriesTitle": "ETERNALS ANNUAL 1",
+      "apiSeriesName": "ETERNALS ANNUAL 1 (2008 - 2009)",
+      "seriesId": 6194,
+      "issueNumber": "1",
+      "seriesYear": 2008,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/22568/eternals_annual_1_2008_1",
+      "onSaleDate": "2008-11-12T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Uncanny X-Men #500",
+      "sourceRangeReference": "Uncanny X-Men #500-503",
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "500",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "33565"
+      ],
+      "selectedIssueId": 33565,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/33565/uncanny_x-men_1963_500",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #500",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        33565
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Uncanny X-Men #501",
+      "sourceRangeReference": "Uncanny X-Men #500-503",
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "501",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21699"
+      ],
+      "selectedIssueId": 21699,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21699/uncanny_x-men_1963_501",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #501",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21699
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Uncanny X-Men #502",
+      "sourceRangeReference": "Uncanny X-Men #500-503",
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "502",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "21924"
+      ],
+      "selectedIssueId": 21924,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/21924/uncanny_x-men_1963_502",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #502",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        21924
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Uncanny X-Men #503",
+      "sourceRangeReference": "Uncanny X-Men #500-503",
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 1963,
+      "issueNumber": "503",
+      "seriesId": 2258,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22255"
+      ],
+      "selectedIssueId": 22255,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22255/uncanny_x-men_1963_503",
+      "resolvedIssueTitle": "Uncanny X-Men (1963) #503",
+      "note": "Marvel series 2258 (Uncanny X-Men (1963 - 2011)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22255
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "X-Men Free Comic Book Day #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men Free Comic Book Day",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 43531,
+      "candidateIssueId": 20905,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "20905"
+      ],
+      "selectedIssueId": 20905,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/20905/free_comic_book_day_2008_1_2008_1",
+      "resolvedIssueTitle": "FREE COMIC BOOK DAY 2008 1 (2008) #1",
+      "note": "Marvel series 43531 (FREE COMIC BOOK DAY 2008 1 (2008 - Present)) is the reviewed metadata series for this source reference. The source title is X-Men Free Comic Book Day; Marvel names the selected series FREE COMIC BOOK DAY 2008 1. Marvel has two identically named 2008 Free Comic Book Day series; issue 20905 is the X-Men story by Mike Carey and Greg Land.",
+      "status": "exact",
+      "selectedIssueIds": [
+        20905
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "X-Men: Manifest Destiny #1",
+      "sourceRangeReference": "Manifest Destiny anthology material from X-Men: Manifest Destiny #1-5",
+      "normalizedSeriesTitle": "X-Men: Manifest Destiny",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 5750,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22048"
+      ],
+      "selectedIssueId": 22048,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22048/x-men_manifest_destiny_2008_1",
+      "resolvedIssueTitle": "X-Men: Manifest Destiny (2008) #1",
+      "note": "Marvel series 5750 (X-Men: Manifest Destiny (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22048
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "X-Men: Manifest Destiny #2",
+      "sourceRangeReference": "Manifest Destiny anthology material from X-Men: Manifest Destiny #1-5",
+      "normalizedSeriesTitle": "X-Men: Manifest Destiny",
+      "seriesYear": 2008,
+      "issueNumber": "2",
+      "seriesId": 5750,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22379"
+      ],
+      "selectedIssueId": 22379,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22379/x-men_manifest_destiny_2008_2",
+      "resolvedIssueTitle": "X-Men: Manifest Destiny (2008) #2",
+      "note": "Marvel series 5750 (X-Men: Manifest Destiny (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22379
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "X-Men: Manifest Destiny #3",
+      "sourceRangeReference": "Manifest Destiny anthology material from X-Men: Manifest Destiny #1-5",
+      "normalizedSeriesTitle": "X-Men: Manifest Destiny",
+      "seriesYear": 2008,
+      "issueNumber": "3",
+      "seriesId": 5750,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22569"
+      ],
+      "selectedIssueId": 22569,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22569/x-men_manifest_destiny_2008_3",
+      "resolvedIssueTitle": "X-Men: Manifest Destiny (2008) #3",
+      "note": "Marvel series 5750 (X-Men: Manifest Destiny (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22569
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "X-Men: Manifest Destiny #4",
+      "sourceRangeReference": "Manifest Destiny anthology material from X-Men: Manifest Destiny #1-5",
+      "normalizedSeriesTitle": "X-Men: Manifest Destiny",
+      "seriesYear": 2008,
+      "issueNumber": "4",
+      "seriesId": 5750,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22986"
+      ],
+      "selectedIssueId": 22986,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22986/x-men_manifest_destiny_2008_4",
+      "resolvedIssueTitle": "X-Men: Manifest Destiny (2008) #4",
+      "note": "Marvel series 5750 (X-Men: Manifest Destiny (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22986
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "X-Men: Manifest Destiny #5",
+      "sourceRangeReference": "Manifest Destiny anthology material from X-Men: Manifest Destiny #1-5",
+      "normalizedSeriesTitle": "X-Men: Manifest Destiny",
+      "seriesYear": 2008,
+      "issueNumber": "5",
+      "seriesId": 5750,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23162"
+      ],
+      "selectedIssueId": 23162,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23162/x-men_manifest_destiny_2008_5",
+      "resolvedIssueTitle": "X-Men: Manifest Destiny (2008) #5",
+      "note": "Marvel series 5750 (X-Men: Manifest Destiny (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23162
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Wolverine: Manifest Destiny #1",
+      "sourceRangeReference": "Wolverine: Manifest Destiny #1-4",
+      "normalizedSeriesTitle": "Wolverine: Manifest Destiny",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 5997,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22380"
+      ],
+      "selectedIssueId": 22380,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22380/wolverine_manifest_destiny_2008_1",
+      "resolvedIssueTitle": "Wolverine: Manifest Destiny (2008) #1",
+      "note": "Marvel series 5997 (Wolverine: Manifest Destiny (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22380
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Wolverine: Manifest Destiny #2",
+      "sourceRangeReference": "Wolverine: Manifest Destiny #1-4",
+      "normalizedSeriesTitle": "Wolverine: Manifest Destiny",
+      "seriesYear": 2008,
+      "issueNumber": "2",
+      "seriesId": 5997,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22571"
+      ],
+      "selectedIssueId": 22571,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22571/wolverine_manifest_destiny_2008_2",
+      "resolvedIssueTitle": "Wolverine: Manifest Destiny (2008) #2",
+      "note": "Marvel series 5997 (Wolverine: Manifest Destiny (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22571
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Wolverine: Manifest Destiny #3",
+      "sourceRangeReference": "Wolverine: Manifest Destiny #1-4",
+      "normalizedSeriesTitle": "Wolverine: Manifest Destiny",
+      "seriesYear": 2008,
+      "issueNumber": "3",
+      "seriesId": 5997,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22988"
+      ],
+      "selectedIssueId": 22988,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22988/wolverine_manifest_destiny_2008_3",
+      "resolvedIssueTitle": "Wolverine: Manifest Destiny (2008) #3",
+      "note": "Marvel series 5997 (Wolverine: Manifest Destiny (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22988
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Wolverine: Manifest Destiny #4",
+      "sourceRangeReference": "Wolverine: Manifest Destiny #1-4",
+      "normalizedSeriesTitle": "Wolverine: Manifest Destiny",
+      "seriesYear": 2008,
+      "issueNumber": "4",
+      "seriesId": 5997,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23164"
+      ],
+      "selectedIssueId": 23164,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23164/wolverine_manifest_destiny_2008_4",
+      "resolvedIssueTitle": "Wolverine: Manifest Destiny (2008) #4",
+      "note": "Marvel series 5997 (Wolverine: Manifest Destiny (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23164
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "X-Men Manifest Destiny: Nightcrawler #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Manifest Destiny - Nightcrawler",
+      "seriesYear": 2009,
+      "issueNumber": "1",
+      "seriesId": 7007,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23849"
+      ],
+      "selectedIssueId": 23849,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23849/x-men_manifest_destiny_nightcrawler_2009_1",
+      "resolvedIssueTitle": "X-Men: Manifest Destiny \u2013 Nightcrawler (2009) #1",
+      "note": "Marvel series 7007 (X-Men: Manifest Destiny \u2013 Nightcrawler (2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23849
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Eternals #7",
+      "sourceRangeReference": "Eternals (2008) #7-9",
+      "normalizedSeriesTitle": "Eternals",
+      "seriesYear": 2008,
+      "issueNumber": "7",
+      "seriesId": 5022,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23127"
+      ],
+      "selectedIssueId": 23127,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23127/eternals_2008_7",
+      "resolvedIssueTitle": "Eternals (2008) #7",
+      "note": "Marvel series 5022 (Eternals (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23127
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Eternals #8",
+      "sourceRangeReference": "Eternals (2008) #7-9",
+      "normalizedSeriesTitle": "Eternals",
+      "seriesYear": 2008,
+      "issueNumber": "8",
+      "seriesId": 5022,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23619"
+      ],
+      "selectedIssueId": 23619,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23619/eternals_2008_8",
+      "resolvedIssueTitle": "Eternals (2008) #8",
+      "note": "Marvel series 5022 (Eternals (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23619
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Eternals #9",
+      "sourceRangeReference": "Eternals (2008) #7-9",
+      "normalizedSeriesTitle": "Eternals",
+      "seriesYear": 2008,
+      "issueNumber": "9",
+      "seriesId": 5022,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "23774"
+      ],
+      "selectedIssueId": 23774,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/23774/eternals_2008_9",
+      "resolvedIssueTitle": "Eternals (2008) #9",
+      "note": "Marvel series 5022 (Eternals (2008 - 2009)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        23774
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Eternals Annual (2008) #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Eternals Annual",
+      "seriesYear": 2008,
+      "issueNumber": "1",
+      "seriesId": 6194,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "22568"
+      ],
+      "selectedIssueId": 22568,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/22568/eternals_annual_1_2008_1",
+      "resolvedIssueTitle": "ETERNALS ANNUAL 1 (2008) #1",
+      "note": "Marvel series 6194 (ETERNALS ANNUAL 1 (2008 - 2009)) is the reviewed metadata series for this source reference. The source title is Eternals Annual; Marvel names the selected series ETERNALS ANNUAL 1. Marvel capitalizes the one-issue series name and adds a trailing 1.",
+      "status": "exact",
+      "selectedIssueIds": [
+        22568
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-men-manifest-destiny",
+    "name": "X-Men: Manifest Destiny",
+    "description": "Nineteen issues following the X-Men move to San Francisco through Uncanny X-Men, Wolverine, the anthology, and Eternals.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-men-manifest-destiny.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/",
+    "sourceSection": "X-Men: Manifest Destiny",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_men_manifest_destiny.json",
+    "characters": [
+      "X-Men",
+      "Wolverine",
+      "Nightcrawler",
+      "Iceman",
+      "Cyclops"
+    ],
+    "keywords": [
+      "Manifest Destiny",
+      "San Francisco",
+      "X-Men",
+      "Eternals"
+    ],
+    "expect": 19,
+    "timeline": 2008,
+    "coverIssueId": 33565,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Uncanny X-Men #500"
+  }
+}

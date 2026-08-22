@@ -372,3 +372,121 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   the new 2007 and 2010 events behind later existing events. Authoring now inserts each packet entry
   before a reviewed stable anchor, fails if any anchor is missing, preserves all existing relative
   order, and reproduces byte for byte.
+
+### CHG-014: Pause batch three at the parent approval gate
+
+* Related phase or task: P03-T01.
+* Baseline: Pull request 161 is merged, and the selection audit used the current default branch.
+* What changed: Re-audited the master sequence from position 1, compared the first two batches and
+  all shipped catalog variants, and identified the next ten genuine missing event or aftermath
+  sections without creating any production packet files.
+* Proposed order: `x-men-divided-we-stand`, `x-men-manifest-destiny`, `x-men-nation-x`,
+  `x-men-curse-of-the-mutants`, `wolverine-goes-to-hell`, `x-men-age-of-x`, `x-men-schism`,
+  `x-men-regenesis`, `doomwar`, and `spider-island`.
+* Master boundary: The first eight are distinct headings inside position 16, Doomwar comes from
+  position 23, and Spider-Island closes the proposal at position 29.
+* Duplicate review: None of the ten ids or three source pages exists in the catalog or approved
+  mappings. Numbered and explicit source references produced zero shipped checklist matches.
+  Exact issue-id overlap is not claimed before mapping.
+* Material blocker: The position 16 page gives its eight event headings no HTML ids. All eight
+  therefore share one exact URL, which the current peer-source uniqueness gate rejects even though
+  their literal issue lists are distinct. Regenesis also lists Uncanny X-Men #3 twice, and Manifest
+  Destiny includes two unnumbered anthology-material groups.
+* Earlier skip result: Positions 1-15 are shipped, reused, excluded, path-only, or blocked as already
+  recorded. Before position 29, Secret Invasion is reused; Dark Reign and Heroic Age are broad
+  overlapping eras; Fall of the Hulks, Siege, and Fear Itself remain blocked; Shadowland and Chaos
+  War are shipped; Utopia and Children's Crusade have shipped overlap.
+* What did not change: No mapping, overlap report, inventory disposition, order Markdown, manifest,
+  catalog, generated data, product or tooling code, test, commit, push, or pull request was created.
+* Approval gate: Explicit parent approval or revision is required, including a durable decision for
+  the repeated source URL, before any P03-T01 implementation begins.
+
+### CHG-015: Approve batch three and represent same-page guide sections
+
+* Related phase or task: P03-T01.
+* Approval: The parent approved the ten proposed targets and required direct implementation without
+  another research or planning phase.
+* Source contract: The first eight mappings keep the exact shared Comic Book Herald page URL and
+  carry a non-empty `sourceSection` derived from the visible heading. Source identity is the page
+  plus section when a section exists and the page alone otherwise. No URL fragment or DOM id was
+  invented.
+* Propagation: Manifest parsing, authoring, duplicate checks, pinned payloads, catalog output, and
+  reader-facing attribution preserve the section. Same-page different-section records pass, while
+  duplicate page-and-section pairs and repeated ordinary page URLs fail.
+
+### CHG-016: Resolve and freeze the third guarded batch
+
+* Related phase or task: P03-T01.
+* Source refresh: Refreshed the three exact source pages on 2026-08-21 and preserved every selected
+  guide's internal source order.
+* Manifest Destiny: The two unnumbered anthology-material groups resolve to the same five numbered
+  X-Men: Manifest Destiny issues. Those five issues appear once, with the duplicate group recorded
+  as an exclusion rather than guessed into additional rows.
+* Regenesis: The source lists Uncanny X-Men #3 twice consecutively. The same page's collection
+  summary gives Uncanny X-Men #1-4 once each, so the frozen mapping records the repeated line and
+  keeps the unique #1, #2, #3, #4 sequence.
+* Spider-Island: The source names thirteen story issues plus Spider-Island Spotlight. The Spotlight
+  is a non-story companion magazine, and its archived Marvel issue id is absent from the live
+  metadata contract, so the mapping records that source reference separately and ships the thirteen
+  exact story issues.
+* Final packet: Ten approved mappings contain 200 exact and distinct issue ids. Ten complete overlap
+  reports contain 550 comparisons, all `none`, with 0 shared ids.
+* Timeline review: The verified first on-sale dates in catalog order are 2008-02-06, 2008-04-16,
+  2009-09-02, 2010-02-17, 2010-07-07, 2010-09-01, 2011-01-26, 2011-07-13, 2011-07-27, and
+  2011-10-12.
+
+### CHG-017: Author and vendor the third guarded batch
+
+* Related phase or task: P03-T02.
+* Authored output: Ten flat checklists and ten manifest entries were generated only from approved
+  mappings. Review-only cover and exclusion evidence stayed in the mappings.
+* Vendored output: Ten pinned payloads add 200 story issues with 0 unresolved rows, placeholders,
+  missing digital ids, missing covers, count warnings, or duplicate warnings. The catalog now holds
+  56 orders.
+* Lifecycle result: The X-Men fast-track inventory record now names eleven shipped child orders.
+  The two bridge sources containing Doomwar and Spider-Island moved to `grouped-variant` and
+  `shipped`; their remaining bridge material stays deferred.
+* Product record: The changelog, README, provenance inventory, and BL-185 describe the third batch
+  and the same-page section contract.
+
+### CHG-018: Close the third batch release gates
+
+* Related phase or task: P03-T02 and P03-T03.
+* Failure proofs: Changing one generated issue id failed the exact-sequence guard. Reusing one
+  source section failed the page-and-section uniqueness guard. Replacing one generated issue with a
+  shipped id failed the aggregate-overlap guard. Each one-line mutation was stashed, the staged good
+  file restored, and the focused guard passed again.
+* Focused suite: 134 packet, inventory, resolver, catalog, manifest, overlap, and provenance tests
+  passed with 0 failed.
+* Full suite: 1,310 tests passed with 0 failed.
+* Offline gates: Lint reported 0; 159 ranked backlog rows, 5 parked rows, and 164 detail blocks all
+  agree; all 7 stated file sizes agree; 88 palette pairs produced 0 new failures; publication found
+  0 content findings; and all 1,047 anchors are unchanged after the reviewed citation re-aims.
+* Live gates: The repository contract passed 33 of 33 assumptions across 17 requests. The added
+  packet contract passed 200 of 200 issue identities, exact Marvel URLs, digital ids, and covers.
+* Browser gate: Installed Edge passed 120 assertions across 14 scenarios.
+* Reproduction: Preparation changed 0 of 10 approved mapping hashes, authoring changed 0 of 11
+  manifest and Markdown hashes, and overlap regeneration changed 0 of 10 report hashes.
+* Review disposition: The parent explicitly waived separate review-agent passes. Direct self-review
+  found and fixed two material issues before validation: inventory transitions initially named the
+  adjacent bridge records instead of positions 23 and 29, and the source-identity guard initially
+  allowed a whole-page record beside a sectioned record on the same page. No material finding remains
+  open.
+
+### CHG-019: Record the external Agent Merge monitor blocker
+
+* Pull request: 163 was opened against `main` from the implementation branch at commit
+  `d8b6ed773627be6a7d1621a178858c89f37104fe`.
+* Ready state: GitHub reports the pull request open, clean, mergeable, not a draft, with no review
+  decision required. Tests on Node 20, tests on Node 24, and lint all completed successfully.
+* Attempts: Agent Merge was activated three times across two independently attached PR sessions.
+  The first session was archived and the pull request was attached again in a fresh worktree before
+  the third attempt.
+* Blocker: Every activation returned the Agent Merge guide without an `agent_merge_state` block or
+  an `Authorized actions this run` line. The skill contract therefore authorizes no merge-loop
+  action and explicitly forbids a manual merge.
+* Exact resolution action: Restart or repair the app-managed Agent Merge monitor for pull request
+  163 so a PR-attached session receives a fully evaluated `agent_merge_state` and
+  `Authorized actions this run` line. The app can then land the already-ready pull request.
+* What was not done: No manual merge, auto-merge, merge queue action, branch rewrite, or CI bypass
+  was attempted.

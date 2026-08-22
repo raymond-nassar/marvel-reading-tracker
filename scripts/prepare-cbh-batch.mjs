@@ -473,6 +473,90 @@ const SERIES = Object.freeze({
     selectionNote: 'The source shortens the one-shot title to X-Men: Blind Science.',
   },
   xMenHellbound: { id: 9981, title: 'X-Men: Hellbound', year: 2010 },
+  xFactorQuickDead: {
+    id: 4833,
+    title: 'X-Factor: The Quick and the Dead',
+    year: 2008,
+    selectionNote: 'Marvel capitalizes the one-issue series name and adds a trailing 1.',
+  },
+  xForceSpecialNoDog: {
+    id: 5024,
+    title: "X-Force Special: Ain't No Dog",
+    year: 2008,
+    selectionNote: 'Marvel capitalizes the one-issue series name and adds a trailing 1.',
+  },
+  xForceAnnual2009: {
+    id: 9119,
+    title: 'X-Force Annual',
+    year: 2009,
+    selectionNote: 'The source labels the material 2010; Marvel indexes the issue in its 2009 annual series.',
+  },
+  wolverine2003: { id: 632, title: 'Wolverine', year: 2003 },
+  cableKingSize: {
+    id: 5749,
+    title: 'Cable King-Size Spectacular',
+    year: 2008,
+    selectionNote: 'The source shortens the one-shot to King-Size Cable; Marvel capitalizes the series name and adds a trailing 1.',
+  },
+  xMenDividedWeStand: { id: 4880, title: 'X-Men: Divided We Stand', year: 2008 },
+  youngXMen: { id: 4443, title: 'Young X-Men', year: 2008 },
+  xMenFcbd2008: {
+    id: 43531,
+    title: 'X-Men Free Comic Book Day',
+    year: 2008,
+    selectionNote: 'Marvel has two identically named 2008 Free Comic Book Day series; issue 20905 is the X-Men story by Mike Carey and Greg Land.',
+  },
+  xMenManifestDestiny: { id: 5750, title: 'X-Men: Manifest Destiny', year: 2008 },
+  wolverineManifestDestiny: { id: 5997, title: 'Wolverine: Manifest Destiny', year: 2008 },
+  xMenManifestDestinyNightcrawler: {
+    id: 7007,
+    title: 'X-Men: Manifest Destiny - Nightcrawler',
+    year: 2009,
+  },
+  eternals2008: { id: 5022, title: 'Eternals', year: 2008 },
+  eternalsAnnual2008: {
+    id: 6194,
+    title: 'Eternals Annual',
+    year: 2008,
+    selectionNote: 'Marvel capitalizes the one-issue series name and adds a trailing 1.',
+  },
+  deadpool2008: { id: 5701, title: 'Deadpool', year: 2008 },
+  nationX: { id: 9176, title: 'Nation X', year: 2009 },
+  nationXXFactor: { id: 9183, title: 'Nation X: X-Factor', year: 2010 },
+  deathOfDracula: { id: 10915, title: 'Death of Dracula', year: 2010 },
+  xMen2010: { id: 9906, title: 'X-Men', year: 2010 },
+  namorFirstMutant: { id: 12761, title: 'Namor: The First Mutant', year: 2010 },
+  curseMutantsBlade: { id: 12667, title: 'X-Men: Curse of the Mutants - Blade', year: 2010 },
+  curseMutantsStormGambit: {
+    id: 12597,
+    title: 'X-Men: Curse of the Mutants - Storm & Gambit',
+    year: 2010,
+  },
+  curseMutantsSmokeBlood: {
+    id: 12759,
+    title: 'X-Men: Curse of the Mutants - Smoke & Blood',
+    year: 2010,
+  },
+  curseMutantsVampires: {
+    id: 13008,
+    title: 'X-Men: Curse of the Mutants - X-Men Vs. Vampires',
+    year: 2010,
+  },
+  wolverine2010: { id: 9962, title: 'Wolverine', year: 2010 },
+  dakenDarkWolverine: { id: 9368, title: 'Daken: Dark Wolverine', year: 2010 },
+  x232010: { id: 9367, title: 'X-23', year: 2010 },
+  ageOfXAlpha: { id: 13603, title: 'Age of X: Alpha', year: 2010 },
+  ageOfXUniverse: { id: 13896, title: 'Age of X: Universe', year: 2011 },
+  xMenSchism: { id: 13880, title: 'X-Men: Schism', year: 2011 },
+  generationHope: { id: 9895, title: 'Generation Hope', year: 2010 },
+  xMenRegenesis: { id: 14685, title: 'X-Men: Regenesis', year: 2011 },
+  magnetoNotHero: { id: 14683, title: 'Magneto: Not a Hero', year: 2011 },
+  xClub: { id: 15552, title: 'X-Club', year: 2011 },
+  uncannyXForce: { id: 9976, title: 'Uncanny X-Force', year: 2010 },
+  astonishingXMen: { id: 744, title: 'Astonishing X-Men', year: 2004 },
+  doomwar: { id: 9240, title: 'Doomwar', year: 2010 },
+  venom2011: { id: 13911, title: 'Venom', year: 2011 },
+  spiderIslandDeadlyFoes: { id: 14778, title: 'Spider-Island: Deadly Foes', year: 2011 },
 });
 
 function issue(
@@ -516,6 +600,8 @@ function sequence(entries) {
       selectionNote ?? null,
     ));
 }
+
+const X_MEN_EVENTS_SOURCE = 'https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/';
 
 const GUIDES = Object.freeze([
   {
@@ -1781,6 +1867,254 @@ const GUIDES = Object.freeze([
       ['xMenHellbound', 3],
     ]),
   },
+  {
+    id: 'x-men-divided-we-stand',
+    inventoryId: 'x-men-events-fast-track',
+    sourceUrl: X_MEN_EVENTS_SOURCE,
+    sourceSection: 'X-Men: Divided We Stand',
+    proposedTimeline: 2008,
+    proposedCoverReference: 'Uncanny X-Men #495',
+    rows: [
+      ...range('uncannyXMen', 495, 499, 'Uncanny X-Men #495-499'),
+      ...range('xMenLegacy', 208, 212, 'X-Men: Legacy #208-212'),
+      ...range('xFactor', 28, 32, 'X-Factor #28-32'),
+      issue('xFactorQuickDead', 1, 'X-Factor: Quick And The Dead'),
+      ...range('xForce2008', 1, 13, 'X-Force (2008) #1-13'),
+      issue('xForceSpecialNoDog', 1, "X-Force Special: Ain't No Dog"),
+      issue('xForceAnnual2009', 1, 'Material From X-Force Annual (2010) #1'),
+      ...range('wolverine2003', 62, 65, 'Wolverine (2003) #62-65'),
+      ...range('cable2008', 1, 5, 'Cable (2008) #1-5'),
+      issue('cableKingSize', 1, 'King-Size Cable #1'),
+      ...range('xMenDividedWeStand', 1, 2, 'X-Men: Divided We Stand (2008) #1-2'),
+      ...range('youngXMen', 1, 5, 'Young X-Men #1-5'),
+    ],
+  },
+  {
+    id: 'x-men-manifest-destiny',
+    inventoryId: 'x-men-events-fast-track',
+    sourceUrl: X_MEN_EVENTS_SOURCE,
+    sourceSection: 'X-Men: Manifest Destiny',
+    proposedTimeline: 2008,
+    proposedCoverReference: 'Uncanny X-Men #500',
+    excludedSourceReferences: [
+      'The second unnumbered anthology-material group resolves to the same X-Men: Manifest Destiny #1-5 issues already represented by the first group',
+    ],
+    rows: [
+      ...range('uncannyXMen', 500, 503, 'Uncanny X-Men #500-503'),
+      issue('xMenFcbd2008', 1, 'X-Men Free Comic Book Day #1', null, 20905),
+      ...range(
+        'xMenManifestDestiny',
+        1,
+        5,
+        'Manifest Destiny anthology material from X-Men: Manifest Destiny #1-5',
+      ),
+      ...range('wolverineManifestDestiny', 1, 4, 'Wolverine: Manifest Destiny #1-4'),
+      issue('xMenManifestDestinyNightcrawler', 1, 'X-Men Manifest Destiny: Nightcrawler #1'),
+      ...range('eternals2008', 7, 9, 'Eternals (2008) #7-9'),
+      issue('eternalsAnnual2008', 1, 'Eternals Annual (2008) #1'),
+    ],
+  },
+  {
+    id: 'x-men-nation-x',
+    inventoryId: 'x-men-events-fast-track',
+    sourceUrl: X_MEN_EVENTS_SOURCE,
+    sourceSection: 'X-Men: Nation X',
+    proposedTimeline: 2009,
+    proposedCoverReference: 'Nation X #1',
+    rows: sequence([
+      ['deadpool2008', 15],
+      ['uncannyXMen', 515],
+      ['deadpool2008', 16],
+      ['uncannyXMen', 516],
+      ['xMenLegacy', 228],
+      ['deadpool2008', 17],
+      ['xMenLegacy', 229],
+      ['uncannyXMen', 517],
+      ['uncannyXMen', 518],
+      ['nationX', 1],
+      ['deadpool2008', 18],
+      ['xMenLegacy', 230],
+      ['uncannyXMen', 519],
+      ['nationXXFactor', 1],
+      ['nationX', 2],
+      ['uncannyXMen', 520],
+      ['uncannyXMen', 521],
+      ['nationX', 3],
+      ['nationX', 4],
+      ['uncannyXMen', 522],
+    ]),
+  },
+  {
+    id: 'x-men-curse-of-the-mutants',
+    inventoryId: 'x-men-events-fast-track',
+    sourceUrl: X_MEN_EVENTS_SOURCE,
+    sourceSection: 'Curse of the Mutants',
+    proposedTimeline: 2010,
+    proposedCoverReference: 'X-Men (2010) #1',
+    rows: sequence([
+      ['deathOfDracula', 1, 'The Death of Dracula #1'],
+      ['xMen2010', 1, 'X-Men (2010) #1'],
+      ['xMen2010', 2],
+      ['namorFirstMutant', 1],
+      ['curseMutantsBlade', 1],
+      ['curseMutantsStormGambit', 1],
+      ['curseMutantsSmokeBlood', 1],
+      ['xMen2010', 3],
+      ['namorFirstMutant', 2],
+      ['curseMutantsVampires', 1, 'X-Men: Curse of the Mutants: X-Men vs. Vampires #1'],
+      ['xMen2010', 4],
+      ['curseMutantsVampires', 2, 'X-Men: Curse of the Mutants: X-Men vs. Vampires #2'],
+      ['namorFirstMutant', 3],
+      ['xMen2010', 5],
+      ['namorFirstMutant', 4],
+      ['deadpool2008', 30],
+      ['xMen2010', 6],
+      ['deadpool2008', 31],
+    ]),
+  },
+  {
+    id: 'wolverine-goes-to-hell',
+    inventoryId: 'x-men-events-fast-track',
+    sourceUrl: X_MEN_EVENTS_SOURCE,
+    sourceSection: 'Wolverine Goes to Hell',
+    proposedTimeline: 2010,
+    proposedCoverReference: 'Wolverine (2010) #1',
+    rows: sequence([
+      ['wolverine2010', 1, 'Wolverine (2010) #1'],
+      ['dakenDarkWolverine', 1],
+      ['x232010', 1, 'X-23 (2010) #1'],
+      ['wolverine2010', 2],
+      ['dakenDarkWolverine', 2],
+      ['x232010', 2],
+      ['wolverine2010', 3],
+      ['dakenDarkWolverine', 3],
+      ['x232010', 3],
+      ['wolverine2010', 4],
+      ['wolverine2010', 5],
+      ['wolverine2010', '5.1'],
+      ['wolverine2010', 6],
+      ['wolverine2010', 7],
+      ['wolverine2010', 8],
+    ]),
+  },
+  {
+    id: 'x-men-age-of-x',
+    inventoryId: 'x-men-events-fast-track',
+    sourceUrl: X_MEN_EVENTS_SOURCE,
+    sourceSection: 'Age of X',
+    proposedTimeline: 2011,
+    proposedCoverReference: 'Age of X: Alpha #1',
+    rows: sequence([
+      ['ageOfXAlpha', 1],
+      ['xMenLegacy', 245],
+      ['newMutants', 22],
+      ['xMenLegacy', 246],
+      ['newMutants', 23],
+      ['xMenLegacy', 247],
+      ['newMutants', 24],
+      ['ageOfXUniverse', 1],
+      ['ageOfXUniverse', 2],
+      ['xMenLegacy', 248],
+      ['xMenLegacy', 249],
+    ]),
+  },
+  {
+    id: 'x-men-schism',
+    inventoryId: 'x-men-events-fast-track',
+    sourceUrl: X_MEN_EVENTS_SOURCE,
+    sourceSection: 'Schism',
+    proposedTimeline: 2011,
+    proposedCoverReference: 'X-Men: Schism #1',
+    rows: sequence([
+      ['xMenSchism', 1, 'Schism #1'],
+      ['xMenSchism', 2, 'Schism #2'],
+      ['xMenSchism', 3, 'Schism #3'],
+      ['generationHope', 10],
+      ['generationHope', 11],
+      ['xMenSchism', 4, 'Schism #4'],
+      ['xMenSchism', 5, 'Schism #5'],
+    ]),
+  },
+  {
+    id: 'x-men-regenesis',
+    inventoryId: 'x-men-events-fast-track',
+    sourceUrl: X_MEN_EVENTS_SOURCE,
+    sourceSection: 'Regenesis',
+    proposedTimeline: 2011,
+    proposedCoverReference: 'X-Men: Regenesis #1',
+    excludedSourceReferences: [
+      'The second consecutive Uncanny X-Men #3 row; the same page collection summary identifies Uncanny X-Men #1-4 once each',
+    ],
+    rows: sequence([
+      ['xMenRegenesis', 1],
+      ['generationHope', 12],
+      ['wolverine2010', 17],
+      ['wolverine2010', 18],
+      ['wolverine2010', 19],
+      ['xMenLegacy', 259],
+      ['uncannyXMen', 544],
+      ['avengersAcademy', 22],
+      ['magnetoNotHero', 1],
+      ['x232010', 17],
+      ['x232010', 18],
+      ['x232010', 19],
+      ['wolverineXMen', 1, 'Wolverine and The X-Men #1'],
+      ['wolverineXMen', 2, 'Wolverine and The X-Men #2'],
+      ['wolverineXMen', 3, 'Wolverine and The X-Men #3'],
+      ['xMenLegacy', 260],
+      ['newMutants', 33],
+      ['newMutants', 34],
+      ['newMutants', 35],
+      ['newMutants', 36],
+      ['xMen2010', 20],
+      ['xMen2010', 21],
+      ['xMen2010', 22],
+      ['xMen2010', 23],
+      ['generationHope', 13],
+      ['generationHope', 14],
+      ['generationHope', 15],
+      ['xClub', 1],
+      ['xClub', 2],
+      ['xClub', 3],
+      ['xClub', 4],
+      ['xClub', 5],
+      ['uncannyXMen2011', 1],
+      ['uncannyXMen2011', 2],
+      ['uncannyXMen2011', 3],
+      ['uncannyXMen2011', 4],
+      ['xMenLegacy', '260.1'],
+      ['uncannyXForce', 19],
+      ['wolverineXMen', 4, 'Wolverine and The X-Men #4'],
+      ['astonishingXMen', 44],
+      ['astonishingXMen', 45],
+      ['astonishingXMen', 46],
+      ['astonishingXMen', 47],
+    ]),
+  },
+  {
+    id: 'doomwar',
+    inventoryId: 'siege-to-heroic-age',
+    sourceUrl: 'https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-siege-to-the-heroic-age/',
+    proposedTimeline: 2010,
+    proposedCoverReference: 'Doomwar #1',
+    rows: range('doomwar', 1, 6, 'Doomwar #1-6'),
+  },
+  {
+    id: 'spider-island',
+    inventoryId: 'fear-itself-to-avx',
+    sourceUrl: 'https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-fear-itself-to-avengers-vs-x-men/',
+    proposedTimeline: 2011,
+    proposedCoverReference: 'Amazing Spider-Man #666',
+    approvedSourceCount: 14,
+    excludedSourceReferences: [
+      'Spider-Island Spotlight, a non-story companion magazine whose archived Marvel issue 38457 is absent from the live metadata contract',
+    ],
+    rows: [
+      ...range('amazingSpiderMan', 666, 673, 'Amazing Spider-Man #666-673'),
+      ...range('venom2011', 6, 9, 'Venom #6-9'),
+      issue('spiderIslandDeadlyFoes', 1, 'Spider-Island: Deadly Foes'),
+    ],
+  },
 ]);
 
 const MANIFEST_PROPOSALS = Object.freeze({
@@ -1924,6 +2258,76 @@ const MANIFEST_PROPOSALS = Object.freeze({
     keywords: ['Second Coming', 'Hope Summers', 'X-Men', 'Messiah'],
     coverPosition: 3,
   },
+  'x-men-divided-we-stand': {
+    name: 'X-Men: Divided We Stand',
+    description: 'Forty-eight aftermath issues following the X-Men, X-Factor, X-Force, Wolverine, Cable, and the Young X-Men after Messiah Complex.',
+    characters: ['X-Men', 'Cyclops', 'Wolverine', 'Cable', 'X-Force'],
+    keywords: ['Divided We Stand', 'Messiah Complex aftermath', 'X-Men', 'Cable'],
+    coverPosition: 1,
+  },
+  'x-men-manifest-destiny': {
+    name: 'X-Men: Manifest Destiny',
+    description: 'Nineteen issues following the X-Men move to San Francisco through Uncanny X-Men, Wolverine, the anthology, and Eternals.',
+    characters: ['X-Men', 'Wolverine', 'Nightcrawler', 'Iceman', 'Cyclops'],
+    keywords: ['Manifest Destiny', 'San Francisco', 'X-Men', 'Eternals'],
+    coverPosition: 1,
+  },
+  'x-men-nation-x': {
+    name: 'X-Men: Nation X',
+    description: 'Twenty chapters interleaving Uncanny X-Men, X-Men Legacy, Deadpool, Nation X, and the X-Factor one-shot.',
+    characters: ['X-Men', 'Magneto', 'Cyclops', 'Deadpool'],
+    keywords: ['Nation X', 'Utopia', 'Magneto', 'X-Men'],
+    coverPosition: 10,
+  },
+  'x-men-curse-of-the-mutants': {
+    name: 'X-Men: Curse of the Mutants',
+    description: 'Eighteen chapters following the vampire conflict through X-Men, Namor, Deadpool, and four one-shots.',
+    characters: ['X-Men', 'Blade', 'Namor', 'Dracula', 'Deadpool'],
+    keywords: ['Curse of the Mutants', 'vampires', 'Blade', 'Namor'],
+    coverPosition: 2,
+  },
+  'wolverine-goes-to-hell': {
+    name: 'Wolverine Goes to Hell',
+    description: 'Fifteen chapters alternating Wolverine, Daken, and X-23 through the opening Goes to Hell storyline.',
+    characters: ['Wolverine', 'Daken', 'X-23'],
+    keywords: ['Wolverine Goes to Hell', 'Daken', 'X-23'],
+    coverPosition: 1,
+  },
+  'x-men-age-of-x': {
+    name: 'X-Men: Age of X',
+    description: 'Eleven chapters combining Alpha, X-Men Legacy, New Mutants, Universe, and the two aftermath issues.',
+    characters: ['X-Men', 'Legion', 'Rogue', 'New Mutants'],
+    keywords: ['Age of X', 'X-Men Legacy', 'New Mutants', 'Legion'],
+    coverPosition: 1,
+  },
+  'x-men-schism': {
+    name: 'X-Men: Schism',
+    description: 'Seven chapters interleaving the five-part Schism event with the two Generation Hope tie-ins.',
+    characters: ['X-Men', 'Cyclops', 'Wolverine', 'Generation Hope'],
+    keywords: ['Schism', 'X-Men', 'Generation Hope'],
+    coverPosition: 1,
+  },
+  'x-men-regenesis': {
+    name: 'X-Men: Regenesis',
+    description: 'Forty-three distinct chapters following the post-Schism teams across the X-Men family of titles.',
+    characters: ['X-Men', 'Cyclops', 'Wolverine', 'Magneto', 'Generation Hope'],
+    keywords: ['Regenesis', 'X-Men', 'Wolverine and the X-Men', 'Uncanny X-Men'],
+    coverPosition: 1,
+  },
+  doomwar: {
+    name: 'Doomwar',
+    description: 'The complete six-issue conflict between Wakanda and Doctor Doom.',
+    characters: ['Black Panther', 'Doctor Doom', 'Storm', 'Wakanda'],
+    keywords: ['Doomwar', 'Black Panther', 'Doctor Doom', 'Wakanda'],
+    coverPosition: 1,
+  },
+  'spider-island': {
+    name: 'Spider-Island',
+    description: 'Thirteen story issues combining Amazing Spider-Man, Venom, and the Deadly Foes one-shot.',
+    characters: ['Spider-Man', 'Venom', 'Mary Jane Watson'],
+    keywords: ['Spider-Island', 'Amazing Spider-Man', 'Venom', 'Deadly Foes'],
+    coverPosition: 1,
+  },
 });
 
 function issueUrl(value) {
@@ -1973,11 +2377,23 @@ async function readExistingMapping(outputPath) {
 }
 
 async function main() {
-  const forceApproved = process.argv.slice(2).includes('--force-approved');
-  const refreshApproved = process.argv.slice(2).includes('--refresh-approved');
+  const args = process.argv.slice(2);
+  const forceApproved = args.includes('--force-approved');
+  const refreshApproved = args.includes('--refresh-approved');
   if (forceApproved && refreshApproved) {
     throw new Error('Use either --force-approved or --refresh-approved, not both');
   }
+  const onlyArgs = args.filter((arg) => arg.startsWith('--only='));
+  if (onlyArgs.length > 1) throw new Error('Use --only once with a comma-separated guide id list');
+  const onlyIds = onlyArgs.length === 0
+    ? null
+    : new Set(onlyArgs[0].slice('--only='.length).split(',').map((id) => id.trim()).filter(Boolean));
+  if (onlyIds?.size === 0) throw new Error('--only must name at least one guide id');
+  const guides = onlyIds ? GUIDES.filter((guide) => onlyIds.has(guide.id)) : GUIDES;
+  const unknownIds = onlyIds
+    ? [...onlyIds].filter((id) => !guides.some((guide) => guide.id === id))
+    : [];
+  if (unknownIds.length > 0) throw new Error(`Unknown guide id(s): ${unknownIds.join(', ')}`);
   const { getJson } = createJsonFetcher();
   const getSeriesPage = async (url) => {
     for (let attempt = 0; ; attempt += 1) {
@@ -1989,7 +2405,10 @@ async function main() {
       }
     }
   };
-  const seriesIds = [...new Set(Object.values(SERIES).map((series) => series.id).filter(Number.isInteger))];
+  const seriesIds = [...new Set(guides
+    .flatMap((guide) => guide.rows)
+    .map((row) => row.seriesId)
+    .filter(Number.isInteger))];
   const seriesById = new Map();
 
   for (const seriesId of seriesIds) {
@@ -2014,7 +2433,7 @@ async function main() {
   await mkdir(OUTPUT_DIR, { recursive: true });
   const summaries = [];
 
-  for (const guide of GUIDES) {
+  for (const guide of guides) {
     const outputPath = path.join(OUTPUT_DIR, `${guide.id}.json`);
     const existingMapping = await readExistingMapping(outputPath);
     if (shouldPreserveApprovedMapping(existingMapping, { forceApproved, refreshApproved })) {
@@ -2101,6 +2520,7 @@ async function main() {
       variant: null,
       sourceFile: `${guide.id}.md`,
       sourcePage: guide.sourceUrl,
+      ...(guide.sourceSection ? { sourceSection: guide.sourceSection } : {}),
       sourceOrigin: "Compiled for this project from Comic Book Herald's guide",
       sourceLicense: null,
       out: `${guide.id.replaceAll('-', '_')}.json`,
@@ -2125,9 +2545,12 @@ async function main() {
       id: guide.id,
       inventoryId: guide.inventoryId ?? guide.id,
       sourceUrl: guide.sourceUrl,
+      ...(guide.sourceSection ? { sourceSection: guide.sourceSection } : {}),
       sourceRetrievedAt: RETRIEVED_AT,
       sourceRetrievalStatus: guide.sourceUnavailable ? guide.sourceError : 'retrieved',
-      approvedSourceCount: guide.sourceUnavailable ? null : rows.length,
+      approvedSourceCount: guide.sourceUnavailable
+        ? null
+        : (guide.approvedSourceCount ?? rows.length),
       excludedSourceReferences: guide.excludedSourceReferences ?? [],
       reviewStatus: guide.sourceUnavailable ? 'blocked-source-unavailable' : 'pending-independent-review',
       proposedManifest,
@@ -2162,7 +2585,9 @@ async function main() {
       };
       delete outputMapping.proposedManifest;
     }
-    await writeFile(outputPath, `${JSON.stringify(outputMapping, null, 2)}\n`, 'utf8');
+    const json = JSON.stringify(outputMapping, null, 2)
+      .replace(/\u2013/g, '\\u2013').replace(/\u2014/g, '\\u2014');
+    await writeFile(outputPath, `${json}\n`, 'utf8');
     summaries.push({
       id: guide.id,
       rows: rows.length,

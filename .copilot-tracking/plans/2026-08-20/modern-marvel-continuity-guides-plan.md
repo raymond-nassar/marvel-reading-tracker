@@ -468,3 +468,98 @@ Security, Planet Hulk, Silent War, Annihilation: Conquest, Messiah Complex, War 
 War, Necrosha, Second Coming, and The Thanos Imperative. Live metadata independently fixes their
 first on-sale dates to 2000-10-01, 2006-02-08, 2007-01-24, 2007-06-20, 2007-10-31, 2009-02-04,
 2009-02-04, 2009-10-28, 2010-02-24, and 2010-05-26.
+
+## P03 Batch Three Selection Proposal Addendum
+
+* Proposal date: 2026-08-21.
+* Status: Awaiting explicit parent approval. This is selection research, not a frozen production
+  packet.
+* Baseline: Pull request 161 is merged at `04b68d9d87aab30c5cc3c557e51825a4a2b07871`,
+  and the default branch used for this audit is `e5d41287182febc1396f167dc4286b42cb6f9795`.
+* Ordering rule: Preserve master position first, then heading order inside a shared source. Do not
+  re-sort embedded sections by publication year.
+* Research boundary: The audit starts again at position 1, confirms that the earlier residuals are
+  runs, arcs, shipped events, or blocked events, then reaches ten genuine missing event or aftermath
+  sections at position 29.
+* No implementation authority: Mapping creation or refresh, inventory disposition changes, overlap
+  reports, order Markdown, manifest or catalog edits, generated data, product or tooling code,
+  tests, commits, pushes, and pull requests remain prohibited until the parent approves an exact
+  packet and resolves the shared-source blocker.
+
+### Proposed ten reading orders
+
+The eight position 16 sections are explicitly framed by Comic Book Herald as X-Men events between
+Messiah CompleX and Avengers vs. X-Men. Doomwar and Spider-Island are the next unblocked discrete
+events in later issue-bearing bridge sources. The row figures are selection estimates only.
+
+| Slot | Master position and inventory source | Proposed reading order and period | Exact Comic Book Herald source | Current disposition and status | Existing coverage or overlap | Estimated rows and complexity | Why this is the next gap | Decision or blocker |
+|---:|---|---|---|---|---|---|---|---|
+| 1 | 16, `x-men-events-fast-track` | `x-men-divided-we-stand`, X-Men: Divided We Stand, Feb 2008 - Aug 2008 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/ | `grouped-variant`, `shipped` | No catalog id, shipped source URL, or numbered source-reference match found; its source URL is shared with slots 2-8 | About 48, high | First unshipped aftermath heading after the shipped Messiah Complex order | Approve the literal collection sequence, including the source's Cable restriction; the shared URL fails the current peer-source uniqueness gate |
+| 2 | 16, `x-men-events-fast-track` | `x-men-manifest-destiny`, X-Men: Manifest Destiny, July 2008 - Nov 2008 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/ | `grouped-variant`, `shipped` | No catalog id, shipped source URL, or numbered source-reference match found; its source URL is shared with slots 1 and 3-8 | 14 numbered rows plus 2 unnumbered anthology-material groups, high | Next unshipped heading in the position 16 source | The anthology material cannot be expanded into issue rows without proof; the shared URL also fails the current gate |
+| 3 | 16, `x-men-events-fast-track` | `x-men-nation-x`, X-Men: Nation X, Sept 2009 - March 2010 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/ | `grouped-variant`, `shipped` | The explicit 20-row list has no shipped source-reference match; its source URL is shared with slots 1-2 and 4-8 | 20, medium | Next unshipped heading after shipped Messiah War and skipped Utopia | Approve the explicit list rather than the narrower 13-row collection summary; the shared URL fails the current gate |
+| 4 | 16, `x-men-events-fast-track` | `x-men-curse-of-the-mutants`, X-Men: Curse of the Mutants, June 2010 - Jan 2011 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/ | `grouped-variant`, `shipped` | The explicit 18-row list has no shipped source-reference match; its source URL is shared with slots 1-3 and 5-8 | 18, medium | Next unshipped heading after shipped Necrosha and Second Coming | Approve the explicit list over the inconsistent collection summary; the shared URL fails the current gate |
+| 5 | 16, `x-men-events-fast-track` | `wolverine-goes-to-hell`, Wolverine Goes to Hell, Sept 2010 - April 2011 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/ | `grouped-variant`, `shipped` | The explicit 15-row cross-title list has no shipped source-reference match; its source URL is shared with slots 1-4 and 6-8 | 15, medium | Next source heading, explicitly called an event and narrowed below the broad omnibus | Approve the 15 selected rows instead of the omnibus contents; the shared URL fails the current gate |
+| 6 | 16, `x-men-events-fast-track` | `x-men-age-of-x`, X-Men: Age of X, Jan 2011 - May 2011 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/ | `grouped-variant`, `shipped` | The explicit 11-row list has no shipped source-reference match; its source URL is shared with slots 1-5 and 7-8 | 11, medium | Next unshipped event heading in the source | Approve the explicit list, which includes two X-Men: Legacy aftermath rows beyond the collection summary; the shared URL fails the current gate |
+| 7 | 16, `x-men-events-fast-track` | `x-men-schism`, X-Men: Schism, July 2011 - Oct 2011 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/ | `grouped-variant`, `shipped` | The explicit 7-row list has no shipped source-reference match; its source URL is shared with slots 1-6 and 8 | 7, low | Next unshipped event heading in the source | Approve the seven ordered rows over the broader Prelude and Generation Hope collections; the shared URL fails the current gate |
+| 8 | 16, `x-men-events-fast-track` | `x-men-regenesis`, X-Men: Regenesis, Oct 2011 - Feb 2012 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/ | `grouped-variant`, `shipped` | The listed rows have no shipped source-reference match; its source URL is shared with slots 1-7 | 44 listed rows and 43 textual uniques, high | Final unshipped aftermath heading before the fast track exits to Avengers vs. X-Men | Uncanny X-Men #3 is listed twice and cannot be silently deduplicated; the shared URL also fails the current gate |
+| 9 | 23, `siege-to-heroic-age` | `doomwar`, Doomwar, 2010 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-siege-to-the-heroic-age/ | `path-source`, `not-applicable` | No catalog id, shipped source URL, or Doomwar #1-6 source-reference match found | 6, low | First later unblocked discrete crossover after positions 17-22 are skipped or blocked | Approve extracting the six-issue miniseries from the bridge source |
+| 10 | 29, `fear-itself-to-avx` | `spider-island`, Spider-Island, July 2011 - Nov 2011 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-fear-itself-to-avengers-vs-x-men/ | `path-source`, `not-applicable` | No catalog id, shipped source URL, or match for the 14 collected source references found | 14, medium | First later unblocked discrete event after Heroic Age, Shadowland, Chaos War, and blocked Fear Itself | Approve the 14-row collection boundary from the issue-bearing bridge source |
+
+The proposal contains no catalog-id duplicate and none of its three source pages is already used by a
+shipped catalog order or approved mapping. Numbered and explicitly listed source references produced
+zero matches in the 46 shipped order checklists. This is not an exact issue-id overlap disposition:
+the eight position 16 candidates have no mappings, Manifest Destiny still has unnumbered material,
+and every selected identity remains subject to the resolver and complete overlap report.
+
+### Shared-source blocker
+
+The position 16 page has plain `h2` headings with no HTML ids. All eight exact section sources are
+therefore the same URL, and inventing fragments would create false source links. Their literal issue
+lists are semantically distinct, but the current packet contract rejects repeated peer source URLs
+before that distinction can be represented. Parent approval must choose a durable representation or
+replace blocked siblings. Approval of the titles alone does not waive the machine gate.
+
+### Earlier master positions not supplying another proposed order
+
+| Position | Inventory source | Exact reason for skipping |
+|---:|---|---|
+| 1 | `early-2000s-until-disassembled` | Maximum Security is shipped. The page describes the rest as pre-event-era runs, arcs, or alternate material rather than another closed Marvel Universe event. |
+| 2 | `avengers-disassembled` | Reuse existing; the wider source is an overlapping variant of the shipped order. |
+| 3 | `secret-war` | The exact five-issue order is shipped. |
+| 4 | `disassembled-to-house-of-m` | Secret War is the only source-framed mini-event and is shipped; the remainder is a continuity path. |
+| 5 | `house-of-m` | Reuse existing; full and essential variants already cover the event. |
+| 6 | `decimation` | Blocked by five absent Generation M issues and one House of M overlap. |
+| 7 | `house-of-m-to-civil-war` | Planet Hulk is shipped; Spider-Man: The Other and Annihilation are covered elsewhere, and the remainder is a path of runs and arcs. |
+| 8 | `iron-man-extremis-commerce` | Excluded commerce link and a single story arc. |
+| 9 | `spider-man-the-other` | The exact 12-row crossover is shipped. |
+| 10 | `marvel-cosmic` | Conquest, War of Kings, and The Thanos Imperative are shipped; Realm of Kings remains blocked, and Annihilation already exists. |
+| 11 | `civil-war` | Reuse existing; three shipped variants cover the event. |
+| 12 | `civil-war-to-secret-invasion` | Silent War and Messiah Complex are shipped; the other discrete event references are shipped or already blocked. |
+| 13 | `silent-war-commerce` | Excluded commerce link; the issue-bearing event order is shipped from position 12. |
+| 14 | `world-war-hulk` | Blocked by three exact overlaps with two shipped orders. |
+| 15 | `world-war-hulk-aftersmash` | The exact aftermath order is shipped. |
+| 17 | `secret-invasion` | Reuse existing; full and essential variants are shipped. |
+| 18 | `secret-invasion-to-dark-reign` | War of Kings is shipped; the remaining rows are connective runs or arcs without another closed event boundary. |
+| 19 | `dark-reign` | Broad era overlaps the shipped Dark Reign Avengers order; Utopia is also overlapped. |
+| 20 | `fall-of-the-hulks` | Blocked because Fall of the Hulks: MODOK #1 is absent from repository metadata. |
+| 21 | `dark-reign-to-siege` | Messiah War and Necrosha are shipped; Utopia is overlapped; Fall of the Hulks and Realm of Kings remain blocked. |
+| 22 | `siege` | Blocked by thirteen shipped Dark Reign Avengers overlaps and unstable source rows. |
+| 24 | `heroic-age` | Broad era overlaps the shipped Heroic Age Avengers order. Nine of the ten Children's Crusade rows are already shipped in two variants. |
+| 25 | `shadowland` | The exact order is shipped. |
+| 26 | `chaos-war` | The exact order is shipped. |
+| 27 | `heroic-age-to-fear-itself` | Curse of the Mutants and Age of X are proposed earlier from position 16, Chaos War is shipped, and the residuals are runs or arcs. |
+| 28 | `fear-itself` | Blocked by fifteen exact overlaps with the shipped Heroic Age Avengers order. |
+
+### Embedded sections deliberately skipped
+
+* Position 16: Messiah War, Necrosha, and Second Coming are shipped. Utopia has known shipped overlap.
+* Position 23: Nation X is already proposed from its earlier source, Second Coming is shipped, World
+  War Hulks belongs to the blocked position 20 event, and Thor: Siege Aftermath is a single-title arc.
+* Position 29: Schism and Regenesis are already proposed from their earlier source. Circle of Four
+  and the remaining entries are source-framed runs or arcs, not another discrete event or aftermath.
+
+### Parent approval gate
+
+The parent must approve or revise the exact ten-order continuity proposal and resolve the repeated
+position 16 source URL before any P03-T01 implementation work starts. Until then, this addendum is
+read-only selection evidence and no inventory lifecycle state changes.

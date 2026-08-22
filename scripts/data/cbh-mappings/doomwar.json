@@ -1,0 +1,270 @@
+{
+  "id": "doomwar",
+  "inventoryId": "siege-to-heroic-age",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-siege-to-the-heroic-age/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 6,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 29948,
+      "title": "Doomwar",
+      "issueTitle": "Doomwar (2010) #1",
+      "seriesTitle": "Doomwar",
+      "apiSeriesName": "Doomwar (2010)",
+      "seriesId": 9240,
+      "issueNumber": "1",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29948/doomwar_2010_1",
+      "onSaleDate": "2010-02-17T00:00:00+0000"
+    },
+    {
+      "id": 29949,
+      "title": "Doomwar",
+      "issueTitle": "Doomwar (2010) #2",
+      "seriesTitle": "Doomwar",
+      "apiSeriesName": "Doomwar (2010)",
+      "seriesId": 9240,
+      "issueNumber": "2",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29949/doomwar_2010_2",
+      "onSaleDate": "2010-03-17T00:00:00+0000"
+    },
+    {
+      "id": 29950,
+      "title": "Doomwar",
+      "issueTitle": "Doomwar (2010) #3",
+      "seriesTitle": "Doomwar",
+      "apiSeriesName": "Doomwar (2010)",
+      "seriesId": 9240,
+      "issueNumber": "3",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29950/doomwar_2010_3",
+      "onSaleDate": "2010-04-21T00:00:00+0000"
+    },
+    {
+      "id": 29951,
+      "title": "Doomwar",
+      "issueTitle": "Doomwar (2010) #4",
+      "seriesTitle": "Doomwar",
+      "apiSeriesName": "Doomwar (2010)",
+      "seriesId": 9240,
+      "issueNumber": "4",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29951/doomwar_2010_4",
+      "onSaleDate": "2010-05-26T00:00:00+0000"
+    },
+    {
+      "id": 29952,
+      "title": "Doomwar",
+      "issueTitle": "Doomwar (2010) #5",
+      "seriesTitle": "Doomwar",
+      "apiSeriesName": "Doomwar (2010)",
+      "seriesId": 9240,
+      "issueNumber": "5",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/29952/doomwar_2010_5",
+      "onSaleDate": "2010-06-30T00:00:00+0000"
+    },
+    {
+      "id": 30720,
+      "title": "Doomwar",
+      "issueTitle": "Doomwar (2010) #6",
+      "seriesTitle": "Doomwar",
+      "apiSeriesName": "Doomwar (2010)",
+      "seriesId": 9240,
+      "issueNumber": "6",
+      "seriesYear": 2010,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/30720/doomwar_2010_6",
+      "onSaleDate": "2010-08-04T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Doomwar #1",
+      "sourceRangeReference": "Doomwar #1-6",
+      "normalizedSeriesTitle": "Doomwar",
+      "seriesYear": 2010,
+      "issueNumber": "1",
+      "seriesId": 9240,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29948"
+      ],
+      "selectedIssueId": 29948,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29948/doomwar_2010_1",
+      "resolvedIssueTitle": "Doomwar (2010) #1",
+      "note": "Marvel series 9240 (Doomwar (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29948
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Doomwar #2",
+      "sourceRangeReference": "Doomwar #1-6",
+      "normalizedSeriesTitle": "Doomwar",
+      "seriesYear": 2010,
+      "issueNumber": "2",
+      "seriesId": 9240,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29949"
+      ],
+      "selectedIssueId": 29949,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29949/doomwar_2010_2",
+      "resolvedIssueTitle": "Doomwar (2010) #2",
+      "note": "Marvel series 9240 (Doomwar (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29949
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Doomwar #3",
+      "sourceRangeReference": "Doomwar #1-6",
+      "normalizedSeriesTitle": "Doomwar",
+      "seriesYear": 2010,
+      "issueNumber": "3",
+      "seriesId": 9240,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29950"
+      ],
+      "selectedIssueId": 29950,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29950/doomwar_2010_3",
+      "resolvedIssueTitle": "Doomwar (2010) #3",
+      "note": "Marvel series 9240 (Doomwar (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29950
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Doomwar #4",
+      "sourceRangeReference": "Doomwar #1-6",
+      "normalizedSeriesTitle": "Doomwar",
+      "seriesYear": 2010,
+      "issueNumber": "4",
+      "seriesId": 9240,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29951"
+      ],
+      "selectedIssueId": 29951,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29951/doomwar_2010_4",
+      "resolvedIssueTitle": "Doomwar (2010) #4",
+      "note": "Marvel series 9240 (Doomwar (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29951
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Doomwar #5",
+      "sourceRangeReference": "Doomwar #1-6",
+      "normalizedSeriesTitle": "Doomwar",
+      "seriesYear": 2010,
+      "issueNumber": "5",
+      "seriesId": 9240,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "29952"
+      ],
+      "selectedIssueId": 29952,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/29952/doomwar_2010_5",
+      "resolvedIssueTitle": "Doomwar (2010) #5",
+      "note": "Marvel series 9240 (Doomwar (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        29952
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Doomwar #6",
+      "sourceRangeReference": "Doomwar #1-6",
+      "normalizedSeriesTitle": "Doomwar",
+      "seriesYear": 2010,
+      "issueNumber": "6",
+      "seriesId": 9240,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "30720"
+      ],
+      "selectedIssueId": 30720,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/30720/doomwar_2010_6",
+      "resolvedIssueTitle": "Doomwar (2010) #6",
+      "note": "Marvel series 9240 (Doomwar (2010)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        30720
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "doomwar",
+    "name": "Doomwar",
+    "description": "The complete six-issue conflict between Wakanda and Doctor Doom.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "doomwar.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-siege-to-the-heroic-age/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "doomwar.json",
+    "characters": [
+      "Black Panther",
+      "Doctor Doom",
+      "Storm",
+      "Wakanda"
+    ],
+    "keywords": [
+      "Doomwar",
+      "Black Panther",
+      "Doctor Doom",
+      "Wakanda"
+    ],
+    "expect": 6,
+    "timeline": 2010,
+    "coverIssueId": 29948,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Doomwar #1"
+  }
+}
