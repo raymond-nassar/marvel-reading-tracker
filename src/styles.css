@@ -481,6 +481,11 @@ body.nocovers .tgl .sw { background: var(--track-2); }
 body.nocovers .tgl .sw::after { left: 2px; }
 
 .list-tools { display: flex; align-items: center; gap: .15rem; flex-wrap: wrap; margin-bottom: 1.4rem; border: 1px solid var(--line); border-radius: 12px; padding: .35rem .45rem; }
+/* The rule that keeps the destructive command apart from the reversible ones. */
+.tool-sep { width: 1px; align-self: stretch; margin: .1rem .45rem; background: var(--line); }
+/* The order's blurb sits under the title, so it needs the header's own left edge rather than the
+   inset a settings card gives it. */
+.order-desc { margin-top: .45rem; }
 
 .quiet {
   border: 1px solid var(--line-2); background: none; color: var(--muted);
@@ -850,6 +855,12 @@ body.nocovers .row .rf, .row .rf.show { display: flex; }
   .setting-ctl.checkbox > input[type="checkbox"] { appearance: auto; width: auto; height: auto; }
   .setting-ctl.checkbox > input[type="checkbox"]::after { content: none; }
 }
+
+/* A shortcut table. These were a paragraph that spelled out three key combinations in prose, which
+   is the shape that makes a reader parse a sentence to find out which key does what. */
+.keys { border-collapse: collapse; margin: .1rem 0 .6rem; }
+.keys th { text-align: left; font-weight: 400; padding: .22rem 1rem .22rem 0; white-space: nowrap; vertical-align: top; }
+.keys td { padding: .22rem 0; color: var(--muted); font-size: var(--t-body); }
 
 /* A stacked form puts each child on its own grid row, which stretches a submit button to the full
    width of the card and makes it read as a banner rather than as a button. */

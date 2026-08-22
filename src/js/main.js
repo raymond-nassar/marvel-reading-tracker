@@ -2376,11 +2376,18 @@ function renderReading() {
   ).size;
 
   $('#order-name').textContent = list.name;
+  // Facts only. The description used to be welded onto the end of this line, which made a single
+  // 543 character run of the subtitle: three sentences of blurb inside a 62ch column, with the
+  // right two fifths of the header band empty beside it. It has its own disclosure below now.
   $('#order-sub').textContent = [
     `${total} issue${total === 1 ? '' : 's'}`,
     seriesCount ? `${seriesCount} series` : null,
-    list.description || null,
   ].filter(Boolean).join(' · ');
+  const desc = $('#order-desc');
+  const descText = $('#order-desc-text');
+  descText.textContent = list.description || '';
+  desc.hidden = !list.description;
+  if (!list.description) desc.open = false;
 
   const pct = total ? read / total : 0;
   const listNote = $('#list-note');
@@ -2388,8 +2395,10 @@ function renderReading() {
   listNote.hidden = !list.note;
   $('#btn-list-note').textContent = list.note ? 'Edit note' : 'Note';
   $('#ring-arc').setAttribute('stroke-dashoffset', String(RING_CIRCUMFERENCE * (1 - pct)));
-  $('#ring-label').textContent = `${read} of ${total} read`;
-  $('#ring-sub').textContent = !total ? 'Nothing in this list' : read === total ? 'All read' : `${total - read} to go · ${Math.round(pct * 100)}%`;
+  // One statement, not two. The ring used to read "0 of 120 read" over "120 to go · 0%", which is
+  // the same fact said twice and subtracted once, in a 44px circle.
+  $('#ring-label').textContent = total ? `${Math.round(pct * 100)}%` : '';
+  $('#ring-sub').textContent = !total ? 'Nothing in this list' : read === total ? 'All read' : `${read} of ${total}`;
 
   renderHero();
   renderShelf();
@@ -2447,12 +2456,16 @@ function renderHero() {
 
   const avClass = av.state === STATE.EXPECTED || av.state === STATE.OVERRIDE_AVAILABLE ? 'ok'
     : av.state === STATE.SCHEDULED ? 'warn' : '';
-  $('#hero-facts').replaceChildren(
-    fact('In Unlimited', `${SHORT[av.state]} ${describe(issue, { override })}`, avClass),
-    fact('Pages', issue.pageCount ? String(issue.pageCount) : 'Unknown'),
-    fact('Released', ymd(issue.onSale) || 'Unknown'),
-    fact('Position', total ? `${position} of ${total}` : 'Unknown'),
-  );
+  // An absent fact is left out rather than printed as "Unknown". A row of four facts where three
+  // read Unknown tells a reader nothing they could not see from the empty screen, and it costs the
+  // one fact that is present the prominence of being the only one. Availability is never dropped:
+  // its unknown state is a distinct, meaningful answer rather than a missing value, which is the
+  // whole reason that model has five states instead of a boolean.
+  const facts = [fact('In Unlimited', `${SHORT[av.state]} ${describe(issue, { override })}`, avClass)];
+  if (issue.pageCount) facts.push(fact('Pages', String(issue.pageCount)));
+  if (ymd(issue.onSale)) facts.push(fact('Released', ymd(issue.onSale)));
+  if (total) facts.push(fact('Position', `${position} of ${total}`));
+  $('#hero-facts').replaceChildren(...facts);
 
   const info = $('#btn-hero-info');
   const infoHref = detailUrl(issue);
@@ -4998,10 +5011,12 @@ function writeYoursSummary(sec, state) {
 
 // The full order summary in its <summary>, on screen whether or not the order is open. An empty
 // order is said plainly rather than as "0 of 0 read", which reads as a fault, not as the fact it is.
+// The unread half used to be spelled out beside the read half. It is the same fact subtracted, and
+// this line is the fifth place on the screen that the same fact appears, so it says one of them.
 function fullCountText(all, unread) {
   if (!all.length) return 'No issues yet';
   const read = all.length - unread;
-  return `${read} of ${all.length} read · ${unread} unread`;
+  return `${read} of ${all.length} read`;
 }
 
 // A quiet row above the reading filters: a bar for the whole order and its percentage, and, when a

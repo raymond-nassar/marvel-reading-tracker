@@ -294,6 +294,12 @@
               <div class="head-left">
                 <h1 id="order-name">Recap Page</h1>
                 <div class="sub" id="order-sub">Curated reading orders, tracked locally.</div>
+                <!-- The order's own blurb. It used to be welded onto the end of the subtitle above,
+                     which is a line with room for a fact and not for three sentences. -->
+                <details class="setting-more order-desc" id="order-desc" hidden>
+                  <summary>About this order</summary>
+                  <p class="rail-hint" id="order-desc-text"></p>
+                </details>
               </div>
               <div class="headright">
                 <button type="button" class="tgl" id="btn-covers" data-covers-toggle aria-pressed="true">
@@ -317,7 +323,6 @@
                 <button type="button" class="quiet" id="btn-list-note">Note</button>
                 <button type="button" class="quiet" id="btn-duplicate-list">Duplicate</button>
                 <button type="button" class="quiet" id="btn-export-md">Export as Markdown</button>
-                <button type="button" class="quiet quiet-danger" id="btn-delete-list">Delete list</button>
                 <span class="grow"></span>
                 <span id="hydration-status" class="rail-hint" hidden></span>
                 <button type="button" class="quiet" id="btn-hydrate" hidden>Fetch missing details</button>
@@ -328,6 +333,12 @@
                 <span id="synopsis-status" class="rail-hint" hidden></span>
                 <button type="button" class="quiet" id="btn-synopsis">Fetch synopses</button>
                 <button type="button" class="quiet" id="btn-cancel-synopsis" hidden>Stop synopses</button>
+                <!-- The one command here that cannot be undone, kept away from the ones that can.
+                     It used to sit flush against "Export as Markdown" in a run of five identical
+                     buttons, so the only thing separating a copy of the list from the loss of it
+                     was reading the label. It is last, past a rule, at the far end of the strip. -->
+                <span class="tool-sep" aria-hidden="true"></span>
+                <button type="button" class="quiet quiet-danger" id="btn-delete-list">Delete list</button>
               </div>
 
               <!-- The reader's own note about this order. Sits above the hero because it is
@@ -747,12 +758,16 @@
               </p>
 
               <h3>Keyboard shortcuts</h3>
+              <table class="keys">
+                <tbody>
+                  <tr><th scope="row"><kbd>↵</kbd></th><td>Open the current issue in Marvel Unlimited</td></tr>
+                  <tr><th scope="row"><kbd>D</kbd></th><td>Mark it read and move to the next one</td></tr>
+                  <tr><th scope="row"><kbd>Ctrl</kbd> + <kbd>\</kbd></th><td>Collapse or expand the sidebar, anywhere in the app</td></tr>
+                </tbody>
+              </table>
               <p class="rail-hint">
-                In the reading view, <kbd>↵</kbd> opens the current issue in Marvel Unlimited and
-                <kbd>D</kbd> marks it read and moves to the next one. <kbd>Ctrl</kbd> +
-                <kbd>\</kbd> collapses and expands the sidebar, anywhere in the app. The two
-                reading shortcuts pause while you are typing in a box, and <kbd>↵</kbd> leaves the
-                button or link you are on to do its own job.
+                The two reading shortcuts pause while you are typing in a box, and <kbd>↵</kbd> leaves
+                the button or link you are on to do its own job.
               </p>
 
               <h3>Your data</h3>
@@ -762,29 +777,32 @@
                 tracking of any kind. Your progress and your notes are never sent anywhere. Clearing
                 site data for this address erases them, so export a backup regularly.
               </p>
-              <p class="rail-hint">
-                What does leave this machine is the ordinary business of fetching what is on
-                screen. Opening the app asks the metadata API named above whether it is reachable,
-                which is what the status pill reports. Searching for issues sends what you typed,
-                and so does asking an imported line to find its own match; searching the catalog,
-                series or creators is answered from files already on this machine, but adding a
-                whole series or a creator's issues then asks the metadata API for every issue it
-                lists, which is the longest run of requests the app makes. Filling in details sends
-                every issue number still missing them, across every list you keep, starting with
-                the one you are about to read. Cover art is
-                requested from Marvel's image servers as it appears, so those servers see which
-                issues are on screen; switching cover art off stops them being requested at all.
-                Those are the only servers a cover is ever asked of: an address the metadata API
-                reports on any other host is refused before anything is fetched.
-                Opening an issue asks the metadata API for the reader link
-                when this copy does not already have it, then hands that one issue to Marvel's
-                reader, or to marvel.com whenever no reader link can be resolved.
-                Adding an issue by hand sends the words in the title box to the Marvel Fandom
-                wiki, a community site Marvel does not run, and it does that only when you press
-                the lookup button. That wiki then sees the title you searched for; your lists,
-                your progress and your notes are no part of the request, and no picture is
-                fetched from it.
-              </p>
+              <details class="setting-more">
+                <summary>What leaves this machine, request by request</summary>
+                <p class="rail-hint">
+                  What does leave this machine is the ordinary business of fetching what is on
+                  screen. Opening the app asks the metadata API named above whether it is reachable,
+                  which is what the status pill reports. Searching for issues sends what you typed,
+                  and so does asking an imported line to find its own match; searching the catalog,
+                  series or creators is answered from files already on this machine, but adding a
+                  whole series or a creator's issues then asks the metadata API for every issue it
+                  lists, which is the longest run of requests the app makes. Filling in details sends
+                  every issue number still missing them, across every list you keep, starting with
+                  the one you are about to read. Cover art is
+                  requested from Marvel's image servers as it appears, so those servers see which
+                  issues are on screen; switching cover art off stops them being requested at all.
+                  Those are the only servers a cover is ever asked of: an address the metadata API
+                  reports on any other host is refused before anything is fetched.
+                  Opening an issue asks the metadata API for the reader link
+                  when this copy does not already have it, then hands that one issue to Marvel's
+                  reader, or to marvel.com whenever no reader link can be resolved.
+                  Adding an issue by hand sends the words in the title box to the Marvel Fandom
+                  wiki, a community site Marvel does not run, and it does that only when you press
+                  the lookup button. That wiki then sees the title you searched for; your lists,
+                  your progress and your notes are no part of the request, and no picture is
+                  fetched from it.
+                </p>
+              </details>
 
               <h3>This build</h3>
               <p class="rail-hint">
