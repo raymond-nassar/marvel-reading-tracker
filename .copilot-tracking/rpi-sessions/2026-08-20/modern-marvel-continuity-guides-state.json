@@ -992,5 +992,393 @@
       }
     ],
     "next_action": "Restart or repair Agent Merge state injection for pull request 163; the pull request itself is ready."
+  },
+  "batch_four_proposal": {
+    "date": "2026-08-21",
+    "status": "approved-implementation-in-progress",
+    "baseline": {
+      "default_branch_commit": "de73f074e94b210011ea0569d426088d7ed152dc",
+      "catalog_entries": 56,
+      "mapping_files": 43,
+      "overlap_files": 37,
+      "shipped_cbh_mappings": 30,
+      "shipped_cbh_overlap_reports": 30
+    },
+    "approval_gate": {
+      "required": false,
+      "authority": "Parent session approved autonomous implementation in the coordinating instruction on 2026-08-21",
+      "status": "approved",
+      "boundary_resolution": {
+        "minimum_carnage": "Resolve six versus seven rows from refreshed source and metadata evidence",
+        "venomverse": "Approved 11-row core ending with Venomverse #5",
+        "infinity_countdown_wars": "Resolve 46 versus 50 rows from refreshed source and metadata evidence",
+        "damnation": "Approved 15-row event checklist ending with Doctor Strange #389"
+      },
+      "must_approve_or_revise": [
+        "the exact ten ids and their source order",
+        "all six page-plus-section source identities",
+        "the six-row versus seven-row Minimum Carnage boundary",
+        "the 11-row Venomverse core boundary",
+        "the 46-row versus 50-row Infinity Countdown and Infinity Wars boundary",
+        "the 15-row Marvel Damnation boundary",
+        "the continued exclusion of every known overlap, semantic non-event, and blocked subset"
+      ],
+      "prohibited_until_approval": [
+        "mapping creation or refresh",
+        "inventory disposition or lifecycle changes",
+        "overlap report generation",
+        "order Markdown authoring",
+        "manifest, catalog, or generated data edits",
+        "product or tooling code changes",
+        "test changes",
+        "commits, pushes, or pull requests"
+      ]
+    },
+    "selection_basis": "Re-audit master positions from the beginning, preserve master position before publication dates, preserve visible section order inside shared pages, recover earlier event or aftermath gaps hidden by record-level filters, and exclude shipped, reused, semantic-duplicate, exact, subset, or partial-overlap work without an approved disposition.",
+    "selection_boundary": {
+      "first_position": 31,
+      "last_position": 56,
+      "shared_source_urls": 2,
+      "sectioned_proposals": 6,
+      "dedicated_source_urls": 4,
+      "unique_source_identities": 10,
+      "explicit_estimated_rows": 128,
+      "maximum_estimated_rows_if_boundaries_expand": 133
+    },
+    "proposed_orders": [
+      {
+        "slot": 1,
+        "position": 31,
+        "inventory_id": "avx-to-marvel-now",
+        "inventory_title": "Comics Getting You From Avengers vs. X-Men to Marvel NOW!",
+        "proposed_id": "minimum-carnage",
+        "proposed_title": "Minimum Carnage",
+        "period": "Oct-Nov 2012",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+        "source_section": "Minimum Carnage",
+        "current_disposition": "path-source",
+        "current_delivery_status": "not-applicable",
+        "existing_coverage": "No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference match.",
+        "estimated_source_rows": "6 core rows, or 7 with Scarlet Spider #12 from the earlier collected block",
+        "complexity": "medium",
+        "why_next": "First clean cross-title event after the blocked position 30 scopes.",
+        "decision_or_blocker": "Parent must choose the explicit six-issue reading order or the seven-issue collected boundary and approve the visible non-fragment sourceSection."
+      },
+      {
+        "slot": 2,
+        "position": 32,
+        "inventory_id": "marvel-now",
+        "inventory_title": "Marvel NOW! Reading Order",
+        "proposed_id": "x-termination",
+        "proposed_title": "X-Men: X-Termination",
+        "period": "Mar-Apr 2013",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+        "source_section": "X-Termination",
+        "current_disposition": "deferred",
+        "current_delivery_status": "not-applicable",
+        "existing_coverage": "No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference match.",
+        "estimated_source_rows": "8",
+        "complexity": "medium",
+        "why_next": "First clean event section in the position 32 page after the skipped AvX aftermath.",
+        "decision_or_blocker": "Approve the literal eight-row section; exact resolution and complete overlap reporting remain mandatory."
+      },
+      {
+        "slot": 3,
+        "position": 32,
+        "inventory_id": "marvel-now",
+        "inventory_title": "Marvel NOW! Reading Order",
+        "proposed_id": "avengers-enemy-within",
+        "proposed_title": "Avengers: The Enemy Within",
+        "period": "May-Jul 2013",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+        "source_section": "Avengers: The Enemy Within",
+        "current_disposition": "deferred",
+        "current_delivery_status": "not-applicable",
+        "existing_coverage": "No exact shipped reference match. Captain Marvel #13 collides by name and number with the 2000 series in Maximum Security, but the proposed series is from 2012.",
+        "estimated_source_rows": "5",
+        "complexity": "low-to-medium",
+        "why_next": "Next clean cross-title reading sequence after blocked Age of Ultron and the selected early Marvel NOW sections.",
+        "decision_or_blocker": "Approve the five-entry reading-order line as the complete event boundary."
+      },
+      {
+        "slot": 4,
+        "position": 32,
+        "inventory_id": "marvel-now",
+        "inventory_title": "Marvel NOW! Reading Order",
+        "proposed_id": "x-men-battle-of-the-atom",
+        "proposed_title": "X-Men: Battle of the Atom",
+        "period": "Sep-Oct 2013",
+        "source_url": "https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/",
+        "source_section": "Battle of the Atom",
+        "current_disposition": "deferred",
+        "current_delivery_status": "not-applicable",
+        "existing_coverage": "No exact shipped reference match. Seven name-number matches belong to different 1963, 2010, or 2015 series.",
+        "estimated_source_rows": "10",
+        "complexity": "medium",
+        "why_next": "Next explicit event heading after Avengers: The Enemy Within.",
+        "decision_or_blocker": "Approve the linked X-Men event sequence because the broad Marvel NOW page groups the issues by series rather than reading order."
+      },
+      {
+        "slot": 5,
+        "position": 32,
+        "inventory_id": "marvel-now",
+        "inventory_title": "Marvel NOW! Reading Order",
+        "proposed_id": "revolutionary-war",
+        "proposed_title": "Revolutionary War",
+        "period": "Jan-Mar 2014",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+        "source_section": "Event: Revolutionary War",
+        "current_disposition": "deferred",
+        "current_delivery_status": "not-applicable",
+        "existing_coverage": "No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference match.",
+        "estimated_source_rows": "8",
+        "complexity": "medium",
+        "why_next": "First clean event heading after blocked Infinity and overlapped Inhumanity.",
+        "decision_or_blocker": "Approve the literal eight-entry source order across the Alpha, six character one-shots, and Omega."
+      },
+      {
+        "slot": 6,
+        "position": 32,
+        "inventory_id": "marvel-now",
+        "inventory_title": "Marvel NOW! Reading Order",
+        "proposed_id": "x-men-trial-of-jean-grey",
+        "proposed_title": "X-Men: The Trial of Jean Grey",
+        "period": "Jan-Mar 2014",
+        "source_url": "https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/",
+        "source_section": "Trial of Jean Grey",
+        "current_disposition": "deferred",
+        "current_delivery_status": "not-applicable",
+        "existing_coverage": "No exact shipped reference match. Guardians of the Galaxy #13 belongs to the 2013 series, not the 2008 War of Kings issue with the same name and number.",
+        "estimated_source_rows": "6",
+        "complexity": "low-to-medium",
+        "why_next": "Next clean crossover sequence after Revolutionary War in the position 32 source flow.",
+        "decision_or_blocker": "Approve the linked six-row X-Men event sequence and its non-fragment section identity."
+      },
+      {
+        "slot": 7,
+        "position": 49,
+        "inventory_id": "monsters-unleashed",
+        "inventory_title": "Monsters Unleashed",
+        "proposed_id": "monsters-unleashed",
+        "proposed_title": "Monsters Unleashed",
+        "period": "Jan-Mar 2017",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/monsters-unleashed/",
+        "source_section": null,
+        "current_disposition": "new-order",
+        "current_delivery_status": "pending",
+        "existing_coverage": "No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference match.",
+        "estimated_source_rows": "13",
+        "complexity": "medium",
+        "why_next": "First clean direct event after positions 33 through 48 resolve to shipped, reused, blocked, broad-era, or exact-overlap work.",
+        "decision_or_blocker": "Approve only the 13-row issue-by-issue block and preserve every 1.MU issue number exactly."
+      },
+      {
+        "slot": 8,
+        "position": 52,
+        "inventory_id": "venomverse",
+        "inventory_title": "Venomverse",
+        "proposed_id": "venomverse",
+        "proposed_title": "Venomverse",
+        "period": "Jun-Oct 2017",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-venomverse/",
+        "source_section": null,
+        "current_disposition": "new-order",
+        "current_delivery_status": "pending",
+        "existing_coverage": "No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference match. Spider-Verse is a different 2014 event.",
+        "estimated_source_rows": "11 core rows",
+        "complexity": "medium",
+        "why_next": "Secret Empire is overlapped and position 51 is a broad era, so Venomverse is the next clean event.",
+        "decision_or_blocker": "Approve stopping before the later Poison-X and Venomized continuation."
+      },
+      {
+        "slot": 9,
+        "position": 55,
+        "inventory_id": "infinity-countdown-wars",
+        "inventory_title": "Infinity Countdown and Infinity Wars",
+        "proposed_id": "infinity-countdown-wars",
+        "proposed_title": "Infinity Countdown and Infinity Wars",
+        "period": "Jan-Dec 2018",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/infinity-countdown/",
+        "source_section": null,
+        "current_disposition": "new-order",
+        "current_delivery_status": "pending",
+        "existing_coverage": "No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference match. This 2018 family is distinct from the blocked 2013 Infinity mapping.",
+        "estimated_source_rows": "46 explicit rows, or 50 with Guardians of the Galaxy #146-149",
+        "complexity": "high",
+        "why_next": "Generations is thematic tissue rather than an event and Marvel Legacy is a broad era.",
+        "decision_or_blocker": "Approve the explicit 46-row flow or add the four collected lead-in issues; keep Countdown and Wars as one reviewed boundary."
+      },
+      {
+        "slot": 10,
+        "position": 56,
+        "inventory_id": "damnation",
+        "inventory_title": "Marvel Damnation",
+        "proposed_id": "damnation",
+        "proposed_title": "Marvel Damnation",
+        "period": "Feb-May 2018",
+        "source_url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/doctor-strange-damnation/",
+        "source_section": null,
+        "current_disposition": "new-order",
+        "current_delivery_status": "pending",
+        "existing_coverage": "No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference match.",
+        "estimated_source_rows": "15",
+        "complexity": "medium",
+        "why_next": "Next direct historical crossover after the selected position 55 family.",
+        "decision_or_blocker": "Approve the issue checklist through Doctor Strange #389, excluding solo-series #390, and require Scarlet Spider to resolve to the reviewed Ben Reilly series."
+      }
+    ],
+    "duplicate_review": {
+      "proposed_ids": 10,
+      "catalog_id_matches": 0,
+      "mapping_id_matches": 0,
+      "shipped_source_identity_matches": 0,
+      "peer_source_identity_matches": 0,
+      "semantic_title_matches": 0,
+      "explicit_source_references": 128,
+      "name_number_collisions": 9,
+      "year_aware_exact_shipped_reference_matches": 0,
+      "shipped_overlap_reports_reviewed": 30,
+      "non_none_relationships_in_shipped_reports": 0,
+      "exact_issue_id_overlap_status": "Not claimed before new mappings and complete reports; any discovered relationship blocks and backfills the candidate."
+    },
+    "known_exclusions": [
+      {
+        "position": 30,
+        "id": "avx-consequences",
+        "reason": "Five clean issues, but they are an exact subset of the existing blocked whole-page Avengers vs. X-Men mapping and have no approved split disposition."
+      },
+      {
+        "position": 32,
+        "id": "inhumanity",
+        "reason": "New Avengers #13 overlaps both shipped Hickman variants."
+      },
+      {
+        "position": 40,
+        "id": "secret-wars-2015",
+        "reason": "Secret Wars #1-9 are already present in both shipped Hickman variants."
+      },
+      {
+        "position": 50,
+        "id": "secret-empire",
+        "reason": "The source includes Avengers-family issues already shipped in All-New All-Different Avengers, with no approved partial-overlap disposition."
+      },
+      {
+        "position": 53,
+        "id": "generations",
+        "reason": "The source describes the ten one-shots as thematic tissue rather than a genuine event."
+      }
+    ],
+    "earlier_skip_summary": [
+      {
+        "positions": "1-29",
+        "reason": "All event-like scopes are shipped, reused, excluded commerce, path-only runs or arcs, or retain the exact resolution and overlap blockers recorded by batch three."
+      },
+      {
+        "positions": "30-32",
+        "reason": "Main Avengers vs. X-Men, Age of Ultron, Infinity, Inhumanity, Original Sin, Death of Wolverine, Black Vortex, and Time Runs Out are blocked or overlapped; Axis and Spider-Verse are shipped. Six clean hidden sections remain proposed."
+      },
+      {
+        "positions": "33-48",
+        "reason": "Direct records repeat shipped or blocked scopes, Secret Wars overlaps both Hickman variants, the fast-track and era records add no clean event, and the three later direct events before Monsters Unleashed are blocked or shipped."
+      },
+      {
+        "positions": "50-54",
+        "reason": "Secret Empire is overlapped, X-Men ResurreXion and Marvel Legacy are eras, and Generations is thematic tissue rather than an event."
+      }
+    ],
+    "implementation": {
+      "status": "validated-delivery-in-progress",
+      "source_refreshed_at": "2026-08-21",
+      "source_refresh": {
+        "unique_urls": 6,
+        "safe_fetch_status": "retrieved",
+        "direct_http_status": "HTTP 403 for all six pages",
+        "edge_navigation_status": "HTTP 403 for all six pages",
+        "resolution": "The safe page fetcher returned the current issue-bearing sections for all six exact URLs; direct HTTP and Edge were retained as failed access evidence rather than treated as missing source content."
+      },
+      "catalog_order_ids": [
+        "minimum-carnage",
+        "x-termination",
+        "avengers-enemy-within",
+        "x-men-battle-of-the-atom",
+        "revolutionary-war",
+        "x-men-trial-of-jean-grey",
+        "monsters-unleashed",
+        "venomverse",
+        "infinity-countdown-wars",
+        "damnation"
+      ],
+      "counts": {
+        "guides": 10,
+        "mapping_rows": 128,
+        "distinct_issue_ids": 128,
+        "documented_excluded_source_references": 4,
+        "overlap_reports": 10,
+        "comparison_rows": 650,
+        "non_none_relationships": 0,
+        "catalog_entries_after": 66,
+        "shared_page_sections": 6
+      },
+      "boundary_and_identity_resolutions": {
+        "minimum-carnage": "Keep the six issues in the explicit reading-order line. Scarlet Spider #12 begins the following standalone block.",
+        "monsters-unleashed": "Preserve all eight source issue numbers as 1.MU while matching Marvel metadata's 1.1 value. Avengers issue 62507 is the 2017 Jim Zub event tie-in, not the 2016 Mark Waid issue with the same metadata number.",
+        "venomverse": "Keep the 11-row core through Venomverse #5. Use issue 64250 for Edge of Venomverse #5 because Marvel indexes that page and its metadata has the complete cover; 64249 is the duplicate record with image_not_available.",
+        "infinity-countdown-wars": "Keep the 46 explicit issue-by-issue rows. Guardians of the Galaxy #146-149 appear only in the collected lead-in, while the explicit flow starts at #150.",
+        "damnation": "Keep the 15-row event checklist through Doctor Strange #389. Doctor Strange #390 appears only in the solo collection, and all three Scarlet Spider rows resolve to the Ben Reilly series."
+      },
+      "first_on_sale_dates": [
+        "2012-10-03",
+        "2013-03-06",
+        "2013-05-15",
+        "2013-09-04",
+        "2014-01-08",
+        "2014-01-22",
+        "2017-01-18",
+        "2017-06-28",
+        "2018-01-03",
+        "2018-02-21"
+      ],
+      "validation": {
+        "focused_tests": "130/130",
+        "full_tests": "1316/1316",
+        "lint_errors": 0,
+        "ranked_backlog_rows": 160,
+        "parked_backlog_rows": 5,
+        "backlog_detail_blocks": 165,
+        "stated_file_sizes": 7,
+        "palette_pairs": 88,
+        "palette_new_failures": 0,
+        "publication_findings": 0,
+        "anchors": 1047,
+        "anchor_reaims": 43,
+        "repository_contract": "33/33",
+        "repository_contract_requests": 17,
+        "added_issue_contract": "128/128",
+        "browser_assertions": 120,
+        "browser_scenarios": 14,
+        "failure_proofs": 2,
+        "approved_mapping_hash_changes": 0,
+        "author_hash_changes": 0,
+        "overlap_hash_changes": 0
+      },
+      "self_review": {
+        "status": "resolved",
+        "material_findings": 2,
+        "open_material_findings": 0,
+        "result": "Corrected an inventory edit that first matched the adjacent Secret Invasion bridge and changed the added-issue contract to compare explicit metadata numbers while the product preserves source display numbers."
+      },
+      "post_pr_review": {
+        "status": "resolved",
+        "pull_request": 164,
+        "reviewed_head": "6119f8751f0c933d9eaae5974cdd43c2378b5b39",
+        "material_findings": 1,
+        "open_material_findings": 0,
+        "result": "Reconciled the eight approved 1.MU checklist overrides into vendored display titles, added a payload-title assertion, and limited the live-contract title allowance to rows carrying an explicit metadataIssueNumber."
+      },
+      "review_agent_passes": "waived by parent instruction",
+      "agent_merge": "Resume after the review-fix commit is pushed"
+    },
+    "selection_status": "Approved ten-order packet authored, vendored, and validated",
+    "next_action": "Commit and push the validated batch, open one pull request, then hand it to Agent Merge."
   }
 }

@@ -563,3 +563,136 @@ replace blocked siblings. Approval of the titles alone does not waive the machin
 The parent must approve or revise the exact ten-order continuity proposal and resolve the repeated
 position 16 source URL before any P03-T01 implementation work starts. Until then, this addendum is
 read-only selection evidence and no inventory lifecycle state changes.
+
+## P03 Batch Four Selection Proposal Addendum
+
+* Proposal date: 2026-08-21.
+* Status: Approved for autonomous P03-T01 through P03-T03 execution by the parent session on
+  2026-08-21.
+* Baseline: The third batch is merged on the default branch at
+  `de73f074e94b210011ea0569d426088d7ed152dc`.
+* Ordering rule: Re-audit from the beginning, preserve master position before any publication-date
+  ordering, and preserve visible section order inside a shared page. An earlier blocked umbrella
+  does not hide a later clean section, but an exact or partial overlap still requires an approved
+  disposition before selection.
+* Research boundary: Earlier event gaps at positions 30 through 32 were reconsidered against all 56
+  shipped catalog orders, all 30 shipped Comic Book Herald mappings, and all 30 shipped overlap
+  reports. The proposal then advances through the first later eligible direct records and closes at
+  position 56.
+* Implementation authority: Refresh the exact sources, resolve every proposed row with real
+  metadata, decide the open count boundaries from that evidence, and carry the approved ten through
+  inventory, overlap, authoring, product records, validation, pull request, and Agent Merge.
+
+### Proposed ten reading orders
+
+The first six proposals recover source-framed events that the inventory's record-level filters hid
+inside a bridge or broad era. They use the existing page-plus-section identity contract and add no
+URL fragment. The last four use dedicated source pages. Counts are selection estimates, not approved
+mapping counts.
+
+| Slot | Master position and source record | Proposed reading order and period | Exact Comic Book Herald source | Current disposition and status | Shipped or peer coverage | Estimated rows and complexity | Why this is the next chronological gap | Decision or blocker |
+|---:|---|---|---|---|---|---|---|---|
+| 1 | 31, `avx-to-marvel-now`, Comics Getting You From Avengers vs. X-Men to Marvel NOW! | `minimum-carnage`, Minimum Carnage, Oct-Nov 2012 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/ with `sourceSection: Minimum Carnage` | `path-source`, `not-applicable` | No proposed id, catalog id, source identity, or exact shipped checklist reference matches | 6 core rows, or 7 if Scarlet Spider #12 from the earlier collected block is retained; medium | First clean cross-title event after the blocked position 30 scopes | Parent must choose the explicit six-issue reading order or the seven-issue collected boundary. The section label is visible source text, and no fragment may be invented. |
+| 2 | 32, `marvel-now`, Marvel NOW! Reading Order | `x-termination`, X-Men: X-Termination, Mar-Apr 2013 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/ with `sourceSection: X-Termination` | `deferred`, `not-applicable` | No proposed id, catalog id, source identity, or exact shipped checklist reference matches | 8 rows across four series; medium | First clean event section in the position 32 page after the skipped AvX aftermath | Approve extracting the literal eight-row section from the broad era source; exact resolution and full overlap reporting remain mandatory. |
+| 3 | 32, `marvel-now`, Marvel NOW! Reading Order | `avengers-enemy-within`, Avengers: The Enemy Within, May-Jul 2013 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/ with `sourceSection: Avengers: The Enemy Within` | `deferred`, `not-applicable` | No exact shipped reference match. Captain Marvel #13 has a name-number collision with the 2000 series in Maximum Security, but the series year differs. | 5 rows across three series; low to medium | Next clean cross-title reading sequence after blocked Age of Ultron and the selected early Marvel NOW sections | Approve the five-entry reading-order line as the complete event boundary. |
+| 4 | 32, `marvel-now`, Marvel NOW! Reading Order | `x-men-battle-of-the-atom`, X-Men: Battle of the Atom, Sep-Oct 2013 | https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/ with `sourceSection: Battle of the Atom` | `deferred`, `not-applicable` | No exact shipped reference match. Seven name-number matches use different 1963, 2010, or 2015 series instead of the proposed 2012 or 2013 series. | 10 interleaved rows across five series; medium | Next explicit event heading after The Enemy Within | Use the linked X-Men event sequence because the broad Marvel NOW page groups the issues by series instead of giving their reading order. |
+| 5 | 32, `marvel-now`, Marvel NOW! Reading Order | `revolutionary-war`, Revolutionary War, Jan-Mar 2014 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/ with `sourceSection: Event: Revolutionary War` | `deferred`, `not-applicable` | No proposed id, catalog id, source identity, or exact shipped checklist reference matches | 8 one-shots; medium | First clean event heading after blocked Infinity and overlapped Inhumanity | Approve the literal eight-entry source order across the Alpha, six character one-shots, and Omega. |
+| 6 | 32, `marvel-now`, Marvel NOW! Reading Order | `x-men-trial-of-jean-grey`, X-Men: The Trial of Jean Grey, Jan-Mar 2014 | https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/ with `sourceSection: Trial of Jean Grey` | `deferred`, `not-applicable` | No exact shipped reference match. Guardians of the Galaxy #13 collides by name and number with the 2008 series in War of Kings, but the proposed issue is from the 2013 series. | 6 interleaved rows across two series; low to medium | Next clean crossover sequence after Revolutionary War in the position 32 source flow | Approve the linked six-row X-Men event sequence and its non-fragment section identity. |
+| 7 | 49, `monsters-unleashed`, Monsters Unleashed | `monsters-unleashed`, Monsters Unleashed, Jan-Mar 2017 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/monsters-unleashed/ | `new-order`, `pending` | No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference matches | 13 rows; medium | Positions 33 through 48 are shipped, reused, blocked, broad-era, or exact-overlap work; this is the first later clean direct event | Approve only the 13-row issue-by-issue block, excluding historical Monsterbus material and the background prelude collection. Preserve each `1.MU` issue number exactly. |
+| 8 | 52, `venomverse`, Venomverse | `venomverse`, Venomverse, Jun-Oct 2017 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-venomverse/ | `new-order`, `pending` | No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference matches; Spider-Verse is a different 2014 event | 11 core rows; medium | Secret Empire is overlapped and position 51 is a broad X-Men era, so Venomverse is the next clean event | Approve stopping after Edge of Venomverse #1-5, War Stories #1, and Venomverse #1-5. Poison-X and Venomized sit under a later continuation heading and are not part of the proposed boundary. |
+| 9 | 55, `infinity-countdown-wars`, Infinity Countdown and Infinity Wars | `infinity-countdown-wars`, Infinity Countdown and Infinity Wars, Jan-Dec 2018 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/infinity-countdown/ | `new-order`, `pending` | No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference matches; the 2018 family is distinct from the blocked 2013 Infinity mapping | 46 explicit rows; high | Generations is thematic tissue rather than a genuine event and Marvel Legacy is a broad era, making this the next eligible event family | Approve the explicit 46-row issue-by-issue flow or add Guardians of the Galaxy #146-149 from the collected lead-in for 50 rows. The combined Countdown and Wars boundary must stay one reviewed decision. |
+| 10 | 56, `damnation`, Marvel Damnation | `damnation`, Marvel Damnation, Feb-May 2018 | https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/doctor-strange-damnation/ | `new-order`, `pending` | No proposed id, catalog id, source identity, semantic scope, or exact shipped checklist reference matches | 15 rows; medium | Next direct historical crossover after the selected position 55 family | Approve the 15-row issue checklist ending with Doctor Strange #389. Doctor Strange #390 is in the solo collection but outside the event checklist, and Scarlet Spider must resolve to the reviewed Ben Reilly series. |
+
+The proposed explicit total is 128 rows. It becomes 129 if Minimum Carnage keeps Scarlet Spider #12
+or 132 if Infinity Countdown also keeps Guardians of the Galaxy #146-149. Both boundary choices must
+be resolved before any mapping count is approved.
+
+### Duplicate and overlap review
+
+* Proposed ids and catalog ids: None of the ten exists in the 56-entry catalog or the 43 mapping-file
+  names. The four direct inventory ids are expected pending records, not shipped output.
+* Source identity: Six proposals use two shared pages with six distinct non-empty `sourceSection`
+  values. Four proposals use four unique dedicated URLs. No resulting page-plus-section identity or
+  ordinary page URL matches a shipped catalog entry, an approved mapping, or a proposal peer.
+* Source-reference check: The 128 explicit references were compared with every shipped checklist.
+  Nine name-number collisions were found and each was a different series year. The year-aware result
+  is zero exact textual identity matches.
+* Existing packet evidence: All 30 shipped Comic Book Herald overlap reports still contain only
+  `none` relationships. They do not substitute for new issue-id mappings or the required complete
+  overlap reports after approval.
+* Semantic scope: Exact title and normalized-id checks found no shipped equivalent. Manual review
+  also distinguishes Venomverse from Spider-Verse and the 2018 Infinity family from 2013 Infinity.
+* Remaining gate: Selection research cannot prove issue-id overlap for unresolved future mappings.
+  Any exact, subset, or partial relationship found after approval blocks that proposal and requires
+  source-order backfill. It may not be waived by title or chronology.
+
+### Earlier candidates and sections not selected
+
+All earlier event-like scopes are restated here so the fourth proposal is independently reviewable.
+
+| Master position or source | Candidate or event-like scope | Exact reason for skipping |
+|---|---|---|
+| 1, `early-2000s-until-disassembled` | Maximum Security and residual material | Maximum Security is shipped. The remaining source material is runs, arcs, or alternate material rather than another closed event. |
+| 2, `avengers-disassembled` | Avengers Disassembled wider order | Reuse existing. The wider source is an overlapping variant of the shipped five-issue order. |
+| 3, `secret-war` | Secret War | The exact five-issue order is shipped. |
+| 4, `disassembled-to-house-of-m` | Secret War and bridge material | Secret War is shipped; the rest is a continuity path. |
+| 5, `house-of-m` | House of M wider order | Reuse existing. Full and essential shipped variants already cover the event. |
+| 6, `decimation` | Decimation | Blocked by five absent Generation M issues and one House of M overlap. |
+| 7, `house-of-m-to-civil-war` | Planet Hulk and other named material | Planet Hulk is shipped. Spider-Man: The Other and Annihilation are covered elsewhere; the residuals are runs or arcs. |
+| 8, `iron-man-extremis-commerce` | Extremis | Excluded commerce link and a single story arc. |
+| 9, `spider-man-the-other` | Spider-Man: The Other | The exact 12-row crossover is shipped. |
+| 10, `marvel-cosmic` | Annihilation, Conquest, War of Kings, Realm of Kings, and The Thanos Imperative | Annihilation already exists; Conquest, War of Kings, and The Thanos Imperative are shipped; Realm of Kings remains blocked by peer overlap. |
+| 11, `civil-war` | Civil War wider order | Reuse existing. Three shipped variants cover the event. |
+| 12, `civil-war-to-secret-invasion` | Silent War, Messiah Complex, and other event links | Silent War and Messiah Complex are shipped; the remaining event references are shipped or blocked. |
+| 13, `silent-war-commerce` | Silent War product link | Excluded commerce link; the issue-bearing order is shipped from position 12. |
+| 14, `world-war-hulk` | World War Hulk | Blocked by three exact overlaps with two shipped orders. |
+| 15, `world-war-hulk-aftersmash` | World War Hulk: Aftersmash | The exact aftermath order is shipped. |
+| 16, `x-men-events-fast-track` | Eleven shipped child events and Utopia | Divided We Stand, Manifest Destiny, Messiah War, Nation X, Necrosha, Second Coming, Curse of the Mutants, Wolverine Goes to Hell, Age of X, Schism, and Regenesis are shipped. Utopia has shipped overlap. |
+| 17, `secret-invasion` | Secret Invasion wider order | Reuse existing. Full and essential variants are shipped. |
+| 18, `secret-invasion-to-dark-reign` | War of Kings and residual bridge material | War of Kings is shipped; the remaining material is connective runs or arcs. |
+| 19, `dark-reign` | Dark Reign and Utopia | The broad era overlaps Dark Reign Avengers, and Utopia also has shipped overlap. |
+| 20, `fall-of-the-hulks` | Fall of the Hulks and World War Hulks | Blocked because Fall of the Hulks: MODOK #1 is absent from repository metadata. |
+| 21, `dark-reign-to-siege` | Messiah War, Necrosha, Utopia, Fall of the Hulks, and Realm of Kings | Messiah War and Necrosha are shipped, Utopia overlaps shipped work, and the other two scopes remain blocked. |
+| 22, `siege` | Siege | Blocked by thirteen Dark Reign Avengers overlaps and unstable source rows. |
+| 23, `siege-to-heroic-age` | Doomwar and other named material | Doomwar, Nation X, and Second Coming are shipped. World War Hulks is blocked, and Thor: Siege Aftermath is a single-title arc. |
+| 24, `heroic-age` | Heroic Age and Children's Crusade | The broad era overlaps Heroic Age Avengers; nine of ten Children's Crusade rows are already shipped in two variants. |
+| 25, `shadowland` | Shadowland | The exact order is shipped. |
+| 26, `chaos-war` | Chaos War | The exact order is shipped. |
+| 27, `heroic-age-to-fear-itself` | Curse of the Mutants, Age of X, Chaos War, and residual material | The three events are shipped; the residuals are runs or arcs. |
+| 28, `fear-itself` | Fear Itself | Blocked by fifteen Heroic Age Avengers overlaps. |
+| 29, `fear-itself-to-avx` | Spider-Island, Schism, Regenesis, Circle of Four, and residual material | The first three are shipped. Circle of Four and the remaining entries are source-framed runs or arcs. |
+| 30, `avengers-vs-x-men` | Avengers vs. X-Men | Blocked by seventeen Heroic Age Avengers overlaps. |
+| 30, `avengers-vs-x-men` | AvX: Consequences | Its five clean issues are an exact subset of the existing blocked whole-page mapping. No approved split disposition exists, so it cannot enter this proposal. |
+| 31, `avx-to-marvel-now` | Spider-Men, Exiled, Everything Burns, and other bridge material | Spider-Men is an alternate-universe crossover. Exiled and Everything Burns are source-framed arcs inside longer runs. Minimum Carnage is the only selected discrete event from this record. |
+| 32, `marvel-now` | Age of Ultron | Blocked by exact overlap with Heroic Age Avengers and Spider-Man Best Of. |
+| 32, `marvel-now` | Infinity | Blocked by two absent Against the Tide rows and one ambiguous Thanos epilogue. |
+| 32, `marvel-now` | Inhumanity | New Avengers #13 overlaps both shipped Hickman variants, so the 21-row epilogue has no approved disposition. |
+| 32, `marvel-now` | Original Sin | Blocked by overlap with both Hickman variants and Spider-Verse. |
+| 32, `marvel-now` | Death of Wolverine | Blocked by the open-ended Wolverines range. |
+| 32, `marvel-now` | Axis and Spider-Verse | Both exact event orders are shipped. |
+| 32, `marvel-now` | Black Vortex | The exact source page remains unavailable. |
+| 32, `marvel-now` | Avengers: Time Runs Out | Its Avengers and New Avengers sequence is already contained in both shipped Hickman guides, with no separate disposition. |
+| 33-39, direct event records | Age of Ultron, Infinity, Original Sin, Death of Wolverine, Axis, Spider-Verse, and Black Vortex | These repeat the blocked or shipped position 32 scopes and do not create new identities. |
+| 40, `secret-wars` | Secret Wars 2015 | Secret Wars #1-9 are already in both shipped Hickman guides. The page also spans older events, so no non-overlapping standalone scope is approved. |
+| 41, `secret-wars-to-legacy-fast-track` | Fast-track event references | It repeats shipped or blocked events; the remaining entries are runs rather than a new event order. |
+| 42, `all-new-all-different` | All-New All-Different umbrella | Broad era material and single-series arcs. Its later event links have their own master records. |
+| 43, `avengers-standoff` | Avengers: Standoff! | Blocked by two All-New All-Different Avengers overlaps. |
+| 44, `apocalypse-wars` | X-Men: Apocalypse Wars | The exact order is shipped. |
+| 45, `civil-war-ii` | Civil War II | Blocked because nine source rows are absent from repository metadata. |
+| 46, `clone-conspiracy` | Spider-Man: Clone Conspiracy | The exact order is shipped. |
+| 47, `inhumans-vs-x-men` | Inhumans vs. X-Men | The exact order is shipped. |
+| 48, `marvel-now-2` | Marvel NOW 2.0 event links | Clone Conspiracy and Inhumans vs. X-Men are shipped; Secret Empire is overlapped; X-Men ResurreXion is an era. Monsters Unleashed and Venomverse are selected at their direct records. |
+| 50, `secret-empire` | Secret Empire | The issue guide includes U.S.Avengers #7-8 and other Avengers-family issues already shipped in All-New All-Different Avengers. No partial-overlap disposition is approved. |
+| 51, `x-men-resurrexion` | X-Men: ResurreXion | Broad family relaunch era, not one event or aftermath. |
+| 53, `generations` | Generations | The source explicitly calls the ten one-shots thematic tissue rather than a genuine event. |
+| 54, `marvel-legacy` | Marvel Legacy | Broad publishing era, not one event or aftermath. |
+
+### Parent approval gate
+
+The parent approved the exact ten ids in source order, all six page-plus-section identities, the
+11-row Venomverse core, the 15-row Damnation event boundary, and the continued exclusion of AvX:
+Consequences, Inhumanity, Secret Empire, Generations, and every other skipped scope on 2026-08-21.
+The same instruction requires the six-versus-seven Minimum Carnage choice and the 46-versus-50
+Infinity Countdown and Infinity Wars choice to be resolved from refreshed source and metadata
+evidence rather than guessed. Any exact, subset, or partial overlap still blocks the affected target
+and requires chronological backfill. P03-T01 through P03-T03 implementation is authorized.

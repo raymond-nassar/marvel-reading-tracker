@@ -1,0 +1,1590 @@
+{
+  "id": "infinity-countdown-wars",
+  "name": "Infinity Countdown and Infinity Wars",
+  "description": "Forty-six chapters covering the explicit Countdown and Wars issue-by-issue flow and its tie-ins.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/infinity-countdown/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T05:06:19.793Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 46,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 65547,
+      "title": "All-New Guardians of the Galaxy (2017) #150",
+      "number": "150",
+      "url": "https://www.marvel.com/comics/issue/65547/all-new_guardians_of_the_galaxy_2017_150",
+      "seriesId": 23058,
+      "seriesName": "All-New Guardians of the Galaxy (2017)",
+      "onSale": "2018-01-03T00:00:00+0000",
+      "mu": "2018-07-09T00:00:00+0000",
+      "digitalId": 47013,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/5a382e241fcce",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Aaron Kuder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Marcus to",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Ross",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 66158,
+      "title": "Infinity Countdown: Adam Warlock (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/66158/infinity_countdown_adam_warlock_2018_1",
+      "seriesId": 23991,
+      "seriesName": "Infinity Countdown: Adam Warlock (2018)",
+      "onSale": "2018-02-07T00:00:00+0000",
+      "mu": "2018-08-13T00:00:00+0000",
+      "digitalId": 47262,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/5a72429c4640b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Allred",
+          "role": "cover artist"
+        },
+        {
+          "name": "Aaron Kuder",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 66283,
+      "title": "Infinity Countdown Prime (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/66283/infinity_countdown_prime_2018_1",
+      "seriesId": 24300,
+      "seriesName": "Infinity Countdown Prime (2018)",
+      "onSale": "2018-02-21T00:00:00+0000",
+      "mu": "2018-08-27T00:00:00+0000",
+      "digitalId": 47335,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/90/5a84851766948",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        },
+        {
+          "name": "Mike O'sullivan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 66416,
+      "title": "Infinity Countdown (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/66416/infinity_countdown_2018_1",
+      "seriesId": 24050,
+      "seriesName": "Infinity Countdown (2018)",
+      "onSale": "2018-03-07T00:00:00+0000",
+      "mu": "2018-09-10T00:00:00+0000",
+      "digitalId": 47478,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/5a972b4f00db6",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Aaron Kuder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 66684,
+      "title": "Infinity Countdown (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/66684/infinity_countdown_2018_2",
+      "seriesId": 24050,
+      "seriesName": "Infinity Countdown (2018)",
+      "onSale": "2018-04-18T00:00:00+0000",
+      "mu": "2018-10-22T00:00:00+0000",
+      "digitalId": 47695,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/90/5ace69f15eae4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Aaron Kuder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Pallot",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Hawthorne",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67022,
+      "title": "Infinity Countdown (2018) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/67022/infinity_countdown_2018_3",
+      "seriesId": 24050,
+      "seriesName": "Infinity Countdown (2018)",
+      "onSale": "2018-05-02T00:00:00+0000",
+      "mu": "2018-11-05T00:00:00+0000",
+      "digitalId": 47930,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5ae0ce596cb46",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Aaron Kuder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Pallot",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Hawthorne",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67347,
+      "title": "Infinity Countdown: Daredevil (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67347/infinity_countdown_daredevil_2018_1",
+      "seriesId": 24339,
+      "seriesName": "Infinity Countdown: Daredevil (2018)",
+      "onSale": "2018-05-16T00:00:00+0000",
+      "mu": "2018-11-19T00:00:00+0000",
+      "digitalId": 47955,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/20/5af36aa231103",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Karl Story",
+          "role": "cover artist"
+        },
+        {
+          "name": "Lee Ferguson",
+          "role": "cover artist"
+        },
+        {
+          "name": "Phil Noto",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Hanna",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Sprouse",
+          "role": "penciler"
+        },
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67346,
+      "title": "Infinity Countdown: Captain Marvel (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67346/infinity_countdown_captain_marvel_2018_1",
+      "seriesId": 24338,
+      "seriesName": "Infinity Countdown: Captain Marvel (2018)",
+      "onSale": "2018-05-30T00:00:00+0000",
+      "mu": "2018-12-03T00:00:00+0000",
+      "digitalId": 48003,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/5b05c148bb8f9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Diego Olortegui",
+          "role": "cover artist"
+        },
+        {
+          "name": "In-Hyuk Lee",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Mccann",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 68295,
+      "title": "Doctor Strange (2018) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/68295/doctor_strange_2018_3",
+      "seriesId": 24296,
+      "seriesName": "Doctor Strange (2018 - 2019)",
+      "onSale": "2018-07-04T00:00:00+0000",
+      "mu": "2019-01-07T00:00:00+0000",
+      "digitalId": 48542,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5b34083dccf91",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jesus Saiz",
+          "role": "penciler"
+        },
+        {
+          "name": "Mark Waid",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 68653,
+      "title": "Infinity Countdown (2018) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/68653/infinity_countdown_2018_4",
+      "seriesId": 24050,
+      "seriesName": "Infinity Countdown (2018)",
+      "onSale": "2018-06-06T00:00:00+0000",
+      "mu": "2018-12-10T00:00:00+0000",
+      "digitalId": 48247,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/5b0f179d866cf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Aaron Kuder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jose Marzan Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato",
+          "role": "cover artist"
+        },
+        {
+          "name": "Terry Pallot",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Hawthorne",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 68659,
+      "title": "Infinity Countdown: Black Widow (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/68659/infinity_countdown_black_widow_2018_1",
+      "seriesId": 24906,
+      "seriesName": "Infinity Countdown: Black Widow (2018)",
+      "onSale": "2018-06-20T00:00:00+0000",
+      "mu": "2018-12-24T00:00:00+0000",
+      "digitalId": 48302,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/c0/5b2185ca3801d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Brent Schoonover",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nik Virella",
+          "role": "cover artist"
+        },
+        {
+          "name": "Yasmine Putri",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67348,
+      "title": "Infinity Countdown: Darkhawk (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67348/infinity_countdown_darkhawk_2018_1",
+      "seriesId": 24302,
+      "seriesName": "Infinity Countdown: Darkhawk (2018)",
+      "onSale": "2018-05-23T00:00:00+0000",
+      "mu": "2018-11-26T00:00:00+0000",
+      "digitalId": 47991,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/d/30/5afc7e7e4479c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Skan Srisuwan",
+          "role": "penciler"
+        },
+        {
+          "name": "Chad Bowers",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Sims",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 68667,
+      "title": "Infinity Countdown: Darkhawk (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/68667/infinity_countdown_darkhawk_2018_2",
+      "seriesId": 24302,
+      "seriesName": "Infinity Countdown: Darkhawk (2018)",
+      "onSale": "2018-06-13T00:00:00+0000",
+      "mu": "2018-12-17T00:00:00+0000",
+      "digitalId": 48274,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/50/5b1704cab1ead",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Skan Srisuwan",
+          "role": "penciler"
+        },
+        {
+          "name": "Chad Bowers",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Sims",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 68668,
+      "title": "Infinity Countdown: Darkhawk (2018) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/68668/infinity_countdown_darkhawk_2018_3",
+      "seriesId": 24302,
+      "seriesName": "Infinity Countdown: Darkhawk (2018)",
+      "onSale": "2018-06-27T00:00:00+0000",
+      "mu": "2018-12-31T00:00:00+0000",
+      "digitalId": 48275,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/90/5b2c19511f140",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Skan Srisuwan",
+          "role": "penciler"
+        },
+        {
+          "name": "Chad Bowers",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Sims",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 68669,
+      "title": "Infinity Countdown: Darkhawk (2018) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/68669/infinity_countdown_darkhawk_2018_4",
+      "seriesId": 24302,
+      "seriesName": "Infinity Countdown: Darkhawk (2018)",
+      "onSale": "2018-07-11T00:00:00+0000",
+      "mu": "2019-01-14T00:00:00+0000",
+      "digitalId": 48566,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/a0/5b3feaa185121",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Skan Srisuwan",
+          "role": "penciler"
+        },
+        {
+          "name": "Chad Bowers",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Sims",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 68662,
+      "title": "Infinity Countdown: Champions (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/68662/infinity_countdown_champions_2018_1",
+      "seriesId": 24909,
+      "seriesName": "Infinity Countdown: Champions (2018)",
+      "onSale": "2018-06-20T00:00:00+0000",
+      "mu": "2018-12-24T00:00:00+0000",
+      "digitalId": 48303,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/80/5b2185e4e9cd2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Emilio Laiso",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 68663,
+      "title": "Infinity Countdown: Champions (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/68663/infinity_countdown_champions_2018_2",
+      "seriesId": 24909,
+      "seriesName": "Infinity Countdown: Champions (2018)",
+      "onSale": "2018-07-04T00:00:00+0000",
+      "mu": "2019-01-07T00:00:00+0000",
+      "digitalId": 48546,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/5b340861d4d9f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Emilio Laiso",
+          "role": "cover artist"
+        },
+        {
+          "name": "Clayton Crain",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 68656,
+      "title": "Infinity Countdown (2018) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/68656/infinity_countdown_2018_5",
+      "seriesId": 24050,
+      "seriesName": "Infinity Countdown (2018)",
+      "onSale": "2018-07-18T00:00:00+0000",
+      "mu": "2019-01-21T00:00:00+0000",
+      "digitalId": 48595,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/d0/5b4673ec0e10c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 48,
+      "creators": [
+        {
+          "name": "Aaron Kuder",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jose Marzan Jr.",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Hawthorne",
+          "role": "penciler"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67349,
+      "title": "Infinity Wars Prime (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67349/infinity_wars_prime_2018_1",
+      "seriesId": 24340,
+      "seriesName": "Infinity Wars Prime (2018)",
+      "onSale": "2018-07-25T00:00:00+0000",
+      "mu": "2019-01-28T00:00:00+0000",
+      "digitalId": 48615,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/5b52272a8fa14",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67145,
+      "title": "Infinity Wars (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/67145/infinity_wars_2018_1",
+      "seriesId": 24279,
+      "seriesName": "Infinity Wars (2018)",
+      "onSale": "2018-08-01T00:00:00+0000",
+      "mu": "2019-02-04T00:00:00+0000",
+      "digitalId": 48874,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/5b58d18411d4d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67147,
+      "title": "Infinity Wars (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/67147/infinity_wars_2018_2",
+      "seriesId": 24279,
+      "seriesName": "Infinity Wars (2018)",
+      "onSale": "2018-08-15T00:00:00+0000",
+      "mu": "2019-02-18T00:00:00+0000",
+      "digitalId": 48873,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/5b6c81fed63fd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71308,
+      "title": "Asgardians of the Galaxy (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71308/asgardians_of_the_galaxy_2018_1",
+      "seriesId": 25996,
+      "seriesName": "Asgardians of the Galaxy (2018 - 2019)",
+      "onSale": "2018-09-05T00:00:00+0000",
+      "mu": "2019-03-11T00:00:00+0000",
+      "digitalId": 49104,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/5b882a7cc8afa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Matteo Lolli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dale Keown",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67148,
+      "title": "Infinity Wars (2018) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/67148/infinity_wars_2018_3",
+      "seriesId": 24279,
+      "seriesName": "Infinity Wars (2018)",
+      "onSale": "2018-09-12T00:00:00+0000",
+      "mu": "2019-03-18T00:00:00+0000",
+      "digitalId": 49143,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/03/5b90165f45632",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71033,
+      "title": "Infinity Wars: Iron Hammer (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71033/infinity_wars_iron_hammer_2018_1",
+      "seriesId": 26158,
+      "seriesName": "Infinity Wars: Iron Hammer (2018)",
+      "onSale": "2018-09-26T00:00:00+0000",
+      "mu": "2019-04-01T00:00:00+0000",
+      "digitalId": 49204,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/e/c0/5b9ff51b01daa",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Humberto Ramos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ramon Rosanas",
+          "role": "cover artist"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71032,
+      "title": "Infinity Wars: Soldier Supreme (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71032/infinity_wars_soldier_supreme_2018_1",
+      "seriesId": 26160,
+      "seriesName": "Infinity Wars: Soldier Supreme (2018)",
+      "onSale": "2018-09-19T00:00:00+0000",
+      "mu": "2019-03-25T00:00:00+0000",
+      "digitalId": 49182,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/20/5b999d2a6732f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71037,
+      "title": "Thanos Legacy (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71037/thanos_legacy_2018_1",
+      "seriesId": 25951,
+      "seriesName": "Thanos Legacy (2018)",
+      "onSale": "2018-09-05T00:00:00+0000",
+      "mu": "2019-03-11T00:00:00+0000",
+      "digitalId": 49121,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/5b882ae7de763",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Brian Level",
+          "role": "cover artist"
+        },
+        {
+          "name": "Cory Smith",
+          "role": "penciler"
+        },
+        {
+          "name": "Geoff Shaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Donny Cates",
+          "role": "writer"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71310,
+      "title": "Asgardians of the Galaxy (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/71310/asgardians_of_the_galaxy_2018_2",
+      "seriesId": 25996,
+      "seriesName": "Asgardians of the Galaxy (2018 - 2019)",
+      "onSale": "2018-10-03T00:00:00+0000",
+      "mu": "2019-04-08T00:00:00+0000",
+      "digitalId": 49455,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/10/5b9bb3ac39e22",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Matteo Lolli",
+          "role": "cover artist"
+        },
+        {
+          "name": "Dale Keown",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67149,
+      "title": "Infinity Wars (2018) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/67149/infinity_wars_2018_4",
+      "seriesId": 24279,
+      "seriesName": "Infinity Wars (2018)",
+      "onSale": "2018-10-10T00:00:00+0000",
+      "mu": "2019-04-15T00:00:00+0000",
+      "digitalId": 49486,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/c0/5bb530efbb8ba",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71034,
+      "title": "Infinity Wars: Arachknight (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71034/infinity_wars_arachknight_2018_1",
+      "seriesId": 26157,
+      "seriesName": "Infinity Wars: Arachknight (2018)",
+      "onSale": "2018-10-24T00:00:00+0000",
+      "mu": "2019-04-29T00:00:00+0000",
+      "digitalId": 49461,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/70/5bc9009b8c6be",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ale Garza",
+          "role": "penciler"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        },
+        {
+          "name": "Max Bemis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71782,
+      "title": "Infinity Wars: Iron Hammer (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/71782/infinity_wars_iron_hammer_2018_2",
+      "seriesId": 26158,
+      "seriesName": "Infinity Wars: Iron Hammer (2018)",
+      "onSale": "2018-10-31T00:00:00+0000",
+      "mu": "2019-05-06T00:00:00+0000",
+      "digitalId": 49564,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/60/5bd207de7067d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ramon Rosanas",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roberto Poggi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Al Ewing",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 73197,
+      "title": "Infinity Wars: Sleepwalker (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/73197/infinity_wars_sleepwalker_2018_1",
+      "seriesId": 26410,
+      "seriesName": "Infinity Wars: Sleepwalker (2018 - 2019)",
+      "onSale": "2018-10-03T00:00:00+0000",
+      "mu": "2019-04-08T00:00:00+0000",
+      "digitalId": 49462,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/b0/5bae6ff4efa5f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Todd Nauck",
+          "role": "penciler"
+        },
+        {
+          "name": "Chad Bowers",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Sims",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 73199,
+      "title": "Infinity Wars: Sleepwalker (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/73199/infinity_wars_sleepwalker_2018_2",
+      "seriesId": 26410,
+      "seriesName": "Infinity Wars: Sleepwalker (2018 - 2019)",
+      "onSale": "2018-10-24T00:00:00+0000",
+      "mu": "2019-04-29T00:00:00+0000",
+      "digitalId": 49463,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/20/5bc9005d84c42",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Todd Nauck",
+          "role": "penciler"
+        },
+        {
+          "name": "Chad Bowers",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Sims",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71785,
+      "title": "Infinity Wars: Soldier Supreme (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/71785/infinity_wars_soldier_supreme_2018_2",
+      "seriesId": 26160,
+      "seriesName": "Infinity Wars: Soldier Supreme (2018)",
+      "onSale": "2018-10-24T00:00:00+0000",
+      "mu": "2019-04-29T00:00:00+0000",
+      "digitalId": 49487,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/5bc900b030958",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roberto Poggi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71035,
+      "title": "Infinity Wars: Weapon Hex (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71035/infinity_wars_weapon_hex_2018_1",
+      "seriesId": 26161,
+      "seriesName": "Infinity Wars: Weapon Hex (2018)",
+      "onSale": "2018-10-17T00:00:00+0000",
+      "mu": "2019-04-22T00:00:00+0000",
+      "digitalId": 49521,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/4/80/5bbe687895329",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerardo Sandoval",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Nava",
+          "role": "cover artist"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Ben Acker",
+          "role": "writer"
+        },
+        {
+          "name": "Ben Blacker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67150,
+      "title": "Infinity Wars (2018) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/67150/infinity_wars_2018_5",
+      "seriesId": 24279,
+      "seriesName": "Infinity Wars (2018)",
+      "onSale": "2018-11-07T00:00:00+0000",
+      "mu": "2019-05-13T00:00:00+0000",
+      "digitalId": 49726,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/5bdb65a5288ec",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71780,
+      "title": "Infinity Wars: Arachknight (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/71780/infinity_wars_arachknight_2018_2",
+      "seriesId": 26157,
+      "seriesName": "Infinity Wars: Arachknight (2018)",
+      "onSale": "2018-11-28T00:00:00+0000",
+      "mu": "2019-06-03T00:00:00+0000",
+      "digitalId": 49795,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/70/5bf4796e2df68",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Roberto Poggi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ale Garza",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Dennis \"Hopeless\" Hallum",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71036,
+      "title": "Infinity Wars: Ghost Panther (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71036/infinity_wars_ghost_panther_2018_1",
+      "seriesId": 26159,
+      "seriesName": "Infinity Wars: Ghost Panther (2018)",
+      "onSale": "2018-11-21T00:00:00+0000",
+      "mu": "2019-05-27T00:00:00+0000",
+      "digitalId": 49775,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/60/5becad5b09296",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jefte Palo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Humberto Ramos",
+          "role": "penciler"
+        },
+        {
+          "name": "Jed Mackay",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71573,
+      "title": "Infinity Wars: Infinity Warps (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/71573/infinity_wars_infinity_warps_2018_1",
+      "seriesId": 26409,
+      "seriesName": "Infinity Wars: Infinity Warps (2018)",
+      "onSale": "2018-11-14T00:00:00+0000",
+      "mu": "2019-05-20T00:00:00+0000",
+      "digitalId": 49756,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/5be3718a119f5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Francisco Herrera",
+          "role": "cover artist"
+        },
+        {
+          "name": "Natacha Bustos",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Mariko Tamaki",
+          "role": "writer"
+        },
+        {
+          "name": "Ryan North",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 73200,
+      "title": "Infinity Wars: Sleepwalker (2018) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/73200/infinity_wars_sleepwalker_2018_3",
+      "seriesId": 26410,
+      "seriesName": "Infinity Wars: Sleepwalker (2018 - 2019)",
+      "onSale": "2018-11-21T00:00:00+0000",
+      "mu": "2018-11-21T00:00:00+0000",
+      "digitalId": 49776,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/10/5becad219da8c",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Todd Nauck",
+          "role": "penciler"
+        },
+        {
+          "name": "Chad Bowers",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Sims",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71786,
+      "title": "Infinity Wars: Weapon Hex (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/71786/infinity_wars_weapon_hex_2018_2",
+      "seriesId": 26161,
+      "seriesName": "Infinity Wars: Weapon Hex (2018)",
+      "onSale": "2018-11-28T00:00:00+0000",
+      "mu": "2019-06-03T00:00:00+0000",
+      "digitalId": 49796,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/5bf4771bac21b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Gerardo Sandoval",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roberto Poggi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Nava",
+          "role": "cover artist"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Ben Acker",
+          "role": "writer"
+        },
+        {
+          "name": "Ben Blacker",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 67151,
+      "title": "Infinity Wars (2018) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/67151/infinity_wars_2018_6",
+      "seriesId": 24279,
+      "seriesName": "Infinity Wars (2018)",
+      "onSale": "2018-12-19T00:00:00+0000",
+      "mu": "2019-06-24T00:00:00+0000",
+      "digitalId": 50084,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/5c12b5f4e47c4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 56,
+      "creators": [
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 73415,
+      "title": "Infinity Wars: Fallen Guardian (2018) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/73415/infinity_wars_fallen_guardian_2018_1",
+      "seriesId": 26478,
+      "seriesName": "Infinity Wars: Fallen Guardian (2018)",
+      "onSale": "2018-12-19T00:00:00+0000",
+      "mu": "2019-06-24T00:00:00+0000",
+      "digitalId": 50085,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/b0/5c12b34f44b5a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Andy Macdonald",
+          "role": "cover artist"
+        },
+        {
+          "name": "R.B. Silva",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 71783,
+      "title": "Infinity Wars: Ghost Panther (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/71783/infinity_wars_ghost_panther_2018_2",
+      "seriesId": 26159,
+      "seriesName": "Infinity Wars: Ghost Panther (2018)",
+      "onSale": "2018-12-12T00:00:00+0000",
+      "mu": "2019-06-17T00:00:00+0000",
+      "digitalId": 50036,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/b0/5c083c71e954e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Jefte Palo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roberto Poggi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Jed Mackay",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 73196,
+      "title": "Infinity Wars: Infinity Warps (2018) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/73196/infinity_wars_infinity_warps_2018_2",
+      "seriesId": 26409,
+      "seriesName": "Infinity Wars: Infinity Warps (2018)",
+      "onSale": "2018-12-05T00:00:00+0000",
+      "mu": "2019-06-10T00:00:00+0000",
+      "digitalId": 50002,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/5bff0bb962d60",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Garry Brown",
+          "role": "cover artist"
+        },
+        {
+          "name": "Karl Story",
+          "role": "cover artist"
+        },
+        {
+          "name": "Kev Walker",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roberto Poggi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Scott Koblish",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Sprouse",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Hastings",
+          "role": "writer"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        },
+        {
+          "name": "Sina Grace",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 73201,
+      "title": "Infinity Wars: Sleepwalker (2018) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/73201/infinity_wars_sleepwalker_2018_4",
+      "seriesId": 26410,
+      "seriesName": "Infinity Wars: Sleepwalker (2018 - 2019)",
+      "onSale": "2018-12-12T00:00:00+0000",
+      "mu": "2019-06-17T00:00:00+0000",
+      "digitalId": 50037,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/5c083c5e4b0da",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Todd Nauck",
+          "role": "penciler"
+        },
+        {
+          "name": "Chad Bowers",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Sims",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 74762,
+      "title": "Infinity Wars: Infinity (2019) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/74762/infinity_wars_infinity_2019_1",
+      "seriesId": 26898,
+      "seriesName": "Infinity Wars: Infinity (2019)",
+      "onSale": "2019-01-02T00:00:00+0000",
+      "mu": "2019-07-08T00:00:00+0000",
+      "digitalId": 50103,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/50/5c23edd3b2784",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andrew Hennessy",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Bagley",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Deodato Jr.",
+          "role": "penciler"
+        },
+        {
+          "name": "Gerry Duggan",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

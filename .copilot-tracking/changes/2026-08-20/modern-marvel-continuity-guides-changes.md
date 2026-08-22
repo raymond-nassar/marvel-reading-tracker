@@ -490,3 +490,128 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   `Authorized actions this run` line. The app can then land the already-ready pull request.
 * What was not done: No manual merge, auto-merge, merge queue action, branch rewrite, or CI bypass
   was attempted.
+
+### CHG-020: Pause batch four at the parent approval gate
+
+* Related phase or task: P03-T01.
+* Baseline: The third guarded batch is merged on the default branch at
+  `de73f074e94b210011ea0569d426088d7ed152dc`.
+* What changed: Re-audited the master sequence from position 1 through position 56, including event
+  and aftermath sections hidden inside bridge and era records, and persisted one exact ten-guide
+  selection proposal without creating production packet files.
+* Proposed order: `minimum-carnage`, `x-termination`, `avengers-enemy-within`,
+  `x-men-battle-of-the-atom`, `revolutionary-war`, `x-men-trial-of-jean-grey`,
+  `monsters-unleashed`, `venomverse`, `infinity-countdown-wars`, and `damnation`.
+* Master boundary: Minimum Carnage comes from position 31. Five clean Marvel NOW sections follow at
+  position 32. Monsters Unleashed, Venomverse, Infinity Countdown and Infinity Wars, and Marvel
+  Damnation close the proposal at positions 49, 52, 55, and 56.
+* Source identity: Six proposals use two shared pages with distinct non-empty `sourceSection`
+  values; four use dedicated URLs. No fragment was invented.
+* Duplicate review: The ten proposed ids, catalog ids, source identities, and normalized titles
+  match no shipped output or approved mapping. The 128 explicit source references produced nine
+  name-number collisions, all resolved as different series years, and zero exact shipped checklist
+  matches.
+* Excluded overlap and scope: AvX: Consequences remains an unapproved exact subset of the blocked
+  Avengers vs. X-Men mapping. Inhumanity shares New Avengers #13 with both Hickman variants. Secret
+  Empire shares Avengers-family issues with All-New All-Different Avengers. Generations is described
+  by its source as thematic tissue rather than an event. None enters the proposal.
+* Decisions awaiting parent: Six versus seven Minimum Carnage rows, the six shared-page section
+  identities, the 11-row Venomverse boundary, the 46 versus 50-row Infinity boundary, and the
+  15-row Damnation boundary.
+* What did not change: No inventory disposition, mapping, overlap report, order Markdown, manifest,
+  catalog, generated data, product or tooling code, test, dependency, commit, push, or pull request
+  was created or changed.
+* Approval gate: Explicit parent approval or revision of the exact ten and every boundary above is
+  required before any P03-T01 implementation action.
+
+### CHG-021: Authorize the fourth guarded batch
+
+* Related phase or task: P03-T01.
+* Authority: The parent session approved autonomous implementation in the coordinating instruction
+  on 2026-08-21.
+* Approved packet: Keep the exact ten ids in source order and all six non-fragment
+  page-plus-section identities recorded by CHG-020.
+* Approved fixed boundaries: Venomverse contains the 11-row core through Venomverse #5. Marvel
+  Damnation contains the 15-row event checklist through Doctor Strange #389.
+* Evidence-governed boundaries: Refresh the live source and issue metadata before deciding whether
+  Minimum Carnage has six or seven rows and whether Infinity Countdown and Infinity Wars has 46 or
+  50 rows. Do not infer either choice from the earlier estimate.
+* Guardrails: Any missing or ambiguous metadata, duplicate id or source identity, semantic
+  duplication, or exact, subset, or partial issue overlap blocks that target and requires
+  chronological backfill. AvX: Consequences, Inhumanity, Secret Empire, Generations, and every
+  other recorded exclusion remain out.
+* Delivery authority: Continue through mappings, overlap reports, authoring, generated data,
+  inventory, product records, direct review, full validation, commit, push, one pull request, and
+  Agent Merge without another planning or approval stop.
+
+### CHG-022: Resolve, publish, and validate the fourth guarded batch
+
+* Related phase or task: P03-T01, P03-T02, and P03-T03.
+* Source refresh: Refreshed all six exact Comic Book Herald URLs on 2026-08-21. Direct HTTP and Edge
+  navigation both returned HTTP 403 for every page, while the safe page fetcher returned every
+  current issue-bearing section. The 403 results were retained as access evidence and were not
+  mistaken for missing source content.
+* Boundary decisions: Minimum Carnage keeps the six issues in its explicit reading-order line;
+  Scarlet Spider #12 begins the following standalone block. Venomverse keeps its 11-row core.
+  Infinity Countdown and Infinity Wars keeps the 46 explicit issue-by-issue rows rather than four
+  Guardians issues found only in a collected lead-in. Marvel Damnation keeps the 15-row event
+  checklist through Doctor Strange #389.
+* Exact identity decisions: All eight Monsters Unleashed tie-ins preserve the source number
+  `1.MU` while matching Marvel metadata's `1.1`. Avengers issue 62507 is the 2017 Jim Zub event
+  tie-in. Edge of Venomverse #5 uses issue 64250, the indexed Marvel page with complete cover
+  metadata, instead of duplicate record 64249 with `image_not_available`. Damnation's Scarlet
+  Spider rows all use the Ben Reilly series.
+* Packet result: Approved ten mappings containing 128 distinct issue ids, ten complete overlap
+  reports containing 650 comparisons, and zero exact, subset, partial, source, catalog, sequence,
+  or issue duplication. No chronological backfill was needed.
+* Product result: Authored ten issue-by-issue checklists, vendored ten payloads with zero unresolved
+  rows, placeholders, missing digital ids, or missing covers, and expanded the catalog from 56 to
+  66 entries. Six entries use exact page-plus-section identities without fragments. Every card
+  credits Comic Book Herald, links the exact page, uses
+  `Compiled for this project from Comic Book Herald's guide`, and keeps `sourceLicense` null.
+* Inventory and records: Moved the four direct records to `shipped`, represented the six linked
+  sections as grouped catalog variants, and updated the reader overview, provenance inventory,
+  backlog, changelog, governance count, packet state, and this changes record.
+* Failure proof: Stashing only the metadata-number resolver change made the new focused semantic
+  test fail once, changing `exact` to `unmatched`; restoring the line returned it to passing.
+* Validation: Focused tests passed 130 of 130 and the full suite passed 1,316 of 1,316. Lint reported
+  zero errors. Counts reported 160 ranked rows, 5 parked rows, and 165 detail blocks. Seven stated
+  sizes agreed, 88 palette pairs had zero new failures, and publication found zero content findings.
+  The repository contract passed 33 of 33 assumptions over 17 requests, the added-issue contract
+  passed 128 of 128 ids, and Edge passed 120 of 120 assertions across 14 scenarios.
+* Evidence anchors: Re-aimed and read all 36 changed citation pairings before blessing 1,047 anchors.
+  Mapping refresh, authoring, and overlap regeneration each reproduced with zero changed files.
+* Direct self-review: Corrected an inventory edit that first matched the adjacent Secret Invasion
+  bridge and corrected the added-issue contract so its live check compares the explicit metadata
+  number while the product keeps the source display number. No material finding remains open.
+* Next action: Commit and push the validated batch, open one pull request against `main`, then let
+  Agent Merge handle authorized CI, conflict, and review-comment work through merge.
+
+### CHG-023: Reconcile approved source numbers in vendored titles
+
+* Related phase or task: P03-T02.
+* Review finding: Agent Merge found one material Medium defect on pull request 164 at head
+  `6119f8751f0c933d9eaae5974cdd43c2378b5b39`. All eight Monsters Unleashed tie-in numbers were
+  `1.MU`, but their vendored titles still ended in the metadata service's `#1.1`, so the same row
+  displayed contradictory labels.
+* Root cause: Vendoring preferred the approved checklist for `number` but always preferred live
+  metadata for `title`.
+* Fix: Added one deterministic issue-number helper shared by vendoring and the packet live contract.
+  When an approved checklist suffix differs from the metadata suffix, vendoring replaces only the
+  title's trailing issue number. The live contract permits that title difference only for mapping
+  rows that explicitly carry `metadataIssueNumber`; every other title still has to match live
+  metadata exactly.
+* Generated result: Re-vendored only Monsters Unleashed. All eight affected titles and numbers now
+  end in `1.MU`; issue ids, URLs, dates, digital ids, covers, creators, and source order are
+  unchanged.
+* Failure proof: The new payload-title assertion failed once on the original pull-request head and
+  named all eight `#1.1` versus `#1.MU` differences. Applying the reconciliation returned that
+  focused test to passing.
+* Validation: The full suite passed 1,316 of 1,316 and lint reported zero errors. Counts reported
+  160 ranked rows, 5 parked rows, and 165 detail blocks; seven stated sizes agreed; 88 palette
+  pairs had zero new failures; publication found zero content findings; and Edge passed 120 of 120
+  assertions across 14 scenarios. The repository contract passed 33 of 33 assumptions over 17
+  requests, and the packet contract passed 128 of 128 issue ids.
+* Evidence anchors: Re-aimed seven vendor citations by fingerprint head and diff arithmetic, with
+  no blank range edge. Together with CHG-022, the packet has 43 reviewed re-aims and 1,047 anchors.
+* Next action: Commit and push the review fix, then resume Agent Merge. Do not merge manually.

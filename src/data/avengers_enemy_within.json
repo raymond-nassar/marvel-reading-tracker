@@ -1,0 +1,152 @@
+{
+  "id": "avengers-enemy-within",
+  "name": "Avengers: The Enemy Within",
+  "description": "The five-part crossover through The Enemy Within, Avengers Assemble, and Captain Marvel.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+  "sourceSection": "Avengers: The Enemy Within",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T05:06:19.789Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 5,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 47565,
+      "title": "Avengers: The Enemy Within (2013) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/47565/avengers_the_enemy_within_2013_1",
+      "seriesId": 17951,
+      "seriesName": "Avengers: The Enemy Within (2013)",
+      "onSale": "2013-05-15T00:00:00+0000",
+      "mu": "2013-12-10T21:08:00+0000",
+      "digitalId": 29894,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/5182c7a088d44",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Joe Quinones",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Sue Deconnick",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45880,
+      "title": "Avengers Assemble (2012) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/45880/avengers_assemble_2012_16",
+      "seriesId": 15373,
+      "seriesName": "Avengers Assemble (2012 - 2014)",
+      "onSale": "2013-06-12T00:00:00+0000",
+      "mu": "2013-12-09T00:00:00+0000",
+      "digitalId": 30138,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/10/58d551b042c09",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Joe Quinones",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Sue Deconnick",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46857,
+      "title": "Captain Marvel (2012) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/46857/captain_marvel_2012_13",
+      "seriesId": 16280,
+      "seriesName": "Captain Marvel (2012 - 2013)",
+      "onSale": "2013-06-19T00:00:00+0000",
+      "mu": "2013-12-16T00:00:00+0000",
+      "digitalId": 30241,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/90/51b6379de01f7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Joe Quinones",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Sue Deconnick",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47591,
+      "title": "Avengers Assemble (2012) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/47591/avengers_assemble_2012_17",
+      "seriesId": 15373,
+      "seriesName": "Avengers Assemble (2012 - 2014)",
+      "onSale": "2013-07-17T00:00:00+0000",
+      "mu": "2014-01-13T00:00:00+0000",
+      "digitalId": 30642,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/58d5578bb268a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Nolan Woodard",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Sue Deconnick",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46858,
+      "title": "Captain Marvel (2012) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/46858/captain_marvel_2012_14",
+      "seriesId": 16280,
+      "seriesName": "Captain Marvel (2012 - 2013)",
+      "onSale": "2013-07-31T00:00:00+0000",
+      "mu": "2014-01-27T00:00:00+0000",
+      "digitalId": 30980,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/00/51e57cff6e806",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Joe Quinones",
+          "role": "penciler"
+        },
+        {
+          "name": "Kelly Sue Deconnick",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

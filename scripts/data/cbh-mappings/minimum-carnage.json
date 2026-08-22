@@ -1,0 +1,273 @@
+{
+  "id": "minimum-carnage",
+  "inventoryId": "avx-to-marvel-now",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+  "sourceSection": "Minimum Carnage",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 6,
+  "excludedSourceReferences": [
+    "Scarlet Spider #12 begins the following standalone Scarlet Spider block and is outside the explicit six-issue Minimum Carnage reading-order line"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 43321,
+      "title": "Minimum Carnage: Alpha",
+      "issueTitle": "Minimum Carnage: Alpha (2012) #1",
+      "seriesTitle": "Minimum Carnage: Alpha",
+      "apiSeriesName": "Minimum Carnage: Alpha (2012)",
+      "seriesId": 16413,
+      "issueNumber": "1",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43321/minimum_carnage_alpha_2012_1",
+      "onSaleDate": "2012-10-03T00:00:00+0000"
+    },
+    {
+      "id": 41167,
+      "title": "Scarlet Spider",
+      "issueTitle": "Scarlet Spider (2011) #10",
+      "seriesTitle": "Scarlet Spider",
+      "apiSeriesName": "Scarlet Spider (2011 - 2012)",
+      "seriesId": 15298,
+      "issueNumber": "10",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41167/scarlet_spider_2011_10",
+      "onSaleDate": "2012-10-10T00:00:00+0000"
+    },
+    {
+      "id": 40629,
+      "title": "Venom",
+      "issueTitle": "Venom (2011) #26",
+      "seriesTitle": "Venom",
+      "apiSeriesName": "Venom (2011 - 2013)",
+      "seriesId": 13911,
+      "issueNumber": "26",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40629/venom_2011_26",
+      "onSaleDate": "2012-10-17T00:00:00+0000"
+    },
+    {
+      "id": 41168,
+      "title": "Scarlet Spider",
+      "issueTitle": "Scarlet Spider (2011) #11",
+      "seriesTitle": "Scarlet Spider",
+      "apiSeriesName": "Scarlet Spider (2011 - 2012)",
+      "seriesId": 15298,
+      "issueNumber": "11",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/41168/scarlet_spider_2011_11",
+      "onSaleDate": "2012-11-07T00:00:00+0000"
+    },
+    {
+      "id": 40627,
+      "title": "Venom",
+      "issueTitle": "Venom (2011) #27",
+      "seriesTitle": "Venom",
+      "apiSeriesName": "Venom (2011 - 2013)",
+      "seriesId": 13911,
+      "issueNumber": "27",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/40627/venom_2011_27",
+      "onSaleDate": "2012-11-14T00:00:00+0000"
+    },
+    {
+      "id": 43320,
+      "title": "Minimum Carnage: Omega",
+      "issueTitle": "Minimum Carnage: Omega (2012) #1",
+      "seriesTitle": "Minimum Carnage: Omega",
+      "apiSeriesName": "Minimum Carnage: Omega (2012)",
+      "seriesId": 16412,
+      "issueNumber": "1",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43320/minimum_carnage_omega_2012_1",
+      "onSaleDate": "2012-11-21T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Minimum Carnage: Alpha #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Minimum Carnage: Alpha",
+      "seriesYear": 2012,
+      "issueNumber": "1",
+      "seriesId": 16413,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43321"
+      ],
+      "selectedIssueId": 43321,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43321/minimum_carnage_alpha_2012_1",
+      "resolvedIssueTitle": "Minimum Carnage: Alpha (2012) #1",
+      "note": "Marvel series 16413 (Minimum Carnage: Alpha (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43321
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Scarlet Spider #10",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Scarlet Spider",
+      "seriesYear": 2011,
+      "issueNumber": "10",
+      "seriesId": 15298,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41167"
+      ],
+      "selectedIssueId": 41167,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41167/scarlet_spider_2011_10",
+      "resolvedIssueTitle": "Scarlet Spider (2011) #10",
+      "note": "Marvel series 15298 (Scarlet Spider (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41167
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Venom #26",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Venom",
+      "seriesYear": 2011,
+      "issueNumber": "26",
+      "seriesId": 13911,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40629"
+      ],
+      "selectedIssueId": 40629,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40629/venom_2011_26",
+      "resolvedIssueTitle": "Venom (2011) #26",
+      "note": "Marvel series 13911 (Venom (2011 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40629
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Scarlet Spider #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Scarlet Spider",
+      "seriesYear": 2011,
+      "issueNumber": "11",
+      "seriesId": 15298,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "41168"
+      ],
+      "selectedIssueId": 41168,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/41168/scarlet_spider_2011_11",
+      "resolvedIssueTitle": "Scarlet Spider (2011) #11",
+      "note": "Marvel series 15298 (Scarlet Spider (2011 - 2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        41168
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Venom #27",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Venom",
+      "seriesYear": 2011,
+      "issueNumber": "27",
+      "seriesId": 13911,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "40627"
+      ],
+      "selectedIssueId": 40627,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/40627/venom_2011_27",
+      "resolvedIssueTitle": "Venom (2011) #27",
+      "note": "Marvel series 13911 (Venom (2011 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        40627
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Minimum Carnage: Omega #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Minimum Carnage: Omega",
+      "seriesYear": 2012,
+      "issueNumber": "1",
+      "seriesId": 16412,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43320"
+      ],
+      "selectedIssueId": 43320,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43320/minimum_carnage_omega_2012_1",
+      "resolvedIssueTitle": "Minimum Carnage: Omega (2012) #1",
+      "note": "Marvel series 16412 (Minimum Carnage: Omega (2012)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43320
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "minimum-carnage",
+    "name": "Minimum Carnage",
+    "description": "Six chapters alternating Scarlet Spider and Venom between the Alpha and Omega one-shots.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "minimum-carnage.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+    "sourceSection": "Minimum Carnage",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "minimum_carnage.json",
+    "characters": [
+      "Scarlet Spider",
+      "Venom",
+      "Carnage"
+    ],
+    "keywords": [
+      "Minimum Carnage",
+      "Scarlet Spider",
+      "Venom",
+      "Carnage"
+    ],
+    "expect": 6,
+    "timeline": 2012,
+    "coverIssueId": 43321,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Minimum Carnage: Alpha #1"
+  }
+}

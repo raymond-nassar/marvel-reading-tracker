@@ -92,6 +92,22 @@ export const THIRD_PACKET_IDS = Object.freeze([
   'x-men-regenesis',
 ]);
 
+export const FOURTH_SELECTION_IDS = Object.freeze([
+  'minimum-carnage',
+  'x-termination',
+  'avengers-enemy-within',
+  'x-men-battle-of-the-atom',
+  'revolutionary-war',
+  'x-men-trial-of-jean-grey',
+  'monsters-unleashed',
+  'venomverse',
+  'infinity-countdown-wars',
+  'damnation',
+]);
+
+// Source order and verified first on-sale chronology are the same for this packet.
+export const FOURTH_PACKET_IDS = FOURTH_SELECTION_IDS;
+
 const INSERT_BEFORE = Object.freeze({
   'maximum-security': 'avengers-disassembled',
   'planet-hulk': 'civil-war',
@@ -113,6 +129,16 @@ const INSERT_BEFORE = Object.freeze({
   'x-men-schism': 'hickman-minimal',
   'spider-island': 'hickman-minimal',
   'x-men-regenesis': 'hickman-minimal',
+  'minimum-carnage': 'new-ultimate-universe',
+  'x-termination': 'new-ultimate-universe',
+  'avengers-enemy-within': 'new-ultimate-universe',
+  'x-men-battle-of-the-atom': 'new-ultimate-universe',
+  'revolutionary-war': 'new-ultimate-universe',
+  'x-men-trial-of-jean-grey': 'new-ultimate-universe',
+  'monsters-unleashed': 'new-ultimate-universe',
+  venomverse: 'new-ultimate-universe',
+  'infinity-countdown-wars': 'new-ultimate-universe',
+  damnation: 'new-ultimate-universe',
 });
 
 const MANIFEST_FIELDS = new Set([
@@ -256,7 +282,7 @@ export function mergePacketEntries(existing, entries) {
   return merged;
 }
 
-export async function authorPacket(packetIds = THIRD_PACKET_IDS) {
+export async function authorPacket(packetIds = FOURTH_PACKET_IDS) {
   const current = JSON.parse(await readFile(MANIFEST_PATH, 'utf8'));
   const currentLists = Array.isArray(current.lists) ? current.lists : [];
   const existing = existingEntriesForPacket(currentLists, packetIds);

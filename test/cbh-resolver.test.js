@@ -107,6 +107,28 @@ test('a year mismatch is filtered out before selection', () => {
   assert.equal(result.selectedIssueId, '402');
 });
 
+test('a source display number can resolve against an explicit metadata number', () => {
+  const row = {
+    normalizedSeriesTitle: 'Avengers',
+    issueNumber: '1.MU',
+    metadataIssueNumber: '1.1',
+    seriesYear: '2016',
+    seriesId: 22547,
+  };
+  const candidate = {
+    id: 62507,
+    title: 'Avengers',
+    issueNumber: '1.1',
+    seriesYear: '2016',
+    seriesId: 22547,
+  };
+
+  const result = resolveRow(row, [candidate]);
+  assert.equal(result.status, 'exact');
+  assert.equal(result.selectedIssueId, '62507');
+  assert.equal(resolveRow({ ...row, metadataIssueNumber: undefined }, [candidate]).status, 'unmatched');
+});
+
 test('approved exceptions are preserved without selection change', () => {
   const row = {
     normalizedSeriesTitle: 'Secret War',

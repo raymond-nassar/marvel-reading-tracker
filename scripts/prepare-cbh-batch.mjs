@@ -557,6 +557,69 @@ const SERIES = Object.freeze({
   doomwar: { id: 9240, title: 'Doomwar', year: 2010 },
   venom2011: { id: 13911, title: 'Venom', year: 2011 },
   spiderIslandDeadlyFoes: { id: 14778, title: 'Spider-Island: Deadly Foes', year: 2011 },
+  minimumCarnageAlpha: { id: 16413, title: 'Minimum Carnage: Alpha', year: 2012 },
+  scarletSpider2011: { id: 15298, title: 'Scarlet Spider', year: 2011 },
+  minimumCarnageOmega: { id: 16412, title: 'Minimum Carnage: Omega', year: 2012 },
+  ageOfApocalypse2012: { id: 15331, title: 'Age of Apocalypse', year: 2012 },
+  xTremeXMen2012: { id: 16308, title: 'X-Treme X-Men', year: 2012 },
+  xTermination: { id: 17743, title: 'X-Termination', year: 2013 },
+  avengersEnemyWithin: { id: 17951, title: 'Avengers: The Enemy Within', year: 2013 },
+  allNewXMen2012: { id: 16449, title: 'All-New X-Men', year: 2012 },
+  xMen2013: { id: 17635, title: 'X-Men', year: 2013 },
+  xMenBattleAtom: { id: 17964, title: 'X-Men: Battle of the Atom', year: 2013 },
+  revolutionaryWarAlpha: {
+    id: 18561,
+    title: 'Revolutionary War: Alpha',
+    year: 2014,
+    selectionNote: 'Marvel indexes the source one-shot in its Revolutionary War: Alpha 1 Kitson Variant series.',
+  },
+  revolutionaryWarDarkAngel: { id: 18562, title: 'Revolutionary War: Dark Angel', year: 2014 },
+  revolutionaryWarDeathsHead: { id: 18563, title: "Revolutionary War: Death's Head II", year: 2014 },
+  revolutionaryWarKnights: {
+    id: 18564,
+    title: 'Revolutionary War: Knights of Pendragon',
+    year: 2014,
+    selectionNote: 'Marvel indexes the source one-shot in its Revolutionary War: Knights of Pendragon 1 Edwards Variant series.',
+  },
+  revolutionaryWarMotormouth: { id: 18565, title: 'Revolutionary War: Motormouth', year: 2014 },
+  revolutionaryWarOmega: { id: 18566, title: 'Revolutionary War: Omega', year: 2014 },
+  revolutionaryWarSupersoldiers: { id: 18567, title: 'Revolutionary War: Supersoldiers', year: 2014 },
+  revolutionaryWarWarheads: { id: 18568, title: 'Revolutionary War: Warheads', year: 2014 },
+  monstersUnleashedEvent: { id: 22407, title: 'Monsters Unleashed', year: 2017 },
+  avengers2016: { id: 22547, title: 'Avengers', year: 2016 },
+  spiderManDeadpool: { id: 19679, title: 'Spider-Man/Deadpool', year: 2016 },
+  doctorStrange2015: { id: 20457, title: 'Doctor Strange', year: 2015 },
+  champions2016: { id: 22552, title: 'Champions', year: 2016 },
+  edgeOfVenomverse: { id: 23125, title: 'Edge of Venomverse', year: 2017 },
+  venomverseWarStories: { id: 25568, title: 'Venomverse: War Stories', year: 2017 },
+  venomverse: { id: 23468, title: 'Venomverse', year: 2017 },
+  allNewGuardiansGalaxy: { id: 23058, title: 'All-New Guardians of the Galaxy', year: 2017 },
+  infinityCountdownAdamWarlock: { id: 23991, title: 'Infinity Countdown: Adam Warlock', year: 2018 },
+  infinityCountdownPrime: { id: 24300, title: 'Infinity Countdown Prime', year: 2018 },
+  infinityCountdown: { id: 24050, title: 'Infinity Countdown', year: 2018 },
+  infinityCountdownDaredevil: { id: 24339, title: 'Infinity Countdown: Daredevil', year: 2018 },
+  infinityCountdownCaptainMarvel: { id: 24338, title: 'Infinity Countdown: Captain Marvel', year: 2018 },
+  doctorStrange2018: { id: 24296, title: 'Doctor Strange', year: 2018 },
+  infinityCountdownBlackWidow: { id: 24906, title: 'Infinity Countdown: Black Widow', year: 2018 },
+  infinityCountdownDarkhawk: { id: 24302, title: 'Infinity Countdown: Darkhawk', year: 2018 },
+  infinityCountdownChampions: { id: 24909, title: 'Infinity Countdown: Champions', year: 2018 },
+  infinityWarsPrime: { id: 24340, title: 'Infinity Wars Prime', year: 2018 },
+  infinityWars: { id: 24279, title: 'Infinity Wars', year: 2018 },
+  asgardiansGalaxy: { id: 25996, title: 'Asgardians of the Galaxy', year: 2018 },
+  infinityWarsIronHammer: { id: 26158, title: 'Infinity Wars: Iron Hammer', year: 2018 },
+  infinityWarsSoldierSupreme: { id: 26160, title: 'Infinity Wars: Soldier Supreme', year: 2018 },
+  thanosLegacy: { id: 25951, title: 'Thanos Legacy', year: 2018 },
+  infinityWarsArachknight: { id: 26157, title: 'Infinity Wars: Arachknight', year: 2018 },
+  infinityWarsSleepwalker: { id: 26410, title: 'Infinity Wars: Sleepwalker', year: 2018 },
+  infinityWarsWeaponHex: { id: 26161, title: 'Infinity Wars: Weapon Hex', year: 2018 },
+  infinityWarsGhostPanther: { id: 26159, title: 'Infinity Wars: Ghost Panther', year: 2018 },
+  infinityWarsInfinityWarps: { id: 26409, title: 'Infinity Wars: Infinity Warps', year: 2018 },
+  infinityWarsFallenGuardian: { id: 26478, title: 'Infinity Wars: Fallen Guardian', year: 2018 },
+  infinityWarsInfinity: { id: 26898, title: 'Infinity Wars: Infinity', year: 2019 },
+  doctorStrangeDamnation: { id: 24016, title: 'Doctor Strange: Damnation', year: 2018 },
+  benReillyScarletSpider: { id: 23021, title: 'Ben Reilly: Scarlet Spider', year: 2017 },
+  ironFist2017: { id: 22993, title: 'Iron Fist', year: 2017 },
+  damnationJohnnyBlaze: { id: 24096, title: 'Damnation: Johnny Blaze - Ghost Rider', year: 2018 },
 });
 
 function issue(
@@ -566,6 +629,7 @@ function issue(
   sourceRangeReference = null,
   candidateIssueId = null,
   selectionNote = null,
+  metadataIssueNumber = null,
 ) {
   const series = SERIES[seriesKey];
   if (!series) throw new Error(`Unknown series key: ${seriesKey}`);
@@ -579,7 +643,27 @@ function issue(
     candidateIssueId,
     manualSeriesSelectionApproved: Boolean(series.selectionNote),
     selectionNote,
+    ...(metadataIssueNumber == null ? {} : { metadataIssueNumber: String(metadataIssueNumber) }),
   };
+}
+
+function issueWithMetadataNumber(
+  seriesKey,
+  sourceIssueNumber,
+  metadataIssueNumber,
+  sourceIssueReference,
+  candidateIssueId = null,
+  selectionNote = null,
+) {
+  return issue(
+    seriesKey,
+    sourceIssueNumber,
+    sourceIssueReference,
+    null,
+    candidateIssueId,
+    selectionNote ?? `Marvel metadata numbers the source's #${sourceIssueNumber} issue as #${metadataIssueNumber}; the source form remains the checklist display.`,
+    metadataIssueNumber,
+  );
 }
 
 function range(seriesKey, start, end, sourceRangeReference) {
@@ -602,6 +686,8 @@ function sequence(entries) {
 }
 
 const X_MEN_EVENTS_SOURCE = 'https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/x-men-events-from-messiah-complex-to-avengers-vs-x-men-2007-to-2012/';
+const MARVEL_NOW_SOURCE = 'https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/';
+const MODERN_X_MEN_SOURCE = 'https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/';
 
 const GUIDES = Object.freeze([
   {
@@ -2115,6 +2201,247 @@ const GUIDES = Object.freeze([
       issue('spiderIslandDeadlyFoes', 1, 'Spider-Island: Deadly Foes'),
     ],
   },
+  {
+    id: 'minimum-carnage',
+    inventoryId: 'avx-to-marvel-now',
+    sourceUrl: MARVEL_NOW_SOURCE,
+    sourceSection: 'Minimum Carnage',
+    proposedTimeline: 2012,
+    proposedCoverReference: 'Minimum Carnage: Alpha #1',
+    approvedSourceCount: 6,
+    excludedSourceReferences: [
+      'Scarlet Spider #12 begins the following standalone Scarlet Spider block and is outside the explicit six-issue Minimum Carnage reading-order line',
+    ],
+    rows: sequence([
+      ['minimumCarnageAlpha', 1],
+      ['scarletSpider2011', 10],
+      ['venom2011', 26],
+      ['scarletSpider2011', 11],
+      ['venom2011', 27],
+      ['minimumCarnageOmega', 1],
+    ]),
+  },
+  {
+    id: 'x-termination',
+    inventoryId: 'marvel-now',
+    sourceUrl: MARVEL_NOW_SOURCE,
+    sourceSection: 'X-Termination',
+    proposedTimeline: 2013,
+    proposedCoverReference: 'X-Termination #1',
+    rows: sequence([
+      ['ageOfApocalypse2012', 13],
+      ['xTremeXMen2012', 12],
+      ['xTermination', 1],
+      ['astonishingXMen', 60],
+      ['ageOfApocalypse2012', 14],
+      ['xTremeXMen2012', 13],
+      ['astonishingXMen', 61],
+      ['xTermination', 2],
+    ]),
+  },
+  {
+    id: 'avengers-enemy-within',
+    inventoryId: 'marvel-now',
+    sourceUrl: MARVEL_NOW_SOURCE,
+    sourceSection: 'Avengers: The Enemy Within',
+    proposedTimeline: 2013,
+    proposedCoverReference: 'Avengers: The Enemy Within #1',
+    rows: sequence([
+      ['avengersEnemyWithin', 1, 'Avengers Enemy Within #1'],
+      ['avengersAssemble', 16],
+      ['captainMarvel2012', 13],
+      ['avengersAssemble', 17],
+      ['captainMarvel2012', 14],
+    ]),
+  },
+  {
+    id: 'x-men-battle-of-the-atom',
+    inventoryId: 'marvel-now',
+    sourceUrl: MODERN_X_MEN_SOURCE,
+    sourceSection: 'Battle of the Atom',
+    proposedTimeline: 2013,
+    proposedCoverReference: 'X-Men: Battle of the Atom #1',
+    rows: sequence([
+      ['xMenBattleAtom', 1],
+      ['allNewXMen2012', 16],
+      ['xMen2013', 5],
+      ['uncannyXMen2013', 12],
+      ['wolverineXMen', 36],
+      ['allNewXMen2012', 17],
+      ['xMen2013', 6],
+      ['uncannyXMen2013', 13],
+      ['wolverineXMen', 37],
+      ['xMenBattleAtom', 2],
+    ]),
+  },
+  {
+    id: 'revolutionary-war',
+    inventoryId: 'marvel-now',
+    sourceUrl: MARVEL_NOW_SOURCE,
+    sourceSection: 'Event: Revolutionary War',
+    proposedTimeline: 2014,
+    proposedCoverReference: 'Revolutionary War: Alpha #1',
+    rows: sequence([
+      ['revolutionaryWarAlpha', 1],
+      ['revolutionaryWarDarkAngel', 1],
+      ['revolutionaryWarDeathsHead', 1],
+      ['revolutionaryWarKnights', 1],
+      ['revolutionaryWarMotormouth', 1],
+      ['revolutionaryWarOmega', 1],
+      ['revolutionaryWarSupersoldiers', 1],
+      ['revolutionaryWarWarheads', 1],
+    ]),
+  },
+  {
+    id: 'x-men-trial-of-jean-grey',
+    inventoryId: 'marvel-now',
+    sourceUrl: MODERN_X_MEN_SOURCE,
+    sourceSection: 'Trial of Jean Grey',
+    proposedTimeline: 2014,
+    proposedCoverReference: 'All-New X-Men #22',
+    rows: sequence([
+      ['allNewXMen2012', 22],
+      ['guardiansGalaxy2013', 11],
+      ['allNewXMen2012', 23],
+      ['guardiansGalaxy2013', 12],
+      ['allNewXMen2012', 24],
+      ['guardiansGalaxy2013', 13],
+    ]),
+  },
+  {
+    id: 'monsters-unleashed',
+    sourceUrl: 'https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/monsters-unleashed/',
+    proposedTimeline: 2017,
+    proposedCoverReference: 'Monsters Unleashed #1',
+    rows: [
+      issue('monstersUnleashedEvent', 1),
+      issueWithMetadataNumber(
+        'avengers2016',
+        '1.MU',
+        '1.1',
+        'Avengers #1.MU',
+        62507,
+        "Marvel metadata numbers the source's #1.MU issue as #1.1. Issue 62507 is the 2017 Jim Zub Monsters Unleashed tie-in; issue 59596 is the distinct 2016 Mark Waid story with the same metadata number.",
+      ),
+      issueWithMetadataNumber('spiderManDeadpool', '1.MU', '1.1', 'Spider-Man/Deadpool #1.MU'),
+      issue('monstersUnleashedEvent', 2),
+      issueWithMetadataNumber('allNewXMen2015', '1.MU', '1.1', 'All-New X-Men #1.MU'),
+      issue('monstersUnleashedEvent', 3),
+      issueWithMetadataNumber('doctorStrange2015', '1.MU', '1.1', 'Doctor Strange #1.MU'),
+      issueWithMetadataNumber('champions2016', '1.MU', '1.1', 'Champions #1.MU'),
+      issueWithMetadataNumber('uncannyInhumans', '1.MU', '1.1', 'Uncanny Inhumans #1.MU'),
+      issue('monstersUnleashedEvent', 4),
+      issueWithMetadataNumber('guardiansGalaxy2015', '1.MU', '1.1', 'Guardians of the Galaxy #1.MU'),
+      issueWithMetadataNumber('totallyAwesomeHulk', '1.MU', '1.1', 'The Totally Awesome Hulk #1.MU'),
+      issue('monstersUnleashedEvent', 5),
+    ],
+  },
+  {
+    id: 'venomverse',
+    sourceUrl: 'https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-venomverse/',
+    proposedTimeline: 2017,
+    proposedCoverReference: 'Venomverse #1',
+    excludedSourceReferences: [
+      'Poison-X and Venomized appear under the later Venomverse continued heading and are outside the approved core event boundary',
+    ],
+    rows: [
+      ...range('edgeOfVenomverse', 1, 4, 'Edge of Venomverse #1-5'),
+      issue(
+        'edgeOfVenomverse',
+        5,
+        null,
+        'Edge of Venomverse #1-5',
+        64250,
+        'Marvel metadata duplicates issue #5. Issue 64250 is the indexed Marvel issue page with complete cover metadata; issue 64249 is the duplicate record whose cover is image_not_available.',
+      ),
+      issue('venomverseWarStories', 1, 'Edge of Venomverse: War Stories #1'),
+      ...range('venomverse', 1, 5, 'Venomverse #1-5'),
+    ],
+  },
+  {
+    id: 'infinity-countdown-wars',
+    sourceUrl: 'https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/infinity-countdown/',
+    proposedTimeline: 2018,
+    proposedCoverReference: 'Infinity Countdown #1',
+    approvedSourceCount: 46,
+    excludedSourceReferences: [
+      'Guardians of the Galaxy #146-149 appear only in the collected lead-in; the explicit issue-by-issue order starts with #150',
+    ],
+    rows: sequence([
+      ['allNewGuardiansGalaxy', 150, 'Guardians of the Galaxy #150'],
+      ['infinityCountdownAdamWarlock', 1],
+      ['infinityCountdownPrime', 1],
+      ['infinityCountdown', 1],
+      ['infinityCountdown', 2],
+      ['infinityCountdown', 3],
+      ['infinityCountdownDaredevil', 1],
+      ['infinityCountdownCaptainMarvel', 1],
+      ['doctorStrange2018', 3],
+      ['infinityCountdown', 4],
+      ['infinityCountdownBlackWidow', 1],
+      ['infinityCountdownDarkhawk', 1],
+      ['infinityCountdownDarkhawk', 2],
+      ['infinityCountdownDarkhawk', 3],
+      ['infinityCountdownDarkhawk', 4],
+      ['infinityCountdownChampions', 1],
+      ['infinityCountdownChampions', 2],
+      ['infinityCountdown', 5],
+      ['infinityWarsPrime', 1],
+      ['infinityWars', 1],
+      ['infinityWars', 2],
+      ['asgardiansGalaxy', 1],
+      ['infinityWars', 3],
+      ['infinityWarsIronHammer', 1],
+      ['infinityWarsSoldierSupreme', 1],
+      ['thanosLegacy', 1],
+      ['asgardiansGalaxy', 2],
+      ['infinityWars', 4],
+      ['infinityWarsArachknight', 1],
+      ['infinityWarsIronHammer', 2],
+      ['infinityWarsSleepwalker', 1],
+      ['infinityWarsSleepwalker', 2],
+      ['infinityWarsSoldierSupreme', 2],
+      ['infinityWarsWeaponHex', 1],
+      ['infinityWars', 5],
+      ['infinityWarsArachknight', 2],
+      ['infinityWarsGhostPanther', 1],
+      ['infinityWarsInfinityWarps', 1],
+      ['infinityWarsSleepwalker', 3],
+      ['infinityWarsWeaponHex', 2],
+      ['infinityWars', 6],
+      ['infinityWarsFallenGuardian', 1],
+      ['infinityWarsGhostPanther', 2],
+      ['infinityWarsInfinityWarps', 2],
+      ['infinityWarsSleepwalker', 4],
+      ['infinityWarsInfinity', 1],
+    ]),
+  },
+  {
+    id: 'damnation',
+    sourceUrl: 'https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/doctor-strange-damnation/',
+    proposedTimeline: 2018,
+    proposedCoverReference: 'Damnation #1',
+    excludedSourceReferences: [
+      'Doctor Strange #390 appears only in the solo-series collection and is outside the 15-row event checklist',
+    ],
+    rows: sequence([
+      ['doctorStrangeDamnation', 1, 'Damnation #1'],
+      ['doctorStrange2015', 386],
+      ['doctorStrangeDamnation', 2, 'Damnation #2'],
+      ['doctorStrange2015', 387],
+      ['benReillyScarletSpider', 15, 'Scarlet Spider #15'],
+      ['doctorStrangeDamnation', 3, 'Damnation #3'],
+      ['ironFist2017', 78],
+      ['benReillyScarletSpider', 16, 'Scarlet Spider #16'],
+      ['damnationJohnnyBlaze', 1, 'Johnny Blaze: Ghost Rider #1'],
+      ['doctorStrange2015', 388],
+      ['ironFist2017', 79],
+      ['ironFist2017', 80],
+      ['benReillyScarletSpider', 17, 'Scarlet Spider #17'],
+      ['doctorStrangeDamnation', 4, 'Damnation #4'],
+      ['doctorStrange2015', 389],
+    ]),
+  },
 ]);
 
 const MANIFEST_PROPOSALS = Object.freeze({
@@ -2328,6 +2655,76 @@ const MANIFEST_PROPOSALS = Object.freeze({
     keywords: ['Spider-Island', 'Amazing Spider-Man', 'Venom', 'Deadly Foes'],
     coverPosition: 1,
   },
+  'minimum-carnage': {
+    name: 'Minimum Carnage',
+    description: 'Six chapters alternating Scarlet Spider and Venom between the Alpha and Omega one-shots.',
+    characters: ['Scarlet Spider', 'Venom', 'Carnage'],
+    keywords: ['Minimum Carnage', 'Scarlet Spider', 'Venom', 'Carnage'],
+    coverPosition: 1,
+  },
+  'x-termination': {
+    name: 'X-Men: X-Termination',
+    description: 'Eight chapters crossing Age of Apocalypse, X-Treme X-Men, Astonishing X-Men, and X-Termination.',
+    characters: ['X-Men', 'Nightcrawler', 'Weapon X'],
+    keywords: ['X-Termination', 'Age of Apocalypse', 'X-Treme X-Men'],
+    coverPosition: 3,
+  },
+  'avengers-enemy-within': {
+    name: 'Avengers: The Enemy Within',
+    description: 'The five-part crossover through The Enemy Within, Avengers Assemble, and Captain Marvel.',
+    characters: ['Captain Marvel', 'Avengers'],
+    keywords: ['The Enemy Within', 'Captain Marvel', 'Avengers Assemble'],
+    coverPosition: 1,
+  },
+  'x-men-battle-of-the-atom': {
+    name: 'X-Men: Battle of the Atom',
+    description: 'Ten interleaved chapters across the two event issues and four ongoing X-Men series.',
+    characters: ['X-Men', 'Cyclops', 'Wolverine', 'Jean Grey'],
+    keywords: ['Battle of the Atom', 'All-New X-Men', 'Uncanny X-Men'],
+    coverPosition: 1,
+  },
+  'revolutionary-war': {
+    name: 'Revolutionary War',
+    description: 'Eight one-shots following Alpha through the linked Marvel UK heroes and the event conclusion.',
+    characters: ['Dark Angel', "Death's Head II", 'Knights of Pendragon', 'Motormouth'],
+    keywords: ['Revolutionary War', 'Marvel UK', "Death's Head II"],
+    coverPosition: 1,
+  },
+  'x-men-trial-of-jean-grey': {
+    name: 'X-Men: The Trial of Jean Grey',
+    description: 'Six alternating chapters joining All-New X-Men with the Guardians of the Galaxy.',
+    characters: ['Jean Grey', 'X-Men', 'Guardians of the Galaxy'],
+    keywords: ['Trial of Jean Grey', 'All-New X-Men', 'Guardians of the Galaxy'],
+    coverPosition: 1,
+  },
+  'monsters-unleashed': {
+    name: 'Monsters Unleashed',
+    description: 'Thirteen chapters combining the five-part event with all eight 1.MU battleground issues.',
+    characters: ['Avengers', 'X-Men', 'Doctor Strange', 'Guardians of the Galaxy'],
+    keywords: ['Monsters Unleashed', '1.MU', 'Battleground'],
+    coverPosition: 1,
+  },
+  venomverse: {
+    name: 'Venomverse',
+    description: 'Eleven core chapters from Edge of Venomverse through War Stories and the five-part event.',
+    characters: ['Venom', 'Deadpool', 'X-23'],
+    keywords: ['Venomverse', 'Edge of Venomverse', 'symbiotes'],
+    coverPosition: 7,
+  },
+  'infinity-countdown-wars': {
+    name: 'Infinity Countdown and Infinity Wars',
+    description: 'Forty-six chapters covering the explicit Countdown and Wars issue-by-issue flow and its tie-ins.',
+    characters: ['Gamora', 'Loki', 'Adam Warlock', 'Guardians of the Galaxy'],
+    keywords: ['Infinity Countdown', 'Infinity Wars', 'Infinity Stones', 'Infinity Warps'],
+    coverPosition: 4,
+  },
+  damnation: {
+    name: 'Marvel Damnation',
+    description: 'Fifteen chapters combining the four-part event with Doctor Strange, Iron Fist, Scarlet Spider, and Ghost Rider.',
+    characters: ['Doctor Strange', 'Mephisto', 'Iron Fist', 'Scarlet Spider', 'Ghost Rider'],
+    keywords: ['Damnation', 'Doctor Strange', 'Mephisto', 'Las Vegas'],
+    coverPosition: 1,
+  },
 });
 
 function issueUrl(value) {
@@ -2354,6 +2751,18 @@ function reviewedSeriesNote(series, apiSeriesName) {
     && normalizeTitle(apiTitle) !== normalizeTitle(series.title)
   ) ? ` The source title is ${series.title}; Marvel names the selected series ${apiTitle}.` : '';
   return `${base}${titleNote}${series.selectionNote ? ` ${series.selectionNote}` : ''}`;
+}
+
+function resolvedIssueTitle(item, sourceRow) {
+  const title = String(item?.title ?? '').trim();
+  const metadataNumber = sourceRow.metadataIssueNumber;
+  if (metadataNumber == null || String(metadataNumber) === String(sourceRow.issueNumber)) return title;
+  const escaped = String(metadataNumber).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const pattern = new RegExp(`#\\s*${escaped}(?=\\s|$)`, 'i');
+  if (!pattern.test(title)) {
+    throw new Error(`${sourceRow.sourceIssueReference} metadata title does not end in #${metadataNumber}`);
+  }
+  return title.replace(pattern, `#${sourceRow.issueNumber}`);
 }
 
 export function shouldPreserveApprovedMapping(existingMapping, {
@@ -2455,8 +2864,9 @@ async function main() {
         issueUrl(item.detailUrl));
       const matches = seriesItems.filter((item) => {
         if (sourceRow.candidateIssueId != null) return Number(item.id) === sourceRow.candidateIssueId;
-        if (sourceRow.issueNumber == null) return true;
-        return String(item.issueNumber) === sourceRow.issueNumber;
+        const metadataIssueNumber = sourceRow.metadataIssueNumber ?? sourceRow.issueNumber;
+        if (metadataIssueNumber == null) return true;
+        return String(item.issueNumber) === metadataIssueNumber;
       });
       const candidateSeriesTitle = apiSeriesTitle(body?.series_name);
       const candidateSeriesYear = apiSeriesYear(body?.series_name);
@@ -2491,6 +2901,9 @@ async function main() {
         normalizedSeriesTitle: sourceRow.normalizedSeriesTitle,
         seriesYear: sourceRow.seriesYear,
         issueNumber: sourceRow.issueNumber,
+        ...(sourceRow.metadataIssueNumber == null
+          ? {}
+          : { metadataIssueNumber: sourceRow.metadataIssueNumber }),
         seriesId: sourceRow.seriesId,
         candidateIssueId: sourceRow.candidateIssueId,
         manualSeriesSelectionApproved: sourceRow.manualSeriesSelectionApproved,
@@ -2498,7 +2911,7 @@ async function main() {
         candidateIssueIds: candidates.map((candidate) => candidate.id),
         selectedIssueId: null,
         marvelIssueUrl: matches.length === 1 ? matches[0].detailUrl : null,
-        resolvedIssueTitle: matches.length === 1 ? matches[0].title : null,
+        resolvedIssueTitle: matches.length === 1 ? resolvedIssueTitle(matches[0], sourceRow) : null,
         note: `${reviewedSeriesNote(series ?? {
           id: sourceRow.seriesId,
           title: sourceRow.normalizedSeriesTitle,

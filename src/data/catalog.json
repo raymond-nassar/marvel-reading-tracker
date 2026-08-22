@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T01:03:29.279Z",
+  "generatedAt": "2026-08-22T05:47:30.542Z",
   "lists": [
     {
       "id": "x-men-age-of-x",
@@ -230,6 +230,360 @@
       "sourceOrigin": "Vendored from emreparker/marvel-comics",
       "sourceLicense": null,
       "updatedAt": "2026-08-04T06:14:48.703Z"
+    },
+    {
+      "id": "minimum-carnage",
+      "file": "minimum_carnage.json",
+      "name": "Minimum Carnage",
+      "description": "Six chapters alternating Scarlet Spider and Venom between the Alpha and Omega one-shots.",
+      "type": "event",
+      "depth": "complete",
+      "count": 6,
+      "collections": 0,
+      "characters": [
+        "Scarlet Spider",
+        "Venom",
+        "Carnage"
+      ],
+      "keywords": [
+        "Minimum Carnage",
+        "Scarlet Spider",
+        "Venom",
+        "Carnage"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2012,
+      "coverIssueId": 43321,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/10/586fd299ba084",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+      "sourceSection": "Minimum Carnage",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:06:19.775Z"
+    },
+    {
+      "id": "x-termination",
+      "file": "x_termination.json",
+      "name": "X-Men: X-Termination",
+      "description": "Eight chapters crossing Age of Apocalypse, X-Treme X-Men, Astonishing X-Men, and X-Termination.",
+      "type": "event",
+      "depth": "complete",
+      "count": 8,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Nightcrawler",
+        "Weapon X"
+      ],
+      "keywords": [
+        "X-Termination",
+        "Age of Apocalypse",
+        "X-Treme X-Men"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2013,
+      "coverIssueId": 47142,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/514332f615fcc",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+      "sourceSection": "X-Termination",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:06:19.778Z"
+    },
+    {
+      "id": "avengers-enemy-within",
+      "file": "avengers_enemy_within.json",
+      "name": "Avengers: The Enemy Within",
+      "description": "The five-part crossover through The Enemy Within, Avengers Assemble, and Captain Marvel.",
+      "type": "event",
+      "depth": "complete",
+      "count": 5,
+      "collections": 0,
+      "characters": [
+        "Captain Marvel",
+        "Avengers"
+      ],
+      "keywords": [
+        "The Enemy Within",
+        "Captain Marvel",
+        "Avengers Assemble"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2013,
+      "coverIssueId": 47565,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/80/5182c7a088d44",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+      "sourceSection": "Avengers: The Enemy Within",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:06:19.789Z"
+    },
+    {
+      "id": "x-men-battle-of-the-atom",
+      "file": "x_men_battle_of_the_atom.json",
+      "name": "X-Men: Battle of the Atom",
+      "description": "Ten interleaved chapters across the two event issues and four ongoing X-Men series.",
+      "type": "event",
+      "depth": "complete",
+      "count": 10,
+      "collections": 0,
+      "characters": [
+        "X-Men",
+        "Cyclops",
+        "Wolverine",
+        "Jean Grey"
+      ],
+      "keywords": [
+        "Battle of the Atom",
+        "All-New X-Men",
+        "Uncanny X-Men"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2013,
+      "coverIssueId": 47623,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/521ccc4613663",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/",
+      "sourceSection": "Battle of the Atom",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:06:19.790Z"
+    },
+    {
+      "id": "revolutionary-war",
+      "file": "revolutionary_war.json",
+      "name": "Revolutionary War",
+      "description": "Eight one-shots following Alpha through the linked Marvel UK heroes and the event conclusion.",
+      "type": "event",
+      "depth": "complete",
+      "count": 8,
+      "collections": 0,
+      "characters": [
+        "Dark Angel",
+        "Death's Head II",
+        "Knights of Pendragon",
+        "Motormouth"
+      ],
+      "keywords": [
+        "Revolutionary War",
+        "Marvel UK",
+        "Death's Head II"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2014,
+      "coverIssueId": 49360,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/b/c0/52cada5c5f323",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+      "sourceSection": "Event: Revolutionary War",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:06:19.791Z"
+    },
+    {
+      "id": "x-men-trial-of-jean-grey",
+      "file": "x_men_trial_of_jean_grey.json",
+      "name": "X-Men: The Trial of Jean Grey",
+      "description": "Six alternating chapters joining All-New X-Men with the Guardians of the Galaxy.",
+      "type": "event",
+      "depth": "complete",
+      "count": 6,
+      "collections": 0,
+      "characters": [
+        "Jean Grey",
+        "X-Men",
+        "Guardians of the Galaxy"
+      ],
+      "keywords": [
+        "Trial of Jean Grey",
+        "All-New X-Men",
+        "Guardians of the Galaxy"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2014,
+      "coverIssueId": 43487,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/50/52d566a0a3030",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/",
+      "sourceSection": "Trial of Jean Grey",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:06:19.792Z"
+    },
+    {
+      "id": "monsters-unleashed",
+      "file": "monsters_unleashed.json",
+      "name": "Monsters Unleashed",
+      "description": "Thirteen chapters combining the five-part event with all eight 1.MU battleground issues.",
+      "type": "event",
+      "depth": "complete",
+      "count": 13,
+      "collections": 0,
+      "characters": [
+        "Avengers",
+        "X-Men",
+        "Doctor Strange",
+        "Guardians of the Galaxy"
+      ],
+      "keywords": [
+        "Monsters Unleashed",
+        "1.MU",
+        "Battleground"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2017,
+      "coverIssueId": 60625,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/5873fc8fda02f",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/monsters-unleashed/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:47:30.518Z"
+    },
+    {
+      "id": "venomverse",
+      "file": "venomverse.json",
+      "name": "Venomverse",
+      "description": "Eleven core chapters from Edge of Venomverse through War Stories and the five-part event.",
+      "type": "event",
+      "depth": "complete",
+      "count": 11,
+      "collections": 0,
+      "characters": [
+        "Venom",
+        "Deadpool",
+        "X-23"
+      ],
+      "keywords": [
+        "Venomverse",
+        "Edge of Venomverse",
+        "symbiotes"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2017,
+      "coverIssueId": 64450,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/90/599afea497394",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-venomverse/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:06:19.793Z"
+    },
+    {
+      "id": "infinity-countdown-wars",
+      "file": "infinity_countdown_wars.json",
+      "name": "Infinity Countdown and Infinity Wars",
+      "description": "Forty-six chapters covering the explicit Countdown and Wars issue-by-issue flow and its tie-ins.",
+      "type": "event",
+      "depth": "complete",
+      "count": 46,
+      "collections": 0,
+      "characters": [
+        "Gamora",
+        "Loki",
+        "Adam Warlock",
+        "Guardians of the Galaxy"
+      ],
+      "keywords": [
+        "Infinity Countdown",
+        "Infinity Wars",
+        "Infinity Stones",
+        "Infinity Warps"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2018,
+      "coverIssueId": 66416,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/10/5a972b4f00db6",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/infinity-countdown/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:06:19.793Z"
+    },
+    {
+      "id": "damnation",
+      "file": "damnation.json",
+      "name": "Marvel Damnation",
+      "description": "Fifteen chapters combining the four-part event with Doctor Strange, Iron Fist, Scarlet Spider, and Ghost Rider.",
+      "type": "event",
+      "depth": "complete",
+      "count": 15,
+      "collections": 0,
+      "characters": [
+        "Doctor Strange",
+        "Mephisto",
+        "Iron Fist",
+        "Scarlet Spider",
+        "Ghost Rider"
+      ],
+      "keywords": [
+        "Damnation",
+        "Doctor Strange",
+        "Mephisto",
+        "Las Vegas"
+      ],
+      "group": null,
+      "groupName": null,
+      "variant": null,
+      "beginner": false,
+      "timeline": 2018,
+      "coverIssueId": 66279,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/5a8482de58425",
+        "ext": "jpg"
+      },
+      "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/doctor-strange-damnation/",
+      "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+      "sourceLicense": null,
+      "updatedAt": "2026-08-22T05:06:19.795Z"
     },
     {
       "id": "new-ultimate-universe",

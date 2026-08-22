@@ -1,0 +1,455 @@
+{
+  "id": "venomverse",
+  "inventoryId": "venomverse",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-venomverse/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 11,
+  "excludedSourceReferences": [
+    "Poison-X and Venomized appear under the later Venomverse continued heading and are outside the approved core event boundary"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 63237,
+      "title": "Edge of Venomverse",
+      "issueTitle": "Edge of Venomverse (2017) #1",
+      "seriesTitle": "Edge of Venomverse",
+      "apiSeriesName": "Edge of Venomverse (2017)",
+      "seriesId": 23125,
+      "issueNumber": "1",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/63237/edge_of_venomverse_2017_1",
+      "onSaleDate": "2017-06-28T00:00:00+0000"
+    },
+    {
+      "id": 63697,
+      "title": "Edge of Venomverse",
+      "issueTitle": "Edge of Venomverse (2017) #2",
+      "seriesTitle": "Edge of Venomverse",
+      "apiSeriesName": "Edge of Venomverse (2017)",
+      "seriesId": 23125,
+      "issueNumber": "2",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/63697/edge_of_venomverse_2017_2",
+      "onSaleDate": "2017-07-12T00:00:00+0000"
+    },
+    {
+      "id": 63866,
+      "title": "Edge of Venomverse",
+      "issueTitle": "Edge of Venomverse (2017) #3",
+      "seriesTitle": "Edge of Venomverse",
+      "apiSeriesName": "Edge of Venomverse (2017)",
+      "seriesId": 23125,
+      "issueNumber": "3",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/63866/edge_of_venomverse_2017_3",
+      "onSaleDate": "2017-07-26T00:00:00+0000"
+    },
+    {
+      "id": 64140,
+      "title": "Edge of Venomverse",
+      "issueTitle": "Edge of Venomverse (2017) #4",
+      "seriesTitle": "Edge of Venomverse",
+      "apiSeriesName": "Edge of Venomverse (2017)",
+      "seriesId": 23125,
+      "issueNumber": "4",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/64140/edge_of_venomverse_2017_4",
+      "onSaleDate": "2017-08-09T00:00:00+0000"
+    },
+    {
+      "id": 64250,
+      "title": "Edge of Venomverse",
+      "issueTitle": "Edge of Venomverse (2017) #5",
+      "seriesTitle": "Edge of Venomverse",
+      "apiSeriesName": "Edge of Venomverse (2017)",
+      "seriesId": 23125,
+      "issueNumber": "5",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/64250/edge_of_venomverse_2017_5",
+      "onSaleDate": "2017-08-23T00:00:00+0000"
+    },
+    {
+      "id": 64380,
+      "title": "Venomverse: War Stories",
+      "issueTitle": "Venomverse: War Stories (2017) #1",
+      "seriesTitle": "Venomverse: War Stories",
+      "apiSeriesName": "Venomverse: War Stories (2017 - Present)",
+      "seriesId": 25568,
+      "issueNumber": "1",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/64380/venomverse_war_stories_2017_1",
+      "onSaleDate": "2017-09-06T00:00:00+0000"
+    },
+    {
+      "id": 64450,
+      "title": "Venomverse",
+      "issueTitle": "Venomverse (2017) #1",
+      "seriesTitle": "Venomverse",
+      "apiSeriesName": "Venomverse (2017)",
+      "seriesId": 23468,
+      "issueNumber": "1",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/64450/venomverse_2017_1",
+      "onSaleDate": "2017-09-06T00:00:00+0000"
+    },
+    {
+      "id": 64545,
+      "title": "Venomverse",
+      "issueTitle": "Venomverse (2017) #2",
+      "seriesTitle": "Venomverse",
+      "apiSeriesName": "Venomverse (2017)",
+      "seriesId": 23468,
+      "issueNumber": "2",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/64545/venomverse_2017_2",
+      "onSaleDate": "2017-09-13T00:00:00+0000"
+    },
+    {
+      "id": 64569,
+      "title": "Venomverse",
+      "issueTitle": "Venomverse (2017) #3",
+      "seriesTitle": "Venomverse",
+      "apiSeriesName": "Venomverse (2017)",
+      "seriesId": 23468,
+      "issueNumber": "3",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/64569/venomverse_2017_3",
+      "onSaleDate": "2017-09-20T00:00:00+0000"
+    },
+    {
+      "id": 64568,
+      "title": "Venomverse",
+      "issueTitle": "Venomverse (2017) #4",
+      "seriesTitle": "Venomverse",
+      "apiSeriesName": "Venomverse (2017)",
+      "seriesId": 23468,
+      "issueNumber": "4",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/64568/venomverse_2017_4",
+      "onSaleDate": "2017-09-27T00:00:00+0000"
+    },
+    {
+      "id": 64757,
+      "title": "Venomverse",
+      "issueTitle": "Venomverse (2017) #5",
+      "seriesTitle": "Venomverse",
+      "apiSeriesName": "Venomverse (2017)",
+      "seriesId": 23468,
+      "issueNumber": "5",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/64757/venomverse_2017_5",
+      "onSaleDate": "2017-10-04T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Edge of Venomverse #1",
+      "sourceRangeReference": "Edge of Venomverse #1-5",
+      "normalizedSeriesTitle": "Edge of Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "1",
+      "seriesId": 23125,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "63237"
+      ],
+      "selectedIssueId": 63237,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/63237/edge_of_venomverse_2017_1",
+      "resolvedIssueTitle": "Edge of Venomverse (2017) #1",
+      "note": "Marvel series 23125 (Edge of Venomverse (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        63237
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Edge of Venomverse #2",
+      "sourceRangeReference": "Edge of Venomverse #1-5",
+      "normalizedSeriesTitle": "Edge of Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "2",
+      "seriesId": 23125,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "63697"
+      ],
+      "selectedIssueId": 63697,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/63697/edge_of_venomverse_2017_2",
+      "resolvedIssueTitle": "Edge of Venomverse (2017) #2",
+      "note": "Marvel series 23125 (Edge of Venomverse (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        63697
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Edge of Venomverse #3",
+      "sourceRangeReference": "Edge of Venomverse #1-5",
+      "normalizedSeriesTitle": "Edge of Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "3",
+      "seriesId": 23125,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "63866"
+      ],
+      "selectedIssueId": 63866,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/63866/edge_of_venomverse_2017_3",
+      "resolvedIssueTitle": "Edge of Venomverse (2017) #3",
+      "note": "Marvel series 23125 (Edge of Venomverse (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        63866
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Edge of Venomverse #4",
+      "sourceRangeReference": "Edge of Venomverse #1-5",
+      "normalizedSeriesTitle": "Edge of Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "4",
+      "seriesId": 23125,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "64140"
+      ],
+      "selectedIssueId": 64140,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/64140/edge_of_venomverse_2017_4",
+      "resolvedIssueTitle": "Edge of Venomverse (2017) #4",
+      "note": "Marvel series 23125 (Edge of Venomverse (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        64140
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Edge of Venomverse #5",
+      "sourceRangeReference": "Edge of Venomverse #1-5",
+      "normalizedSeriesTitle": "Edge of Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "5",
+      "seriesId": 23125,
+      "candidateIssueId": 64250,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "64250"
+      ],
+      "selectedIssueId": 64250,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/64250/edge_of_venomverse_2017_5",
+      "resolvedIssueTitle": "Edge of Venomverse (2017) #5",
+      "note": "Marvel series 23125 (Edge of Venomverse (2017)) is the reviewed metadata series for this source reference. Marvel metadata duplicates issue #5. Issue 64250 is the indexed Marvel issue page with complete cover metadata; issue 64249 is the duplicate record whose cover is image_not_available.",
+      "status": "exact",
+      "selectedIssueIds": [
+        64250
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Edge of Venomverse: War Stories #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Venomverse: War Stories",
+      "seriesYear": 2017,
+      "issueNumber": "1",
+      "seriesId": 25568,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "64380"
+      ],
+      "selectedIssueId": 64380,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/64380/venomverse_war_stories_2017_1",
+      "resolvedIssueTitle": "Venomverse: War Stories (2017) #1",
+      "note": "Marvel series 25568 (Venomverse: War Stories (2017 - Present)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        64380
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Venomverse #1",
+      "sourceRangeReference": "Venomverse #1-5",
+      "normalizedSeriesTitle": "Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "1",
+      "seriesId": 23468,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "64450"
+      ],
+      "selectedIssueId": 64450,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/64450/venomverse_2017_1",
+      "resolvedIssueTitle": "Venomverse (2017) #1",
+      "note": "Marvel series 23468 (Venomverse (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        64450
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Venomverse #2",
+      "sourceRangeReference": "Venomverse #1-5",
+      "normalizedSeriesTitle": "Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "2",
+      "seriesId": 23468,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "64545"
+      ],
+      "selectedIssueId": 64545,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/64545/venomverse_2017_2",
+      "resolvedIssueTitle": "Venomverse (2017) #2",
+      "note": "Marvel series 23468 (Venomverse (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        64545
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Venomverse #3",
+      "sourceRangeReference": "Venomverse #1-5",
+      "normalizedSeriesTitle": "Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "3",
+      "seriesId": 23468,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "64569"
+      ],
+      "selectedIssueId": 64569,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/64569/venomverse_2017_3",
+      "resolvedIssueTitle": "Venomverse (2017) #3",
+      "note": "Marvel series 23468 (Venomverse (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        64569
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Venomverse #4",
+      "sourceRangeReference": "Venomverse #1-5",
+      "normalizedSeriesTitle": "Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "4",
+      "seriesId": 23468,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "64568"
+      ],
+      "selectedIssueId": 64568,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/64568/venomverse_2017_4",
+      "resolvedIssueTitle": "Venomverse (2017) #4",
+      "note": "Marvel series 23468 (Venomverse (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        64568
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Venomverse #5",
+      "sourceRangeReference": "Venomverse #1-5",
+      "normalizedSeriesTitle": "Venomverse",
+      "seriesYear": 2017,
+      "issueNumber": "5",
+      "seriesId": 23468,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "64757"
+      ],
+      "selectedIssueId": 64757,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/64757/venomverse_2017_5",
+      "resolvedIssueTitle": "Venomverse (2017) #5",
+      "note": "Marvel series 23468 (Venomverse (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        64757
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "venomverse",
+    "name": "Venomverse",
+    "description": "Eleven core chapters from Edge of Venomverse through War Stories and the five-part event.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "venomverse.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-venomverse/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "venomverse.json",
+    "characters": [
+      "Venom",
+      "Deadpool",
+      "X-23"
+    ],
+    "keywords": [
+      "Venomverse",
+      "Edge of Venomverse",
+      "symbiotes"
+    ],
+    "expect": 11,
+    "timeline": 2017,
+    "coverIssueId": 64450,
+    "coverSourcePosition": 7,
+    "coverSourceReference": "Venomverse #1"
+  }
+}
