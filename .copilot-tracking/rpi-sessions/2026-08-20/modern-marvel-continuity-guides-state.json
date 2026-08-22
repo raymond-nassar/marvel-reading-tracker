@@ -237,8 +237,19 @@
       "evidence": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md"
     }
   ],
-  "blockers": [],
-  "next_action": "Complete batch three validation, open one pull request, and hand it to Agent Merge",
+  "blockers": [
+    {
+      "id": "agent-merge-state-injection",
+      "status": "external-app-blocker",
+      "pull_request": 163,
+      "head_commit": "d8b6ed773627be6a7d1621a178858c89f37104fe",
+      "observed": "Three Agent Merge activations across two independently attached PR sessions returned the skill guide without an agent_merge_state block or Authorized actions this run line.",
+      "github_state": "PR open, clean, mergeable, not draft, no review decision required, and all three CI jobs successful.",
+      "prohibited_workaround": "Do not merge manually, enable auto-merge, enqueue, or take an action not authorized by an injected Agent Merge state.",
+      "resolution_action": "Restart or repair the app-managed Agent Merge monitor for PR 163 so a PR-attached session receives an evaluated agent_merge_state and Authorized actions this run line; then let the app land the already-ready pull request."
+    }
+  ],
+  "next_action": "Repair or restart the app-managed Agent Merge state injection for pull request 163, then let the app merge the ready pull request",
   "prioritized_follow_ups": [],
   "batch_two_proposal": {
     "date": "2026-08-21",
@@ -526,7 +537,15 @@
       "delivery": {
         "status": "validated-delivery-in-progress",
         "review_agent_passes": "waived by parent instruction",
-        "agent_merge": "required after pull request creation"
+        "agent_merge": {
+          "status": "blocked-external",
+          "pull_request": 163,
+          "attempts": 3,
+          "attached_pr_sessions": 2,
+          "missing_input": "agent_merge_state and Authorized actions this run",
+          "manual_merge_forbidden": true,
+          "resolution_action": "Restart or repair the app-managed Agent Merge monitor and issue a fully evaluated tick for PR 163."
+        }
       }
     },
     "next_action": "Commit and push the validated batch, open one pull request, then hand it to Agent Merge."
@@ -972,6 +991,6 @@
         "reason": "Schism and Regenesis are proposed from their earlier source; Circle of Four and the remaining entries are runs or arcs."
       }
     ],
-    "next_action": "Complete validation, commit and push, open one pull request, and continue through Agent Merge."
+    "next_action": "Restart or repair Agent Merge state injection for pull request 163; the pull request itself is ready."
   }
 }

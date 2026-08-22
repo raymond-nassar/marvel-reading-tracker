@@ -472,3 +472,21 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   adjacent bridge records instead of positions 23 and 29, and the source-identity guard initially
   allowed a whole-page record beside a sectioned record on the same page. No material finding remains
   open.
+
+### CHG-019: Record the external Agent Merge monitor blocker
+
+* Pull request: 163 was opened against `main` from the implementation branch at commit
+  `d8b6ed773627be6a7d1621a178858c89f37104fe`.
+* Ready state: GitHub reports the pull request open, clean, mergeable, not a draft, with no review
+  decision required. Tests on Node 20, tests on Node 24, and lint all completed successfully.
+* Attempts: Agent Merge was activated three times across two independently attached PR sessions.
+  The first session was archived and the pull request was attached again in a fresh worktree before
+  the third attempt.
+* Blocker: Every activation returned the Agent Merge guide without an `agent_merge_state` block or
+  an `Authorized actions this run` line. The skill contract therefore authorizes no merge-loop
+  action and explicitly forbids a manual merge.
+* Exact resolution action: Restart or repair the app-managed Agent Merge monitor for pull request
+  163 so a PR-attached session receives a fully evaluated `agent_merge_state` and
+  `Authorized actions this run` line. The app can then land the already-ready pull request.
+* What was not done: No manual merge, auto-merge, merge queue action, branch rewrite, or CI bypass
+  was attempted.
