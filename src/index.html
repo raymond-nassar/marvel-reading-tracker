@@ -40,6 +40,7 @@
         </button>
 
         <nav id="sidebar-nav" aria-label="Main">
+          <div class="nav-scroll">
           <div class="nav-group">
             <h2 id="rail-orders" class="rail-h">Reading orders</h2>
             <ul id="list-nav" class="rail-list" aria-labelledby="rail-orders"></ul>
@@ -106,7 +107,14 @@
             </ul>
           </div>
 
-          <div class="nav-group">
+          </div>
+
+          <!-- Pinned to the bottom of the rail rather than left to the end of a scrolling column.
+               Measured at 1280x900 with one order in the library, the rail's content was 991px in
+               a 900px viewport, so settings, about and both status pills were all below the fold
+               on a first run. They are the two things a reader needs to be able to find without
+               knowing they are there. -->
+          <div class="nav-group nav-foot">
             <h2 class="rail-h">App</h2>
             <ul class="rail-list">
               <li><button type="button" class="ri" data-view="data">
@@ -430,7 +438,7 @@
               <label class="fp"><input type="radio" name="progress-scope" value="list" checked /><span>This list</span></label>
               <label class="fp"><input type="radio" name="progress-scope" value="all" /><span>All lists</span></label>
             </fieldset>
-            <p class="rail-hint">“Tracked” means what you have added, not the size of the whole series.</p>
+            <p class="rail-hint" id="progress-note">“Tracked” means what you have added, not the size of the whole series.</p>
             <div id="series-progress" class="results"></div>
           </section>
 

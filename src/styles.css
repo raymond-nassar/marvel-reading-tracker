@@ -265,9 +265,15 @@ h2[tabindex="-1"]:focus {
   background: var(--rail);
   border-right: 1px solid var(--line);
   padding: .8rem .8rem 1rem;
-  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  position: sticky; top: 0; height: 100vh; overflow: hidden;
   display: flex; flex-direction: column;
 }
+/* The rail used to scroll as one column, so everything past the fold went with it. The reading
+   orders and the task shortcuts scroll; the app group and the status pills are pinned, which is
+   the footer area a navigation pane is supposed to have. */
+#sidebar-nav { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+.nav-scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; }
+.nav-foot { flex: 0 0 auto; }
 .railed .rail { padding-left: .3rem; padding-right: .3rem; }
 
 /* Fluent's PUA glyphs. They are decorative: every button keeps its label in the DOM as
@@ -310,7 +316,7 @@ h2[tabindex="-1"]:focus {
 /* Dividers, option C. Two tiers, both CSS borders rather than <hr>, so a screen reader
    is never handed a separator for something that is purely visual rhythm. */
 .rail-list > li:not(:last-child) { border-bottom: 1px solid rgb(var(--tint-base) / 5%); }
-.nav-group + .nav-group {
+.nav-group + .nav-group, .nav-scroll + .nav-foot {
   border-top: 1px solid rgb(var(--tint-base) / 10%);
   margin-top: 12px; padding-top: 12px;
 }
@@ -1051,7 +1057,12 @@ body.nocovers .chero .art img, .chero .art img[hidden] { display: none; }
 }
 .yours button:hover { background: var(--card-2); }
 .yours .yt { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
-.yours .yours-name { color: var(--muted); font-size: var(--t-body); font-variant-numeric: tabular-nums; white-space: nowrap; }
+/* The name is the thing being chosen and the thing being clicked, so it carries the weight. It
+   used to be muted while the count beside it was full brightness, which put the emphasis on how
+   far along the order is rather than on which order it is. Measured on a one order shelf: name
+   14px/400 in the muted grey, count 14px/400 in the foreground colour. */
+.yours .yours-name { color: var(--text); font-weight: 600; font-size: var(--t-body); white-space: nowrap; }
+.yours .yours-count { color: var(--muted); font-variant-numeric: tabular-nums; }
 
 /* ---------------------------------------------------------- featured journey
 
@@ -1165,6 +1176,16 @@ body.nocovers .ocard-art .of, .ocard-art .of.show { display: flex; }
   background: none; color: var(--text); border-color: var(--line-2); font-weight: 600;
 }
 .ocard-foot .btn:not(.btn-added):hover {
+  border-color: var(--accent-text); background: rgb(var(--accent-line) / 8%);
+}
+/* The catalog rows are the same 59 orders as the grid above, rendered by a different component,
+   and the rule the grid learned never reached them. Measured: the catalog painted 59 filled
+   accent Import buttons down an 11,314px page, against exactly one filled button on the whole
+   home view. The argument is the one three rules up, only more so at 59. */
+.result-act .btn:not(.btn-added) {
+  background: none; color: var(--text); border-color: var(--line-2); font-weight: 600;
+}
+.result-act .btn:not(.btn-added):hover {
   border-color: var(--accent-text); background: rgb(var(--accent-line) / 8%);
 }
 /* The preview covers the whole card, so the body is a large secondary target without the

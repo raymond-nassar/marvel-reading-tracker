@@ -1034,21 +1034,34 @@ function hideRailTip() {
 
 // ------------------------------------------------------------------ navigation
 
+// Extracted so a control created after boot can navigate the same way a rail button does.
+// wireNav only ever runs once, over the markup present at load, so an empty-state button built
+// during a render would carry data-view and do nothing at all.
+function navigateTo(view, open) {
+  // A click on the rail is the archetypal navigation, so this is the one that has to leave a
+  // history entry for Back to come back to.
+  showView(view, { push: true });
+  if (!open) return;
+  const d = $(`#${open}`);
+  if (!d) return;
+  for (const other of document.querySelectorAll('#view-add details.card[open]')) other.open = false;
+  if (d.tagName === 'DETAILS') d.open = true;
+  d.querySelector('input, textarea, button')?.focus();
+}
+
+// The action an empty state offers. A screen with nothing on it is the one place a reader has no
+// context to work from, so it hands over the next step rather than naming a control elsewhere.
+function emptyAction({ label, view, open }) {
+  return el('button', {
+    class: 'btn btn-g',
+    type: 'button',
+    onclick: () => navigateTo(view, open),
+  }, label);
+}
+
 function wireNav() {
   for (const btn of document.querySelectorAll('[data-view]')) {
-    btn.addEventListener('click', () => {
-      // A click on the rail is the archetypal navigation, so this is the one that has to leave a
-      // history entry for Back to come back to.
-      showView(btn.dataset.view, { push: true });
-      if (btn.dataset.open) {
-        const d = $(`#${btn.dataset.open}`);
-        if (d) {
-          for (const other of document.querySelectorAll('#view-add details.card[open]')) other.open = false;
-          if (d.tagName === 'DETAILS') d.open = true;
-          d.querySelector('input, textarea, button')?.focus();
-        }
-      }
-    });
+    btn.addEventListener('click', () => navigateTo(btn.dataset.view, btn.dataset.open));
   }
 
   for (const btn of ['#btn-new-list', '#esc-new-list']) {
@@ -4153,6 +4166,11 @@ function renderProgress() {
     : 'Counted over unique issues across every list, so an issue in two lists counts once.';
 
   const rows = scoped ? seriesProgress(store.state, activeListId()) : seriesProgress(store.state);
+  // How a figure is counted is worth explaining beside the figures and nowhere else. With no rows
+  // the subtitle described the arithmetic of an empty table, which is two sentences a reader has
+  // to get past to reach the one that tells them there is nothing here.
+  $('#progress-sub').hidden = rows.length === 0;
+  $('#progress-note').hidden = rows.length === 0;
   // Both the scope and the active list are in the key. One number would let expanding All lists
   // carry into This list, and one list's expansion onto the next list opened under the same scope,
   // so switching either restarts at the cap, which is what a reader expects when the list changes.
@@ -4161,7 +4179,15 @@ function renderProgress() {
   preservingFocus(box, () => {
     box.replaceChildren();
     if (!rows.length) {
-      box.append(el('p', { class: 'rail-hint', text: 'Nothing tracked yet.' }));
+      // The same shape the library sub-views and the finished-order panel use, rather than a bare
+      // hint line. It also drops the two sentences of methodology that sat above it: how unique
+      // issues are counted and what "tracked" means are answers about a table, and there is no
+      // table, so on this screen they explained a measurement of nothing.
+      box.append(el('div', { class: 'empty-state' }, [
+        el('div', { class: 'empty-glyph', 'aria-hidden': 'true', text: '☐' }),
+        el('p', { text: 'Nothing tracked yet.' }),
+        emptyAction({ label: 'Browse reading orders', view: 'catalog' }),
+      ]));
       return;
     }
     const shown = Math.min(listShown.get(key) ?? LIBRARY_CAP, rows.length);
@@ -4208,6 +4234,7 @@ function renderLibrary() {
         box.append(el('div', { class: 'empty-state' }, [
           el('div', { class: 'empty-glyph', 'aria-hidden': 'true', text: '☐' }),
           el('p', { text: v.empty }),
+          ...(v.emptyAction ? [emptyAction(v.emptyAction)] : []),
         ]));
         return;
       }
