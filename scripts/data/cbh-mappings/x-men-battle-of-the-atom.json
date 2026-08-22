@@ -1,0 +1,419 @@
+{
+  "id": "x-men-battle-of-the-atom",
+  "inventoryId": "marvel-now",
+  "sourceUrl": "https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/",
+  "sourceSection": "Battle of the Atom",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 10,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 47623,
+      "title": "X-Men: Battle of the Atom",
+      "issueTitle": "X-Men: Battle of the Atom (2013) #1",
+      "seriesTitle": "X-Men: Battle of the Atom",
+      "apiSeriesName": "X-Men: Battle of the Atom (2013)",
+      "seriesId": 17964,
+      "issueNumber": "1",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47623/x-men_battle_of_the_atom_2013_1",
+      "onSaleDate": "2013-09-04T00:00:00+0000"
+    },
+    {
+      "id": 43481,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2012) #16",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2012 - 2015)",
+      "seriesId": 16449,
+      "issueNumber": "16",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43481/all-new_x-men_2012_16",
+      "onSaleDate": "2013-09-04T00:00:00+0000"
+    },
+    {
+      "id": 46786,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2013) #5",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2013 - 2015)",
+      "seriesId": 17635,
+      "issueNumber": "5",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/46786/x-men_2013_5",
+      "onSaleDate": "2013-09-11T00:00:00+0000"
+    },
+    {
+      "id": 46677,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2013) #12",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2013 - 2015)",
+      "seriesId": 17602,
+      "issueNumber": "12",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/46677/uncanny_x-men_2013_12",
+      "onSaleDate": "2013-09-18T00:00:00+0000"
+    },
+    {
+      "id": 46738,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #36",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "36",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/46738/wolverine_the_x-men_2011_36",
+      "onSaleDate": "2013-09-25T00:00:00+0000"
+    },
+    {
+      "id": 43482,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2012) #17",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2012 - 2015)",
+      "seriesId": 16449,
+      "issueNumber": "17",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43482/all-new_x-men_2012_17",
+      "onSaleDate": "2013-10-02T00:00:00+0000"
+    },
+    {
+      "id": 46788,
+      "title": "X-Men",
+      "issueTitle": "X-Men (2013) #6",
+      "seriesTitle": "X-Men",
+      "apiSeriesName": "X-Men (2013 - 2015)",
+      "seriesId": 17635,
+      "issueNumber": "6",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/46788/x-men_2013_6",
+      "onSaleDate": "2013-10-09T00:00:00+0000"
+    },
+    {
+      "id": 48095,
+      "title": "Uncanny X-Men",
+      "issueTitle": "Uncanny X-Men (2013) #13",
+      "seriesTitle": "Uncanny X-Men",
+      "apiSeriesName": "Uncanny X-Men (2013 - 2015)",
+      "seriesId": 17602,
+      "issueNumber": "13",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48095/uncanny_x-men_2013_13",
+      "onSaleDate": "2013-10-16T00:00:00+0000"
+    },
+    {
+      "id": 48097,
+      "title": "Wolverine & the X-Men",
+      "issueTitle": "Wolverine & the X-Men (2011) #37",
+      "seriesTitle": "Wolverine & the X-Men",
+      "apiSeriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "seriesId": 13910,
+      "issueNumber": "37",
+      "seriesYear": 2011,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48097/wolverine_the_x-men_2011_37",
+      "onSaleDate": "2013-10-23T00:00:00+0000"
+    },
+    {
+      "id": 47624,
+      "title": "X-Men: Battle of the Atom",
+      "issueTitle": "X-Men: Battle of the Atom (2013) #2",
+      "seriesTitle": "X-Men: Battle of the Atom",
+      "apiSeriesName": "X-Men: Battle of the Atom (2013)",
+      "seriesId": 17964,
+      "issueNumber": "2",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47624/x-men_battle_of_the_atom_2013_2",
+      "onSaleDate": "2013-10-30T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "X-Men: Battle of the Atom #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Battle of the Atom",
+      "seriesYear": 2013,
+      "issueNumber": "1",
+      "seriesId": 17964,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47623"
+      ],
+      "selectedIssueId": 47623,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47623/x-men_battle_of_the_atom_2013_1",
+      "resolvedIssueTitle": "X-Men: Battle of the Atom (2013) #1",
+      "note": "Marvel series 17964 (X-Men: Battle of the Atom (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47623
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "All-New X-Men #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "16",
+      "seriesId": 16449,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43481"
+      ],
+      "selectedIssueId": 43481,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43481/all-new_x-men_2012_16",
+      "resolvedIssueTitle": "All-New X-Men (2012) #16",
+      "note": "Marvel series 16449 (All-New X-Men (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43481
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "X-Men #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2013,
+      "issueNumber": "5",
+      "seriesId": 17635,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "46786"
+      ],
+      "selectedIssueId": 46786,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/46786/x-men_2013_5",
+      "resolvedIssueTitle": "X-Men (2013) #5",
+      "note": "Marvel series 17635 (X-Men (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        46786
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Uncanny X-Men #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2013,
+      "issueNumber": "12",
+      "seriesId": 17602,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "46677"
+      ],
+      "selectedIssueId": 46677,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/46677/uncanny_x-men_2013_12",
+      "resolvedIssueTitle": "Uncanny X-Men (2013) #12",
+      "note": "Marvel series 17602 (Uncanny X-Men (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        46677
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Wolverine & The X-Men #36",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "36",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "46738"
+      ],
+      "selectedIssueId": 46738,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/46738/wolverine_the_x-men_2011_36",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #36",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        46738
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "All-New X-Men #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "17",
+      "seriesId": 16449,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43482"
+      ],
+      "selectedIssueId": 43482,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43482/all-new_x-men_2012_17",
+      "resolvedIssueTitle": "All-New X-Men (2012) #17",
+      "note": "Marvel series 16449 (All-New X-Men (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43482
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "X-Men #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men",
+      "seriesYear": 2013,
+      "issueNumber": "6",
+      "seriesId": 17635,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "46788"
+      ],
+      "selectedIssueId": 46788,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/46788/x-men_2013_6",
+      "resolvedIssueTitle": "X-Men (2013) #6",
+      "note": "Marvel series 17635 (X-Men (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        46788
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Uncanny X-Men #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Uncanny X-Men",
+      "seriesYear": 2013,
+      "issueNumber": "13",
+      "seriesId": 17602,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48095"
+      ],
+      "selectedIssueId": 48095,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48095/uncanny_x-men_2013_13",
+      "resolvedIssueTitle": "Uncanny X-Men (2013) #13",
+      "note": "Marvel series 17602 (Uncanny X-Men (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48095
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Wolverine & The X-Men #37",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Wolverine & The X-Men",
+      "seriesYear": 2011,
+      "issueNumber": "37",
+      "seriesId": 13910,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48097"
+      ],
+      "selectedIssueId": 48097,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48097/wolverine_the_x-men_2011_37",
+      "resolvedIssueTitle": "Wolverine & the X-Men (2011) #37",
+      "note": "Marvel series 13910 (Wolverine & the X-Men (2011 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48097
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "X-Men: Battle of the Atom #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Men: Battle of the Atom",
+      "seriesYear": 2013,
+      "issueNumber": "2",
+      "seriesId": 17964,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47624"
+      ],
+      "selectedIssueId": 47624,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47624/x-men_battle_of_the_atom_2013_2",
+      "resolvedIssueTitle": "X-Men: Battle of the Atom (2013) #2",
+      "note": "Marvel series 17964 (X-Men: Battle of the Atom (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47624
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-men-battle-of-the-atom",
+    "name": "X-Men: Battle of the Atom",
+    "description": "Ten interleaved chapters across the two event issues and four ongoing X-Men series.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-men-battle-of-the-atom.md",
+    "sourcePage": "https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/",
+    "sourceSection": "Battle of the Atom",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_men_battle_of_the_atom.json",
+    "characters": [
+      "X-Men",
+      "Cyclops",
+      "Wolverine",
+      "Jean Grey"
+    ],
+    "keywords": [
+      "Battle of the Atom",
+      "All-New X-Men",
+      "Uncanny X-Men"
+    ],
+    "expect": 10,
+    "timeline": 2013,
+    "coverIssueId": 47623,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "X-Men: Battle of the Atom #1"
+  }
+}

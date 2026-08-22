@@ -1,0 +1,1752 @@
+{
+  "id": "infinity-countdown-wars",
+  "inventoryId": "infinity-countdown-wars",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/infinity-countdown/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 46,
+  "excludedSourceReferences": [
+    "Guardians of the Galaxy #146-149 appear only in the collected lead-in; the explicit issue-by-issue order starts with #150"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 65547,
+      "title": "All-New Guardians of the Galaxy",
+      "issueTitle": "All-New Guardians of the Galaxy (2017) #150",
+      "seriesTitle": "All-New Guardians of the Galaxy",
+      "apiSeriesName": "All-New Guardians of the Galaxy (2017)",
+      "seriesId": 23058,
+      "issueNumber": "150",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/65547/all-new_guardians_of_the_galaxy_2017_150",
+      "onSaleDate": "2018-01-03T00:00:00+0000"
+    },
+    {
+      "id": 66158,
+      "title": "Infinity Countdown: Adam Warlock",
+      "issueTitle": "Infinity Countdown: Adam Warlock (2018) #1",
+      "seriesTitle": "Infinity Countdown: Adam Warlock",
+      "apiSeriesName": "Infinity Countdown: Adam Warlock (2018)",
+      "seriesId": 23991,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66158/infinity_countdown_adam_warlock_2018_1",
+      "onSaleDate": "2018-02-07T00:00:00+0000"
+    },
+    {
+      "id": 66283,
+      "title": "Infinity Countdown Prime",
+      "issueTitle": "Infinity Countdown Prime (2018) #1",
+      "seriesTitle": "Infinity Countdown Prime",
+      "apiSeriesName": "Infinity Countdown Prime (2018)",
+      "seriesId": 24300,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66283/infinity_countdown_prime_2018_1",
+      "onSaleDate": "2018-02-21T00:00:00+0000"
+    },
+    {
+      "id": 66416,
+      "title": "Infinity Countdown",
+      "issueTitle": "Infinity Countdown (2018) #1",
+      "seriesTitle": "Infinity Countdown",
+      "apiSeriesName": "Infinity Countdown (2018)",
+      "seriesId": 24050,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66416/infinity_countdown_2018_1",
+      "onSaleDate": "2018-03-07T00:00:00+0000"
+    },
+    {
+      "id": 66684,
+      "title": "Infinity Countdown",
+      "issueTitle": "Infinity Countdown (2018) #2",
+      "seriesTitle": "Infinity Countdown",
+      "apiSeriesName": "Infinity Countdown (2018)",
+      "seriesId": 24050,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66684/infinity_countdown_2018_2",
+      "onSaleDate": "2018-04-18T00:00:00+0000"
+    },
+    {
+      "id": 67022,
+      "title": "Infinity Countdown",
+      "issueTitle": "Infinity Countdown (2018) #3",
+      "seriesTitle": "Infinity Countdown",
+      "apiSeriesName": "Infinity Countdown (2018)",
+      "seriesId": 24050,
+      "issueNumber": "3",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67022/infinity_countdown_2018_3",
+      "onSaleDate": "2018-05-02T00:00:00+0000"
+    },
+    {
+      "id": 67347,
+      "title": "Infinity Countdown: Daredevil",
+      "issueTitle": "Infinity Countdown: Daredevil (2018) #1",
+      "seriesTitle": "Infinity Countdown: Daredevil",
+      "apiSeriesName": "Infinity Countdown: Daredevil (2018)",
+      "seriesId": 24339,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67347/infinity_countdown_daredevil_2018_1",
+      "onSaleDate": "2018-05-16T00:00:00+0000"
+    },
+    {
+      "id": 67346,
+      "title": "Infinity Countdown: Captain Marvel",
+      "issueTitle": "Infinity Countdown: Captain Marvel (2018) #1",
+      "seriesTitle": "Infinity Countdown: Captain Marvel",
+      "apiSeriesName": "Infinity Countdown: Captain Marvel (2018)",
+      "seriesId": 24338,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67346/infinity_countdown_captain_marvel_2018_1",
+      "onSaleDate": "2018-05-30T00:00:00+0000"
+    },
+    {
+      "id": 68295,
+      "title": "Doctor Strange",
+      "issueTitle": "Doctor Strange (2018) #3",
+      "seriesTitle": "Doctor Strange",
+      "apiSeriesName": "Doctor Strange (2018 - 2019)",
+      "seriesId": 24296,
+      "issueNumber": "3",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/68295/doctor_strange_2018_3",
+      "onSaleDate": "2018-07-04T00:00:00+0000"
+    },
+    {
+      "id": 68653,
+      "title": "Infinity Countdown",
+      "issueTitle": "Infinity Countdown (2018) #4",
+      "seriesTitle": "Infinity Countdown",
+      "apiSeriesName": "Infinity Countdown (2018)",
+      "seriesId": 24050,
+      "issueNumber": "4",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/68653/infinity_countdown_2018_4",
+      "onSaleDate": "2018-06-06T00:00:00+0000"
+    },
+    {
+      "id": 68659,
+      "title": "Infinity Countdown: Black Widow",
+      "issueTitle": "Infinity Countdown: Black Widow (2018) #1",
+      "seriesTitle": "Infinity Countdown: Black Widow",
+      "apiSeriesName": "Infinity Countdown: Black Widow (2018)",
+      "seriesId": 24906,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/68659/infinity_countdown_black_widow_2018_1",
+      "onSaleDate": "2018-06-20T00:00:00+0000"
+    },
+    {
+      "id": 67348,
+      "title": "Infinity Countdown: Darkhawk",
+      "issueTitle": "Infinity Countdown: Darkhawk (2018) #1",
+      "seriesTitle": "Infinity Countdown: Darkhawk",
+      "apiSeriesName": "Infinity Countdown: Darkhawk (2018)",
+      "seriesId": 24302,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67348/infinity_countdown_darkhawk_2018_1",
+      "onSaleDate": "2018-05-23T00:00:00+0000"
+    },
+    {
+      "id": 68667,
+      "title": "Infinity Countdown: Darkhawk",
+      "issueTitle": "Infinity Countdown: Darkhawk (2018) #2",
+      "seriesTitle": "Infinity Countdown: Darkhawk",
+      "apiSeriesName": "Infinity Countdown: Darkhawk (2018)",
+      "seriesId": 24302,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/68667/infinity_countdown_darkhawk_2018_2",
+      "onSaleDate": "2018-06-13T00:00:00+0000"
+    },
+    {
+      "id": 68668,
+      "title": "Infinity Countdown: Darkhawk",
+      "issueTitle": "Infinity Countdown: Darkhawk (2018) #3",
+      "seriesTitle": "Infinity Countdown: Darkhawk",
+      "apiSeriesName": "Infinity Countdown: Darkhawk (2018)",
+      "seriesId": 24302,
+      "issueNumber": "3",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/68668/infinity_countdown_darkhawk_2018_3",
+      "onSaleDate": "2018-06-27T00:00:00+0000"
+    },
+    {
+      "id": 68669,
+      "title": "Infinity Countdown: Darkhawk",
+      "issueTitle": "Infinity Countdown: Darkhawk (2018) #4",
+      "seriesTitle": "Infinity Countdown: Darkhawk",
+      "apiSeriesName": "Infinity Countdown: Darkhawk (2018)",
+      "seriesId": 24302,
+      "issueNumber": "4",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/68669/infinity_countdown_darkhawk_2018_4",
+      "onSaleDate": "2018-07-11T00:00:00+0000"
+    },
+    {
+      "id": 68662,
+      "title": "Infinity Countdown: Champions",
+      "issueTitle": "Infinity Countdown: Champions (2018) #1",
+      "seriesTitle": "Infinity Countdown: Champions",
+      "apiSeriesName": "Infinity Countdown: Champions (2018)",
+      "seriesId": 24909,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/68662/infinity_countdown_champions_2018_1",
+      "onSaleDate": "2018-06-20T00:00:00+0000"
+    },
+    {
+      "id": 68663,
+      "title": "Infinity Countdown: Champions",
+      "issueTitle": "Infinity Countdown: Champions (2018) #2",
+      "seriesTitle": "Infinity Countdown: Champions",
+      "apiSeriesName": "Infinity Countdown: Champions (2018)",
+      "seriesId": 24909,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/68663/infinity_countdown_champions_2018_2",
+      "onSaleDate": "2018-07-04T00:00:00+0000"
+    },
+    {
+      "id": 68656,
+      "title": "Infinity Countdown",
+      "issueTitle": "Infinity Countdown (2018) #5",
+      "seriesTitle": "Infinity Countdown",
+      "apiSeriesName": "Infinity Countdown (2018)",
+      "seriesId": 24050,
+      "issueNumber": "5",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/68656/infinity_countdown_2018_5",
+      "onSaleDate": "2018-07-18T00:00:00+0000"
+    },
+    {
+      "id": 67349,
+      "title": "Infinity Wars Prime",
+      "issueTitle": "Infinity Wars Prime (2018) #1",
+      "seriesTitle": "Infinity Wars Prime",
+      "apiSeriesName": "Infinity Wars Prime (2018)",
+      "seriesId": 24340,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67349/infinity_wars_prime_2018_1",
+      "onSaleDate": "2018-07-25T00:00:00+0000"
+    },
+    {
+      "id": 67145,
+      "title": "Infinity Wars",
+      "issueTitle": "Infinity Wars (2018) #1",
+      "seriesTitle": "Infinity Wars",
+      "apiSeriesName": "Infinity Wars (2018)",
+      "seriesId": 24279,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67145/infinity_wars_2018_1",
+      "onSaleDate": "2018-08-01T00:00:00+0000"
+    },
+    {
+      "id": 67147,
+      "title": "Infinity Wars",
+      "issueTitle": "Infinity Wars (2018) #2",
+      "seriesTitle": "Infinity Wars",
+      "apiSeriesName": "Infinity Wars (2018)",
+      "seriesId": 24279,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67147/infinity_wars_2018_2",
+      "onSaleDate": "2018-08-15T00:00:00+0000"
+    },
+    {
+      "id": 71308,
+      "title": "Asgardians of the Galaxy",
+      "issueTitle": "Asgardians of the Galaxy (2018) #1",
+      "seriesTitle": "Asgardians of the Galaxy",
+      "apiSeriesName": "Asgardians of the Galaxy (2018 - 2019)",
+      "seriesId": 25996,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71308/asgardians_of_the_galaxy_2018_1",
+      "onSaleDate": "2018-09-05T00:00:00+0000"
+    },
+    {
+      "id": 67148,
+      "title": "Infinity Wars",
+      "issueTitle": "Infinity Wars (2018) #3",
+      "seriesTitle": "Infinity Wars",
+      "apiSeriesName": "Infinity Wars (2018)",
+      "seriesId": 24279,
+      "issueNumber": "3",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67148/infinity_wars_2018_3",
+      "onSaleDate": "2018-09-12T00:00:00+0000"
+    },
+    {
+      "id": 71033,
+      "title": "Infinity Wars: Iron Hammer",
+      "issueTitle": "Infinity Wars: Iron Hammer (2018) #1",
+      "seriesTitle": "Infinity Wars: Iron Hammer",
+      "apiSeriesName": "Infinity Wars: Iron Hammer (2018)",
+      "seriesId": 26158,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71033/infinity_wars_iron_hammer_2018_1",
+      "onSaleDate": "2018-09-26T00:00:00+0000"
+    },
+    {
+      "id": 71032,
+      "title": "Infinity Wars: Soldier Supreme",
+      "issueTitle": "Infinity Wars: Soldier Supreme (2018) #1",
+      "seriesTitle": "Infinity Wars: Soldier Supreme",
+      "apiSeriesName": "Infinity Wars: Soldier Supreme (2018)",
+      "seriesId": 26160,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71032/infinity_wars_soldier_supreme_2018_1",
+      "onSaleDate": "2018-09-19T00:00:00+0000"
+    },
+    {
+      "id": 71037,
+      "title": "Thanos Legacy",
+      "issueTitle": "Thanos Legacy (2018) #1",
+      "seriesTitle": "Thanos Legacy",
+      "apiSeriesName": "Thanos Legacy (2018)",
+      "seriesId": 25951,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71037/thanos_legacy_2018_1",
+      "onSaleDate": "2018-09-05T00:00:00+0000"
+    },
+    {
+      "id": 71310,
+      "title": "Asgardians of the Galaxy",
+      "issueTitle": "Asgardians of the Galaxy (2018) #2",
+      "seriesTitle": "Asgardians of the Galaxy",
+      "apiSeriesName": "Asgardians of the Galaxy (2018 - 2019)",
+      "seriesId": 25996,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71310/asgardians_of_the_galaxy_2018_2",
+      "onSaleDate": "2018-10-03T00:00:00+0000"
+    },
+    {
+      "id": 67149,
+      "title": "Infinity Wars",
+      "issueTitle": "Infinity Wars (2018) #4",
+      "seriesTitle": "Infinity Wars",
+      "apiSeriesName": "Infinity Wars (2018)",
+      "seriesId": 24279,
+      "issueNumber": "4",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67149/infinity_wars_2018_4",
+      "onSaleDate": "2018-10-10T00:00:00+0000"
+    },
+    {
+      "id": 71034,
+      "title": "Infinity Wars: Arachknight",
+      "issueTitle": "Infinity Wars: Arachknight (2018) #1",
+      "seriesTitle": "Infinity Wars: Arachknight",
+      "apiSeriesName": "Infinity Wars: Arachknight (2018)",
+      "seriesId": 26157,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71034/infinity_wars_arachknight_2018_1",
+      "onSaleDate": "2018-10-24T00:00:00+0000"
+    },
+    {
+      "id": 71782,
+      "title": "Infinity Wars: Iron Hammer",
+      "issueTitle": "Infinity Wars: Iron Hammer (2018) #2",
+      "seriesTitle": "Infinity Wars: Iron Hammer",
+      "apiSeriesName": "Infinity Wars: Iron Hammer (2018)",
+      "seriesId": 26158,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71782/infinity_wars_iron_hammer_2018_2",
+      "onSaleDate": "2018-10-31T00:00:00+0000"
+    },
+    {
+      "id": 73197,
+      "title": "Infinity Wars: Sleepwalker",
+      "issueTitle": "Infinity Wars: Sleepwalker (2018) #1",
+      "seriesTitle": "Infinity Wars: Sleepwalker",
+      "apiSeriesName": "Infinity Wars: Sleepwalker (2018 - 2019)",
+      "seriesId": 26410,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/73197/infinity_wars_sleepwalker_2018_1",
+      "onSaleDate": "2018-10-03T00:00:00+0000"
+    },
+    {
+      "id": 73199,
+      "title": "Infinity Wars: Sleepwalker",
+      "issueTitle": "Infinity Wars: Sleepwalker (2018) #2",
+      "seriesTitle": "Infinity Wars: Sleepwalker",
+      "apiSeriesName": "Infinity Wars: Sleepwalker (2018 - 2019)",
+      "seriesId": 26410,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/73199/infinity_wars_sleepwalker_2018_2",
+      "onSaleDate": "2018-10-24T00:00:00+0000"
+    },
+    {
+      "id": 71785,
+      "title": "Infinity Wars: Soldier Supreme",
+      "issueTitle": "Infinity Wars: Soldier Supreme (2018) #2",
+      "seriesTitle": "Infinity Wars: Soldier Supreme",
+      "apiSeriesName": "Infinity Wars: Soldier Supreme (2018)",
+      "seriesId": 26160,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71785/infinity_wars_soldier_supreme_2018_2",
+      "onSaleDate": "2018-10-24T00:00:00+0000"
+    },
+    {
+      "id": 71035,
+      "title": "Infinity Wars: Weapon Hex",
+      "issueTitle": "Infinity Wars: Weapon Hex (2018) #1",
+      "seriesTitle": "Infinity Wars: Weapon Hex",
+      "apiSeriesName": "Infinity Wars: Weapon Hex (2018)",
+      "seriesId": 26161,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71035/infinity_wars_weapon_hex_2018_1",
+      "onSaleDate": "2018-10-17T00:00:00+0000"
+    },
+    {
+      "id": 67150,
+      "title": "Infinity Wars",
+      "issueTitle": "Infinity Wars (2018) #5",
+      "seriesTitle": "Infinity Wars",
+      "apiSeriesName": "Infinity Wars (2018)",
+      "seriesId": 24279,
+      "issueNumber": "5",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67150/infinity_wars_2018_5",
+      "onSaleDate": "2018-11-07T00:00:00+0000"
+    },
+    {
+      "id": 71780,
+      "title": "Infinity Wars: Arachknight",
+      "issueTitle": "Infinity Wars: Arachknight (2018) #2",
+      "seriesTitle": "Infinity Wars: Arachknight",
+      "apiSeriesName": "Infinity Wars: Arachknight (2018)",
+      "seriesId": 26157,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71780/infinity_wars_arachknight_2018_2",
+      "onSaleDate": "2018-11-28T00:00:00+0000"
+    },
+    {
+      "id": 71036,
+      "title": "Infinity Wars: Ghost Panther",
+      "issueTitle": "Infinity Wars: Ghost Panther (2018) #1",
+      "seriesTitle": "Infinity Wars: Ghost Panther",
+      "apiSeriesName": "Infinity Wars: Ghost Panther (2018)",
+      "seriesId": 26159,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71036/infinity_wars_ghost_panther_2018_1",
+      "onSaleDate": "2018-11-21T00:00:00+0000"
+    },
+    {
+      "id": 71573,
+      "title": "Infinity Wars: Infinity Warps",
+      "issueTitle": "Infinity Wars: Infinity Warps (2018) #1",
+      "seriesTitle": "Infinity Wars: Infinity Warps",
+      "apiSeriesName": "Infinity Wars: Infinity Warps (2018)",
+      "seriesId": 26409,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71573/infinity_wars_infinity_warps_2018_1",
+      "onSaleDate": "2018-11-14T00:00:00+0000"
+    },
+    {
+      "id": 73200,
+      "title": "Infinity Wars: Sleepwalker",
+      "issueTitle": "Infinity Wars: Sleepwalker (2018) #3",
+      "seriesTitle": "Infinity Wars: Sleepwalker",
+      "apiSeriesName": "Infinity Wars: Sleepwalker (2018 - 2019)",
+      "seriesId": 26410,
+      "issueNumber": "3",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/73200/infinity_wars_sleepwalker_2018_3",
+      "onSaleDate": "2018-11-21T00:00:00+0000"
+    },
+    {
+      "id": 71786,
+      "title": "Infinity Wars: Weapon Hex",
+      "issueTitle": "Infinity Wars: Weapon Hex (2018) #2",
+      "seriesTitle": "Infinity Wars: Weapon Hex",
+      "apiSeriesName": "Infinity Wars: Weapon Hex (2018)",
+      "seriesId": 26161,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71786/infinity_wars_weapon_hex_2018_2",
+      "onSaleDate": "2018-11-28T00:00:00+0000"
+    },
+    {
+      "id": 67151,
+      "title": "Infinity Wars",
+      "issueTitle": "Infinity Wars (2018) #6",
+      "seriesTitle": "Infinity Wars",
+      "apiSeriesName": "Infinity Wars (2018)",
+      "seriesId": 24279,
+      "issueNumber": "6",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/67151/infinity_wars_2018_6",
+      "onSaleDate": "2018-12-19T00:00:00+0000"
+    },
+    {
+      "id": 73415,
+      "title": "Infinity Wars: Fallen Guardian",
+      "issueTitle": "Infinity Wars: Fallen Guardian (2018) #1",
+      "seriesTitle": "Infinity Wars: Fallen Guardian",
+      "apiSeriesName": "Infinity Wars: Fallen Guardian (2018)",
+      "seriesId": 26478,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/73415/infinity_wars_fallen_guardian_2018_1",
+      "onSaleDate": "2018-12-19T00:00:00+0000"
+    },
+    {
+      "id": 71783,
+      "title": "Infinity Wars: Ghost Panther",
+      "issueTitle": "Infinity Wars: Ghost Panther (2018) #2",
+      "seriesTitle": "Infinity Wars: Ghost Panther",
+      "apiSeriesName": "Infinity Wars: Ghost Panther (2018)",
+      "seriesId": 26159,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/71783/infinity_wars_ghost_panther_2018_2",
+      "onSaleDate": "2018-12-12T00:00:00+0000"
+    },
+    {
+      "id": 73196,
+      "title": "Infinity Wars: Infinity Warps",
+      "issueTitle": "Infinity Wars: Infinity Warps (2018) #2",
+      "seriesTitle": "Infinity Wars: Infinity Warps",
+      "apiSeriesName": "Infinity Wars: Infinity Warps (2018)",
+      "seriesId": 26409,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/73196/infinity_wars_infinity_warps_2018_2",
+      "onSaleDate": "2018-12-05T00:00:00+0000"
+    },
+    {
+      "id": 73201,
+      "title": "Infinity Wars: Sleepwalker",
+      "issueTitle": "Infinity Wars: Sleepwalker (2018) #4",
+      "seriesTitle": "Infinity Wars: Sleepwalker",
+      "apiSeriesName": "Infinity Wars: Sleepwalker (2018 - 2019)",
+      "seriesId": 26410,
+      "issueNumber": "4",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/73201/infinity_wars_sleepwalker_2018_4",
+      "onSaleDate": "2018-12-12T00:00:00+0000"
+    },
+    {
+      "id": 74762,
+      "title": "Infinity Wars: Infinity",
+      "issueTitle": "Infinity Wars: Infinity (2019) #1",
+      "seriesTitle": "Infinity Wars: Infinity",
+      "apiSeriesName": "Infinity Wars: Infinity (2019)",
+      "seriesId": 26898,
+      "issueNumber": "1",
+      "seriesYear": 2019,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/74762/infinity_wars_infinity_2019_1",
+      "onSaleDate": "2019-01-02T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Guardians of the Galaxy #150",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New Guardians of the Galaxy",
+      "seriesYear": 2017,
+      "issueNumber": "150",
+      "seriesId": 23058,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "65547"
+      ],
+      "selectedIssueId": 65547,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/65547/all-new_guardians_of_the_galaxy_2017_150",
+      "resolvedIssueTitle": "All-New Guardians of the Galaxy (2017) #150",
+      "note": "Marvel series 23058 (All-New Guardians of the Galaxy (2017)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        65547
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Infinity Countdown: Adam Warlock #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Adam Warlock",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 23991,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66158"
+      ],
+      "selectedIssueId": 66158,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66158/infinity_countdown_adam_warlock_2018_1",
+      "resolvedIssueTitle": "Infinity Countdown: Adam Warlock (2018) #1",
+      "note": "Marvel series 23991 (Infinity Countdown: Adam Warlock (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66158
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Infinity Countdown Prime #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown Prime",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24300,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66283"
+      ],
+      "selectedIssueId": 66283,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66283/infinity_countdown_prime_2018_1",
+      "resolvedIssueTitle": "Infinity Countdown Prime (2018) #1",
+      "note": "Marvel series 24300 (Infinity Countdown Prime (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66283
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Infinity Countdown #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24050,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66416"
+      ],
+      "selectedIssueId": 66416,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66416/infinity_countdown_2018_1",
+      "resolvedIssueTitle": "Infinity Countdown (2018) #1",
+      "note": "Marvel series 24050 (Infinity Countdown (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66416
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Infinity Countdown #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 24050,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66684"
+      ],
+      "selectedIssueId": 66684,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66684/infinity_countdown_2018_2",
+      "resolvedIssueTitle": "Infinity Countdown (2018) #2",
+      "note": "Marvel series 24050 (Infinity Countdown (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66684
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Infinity Countdown #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown",
+      "seriesYear": 2018,
+      "issueNumber": "3",
+      "seriesId": 24050,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67022"
+      ],
+      "selectedIssueId": 67022,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67022/infinity_countdown_2018_3",
+      "resolvedIssueTitle": "Infinity Countdown (2018) #3",
+      "note": "Marvel series 24050 (Infinity Countdown (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67022
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Infinity Countdown: Daredevil #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Daredevil",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24339,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67347"
+      ],
+      "selectedIssueId": 67347,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67347/infinity_countdown_daredevil_2018_1",
+      "resolvedIssueTitle": "Infinity Countdown: Daredevil (2018) #1",
+      "note": "Marvel series 24339 (Infinity Countdown: Daredevil (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67347
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Infinity Countdown: Captain Marvel #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Captain Marvel",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24338,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67346"
+      ],
+      "selectedIssueId": 67346,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67346/infinity_countdown_captain_marvel_2018_1",
+      "resolvedIssueTitle": "Infinity Countdown: Captain Marvel (2018) #1",
+      "note": "Marvel series 24338 (Infinity Countdown: Captain Marvel (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67346
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Doctor Strange #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Doctor Strange",
+      "seriesYear": 2018,
+      "issueNumber": "3",
+      "seriesId": 24296,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "68295"
+      ],
+      "selectedIssueId": 68295,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/68295/doctor_strange_2018_3",
+      "resolvedIssueTitle": "Doctor Strange (2018) #3",
+      "note": "Marvel series 24296 (Doctor Strange (2018 - 2019)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        68295
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Infinity Countdown #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown",
+      "seriesYear": 2018,
+      "issueNumber": "4",
+      "seriesId": 24050,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "68653"
+      ],
+      "selectedIssueId": 68653,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/68653/infinity_countdown_2018_4",
+      "resolvedIssueTitle": "Infinity Countdown (2018) #4",
+      "note": "Marvel series 24050 (Infinity Countdown (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        68653
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Infinity Countdown: Black Widow #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Black Widow",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24906,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "68659"
+      ],
+      "selectedIssueId": 68659,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/68659/infinity_countdown_black_widow_2018_1",
+      "resolvedIssueTitle": "Infinity Countdown: Black Widow (2018) #1",
+      "note": "Marvel series 24906 (Infinity Countdown: Black Widow (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        68659
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Infinity Countdown: Darkhawk #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Darkhawk",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24302,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67348"
+      ],
+      "selectedIssueId": 67348,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67348/infinity_countdown_darkhawk_2018_1",
+      "resolvedIssueTitle": "Infinity Countdown: Darkhawk (2018) #1",
+      "note": "Marvel series 24302 (Infinity Countdown: Darkhawk (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67348
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Infinity Countdown: Darkhawk #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Darkhawk",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 24302,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "68667"
+      ],
+      "selectedIssueId": 68667,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/68667/infinity_countdown_darkhawk_2018_2",
+      "resolvedIssueTitle": "Infinity Countdown: Darkhawk (2018) #2",
+      "note": "Marvel series 24302 (Infinity Countdown: Darkhawk (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        68667
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Infinity Countdown: Darkhawk #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Darkhawk",
+      "seriesYear": 2018,
+      "issueNumber": "3",
+      "seriesId": 24302,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "68668"
+      ],
+      "selectedIssueId": 68668,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/68668/infinity_countdown_darkhawk_2018_3",
+      "resolvedIssueTitle": "Infinity Countdown: Darkhawk (2018) #3",
+      "note": "Marvel series 24302 (Infinity Countdown: Darkhawk (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        68668
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Infinity Countdown: Darkhawk #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Darkhawk",
+      "seriesYear": 2018,
+      "issueNumber": "4",
+      "seriesId": 24302,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "68669"
+      ],
+      "selectedIssueId": 68669,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/68669/infinity_countdown_darkhawk_2018_4",
+      "resolvedIssueTitle": "Infinity Countdown: Darkhawk (2018) #4",
+      "note": "Marvel series 24302 (Infinity Countdown: Darkhawk (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        68669
+      ]
+    },
+    {
+      "sourcePosition": 16,
+      "sourceIssueReference": "Infinity Countdown: Champions #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Champions",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24909,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "68662"
+      ],
+      "selectedIssueId": 68662,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/68662/infinity_countdown_champions_2018_1",
+      "resolvedIssueTitle": "Infinity Countdown: Champions (2018) #1",
+      "note": "Marvel series 24909 (Infinity Countdown: Champions (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        68662
+      ]
+    },
+    {
+      "sourcePosition": 17,
+      "sourceIssueReference": "Infinity Countdown: Champions #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown: Champions",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 24909,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "68663"
+      ],
+      "selectedIssueId": 68663,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/68663/infinity_countdown_champions_2018_2",
+      "resolvedIssueTitle": "Infinity Countdown: Champions (2018) #2",
+      "note": "Marvel series 24909 (Infinity Countdown: Champions (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        68663
+      ]
+    },
+    {
+      "sourcePosition": 18,
+      "sourceIssueReference": "Infinity Countdown #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Countdown",
+      "seriesYear": 2018,
+      "issueNumber": "5",
+      "seriesId": 24050,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "68656"
+      ],
+      "selectedIssueId": 68656,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/68656/infinity_countdown_2018_5",
+      "resolvedIssueTitle": "Infinity Countdown (2018) #5",
+      "note": "Marvel series 24050 (Infinity Countdown (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        68656
+      ]
+    },
+    {
+      "sourcePosition": 19,
+      "sourceIssueReference": "Infinity Wars Prime #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars Prime",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24340,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67349"
+      ],
+      "selectedIssueId": 67349,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67349/infinity_wars_prime_2018_1",
+      "resolvedIssueTitle": "Infinity Wars Prime (2018) #1",
+      "note": "Marvel series 24340 (Infinity Wars Prime (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67349
+      ]
+    },
+    {
+      "sourcePosition": 20,
+      "sourceIssueReference": "Infinity Wars #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24279,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67145"
+      ],
+      "selectedIssueId": 67145,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67145/infinity_wars_2018_1",
+      "resolvedIssueTitle": "Infinity Wars (2018) #1",
+      "note": "Marvel series 24279 (Infinity Wars (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67145
+      ]
+    },
+    {
+      "sourcePosition": 21,
+      "sourceIssueReference": "Infinity Wars #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 24279,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67147"
+      ],
+      "selectedIssueId": 67147,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67147/infinity_wars_2018_2",
+      "resolvedIssueTitle": "Infinity Wars (2018) #2",
+      "note": "Marvel series 24279 (Infinity Wars (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67147
+      ]
+    },
+    {
+      "sourcePosition": 22,
+      "sourceIssueReference": "Asgardians of the Galaxy #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Asgardians of the Galaxy",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 25996,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71308"
+      ],
+      "selectedIssueId": 71308,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71308/asgardians_of_the_galaxy_2018_1",
+      "resolvedIssueTitle": "Asgardians of the Galaxy (2018) #1",
+      "note": "Marvel series 25996 (Asgardians of the Galaxy (2018 - 2019)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71308
+      ]
+    },
+    {
+      "sourcePosition": 23,
+      "sourceIssueReference": "Infinity Wars #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars",
+      "seriesYear": 2018,
+      "issueNumber": "3",
+      "seriesId": 24279,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67148"
+      ],
+      "selectedIssueId": 67148,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67148/infinity_wars_2018_3",
+      "resolvedIssueTitle": "Infinity Wars (2018) #3",
+      "note": "Marvel series 24279 (Infinity Wars (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67148
+      ]
+    },
+    {
+      "sourcePosition": 24,
+      "sourceIssueReference": "Infinity Wars: Iron Hammer #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Iron Hammer",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 26158,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71033"
+      ],
+      "selectedIssueId": 71033,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71033/infinity_wars_iron_hammer_2018_1",
+      "resolvedIssueTitle": "Infinity Wars: Iron Hammer (2018) #1",
+      "note": "Marvel series 26158 (Infinity Wars: Iron Hammer (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71033
+      ]
+    },
+    {
+      "sourcePosition": 25,
+      "sourceIssueReference": "Infinity Wars: Soldier Supreme #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Soldier Supreme",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 26160,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71032"
+      ],
+      "selectedIssueId": 71032,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71032/infinity_wars_soldier_supreme_2018_1",
+      "resolvedIssueTitle": "Infinity Wars: Soldier Supreme (2018) #1",
+      "note": "Marvel series 26160 (Infinity Wars: Soldier Supreme (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71032
+      ]
+    },
+    {
+      "sourcePosition": 26,
+      "sourceIssueReference": "Thanos Legacy #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Thanos Legacy",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 25951,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71037"
+      ],
+      "selectedIssueId": 71037,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71037/thanos_legacy_2018_1",
+      "resolvedIssueTitle": "Thanos Legacy (2018) #1",
+      "note": "Marvel series 25951 (Thanos Legacy (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71037
+      ]
+    },
+    {
+      "sourcePosition": 27,
+      "sourceIssueReference": "Asgardians of the Galaxy #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Asgardians of the Galaxy",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 25996,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71310"
+      ],
+      "selectedIssueId": 71310,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71310/asgardians_of_the_galaxy_2018_2",
+      "resolvedIssueTitle": "Asgardians of the Galaxy (2018) #2",
+      "note": "Marvel series 25996 (Asgardians of the Galaxy (2018 - 2019)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71310
+      ]
+    },
+    {
+      "sourcePosition": 28,
+      "sourceIssueReference": "Infinity Wars #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars",
+      "seriesYear": 2018,
+      "issueNumber": "4",
+      "seriesId": 24279,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67149"
+      ],
+      "selectedIssueId": 67149,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67149/infinity_wars_2018_4",
+      "resolvedIssueTitle": "Infinity Wars (2018) #4",
+      "note": "Marvel series 24279 (Infinity Wars (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67149
+      ]
+    },
+    {
+      "sourcePosition": 29,
+      "sourceIssueReference": "Infinity Wars: Arachknight #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Arachknight",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 26157,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71034"
+      ],
+      "selectedIssueId": 71034,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71034/infinity_wars_arachknight_2018_1",
+      "resolvedIssueTitle": "Infinity Wars: Arachknight (2018) #1",
+      "note": "Marvel series 26157 (Infinity Wars: Arachknight (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71034
+      ]
+    },
+    {
+      "sourcePosition": 30,
+      "sourceIssueReference": "Infinity Wars: Iron Hammer #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Iron Hammer",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 26158,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71782"
+      ],
+      "selectedIssueId": 71782,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71782/infinity_wars_iron_hammer_2018_2",
+      "resolvedIssueTitle": "Infinity Wars: Iron Hammer (2018) #2",
+      "note": "Marvel series 26158 (Infinity Wars: Iron Hammer (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71782
+      ]
+    },
+    {
+      "sourcePosition": 31,
+      "sourceIssueReference": "Infinity Wars: Sleepwalker #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Sleepwalker",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 26410,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "73197"
+      ],
+      "selectedIssueId": 73197,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/73197/infinity_wars_sleepwalker_2018_1",
+      "resolvedIssueTitle": "Infinity Wars: Sleepwalker (2018) #1",
+      "note": "Marvel series 26410 (Infinity Wars: Sleepwalker (2018 - 2019)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        73197
+      ]
+    },
+    {
+      "sourcePosition": 32,
+      "sourceIssueReference": "Infinity Wars: Sleepwalker #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Sleepwalker",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 26410,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "73199"
+      ],
+      "selectedIssueId": 73199,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/73199/infinity_wars_sleepwalker_2018_2",
+      "resolvedIssueTitle": "Infinity Wars: Sleepwalker (2018) #2",
+      "note": "Marvel series 26410 (Infinity Wars: Sleepwalker (2018 - 2019)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        73199
+      ]
+    },
+    {
+      "sourcePosition": 33,
+      "sourceIssueReference": "Infinity Wars: Soldier Supreme #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Soldier Supreme",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 26160,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71785"
+      ],
+      "selectedIssueId": 71785,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71785/infinity_wars_soldier_supreme_2018_2",
+      "resolvedIssueTitle": "Infinity Wars: Soldier Supreme (2018) #2",
+      "note": "Marvel series 26160 (Infinity Wars: Soldier Supreme (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71785
+      ]
+    },
+    {
+      "sourcePosition": 34,
+      "sourceIssueReference": "Infinity Wars: Weapon Hex #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Weapon Hex",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 26161,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71035"
+      ],
+      "selectedIssueId": 71035,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71035/infinity_wars_weapon_hex_2018_1",
+      "resolvedIssueTitle": "Infinity Wars: Weapon Hex (2018) #1",
+      "note": "Marvel series 26161 (Infinity Wars: Weapon Hex (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71035
+      ]
+    },
+    {
+      "sourcePosition": 35,
+      "sourceIssueReference": "Infinity Wars #5",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars",
+      "seriesYear": 2018,
+      "issueNumber": "5",
+      "seriesId": 24279,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67150"
+      ],
+      "selectedIssueId": 67150,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67150/infinity_wars_2018_5",
+      "resolvedIssueTitle": "Infinity Wars (2018) #5",
+      "note": "Marvel series 24279 (Infinity Wars (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67150
+      ]
+    },
+    {
+      "sourcePosition": 36,
+      "sourceIssueReference": "Infinity Wars: Arachknight #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Arachknight",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 26157,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71780"
+      ],
+      "selectedIssueId": 71780,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71780/infinity_wars_arachknight_2018_2",
+      "resolvedIssueTitle": "Infinity Wars: Arachknight (2018) #2",
+      "note": "Marvel series 26157 (Infinity Wars: Arachknight (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71780
+      ]
+    },
+    {
+      "sourcePosition": 37,
+      "sourceIssueReference": "Infinity Wars: Ghost Panther #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Ghost Panther",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 26159,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71036"
+      ],
+      "selectedIssueId": 71036,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71036/infinity_wars_ghost_panther_2018_1",
+      "resolvedIssueTitle": "Infinity Wars: Ghost Panther (2018) #1",
+      "note": "Marvel series 26159 (Infinity Wars: Ghost Panther (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71036
+      ]
+    },
+    {
+      "sourcePosition": 38,
+      "sourceIssueReference": "Infinity Wars: Infinity Warps #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Infinity Warps",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 26409,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71573"
+      ],
+      "selectedIssueId": 71573,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71573/infinity_wars_infinity_warps_2018_1",
+      "resolvedIssueTitle": "Infinity Wars: Infinity Warps (2018) #1",
+      "note": "Marvel series 26409 (Infinity Wars: Infinity Warps (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71573
+      ]
+    },
+    {
+      "sourcePosition": 39,
+      "sourceIssueReference": "Infinity Wars: Sleepwalker #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Sleepwalker",
+      "seriesYear": 2018,
+      "issueNumber": "3",
+      "seriesId": 26410,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "73200"
+      ],
+      "selectedIssueId": 73200,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/73200/infinity_wars_sleepwalker_2018_3",
+      "resolvedIssueTitle": "Infinity Wars: Sleepwalker (2018) #3",
+      "note": "Marvel series 26410 (Infinity Wars: Sleepwalker (2018 - 2019)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        73200
+      ]
+    },
+    {
+      "sourcePosition": 40,
+      "sourceIssueReference": "Infinity Wars: Weapon Hex #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Weapon Hex",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 26161,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71786"
+      ],
+      "selectedIssueId": 71786,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71786/infinity_wars_weapon_hex_2018_2",
+      "resolvedIssueTitle": "Infinity Wars: Weapon Hex (2018) #2",
+      "note": "Marvel series 26161 (Infinity Wars: Weapon Hex (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71786
+      ]
+    },
+    {
+      "sourcePosition": 41,
+      "sourceIssueReference": "Infinity Wars #6",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars",
+      "seriesYear": 2018,
+      "issueNumber": "6",
+      "seriesId": 24279,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "67151"
+      ],
+      "selectedIssueId": 67151,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/67151/infinity_wars_2018_6",
+      "resolvedIssueTitle": "Infinity Wars (2018) #6",
+      "note": "Marvel series 24279 (Infinity Wars (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        67151
+      ]
+    },
+    {
+      "sourcePosition": 42,
+      "sourceIssueReference": "Infinity Wars: Fallen Guardian #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Fallen Guardian",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 26478,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "73415"
+      ],
+      "selectedIssueId": 73415,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/73415/infinity_wars_fallen_guardian_2018_1",
+      "resolvedIssueTitle": "Infinity Wars: Fallen Guardian (2018) #1",
+      "note": "Marvel series 26478 (Infinity Wars: Fallen Guardian (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        73415
+      ]
+    },
+    {
+      "sourcePosition": 43,
+      "sourceIssueReference": "Infinity Wars: Ghost Panther #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Ghost Panther",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 26159,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "71783"
+      ],
+      "selectedIssueId": 71783,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/71783/infinity_wars_ghost_panther_2018_2",
+      "resolvedIssueTitle": "Infinity Wars: Ghost Panther (2018) #2",
+      "note": "Marvel series 26159 (Infinity Wars: Ghost Panther (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        71783
+      ]
+    },
+    {
+      "sourcePosition": 44,
+      "sourceIssueReference": "Infinity Wars: Infinity Warps #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Infinity Warps",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 26409,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "73196"
+      ],
+      "selectedIssueId": 73196,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/73196/infinity_wars_infinity_warps_2018_2",
+      "resolvedIssueTitle": "Infinity Wars: Infinity Warps (2018) #2",
+      "note": "Marvel series 26409 (Infinity Wars: Infinity Warps (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        73196
+      ]
+    },
+    {
+      "sourcePosition": 45,
+      "sourceIssueReference": "Infinity Wars: Sleepwalker #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Sleepwalker",
+      "seriesYear": 2018,
+      "issueNumber": "4",
+      "seriesId": 26410,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "73201"
+      ],
+      "selectedIssueId": 73201,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/73201/infinity_wars_sleepwalker_2018_4",
+      "resolvedIssueTitle": "Infinity Wars: Sleepwalker (2018) #4",
+      "note": "Marvel series 26410 (Infinity Wars: Sleepwalker (2018 - 2019)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        73201
+      ]
+    },
+    {
+      "sourcePosition": 46,
+      "sourceIssueReference": "Infinity Wars: Infinity #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Infinity Wars: Infinity",
+      "seriesYear": 2019,
+      "issueNumber": "1",
+      "seriesId": 26898,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "74762"
+      ],
+      "selectedIssueId": 74762,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/74762/infinity_wars_infinity_2019_1",
+      "resolvedIssueTitle": "Infinity Wars: Infinity (2019) #1",
+      "note": "Marvel series 26898 (Infinity Wars: Infinity (2019)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        74762
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "infinity-countdown-wars",
+    "name": "Infinity Countdown and Infinity Wars",
+    "description": "Forty-six chapters covering the explicit Countdown and Wars issue-by-issue flow and its tie-ins.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "infinity-countdown-wars.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/infinity-countdown/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "infinity_countdown_wars.json",
+    "characters": [
+      "Gamora",
+      "Loki",
+      "Adam Warlock",
+      "Guardians of the Galaxy"
+    ],
+    "keywords": [
+      "Infinity Countdown",
+      "Infinity Wars",
+      "Infinity Stones",
+      "Infinity Warps"
+    ],
+    "expect": 46,
+    "timeline": 2018,
+    "coverIssueId": 66416,
+    "coverSourcePosition": 4,
+    "coverSourceReference": "Infinity Countdown #1"
+  }
+}

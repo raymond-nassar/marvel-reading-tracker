@@ -1,0 +1,343 @@
+{
+  "id": "x-men-battle-of-the-atom",
+  "name": "X-Men: Battle of the Atom",
+  "description": "Ten interleaved chapters across the two event issues and four ongoing X-Men series.",
+  "source": "https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/",
+  "sourceSection": "Battle of the Atom",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T05:06:19.790Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 10,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 47623,
+      "title": "X-Men: Battle of the Atom (2013) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/47623/x-men_battle_of_the_atom_2013_1",
+      "seriesId": 17964,
+      "seriesName": "X-Men: Battle of the Atom (2013)",
+      "onSale": "2013-09-04T00:00:00+0000",
+      "mu": "2014-03-03T00:00:00+0000",
+      "digitalId": 31387,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/f0/521ccc4613663",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43481,
+      "title": "All-New X-Men (2012) #16",
+      "number": "16",
+      "url": "https://www.marvel.com/comics/issue/43481/all-new_x-men_2012_16",
+      "seriesId": 16449,
+      "seriesName": "All-New X-Men (2012 - 2015)",
+      "onSale": "2013-09-04T00:00:00+0000",
+      "mu": "2014-03-03T00:00:00+0000",
+      "digitalId": 31351,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/521b83ec1677a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46786,
+      "title": "X-Men (2013) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/46786/x-men_2013_5",
+      "seriesId": 17635,
+      "seriesName": "X-Men (2013 - 2015)",
+      "onSale": "2013-09-11T00:00:00+0000",
+      "mu": "2014-03-17T00:00:00+0000",
+      "digitalId": 31507,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/1/03/522a3346e1394",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Wood",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46677,
+      "title": "Uncanny X-Men (2013) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/46677/uncanny_x-men_2013_12",
+      "seriesId": 17602,
+      "seriesName": "Uncanny X-Men (2013 - 2015)",
+      "onSale": "2013-09-18T00:00:00+0000",
+      "mu": "2014-03-24T00:00:00+0000",
+      "digitalId": 31520,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/59317bb7ab921",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Al Vey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jaime Mendoza",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Irwin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "Peter Steigerweld",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46738,
+      "title": "Wolverine & the X-Men (2011) #36",
+      "number": "36",
+      "url": "https://www.marvel.com/comics/issue/46738/wolverine_the_x-men_2011_36",
+      "seriesId": 13910,
+      "seriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "onSale": "2013-09-25T00:00:00+0000",
+      "mu": "2014-03-24T00:00:00+0000",
+      "digitalId": 31596,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/52376b71917af",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 43482,
+      "title": "All-New X-Men (2012) #17",
+      "number": "17",
+      "url": "https://www.marvel.com/comics/issue/43482/all-new_x-men_2012_17",
+      "seriesId": 16449,
+      "seriesName": "All-New X-Men (2012 - 2015)",
+      "onSale": "2013-10-02T00:00:00+0000",
+      "mu": "2014-04-07T00:00:00+0000",
+      "digitalId": 31573,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5238a5d756415",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 46788,
+      "title": "X-Men (2013) #6",
+      "number": "6",
+      "url": "https://www.marvel.com/comics/issue/46788/x-men_2013_6",
+      "seriesId": 17635,
+      "seriesName": "X-Men (2013 - 2015)",
+      "onSale": "2013-10-09T00:00:00+0000",
+      "mu": "2014-04-14T00:00:00+0000",
+      "digitalId": 31681,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/f0/524b151d4c56d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Wood",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48095,
+      "title": "Uncanny X-Men (2013) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/48095/uncanny_x-men_2013_13",
+      "seriesId": 17602,
+      "seriesName": "Uncanny X-Men (2013 - 2015)",
+      "onSale": "2013-10-16T00:00:00+0000",
+      "mu": "2014-04-21T00:00:00+0000",
+      "digitalId": 31734,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/d0/59317dd9d5144",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Al Vey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jaime Mendoza",
+          "role": "cover artist"
+        },
+        {
+          "name": "Mark Irwin",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tim Townsend",
+          "role": "cover artist"
+        },
+        {
+          "name": "Victor Olazaba",
+          "role": "cover artist"
+        },
+        {
+          "name": "Chris Bachalo",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Marte Gracia",
+          "role": "penciler"
+        },
+        {
+          "name": "Brian Michael Bendis",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 48097,
+      "title": "Wolverine & the X-Men (2011) #37",
+      "number": "37",
+      "url": "https://www.marvel.com/comics/issue/48097/wolverine_the_x-men_2011_37",
+      "seriesId": 13910,
+      "seriesName": "Wolverine & the X-Men (2011 - 2014)",
+      "onSale": "2013-10-23T00:00:00+0000",
+      "mu": "2014-04-28T00:00:00+0000",
+      "digitalId": 31752,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/30/525ef70a607db",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47624,
+      "title": "X-Men: Battle of the Atom (2013) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/47624/x-men_battle_of_the_atom_2013_2",
+      "seriesId": 17964,
+      "seriesName": "X-Men: Battle of the Atom (2013)",
+      "onSale": "2013-10-30T00:00:00+0000",
+      "mu": "2014-04-28T00:00:00+0000",
+      "digitalId": 31807,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/50/526976c1c8fe7",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "Jason Aaron",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

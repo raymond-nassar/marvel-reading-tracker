@@ -1,0 +1,345 @@
+{
+  "id": "revolutionary-war",
+  "inventoryId": "marvel-now",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+  "sourceSection": "Event: Revolutionary War",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 8,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 49360,
+      "title": "REVOLUTIONARY WAR: ALPHA 1 KITSON VARIANT",
+      "issueTitle": "REVOLUTIONARY WAR: ALPHA 1 KITSON VARIANT (2014) #1",
+      "seriesTitle": "REVOLUTIONARY WAR: ALPHA 1 KITSON VARIANT",
+      "apiSeriesName": "REVOLUTIONARY WAR: ALPHA 1 KITSON VARIANT (2014)",
+      "seriesId": 18561,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/49360/revolutionary_war_alpha_1_kitson_variant_2014_1",
+      "onSaleDate": "2014-01-08T00:00:00+0000"
+    },
+    {
+      "id": 49361,
+      "title": "Revolutionary War: Dark Angel",
+      "issueTitle": "Revolutionary War: Dark Angel (2014) #1",
+      "seriesTitle": "Revolutionary War: Dark Angel",
+      "apiSeriesName": "Revolutionary War: Dark Angel (2014)",
+      "seriesId": 18562,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49361/revolutionary_war_dark_angel_2014_1",
+      "onSaleDate": "2014-01-15T00:00:00+0000"
+    },
+    {
+      "id": 49362,
+      "title": "REVOLUTIONARY WAR: DEATH'S HEAD II",
+      "issueTitle": "REVOLUTIONARY WAR: DEATH'S HEAD II (2014) #1",
+      "seriesTitle": "REVOLUTIONARY WAR: DEATH'S HEAD II",
+      "apiSeriesName": "REVOLUTIONARY WAR: DEATH'S HEAD II (2014)",
+      "seriesId": 18563,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49362/revolutionary_war_deaths_head_ii_2014_1",
+      "onSaleDate": "2014-02-12T00:00:00+0000"
+    },
+    {
+      "id": 49363,
+      "title": "REVOLUTIONARY WAR: KNIGHTS OF PENDRAGON 1 EDWARDS VARIANT",
+      "issueTitle": "REVOLUTIONARY WAR: KNIGHTS OF PENDRAGON 1 EDWARDS VARIANT (2014) #1",
+      "seriesTitle": "REVOLUTIONARY WAR: KNIGHTS OF PENDRAGON 1 EDWARDS VARIANT",
+      "apiSeriesName": "REVOLUTIONARY WAR: KNIGHTS OF PENDRAGON 1 EDWARDS VARIANT (2014)",
+      "seriesId": 18564,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": true,
+      "manualSeriesSelectionApproved": true,
+      "detailUrl": "https://www.marvel.com/comics/issue/49363/revolutionary_war_knights_of_pendragon_1_edwards_variant_2014_1",
+      "onSaleDate": "2014-01-29T00:00:00+0000"
+    },
+    {
+      "id": 49364,
+      "title": "Revolutionary War: Motormouth",
+      "issueTitle": "Revolutionary War: Motormouth (2014) #1",
+      "seriesTitle": "Revolutionary War: Motormouth",
+      "apiSeriesName": "Revolutionary War: Motormouth (2014)",
+      "seriesId": 18565,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49364/revolutionary_war_motormouth_2014_1",
+      "onSaleDate": "2014-03-12T00:00:00+0000"
+    },
+    {
+      "id": 49365,
+      "title": "Revolutionary War: Omega",
+      "issueTitle": "Revolutionary War: Omega (2014) #1",
+      "seriesTitle": "Revolutionary War: Omega",
+      "apiSeriesName": "Revolutionary War: Omega (2014)",
+      "seriesId": 18566,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49365/revolutionary_war_omega_2014_1",
+      "onSaleDate": "2014-03-26T00:00:00+0000"
+    },
+    {
+      "id": 49366,
+      "title": "Revolutionary War: Supersoldiers",
+      "issueTitle": "Revolutionary War: Supersoldiers (2014) #1",
+      "seriesTitle": "Revolutionary War: Supersoldiers",
+      "apiSeriesName": "Revolutionary War: Supersoldiers (2014)",
+      "seriesId": 18567,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49366/revolutionary_war_supersoldiers_2014_1",
+      "onSaleDate": "2014-02-26T00:00:00+0000"
+    },
+    {
+      "id": 49367,
+      "title": "Revolutionary War: Warheads",
+      "issueTitle": "Revolutionary War: Warheads (2014) #1",
+      "seriesTitle": "Revolutionary War: Warheads",
+      "apiSeriesName": "Revolutionary War: Warheads (2014)",
+      "seriesId": 18568,
+      "issueNumber": "1",
+      "seriesYear": 2014,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/49367/revolutionary_war_warheads_2014_1",
+      "onSaleDate": "2014-03-19T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Revolutionary War: Alpha #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Revolutionary War: Alpha",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18561,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49360"
+      ],
+      "selectedIssueId": 49360,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49360/revolutionary_war_alpha_1_kitson_variant_2014_1",
+      "resolvedIssueTitle": "REVOLUTIONARY WAR: ALPHA 1 KITSON VARIANT (2014) #1",
+      "note": "Marvel series 18561 (REVOLUTIONARY WAR: ALPHA 1 KITSON VARIANT (2014)) is the reviewed metadata series for this source reference. The source title is Revolutionary War: Alpha; Marvel names the selected series REVOLUTIONARY WAR: ALPHA 1 KITSON VARIANT. Marvel indexes the source one-shot in its Revolutionary War: Alpha 1 Kitson Variant series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49360
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Revolutionary War: Dark Angel #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Revolutionary War: Dark Angel",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18562,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49361"
+      ],
+      "selectedIssueId": 49361,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49361/revolutionary_war_dark_angel_2014_1",
+      "resolvedIssueTitle": "Revolutionary War: Dark Angel (2014) #1",
+      "note": "Marvel series 18562 (Revolutionary War: Dark Angel (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49361
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Revolutionary War: Death's Head II #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Revolutionary War: Death's Head II",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18563,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49362"
+      ],
+      "selectedIssueId": 49362,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49362/revolutionary_war_deaths_head_ii_2014_1",
+      "resolvedIssueTitle": "REVOLUTIONARY WAR: DEATH'S HEAD II (2014) #1",
+      "note": "Marvel series 18563 (REVOLUTIONARY WAR: DEATH'S HEAD II (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49362
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Revolutionary War: Knights of Pendragon #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Revolutionary War: Knights of Pendragon",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18564,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": true,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49363"
+      ],
+      "selectedIssueId": 49363,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49363/revolutionary_war_knights_of_pendragon_1_edwards_variant_2014_1",
+      "resolvedIssueTitle": "REVOLUTIONARY WAR: KNIGHTS OF PENDRAGON 1 EDWARDS VARIANT (2014) #1",
+      "note": "Marvel series 18564 (REVOLUTIONARY WAR: KNIGHTS OF PENDRAGON 1 EDWARDS VARIANT (2014)) is the reviewed metadata series for this source reference. The source title is Revolutionary War: Knights of Pendragon; Marvel names the selected series REVOLUTIONARY WAR: KNIGHTS OF PENDRAGON 1 EDWARDS VARIANT. Marvel indexes the source one-shot in its Revolutionary War: Knights of Pendragon 1 Edwards Variant series.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49363
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Revolutionary War: Motormouth #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Revolutionary War: Motormouth",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18565,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49364"
+      ],
+      "selectedIssueId": 49364,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49364/revolutionary_war_motormouth_2014_1",
+      "resolvedIssueTitle": "Revolutionary War: Motormouth (2014) #1",
+      "note": "Marvel series 18565 (Revolutionary War: Motormouth (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49364
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Revolutionary War: Omega #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Revolutionary War: Omega",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18566,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49365"
+      ],
+      "selectedIssueId": 49365,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49365/revolutionary_war_omega_2014_1",
+      "resolvedIssueTitle": "Revolutionary War: Omega (2014) #1",
+      "note": "Marvel series 18566 (Revolutionary War: Omega (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49365
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Revolutionary War: Supersoldiers #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Revolutionary War: Supersoldiers",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18567,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49366"
+      ],
+      "selectedIssueId": 49366,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49366/revolutionary_war_supersoldiers_2014_1",
+      "resolvedIssueTitle": "Revolutionary War: Supersoldiers (2014) #1",
+      "note": "Marvel series 18567 (Revolutionary War: Supersoldiers (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49366
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Revolutionary War: Warheads #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Revolutionary War: Warheads",
+      "seriesYear": 2014,
+      "issueNumber": "1",
+      "seriesId": 18568,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "49367"
+      ],
+      "selectedIssueId": 49367,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/49367/revolutionary_war_warheads_2014_1",
+      "resolvedIssueTitle": "Revolutionary War: Warheads (2014) #1",
+      "note": "Marvel series 18568 (Revolutionary War: Warheads (2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        49367
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "revolutionary-war",
+    "name": "Revolutionary War",
+    "description": "Eight one-shots following Alpha through the linked Marvel UK heroes and the event conclusion.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "revolutionary-war.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+    "sourceSection": "Event: Revolutionary War",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "revolutionary_war.json",
+    "characters": [
+      "Dark Angel",
+      "Death's Head II",
+      "Knights of Pendragon",
+      "Motormouth"
+    ],
+    "keywords": [
+      "Revolutionary War",
+      "Marvel UK",
+      "Death's Head II"
+    ],
+    "expect": 8,
+    "timeline": 2014,
+    "coverIssueId": 49360,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Revolutionary War: Alpha #1"
+  }
+}

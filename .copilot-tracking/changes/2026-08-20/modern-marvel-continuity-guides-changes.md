@@ -523,3 +523,66 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   was created or changed.
 * Approval gate: Explicit parent approval or revision of the exact ten and every boundary above is
   required before any P03-T01 implementation action.
+
+### CHG-021: Authorize the fourth guarded batch
+
+* Related phase or task: P03-T01.
+* Authority: The parent session approved autonomous implementation in the coordinating instruction
+  on 2026-08-21.
+* Approved packet: Keep the exact ten ids in source order and all six non-fragment
+  page-plus-section identities recorded by CHG-020.
+* Approved fixed boundaries: Venomverse contains the 11-row core through Venomverse #5. Marvel
+  Damnation contains the 15-row event checklist through Doctor Strange #389.
+* Evidence-governed boundaries: Refresh the live source and issue metadata before deciding whether
+  Minimum Carnage has six or seven rows and whether Infinity Countdown and Infinity Wars has 46 or
+  50 rows. Do not infer either choice from the earlier estimate.
+* Guardrails: Any missing or ambiguous metadata, duplicate id or source identity, semantic
+  duplication, or exact, subset, or partial issue overlap blocks that target and requires
+  chronological backfill. AvX: Consequences, Inhumanity, Secret Empire, Generations, and every
+  other recorded exclusion remain out.
+* Delivery authority: Continue through mappings, overlap reports, authoring, generated data,
+  inventory, product records, direct review, full validation, commit, push, one pull request, and
+  Agent Merge without another planning or approval stop.
+
+### CHG-022: Resolve, publish, and validate the fourth guarded batch
+
+* Related phase or task: P03-T01, P03-T02, and P03-T03.
+* Source refresh: Refreshed all six exact Comic Book Herald URLs on 2026-08-21. Direct HTTP and Edge
+  navigation both returned HTTP 403 for every page, while the safe page fetcher returned every
+  current issue-bearing section. The 403 results were retained as access evidence and were not
+  mistaken for missing source content.
+* Boundary decisions: Minimum Carnage keeps the six issues in its explicit reading-order line;
+  Scarlet Spider #12 begins the following standalone block. Venomverse keeps its 11-row core.
+  Infinity Countdown and Infinity Wars keeps the 46 explicit issue-by-issue rows rather than four
+  Guardians issues found only in a collected lead-in. Marvel Damnation keeps the 15-row event
+  checklist through Doctor Strange #389.
+* Exact identity decisions: All eight Monsters Unleashed tie-ins preserve the source number
+  `1.MU` while matching Marvel metadata's `1.1`. Avengers issue 62507 is the 2017 Jim Zub event
+  tie-in. Edge of Venomverse #5 uses issue 64250, the indexed Marvel page with complete cover
+  metadata, instead of duplicate record 64249 with `image_not_available`. Damnation's Scarlet
+  Spider rows all use the Ben Reilly series.
+* Packet result: Approved ten mappings containing 128 distinct issue ids, ten complete overlap
+  reports containing 650 comparisons, and zero exact, subset, partial, source, catalog, sequence,
+  or issue duplication. No chronological backfill was needed.
+* Product result: Authored ten issue-by-issue checklists, vendored ten payloads with zero unresolved
+  rows, placeholders, missing digital ids, or missing covers, and expanded the catalog from 56 to
+  66 entries. Six entries use exact page-plus-section identities without fragments. Every card
+  credits Comic Book Herald, links the exact page, uses
+  `Compiled for this project from Comic Book Herald's guide`, and keeps `sourceLicense` null.
+* Inventory and records: Moved the four direct records to `shipped`, represented the six linked
+  sections as grouped catalog variants, and updated the reader overview, provenance inventory,
+  backlog, changelog, governance count, packet state, and this changes record.
+* Failure proof: Stashing only the metadata-number resolver change made the new focused semantic
+  test fail once, changing `exact` to `unmatched`; restoring the line returned it to passing.
+* Validation: Focused tests passed 130 of 130 and the full suite passed 1,316 of 1,316. Lint reported
+  zero errors. Counts reported 160 ranked rows, 5 parked rows, and 165 detail blocks. Seven stated
+  sizes agreed, 88 palette pairs had zero new failures, and publication found zero content findings.
+  The repository contract passed 33 of 33 assumptions over 17 requests, the added-issue contract
+  passed 128 of 128 ids, and Edge passed 120 of 120 assertions across 14 scenarios.
+* Evidence anchors: Re-aimed and read all 36 changed citation pairings before blessing 1,047 anchors.
+  Mapping refresh, authoring, and overlap regeneration each reproduced with zero changed files.
+* Direct self-review: Corrected an inventory edit that first matched the adjacent Secret Invasion
+  bridge and corrected the added-issue contract so its live check compares the explicit metadata
+  number while the product keeps the source display number. No material finding remains open.
+* Next action: Commit and push the validated batch, open one pull request against `main`, then let
+  Agent Merge handle authorized CI, conflict, and review-comment work through merge.

@@ -1,0 +1,232 @@
+{
+  "id": "avengers-enemy-within",
+  "inventoryId": "marvel-now",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+  "sourceSection": "Avengers: The Enemy Within",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 5,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 47565,
+      "title": "Avengers: The Enemy Within",
+      "issueTitle": "Avengers: The Enemy Within (2013) #1",
+      "seriesTitle": "Avengers: The Enemy Within",
+      "apiSeriesName": "Avengers: The Enemy Within (2013)",
+      "seriesId": 17951,
+      "issueNumber": "1",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47565/avengers_the_enemy_within_2013_1",
+      "onSaleDate": "2013-05-15T00:00:00+0000"
+    },
+    {
+      "id": 45880,
+      "title": "Avengers Assemble",
+      "issueTitle": "Avengers Assemble (2012) #16",
+      "seriesTitle": "Avengers Assemble",
+      "apiSeriesName": "Avengers Assemble (2012 - 2014)",
+      "seriesId": 15373,
+      "issueNumber": "16",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45880/avengers_assemble_2012_16",
+      "onSaleDate": "2013-06-12T00:00:00+0000"
+    },
+    {
+      "id": 46857,
+      "title": "Captain Marvel",
+      "issueTitle": "Captain Marvel (2012) #13",
+      "seriesTitle": "Captain Marvel",
+      "apiSeriesName": "Captain Marvel (2012 - 2013)",
+      "seriesId": 16280,
+      "issueNumber": "13",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/46857/captain_marvel_2012_13",
+      "onSaleDate": "2013-06-19T00:00:00+0000"
+    },
+    {
+      "id": 47591,
+      "title": "Avengers Assemble",
+      "issueTitle": "Avengers Assemble (2012) #17",
+      "seriesTitle": "Avengers Assemble",
+      "apiSeriesName": "Avengers Assemble (2012 - 2014)",
+      "seriesId": 15373,
+      "issueNumber": "17",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47591/avengers_assemble_2012_17",
+      "onSaleDate": "2013-07-17T00:00:00+0000"
+    },
+    {
+      "id": 46858,
+      "title": "Captain Marvel",
+      "issueTitle": "Captain Marvel (2012) #14",
+      "seriesTitle": "Captain Marvel",
+      "apiSeriesName": "Captain Marvel (2012 - 2013)",
+      "seriesId": 16280,
+      "issueNumber": "14",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/46858/captain_marvel_2012_14",
+      "onSaleDate": "2013-07-31T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Avengers Enemy Within #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers: The Enemy Within",
+      "seriesYear": 2013,
+      "issueNumber": "1",
+      "seriesId": 17951,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47565"
+      ],
+      "selectedIssueId": 47565,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47565/avengers_the_enemy_within_2013_1",
+      "resolvedIssueTitle": "Avengers: The Enemy Within (2013) #1",
+      "note": "Marvel series 17951 (Avengers: The Enemy Within (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47565
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Avengers Assemble #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Assemble",
+      "seriesYear": 2012,
+      "issueNumber": "16",
+      "seriesId": 15373,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45880"
+      ],
+      "selectedIssueId": 45880,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45880/avengers_assemble_2012_16",
+      "resolvedIssueTitle": "Avengers Assemble (2012) #16",
+      "note": "Marvel series 15373 (Avengers Assemble (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45880
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Captain Marvel #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain Marvel",
+      "seriesYear": 2012,
+      "issueNumber": "13",
+      "seriesId": 16280,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "46857"
+      ],
+      "selectedIssueId": 46857,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/46857/captain_marvel_2012_13",
+      "resolvedIssueTitle": "Captain Marvel (2012) #13",
+      "note": "Marvel series 16280 (Captain Marvel (2012 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        46857
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Avengers Assemble #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Avengers Assemble",
+      "seriesYear": 2012,
+      "issueNumber": "17",
+      "seriesId": 15373,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47591"
+      ],
+      "selectedIssueId": 47591,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47591/avengers_assemble_2012_17",
+      "resolvedIssueTitle": "Avengers Assemble (2012) #17",
+      "note": "Marvel series 15373 (Avengers Assemble (2012 - 2014)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47591
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Captain Marvel #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Captain Marvel",
+      "seriesYear": 2012,
+      "issueNumber": "14",
+      "seriesId": 16280,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "46858"
+      ],
+      "selectedIssueId": 46858,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/46858/captain_marvel_2012_14",
+      "resolvedIssueTitle": "Captain Marvel (2012) #14",
+      "note": "Marvel series 16280 (Captain Marvel (2012 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        46858
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "avengers-enemy-within",
+    "name": "Avengers: The Enemy Within",
+    "description": "The five-part crossover through The Enemy Within, Avengers Assemble, and Captain Marvel.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "avengers-enemy-within.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+    "sourceSection": "Avengers: The Enemy Within",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "avengers_enemy_within.json",
+    "characters": [
+      "Captain Marvel",
+      "Avengers"
+    ],
+    "keywords": [
+      "The Enemy Within",
+      "Captain Marvel",
+      "Avengers Assemble"
+    ],
+    "expect": 5,
+    "timeline": 2013,
+    "coverIssueId": 47565,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Avengers Enemy Within #1"
+  }
+}

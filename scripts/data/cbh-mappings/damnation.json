@@ -1,0 +1,606 @@
+{
+  "id": "damnation",
+  "inventoryId": "damnation",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/doctor-strange-damnation/",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 15,
+  "excludedSourceReferences": [
+    "Doctor Strange #390 appears only in the solo-series collection and is outside the 15-row event checklist"
+  ],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 66279,
+      "title": "Doctor Strange: Damnation",
+      "issueTitle": "Doctor Strange: Damnation (2018) #1",
+      "seriesTitle": "Doctor Strange: Damnation",
+      "apiSeriesName": "Doctor Strange: Damnation (2018)",
+      "seriesId": 24016,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66279/doctor_strange_damnation_2018_1",
+      "onSaleDate": "2018-02-21T00:00:00+0000"
+    },
+    {
+      "id": 66278,
+      "title": "Doctor Strange",
+      "issueTitle": "Doctor Strange (2015) #386",
+      "seriesTitle": "Doctor Strange",
+      "apiSeriesName": "Doctor Strange (2015 - 2018)",
+      "seriesId": 20457,
+      "issueNumber": "386",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66278/doctor_strange_2015_386",
+      "onSaleDate": "2018-02-28T00:00:00+0000"
+    },
+    {
+      "id": 66409,
+      "title": "Doctor Strange: Damnation",
+      "issueTitle": "Doctor Strange: Damnation (2018) #2",
+      "seriesTitle": "Doctor Strange: Damnation",
+      "apiSeriesName": "Doctor Strange: Damnation (2018)",
+      "seriesId": 24016,
+      "issueNumber": "2",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66409/doctor_strange_damnation_2018_2",
+      "onSaleDate": "2018-03-07T00:00:00+0000"
+    },
+    {
+      "id": 66493,
+      "title": "Doctor Strange",
+      "issueTitle": "Doctor Strange (2015) #387",
+      "seriesTitle": "Doctor Strange",
+      "apiSeriesName": "Doctor Strange (2015 - 2018)",
+      "seriesId": 20457,
+      "issueNumber": "387",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66493/doctor_strange_2015_387",
+      "onSaleDate": "2018-03-14T00:00:00+0000"
+    },
+    {
+      "id": 66485,
+      "title": "Ben Reilly: Scarlet Spider",
+      "issueTitle": "Ben Reilly: Scarlet Spider (2017) #15",
+      "seriesTitle": "Ben Reilly: Scarlet Spider",
+      "apiSeriesName": "Ben Reilly: Scarlet Spider (2017 - 2018)",
+      "seriesId": 23021,
+      "issueNumber": "15",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66485/ben_reilly_scarlet_spider_2017_15",
+      "onSaleDate": "2018-03-14T00:00:00+0000"
+    },
+    {
+      "id": 66540,
+      "title": "Doctor Strange: Damnation",
+      "issueTitle": "Doctor Strange: Damnation (2018) #3",
+      "seriesTitle": "Doctor Strange: Damnation",
+      "apiSeriesName": "Doctor Strange: Damnation (2018)",
+      "seriesId": 24016,
+      "issueNumber": "3",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66540/doctor_strange_damnation_2018_3",
+      "onSaleDate": "2018-03-21T00:00:00+0000"
+    },
+    {
+      "id": 66543,
+      "title": "Iron Fist",
+      "issueTitle": "Iron Fist (2017) #78",
+      "seriesTitle": "Iron Fist",
+      "apiSeriesName": "Iron Fist (2017 - 2018)",
+      "seriesId": 22993,
+      "issueNumber": "78",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66543/iron_fist_2017_78",
+      "onSaleDate": "2018-03-21T00:00:00+0000"
+    },
+    {
+      "id": 66532,
+      "title": "Ben Reilly: Scarlet Spider",
+      "issueTitle": "Ben Reilly: Scarlet Spider (2017) #16",
+      "seriesTitle": "Ben Reilly: Scarlet Spider",
+      "apiSeriesName": "Ben Reilly: Scarlet Spider (2017 - 2018)",
+      "seriesId": 23021,
+      "issueNumber": "16",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66532/ben_reilly_scarlet_spider_2017_16",
+      "onSaleDate": "2018-03-28T00:00:00+0000"
+    },
+    {
+      "id": 66537,
+      "title": "Damnation: Johnny Blaze - Ghost Rider",
+      "issueTitle": "Damnation: Johnny Blaze - Ghost Rider (2018) #1",
+      "seriesTitle": "Damnation: Johnny Blaze - Ghost Rider",
+      "apiSeriesName": "Damnation: Johnny Blaze - Ghost Rider (2018)",
+      "seriesId": 24096,
+      "issueNumber": "1",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66537/damnation_johnny_blaze_-_ghost_rider_2018_1",
+      "onSaleDate": "2018-03-28T00:00:00+0000"
+    },
+    {
+      "id": 66762,
+      "title": "Doctor Strange",
+      "issueTitle": "Doctor Strange (2015) #388",
+      "seriesTitle": "Doctor Strange",
+      "apiSeriesName": "Doctor Strange (2015 - 2018)",
+      "seriesId": 20457,
+      "issueNumber": "388",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66762/doctor_strange_2015_388",
+      "onSaleDate": "2018-04-11T00:00:00+0000"
+    },
+    {
+      "id": 66688,
+      "title": "Iron Fist",
+      "issueTitle": "Iron Fist (2017) #79",
+      "seriesTitle": "Iron Fist",
+      "apiSeriesName": "Iron Fist (2017 - 2018)",
+      "seriesId": 22993,
+      "issueNumber": "79",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66688/iron_fist_2017_79",
+      "onSaleDate": "2018-04-04T00:00:00+0000"
+    },
+    {
+      "id": 66843,
+      "title": "Iron Fist",
+      "issueTitle": "Iron Fist (2017) #80",
+      "seriesTitle": "Iron Fist",
+      "apiSeriesName": "Iron Fist (2017 - 2018)",
+      "seriesId": 22993,
+      "issueNumber": "80",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66843/iron_fist_2017_80",
+      "onSaleDate": "2018-04-18T00:00:00+0000"
+    },
+    {
+      "id": 66756,
+      "title": "Ben Reilly: Scarlet Spider",
+      "issueTitle": "Ben Reilly: Scarlet Spider (2017) #17",
+      "seriesTitle": "Ben Reilly: Scarlet Spider",
+      "apiSeriesName": "Ben Reilly: Scarlet Spider (2017 - 2018)",
+      "seriesId": 23021,
+      "issueNumber": "17",
+      "seriesYear": 2017,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66756/ben_reilly_scarlet_spider_2017_17",
+      "onSaleDate": "2018-04-11T00:00:00+0000"
+    },
+    {
+      "id": 66910,
+      "title": "Doctor Strange: Damnation",
+      "issueTitle": "Doctor Strange: Damnation (2018) #4",
+      "seriesTitle": "Doctor Strange: Damnation",
+      "apiSeriesName": "Doctor Strange: Damnation (2018)",
+      "seriesId": 24016,
+      "issueNumber": "4",
+      "seriesYear": 2018,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66910/doctor_strange_damnation_2018_4",
+      "onSaleDate": "2018-04-25T00:00:00+0000"
+    },
+    {
+      "id": 66909,
+      "title": "Doctor Strange",
+      "issueTitle": "Doctor Strange (2015) #389",
+      "seriesTitle": "Doctor Strange",
+      "apiSeriesName": "Doctor Strange (2015 - 2018)",
+      "seriesId": 20457,
+      "issueNumber": "389",
+      "seriesYear": 2015,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/66909/doctor_strange_2015_389",
+      "onSaleDate": "2018-04-25T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Damnation #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Doctor Strange: Damnation",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24016,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66279"
+      ],
+      "selectedIssueId": 66279,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66279/doctor_strange_damnation_2018_1",
+      "resolvedIssueTitle": "Doctor Strange: Damnation (2018) #1",
+      "note": "Marvel series 24016 (Doctor Strange: Damnation (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66279
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Doctor Strange #386",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Doctor Strange",
+      "seriesYear": 2015,
+      "issueNumber": "386",
+      "seriesId": 20457,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66278"
+      ],
+      "selectedIssueId": 66278,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66278/doctor_strange_2015_386",
+      "resolvedIssueTitle": "Doctor Strange (2015) #386",
+      "note": "Marvel series 20457 (Doctor Strange (2015 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66278
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "Damnation #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Doctor Strange: Damnation",
+      "seriesYear": 2018,
+      "issueNumber": "2",
+      "seriesId": 24016,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66409"
+      ],
+      "selectedIssueId": 66409,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66409/doctor_strange_damnation_2018_2",
+      "resolvedIssueTitle": "Doctor Strange: Damnation (2018) #2",
+      "note": "Marvel series 24016 (Doctor Strange: Damnation (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66409
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Doctor Strange #387",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Doctor Strange",
+      "seriesYear": 2015,
+      "issueNumber": "387",
+      "seriesId": 20457,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66493"
+      ],
+      "selectedIssueId": 66493,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66493/doctor_strange_2015_387",
+      "resolvedIssueTitle": "Doctor Strange (2015) #387",
+      "note": "Marvel series 20457 (Doctor Strange (2015 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66493
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Scarlet Spider #15",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Ben Reilly: Scarlet Spider",
+      "seriesYear": 2017,
+      "issueNumber": "15",
+      "seriesId": 23021,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66485"
+      ],
+      "selectedIssueId": 66485,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66485/ben_reilly_scarlet_spider_2017_15",
+      "resolvedIssueTitle": "Ben Reilly: Scarlet Spider (2017) #15",
+      "note": "Marvel series 23021 (Ben Reilly: Scarlet Spider (2017 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66485
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Damnation #3",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Doctor Strange: Damnation",
+      "seriesYear": 2018,
+      "issueNumber": "3",
+      "seriesId": 24016,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66540"
+      ],
+      "selectedIssueId": 66540,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66540/doctor_strange_damnation_2018_3",
+      "resolvedIssueTitle": "Doctor Strange: Damnation (2018) #3",
+      "note": "Marvel series 24016 (Doctor Strange: Damnation (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66540
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Iron Fist #78",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Iron Fist",
+      "seriesYear": 2017,
+      "issueNumber": "78",
+      "seriesId": 22993,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66543"
+      ],
+      "selectedIssueId": 66543,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66543/iron_fist_2017_78",
+      "resolvedIssueTitle": "Iron Fist (2017) #78",
+      "note": "Marvel series 22993 (Iron Fist (2017 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66543
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "Scarlet Spider #16",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Ben Reilly: Scarlet Spider",
+      "seriesYear": 2017,
+      "issueNumber": "16",
+      "seriesId": 23021,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66532"
+      ],
+      "selectedIssueId": 66532,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66532/ben_reilly_scarlet_spider_2017_16",
+      "resolvedIssueTitle": "Ben Reilly: Scarlet Spider (2017) #16",
+      "note": "Marvel series 23021 (Ben Reilly: Scarlet Spider (2017 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66532
+      ]
+    },
+    {
+      "sourcePosition": 9,
+      "sourceIssueReference": "Johnny Blaze: Ghost Rider #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Damnation: Johnny Blaze - Ghost Rider",
+      "seriesYear": 2018,
+      "issueNumber": "1",
+      "seriesId": 24096,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66537"
+      ],
+      "selectedIssueId": 66537,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66537/damnation_johnny_blaze_-_ghost_rider_2018_1",
+      "resolvedIssueTitle": "Damnation: Johnny Blaze - Ghost Rider (2018) #1",
+      "note": "Marvel series 24096 (Damnation: Johnny Blaze - Ghost Rider (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66537
+      ]
+    },
+    {
+      "sourcePosition": 10,
+      "sourceIssueReference": "Doctor Strange #388",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Doctor Strange",
+      "seriesYear": 2015,
+      "issueNumber": "388",
+      "seriesId": 20457,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66762"
+      ],
+      "selectedIssueId": 66762,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66762/doctor_strange_2015_388",
+      "resolvedIssueTitle": "Doctor Strange (2015) #388",
+      "note": "Marvel series 20457 (Doctor Strange (2015 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66762
+      ]
+    },
+    {
+      "sourcePosition": 11,
+      "sourceIssueReference": "Iron Fist #79",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Iron Fist",
+      "seriesYear": 2017,
+      "issueNumber": "79",
+      "seriesId": 22993,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66688"
+      ],
+      "selectedIssueId": 66688,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66688/iron_fist_2017_79",
+      "resolvedIssueTitle": "Iron Fist (2017) #79",
+      "note": "Marvel series 22993 (Iron Fist (2017 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66688
+      ]
+    },
+    {
+      "sourcePosition": 12,
+      "sourceIssueReference": "Iron Fist #80",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Iron Fist",
+      "seriesYear": 2017,
+      "issueNumber": "80",
+      "seriesId": 22993,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66843"
+      ],
+      "selectedIssueId": 66843,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66843/iron_fist_2017_80",
+      "resolvedIssueTitle": "Iron Fist (2017) #80",
+      "note": "Marvel series 22993 (Iron Fist (2017 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66843
+      ]
+    },
+    {
+      "sourcePosition": 13,
+      "sourceIssueReference": "Scarlet Spider #17",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Ben Reilly: Scarlet Spider",
+      "seriesYear": 2017,
+      "issueNumber": "17",
+      "seriesId": 23021,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66756"
+      ],
+      "selectedIssueId": 66756,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66756/ben_reilly_scarlet_spider_2017_17",
+      "resolvedIssueTitle": "Ben Reilly: Scarlet Spider (2017) #17",
+      "note": "Marvel series 23021 (Ben Reilly: Scarlet Spider (2017 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66756
+      ]
+    },
+    {
+      "sourcePosition": 14,
+      "sourceIssueReference": "Damnation #4",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Doctor Strange: Damnation",
+      "seriesYear": 2018,
+      "issueNumber": "4",
+      "seriesId": 24016,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66910"
+      ],
+      "selectedIssueId": 66910,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66910/doctor_strange_damnation_2018_4",
+      "resolvedIssueTitle": "Doctor Strange: Damnation (2018) #4",
+      "note": "Marvel series 24016 (Doctor Strange: Damnation (2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66910
+      ]
+    },
+    {
+      "sourcePosition": 15,
+      "sourceIssueReference": "Doctor Strange #389",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Doctor Strange",
+      "seriesYear": 2015,
+      "issueNumber": "389",
+      "seriesId": 20457,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "66909"
+      ],
+      "selectedIssueId": 66909,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/66909/doctor_strange_2015_389",
+      "resolvedIssueTitle": "Doctor Strange (2015) #389",
+      "note": "Marvel series 20457 (Doctor Strange (2015 - 2018)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        66909
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "damnation",
+    "name": "Marvel Damnation",
+    "description": "Fifteen chapters combining the four-part event with Doctor Strange, Iron Fist, Scarlet Spider, and Ghost Rider.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "damnation.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/doctor-strange-damnation/",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "damnation.json",
+    "characters": [
+      "Doctor Strange",
+      "Mephisto",
+      "Iron Fist",
+      "Scarlet Spider",
+      "Ghost Rider"
+    ],
+    "keywords": [
+      "Damnation",
+      "Doctor Strange",
+      "Mephisto",
+      "Las Vegas"
+    ],
+    "expect": 15,
+    "timeline": 2018,
+    "coverIssueId": 66279,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "Damnation #1"
+  }
+}

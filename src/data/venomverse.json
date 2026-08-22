@@ -1,0 +1,389 @@
+{
+  "id": "venomverse",
+  "name": "Venomverse",
+  "description": "Eleven core chapters from Edge of Venomverse through War Stories and the five-part event.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/spider-man-venomverse/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T05:06:19.793Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 11,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 63237,
+      "title": "Edge of Venomverse (2017) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/63237/edge_of_venomverse_2017_1",
+      "seriesId": 23125,
+      "seriesName": "Edge of Venomverse (2017)",
+      "onSale": "2017-06-28T00:00:00+0000",
+      "mu": "2017-06-28T00:00:00+0000",
+      "digitalId": 45683,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/00/594c2a044a7dc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Adam Gorham",
+          "role": "cover artist"
+        },
+        {
+          "name": "Roland Boschi",
+          "role": "cover artist"
+        },
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler"
+        },
+        {
+          "name": "Matthew Rosenberg",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 63697,
+      "title": "Edge of Venomverse (2017) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/63697/edge_of_venomverse_2017_2",
+      "seriesId": 23125,
+      "seriesName": "Edge of Venomverse (2017)",
+      "onSale": "2017-07-12T00:00:00+0000",
+      "mu": "2018-01-15T00:00:00+0000",
+      "digitalId": 45250,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/40/59651ef1a133e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Irene Strychalski",
+          "role": "cover artist"
+        },
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler"
+        },
+        {
+          "name": "Christopher Hastings",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 63866,
+      "title": "Edge of Venomverse (2017) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/63866/edge_of_venomverse_2017_3",
+      "seriesId": 23125,
+      "seriesName": "Edge of Venomverse (2017)",
+      "onSale": "2017-07-26T00:00:00+0000",
+      "mu": "2018-01-29T00:00:00+0000",
+      "digitalId": 45329,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/03/596d09077c250",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Tigh Walker",
+          "role": "cover artist"
+        },
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler"
+        },
+        {
+          "name": "Simon Spurrier",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 64140,
+      "title": "Edge of Venomverse (2017) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/64140/edge_of_venomverse_2017_4",
+      "seriesId": 23125,
+      "seriesName": "Edge of Venomverse (2017)",
+      "onSale": "2017-08-09T00:00:00+0000",
+      "mu": "2018-02-12T00:00:00+0000",
+      "digitalId": 45449,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/60/597794aa55fa9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Andre Lima Araujo",
+          "role": "cover artist"
+        },
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler"
+        },
+        {
+          "name": "Ryan Key",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 64250,
+      "title": "Edge of Venomverse (2017) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/64250/edge_of_venomverse_2017_5",
+      "seriesId": 23125,
+      "seriesName": "Edge of Venomverse (2017)",
+      "onSale": "2017-08-23T00:00:00+0000",
+      "mu": "2018-02-26T00:00:00+0000",
+      "digitalId": 45546,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/5988e053c24d5",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "James Stokoe",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ron Lim",
+          "role": "penciler"
+        },
+        {
+          "name": "Clay Chapman",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 64380,
+      "title": "Venomverse: War Stories (2017) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/64380/venomverse_war_stories_2017_1",
+      "seriesId": 25568,
+      "seriesName": "Venomverse: War Stories (2017 - Present)",
+      "onSale": "2017-09-06T00:00:00+0000",
+      "mu": "2018-03-12T00:00:00+0000",
+      "digitalId": 45697,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/40/599b1a82aa4d4",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Annapaola Martello",
+          "role": "cover artist"
+        },
+        {
+          "name": "Declan Shalvey",
+          "role": "cover artist"
+        },
+        {
+          "name": "Khary Randolph",
+          "role": "cover artist"
+        },
+        {
+          "name": "Tana Ford",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alex Arizmendi",
+          "role": "penciler"
+        },
+        {
+          "name": "Francesco Mattina",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Aaron Covington",
+          "role": "writer"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        },
+        {
+          "name": "Magdelene Visaggio",
+          "role": "writer"
+        },
+        {
+          "name": "Nnedi Okorafor",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 64450,
+      "title": "Venomverse (2017) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/64450/venomverse_2017_1",
+      "seriesId": 23468,
+      "seriesName": "Venomverse (2017)",
+      "onSale": "2017-09-06T00:00:00+0000",
+      "mu": "2018-03-12T00:00:00+0000",
+      "digitalId": 45717,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/90/599afea497394",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Iban Coello",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 64545,
+      "title": "Venomverse (2017) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/64545/venomverse_2017_2",
+      "seriesId": 23468,
+      "seriesName": "Venomverse (2017)",
+      "onSale": "2017-09-13T00:00:00+0000",
+      "mu": "2018-03-19T00:00:00+0000",
+      "digitalId": 45718,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/80/59b04d318e36e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Iban Coello",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 64569,
+      "title": "Venomverse (2017) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/64569/venomverse_2017_3",
+      "seriesId": 23468,
+      "seriesName": "Venomverse (2017)",
+      "onSale": "2017-09-20T00:00:00+0000",
+      "mu": "2018-03-26T00:00:00+0000",
+      "digitalId": 45806,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/80/59b93f48d26d9",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Iban Coello",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 64568,
+      "title": "Venomverse (2017) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/64568/venomverse_2017_4",
+      "seriesId": 23468,
+      "seriesName": "Venomverse (2017)",
+      "onSale": "2017-09-27T00:00:00+0000",
+      "mu": "2018-04-02T00:00:00+0000",
+      "digitalId": 45807,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/e0/59c28973b700f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Iban Coello",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 64757,
+      "title": "Venomverse (2017) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/64757/venomverse_2017_5",
+      "seriesId": 23468,
+      "seriesName": "Venomverse (2017)",
+      "onSale": "2017-10-04T00:00:00+0000",
+      "mu": "2018-04-09T00:00:00+0000",
+      "digitalId": 45972,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/5/b0/59cc063e131a2",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Iban Coello",
+          "role": "cover artist"
+        },
+        {
+          "name": "Nick Bradshaw",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

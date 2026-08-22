@@ -48,7 +48,7 @@ export function exactMatchesForRow(row, candidates) {
     );
     if (!candidateTitle || (candidateTitle !== rowTitle && !manualSeriesSelection)) return false;
 
-    const rowNumber = row?.issueNumber ?? row?.number ?? row?.issue ?? null;
+    const rowNumber = row?.metadataIssueNumber ?? row?.issueNumber ?? row?.number ?? row?.issue ?? null;
     const candidateNumber = candidate?.issueNumber ?? candidate?.number ?? candidate?.issue ?? null;
     if (rowNumber != null) {
       if (candidateNumber == null || String(rowNumber) !== String(candidateNumber)) return false;

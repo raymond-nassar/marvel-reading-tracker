@@ -1,0 +1,344 @@
+{
+  "id": "x-termination",
+  "inventoryId": "marvel-now",
+  "sourceUrl": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+  "sourceSection": "X-Termination",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 8,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 47069,
+      "title": "Age of Apocalypse",
+      "issueTitle": "Age of Apocalypse (2012) #13",
+      "seriesTitle": "Age of Apocalypse",
+      "apiSeriesName": "Age of Apocalypse (2012 - 2013)",
+      "seriesId": 15331,
+      "issueNumber": "13",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47069/age_of_apocalypse_2012_13",
+      "onSaleDate": "2013-03-06T00:00:00+0000"
+    },
+    {
+      "id": 42754,
+      "title": "X-Treme X-Men",
+      "issueTitle": "X-Treme X-Men (2012) #12",
+      "seriesTitle": "X-Treme X-Men",
+      "apiSeriesName": "X-Treme X-Men (2012 - 2013)",
+      "seriesId": 16308,
+      "issueNumber": "12",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/42754/x-treme_x-men_2012_12",
+      "onSaleDate": "2013-03-13T00:00:00+0000"
+    },
+    {
+      "id": 47142,
+      "title": "X-Termination",
+      "issueTitle": "X-Termination (2013) #1",
+      "seriesTitle": "X-Termination",
+      "apiSeriesName": "X-Termination (2013)",
+      "seriesId": 17743,
+      "issueNumber": "1",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47142/x-termination_2013_1",
+      "onSaleDate": "2013-03-20T00:00:00+0000"
+    },
+    {
+      "id": 45821,
+      "title": "Astonishing X-Men",
+      "issueTitle": "Astonishing X-Men (2004) #60",
+      "seriesTitle": "Astonishing X-Men",
+      "apiSeriesName": "Astonishing X-Men (2004 - 2013)",
+      "seriesId": 744,
+      "issueNumber": "60",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45821/astonishing_x-men_2004_60",
+      "onSaleDate": "2013-03-27T00:00:00+0000"
+    },
+    {
+      "id": 47070,
+      "title": "Age of Apocalypse",
+      "issueTitle": "Age of Apocalypse (2012) #14",
+      "seriesTitle": "Age of Apocalypse",
+      "apiSeriesName": "Age of Apocalypse (2012 - 2013)",
+      "seriesId": 15331,
+      "issueNumber": "14",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47070/age_of_apocalypse_2012_14",
+      "onSaleDate": "2013-04-03T00:00:00+0000"
+    },
+    {
+      "id": 47144,
+      "title": "X-Treme X-Men",
+      "issueTitle": "X-Treme X-Men (2012) #13",
+      "seriesTitle": "X-Treme X-Men",
+      "apiSeriesName": "X-Treme X-Men (2012 - 2013)",
+      "seriesId": 16308,
+      "issueNumber": "13",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47144/x-treme_x-men_2012_13",
+      "onSaleDate": "2013-04-10T00:00:00+0000"
+    },
+    {
+      "id": 45822,
+      "title": "Astonishing X-Men",
+      "issueTitle": "Astonishing X-Men (2004) #61",
+      "seriesTitle": "Astonishing X-Men",
+      "apiSeriesName": "Astonishing X-Men (2004 - 2013)",
+      "seriesId": 744,
+      "issueNumber": "61",
+      "seriesYear": 2004,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/45822/astonishing_x-men_2004_61",
+      "onSaleDate": "2013-04-17T00:00:00+0000"
+    },
+    {
+      "id": 47143,
+      "title": "X-Termination",
+      "issueTitle": "X-Termination (2013) #2",
+      "seriesTitle": "X-Termination",
+      "apiSeriesName": "X-Termination (2013)",
+      "seriesId": 17743,
+      "issueNumber": "2",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/47143/x-termination_2013_2",
+      "onSaleDate": "2013-04-24T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "Age of Apocalypse #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Apocalypse",
+      "seriesYear": 2012,
+      "issueNumber": "13",
+      "seriesId": 15331,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47069"
+      ],
+      "selectedIssueId": 47069,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47069/age_of_apocalypse_2012_13",
+      "resolvedIssueTitle": "Age of Apocalypse (2012) #13",
+      "note": "Marvel series 15331 (Age of Apocalypse (2012 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47069
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "X-Treme X-Men #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Treme X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "12",
+      "seriesId": 16308,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "42754"
+      ],
+      "selectedIssueId": 42754,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/42754/x-treme_x-men_2012_12",
+      "resolvedIssueTitle": "X-Treme X-Men (2012) #12",
+      "note": "Marvel series 16308 (X-Treme X-Men (2012 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        42754
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "X-Termination #1",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Termination",
+      "seriesYear": 2013,
+      "issueNumber": "1",
+      "seriesId": 17743,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47142"
+      ],
+      "selectedIssueId": 47142,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47142/x-termination_2013_1",
+      "resolvedIssueTitle": "X-Termination (2013) #1",
+      "note": "Marvel series 17743 (X-Termination (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47142
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Astonishing X-Men #60",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Astonishing X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "60",
+      "seriesId": 744,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45821"
+      ],
+      "selectedIssueId": 45821,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45821/astonishing_x-men_2004_60",
+      "resolvedIssueTitle": "Astonishing X-Men (2004) #60",
+      "note": "Marvel series 744 (Astonishing X-Men (2004 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45821
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "Age of Apocalypse #14",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Age of Apocalypse",
+      "seriesYear": 2012,
+      "issueNumber": "14",
+      "seriesId": 15331,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47070"
+      ],
+      "selectedIssueId": 47070,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47070/age_of_apocalypse_2012_14",
+      "resolvedIssueTitle": "Age of Apocalypse (2012) #14",
+      "note": "Marvel series 15331 (Age of Apocalypse (2012 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47070
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "X-Treme X-Men #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Treme X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "13",
+      "seriesId": 16308,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47144"
+      ],
+      "selectedIssueId": 47144,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47144/x-treme_x-men_2012_13",
+      "resolvedIssueTitle": "X-Treme X-Men (2012) #13",
+      "note": "Marvel series 16308 (X-Treme X-Men (2012 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47144
+      ]
+    },
+    {
+      "sourcePosition": 7,
+      "sourceIssueReference": "Astonishing X-Men #61",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Astonishing X-Men",
+      "seriesYear": 2004,
+      "issueNumber": "61",
+      "seriesId": 744,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "45822"
+      ],
+      "selectedIssueId": 45822,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/45822/astonishing_x-men_2004_61",
+      "resolvedIssueTitle": "Astonishing X-Men (2004) #61",
+      "note": "Marvel series 744 (Astonishing X-Men (2004 - 2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        45822
+      ]
+    },
+    {
+      "sourcePosition": 8,
+      "sourceIssueReference": "X-Termination #2",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "X-Termination",
+      "seriesYear": 2013,
+      "issueNumber": "2",
+      "seriesId": 17743,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "47143"
+      ],
+      "selectedIssueId": 47143,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/47143/x-termination_2013_2",
+      "resolvedIssueTitle": "X-Termination (2013) #2",
+      "note": "Marvel series 17743 (X-Termination (2013)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        47143
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-termination",
+    "name": "X-Men: X-Termination",
+    "description": "Eight chapters crossing Age of Apocalypse, X-Treme X-Men, Astonishing X-Men, and X-Termination.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-termination.md",
+    "sourcePage": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+    "sourceSection": "X-Termination",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_termination.json",
+    "characters": [
+      "X-Men",
+      "Nightcrawler",
+      "Weapon X"
+    ],
+    "keywords": [
+      "X-Termination",
+      "Age of Apocalypse",
+      "X-Treme X-Men"
+    ],
+    "expect": 8,
+    "timeline": 2013,
+    "coverIssueId": 47142,
+    "coverSourcePosition": 3,
+    "coverSourceReference": "X-Termination #1"
+  }
+}

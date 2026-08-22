@@ -84,7 +84,7 @@ function placeholderId(orderId, title) {
 }
 
 function parseIssueNumber(title) {
-  const m = /#\s*([0-9]+(?:\.[0-9]+)?[A-Za-z]*)\s*$/.exec(String(title ?? '').trim());
+  const m = /#\s*([0-9]+(?:\.[0-9A-Za-z]+)?[A-Za-z]*)\s*$/.exec(String(title ?? '').trim());
   return m ? m[1] : null;
 }
 
@@ -230,7 +230,7 @@ async function main() {
         item: {
           issueId: e.issueId,
           title: cleanText(d.title ?? e.title),
-          number: parseIssueNumber(d.title) ?? parseIssueNumber(e.title),
+          number: parseIssueNumber(e.title) ?? parseIssueNumber(d.title),
           url: d.detailUrl ?? e.url,
           seriesId: d.seriesId ?? null,
           seriesName: d.seriesName == null ? null : cleanText(d.seriesName),

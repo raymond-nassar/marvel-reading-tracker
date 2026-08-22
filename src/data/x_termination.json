@@ -1,0 +1,313 @@
+{
+  "id": "x-termination",
+  "name": "X-Men: X-Termination",
+  "description": "Eight chapters crossing Age of Apocalypse, X-Treme X-Men, Astonishing X-Men, and X-Termination.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
+  "sourceSection": "X-Termination",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T05:06:19.778Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 8,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 47069,
+      "title": "Age of Apocalypse (2012) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/47069/age_of_apocalypse_2012_13",
+      "seriesId": 15331,
+      "seriesName": "Age of Apocalypse (2012 - 2013)",
+      "onSale": "2013-03-06T00:00:00+0000",
+      "mu": "2013-09-02T00:00:00+0000",
+      "digitalId": 28782,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/56af98ca06fbf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "David Lapham",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 42754,
+      "title": "X-Treme X-Men (2012) #12",
+      "number": "12",
+      "url": "https://www.marvel.com/comics/issue/42754/x-treme_x-men_2012_12",
+      "seriesId": 16308,
+      "seriesName": "X-Treme X-Men (2012 - 2013)",
+      "onSale": "2013-03-13T00:00:00+0000",
+      "mu": "2013-09-16T00:00:00+0000",
+      "digitalId": 28849,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/c0/512d26085e7f8",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Kalman Andrasofszky",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47142,
+      "title": "X-Termination (2013) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/47142/x-termination_2013_1",
+      "seriesId": 17743,
+      "seriesName": "X-Termination (2013)",
+      "onSale": "2013-03-20T00:00:00+0000",
+      "mu": "2013-09-23T00:00:00+0000",
+      "digitalId": 28988,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/10/514332f615fcc",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Allen Martinez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Alvaro Lopez",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Lopez",
+          "role": "penciler"
+        },
+        {
+          "name": "Ed Mcguinness",
+          "role": "penciler"
+        },
+        {
+          "name": "David Lapham",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        },
+        {
+          "name": "Marjorie Liu",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45821,
+      "title": "Astonishing X-Men (2004) #60",
+      "number": "60",
+      "url": "https://www.marvel.com/comics/issue/45821/astonishing_x-men_2004_60",
+      "seriesId": 744,
+      "seriesName": "Astonishing X-Men (2004 - 2013)",
+      "onSale": "2013-03-27T00:00:00+0000",
+      "mu": "2013-06-23T00:00:00+0000",
+      "digitalId": 29049,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/70/58f8e6c0130f3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Cam Smith",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Rain Beredo",
+          "role": "penciler"
+        },
+        {
+          "name": "David Lapham",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        },
+        {
+          "name": "Marjorie Liu",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47070,
+      "title": "Age of Apocalypse (2012) #14",
+      "number": "14",
+      "url": "https://www.marvel.com/comics/issue/47070/age_of_apocalypse_2012_14",
+      "seriesId": 15331,
+      "seriesName": "Age of Apocalypse (2012 - 2013)",
+      "onSale": "2013-04-03T00:00:00+0000",
+      "mu": "2013-10-07T00:00:00+0000",
+      "digitalId": 29143,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/70/56af9ab31766a",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "David Lapham",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47144,
+      "title": "X-Treme X-Men (2012) #13",
+      "number": "13",
+      "url": "https://www.marvel.com/comics/issue/47144/x-treme_x-men_2012_13",
+      "seriesId": 16308,
+      "seriesName": "X-Treme X-Men (2012 - 2013)",
+      "onSale": "2013-04-10T00:00:00+0000",
+      "mu": "2013-10-14T00:00:00+0000",
+      "digitalId": 29246,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/20/514b15f680d52",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 45822,
+      "title": "Astonishing X-Men (2004) #61",
+      "number": "61",
+      "url": "https://www.marvel.com/comics/issue/45822/astonishing_x-men_2004_61",
+      "seriesId": 744,
+      "seriesName": "Astonishing X-Men (2004 - 2013)",
+      "onSale": "2013-04-17T00:00:00+0000",
+      "mu": "2013-10-14T00:00:00+0000",
+      "digitalId": 29356,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/7/80/58f8e8c1c9735",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Cam Smith",
+          "role": "penciler"
+        },
+        {
+          "name": "Giuseppe Camuncoli",
+          "role": "penciler"
+        },
+        {
+          "name": "Rain Beredo",
+          "role": "penciler"
+        },
+        {
+          "name": "David Lapham",
+          "role": "writer"
+        },
+        {
+          "name": "Greg Pak",
+          "role": "writer"
+        },
+        {
+          "name": "Marjorie Liu",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 47143,
+      "title": "X-Termination (2013) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/47143/x-termination_2013_2",
+      "seriesId": 17743,
+      "seriesName": "X-Termination (2013)",
+      "onSale": "2013-04-24T00:00:00+0000",
+      "mu": "2013-10-28T00:00:00+0000",
+      "digitalId": 29621,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/40/5cf948e2f19f3",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Allen Martinez",
+          "role": "cover artist"
+        },
+        {
+          "name": "Carlos Cuevas",
+          "role": "cover artist"
+        },
+        {
+          "name": "Don Ho",
+          "role": "cover artist"
+        },
+        {
+          "name": "Lorenzo Ruggiero",
+          "role": "cover artist"
+        },
+        {
+          "name": "David Lopez",
+          "role": "penciler"
+        },
+        {
+          "name": "Guillermo Mogorron",
+          "role": "penciler"
+        },
+        {
+          "name": "Matteo Lolli",
+          "role": "penciler"
+        },
+        {
+          "name": "Mike Deodato",
+          "role": "penciler"
+        },
+        {
+          "name": "David Lapham",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

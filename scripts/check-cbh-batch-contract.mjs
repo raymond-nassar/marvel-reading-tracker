@@ -3,7 +3,7 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { PACKET_IDS } from './author-cbh-packet.mjs';
+import { FOURTH_PACKET_IDS } from './author-cbh-packet.mjs';
 import { createJsonFetcher } from './lib/fetch-json.mjs';
 import { lookupIssues } from './lib/lookup-issues.mjs';
 
@@ -16,10 +16,10 @@ function cleanText(value) {
 
 async function main() {
   const manifest = JSON.parse(await readFile(path.join(ROOT, 'src', 'data', 'curated-lists.json'), 'utf8'));
-  const packetSet = new Set(PACKET_IDS);
+  const packetSet = new Set(FOURTH_PACKET_IDS);
   const entries = manifest.lists.filter((entry) => packetSet.has(entry.id));
-  if (entries.length !== PACKET_IDS.length) {
-    throw new Error(`Manifest contains ${entries.length} of ${PACKET_IDS.length} packet entries`);
+  if (entries.length !== FOURTH_PACKET_IDS.length) {
+    throw new Error(`Manifest contains ${entries.length} of ${FOURTH_PACKET_IDS.length} packet entries`);
   }
 
   const items = [];
@@ -77,7 +77,9 @@ async function main() {
     if (cleanText(live.title) !== item.title) problems.push(`${item.issueId}: title changed`);
     if (live.detailUrl !== item.url) problems.push(`${item.issueId}: detail URL changed`);
     if (Number(live.seriesId) !== item.seriesId) problems.push(`${item.issueId}: series changed`);
-    if (String(live.issueNumber) !== String(expectedById.get(item.issueId)?.issueNumber)) {
+    const expectedRow = expectedById.get(item.issueId);
+    const expectedMetadataNumber = expectedRow?.metadataIssueNumber ?? expectedRow?.issueNumber;
+    if (String(live.issueNumber) !== String(expectedMetadataNumber)) {
       problems.push(`${item.issueId}: issue number changed`);
     }
   }

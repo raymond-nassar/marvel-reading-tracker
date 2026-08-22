@@ -1,0 +1,270 @@
+{
+  "id": "x-men-trial-of-jean-grey",
+  "inventoryId": "marvel-now",
+  "sourceUrl": "https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/",
+  "sourceSection": "Trial of Jean Grey",
+  "sourceRetrievedAt": "2026-08-21",
+  "sourceRetrievalStatus": "retrieved",
+  "approvedSourceCount": 6,
+  "excludedSourceReferences": [],
+  "reviewStatus": "approved",
+  "candidateMetadata": [
+    {
+      "id": 43487,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2012) #22",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2012 - 2015)",
+      "seriesId": 16449,
+      "issueNumber": "22",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43487/all-new_x-men_2012_22",
+      "onSaleDate": "2014-01-22T00:00:00+0000"
+    },
+    {
+      "id": 43295,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2013) #11",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2013 - 2015)",
+      "seriesId": 16410,
+      "issueNumber": "11",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43295/guardians_of_the_galaxy_2013_11",
+      "onSaleDate": "2014-01-29T00:00:00+0000"
+    },
+    {
+      "id": 48526,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2012) #23",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2012 - 2015)",
+      "seriesId": 16449,
+      "issueNumber": "23",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48526/all-new_x-men_2012_23",
+      "onSaleDate": "2014-02-12T00:00:00+0000"
+    },
+    {
+      "id": 43294,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2013) #12",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2013 - 2015)",
+      "seriesId": 16410,
+      "issueNumber": "12",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/43294/guardians_of_the_galaxy_2013_12",
+      "onSaleDate": "2014-02-26T00:00:00+0000"
+    },
+    {
+      "id": 48527,
+      "title": "All-New X-Men",
+      "issueTitle": "All-New X-Men (2012) #24",
+      "seriesTitle": "All-New X-Men",
+      "apiSeriesName": "All-New X-Men (2012 - 2015)",
+      "seriesId": 16449,
+      "issueNumber": "24",
+      "seriesYear": 2012,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48527/all-new_x-men_2012_24",
+      "onSaleDate": "2014-03-12T00:00:00+0000"
+    },
+    {
+      "id": 48632,
+      "title": "Guardians of the Galaxy",
+      "issueTitle": "Guardians of the Galaxy (2013) #13",
+      "seriesTitle": "Guardians of the Galaxy",
+      "apiSeriesName": "Guardians of the Galaxy (2013 - 2015)",
+      "seriesId": 16410,
+      "issueNumber": "13",
+      "seriesYear": 2013,
+      "manualSeriesSelection": false,
+      "manualSeriesSelectionApproved": false,
+      "detailUrl": "https://www.marvel.com/comics/issue/48632/guardians_of_the_galaxy_2013_13",
+      "onSaleDate": "2014-03-26T00:00:00+0000"
+    }
+  ],
+  "rows": [
+    {
+      "sourcePosition": 1,
+      "sourceIssueReference": "All-New X-Men #22",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "22",
+      "seriesId": 16449,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43487"
+      ],
+      "selectedIssueId": 43487,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43487/all-new_x-men_2012_22",
+      "resolvedIssueTitle": "All-New X-Men (2012) #22",
+      "note": "Marvel series 16449 (All-New X-Men (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43487
+      ]
+    },
+    {
+      "sourcePosition": 2,
+      "sourceIssueReference": "Guardians of the Galaxy #11",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2013,
+      "issueNumber": "11",
+      "seriesId": 16410,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43295"
+      ],
+      "selectedIssueId": 43295,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43295/guardians_of_the_galaxy_2013_11",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2013) #11",
+      "note": "Marvel series 16410 (Guardians of the Galaxy (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43295
+      ]
+    },
+    {
+      "sourcePosition": 3,
+      "sourceIssueReference": "All-New X-Men #23",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "23",
+      "seriesId": 16449,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48526"
+      ],
+      "selectedIssueId": 48526,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48526/all-new_x-men_2012_23",
+      "resolvedIssueTitle": "All-New X-Men (2012) #23",
+      "note": "Marvel series 16449 (All-New X-Men (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48526
+      ]
+    },
+    {
+      "sourcePosition": 4,
+      "sourceIssueReference": "Guardians of the Galaxy #12",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2013,
+      "issueNumber": "12",
+      "seriesId": 16410,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "43294"
+      ],
+      "selectedIssueId": 43294,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/43294/guardians_of_the_galaxy_2013_12",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2013) #12",
+      "note": "Marvel series 16410 (Guardians of the Galaxy (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        43294
+      ]
+    },
+    {
+      "sourcePosition": 5,
+      "sourceIssueReference": "All-New X-Men #24",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "All-New X-Men",
+      "seriesYear": 2012,
+      "issueNumber": "24",
+      "seriesId": 16449,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48527"
+      ],
+      "selectedIssueId": 48527,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48527/all-new_x-men_2012_24",
+      "resolvedIssueTitle": "All-New X-Men (2012) #24",
+      "note": "Marvel series 16449 (All-New X-Men (2012 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48527
+      ]
+    },
+    {
+      "sourcePosition": 6,
+      "sourceIssueReference": "Guardians of the Galaxy #13",
+      "sourceRangeReference": null,
+      "normalizedSeriesTitle": "Guardians of the Galaxy",
+      "seriesYear": 2013,
+      "issueNumber": "13",
+      "seriesId": 16410,
+      "candidateIssueId": null,
+      "manualSeriesSelectionApproved": false,
+      "resolutionStatus": "exact",
+      "candidateIssueIds": [
+        "48632"
+      ],
+      "selectedIssueId": 48632,
+      "marvelIssueUrl": "https://www.marvel.com/comics/issue/48632/guardians_of_the_galaxy_2013_13",
+      "resolvedIssueTitle": "Guardians of the Galaxy (2013) #13",
+      "note": "Marvel series 16410 (Guardians of the Galaxy (2013 - 2015)) is the reviewed metadata series for this source reference.",
+      "status": "exact",
+      "selectedIssueIds": [
+        48632
+      ]
+    }
+  ],
+  "packetReview": ".copilot-tracking/changes/2026-08-20/modern-marvel-continuity-guides-changes.md",
+  "approvedManifest": {
+    "id": "x-men-trial-of-jean-grey",
+    "name": "X-Men: The Trial of Jean Grey",
+    "description": "Six alternating chapters joining All-New X-Men with the Guardians of the Galaxy.",
+    "type": "event",
+    "depth": "complete",
+    "beginner": false,
+    "group": null,
+    "groupName": null,
+    "variant": null,
+    "sourceFile": "x-men-trial-of-jean-grey.md",
+    "sourcePage": "https://www.comicbookherald.com/question-of-the-week-ok-what-the-heck-is-the-right-order-for-x-men-events/",
+    "sourceSection": "Trial of Jean Grey",
+    "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+    "sourceLicense": null,
+    "out": "x_men_trial_of_jean_grey.json",
+    "characters": [
+      "Jean Grey",
+      "X-Men",
+      "Guardians of the Galaxy"
+    ],
+    "keywords": [
+      "Trial of Jean Grey",
+      "All-New X-Men",
+      "Guardians of the Galaxy"
+    ],
+    "expect": 6,
+    "timeline": 2014,
+    "coverIssueId": 43487,
+    "coverSourcePosition": 1,
+    "coverSourceReference": "All-New X-Men #22"
+  }
+}

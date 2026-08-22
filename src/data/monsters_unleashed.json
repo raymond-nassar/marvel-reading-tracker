@@ -1,0 +1,455 @@
+{
+  "id": "monsters-unleashed",
+  "name": "Monsters Unleashed",
+  "description": "Thirteen chapters combining the five-part event with all eight 1.MU battleground issues.",
+  "source": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/monsters-unleashed/",
+  "sourceOrigin": "Compiled for this project from Comic Book Herald's guide",
+  "sourceLicense": null,
+  "generatedAt": "2026-08-22T05:06:19.792Z",
+  "apiBase": "https://marvel.emreparker.com/v1",
+  "count": 13,
+  "collections": 0,
+  "placeholders": 0,
+  "unresolved": [],
+  "items": [
+    {
+      "issueId": 60625,
+      "title": "Monsters Unleashed (2017) #1",
+      "number": "1",
+      "url": "https://www.marvel.com/comics/issue/60625/monsters_unleashed_2017_1",
+      "seriesId": 22407,
+      "seriesName": "Monsters Unleashed (2017)",
+      "onSale": "2017-01-18T00:00:00+0000",
+      "mu": "2017-01-18T00:00:00+0000",
+      "digitalId": 43887,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/5873fc8fda02f",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Steve Mcniven",
+          "role": "penciler"
+        },
+        {
+          "name": "Terry Dodson",
+          "role": "penciler"
+        },
+        {
+          "name": "Jose Ladronn",
+          "role": "penciler (cover)"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62507,
+      "title": "Avengers (2016) #1.1",
+      "number": "1.MU",
+      "url": "https://www.marvel.com/comics/issue/62507/avengers_2016_1.1",
+      "seriesId": 22547,
+      "seriesName": "Avengers (2016 - 2018)",
+      "onSale": "2017-01-25T00:00:00+0000",
+      "mu": "2017-07-31T00:00:00+0000",
+      "digitalId": 43888,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/c0/5878facf3a0fe",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "David Nakayama",
+          "role": "penciler"
+        },
+        {
+          "name": "Sean Izaakse",
+          "role": "penciler"
+        },
+        {
+          "name": "Jim Zub",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62511,
+      "title": "Spider-Man/Deadpool (2016) #1.1",
+      "number": "1.MU",
+      "url": "https://www.marvel.com/comics/issue/62511/spider-mandeadpool_2016_1.1",
+      "seriesId": 19679,
+      "seriesName": "Spider-Man/Deadpool (2016 - 2019)",
+      "onSale": "2017-01-25T00:00:00+0000",
+      "mu": "2017-07-31T00:00:00+0000",
+      "digitalId": 43893,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/58825b1cab96e",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Dave Johnson",
+          "role": "penciler"
+        },
+        {
+          "name": "Tigh Walker",
+          "role": "penciler"
+        },
+        {
+          "name": "Joshua Corin",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 60626,
+      "title": "Monsters Unleashed (2017) #2",
+      "number": "2",
+      "url": "https://www.marvel.com/comics/issue/60626/monsters_unleashed_2017_2",
+      "seriesId": 22407,
+      "seriesName": "Monsters Unleashed (2017)",
+      "onSale": "2017-02-01T00:00:00+0000",
+      "mu": "2017-08-07T00:00:00+0000",
+      "digitalId": 44136,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/60/588b720260f5b",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jay Leisten",
+          "role": "cover artist"
+        },
+        {
+          "name": "Greg Land",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62601,
+      "title": "All-New X-Men (2015) #1.1",
+      "number": "1.MU",
+      "url": "https://www.marvel.com/comics/issue/62601/all-new_x-men_2015_1.1",
+      "seriesId": 20622,
+      "seriesName": "All-New X-Men (2015 - 2017)",
+      "onSale": "2017-02-01T00:00:00+0000",
+      "mu": "2017-08-07T00:00:00+0000",
+      "digitalId": 44172,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/3/50/588b6561f11c0",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Carlo Barberi",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeremy Whitley",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 60627,
+      "title": "Monsters Unleashed (2017) #3",
+      "number": "3",
+      "url": "https://www.marvel.com/comics/issue/60627/monsters_unleashed_2017_3",
+      "seriesId": 22407,
+      "seriesName": "Monsters Unleashed (2017)",
+      "onSale": "2017-02-15T00:00:00+0000",
+      "mu": "2017-08-21T00:00:00+0000",
+      "digitalId": 44087,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/c0/589dea6ece161",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Gerry Alanguilan",
+          "role": "cover artist"
+        },
+        {
+          "name": "Jason Paz",
+          "role": "cover artist"
+        },
+        {
+          "name": "Leinil Francis Yu",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62603,
+      "title": "Doctor Strange (2015) #1.1",
+      "number": "1.MU",
+      "url": "https://www.marvel.com/comics/issue/62603/doctor_strange_2015_1.1",
+      "seriesId": 20457,
+      "seriesName": "Doctor Strange (2015 - 2018)",
+      "onSale": "2017-02-15T00:00:00+0000",
+      "mu": "2017-08-21T00:00:00+0000",
+      "digitalId": 44174,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/2/e0/589debafe72cd",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Chip Zdarsky",
+          "role": "penciler"
+        },
+        {
+          "name": "Julian Lopez",
+          "role": "penciler"
+        }
+      ]
+    },
+    {
+      "issueId": 62604,
+      "title": "Champions (2016) #1.1",
+      "number": "1.MU",
+      "url": "https://www.marvel.com/comics/issue/62604/champions_2016_1.1",
+      "seriesId": 22552,
+      "seriesName": "Champions (2016 - 2019)",
+      "onSale": "2017-02-22T00:00:00+0000",
+      "mu": "2017-08-28T00:00:00+0000",
+      "digitalId": 44175,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/f/80/58a20f6edc6cf",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Ro Stein",
+          "role": "penciler"
+        },
+        {
+          "name": "Simone Bianchi",
+          "role": "penciler"
+        },
+        {
+          "name": "Ted Brandt",
+          "role": "penciler"
+        },
+        {
+          "name": "Jeremy Whitley",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62602,
+      "title": "Uncanny Inhumans (2015) #1.1",
+      "number": "1.MU",
+      "url": "https://www.marvel.com/comics/issue/62602/uncanny_inhumans_2015_1.1",
+      "seriesId": 19780,
+      "seriesName": "Uncanny Inhumans (2015 - 2017)",
+      "onSale": "2017-02-08T00:00:00+0000",
+      "mu": "2017-08-14T00:00:00+0000",
+      "digitalId": 44173,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/9/03/5890a36c52374",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 0,
+      "creators": [
+        {
+          "name": "Brian Level",
+          "role": "penciler"
+        },
+        {
+          "name": "Michael Walsh",
+          "role": "penciler"
+        },
+        {
+          "name": "Paul Allor",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 60628,
+      "title": "Monsters Unleashed (2017) #4",
+      "number": "4",
+      "url": "https://www.marvel.com/comics/issue/60628/monsters_unleashed_2017_4",
+      "seriesId": 22407,
+      "seriesName": "Monsters Unleashed (2017)",
+      "onSale": "2017-03-01T00:00:00+0000",
+      "mu": "2017-09-04T00:00:00+0000",
+      "digitalId": 44376,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/a/60/589def322e97d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Salvador Larroca",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62637,
+      "title": "Guardians of the Galaxy (2015) #1.1",
+      "number": "1.MU",
+      "url": "https://www.marvel.com/comics/issue/62637/guardians_of_the_galaxy_2015_1.1",
+      "seriesId": 20465,
+      "seriesName": "Guardians of the Galaxy (2015 - 2017)",
+      "onSale": "2017-03-08T00:00:00+0000",
+      "mu": "2017-09-11T00:00:00+0000",
+      "digitalId": 44349,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/6/50/58b71e153c35d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 32,
+      "creators": [
+        {
+          "name": "Arthur Adams",
+          "role": "penciler"
+        },
+        {
+          "name": "Chad Bowers",
+          "role": "writer"
+        },
+        {
+          "name": "Chris Sims",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 62648,
+      "title": "The Totally Awesome Hulk (2015) #1.1",
+      "number": "1.MU",
+      "url": "https://www.marvel.com/comics/issue/62648/the_totally_awesome_hulk_2015_1.1",
+      "seriesId": 20614,
+      "seriesName": "The Totally Awesome Hulk (2015 - 2017)",
+      "onSale": "2017-03-01T00:00:00+0000",
+      "mu": "2017-09-04T00:00:00+0000",
+      "digitalId": 44374,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/c/90/58b095ecd6c2d",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Jahnoy Lindsay",
+          "role": "cover artist"
+        },
+        {
+          "name": "Ty Templeton",
+          "role": "cover artist"
+        },
+        {
+          "name": "R Rahzzah",
+          "role": "penciler"
+        },
+        {
+          "name": "Ricardo Lopez-Ortiz",
+          "role": "penciler"
+        },
+        {
+          "name": "Bryan Edward Hill",
+          "role": "writer"
+        },
+        {
+          "name": "Leah Williams",
+          "role": "writer"
+        }
+      ]
+    },
+    {
+      "issueId": 60629,
+      "title": "Monsters Unleashed (2017) #5",
+      "number": "5",
+      "url": "https://www.marvel.com/comics/issue/60629/monsters_unleashed_2017_5",
+      "seriesId": 22407,
+      "seriesName": "Monsters Unleashed (2017)",
+      "onSale": "2017-03-15T00:00:00+0000",
+      "mu": "2017-09-18T00:00:00+0000",
+      "digitalId": 44377,
+      "cover": {
+        "path": "https://i.annihil.us/u/prod/marvel/i/mg/8/03/58c1d52205695",
+        "ext": "jpg"
+      },
+      "description": null,
+      "pageCount": 40,
+      "creators": [
+        {
+          "name": "Adam Kubert",
+          "role": "penciler"
+        },
+        {
+          "name": "Cullen Bunn",
+          "role": "writer"
+        }
+      ]
+    }
+  ]
+}

@@ -474,12 +474,14 @@
     "url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-comics-from-avengers-vs-x-men-to-marvel-now/",
     "guideType": "bridge",
     "window": "Q3",
-    "disposition": "path-source",
-    "reason": "Chronology source for later bridge review",
-    "sourceRetrievedAt": "2026-08-20",
+    "disposition": "grouped-variant",
+    "reason": "Shipped the linked Minimum Carnage event section as its own catalog order; the remaining bridge material stays deferred",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "not-applicable"
+    "catalogIds": [
+      "minimum-carnage"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 32,
@@ -488,12 +490,18 @@
     "url": "https://www.comicbookherald.com/the-complete-marvel-reading-order-guide/marvel-now-checklist/",
     "guideType": "era",
     "window": "Q4",
-    "disposition": "deferred",
-    "reason": "Broad umbrella includes the following event guides",
-    "sourceRetrievedAt": "2026-08-20",
+    "disposition": "grouped-variant",
+    "reason": "Shipped five event sections as separate catalog orders; the broad era and blocked sections stay deferred",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "not-applicable"
+    "catalogIds": [
+      "x-termination",
+      "avengers-enemy-within",
+      "x-men-battle-of-the-atom",
+      "revolutionary-war",
+      "x-men-trial-of-jean-grey"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 33,
@@ -746,11 +754,13 @@
     "guideType": "event",
     "window": "Q5",
     "disposition": "new-order",
-    "reason": "Discrete historical event candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 13-row mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "monsters-unleashed"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 50,
@@ -788,11 +798,13 @@
     "guideType": "sub-guide",
     "window": "Q5",
     "disposition": "new-order",
-    "reason": "Discrete historical crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 11-row core mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "venomverse"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 53,
@@ -830,11 +842,13 @@
     "guideType": "event",
     "window": "Q6",
     "disposition": "new-order",
-    "reason": "Discrete historical event family candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 46-row explicit mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "infinity-countdown-wars"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 56,
@@ -844,11 +858,13 @@
     "guideType": "sub-guide",
     "window": "Q6",
     "disposition": "new-order",
-    "reason": "Discrete historical crossover candidate",
-    "sourceRetrievedAt": "2026-08-20",
+    "reason": "Shipped: approved 15-row event mapping, final zero-overlap report, and catalog entry",
+    "sourceRetrievedAt": "2026-08-21",
     "overlapIds": [],
-    "catalogIds": [],
-    "deliveryStatus": "pending"
+    "catalogIds": [
+      "damnation"
+    ],
+    "deliveryStatus": "shipped"
   },
   {
     "position": 57,

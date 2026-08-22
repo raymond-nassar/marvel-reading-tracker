@@ -995,7 +995,7 @@
   },
   "batch_four_proposal": {
     "date": "2026-08-21",
-    "status": "awaiting-explicit-parent-approval",
+    "status": "approved-implementation-in-progress",
     "baseline": {
       "default_branch_commit": "de73f074e94b210011ea0569d426088d7ed152dc",
       "catalog_entries": 56,
@@ -1005,9 +1005,15 @@
       "shipped_cbh_overlap_reports": 30
     },
     "approval_gate": {
-      "required": true,
-      "authority": null,
-      "status": "awaiting-parent",
+      "required": false,
+      "authority": "Parent session approved autonomous implementation in the coordinating instruction on 2026-08-21",
+      "status": "approved",
+      "boundary_resolution": {
+        "minimum_carnage": "Resolve six versus seven rows from refreshed source and metadata evidence",
+        "venomverse": "Approved 11-row core ending with Venomverse #5",
+        "infinity_countdown_wars": "Resolve 46 versus 50 rows from refreshed source and metadata evidence",
+        "damnation": "Approved 15-row event checklist ending with Doctor Strange #389"
+      },
       "must_approve_or_revise": [
         "the exact ten ids and their source order",
         "all six page-plus-section source identities",
@@ -1280,7 +1286,91 @@
         "reason": "Secret Empire is overlapped, X-Men ResurreXion and Marvel Legacy are eras, and Generations is thematic tissue rather than an event."
       }
     ],
-    "selection_status": "Exact ten recorded; no implementation authority granted",
-    "next_action": "Parent must approve or revise the exact ten, source sections, boundaries, and exclusions, then persist that decision before any P03-T01 implementation."
+    "implementation": {
+      "status": "validated-delivery-in-progress",
+      "source_refreshed_at": "2026-08-21",
+      "source_refresh": {
+        "unique_urls": 6,
+        "safe_fetch_status": "retrieved",
+        "direct_http_status": "HTTP 403 for all six pages",
+        "edge_navigation_status": "HTTP 403 for all six pages",
+        "resolution": "The safe page fetcher returned the current issue-bearing sections for all six exact URLs; direct HTTP and Edge were retained as failed access evidence rather than treated as missing source content."
+      },
+      "catalog_order_ids": [
+        "minimum-carnage",
+        "x-termination",
+        "avengers-enemy-within",
+        "x-men-battle-of-the-atom",
+        "revolutionary-war",
+        "x-men-trial-of-jean-grey",
+        "monsters-unleashed",
+        "venomverse",
+        "infinity-countdown-wars",
+        "damnation"
+      ],
+      "counts": {
+        "guides": 10,
+        "mapping_rows": 128,
+        "distinct_issue_ids": 128,
+        "documented_excluded_source_references": 4,
+        "overlap_reports": 10,
+        "comparison_rows": 650,
+        "non_none_relationships": 0,
+        "catalog_entries_after": 66,
+        "shared_page_sections": 6
+      },
+      "boundary_and_identity_resolutions": {
+        "minimum-carnage": "Keep the six issues in the explicit reading-order line. Scarlet Spider #12 begins the following standalone block.",
+        "monsters-unleashed": "Preserve all eight source issue numbers as 1.MU while matching Marvel metadata's 1.1 value. Avengers issue 62507 is the 2017 Jim Zub event tie-in, not the 2016 Mark Waid issue with the same metadata number.",
+        "venomverse": "Keep the 11-row core through Venomverse #5. Use issue 64250 for Edge of Venomverse #5 because Marvel indexes that page and its metadata has the complete cover; 64249 is the duplicate record with image_not_available.",
+        "infinity-countdown-wars": "Keep the 46 explicit issue-by-issue rows. Guardians of the Galaxy #146-149 appear only in the collected lead-in, while the explicit flow starts at #150.",
+        "damnation": "Keep the 15-row event checklist through Doctor Strange #389. Doctor Strange #390 appears only in the solo collection, and all three Scarlet Spider rows resolve to the Ben Reilly series."
+      },
+      "first_on_sale_dates": [
+        "2012-10-03",
+        "2013-03-06",
+        "2013-05-15",
+        "2013-09-04",
+        "2014-01-08",
+        "2014-01-22",
+        "2017-01-18",
+        "2017-06-28",
+        "2018-01-03",
+        "2018-02-21"
+      ],
+      "validation": {
+        "focused_tests": "130/130",
+        "full_tests": "1316/1316",
+        "lint_errors": 0,
+        "ranked_backlog_rows": 160,
+        "parked_backlog_rows": 5,
+        "backlog_detail_blocks": 165,
+        "stated_file_sizes": 7,
+        "palette_pairs": 88,
+        "palette_new_failures": 0,
+        "publication_findings": 0,
+        "anchors": 1047,
+        "anchor_reaims": 36,
+        "repository_contract": "33/33",
+        "repository_contract_requests": 17,
+        "added_issue_contract": "128/128",
+        "browser_assertions": 120,
+        "browser_scenarios": 14,
+        "failure_proofs": 1,
+        "approved_mapping_hash_changes": 0,
+        "author_hash_changes": 0,
+        "overlap_hash_changes": 0
+      },
+      "self_review": {
+        "status": "resolved",
+        "material_findings": 2,
+        "open_material_findings": 0,
+        "result": "Corrected an inventory edit that first matched the adjacent Secret Invasion bridge and changed the added-issue contract to compare explicit metadata numbers while the product preserves source display numbers."
+      },
+      "review_agent_passes": "waived by parent instruction",
+      "agent_merge": "required after pull request creation"
+    },
+    "selection_status": "Approved ten-order packet authored, vendored, and validated",
+    "next_action": "Commit and push the validated batch, open one pull request, then hand it to Agent Merge."
   }
 }

@@ -14,6 +14,20 @@ quote in a bug report.
 
 ## Unreleased
 
+### Added ten more modern Marvel crossover reading orders
+
+In plain English: the catalog now follows Minimum Carnage, X-Termination, The Enemy Within, Battle
+of the Atom, Revolutionary War, and The Trial of Jean Grey before moving forward to Monsters
+Unleashed, Venomverse, Infinity Countdown and Infinity Wars, and Marvel Damnation. Every new card
+credits Comic Book Herald and opens the exact page or named section followed. Nothing you have saved
+is changed.
+
+For maintainers: the batch adds 128 distinct issues across ten exact mappings. The source evidence
+keeps Minimum Carnage at six issues, Venomverse at its 11-issue core, Infinity at the 46 explicit
+issue-by-issue rows, and Damnation at 15 issues. All 650 comparisons against 56 existing orders and
+nine batch peers report no shared issue. The eight Monsters Unleashed tie-ins retain their `1.MU`
+source numbers even though Marvel metadata represents them as `1.1`.
+
 ### Added ten more Marvel event and aftermath reading orders
 
 In plain English: the catalog now carries the X-Men from the aftermath of Messiah Complex through

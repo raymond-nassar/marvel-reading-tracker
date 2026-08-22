@@ -567,7 +567,8 @@ read-only selection evidence and no inventory lifecycle state changes.
 ## P03 Batch Four Selection Proposal Addendum
 
 * Proposal date: 2026-08-21.
-* Status: Awaiting explicit parent approval. This is candidate research and packet selection only.
+* Status: Approved for autonomous P03-T01 through P03-T03 execution by the parent session on
+  2026-08-21.
 * Baseline: The third batch is merged on the default branch at
   `de73f074e94b210011ea0569d426088d7ed152dc`.
 * Ordering rule: Re-audit from the beginning, preserve master position before any publication-date
@@ -578,10 +579,9 @@ read-only selection evidence and no inventory lifecycle state changes.
   shipped catalog orders, all 30 shipped Comic Book Herald mappings, and all 30 shipped overlap
   reports. The proposal then advances through the first later eligible direct records and closes at
   position 56.
-* No implementation authority: Mapping creation or refresh, inventory changes, overlap generation,
-  order authoring, manifest or catalog edits, generated data, product or tooling changes, tests,
-  commits, pushes, and pull requests remain prohibited until the parent approves or revises the exact
-  packet below.
+* Implementation authority: Refresh the exact sources, resolve every proposed row with real
+  metadata, decide the open count boundaries from that evidence, and carry the approved ten through
+  inventory, overlap, authoring, product records, validation, pull request, and Agent Merge.
 
 ### Proposed ten reading orders
 
@@ -689,9 +689,10 @@ All earlier event-like scopes are restated here so the fourth proposal is indepe
 
 ### Parent approval gate
 
-The parent must approve or revise the exact ten ids, their order, all six `sourceSection` identities,
-and the Minimum Carnage, Venomverse, Infinity, and Damnation boundaries as one packet. Approval must
-also confirm that AvX: Consequences, Inhumanity, Secret Empire, Generations, and every other skipped
-scope remain out. Until that approval is durable in the plan, state, and changes record, no mapping,
-inventory, overlap, authoring, product, tooling, test, commit, push, or pull-request work is
-authorized.
+The parent approved the exact ten ids in source order, all six page-plus-section identities, the
+11-row Venomverse core, the 15-row Damnation event boundary, and the continued exclusion of AvX:
+Consequences, Inhumanity, Secret Empire, Generations, and every other skipped scope on 2026-08-21.
+The same instruction requires the six-versus-seven Minimum Carnage choice and the 46-versus-50
+Infinity Countdown and Infinity Wars choice to be resolved from refreshed source and metadata
+evidence rather than guessed. Any exact, subset, or partial overlap still blocks the affected target
+and requires chronological backfill. P03-T01 through P03-T03 implementation is authorized.
