@@ -2410,8 +2410,12 @@ function renderReading() {
   $('#ring-arc').setAttribute('stroke-dashoffset', String(RING_CIRCUMFERENCE * (1 - pct)));
   // One statement, not two. The ring used to read "0 of 120 read" over "120 to go · 0%", which is
   // the same fact said twice and subtracted once, in a 44px circle.
+  //
+  // The word "read" stays in the second line even though the first line is now a percentage. The
+  // svg is aria-hidden, so these two spans are the whole programmatic statement of progress: drop
+  // the verb and a screen reader announces "13%, 12 of 89" with nothing saying what was counted.
   $('#ring-label').textContent = total ? `${Math.round(pct * 100)}%` : '';
-  $('#ring-sub').textContent = !total ? 'Nothing in this list' : read === total ? 'All read' : `${read} of ${total}`;
+  $('#ring-sub').textContent = !total ? 'Nothing in this list' : read === total ? 'All read' : `${read} of ${total} read`;
 
   renderHero();
   renderShelf();

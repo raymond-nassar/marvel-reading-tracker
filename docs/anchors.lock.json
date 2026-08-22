@@ -799,8 +799,8 @@
     "fp": "e02400c51488e536",
     "head": "workflow_dispatch:"
   },
-  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|PRODUCT_BACKLOG.md:6427|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6427",
+  ".github/copilot-instructions.md|the-evidence-anchors-gate-and-how-to-not-corrupt|PRODUCT_BACKLOG.md:6428|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6428",
     "fp": "e1a5d1c42772f713",
     "head": "`package.json:37-41`, `package-lock.json:1-22`, `absent: .github/dependabot.yml, tracked-file invent"
   },
@@ -839,18 +839,18 @@
     "fp": "d3c89ab1f16d81ee",
     "head": "export function toggleRead(state, issueId) {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:2580-2588|0": {
-    "anchor": "src/js/main.js:2580-2588",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:2584-2592|0": {
+    "anchor": "src/js/main.js:2584-2592",
     "fp": "2ce9cb5e784ef76c",
     "head": "export function commitRows(container, desired) {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:2692|0": {
-    "anchor": "src/js/main.js:2692",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:2696|0": {
+    "anchor": "src/js/main.js:2696",
     "fp": "931bd75b9e4067fe",
     "head": "preservingFocus(rows, () => {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:2793-2796|0": {
-    "anchor": "src/js/main.js:2793-2796",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:2797-2800|0": {
+    "anchor": "src/js/main.js:2797-2800",
     "fp": "fe152ee33152803c",
     "head": "onclick: () => {"
   },
@@ -859,8 +859,8 @@
     "fp": "b70cf478e0e33507",
     "head": "function announceIfSaved(msg) {"
   },
-  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:4788-4808|0": {
-    "anchor": "src/js/main.js:4788-4808",
+  "docs/ARCHITECTURE.md|marking-one-issue-read|src/js/main.js:4792-4812|0": {
+    "anchor": "src/js/main.js:4792-4812",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -909,8 +909,8 @@
     "fp": "ba2f2ef80f02d08a",
     "head": "export class RateLimiter {"
   },
-  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:4461-4463|0": {
-    "anchor": "src/js/main.js:4461-4463",
+  "docs/ARCHITECTURE.md|the-module-graph-drawn-as-ownership|src/js/main.js:4465-4467|0": {
+    "anchor": "src/js/main.js:4465-4467",
     "fp": "8f226e48e15a5fea",
     "head": "cache = new ResponseCache({ baseUrl: value });"
   },
@@ -1014,13 +1014,13 @@
     "fp": "9f4e8a74882b0cdb",
     "head": "const raw = JSON.parse(localStorage.getItem('mrt.settings') || '{}');"
   },
-  "docs/DATA_PROVENANCE.md|the-size-of-the-question-measured-and-what-was-d|src/js/main.js:2468|0": {
-    "anchor": "src/js/main.js:2468",
+  "docs/DATA_PROVENANCE.md|the-size-of-the-question-measured-and-what-was-d|src/js/main.js:2472|0": {
+    "anchor": "src/js/main.js:2472",
     "fp": "326dd7903e5bfaeb",
     "head": "$('#hero-desc').textContent = synopsisFallback(issue, sessionSynopsis.get(issue.issueId));"
   },
-  "docs/DATA_PROVENANCE.md|the-size-of-the-question-measured-and-what-was-d|src/js/main.js:2656-2665|0": {
-    "anchor": "src/js/main.js:2656-2665",
+  "docs/DATA_PROVENANCE.md|the-size-of-the-question-measured-and-what-was-d|src/js/main.js:2660-2669|0": {
+    "anchor": "src/js/main.js:2660-2669",
     "fp": "1c9519267c0515d1",
     "head": "export function synopsisFallback(issue, sessionEntry = null) {"
   },
@@ -1034,8 +1034,8 @@
     "fp": "4fe337c262402dbd",
     "head": "**It draws no legal conclusion, and it is not legal advice.** Whether the tree as a whole may be"
   },
-  "docs/PUBLICATION_RUNBOOK.md|settings-that-only-become-available-on-the-day|PRODUCT_BACKLOG.md:7083-7087|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7083-7087",
+  "docs/PUBLICATION_RUNBOOK.md|settings-that-only-become-available-on-the-day|PRODUCT_BACKLOG.md:7084-7088|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7084-7088",
     "fp": "a6ceb97902e6f2c0",
     "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
   },
@@ -1089,13 +1089,13 @@
     "fp": "e9a1e74dee2c791e",
     "head": "// The publication gate answered a question that only gets asked once, and it was asked on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2343-2346|0": {
-    "anchor": "CHANGELOG.md:2343-2346",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2352-2355|0": {
+    "anchor": "CHANGELOG.md:2352-2355",
     "fp": "a1bbc9d008c99c4d",
     "head": "rather than being decided afresh each time. One protection could not be turned on: the service"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2355-2358|0": {
-    "anchor": "CHANGELOG.md:2355-2358",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|CHANGELOG.md:2364-2367|0": {
+    "anchor": "CHANGELOG.md:2364-2367",
     "fp": "f6d971f298b3d32e",
     "head": "and the deliberately destructive testing page that warns you before every button. The private"
   },
@@ -1104,48 +1104,48 @@
     "fp": "9c0bba462139bd28",
     "head": "remote rather than on the tree, for the reasons recorded in their blocks. Eight remain open on"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6436-6449|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6436-6449",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6437-6450|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6437-6450",
     "fp": "5a16aa8c31c583fe",
     "head": "Secret scanning is the task left unticked, and the clause \"where the repository plan supports them\""
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6847-6854|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6847-6854",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6848-6855|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6848-6855",
     "fp": "530abb424967ad7c",
     "head": "Shipped, with the third task deliberately left open. It cannot be done yet, and that was measured"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6913-6915|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6913-6915",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6914-6916|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6914-6916",
     "fp": "4e89601fade35e5b",
     "head": "above records. The seventh was the `CHANGELOG.md` entry announcing a private reporting route as"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6935-6940|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6935-6940",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6936-6941|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6936-6941",
     "fp": "689b1e6e9a7ed6b5",
     "head": "The framing is the part worth defending. Nobody outside this repository can see it, open an issue or"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6942-6948|0": {
-    "anchor": "PRODUCT_BACKLOG.md:6942-6948",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:6943-6949|0": {
+    "anchor": "PRODUCT_BACKLOG.md:6943-6949",
     "fp": "85a655f4b40673f2",
     "head": "The code of conduct is written for this project rather than adopted from a template, and it names"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7009-7015|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7009-7015",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7010-7016|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7010-7016",
     "fp": "b72eadfcd70292d3",
     "head": "Shipped, with the fifth task open and recorded as a blocker rather than ticked, in the shape BL-099"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7040-7045|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7040-7045",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7041-7046|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7041-7046",
     "fp": "6863c064dec49090",
     "head": "Blank issues stay enabled, and that is a promise the security policy already made rather than a"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7083-7087|0": {
-    "anchor": "PRODUCT_BACKLOG.md:7083-7087",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:7084-7088|0": {
+    "anchor": "PRODUCT_BACKLOG.md:7084-7088",
     "fp": "a6ceb97902e6f2c0",
     "head": "Two limits worth stating rather than discovering later. Every `required: true` in these forms is"
   },
-  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:9187-9192|0": {
-    "anchor": "PRODUCT_BACKLOG.md:9187-9192",
+  "docs/PUBLICATION_RUNBOOK.md|the-prose-that-stops-being-true|PRODUCT_BACKLOG.md:9188-9193|0": {
+    "anchor": "PRODUCT_BACKLOG.md:9188-9193",
     "fp": "38d80111ac4d6ef8",
     "head": "Three settings are the actionable half: secret scanning with push protection behind it, private"
   },
@@ -1194,18 +1194,18 @@
     "fp": "b7f45dbb792851ff",
     "head": "export function validateBackup(raw) {"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:2811-2812|0": {
-    "anchor": "src/js/main.js:2811-2812",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:2815-2816|0": {
+    "anchor": "src/js/main.js:2815-2816",
     "fp": "c4badc70c9aad76e",
     "head": "detailsBadge(item),"
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:3884-3901|0": {
-    "anchor": "src/js/main.js:3884-3901",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:3888-3905|0": {
+    "anchor": "src/js/main.js:3888-3905",
     "fp": "5600b34464861844",
     "head": "return el('div', { class: 'result' }, ["
   },
-  "docs/UX_STUDY.md|job-stories|src/js/main.js:4150-4210|0": {
-    "anchor": "src/js/main.js:4150-4210",
+  "docs/UX_STUDY.md|job-stories|src/js/main.js:4154-4214|0": {
+    "anchor": "src/js/main.js:4154-4214",
     "fp": "37fa266965946bbf",
     "head": "function renderProgress() {"
   },
@@ -1214,18 +1214,18 @@
     "fp": "d52c5acfb3ad6365",
     "head": "$('#reading-filters').append(...READING_FILTERS.map((f) => el('label', { class: 'fp' }, ["
   },
-  "docs/UX_STUDY.md|keyboard|src/styles.css:632|0": {
-    "anchor": "src/styles.css:632",
+  "docs/UX_STUDY.md|keyboard|src/styles.css:641|0": {
+    "anchor": "src/styles.css:641",
     "fp": "7077ab405dd69458",
     "head": ".fp input { position: absolute; opacity: 0; width: 1px; height: 1px; }"
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:12365|0": {
-    "anchor": "PRODUCT_BACKLOG.md:12365",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:12409|0": {
+    "anchor": "PRODUCT_BACKLOG.md:12409",
     "fp": "feb71ffdf55c404d",
     "head": "- Requiring accounts or cloud services for the core tracker experience."
   },
-  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:422-426|0": {
-    "anchor": "PRODUCT_BACKLOG.md:422-426",
+  "docs/UX_STUDY.md|proto-persona#attitude-to-cloud-services|PRODUCT_BACKLOG.md:423-427|0": {
+    "anchor": "PRODUCT_BACKLOG.md:423-427",
     "fp": "e3adde4f90cac392",
     "head": "Repository Constraint 3 forbids accounts, cloud services, analytics and telemetry, because the"
   },
@@ -1239,8 +1239,8 @@
     "fp": "e19583cc19f81884",
     "head": "// Contract verified 2026-08-03 (CHG-001): the live API's digitalId is authoritative; the"
   },
-  "docs/UX_STUDY.md|proto-persona#tolerance-for-missing-metadata|src/js/main.js:2811-2812|0": {
-    "anchor": "src/js/main.js:2811-2812",
+  "docs/UX_STUDY.md|proto-persona#tolerance-for-missing-metadata|src/js/main.js:2815-2816|0": {
+    "anchor": "src/js/main.js:2815-2816",
     "fp": "c4badc70c9aad76e",
     "head": "detailsBadge(item),"
   },
@@ -1249,8 +1249,8 @@
     "fp": "39027722fc19b2ed",
     "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
-  "docs/UX_STUDY.md|step-1-heuristic-evaluation#2|src/js/main.js:2867-2872|0": {
-    "anchor": "src/js/main.js:2867-2872",
+  "docs/UX_STUDY.md|step-1-heuristic-evaluation#2|src/js/main.js:2871-2876|0": {
+    "anchor": "src/js/main.js:2871-2876",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
@@ -1274,13 +1274,13 @@
     "fp": "90461cc45716fa24",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
-  "docs/UX_STUDY.md|sweep-result|src/js/main.js:3968-3976|0": {
-    "anchor": "src/js/main.js:3968-3976",
+  "docs/UX_STUDY.md|sweep-result|src/js/main.js:3972-3980|0": {
+    "anchor": "src/js/main.js:3972-3980",
     "fp": "9b9575dc8a81cd13",
     "head": "function wireCatalogSearch() {"
   },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css:1269-1271|0": {
-    "anchor": "src/styles.css:1269-1271",
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:1278-1280|0": {
+    "anchor": "src/styles.css:1278-1280",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -1289,8 +1289,8 @@
     "fp": "8e9f0b814f7bdc04",
     "head": ":focus-visible {"
   },
-  "docs/UX_STUDY.md|sweep-result|src/styles.css:473|0": {
-    "anchor": "src/styles.css:473",
+  "docs/UX_STUDY.md|sweep-result|src/styles.css:482|0": {
+    "anchor": "src/styles.css:482",
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
@@ -1299,13 +1299,13 @@
     "fp": "3cbc7d76b21e95fa",
     "head": "// Generated from src/data/hickman_full.json - real issues and real covers. The synopses this"
   },
-  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:1269-1271|0": {
-    "anchor": "src/styles.css:1269-1271",
+  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:1278-1280|0": {
+    "anchor": "src/styles.css:1278-1280",
     "fp": "6505ad8d84b22c24",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
-  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:473|0": {
-    "anchor": "src/styles.css:473",
+  "docs/UX_STUDY.md|user-preference-emulation|src/styles.css:482|0": {
+    "anchor": "src/styles.css:482",
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
@@ -1324,18 +1324,18 @@
     "fp": "ba9fc4d401e78741",
     "head": "/* Two purples, because one cannot serve both jobs on a dark page. `--accent` is a"
   },
-  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css:576|0": {
-    "anchor": "src/styles.css:576",
+  "docs/UX_STUDY.md|ux-a-001-the-primary-call-to-action-and-the-acce|src/styles.css:585|0": {
+    "anchor": "src/styles.css:585",
     "fp": "3a6460e8dae6367c",
     "head": "kbd { font: inherit; font-size: var(--t-caption); border: 1px solid rgb(var(--tint-base) / 30.196%);"
   },
-  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:692-693|0": {
-    "anchor": "src/styles.css:692-693",
+  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:701-702|0": {
+    "anchor": "src/styles.css:701-702",
     "fp": "4867cdf75f778888",
     "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
   },
-  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:695|0": {
-    "anchor": "src/styles.css:695",
+  "docs/UX_STUDY.md|ux-a-002-read-rows-are-dimmed-by-a-blanket-opaci|src/styles.css:704|0": {
+    "anchor": "src/styles.css:704",
     "fp": "6ba162a32bf16415",
     "head": ".row.is-read img { opacity: .5; }"
   },
@@ -1344,18 +1344,18 @@
     "fp": "530c3d774c082668",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/styles.css:518-525|0": {
-    "anchor": "src/styles.css:518-525",
+  "docs/UX_STUDY.md|ux-a-003-hero-text-contrast-is-undeterminable-be|src/styles.css:527-534|0": {
+    "anchor": "src/styles.css:527-534",
     "fp": "d9fb3bc05f56276d",
     "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
   },
-  "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css:707-710|0": {
-    "anchor": "src/styles.css:707-710",
+  "docs/UX_STUDY.md|ux-a-004-row-controls-are-below-24-by-24-pixels-|src/styles.css:716-719|0": {
+    "anchor": "src/styles.css:716-719",
     "fp": "713b8b6372bfe540",
     "head": ".cb {"
   },
-  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css:764-765|0": {
-    "anchor": "src/styles.css:764-765",
+  "docs/UX_STUDY.md|ux-a-005-row-actions-are-invisible-until-hover-s|src/styles.css:773-774|0": {
+    "anchor": "src/styles.css:773-774",
     "fp": "3a7250a4d0e170ae",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -1404,8 +1404,8 @@
     "fp": "e3ff49812c2ea71d",
     "head": "for (const btn of document.querySelectorAll('.ri[data-view]')) {"
   },
-  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:1269-1276|0": {
-    "anchor": "src/styles.css:1269-1276",
+  "docs/UX_STUDY.md|ux-a-008-the-interface-is-locked-to-a-dark-schem|src/styles.css:1278-1285|0": {
+    "anchor": "src/styles.css:1278-1285",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
@@ -1414,13 +1414,13 @@
     "fp": "53b9bb8e0988cf2b",
     "head": "color-scheme: dark;"
   },
-  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:2807-2812|0": {
-    "anchor": "src/js/main.js:2807-2812",
+  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:2811-2816|0": {
+    "anchor": "src/js/main.js:2811-2816",
     "fp": "b5ed750de57fac97",
     "head": "el('span', { class: `badge ${badgeClass}` }, ["
   },
-  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:2867-2872|0": {
-    "anchor": "src/js/main.js:2867-2872",
+  "docs/UX_STUDY.md|ux-a-009-the-full-availability-description-is-ca|src/js/main.js:2871-2876|0": {
+    "anchor": "src/js/main.js:2871-2876",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
@@ -1444,13 +1444,13 @@
     "fp": "0c13bbed47c568da",
     "head": "export function isTextEntry(el) {"
   },
-  "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/js/main.js:2898-2921|0": {
-    "anchor": "src/js/main.js:2898-2921",
+  "docs/UX_STUDY.md|ux-d-003-the-advertised-keyboard-shortcut-stops-|src/js/main.js:2902-2925|0": {
+    "anchor": "src/js/main.js:2902-2925",
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
-  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:4788-4808|0": {
-    "anchor": "src/js/main.js:4788-4808",
+  "docs/UX_STUDY.md|ux-h-001-a-single-read-toggle-re-renders-the-ent|src/js/main.js:4792-4812|0": {
+    "anchor": "src/js/main.js:4792-4812",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -1474,8 +1474,8 @@
     "fp": "6cbc2f6bdb1dc112",
     "head": "$('#btn-delete-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:4063|0": {
-    "anchor": "src/js/main.js:4063",
+  "docs/UX_STUDY.md|ux-h-002-native-browser-dialogs-run-alongside-th|src/js/main.js:4067|0": {
+    "anchor": "src/js/main.js:4067",
     "fp": "8ab27e651ace604e",
     "head": "notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error', importKey);"
   },
@@ -1489,8 +1489,8 @@
     "fp": "6cbc2f6bdb1dc112",
     "head": "$('#btn-delete-list').addEventListener('click', async () => {"
   },
-  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:4438-4444|0": {
-    "anchor": "src/js/main.js:4438-4444",
+  "docs/UX_STUDY.md|ux-h-003-deleting-a-list-cannot-be-undone-while-|src/js/main.js:4442-4448|0": {
+    "anchor": "src/js/main.js:4442-4448",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -1504,8 +1504,8 @@
     "fp": "d285f976e18ead5e",
     "head": "<h3>Keyboard shortcuts</h3>"
   },
-  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/js/main.js:2898-2921|0": {
-    "anchor": "src/js/main.js:2898-2921",
+  "docs/UX_STUDY.md|ux-h-004-the-advertised-keyboard-shortcut-is-doc|src/js/main.js:2902-2925|0": {
+    "anchor": "src/js/main.js:2902-2925",
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
@@ -1534,8 +1534,8 @@
     "fp": "46b299edcd0627b1",
     "head": "<nav id=\"sidebar-nav\" aria-label=\"Main\">"
   },
-  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/js/main.js:2812|0": {
-    "anchor": "src/js/main.js:2812",
+  "docs/UX_STUDY.md|ux-i-003-two-library-sub-views-from-the-adopted-|src/js/main.js:2816|0": {
+    "anchor": "src/js/main.js:2816",
     "fp": "bd66076a7b8dce19",
     "head": "item.source === 'manual' ? el('span', { class: 'badge badge-unknown' }, 'by hand') : null,"
   },
@@ -1569,13 +1569,13 @@
     "fp": "4fa15a7cc8430788",
     "head": "<div class=\"sub\" id=\"progress-sub\">Counted over unique issues across every list, so an issue in two "
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:3891|0": {
-    "anchor": "src/js/main.js:3891",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:3895|0": {
+    "anchor": "src/js/main.js:3895",
     "fp": "bc4ade19df6d109a",
     "head": "pathChooser(story, 'catalog', paint),"
   },
-  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:4150-4210|0": {
-    "anchor": "src/js/main.js:4150-4210",
+  "PRODUCT_BACKLOG.md|1-functional-suitability|src/js/main.js:4154-4214|0": {
+    "anchor": "src/js/main.js:4154-4214",
     "fp": "37fa266965946bbf",
     "head": "function renderProgress() {"
   },
@@ -1584,13 +1584,13 @@
     "fp": "b5dd33b3dd95fa49",
     "head": "// Series and creators are searched locally against a vendored index, because the API ignores"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2687-2865|0": {
-    "anchor": "src/js/main.js:2687-2865",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:2691-2869|0": {
+    "anchor": "src/js/main.js:2691-2869",
     "fp": "cac2b8a5d8e79cfe",
     "head": "function renderRows() {"
   },
-  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:4788-4808|0": {
-    "anchor": "src/js/main.js:4788-4808",
+  "PRODUCT_BACKLOG.md|2-performance-efficiency|src/js/main.js:4792-4812|0": {
+    "anchor": "src/js/main.js:4792-4812",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -1619,23 +1619,23 @@
     "fp": "fdc5efd3e796a244",
     "head": "function undoDelete() {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2807-2812|0": {
-    "anchor": "src/js/main.js:2807-2812",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2811-2816|0": {
+    "anchor": "src/js/main.js:2811-2816",
     "fp": "b5ed750de57fac97",
     "head": "el('span', { class: `badge ${badgeClass}` }, ["
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2867-2872|0": {
-    "anchor": "src/js/main.js:2867-2872",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:2871-2876|0": {
+    "anchor": "src/js/main.js:2871-2876",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:4438-4444|0": {
-    "anchor": "src/js/main.js:4438-4444",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/js/main.js:4442-4448|0": {
+    "anchor": "src/js/main.js:4442-4448",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:764-765|0": {
-    "anchor": "src/styles.css:764-765",
+  "PRODUCT_BACKLOG.md|4-interaction-capability|src/styles.css:773-774|0": {
+    "anchor": "src/styles.css:773-774",
     "fp": "3a7250a4d0e170ae",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -1699,18 +1699,18 @@
     "fp": "0c509180e2c07d4d",
     "head": "function showView(next, { focus = true, push = false } = {}) {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:4788-4808|0": {
-    "anchor": "src/js/main.js:4788-4808",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/js/main.js:4792-4812|0": {
+    "anchor": "src/js/main.js:4792-4812",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:678-681|0": {
-    "anchor": "src/styles.css:678-681",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:687-690|0": {
+    "anchor": "src/styles.css:687-690",
     "fp": "fdc83297d03c82f8",
     "head": ".row {"
   },
-  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:906-922|0": {
-    "anchor": "src/styles.css:906-922",
+  "PRODUCT_BACKLOG.md|7-maintainability|src/styles.css:915-931|0": {
+    "anchor": "src/styles.css:915-931",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -1739,8 +1739,8 @@
     "fp": "31193066f7e84653",
     "head": "const version = Number(raw.schemaVersion ?? 1);"
   },
-  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:4446-4479|0": {
-    "anchor": "src/js/main.js:4446-4479",
+  "PRODUCT_BACKLOG.md|8-flexibility|src/js/main.js:4450-4483|0": {
+    "anchor": "src/js/main.js:4450-4483",
     "fp": "148fb23eb9d1aeb8",
     "head": "$('#form-settings').addEventListener('submit', (e) => {"
   },
@@ -1759,13 +1759,13 @@
     "fp": "c546f6073d5d1cb1",
     "head": "export function checkOrdinalHeadings(d) {"
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-sits-near-the-b|src/js/main.js:3884-3901|0": {
-    "anchor": "src/js/main.js:3884-3901",
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-sits-near-the-b|src/js/main.js:3888-3905|0": {
+    "anchor": "src/js/main.js:3888-3905",
     "fp": "5600b34464861844",
     "head": "return el('div', { class: 'result' }, ["
   },
-  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-sits-near-the-b|src/js/main.js:3891|0": {
-    "anchor": "src/js/main.js:3891",
+  "PRODUCT_BACKLOG.md|case-2-bl-007-is-labelled-p1-but-sits-near-the-b|src/js/main.js:3895|0": {
+    "anchor": "src/js/main.js:3895",
     "fp": "bc4ade19df6d109a",
     "head": "pathChooser(story, 'catalog', paint),"
   },
@@ -1849,8 +1849,8 @@
     "fp": "cb635e136016596a",
     "head": ".copilot-tracking/"
   },
-  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:3219-3228|0": {
-    "anchor": "CHANGELOG.md:3219-3228",
+  "PRODUCT_BACKLOG.md|item-details|CHANGELOG.md:3228-3237|0": {
+    "anchor": "CHANGELOG.md:3228-3237",
     "fp": "9536555cba42e8dc",
     "head": "reconciliation record measured `src/js/main.js` at 1,566 lines and the test suite at 224 tests."
   },
@@ -1926,7 +1926,7 @@
   },
   "PRODUCT_BACKLOG.md|item-details|GOVERNANCE.md:1-95|0": {
     "anchor": "GOVERNANCE.md:1-95",
-    "fp": "2d5d5868526c6aaf",
+    "fp": "4b01b63caed774cd",
     "head": "# Governance"
   },
   "PRODUCT_BACKLOG.md|item-details|GOVERNANCE.md:44-46|0": {
@@ -1959,29 +1959,29 @@
     "fp": "2dd7937698bc86f1",
     "head": "\"devDependencies\": {"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12277-12279|0": {
-    "anchor": "PRODUCT_BACKLOG.md:12277-12279",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12321-12323|0": {
+    "anchor": "PRODUCT_BACKLOG.md:12321-12323",
     "fp": "2622e3ad2443790b",
     "head": "224 tests exist and nothing runs them automatically. The three modules touching the browser have no"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12505-12507|0": {
-    "anchor": "PRODUCT_BACKLOG.md:12505-12507",
-    "fp": "398817d17e755390",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12549-12551|0": {
+    "anchor": "PRODUCT_BACKLOG.md:12549-12551",
+    "fp": "953f9deac6e9d0d7",
     "head": "- Modularity gap: `src/js/main.js` is 1,566 lines and carries every view, every event handler and <!"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12526-12528|0": {
-    "anchor": "PRODUCT_BACKLOG.md:12526-12528",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:12570-12572|0": {
+    "anchor": "PRODUCT_BACKLOG.md:12570-12572",
     "fp": "70f2b470e750ff0d",
     "head": "Resolved: `BL-046` extracted it into one module, which all three scripts that page the API now"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1532-1533|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1532-1533",
-    "fp": "d54a88937f131cba",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:1533-1534|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1533-1534",
+    "fp": "701bb0925ceb3169",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:203-207|0": {
     "anchor": "PRODUCT_BACKLOG.md:203-207",
-    "fp": "e9ef53bacd0d9908",
+    "fp": "28b1e2c292c8edd3",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:213-215|0": {
@@ -1999,28 +1999,28 @@
     "fp": "ae02072879fb9465",
     "head": "`Status` is `Ready` for an item still to be picked up and `Shipped` for one delivered since this"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2628|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2628",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2629|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2629",
     "fp": "2a31d6a4f8340417",
     "head": "how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2905-2908|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2905-2908",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:2906-2909|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2906-2909",
     "fp": "11ccb83f4582ed29",
     "head": "two that pass unfixed are the honest baselines, and they are not the two filter assertions, which is"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4866-4869|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4866-4869",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4867-4870|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4867-4870",
     "fp": "5f70e71a6ffb659a",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4866-4874|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4866-4874",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4867-4875|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4867-4875",
     "fp": "5e0f5efb50840fc0",
     "head": "Not closed by this item. The gate reads four claim forms, and the block above names two more figures"
   },
-  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4871-4874|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4871-4874",
+  "PRODUCT_BACKLOG.md|item-details|PRODUCT_BACKLOG.md:4872-4875|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4872-4875",
     "fp": "f4e601f69a12978f",
     "head": "this repository's own words. They are recorded here rather than filed, because the cost of a bespoke"
   },
@@ -2346,12 +2346,12 @@
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:102|0": {
     "anchor": "scripts/check-palette.mjs:102",
-    "fp": "78f0df04beca37ee",
-    "head": "// (`src/styles.css:709` and `src/styles.css:711`), which is 1.93:1 in the dark theme. It is"
+    "fp": "41740615ce45fe89",
+    "head": "// (`src/styles.css:718` and `src/styles.css:720`), which is 1.93:1 in the dark theme. It is"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:151-179|0": {
     "anchor": "scripts/check-palette.mjs:151-179",
-    "fp": "b84aadfec867a2a7",
+    "fp": "afbb124f4b431eca",
     "head": "export const SURFACES = {"
   },
   "PRODUCT_BACKLOG.md|item-details|scripts/check-palette.mjs:207-227|0": {
@@ -3304,38 +3304,38 @@
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2449|0": {
-    "anchor": "src/js/main.js:2449",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2453|0": {
+    "anchor": "src/js/main.js:2453",
     "fp": "68d0767680173eb7",
     "head": "const bgUrl = settings.covers ? coverUrl(issue, 'detail') : null;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2449|1": {
-    "anchor": "src/js/main.js:2449",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2453|1": {
+    "anchor": "src/js/main.js:2453",
     "fp": "68d0767680173eb7",
     "head": "const bgUrl = settings.covers ? coverUrl(issue, 'detail') : null;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2468|0": {
-    "anchor": "src/js/main.js:2468",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2472|0": {
+    "anchor": "src/js/main.js:2472",
     "fp": "326dd7903e5bfaeb",
     "head": "$('#hero-desc').textContent = synopsisFallback(issue, sessionSynopsis.get(issue.issueId));"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2555|0": {
-    "anchor": "src/js/main.js:2555",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2559|0": {
+    "anchor": "src/js/main.js:2559",
     "fp": "68438c96755a3a2a",
     "head": "primary: 'open',"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2580-2588|0": {
-    "anchor": "src/js/main.js:2580-2588",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2584-2592|0": {
+    "anchor": "src/js/main.js:2584-2592",
     "fp": "2ce9cb5e784ef76c",
     "head": "export function commitRows(container, desired) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2590-2605|0": {
-    "anchor": "src/js/main.js:2590-2605",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2594-2609|0": {
+    "anchor": "src/js/main.js:2594-2609",
     "fp": "77a96d3468f3df8f",
     "head": "// The key is the whole item rather than a list of the fields a row happens to read. An"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2604|0": {
-    "anchor": "src/js/main.js:2604",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2608|0": {
+    "anchor": "src/js/main.js:2608",
     "fp": "d592ba0f1982a332",
     "head": "return `${JSON.stringify(item)}|${item.issueId === currentId}|${today}|${covers !== false}`;"
   },
@@ -3344,28 +3344,28 @@
     "fp": "d1af2a9559aeb1bf",
     "head": "function preservingFocus(container, rebuild, opts) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2656-2665|0": {
-    "anchor": "src/js/main.js:2656-2665",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2660-2669|0": {
+    "anchor": "src/js/main.js:2660-2669",
     "fp": "1c9519267c0515d1",
     "head": "export function synopsisFallback(issue, sessionEntry = null) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2715|0": {
-    "anchor": "src/js/main.js:2715",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2719|0": {
+    "anchor": "src/js/main.js:2719",
     "fp": "65dd2b88c0b13a58",
     "head": "const items = all.filter((it) => matchesReadingFilter(filter, it));"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2791|0": {
-    "anchor": "src/js/main.js:2791",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2795|0": {
+    "anchor": "src/js/main.js:2795",
     "fp": "6260601161fee24f",
     "head": "'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2807-2812|0": {
-    "anchor": "src/js/main.js:2807-2812",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2811-2816|0": {
+    "anchor": "src/js/main.js:2811-2816",
     "fp": "b5ed750de57fac97",
     "head": "el('span', { class: `badge ${badgeClass}` }, ["
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2807-2812|1": {
-    "anchor": "src/js/main.js:2807-2812",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2811-2816|1": {
+    "anchor": "src/js/main.js:2811-2816",
     "fp": "b5ed750de57fac97",
     "head": "el('span', { class: `badge ${badgeClass}` }, ["
   },
@@ -3374,28 +3374,28 @@
     "fp": "641304695be79822",
     "head": "export function announceChannel(open, after) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2858|0": {
-    "anchor": "src/js/main.js:2858",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2862|0": {
+    "anchor": "src/js/main.js:2862",
     "fp": "81dbc455d847ca75",
     "head": "primary: 'read',"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2867-2872|0": {
-    "anchor": "src/js/main.js:2867-2872",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2871-2876|0": {
+    "anchor": "src/js/main.js:2871-2876",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2900|0": {
-    "anchor": "src/js/main.js:2900",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2904|0": {
+    "anchor": "src/js/main.js:2904",
     "fp": "1750fc696b0cd38a",
     "head": "if (view !== 'read' || e.metaKey || e.ctrlKey || e.altKey) return;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2954-2963|0": {
-    "anchor": "src/js/main.js:2954-2963",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:2958-2967|0": {
+    "anchor": "src/js/main.js:2958-2967",
     "fp": "3ed4516f9ec828a3",
     "head": "export function hydrationAnnouncement(status) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3003|0": {
-    "anchor": "src/js/main.js:3003",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3007|0": {
+    "anchor": "src/js/main.js:3007",
     "fp": "91c3c8709391a229",
     "head": "export function synopsisDisclaimer(baseUrl) {"
   },
@@ -3404,28 +3404,28 @@
     "fp": "5653c58ac2ec1711",
     "head": "export function stateAnnouncer(speak, seed = []) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3293|0": {
-    "anchor": "src/js/main.js:3293",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3297|0": {
+    "anchor": "src/js/main.js:3297",
     "fp": "2450e376de7482c6",
     "head": "announce(`${message} ${added} added${skipped ? `, ${skipped} already in the list` : ''}.`);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3300|0": {
-    "anchor": "src/js/main.js:3300",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3304|0": {
+    "anchor": "src/js/main.js:3304",
     "fp": "31475027e7509b8b",
     "head": "if (added > 0) hydrator.start(id);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3308|0": {
-    "anchor": "src/js/main.js:3308",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3312|0": {
+    "anchor": "src/js/main.js:3312",
     "fp": "7bd1ae0b52d2a935",
     "head": "const issues = await api.seriesIssues(series.id, {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3324|0": {
-    "anchor": "src/js/main.js:3324",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3328|0": {
+    "anchor": "src/js/main.js:3328",
     "fp": "e03477593ebcb719",
     "head": "const issues = await api.creatorIssues(creator.id, {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3354|0": {
-    "anchor": "src/js/main.js:3354",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3358|0": {
+    "anchor": "src/js/main.js:3358",
     "fp": "a33500273e2d9180",
     "head": "const name = headings[0] || `Imported ${new Date().toLocaleDateString()}`;"
   },
@@ -3434,8 +3434,8 @@
     "fp": "da65ab7e7c48f6f6",
     "head": "export function passiveAnnouncer(speak) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3417|0": {
-    "anchor": "src/js/main.js:3417",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3421|0": {
+    "anchor": "src/js/main.js:3421",
     "fp": "640bde9ca30a8cc4",
     "head": "const candidates = await api.searchIssues(entry.title, { limit: 25 });"
   },
@@ -3444,8 +3444,8 @@
     "fp": "c8ff28f8e2ea386d",
     "head": "function isLive(node) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3603|0": {
-    "anchor": "src/js/main.js:3603",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3607|0": {
+    "anchor": "src/js/main.js:3607",
     "fp": "81807e732e7c9cb2",
     "head": "const issueId = issueIdFromUrl(url) ?? wikiId ?? -Date.now();"
   },
@@ -3459,13 +3459,13 @@
     "fp": "77007c4861c2ec00",
     "head": "const notices = new Map();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3856-3861|0": {
-    "anchor": "src/js/main.js:3856-3861",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3860-3865|0": {
+    "anchor": "src/js/main.js:3860-3865",
     "fp": "4995ea90f0deccc9",
     "head": "meta.textContent = ["
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3890|0": {
-    "anchor": "src/js/main.js:3890",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:3894|0": {
+    "anchor": "src/js/main.js:3894",
     "fp": "33e71ae809b76488",
     "head": "el('h3', { class: 'result-title', text: title }),"
   },
@@ -3484,193 +3484,193 @@
     "fp": "d63d9c973c5c5e6c",
     "head": "for (const [, note] of notices) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4052|0": {
-    "anchor": "src/js/main.js:4052",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4056|0": {
+    "anchor": "src/js/main.js:4056",
     "fp": "7a6b3e0fd15becfe",
     "head": "btn.disabled = true;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4069-4075|0": {
-    "anchor": "src/js/main.js:4069-4075",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4073-4079|0": {
+    "anchor": "src/js/main.js:4073-4079",
     "fp": "2f1c0c819d1de153",
     "head": "// No `hydrated: true` here. It was asserted over the whole file, which is right for the 688"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4079-4090|0": {
-    "anchor": "src/js/main.js:4079-4090",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4083-4094|0": {
+    "anchor": "src/js/main.js:4083-4094",
     "fp": "040ed2d540e2a8c3",
     "head": "if (!store.lastUpdateOk) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4079-4090|1": {
-    "anchor": "src/js/main.js:4079-4090",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4083-4094|1": {
+    "anchor": "src/js/main.js:4083-4094",
     "fp": "040ed2d540e2a8c3",
     "head": "if (!store.lastUpdateOk) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4101-4107|0": {
-    "anchor": "src/js/main.js:4101-4107",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4105-4111|0": {
+    "anchor": "src/js/main.js:4105-4111",
     "fp": "e24ba789073145b4",
     "head": "// Some curated orders are short of metadata, in two ways that look nothing alike to a reader"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4110|0": {
-    "anchor": "src/js/main.js:4110",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4114|0": {
+    "anchor": "src/js/main.js:4114",
     "fp": "fdade8739af79cef",
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4110|1": {
-    "anchor": "src/js/main.js:4110",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4114|1": {
+    "anchor": "src/js/main.js:4114",
     "fp": "fdade8739af79cef",
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4110|2": {
-    "anchor": "src/js/main.js:4110",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4114|2": {
+    "anchor": "src/js/main.js:4114",
     "fp": "fdade8739af79cef",
     "head": "const withdrawn = forgetDeletedFor(catalogId, order.name);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4116|0": {
-    "anchor": "src/js/main.js:4116",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4120|0": {
+    "anchor": "src/js/main.js:4120",
     "fp": "7b7896b1f0fabe72",
     "head": "announce(parts.join(' '));"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4127|0": {
-    "anchor": "src/js/main.js:4127",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4131|0": {
+    "anchor": "src/js/main.js:4131",
     "fp": "640ca8555353598d",
     "head": "btn.disabled = false;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4164-4166|0": {
-    "anchor": "src/js/main.js:4164-4166",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4168-4170|0": {
+    "anchor": "src/js/main.js:4168-4170",
     "fp": "f65558c74b0b4973",
     "head": "$('#progress-sub').textContent = scoped"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4217-4255|0": {
-    "anchor": "src/js/main.js:4217-4255",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4221-4259|0": {
+    "anchor": "src/js/main.js:4221-4259",
     "fp": "b10efb4bfbdc4910",
     "head": "function renderLibrary() {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4399-4427|0": {
-    "anchor": "src/js/main.js:4399-4427",
-    "fp": "d26b5eec264b921c",
-    "head": "$('#restore-file').addEventListener('change', async (e) => {"
-  },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4399-4427|1": {
-    "anchor": "src/js/main.js:4399-4427",
-    "fp": "d26b5eec264b921c",
-    "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
   "PRODUCT_BACKLOG.md|item-details|src/js/main.js:44-45|0": {
     "anchor": "src/js/main.js:44-45",
     "fp": "9179653f1e66ad0d",
     "head": "const SETTINGS_KEY = 'mrt.settings';"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4422|0": {
-    "anchor": "src/js/main.js:4422",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4403-4431|0": {
+    "anchor": "src/js/main.js:4403-4431",
+    "fp": "d26b5eec264b921c",
+    "head": "$('#restore-file').addEventListener('change', async (e) => {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4403-4431|1": {
+    "anchor": "src/js/main.js:4403-4431",
+    "fp": "d26b5eec264b921c",
+    "head": "$('#restore-file').addEventListener('change', async (e) => {"
+  },
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4426|0": {
+    "anchor": "src/js/main.js:4426",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4422|1": {
-    "anchor": "src/js/main.js:4422",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4426|1": {
+    "anchor": "src/js/main.js:4426",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4422|2": {
-    "anchor": "src/js/main.js:4422",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4426|2": {
+    "anchor": "src/js/main.js:4426",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4438-4444|0": {
-    "anchor": "src/js/main.js:4438-4444",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4442-4448|0": {
+    "anchor": "src/js/main.js:4442-4448",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4438-4444|1": {
-    "anchor": "src/js/main.js:4438-4444",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4442-4448|1": {
+    "anchor": "src/js/main.js:4442-4448",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4443|0": {
-    "anchor": "src/js/main.js:4443",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4447|0": {
+    "anchor": "src/js/main.js:4447",
     "fp": "8a9fef9441555e07",
     "head": "if (res.ok) forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4443|1": {
-    "anchor": "src/js/main.js:4443",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4447|1": {
+    "anchor": "src/js/main.js:4447",
     "fp": "8a9fef9441555e07",
     "head": "if (res.ok) forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4449-4450|0": {
-    "anchor": "src/js/main.js:4449-4450",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4453-4454|0": {
+    "anchor": "src/js/main.js:4453-4454",
     "fp": "2924a87434a010b4",
     "head": "if (!isAllowedApiBase(value)) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4461-4463|0": {
-    "anchor": "src/js/main.js:4461-4463",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4465-4467|0": {
+    "anchor": "src/js/main.js:4465-4467",
     "fp": "8f226e48e15a5fea",
     "head": "cache = new ResponseCache({ baseUrl: value });"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4487-4524|0": {
-    "anchor": "src/js/main.js:4487-4524",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4491-4528|0": {
+    "anchor": "src/js/main.js:4491-4528",
     "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4487-4524|1": {
-    "anchor": "src/js/main.js:4487-4524",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4491-4528|1": {
+    "anchor": "src/js/main.js:4491-4528",
     "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4498-4523|0": {
-    "anchor": "src/js/main.js:4498-4523",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4502-4527|0": {
+    "anchor": "src/js/main.js:4502-4527",
     "fp": "d3202dc971ffdb49",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4498|0": {
-    "anchor": "src/js/main.js:4498",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4502|0": {
+    "anchor": "src/js/main.js:4502",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4498|1": {
-    "anchor": "src/js/main.js:4498",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4502|1": {
+    "anchor": "src/js/main.js:4502",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4498|2": {
-    "anchor": "src/js/main.js:4498",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4502|2": {
+    "anchor": "src/js/main.js:4502",
     "fp": "5c0fc3bcf2044a48",
     "head": "forgetDeleted();"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4611-4617|0": {
-    "anchor": "src/js/main.js:4611-4617",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4615-4621|0": {
+    "anchor": "src/js/main.js:4615-4621",
     "fp": "4e96d4938aa42b04",
     "head": "c.live"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4708-4771|0": {
-    "anchor": "src/js/main.js:4708-4771",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4712-4775|0": {
+    "anchor": "src/js/main.js:4712-4775",
     "fp": "ee245f132cd8352f",
     "head": "async function checkHealth() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4743-4757|0": {
-    "anchor": "src/js/main.js:4743-4757",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4747-4761|0": {
+    "anchor": "src/js/main.js:4747-4761",
     "fp": "4809a55ef0ed038d",
     "head": "export function backoffAnnouncer(speak) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4761-4764|0": {
-    "anchor": "src/js/main.js:4761-4764",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4765-4768|0": {
+    "anchor": "src/js/main.js:4765-4768",
     "fp": "3ce058140aeaef21",
     "head": "function onApiStatus(s) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4788|0": {
-    "anchor": "src/js/main.js:4788",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4792|0": {
+    "anchor": "src/js/main.js:4792",
     "fp": "badb42e555d676d1",
     "head": "function renderAll() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4821-4842|0": {
-    "anchor": "src/js/main.js:4821-4842",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4825-4846|0": {
+    "anchor": "src/js/main.js:4825-4846",
     "fp": "869903fa5815c604",
     "head": "export function boot() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4821|0": {
-    "anchor": "src/js/main.js:4821",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4825|0": {
+    "anchor": "src/js/main.js:4825",
     "fp": "ae8c800634b48bfe",
     "head": "export function boot() {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4870-4874|0": {
-    "anchor": "src/js/main.js:4870-4874",
+  "PRODUCT_BACKLOG.md|item-details|src/js/main.js:4874-4878|0": {
+    "anchor": "src/js/main.js:4874-4878",
     "fp": "5bf111284df2b094",
     "head": "// Nothing reports store.lastError here. Every writer of it calls onChange in the same step, and"
   },
@@ -3904,123 +3904,123 @@
     "fp": "fe5aeebbafa03538",
     "head": "light enough to clear 4.5:1 the other way. This is the same split `--accent` and"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:1269-1276|0": {
-    "anchor": "src/styles.css:1269-1276",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:1278-1285|0": {
+    "anchor": "src/styles.css:1278-1285",
     "fp": "9bb3bad6e68a2a84",
     "head": "@media (prefers-reduced-motion: reduce) {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:1300|0": {
-    "anchor": "src/styles.css:1300",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:1309|0": {
+    "anchor": "src/styles.css:1309",
     "fp": "3a5c838f7187d084",
     "head": "background: color-mix(in srgb, var(--warn) 12%, var(--panel));"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:333-334|0": {
-    "anchor": "src/styles.css:333-334",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:342-343|0": {
+    "anchor": "src/styles.css:342-343",
     "fp": "9aa045d8bf9374a3",
     "head": "/* The selected state is a purple accent bar AND a raised surface AND a heavier label, so it"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:336|0": {
-    "anchor": "src/styles.css:336",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:345|0": {
+    "anchor": "src/styles.css:345",
     "fp": "0aa89ba98945a96a",
     "head": "background: rgb(var(--tint-base) / 8%); color: var(--text); font-weight: 600;"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:340|0": {
-    "anchor": "src/styles.css:340",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:349|0": {
+    "anchor": "src/styles.css:349",
     "fp": "1a189415f7ffa207",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--accent);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:426-428|0": {
-    "anchor": "src/styles.css:426-428",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:435-437|0": {
+    "anchor": "src/styles.css:435-437",
     "fp": "acdb5615e2c2cc2a",
     "head": ".pill-start, .pill-beginner {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:473|0": {
-    "anchor": "src/styles.css:473",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:482|0": {
+    "anchor": "src/styles.css:482",
     "fp": "c05f099c43c67496",
     "head": "#ring-arc { transition: stroke-dashoffset .35s ease; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:481|0": {
-    "anchor": "src/styles.css:481",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:490|0": {
+    "anchor": "src/styles.css:490",
     "fp": "e43da2b1ba3328bd",
     "head": ".tgl .sw { width: 26px; height: 15px; border-radius: 999px; background: var(--accent); position: rel"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:518-525|0": {
-    "anchor": "src/styles.css:518-525",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:527-534|0": {
+    "anchor": "src/styles.css:527-534",
     "fp": "d9fb3bc05f56276d",
     "head": "/* The top stop was #171a2099 (60% opaque). At that alpha the blurred cover art"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:534|0": {
-    "anchor": "src/styles.css:534",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:543|0": {
+    "anchor": "src/styles.css:543",
     "fp": "836c7bc0def19b2c",
     "head": "body.nocovers .art img, .art img[hidden] { display: none; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:534|1": {
-    "anchor": "src/styles.css:534",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:543|1": {
+    "anchor": "src/styles.css:543",
     "fp": "836c7bc0def19b2c",
     "head": "body.nocovers .art img, .art img[hidden] { display: none; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:563-567|0": {
-    "anchor": "src/styles.css:563-567",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:572-576|0": {
+    "anchor": "src/styles.css:572-576",
     "fp": "99e6d3a793bd6d7b",
     "head": ".btn {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:572|0": {
-    "anchor": "src/styles.css:572",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:581|0": {
+    "anchor": "src/styles.css:581",
     "fp": "955a5533014388f9",
     "head": ".btn-g { background: rgb(var(--tint-base) / 5.882%); color: var(--text); border-color: var(--line-2)"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:576|0": {
-    "anchor": "src/styles.css:576",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:585|0": {
+    "anchor": "src/styles.css:585",
     "fp": "3a6460e8dae6367c",
     "head": "kbd { font: inherit; font-size: var(--t-caption); border: 1px solid rgb(var(--tint-base) / 30.196%);"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:678-681|0": {
-    "anchor": "src/styles.css:678-681",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:687-690|0": {
+    "anchor": "src/styles.css:687-690",
     "fp": "fdc83297d03c82f8",
     "head": ".row {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:692-693|0": {
-    "anchor": "src/styles.css:692-693",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:701-702|0": {
+    "anchor": "src/styles.css:701-702",
     "fp": "4867cdf75f778888",
     "head": ".row.is-read .rt { color: var(--read-fg); text-decoration: line-through; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:695|0": {
-    "anchor": "src/styles.css:695",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:704|0": {
+    "anchor": "src/styles.css:704",
     "fp": "6ba162a32bf16415",
     "head": ".row.is-read img { opacity: .5; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:733-757|0": {
-    "anchor": "src/styles.css:733-757",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:742-766|0": {
+    "anchor": "src/styles.css:742-766",
     "fp": "0ca231bb4e98d821",
     "head": "/* These outlines are faint on purpose, and that is a recorded decision rather than an"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:759|0": {
-    "anchor": "src/styles.css:759",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:768|0": {
+    "anchor": "src/styles.css:768",
     "fp": "06802dffb3791505",
     "head": ".badge-expected, .badge-override-available { color: var(--teal); border-color: rgb(var(--teal-line) "
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:759|1": {
-    "anchor": "src/styles.css:759",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:768|1": {
+    "anchor": "src/styles.css:768",
     "fp": "06802dffb3791505",
     "head": ".badge-expected, .badge-override-available { color: var(--teal); border-color: rgb(var(--teal-line) "
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:764|0": {
-    "anchor": "src/styles.css:764",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:773|0": {
+    "anchor": "src/styles.css:773",
     "fp": "188826f8749bd3bc",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:782-783|0": {
-    "anchor": "src/styles.css:782-783",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:791-792|0": {
+    "anchor": "src/styles.css:791-792",
     "fp": "f3ad75123ecb57cd",
     "head": ".card > summary::before {"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:792|0": {
-    "anchor": "src/styles.css:792",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:801|0": {
+    "anchor": "src/styles.css:801",
     "fp": "a5884bb783e5d63e",
     "head": ".card-static > * { padding: 0 !important; }"
   },
-  "PRODUCT_BACKLOG.md|item-details|src/styles.css:906-922|0": {
-    "anchor": "src/styles.css:906-922",
+  "PRODUCT_BACKLOG.md|item-details|src/styles.css:915-931|0": {
+    "anchor": "src/styles.css:915-931",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -4074,8 +4074,8 @@
     "fp": "c727e9b5638b206f",
     "head": "assert.doesNotMatch(code, /MRT_PORT/, `${name} sets a port, which moves the stored progress`);"
   },
-  "PRODUCT_BACKLOG.md|item-details|test/library.test.js:243-273|0": {
-    "anchor": "test/library.test.js:243-273",
+  "PRODUCT_BACKLOG.md|item-details|test/library.test.js:256-286|0": {
+    "anchor": "test/library.test.js:256-286",
     "fp": "aaf0e826528174f3",
     "head": "test('every view main.js switches between has a section in the markup, and the reverse', () => {"
   },
@@ -4124,8 +4124,8 @@
     "fp": "3ecaccb832a49e38",
     "head": "\"test\": \"node --test\","
   },
-  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:4788-4808|0": {
-    "anchor": "src/js/main.js:4788-4808",
+  "PRODUCT_BACKLOG.md|orientation-disagreements|src/js/main.js:4792-4812|0": {
+    "anchor": "src/js/main.js:4792-4812",
     "fp": "b4277228bfc7a3f5",
     "head": "function renderAll() {"
   },
@@ -4134,13 +4134,13 @@
     "fp": "6c6878ef6f032cfe",
     "head": "@media (max-width: 880px) {"
   },
-  "PRODUCT_BACKLOG.md|parked|src/js/main.js:3746|0": {
-    "anchor": "src/js/main.js:3746",
+  "PRODUCT_BACKLOG.md|parked|src/js/main.js:3750|0": {
+    "anchor": "src/js/main.js:3750",
     "fp": "546deeb5e4bbb440",
     "head": "async function renderCatalog() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-001|src/js/main.js:3842-3903|0": {
-    "anchor": "src/js/main.js:3842-3903",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-001|src/js/main.js:3846-3907|0": {
+    "anchor": "src/js/main.js:3846-3907",
     "fp": "96936b331b79013f",
     "head": "function catalogRow(story, placement) {"
   },
@@ -4159,23 +4159,23 @@
     "fp": "90461cc45716fa24",
     "head": "<form id=\"form-catalog-search\" class=\"stack\" role=\"search\">"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/js/main.js:3968-3983|0": {
-    "anchor": "src/js/main.js:3968-3983",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-003|src/js/main.js:3972-3987|0": {
+    "anchor": "src/js/main.js:3972-3987",
     "fp": "97edef98a6cc84a2",
     "head": "function wireCatalogSearch() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:3866|0": {
-    "anchor": "src/js/main.js:3866",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:3870|0": {
+    "anchor": "src/js/main.js:3870",
     "fp": "7331f7f45bf00813",
     "head": "const label = depthLabel(list.depth);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:3884-3901|0": {
-    "anchor": "src/js/main.js:3884-3901",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-004|src/js/main.js:3888-3905|0": {
+    "anchor": "src/js/main.js:3888-3905",
     "fp": "5600b34464861844",
     "head": "return el('div', { class: 'result' }, ["
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-006|src/js/main.js:3942-3966|0": {
-    "anchor": "src/js/main.js:3942-3966",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-006|src/js/main.js:3946-3970|0": {
+    "anchor": "src/js/main.js:3946-3970",
     "fp": "ef8b62a3eca0e5eb",
     "head": "function attributionLine(list) {"
   },
@@ -4194,23 +4194,23 @@
     "fp": "cd5219d930a48c51",
     "head": "// Returns { entries, unresolved, headings }"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/main.js:3343-3399|0": {
-    "anchor": "src/js/main.js:3343-3399",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-009|src/js/main.js:3347-3403|0": {
+    "anchor": "src/js/main.js:3347-3403",
     "fp": "92d136c8b0aea78d",
     "head": "const { entries, unresolved, headings } = parseChecklist(text);"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-010|src/js/main.js:3407-3476|0": {
-    "anchor": "src/js/main.js:3407-3476",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-010|src/js/main.js:3411-3480|0": {
+    "anchor": "src/js/main.js:3411-3480",
     "fp": "28484099f9359635",
     "head": "function unresolvedRow(entry, listId) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:3305-3323|0": {
-    "anchor": "src/js/main.js:3305-3323",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:3309-3327|0": {
+    "anchor": "src/js/main.js:3309-3327",
     "fp": "42d7b151cea5ab04",
     "head": "async function addSeries(series) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:3592-3712|0": {
-    "anchor": "src/js/main.js:3592-3712",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-011|src/js/main.js:3596-3716|0": {
+    "anchor": "src/js/main.js:3596-3716",
     "fp": "14a5af08a0cf692a",
     "head": "function doManual() {"
   },
@@ -4234,13 +4234,13 @@
     "fp": "3d856d97acb5205e",
     "head": "<fieldset class=\"filters\" id=\"progress-scope\">"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:4150-4210|0": {
-    "anchor": "src/js/main.js:4150-4210",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:4154-4214|0": {
+    "anchor": "src/js/main.js:4154-4214",
     "fp": "37fa266965946bbf",
     "head": "function renderProgress() {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:4164-4166|0": {
-    "anchor": "src/js/main.js:4164-4166",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-014|src/js/main.js:4168-4170|0": {
+    "anchor": "src/js/main.js:4168-4170",
     "fp": "f65558c74b0b4973",
     "head": "$('#progress-sub').textContent = scoped"
   },
@@ -4249,8 +4249,8 @@
     "fp": "33eb001b939b3f47",
     "head": "export const READING_FILTERS = ["
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-015|src/js/main.js:2715|0": {
-    "anchor": "src/js/main.js:2715",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-015|src/js/main.js:2719|0": {
+    "anchor": "src/js/main.js:2719",
     "fp": "65dd2b88c0b13a58",
     "head": "const items = all.filter((it) => matchesReadingFilter(filter, it));"
   },
@@ -4274,8 +4274,8 @@
     "fp": "97c8384ff4bc6a6c",
     "head": "match: (item) => !item.hydrated && !item.detailsRefused && item.source !== 'manual',"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-018|src/js/main.js:2811-2812|0": {
-    "anchor": "src/js/main.js:2811-2812",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-018|src/js/main.js:2815-2816|0": {
+    "anchor": "src/js/main.js:2815-2816",
     "fp": "c4badc70c9aad76e",
     "head": "detailsBadge(item),"
   },
@@ -4284,13 +4284,13 @@
     "fp": "9ddcd2397f40d9c8",
     "head": "export const STATE = {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-019|src/js/main.js:2867-2872|0": {
-    "anchor": "src/js/main.js:2867-2872",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-019|src/js/main.js:2871-2876|0": {
+    "anchor": "src/js/main.js:2871-2876",
     "fp": "2435be3c1e7a1165",
     "head": "const SHORT_LABEL = {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-020|src/js/main.js:3669|0": {
-    "anchor": "src/js/main.js:3669",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-020|src/js/main.js:3673|0": {
+    "anchor": "src/js/main.js:3673",
     "fp": "5435ae20ec2b0bc2",
     "head": "source: 'manual',"
   },
@@ -4309,13 +4309,13 @@
     "fp": "b7f45dbb792851ff",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:4438-4444|0": {
-    "anchor": "src/js/main.js:4438-4444",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-023|src/js/main.js:4442-4448|0": {
+    "anchor": "src/js/main.js:4442-4448",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
-  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-026|src/js/main.js:2898-2921|0": {
-    "anchor": "src/js/main.js:2898-2921",
+  "PRODUCT_BACKLOG.md|reconciliation-against-shipped-code#BL-026|src/js/main.js:2902-2925|0": {
+    "anchor": "src/js/main.js:2902-2925",
     "fp": "0b4690332af2c11d",
     "head": "function wireShortcuts() {"
   },
@@ -4374,8 +4374,8 @@
     "fp": "f792167ff30db7a7",
     "head": "constructor({"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:4449-4450|0": {
-    "anchor": "src/js/main.js:4449-4450",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-030|src/js/main.js:4453-4454|0": {
+    "anchor": "src/js/main.js:4453-4454",
     "fp": "2924a87434a010b4",
     "head": "if (!isAllowedApiBase(value)) {"
   },
@@ -4389,18 +4389,18 @@
     "fp": "6eef07bc9d25975b",
     "head": "const CATALOG_LOAD = 'catalog-load';"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:4063|0": {
-    "anchor": "src/js/main.js:4063",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:4067|0": {
+    "anchor": "src/js/main.js:4067",
     "fp": "8ab27e651ace604e",
     "head": "notify(report, `${order.name} could not be saved, so nothing was imported.`, 'error', importKey);"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:4087-4089|0": {
-    "anchor": "src/js/main.js:4087-4089",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:4091-4093|0": {
+    "anchor": "src/js/main.js:4091-4093",
     "fp": "f7ec63c05cd8928c",
     "head": "notify(report, store.lastUpdateOk"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:4119|0": {
-    "anchor": "src/js/main.js:4119",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#BL-034|src/js/main.js:4123|0": {
+    "anchor": "src/js/main.js:4123",
     "fp": "fc2e7b4023138c1b",
     "head": "notify(report, `Could not load ${list.name}: ${err.message}. Your lists are unchanged.`, 'error', im"
   },
@@ -4434,8 +4434,8 @@
     "fp": "b7f45dbb792851ff",
     "head": "export function validateBackup(raw) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:4438-4444|0": {
-    "anchor": "src/js/main.js:4438-4444",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#data-durability-and-export|src/js/main.js:4442-4448|0": {
+    "anchor": "src/js/main.js:4442-4448",
     "fp": "8e57ce8810ab55d4",
     "head": "$('#btn-undo-restore').addEventListener('click', () => {"
   },
@@ -4449,18 +4449,18 @@
     "fp": "530c3d774c082668",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#licensing|src/js/main.js:3942-3966|0": {
-    "anchor": "src/js/main.js:3942-3966",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#licensing|src/js/main.js:3946-3970|0": {
+    "anchor": "src/js/main.js:3946-3970",
     "fp": "ef8b62a3eca0e5eb",
     "head": "function attributionLine(list) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:4761-4764|0": {
-    "anchor": "src/js/main.js:4761-4764",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#observability|src/js/main.js:4765-4768|0": {
+    "anchor": "src/js/main.js:4765-4768",
     "fp": "3ce058140aeaef21",
     "head": "function onApiStatus(s) {"
   },
-  "PRODUCT_BACKLOG.md|table-stakes-categories#offline-behavior|src/js/main.js:2811-2812|0": {
-    "anchor": "src/js/main.js:2811-2812",
+  "PRODUCT_BACKLOG.md|table-stakes-categories#offline-behavior|src/js/main.js:2815-2816|0": {
+    "anchor": "src/js/main.js:2815-2816",
     "fp": "c4badc70c9aad76e",
     "head": "detailsBadge(item),"
   },
@@ -4484,8 +4484,8 @@
     "fp": "6324ae55860da3a9",
     "head": "test('a future schema is refused rather than silently mangled', () => {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:4150-4210|0": {
-    "anchor": "src/js/main.js:4150-4210",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-014|src/js/main.js:4154-4214|0": {
+    "anchor": "src/js/main.js:4154-4214",
     "fp": "37fa266965946bbf",
     "head": "function renderProgress() {"
   },
@@ -4509,8 +4509,8 @@
     "fp": "8051f5418264c395",
     "head": "`--accent` is the brand mixed 20% toward white, and that ratio was searched rather"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-030|src/styles.css:686-695|0": {
-    "anchor": "src/styles.css:686-695",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-030|src/styles.css:695-704|0": {
+    "anchor": "src/styles.css:695-704",
     "fp": "a8497ff4e93c6cc6",
     "head": "/* A read row recedes through a dimmer title colour, a strikethrough and a filled"
   },
@@ -4519,8 +4519,8 @@
     "fp": "530c3d774c082668",
     "head": "<section class=\"hero\" id=\"hero\" aria-labelledby=\"hero-title\">"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:4788-4802|0": {
-    "anchor": "src/js/main.js:4788-4802",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-033|src/js/main.js:4792-4806|0": {
+    "anchor": "src/js/main.js:4792-4806",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -4549,8 +4549,8 @@
     "fp": "4b2c34e3e004c761",
     "head": "<h3>Library</h3>"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:4788-4802|0": {
-    "anchor": "src/js/main.js:4788-4802",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-042|src/js/main.js:4792-4806|0": {
+    "anchor": "src/js/main.js:4792-4806",
     "fp": "605186ea09ee83b3",
     "head": "function renderAll() {"
   },
@@ -4574,8 +4574,8 @@
     "fp": "e4a4f256115bd4c7",
     "head": "async function getJson(url) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:906-922|0": {
-    "anchor": "src/styles.css:906-922",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-047|src/styles.css:915-931|0": {
+    "anchor": "src/styles.css:915-931",
     "fp": "98263a714f7751d4",
     "head": "/* A form row, which is a different thing from the `.row` a reading list is built from"
   },
@@ -4584,8 +4584,8 @@
     "fp": "baff944060f60826",
     "head": "// So we never claim an issue *is* available. We report one of five explicit"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-049|src/styles.css:759|0": {
-    "anchor": "src/styles.css:759",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-049|src/styles.css:768|0": {
+    "anchor": "src/styles.css:768",
     "fp": "06802dffb3791505",
     "head": ".badge-expected, .badge-override-available { color: var(--teal); border-color: rgb(var(--teal-line) "
   },
@@ -4601,7 +4601,7 @@
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-055|PRODUCT_BACKLOG.md:203-215|0": {
     "anchor": "PRODUCT_BACKLOG.md:203-215",
-    "fp": "886d1ba73990b241",
+    "fp": "227922ee03bf49af",
     "head": "Three quantities used to brief this pass disagreed with what the repository actually contains. They"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-061|eslint.config.mjs:56-67|0": {
@@ -4629,8 +4629,8 @@
     "fp": "e36b1a135075a2c6",
     "head": "## Ultimate Invasion"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-067|src/styles.css:486|0": {
-    "anchor": "src/styles.css:486",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-067|src/styles.css:495|0": {
+    "anchor": "src/styles.css:495",
     "fp": "fd168a7fecabce4c",
     "head": "body.nocovers .tgl .sw { background: var(--track-2); }"
   },
@@ -4639,8 +4639,8 @@
     "fp": "0c1b3de0385c2af9",
     "head": "lists[k] = {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-069|src/styles.css:340|0": {
-    "anchor": "src/styles.css:340",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-069|src/styles.css:349|0": {
+    "anchor": "src/styles.css:349",
     "fp": "1a189415f7ffa207",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--accent);"
   },
@@ -4654,8 +4654,8 @@
     "fp": "f94694921cabfa0d",
     "head": ".filter((s) => s.length > 0 && s !== LOCK);"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-072|src/styles.css:1324|0": {
-    "anchor": "src/styles.css:1324",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-072|src/styles.css:1333|0": {
+    "anchor": "src/styles.css:1333",
     "fp": "1eef54d530f1e5d5",
     "head": ".blocked .btn-g { border-color: var(--muted); }"
   },
@@ -4714,8 +4714,8 @@
     "fp": "057492ee45bbd06d",
     "head": "// Compare before writing, because this key is shared with every other tab on this origin and a"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-085|src/js/main.js:4399-4427|0": {
-    "anchor": "src/js/main.js:4399-4427",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-085|src/js/main.js:4403-4431|0": {
+    "anchor": "src/js/main.js:4403-4431",
     "fp": "d26b5eec264b921c",
     "head": "$('#restore-file').addEventListener('change', async (e) => {"
   },
@@ -4739,13 +4739,13 @@
     "fp": "7a07ad85b4a02516",
     "head": "updates:"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:4708-4771|0": {
-    "anchor": "src/js/main.js:4708-4771",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-090|src/js/main.js:4712-4775|0": {
+    "anchor": "src/js/main.js:4712-4775",
     "fp": "ee245f132cd8352f",
     "head": "async function checkHealth() {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-091|src/styles.css:1139-1142|0": {
-    "anchor": "src/styles.css:1139-1142",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-091|src/styles.css:1148-1151|0": {
+    "anchor": "src/styles.css:1148-1151",
     "fp": "7ea146c6d6839b8e",
     "head": ".ocard-desc {"
   },
@@ -4799,8 +4799,8 @@
     "fp": "b40fb8cc4678105d",
     "head": "// Roots whose contents are working evidence for one session rather than product documentation."
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-101|src/js/main.js:4487-4524|0": {
-    "anchor": "src/js/main.js:4487-4524",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-101|src/js/main.js:4491-4528|0": {
+    "anchor": "src/js/main.js:4491-4528",
     "fp": "a78fcf83b20d732b",
     "head": "$('#btn-wipe').addEventListener('click', async () => {"
   },
@@ -4819,8 +4819,8 @@
     "fp": "eba7d4f1731c86ac",
     "head": "export function checkLedger(d) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-107|PRODUCT_BACKLOG.md:4043-4045|0": {
-    "anchor": "PRODUCT_BACKLOG.md:4043-4045",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-107|PRODUCT_BACKLOG.md:4044-4046|0": {
+    "anchor": "PRODUCT_BACKLOG.md:4044-4046",
     "fp": "e719476a3446f6d3",
     "head": "by measuring the one draft it was filed from. Counting every repeated blank-free window within each"
   },
@@ -4834,8 +4834,8 @@
     "fp": "06e54a56a333a199",
     "head": "detailsRefused: refused || input.detailsRefused === true,"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-110|src/js/main.js:4107|0": {
-    "anchor": "src/js/main.js:4107",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-110|src/js/main.js:4111|0": {
+    "anchor": "src/js/main.js:4111",
     "fp": "8f186a926ed5a738",
     "head": "parts.push(...orderGapSentences(order));"
   },
@@ -4874,8 +4874,8 @@
     "fp": "1cf6a87693afcdd5",
     "head": "// BL-118. The repeat pass over every prose document, each read as its own corpus. A finding"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-119|src/js/main.js:3856-3861|0": {
-    "anchor": "src/js/main.js:3856-3861",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-119|src/js/main.js:3860-3865|0": {
+    "anchor": "src/js/main.js:3860-3865",
     "fp": "4995ea90f0deccc9",
     "head": "meta.textContent = ["
   },
@@ -4884,9 +4884,9 @@
     "fp": "bd0da58f7569ec11",
     "head": "- name: Check publication boundary"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1532-1533|0": {
-    "anchor": "PRODUCT_BACKLOG.md:1532-1533",
-    "fp": "d54a88937f131cba",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-121|PRODUCT_BACKLOG.md:1533-1534|0": {
+    "anchor": "PRODUCT_BACKLOG.md:1533-1534",
+    "fp": "701bb0925ceb3169",
     "head": "Erasing everything, restoring a backup and undoing a restore all call `forgetDeleted()`, at"
   },
   "PRODUCT_BACKLOG.md|the-backlog#BL-122|scripts/check-anchors.mjs:671-704|0": {
@@ -4894,8 +4894,8 @@
     "fp": "1f49cb516abe3fde",
     "head": "export function repeatedCitations(text, syntax = PROSE, known = null) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-124|src/js/main.js:4761-4764|0": {
-    "anchor": "src/js/main.js:4761-4764",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-124|src/js/main.js:4765-4768|0": {
+    "anchor": "src/js/main.js:4765-4768",
     "fp": "3ce058140aeaef21",
     "head": "function onApiStatus(s) {"
   },
@@ -4919,8 +4919,8 @@
     "fp": "f24eaa1394ace2ff",
     "head": "1. **Secret scanning, and then push protection**, closing BL-089. Push protection depends on secret"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-130|src/js/main.js:2656-2665|0": {
-    "anchor": "src/js/main.js:2656-2665",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-130|src/js/main.js:2660-2669|0": {
+    "anchor": "src/js/main.js:2660-2669",
     "fp": "1c9519267c0515d1",
     "head": "export function synopsisFallback(issue, sessionEntry = null) {"
   },
@@ -5004,8 +5004,8 @@
     "fp": "f74020fd383e677d",
     "head": "const SCALAR_FIELDS = new Map(["
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-150|src/js/main.js:3634-3646|0": {
-    "anchor": "src/js/main.js:3634-3646",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-150|src/js/main.js:3638-3650|0": {
+    "anchor": "src/js/main.js:3638-3650",
     "fp": "a77cfe2b73ba2042",
     "head": "if (manualMatch && store.state.issues?.[issueId]) {"
   },
@@ -5014,8 +5014,8 @@
     "fp": "13acd7bcc6aab6ed",
     "head": "if (issueId != null) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-153|src/styles.css:397-398|0": {
-    "anchor": "src/styles.css:397-398",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-153|src/styles.css:406-407|0": {
+    "anchor": "src/styles.css:406-407",
     "fp": "c91a0a86b137ab9d",
     "head": ".railed .rail-foot .pill { width: 10px; height: 10px; padding: 0; border-radius: 50%; overflow: hidd"
   },
@@ -5024,13 +5024,13 @@
     "fp": "1f9b5fc62dd9763f",
     "head": "export function sectionKey(story) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-155|src/js/main.js:3921-3936|0": {
-    "anchor": "src/js/main.js:3921-3936",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-155|src/js/main.js:3925-3940|0": {
+    "anchor": "src/js/main.js:3925-3940",
     "fp": "c55d571f46037a8e",
     "head": "function pathLine(placement) {"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-156|src/styles.css:426-428|0": {
-    "anchor": "src/styles.css:426-428",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-156|src/styles.css:435-437|0": {
+    "anchor": "src/styles.css:435-437",
     "fp": "acdb5615e2c2cc2a",
     "head": ".pill-start, .pill-beginner {"
   },
@@ -5049,8 +5049,8 @@
     "fp": "907a6336435cb8d1",
     "head": "export const UPDATE_DOWNLOAD_URL = 'https://github.com/raymond-nassar/recap-page/releases/latest/dow"
   },
-  "PRODUCT_BACKLOG.md|the-backlog#BL-165|src/styles.css:446-455|0": {
-    "anchor": "src/styles.css:446-455",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-165|src/styles.css:455-464|0": {
+    "anchor": "src/styles.css:455-464",
     "fp": "2e93a158ec57a47b",
     "head": ".wrap { max-width: var(--canvas); margin: 0 auto; padding: 1.6rem 2rem 3rem; }"
   },
@@ -5074,8 +5074,13 @@
     "fp": "a2c0f5e6f32c9d7d",
     "head": "# Recap Page"
   },
-  "scripts/browser-check.mjs|preamble|src/styles.css:764|0": {
-    "anchor": "src/styles.css:764",
+  "PRODUCT_BACKLOG.md|the-backlog#BL-188|src/styles.css:257-260|0": {
+    "anchor": "src/styles.css:257-260",
+    "fp": "6c6878ef6f032cfe",
+    "head": "@media (max-width: 880px) {"
+  },
+  "scripts/browser-check.mjs|preamble|src/styles.css:773|0": {
+    "anchor": "src/styles.css:773",
     "fp": "188826f8749bd3bc",
     "head": ".ract { display: flex; gap: .25rem; opacity: 0; }"
   },
@@ -5099,8 +5104,8 @@
     "fp": "24fc4e0169a550e3",
     "head": "if (this.controller !== controller) return;"
   },
-  "scripts/check-counts.mjs|preamble|PRODUCT_BACKLOG.md:2628|0": {
-    "anchor": "PRODUCT_BACKLOG.md:2628",
+  "scripts/check-counts.mjs|preamble|PRODUCT_BACKLOG.md:2629|0": {
+    "anchor": "PRODUCT_BACKLOG.md:2629",
     "fp": "2a31d6a4f8340417",
     "head": "how this checker once covered thirty-seven of a hundred and ninety-three. The cost is that deleting"
   },
@@ -5114,63 +5119,63 @@
     "fp": "b16e0bda4cf16693",
     "head": "el('span', { class: 'n', text: `${read} / ${total}` }),"
   },
-  "scripts/check-palette.mjs|preamble|src/js/main.js:2791|0": {
-    "anchor": "src/js/main.js:2791",
+  "scripts/check-palette.mjs|preamble|src/js/main.js:2795|0": {
+    "anchor": "src/js/main.js:2795",
     "fp": "6260601161fee24f",
     "head": "'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,"
   },
-  "scripts/check-palette.mjs|preamble|src/js/main.js:2791|1": {
-    "anchor": "src/js/main.js:2791",
+  "scripts/check-palette.mjs|preamble|src/js/main.js:2795|1": {
+    "anchor": "src/js/main.js:2795",
     "fp": "6260601161fee24f",
     "head": "'aria-label': `Mark ${item.title} as ${item.read ? 'unread' : 'read'}`,"
   },
-  "scripts/check-palette.mjs|preamble|src/js/main.js:5019|0": {
-    "anchor": "src/js/main.js:5019",
+  "scripts/check-palette.mjs|preamble|src/js/main.js:5023|0": {
+    "anchor": "src/js/main.js:5023",
     "fp": "3a90f9bd69dfcf96",
     "head": "el('span', { class: 'yours-count', text: count }),"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:1300|0": {
-    "anchor": "src/styles.css:1300",
+  "scripts/check-palette.mjs|preamble|src/styles.css:1309|0": {
+    "anchor": "src/styles.css:1309",
     "fp": "3a5c838f7187d084",
     "head": "background: color-mix(in srgb, var(--warn) 12%, var(--panel));"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:1324|0": {
-    "anchor": "src/styles.css:1324",
+  "scripts/check-palette.mjs|preamble|src/styles.css:1333|0": {
+    "anchor": "src/styles.css:1333",
     "fp": "1eef54d530f1e5d5",
     "head": ".blocked .btn-g { border-color: var(--muted); }"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:336|0": {
-    "anchor": "src/styles.css:336",
+  "scripts/check-palette.mjs|preamble|src/styles.css:345|0": {
+    "anchor": "src/styles.css:345",
     "fp": "0aa89ba98945a96a",
     "head": "background: rgb(var(--tint-base) / 8%); color: var(--text); font-weight: 600;"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:336|1": {
-    "anchor": "src/styles.css:336",
+  "scripts/check-palette.mjs|preamble|src/styles.css:345|1": {
+    "anchor": "src/styles.css:345",
     "fp": "0aa89ba98945a96a",
     "head": "background: rgb(var(--tint-base) / 8%); color: var(--text); font-weight: 600;"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:340|0": {
-    "anchor": "src/styles.css:340",
+  "scripts/check-palette.mjs|preamble|src/styles.css:349|0": {
+    "anchor": "src/styles.css:349",
     "fp": "1a189415f7ffa207",
     "head": "width: 3px; height: 60%; border-radius: 0 3px 3px 0; background: var(--accent);"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:397-398|0": {
-    "anchor": "src/styles.css:397-398",
+  "scripts/check-palette.mjs|preamble|src/styles.css:406-407|0": {
+    "anchor": "src/styles.css:406-407",
     "fp": "c91a0a86b137ab9d",
     "head": ".railed .rail-foot .pill { width: 10px; height: 10px; padding: 0; border-radius: 50%; overflow: hidd"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:572|0": {
-    "anchor": "src/styles.css:572",
+  "scripts/check-palette.mjs|preamble|src/styles.css:581|0": {
+    "anchor": "src/styles.css:581",
     "fp": "955a5533014388f9",
     "head": ".btn-g { background: rgb(var(--tint-base) / 5.882%); color: var(--text); border-color: var(--line-2)"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:709|0": {
-    "anchor": "src/styles.css:709",
+  "scripts/check-palette.mjs|preamble|src/styles.css:718|0": {
+    "anchor": "src/styles.css:718",
     "fp": "ab1b965d8a6c63ba",
     "head": "background: none; display: grid; place-items: center; color: var(--on-accent); font-size: var(--t-ca"
   },
-  "scripts/check-palette.mjs|preamble|src/styles.css:711|0": {
-    "anchor": "src/styles.css:711",
+  "scripts/check-palette.mjs|preamble|src/styles.css:720|0": {
+    "anchor": "src/styles.css:720",
     "fp": "66318b8a9bc87d06",
     "head": ".row.is-read .cb { background: var(--teal); border-color: var(--teal); }"
   },
@@ -5224,8 +5229,8 @@
     "fp": "307982fb4a5a2d23",
     "head": "this.onProgress(this.status('running'));"
   },
-  "test/passive-announce.test.js|preamble|src/js/main.js:3293|0": {
-    "anchor": "src/js/main.js:3293",
+  "test/passive-announce.test.js|preamble|src/js/main.js:3297|0": {
+    "anchor": "src/js/main.js:3297",
     "fp": "2450e376de7482c6",
     "head": "announce(`${message} ${added} added${skipped ? `, ${skipped} already in the list` : ''}.`);"
   },

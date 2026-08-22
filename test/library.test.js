@@ -96,14 +96,27 @@ test('an empty-state action is optional, but a declared one has to lead somewher
 
 test('every declared empty-state action names a view the rail can actually reach', () => {
   // The destination is a data value here and a data-view attribute there, so nothing but this
-  // test connects the two. A renamed view would leave the button pointing at a dead name.
-  const reachable = new Set(['home', 'catalog', 'add', 'library', 'progress', 'settings', 'about', 'reading']);
+  // test connects the two. An allow-list written by hand does not connect them either: the first
+  // version of this test allowed 'library', 'settings' and 'reading', none of which are views,
+  // while omitting 'data' and 'read', which are. It would have passed the exact typo it was
+  // written to catch. Read the sections out of the markup instead, because a section is what
+  // showView looks for and failing to find one blanks the page.
+  const html = read('src/index.html');
+  const sections = new Set(sectionIds(html));
   for (const v of LIBRARY_VIEWS) {
     if (!v.emptyAction) continue;
     assert.ok(
-      reachable.has(v.emptyAction.view),
-      `${v.value} offers an empty-state action that goes to ${v.emptyAction.view}, which is not a view`,
+      sections.has(v.emptyAction.view),
+      `${v.value} offers an empty-state action going to ${v.emptyAction.view}, which has no section in the markup`,
     );
+    // The disclosure the action opens is looked up by id at click time and skipped when missing,
+    // so a wrong id degrades quietly to a plain view change rather than throwing.
+    if (v.emptyAction.open) {
+      assert.ok(
+        html.includes(`id="${v.emptyAction.open}"`),
+        `${v.value} offers an empty-state action opening ${v.emptyAction.open}, which is not in the markup`,
+      );
+    }
   }
 });
 

@@ -330,6 +330,15 @@ h2[tabindex="-1"]:focus {
 }
 .ri:hover { background: rgb(var(--tint-base) / 4%); color: var(--text); }
 
+/* The scrolling half of the rail has no padding of its own, and padding it would not help: .ri is
+   width: 100%, so it stretches to whatever box it is given and stays flush with the edge. An
+   outset ring is therefore clipped, and outlines do not scroll into view, so nothing reveals it.
+   Measured in Edge at 1280x900, 11 of the 14 rail controls lost the left and right bars of the
+   ring. Drawing it inside the button clears all 14. -3px is the shallowest offset that does,
+   because the ring is 3px wide and any less leaves its outer edge past the button. */
+.rail .ri:focus-visible,
+.rail .brand:focus-visible { outline-offset: -3px; }
+
 /* The selected state is a purple accent bar AND a raised surface AND a heavier label, so it
    never depends on colour alone. */
 .ri[aria-current], .ri.on {
