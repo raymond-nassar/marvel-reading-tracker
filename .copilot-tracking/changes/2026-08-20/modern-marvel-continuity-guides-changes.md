@@ -490,3 +490,36 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   `Authorized actions this run` line. The app can then land the already-ready pull request.
 * What was not done: No manual merge, auto-merge, merge queue action, branch rewrite, or CI bypass
   was attempted.
+
+### CHG-020: Pause batch four at the parent approval gate
+
+* Related phase or task: P03-T01.
+* Baseline: The third guarded batch is merged on the default branch at
+  `de73f074e94b210011ea0569d426088d7ed152dc`.
+* What changed: Re-audited the master sequence from position 1 through position 56, including event
+  and aftermath sections hidden inside bridge and era records, and persisted one exact ten-guide
+  selection proposal without creating production packet files.
+* Proposed order: `minimum-carnage`, `x-termination`, `avengers-enemy-within`,
+  `x-men-battle-of-the-atom`, `revolutionary-war`, `x-men-trial-of-jean-grey`,
+  `monsters-unleashed`, `venomverse`, `infinity-countdown-wars`, and `damnation`.
+* Master boundary: Minimum Carnage comes from position 31. Five clean Marvel NOW sections follow at
+  position 32. Monsters Unleashed, Venomverse, Infinity Countdown and Infinity Wars, and Marvel
+  Damnation close the proposal at positions 49, 52, 55, and 56.
+* Source identity: Six proposals use two shared pages with distinct non-empty `sourceSection`
+  values; four use dedicated URLs. No fragment was invented.
+* Duplicate review: The ten proposed ids, catalog ids, source identities, and normalized titles
+  match no shipped output or approved mapping. The 128 explicit source references produced nine
+  name-number collisions, all resolved as different series years, and zero exact shipped checklist
+  matches.
+* Excluded overlap and scope: AvX: Consequences remains an unapproved exact subset of the blocked
+  Avengers vs. X-Men mapping. Inhumanity shares New Avengers #13 with both Hickman variants. Secret
+  Empire shares Avengers-family issues with All-New All-Different Avengers. Generations is described
+  by its source as thematic tissue rather than an event. None enters the proposal.
+* Decisions awaiting parent: Six versus seven Minimum Carnage rows, the six shared-page section
+  identities, the 11-row Venomverse boundary, the 46 versus 50-row Infinity boundary, and the
+  15-row Damnation boundary.
+* What did not change: No inventory disposition, mapping, overlap report, order Markdown, manifest,
+  catalog, generated data, product or tooling code, test, dependency, commit, push, or pull request
+  was created or changed.
+* Approval gate: Explicit parent approval or revision of the exact ten and every boundary above is
+  required before any P03-T01 implementation action.
