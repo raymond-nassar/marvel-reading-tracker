@@ -372,3 +372,31 @@ reached ten authorable packets. The resulting source-order batch is `secret-war`
   the new 2007 and 2010 events behind later existing events. Authoring now inserts each packet entry
   before a reviewed stable anchor, fails if any anchor is missing, preserves all existing relative
   order, and reproduces byte for byte.
+
+### CHG-014: Pause batch three at the parent approval gate
+
+* Related phase or task: P03-T01.
+* Baseline: Pull request 161 is merged, and the selection audit used the current default branch.
+* What changed: Re-audited the master sequence from position 1, compared the first two batches and
+  all shipped catalog variants, and identified the next ten genuine missing event or aftermath
+  sections without creating any production packet files.
+* Proposed order: `x-men-divided-we-stand`, `x-men-manifest-destiny`, `x-men-nation-x`,
+  `x-men-curse-of-the-mutants`, `wolverine-goes-to-hell`, `x-men-age-of-x`, `x-men-schism`,
+  `x-men-regenesis`, `doomwar`, and `spider-island`.
+* Master boundary: The first eight are distinct headings inside position 16, Doomwar comes from
+  position 23, and Spider-Island closes the proposal at position 29.
+* Duplicate review: None of the ten ids or three source pages exists in the catalog or approved
+  mappings. Numbered and explicit source references produced zero shipped checklist matches.
+  Exact issue-id overlap is not claimed before mapping.
+* Material blocker: The position 16 page gives its eight event headings no HTML ids. All eight
+  therefore share one exact URL, which the current peer-source uniqueness gate rejects even though
+  their literal issue lists are distinct. Regenesis also lists Uncanny X-Men #3 twice, and Manifest
+  Destiny includes two unnumbered anthology-material groups.
+* Earlier skip result: Positions 1-15 are shipped, reused, excluded, path-only, or blocked as already
+  recorded. Before position 29, Secret Invasion is reused; Dark Reign and Heroic Age are broad
+  overlapping eras; Fall of the Hulks, Siege, and Fear Itself remain blocked; Shadowland and Chaos
+  War are shipped; Utopia and Children's Crusade have shipped overlap.
+* What did not change: No mapping, overlap report, inventory disposition, order Markdown, manifest,
+  catalog, generated data, product or tooling code, test, commit, push, or pull request was created.
+* Approval gate: Explicit parent approval or revision is required, including a durable decision for
+  the repeated source URL, before any P03-T01 implementation begins.
